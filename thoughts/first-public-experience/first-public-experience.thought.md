@@ -371,3 +371,5 @@ An initial contrasting set could be:
 | 2026-08-25 | Initial exploration created | Define the first public experience before selecting implementation work |
 | 2026-08-25 | Frame the MVP as an experience rather than a feature subset | A coherent promise can be evaluated and shared; an isolated feature cannot |
 | 2026-08-25 | Keep side projects in scope | A small game, tool, or visual experience may deliver learning and public value sooner than the opening of the final game |
+| 2026-08-25 | Select Rope, Glide, and Run for an initiative | It offers an immediate movement experience and a focused way to explore original traversal mechanics |
+| 2026-08-25 | Select the Skyship Building Tool for an initiative | It offers a contrasting creation-and-sharing experience that can progress independently of movement development |
