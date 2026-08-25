@@ -1,0 +1,12 @@
+[package]
+name = "sandbox"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+bevy.workspace = true
+aether_app.workspace = true
+aether_first_person.workspace = true
+aether_grid_ground.workspace = true
+

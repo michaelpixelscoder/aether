@@ -1,0 +1,9 @@
+[package]
+name = "aether_first_person"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+bevy.workspace = true
+

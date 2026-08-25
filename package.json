@@ -1,0 +1,10 @@
+{
+  "name": "aether-browser-tests",
+  "private": true,
+  "scripts": {
+    "test:browser": "playwright test tests/browser/aether.spec.js --workers=1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1"
+  }
+}

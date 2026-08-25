@@ -1,0 +1,7 @@
+[alias]
+lobby = "run -p lobby"
+sandbox = "run -p sandbox"
+
+[target.wasm32-unknown-unknown]
+rustflags = ["--cfg", "getrandom_backend=\"wasm_js\""]
+
