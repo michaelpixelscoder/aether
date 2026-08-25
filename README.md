@@ -65,7 +65,7 @@ This repository is also the working knowledge base for the business:
 
 ```text
 aether/
-├── initiative/  Active directions, specifications, and delivery tracking
+├── initiatives/  Active directions, specifications, and delivery tracking
 ├── stories/     Factual observations and experiences from the field
 └── thoughts/    Explorations, hypotheses, and possible solutions
 ```
