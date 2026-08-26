@@ -43,7 +43,7 @@ Open `http://localhost:8080/`. The sandbox has the stable route:
 
 The lane runner is available at `/game/runner/`.
 
-Runner controls: Left/Right Arrow or A/D changes lane, Space jumps, and mobile supports horizontal swipes plus swipe-up to jump. Sandbox controls remain WASD, Space/left Shift, and hold-left-mouse look.
+Runner controls: Left/Right Arrow or A/D changes lane and Space jumps. While airborne, Space toggles the glider on or off. Jump near a glowing anchor and hold F or E to attach the rope; release to launch with your swing momentum. Mobile supports horizontal swipes, swipe-up for jump/glide toggle, and touch-and-hold for the rope. Sandbox controls remain WASD, Space/left Shift, and hold-left-mouse look.
 
 With the web server running, execute the browser smoke test with:
 

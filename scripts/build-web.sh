@@ -15,7 +15,7 @@ cargo build --manifest-path "$project_root/Cargo.toml" --release --target wasm32
 mkdir -p "$output_dir/game/sandbox" "$output_dir/game/runner/assets/characters/kaykit"
 cp "$project_root/web/lobby.html" "$output_dir/index.html"
 cp "$project_root/web/game.html" "$output_dir/game/sandbox/index.html"
-sed 's/Aether Isles — Sandbox/Aether Isles — Skyway Runner/; s#./sandbox.js#./runner.js#; s#WASD move · Space/Shift vertical · Hold left mouse to look#← → or A D change lane · Space jump · Swipe on mobile#' \
+sed 's/Aether Isles — Sandbox/Aether Isles — Skyway Runner/; s#./sandbox.js#./runner.js#; s#WASD move · Space/Shift vertical · Hold left mouse to look#← → steer · Space jump/glide · Hold F or E to swing#' \
   "$project_root/web/game.html" > "$output_dir/game/runner/index.html"
 cp "$project_root/web/style.css" "$output_dir/style.css"
 cp "$project_root/assets/characters/kaykit/Knight.glb" "$output_dir/game/runner/assets/characters/kaykit/Knight.glb"
