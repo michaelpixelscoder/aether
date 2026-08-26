@@ -383,6 +383,8 @@ Observe at least five first-use sessions. Record time to first meaningful action
 | 2026-08-25 | Split locomotion, rope, glide, and interaction into capabilities | Custom mechanics must extend actors without growing a monolithic player controller |
 | 2026-08-25 | Require one motion authority | Multiple capabilities may contribute forces and requests, but they must not race to mutate transforms |
 | 2026-08-25 | Start with an authored greybox | It isolates movement feel from procedural route-generation risk |
+| 2026-08-25 | Build the runner foundation before rope and glide | A dedicated greybox validates continuous forward motion, three lanes, keyboard/touch lane changes, jumping, follow camera, and character animation in isolation |
+| 2026-08-25 | Use KayKit Adventurers Knight for the movement prototype | The premade CC0 glTF is lightweight, browser-friendly, and includes coherent run and jump animations; source, license, and checksum are vendored with it |
 
 ## 10. Closure
 

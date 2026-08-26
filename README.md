@@ -24,6 +24,7 @@ cargo lobby
 Run the game directly with:
 
 ```sh
+cargo runner
 cargo sandbox
 ```
 
@@ -40,7 +41,9 @@ Open `http://localhost:8080/`. The sandbox has the stable route:
 /game/sandbox/
 ```
 
-Controls: WASD to move, Space/left Shift to move vertically, and hold the left mouse button while moving the mouse to look.
+The lane runner is available at `/game/runner/`.
+
+Runner controls: Left/Right Arrow or A/D changes lane, Space jumps, and mobile supports horizontal swipes plus swipe-up to jump. Sandbox controls remain WASD, Space/left Shift, and hold-left-mouse look.
 
 With the web server running, execute the browser smoke test with:
 
