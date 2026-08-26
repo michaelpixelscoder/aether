@@ -27,6 +27,12 @@ Run the game directly with:
 cargo sandbox
 ```
 
+Run the voxel ship editor directly with:
+
+```sh
+cargo shipwright
+```
+
 ## Browser
 
 ```sh
@@ -40,7 +46,15 @@ Open `http://localhost:8080/`. The sandbox has the stable route:
 /game/sandbox/
 ```
 
+The voxel ship editor has the stable route:
+
+```text
+/game/shipwright/
+```
+
 Controls: WASD to move, Space/left Shift to move vertically, and hold the left mouse button while moving the mouse to look.
+
+Shipwright controls: click an exposed voxel face to add the selected material, Shift-click to remove, drag to orbit, scroll to zoom, use 1–5 to select wood/stone/grass/iron/glass, and Ctrl/Cmd+Z to undo.
 
 With the web server running, execute the browser smoke test with:
 

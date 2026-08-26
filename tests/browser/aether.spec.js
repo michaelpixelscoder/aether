@@ -17,3 +17,15 @@ test("web lobby opens the sandbox", async ({ page }) => {
   await page.waitForTimeout(5000);
   expect(errors).toEqual([]);
 });
+
+test("web lobby opens Aether Shipwright", async ({ page }) => {
+  const errors = [];
+  page.on("pageerror", error => errors.push(error.message));
+
+  await page.goto("http://127.0.0.1:8080/");
+  await page.getByRole("link", { name: /Aether Shipwright/ }).click();
+  await expect(page).toHaveURL(/\/game\/shipwright\/$/);
+  await expect(page.locator("#aether-canvas")).toBeAttached();
+  await page.waitForTimeout(5000);
+  expect(errors).toEqual([]);
+});

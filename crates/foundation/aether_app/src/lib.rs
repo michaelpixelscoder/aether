@@ -16,6 +16,7 @@ impl Plugin for AetherAppPlugin {
                 canvas: Some("#aether-canvas".into()),
                 fit_canvas_to_parent: true,
                 prevent_default_event_handling: true,
+                transparent: true,
                 ..default()
             }),
             ..default()

@@ -13,7 +13,7 @@ h1 { margin: .2rem 0; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: -.06e
 .game span:nth-child(2) { color: #a9bac1; }
 .game-page { overflow: hidden; }
 #aether-canvas { width: 100vw; height: 100vh; display: block; }
+.shipwright-page { background: linear-gradient(155deg, #93c4dc 0%, #4c7fa2 42%, #172b49 100%); }
 aside { position: fixed; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; padding: 10px 14px; border: 1px solid #ffffff26; border-radius: 8px; background: #10171bd9; color: #c7d4d9; font-size: .85rem; pointer-events: none; }
 aside a { color: #9adff0; pointer-events: auto; }
 @media (max-width: 650px) { .game { grid-template-columns: 1fr; } aside span { display: none; } }
-
