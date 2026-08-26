@@ -45,6 +45,14 @@
 - Fix: use a transparent Bevy window/camera clear so the page gradient is visible beneath the canvas.
 - Post-fix visual evidence: blocked by collaborative preview snapshot failure.
 
+### Pass 2 — textures and rear lighting
+
+- User finding: voxel surfaces lacked material texture and the back of the build was too dark.
+- Fix: added five project-local 256 × 256 painted material textures and connected them to the wood, stone, grass, iron, and glass PBR materials.
+- Fix: added a broad, shadowless camera-relative blue fill light and raised the neutral-blue ambient contribution from 230 to 420 while preserving the shadow-casting directional key.
+- Verification: native check, two focused editor tests, and the optimized WASM build passed; all five texture assets are included under `dist/assets/textures/shipwright/`.
+- Post-fix visual evidence: blocked again by T3 preview snapshot timeout on the live WebGL canvas.
+
 ## Follow-up polish
 
 - Replace the default system font with a bundled display/UI font pair after visual capture establishes exact metrics.

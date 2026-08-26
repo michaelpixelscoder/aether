@@ -18,6 +18,12 @@ cp "$project_root/web/lobby.html" "$output_dir/index.html"
 cp "$project_root/web/game.html" "$output_dir/game/sandbox/index.html"
 cp "$project_root/web/shipwright.html" "$output_dir/game/shipwright/index.html"
 cp "$project_root/web/style.css" "$output_dir/style.css"
+mkdir -p "$output_dir/assets"
+cp -R "$project_root/assets/." "$output_dir/assets/"
+# Bevy's web asset reader resolves its default `assets/` directory relative to
+# the document URL. Each routed game therefore needs its own asset root.
+mkdir -p "$output_dir/game/shipwright/assets"
+cp -R "$project_root/assets/." "$output_dir/game/shipwright/assets/"
 
 wasm-bindgen "$wasm_target/lobby_web.wasm" --out-dir "$output_dir" --target web --no-typescript
 wasm-bindgen "$wasm_target/sandbox.wasm" --out-dir "$output_dir/game/sandbox" --target web --no-typescript

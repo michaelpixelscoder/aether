@@ -167,15 +167,28 @@ fn setup(
     mut materials: ResMut<Assets<StandardMaterial>>,
     mut images: ResMut<Assets<Image>>,
 ) {
-    commands.spawn((
-        Camera3d::default(),
-        Transform::from_xyz(8.5, 7.0, 10.0).looking_at(Vec3::ZERO, Vec3::Y),
-        OrbitCamera {
-            yaw: 0.70,
-            pitch: -0.48,
-            radius: 15.0,
-        },
-    ));
+    commands
+        .spawn((
+            Camera3d::default(),
+            Transform::from_xyz(8.5, 7.0, 10.0).looking_at(Vec3::ZERO, Vec3::Y),
+            OrbitCamera {
+                yaw: 0.70,
+                pitch: -0.48,
+                radius: 15.0,
+            },
+        ))
+        .with_child((
+            PointLight {
+                color: Color::srgb(0.72, 0.84, 1.0),
+                intensity: 185_000.0,
+                range: 28.0,
+                radius: 7.0,
+                shadows_enabled: false,
+                ..default()
+            },
+            // A broad camera-relative fill keeps the far side readable throughout orbiting.
+            Transform::from_xyz(-3.5, 4.0, 2.0),
+        ));
 
     commands.spawn((
         DirectionalLight {
@@ -186,8 +199,8 @@ fn setup(
         Transform::from_rotation(Quat::from_euler(EulerRot::XYZ, -0.9, -0.65, 0.0)),
     ));
     commands.insert_resource(GlobalAmbientLight {
-        color: Color::srgb(0.55, 0.66, 0.82),
-        brightness: 230.0,
+        color: Color::srgb(0.62, 0.71, 0.86),
+        brightness: 420.0,
         affects_lightmapped_meshes: true,
     });
 
@@ -722,6 +735,7 @@ fn sync_voxel_scene(
     entities: Query<Entity, With<VoxelEntity>>,
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
+    asset_server: Res<AssetServer>,
     mut last_revision: Local<u64>,
 ) {
     if *last_revision == world.revision {
@@ -734,10 +748,27 @@ fn sync_voxel_scene(
     let mut material_handles = HashMap::new();
     for kind in BlockKind::ALL {
         let glass = kind == BlockKind::Glass;
+        let texture_path = match kind {
+            BlockKind::Wood => "textures/shipwright/wood.png",
+            BlockKind::Stone => "textures/shipwright/stone.png",
+            BlockKind::Grass => "textures/shipwright/grass.png",
+            BlockKind::Iron => "textures/shipwright/iron.png",
+            BlockKind::Glass => "textures/shipwright/glass.png",
+        };
         let handle = materials.add(StandardMaterial {
-            base_color: kind.color(),
+            base_color: if glass {
+                Color::srgba(0.58, 0.88, 0.96, 0.48)
+            } else {
+                Color::WHITE
+            },
+            base_color_texture: Some(asset_server.load(texture_path)),
             metallic: if kind == BlockKind::Iron { 0.72 } else { 0.0 },
-            perceptual_roughness: if glass { 0.12 } else { 0.78 },
+            perceptual_roughness: match kind {
+                BlockKind::Iron => 0.38,
+                BlockKind::Glass => 0.10,
+                BlockKind::Wood => 0.72,
+                _ => 0.82,
+            },
             alpha_mode: if glass {
                 AlphaMode::Blend
             } else {
