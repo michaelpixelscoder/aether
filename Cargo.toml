@@ -4,8 +4,10 @@ members = [
     "apps/lobby",
     "apps/lobby_web",
     "games/sandbox",
+    "games/runner",
     "crates/foundation/aether_app",
     "crates/features/aether_first_person",
+    "crates/features/aether_runner",
     "crates/presentation/aether_grid_ground",
 ]
 
@@ -17,10 +19,12 @@ license = "MIT OR Apache-2.0"
 [workspace.dependencies]
 bevy = { version = "0.18.1", default-features = false, features = [
     "bevy_asset",
+    "bevy_animation",
     "bevy_camera",
     "bevy_color",
     "bevy_core_pipeline",
     "bevy_input_focus",
+    "bevy_gltf",
     "bevy_light",
     "bevy_log",
     "bevy_mesh",
@@ -28,12 +32,16 @@ bevy = { version = "0.18.1", default-features = false, features = [
     "bevy_render",
     "bevy_shader",
     "bevy_state",
+    "bevy_text",
+    "bevy_ui",
     "bevy_window",
     "bevy_winit",
     "custom_cursor",
     "hdr",
+    "gltf_animation",
     "multi_threaded",
     "png",
+    "reflect_auto_register",
     "std",
     "tonemapping_luts",
     "webgl2",
@@ -42,6 +50,7 @@ bevy = { version = "0.18.1", default-features = false, features = [
 ] }
 aether_app = { path = "crates/foundation/aether_app" }
 aether_first_person = { path = "crates/features/aether_first_person" }
+aether_runner = { path = "crates/features/aether_runner" }
 aether_grid_ground = { path = "crates/presentation/aether_grid_ground" }
 
 [profile.dev]

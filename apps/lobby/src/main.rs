@@ -8,11 +8,18 @@ struct Game {
     description: &'static str,
 }
 
-const GAMES: &[Game] = &[Game {
-    name: "sandbox",
-    binary: "sandbox",
-    description: "First-person movement on the grid ground",
-}];
+const GAMES: &[Game] = &[
+    Game {
+        name: "runner",
+        binary: "runner",
+        description: "Third-person lane running and jumping",
+    },
+    Game {
+        name: "sandbox",
+        binary: "sandbox",
+        description: "First-person movement on the grid ground",
+    },
+];
 
 fn main() -> io::Result<()> {
     println!("Aether Isles — Game Lobby\n");
