@@ -10,6 +10,11 @@ struct Game {
 
 const GAMES: &[Game] = &[
     Game {
+        name: "runner",
+        binary: "runner",
+        description: "Third-person lane running and jumping",
+    },
+    Game {
         name: "shipwright",
         binary: "shipwright",
         description: "Build a skyship voxel by voxel",

@@ -8,7 +8,12 @@ pub fn start() {
         let document = web_sys::window().unwrap().document().unwrap();
         let games = document.get_element_by_id("games").unwrap();
         games.set_inner_html(
-            r#"<a class="game" href="/game/shipwright/">
+            r#"<a class="game" href="/game/runner/">
+                <span class="game-title">Skyway Runner</span>
+                <span>Third-person lane running and jumping</span>
+                <strong>Launch →</strong>
+            </a>
+            <a class="game" href="/game/shipwright/">
                 <span class="game-title">Aether Shipwright</span>
                 <span>Build a skyship voxel by voxel</span>
                 <strong>Launch →</strong>

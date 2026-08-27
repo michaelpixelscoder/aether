@@ -24,6 +24,7 @@ cargo lobby
 Run the game directly with:
 
 ```sh
+cargo runner
 cargo sandbox
 ```
 
@@ -53,6 +54,9 @@ The voxel ship editor has the stable route:
 ```
 
 Controls: WASD to move, Space/left Shift to move vertically, and hold the left mouse button while moving the mouse to look.
+The lane runner is available at `/game/runner/`.
+
+Runner controls: Left/Right Arrow or A/D changes lane and Space jumps. While airborne, Space toggles the glider on or off. Jump near a glowing anchor and hold F or E to attach the rope; release to launch with your swing momentum. Mobile supports horizontal swipes, swipe-up for jump/glide toggle, and touch-and-hold for the rope. Sandbox controls remain WASD, Space/left Shift, and hold-left-mouse look.
 
 Shipwright controls: click an exposed voxel face to add the selected material, Shift-click to remove, drag to orbit, scroll to zoom, use 1–5 to select wood/stone/grass/iron/glass, and Ctrl/Cmd+Z to undo.
 
