@@ -1,6 +1,7 @@
 [alias]
 lobby = "run -p lobby"
 sandbox = "run -p sandbox"
+shipwright = "run -p shipwright"
 runner = "run -p runner"
 
 [target.wasm32-unknown-unknown]
