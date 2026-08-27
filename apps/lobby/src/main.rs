@@ -15,7 +15,7 @@ const GAMES: &[Game] = &[
         description: "Third-person lane running and jumping",
     },
     Game {
-        name: "shipwright",
+        name: "Aether Shipwright",
         binary: "shipwright",
         description: "Build a skyship voxel by voxel",
     },
