@@ -24,7 +24,7 @@ const GLIDE_MAX_FALL_SPEED: f32 = 3.25;
 const GLIDE_DEPLOY_LIFT: f32 = 2.4;
 const ROPE_RANGE: f32 = 15.0;
 const ROPE_GRAVITY: f32 = 18.0;
-const ROPE_PUMP: f32 = 1.35;
+const ROPE_DRAG: f32 = 0.18;
 const ROUTE_LENGTH: f32 = 238.0;
 const SEGMENT_LENGTH: f32 = 2.0;
 const KNOT_DISTANCE: f32 = 24.0;
@@ -678,8 +678,9 @@ fn drive_actor(
         };
         if let Some(mut rope) = actor.rope {
             let dt = time.delta_secs();
-            let acceleration = -(ROPE_GRAVITY / rope.length) * rope.angle.sin() + ROPE_PUMP;
+            let acceleration = -(ROPE_GRAVITY / rope.length) * rope.angle.sin();
             rope.angular_speed += acceleration * dt;
+            rope.angular_speed *= (-ROPE_DRAG * dt).exp();
             rope.angle += rope.angular_speed * dt;
             actor.distance = rope.anchor_distance + rope.length * rope.angle.sin();
             transform.translation.y = rope.anchor_height - rope.length * rope.angle.cos();
