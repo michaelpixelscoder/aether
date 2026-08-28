@@ -75,8 +75,8 @@ Every push to `main` builds the single-page web distribution and publishes it to
 
 One-time repository setup:
 
-1. Create a fine-grained GitHub token with access to `michaelpixelscoder/aether-public` and permission to read and write its contents.
-2. Add that token to this repository as the `AETHER_PUBLIC_REPO_TOKEN` Actions secret.
+1. Create a fine-grained GitHub token with access to `michaelpixelscoder/aether-public` and `Contents: Read and write` repository permission.
+2. In this repository, open **Settings** > **Secrets and variables** > **Actions**, select **New repository secret**, name it `AETHER_PUBLIC_REPO_TOKEN`, paste the token, and select **Add secret**.
 3. In `aether-public`, enable GitHub Pages with the `main` branch as the source and the repository root as the folder.
 
 After setup, pushes to `main` replace the public repository contents with the newest `dist` output. Until the secret is configured, the workflow still verifies the web build but skips publication. The public Pages URL is normally `https://michaelpixelscoder.github.io/aether-public/`.
