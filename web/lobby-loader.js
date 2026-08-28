@@ -7,6 +7,8 @@ const gameLoadingLabel = document.getElementById("game-loading-label");
 const gameLoadingProgress = document.getElementById("game-loading-progress");
 const gameTitle = document.getElementById("game-title");
 const gameHelp = document.getElementById("game-help");
+const gameLoadingTitle = document.getElementById("game-loading-title");
+const gameHeader = document.getElementById("game-header");
 const basePath = "__AETHER_PREFIX__";
 const sitePath = path => `${basePath}${path}`;
 const engineUrl = sitePath("/lobby_web_bg.wasm");
@@ -80,7 +82,8 @@ function renderManifest() {
 
 async function preloadGame(game) {
   gameLoading.classList.add("is-visible");
-  gameLoadingLabel.textContent = `Loading ${game.name}`;
+  gameLoadingTitle.textContent = `Loading ${game.name}`;
+  gameLoadingLabel.textContent = "Preparing game assets";
   setBar(gameLoadingProgress, 0);
   for (let index = 0; index < game.assets.length; index += 1) {
     await readResource(sitePath(`/${game.assets[index]}`), value => {
@@ -105,6 +108,7 @@ async function selectGame(id, updateUrl) {
       : "WASD move · Space/Shift vertical · Hold left mouse to look";
   canvas.classList.add("is-visible");
   document.body.classList.add("game-active");
+  gameHeader.classList.add("is-visible");
   gameLoadingLabel.textContent = "Starting game";
   host.start_game(game.id);
   gameLoading.classList.remove("is-visible");

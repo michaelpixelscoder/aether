@@ -15,9 +15,16 @@
     <section id="games" class="games"><p>Loading games...</p></section>
   </main>
   <canvas id="aether-canvas" aria-label="Aether game canvas"></canvas>
+  <header id="game-header" class="game-header">
+    <a id="lobby-button" class="lobby-button" href="__AETHER_PREFIX__/">Lobby</a>
+    <div class="game-header-info">
+      <strong id="game-title">Loading game</strong>
+      <span id="game-help"></span>
+    </div>
+  </header>
   <aside class="engine-status"><span id="engine-status">Preparing shared engine</span><div class="engine-track"><div id="engine-progress"></div></div></aside>
   <div id="game-loading" class="game-loading">
-    <div class="game-loading-card"><p id="game-title">Loading game</p><div class="engine-track"><div id="game-loading-progress"></div></div><span id="game-loading-label">Preparing game assets</span><span id="game-help"></span></div>
+    <div class="game-loading-card"><p id="game-loading-title">Loading game</p><div class="engine-track"><div id="game-loading-progress"></div></div><span id="game-loading-label">Preparing game assets</span></div>
   </div>
   <script type="module" src="__AETHER_PREFIX__/lobby-loader.js"></script>
 </body>

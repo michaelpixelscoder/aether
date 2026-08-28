@@ -16,6 +16,14 @@ h1 { margin: .2rem 0; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: -.06e
 .lobby #aether-canvas { position: fixed; inset: 0; z-index: 10; visibility: hidden; }
 .lobby #aether-canvas.is-visible { visibility: visible; }
 .game-active main { visibility: hidden; }
+.game-header { position: fixed; top: 0; left: 0; right: 0; z-index: 35; display: none; height: 56px; align-items: center; gap: 18px; padding: 0 18px; border-bottom: 1px solid #ffffff26; background: #10171bf2; color: #c7d4d9; }
+.game-header.is-visible { display: flex; }
+.lobby-button { flex: 0 0 auto; padding: 8px 14px; border: 1px solid #9adff0a8; border-radius: 7px; background: #20323a; color: #9adff0; text-decoration: none; font-size: .85rem; }
+.lobby-button:hover { background: #20323a; color: #eaf3f5; }
+.game-header-info { min-width: 0; display: flex; align-items: baseline; gap: 14px; overflow: hidden; }
+.game-header-info strong { color: #eaf3f5; white-space: nowrap; }
+.game-header-info span { overflow: hidden; color: #a9bac1; text-overflow: ellipsis; white-space: nowrap; }
+.game-active #aether-canvas { top: 56px; height: calc(100vh - 56px); }
 .engine-status { position: fixed; right: 18px; bottom: 18px; top: auto; left: auto; z-index: 30; width: min(270px, calc(100% - 36px)); display: block; pointer-events: none; }
 .engine-track { height: 6px; margin-top: 8px; border-radius: 999px; background: #0d1317; overflow: hidden; }
 .engine-track > div { height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #56bdd7, #8ff7da); transition: transform 120ms linear; }
@@ -35,4 +43,4 @@ aside a { color: #9adff0; pointer-events: auto; }
 .loading-card p { margin: .35rem 0; color: #c3d2d8; }
 .loading-track { height: 10px; margin: 14px 0 10px; border: 1px solid #3e5a66; border-radius: 999px; background: #0d1317; overflow: hidden; }
 .loading-bar { height: 100%; width: 100%; transform-origin: left center; transform: scaleX(0); background: linear-gradient(90deg, #56bdd7, #8ff7da); transition: transform 130ms linear; }
-@media (max-width: 650px) { .game { grid-template-columns: 1fr; } aside span { display: none; } }
+@media (max-width: 650px) { .game { grid-template-columns: 1fr; } aside span { display: none; } .game-header { gap: 10px; padding: 0 12px; } .game-header-info { display: block; } .game-header-info span { display: block; max-width: calc(100vw - 110px); } }

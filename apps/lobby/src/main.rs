@@ -87,8 +87,9 @@ fn try_launch_dynamic(game: &Game) -> io::Result<bool> {
     println!("Loading {} from {}…", game.name, path.display());
     let result = unsafe {
         let library = Library::new(&path).map_err(io::Error::other)?;
-        let register: Symbol<'_, RegisterGameFn> =
-            library.get(b"aether_register_game").map_err(io::Error::other)?;
+        let register: Symbol<'_, RegisterGameFn> = library
+            .get(b"aether_register_game")
+            .map_err(io::Error::other)?;
         let mut app = App::new();
         register(&mut app as *mut App);
         app.run();
