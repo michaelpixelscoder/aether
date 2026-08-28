@@ -12,6 +12,7 @@ test("web lobby opens the runner", async ({ page }) => {
 
   await page.getByRole("link", { name: /Skyway Runner/ }).click();
   await expect(page).toHaveURL(/\/game\/runner\/$/);
+  await expect(page.locator("#aether-canvas")).toHaveClass(/is-visible/, { timeout: 15000 });
   // Navigating away can abort the lobby's WASM event loop with `unreachable`.
   // Only runtime errors from the game page are relevant to this smoke test.
   errors.length = 0;
@@ -29,7 +30,7 @@ test("web lobby opens Aether Shipwright", async ({ page }) => {
   await page.goto("http://127.0.0.1:8080/");
   await page.getByRole("link", { name: /Aether Shipwright/ }).click();
   await expect(page).toHaveURL(/\/game\/shipwright\/$/);
-  await expect(page.locator("#aether-canvas")).toBeAttached();
+  await expect(page.locator("#aether-canvas")).toHaveClass(/is-visible/, { timeout: 15000 });
   await page.waitForTimeout(5000);
   expect(errors).toEqual([]);
 });

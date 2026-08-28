@@ -12,6 +12,11 @@ impl Plugin for AetherAppPlugin {
         app.add_plugins(
             DefaultPlugins
                 .set(AssetPlugin {
+                    file_path: if cfg!(target_arch = "wasm32") {
+                        "/assets".into()
+                    } else {
+                        "assets".into()
+                    },
                     // The project does not use sidecar metadata. Avoid noisy web requests for
                     // `*.meta` files and use each loader's defaults directly.
                     meta_check: AssetMetaCheck::Never,

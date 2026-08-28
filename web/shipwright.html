@@ -6,11 +6,18 @@
   <title>Aether Shipwright</title>
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="game-page shipwright-page">
+<body class="game-page shipwright-page" data-game-title="Aether Shipwright" data-module="./shipwright.js" data-help="Voxel editing toolkit" data-assets='["./shipwright_bg.wasm","./assets/textures/shipwright/wood.png","./assets/textures/shipwright/stone.png","./assets/textures/shipwright/grass.png","./assets/textures/shipwright/iron.png","./assets/textures/shipwright/glass.png"]'>
   <canvas id="aether-canvas" aria-label="Aether Shipwright voxel editor"></canvas>
-  <script type="module">
-    import init from './shipwright.js';
-    init();
-  </script>
+  <aside><a id="lobby-link" href="/"></a><span id="game-hint"></span></aside>
+  <div id="loading-overlay" class="loading-overlay" role="status" aria-live="polite">
+    <div class="loading-card">
+      <p class="loading-kicker">AETHER ISLES</p>
+      <h2>Loading game world</h2>
+      <p id="loading-hint">Preparing game resources</p>
+      <div class="loading-track"><div id="loading-bar" class="loading-bar"></div></div>
+      <p id="loading-label">Starting…</p>
+    </div>
+  </div>
+  <script type="module" src="./game-loader.js"></script>
 </body>
 </html>

@@ -58,6 +58,8 @@ The lane runner is available at `/game/runner/`.
 
 Runner controls: Left/Right Arrow or A/D changes lane and Space jumps. While airborne, Space toggles the glider on or off. Jump near a glowing anchor and hold F or E to attach the rope; release to launch with your swing momentum. Mobile supports horizontal swipes, swipe-up for jump/glide toggle, and touch-and-hold for the rope. Sandbox controls remain WASD, Space/left Shift, and hold-left-mouse look.
 
+The browser build is a single-page host. `lobby_web` contains the shared Bevy engine and all game plugins; `web/lobby-loader.js` preloads and instantiates that engine while the lobby is visible, then selects one game plugin on click without reloading the document. Game URLs are updated with the History API, and `web/games.json` declares each game's plugin dependency and assets. The generated route aliases allow direct refreshes of `/game/<name>/` to return to the same shell.
+
 Shipwright controls: click an exposed voxel face to add the selected material, Shift-click to remove, drag to orbit, scroll to zoom, use 1–5 to select wood/stone/grass/iron/glass, and Ctrl/Cmd+Z to undo.
 
 With the web server running, execute the browser smoke test with:
@@ -67,12 +69,24 @@ npm install
 npm run test:browser
 ```
 
+## Web deployment
+
+Every push to `main` builds the single-page web distribution and publishes it to [`michaelpixelscoder/aether-public`](https://github.com/michaelpixelscoder/aether-public). The workflow is [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+
+One-time repository setup:
+
+1. Create a fine-grained GitHub token with access to `michaelpixelscoder/aether-public` and permission to read and write its contents.
+2. Add that token to this repository as the `AETHER_PUBLIC_REPO_TOKEN` Actions secret.
+3. In `aether-public`, enable GitHub Pages with the `main` branch as the source and the repository root as the folder.
+
+After setup, pushes to `main` replace the public repository contents with the newest `dist` output. The public Pages URL is normally `https://michaelpixelscoder.github.io/aether-public/`.
+
 ## Adding a game
 
-1. Add its binary crate under `games/` and register it in the workspace.
-2. Compose shared feature plugins in its `main.rs`.
-3. Add it to both lobby catalogs.
-4. Add its WASM package and `/game/<name>/` output to `scripts/build-web.sh`.
+1. Add its game crate under `games/` and register it in the workspace.
+2. Expose a public `configure(&mut App)` function from its library and keep its binary wrapper for desktop use.
+3. Add its plugin and required assets to `web/games.json`.
+4. The shared browser host will include the plugin and select it from the manifest at runtime.
 
 The duplicated lobby catalog is deliberately tiny for now. Once several games exist it should move to a shared data file consumed during both builds.
 

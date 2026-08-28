@@ -1,28 +1,31 @@
 #[cfg(target_arch = "wasm32")]
+use bevy::prelude::App;
+#[cfg(target_arch = "wasm32")]
+use runner_game::configure as configure_runner;
+#[cfg(target_arch = "wasm32")]
+use sandbox_game::configure as configure_sandbox;
+#[cfg(target_arch = "wasm32")]
+use shipwright_game::configure as configure_shipwright;
+
+#[cfg(target_arch = "wasm32")]
 use wasm_bindgen::prelude::*;
 
-#[cfg_attr(target_arch = "wasm32", wasm_bindgen(start))]
-pub fn start() {
-    #[cfg(target_arch = "wasm32")]
-    {
-        let document = web_sys::window().unwrap().document().unwrap();
-        let games = document.get_element_by_id("games").unwrap();
-        games.set_inner_html(
-            r#"<a class="game" href="/game/runner/">
-                <span class="game-title">Skyway Runner</span>
-                <span>Third-person lane running and jumping</span>
-                <strong>Launch →</strong>
-            </a>
-            <a class="game" href="/game/shipwright/">
-                <span class="game-title">Aether Shipwright</span>
-                <span>Build a skyship voxel by voxel</span>
-                <strong>Launch →</strong>
-            </a>
-            <a class="game" href="/game/sandbox/">
-                <span class="game-title">Sandbox</span>
-                <span>First-person movement on the grid ground</span>
-                <strong>Launch →</strong>
-            </a>"#,
-        );
+#[cfg(target_arch = "wasm32")]
+fn configure_game(app: &mut App, game: &str) -> Result<(), String> {
+    match game {
+        "sandbox" => configure_sandbox(app),
+        "runner" => configure_runner(app),
+        "shipwright" => configure_shipwright(app),
+        _ => return Err(format!("Unknown game: {game}")),
     }
+    Ok(())
+}
+
+#[cfg(target_arch = "wasm32")]
+#[wasm_bindgen]
+pub fn start_game(game: &str) -> Result<(), JsValue> {
+    let mut app = App::new();
+    configure_game(&mut app, game).map_err(|error| JsValue::from_str(&error))?;
+    app.run();
+    Ok(())
 }

@@ -6,13 +6,19 @@
   <title>Aether Isles — Sandbox</title>
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="game-page">
+<body class="game-page" data-game-title="Aether Isles — Sandbox" data-module="./sandbox.js" data-help="WASD move · Space/Shift vertical · Hold left mouse to look" data-assets='["./sandbox_bg.wasm"]'>
   <canvas id="aether-canvas"></canvas>
-  <aside><a href="/">← Lobby</a><span>WASD move · Space/Shift vertical · Hold left mouse to look</span></aside>
-  <script type="module">
-    import init from './sandbox.js';
-    init();
-  </script>
+  <aside><a id="lobby-link" href="/"></a><span id="game-hint"></span></aside>
+  <div id="loading-overlay" class="loading-overlay" role="status" aria-live="polite">
+    <div class="loading-card">
+      <p class="loading-kicker">AETHER ISLES</p>
+      <h2>Loading game world</h2>
+      <p id="loading-hint">Preparing game resources</p>
+      <div class="loading-track"><div id="loading-bar" class="loading-bar"></div></div>
+      <p id="loading-label">Starting…</p>
+    </div>
+  </div>
+  <script type="module" src="./game-loader.js"></script>
 </body>
 </html>
 

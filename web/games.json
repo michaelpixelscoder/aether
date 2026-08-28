@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Skyway Runner",
+    "id": "runner",
+    "description": "Third-person lane running and jumping",
+    "start": "runner.start",
+    "dependencies": ["runner_game"],
+    "assets": ["/assets/characters/kaykit/Knight.glb"]
+  },
+  {
+    "name": "Aether Shipwright",
+    "id": "shipwright",
+    "description": "Build a skyship voxel by voxel",
+    "start": "shipwright.start",
+    "dependencies": ["shipwright_game"],
+    "assets": [
+      "/assets/textures/shipwright/wood.png",
+      "/assets/textures/shipwright/stone.png",
+      "/assets/textures/shipwright/grass.png",
+      "/assets/textures/shipwright/iron.png",
+      "/assets/textures/shipwright/glass.png"
+    ]
+  },
+  {
+    "name": "Sandbox",
+    "id": "sandbox",
+    "description": "First-person movement on the grid ground",
+    "start": "sandbox.start",
+    "dependencies": ["sandbox_game"],
+    "assets": []
+  }
+]

@@ -13,7 +13,26 @@ h1 { margin: .2rem 0; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: -.06e
 .game span:nth-child(2) { color: #a9bac1; }
 .game-page { overflow: hidden; }
 #aether-canvas { width: 100vw; height: 100vh; display: block; }
+.lobby #aether-canvas { position: fixed; inset: 0; z-index: 10; visibility: hidden; }
+.lobby #aether-canvas.is-visible { visibility: visible; }
+.game-active main { visibility: hidden; }
+.engine-status { position: fixed; right: 18px; bottom: 18px; top: auto; left: auto; z-index: 30; width: min(270px, calc(100% - 36px)); display: block; pointer-events: none; }
+.engine-track { height: 6px; margin-top: 8px; border-radius: 999px; background: #0d1317; overflow: hidden; }
+.engine-track > div { height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #56bdd7, #8ff7da); transition: transform 120ms linear; }
+.game-loading { position: fixed; inset: 0; z-index: 25; display: grid; place-items: center; visibility: hidden; opacity: 0; background: #0f161ae8; transition: opacity 180ms ease; }
+.game-loading.is-visible { visibility: visible; opacity: 1; }
+.game-loading-card { width: min(460px, calc(100% - 48px)); padding: 24px; border: 1px solid #9adff06b; border-radius: 12px; background: #162128; }
+.game-loading-card p { margin: 0 0 12px; font-weight: 800; }
+.game-loading-card span { display: block; margin-top: 8px; color: #c3d2d8; }
 .shipwright-page { background: linear-gradient(155deg, #93c4dc 0%, #4c7fa2 42%, #172b49 100%); }
 aside { position: fixed; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; padding: 10px 14px; border: 1px solid #ffffff26; border-radius: 8px; background: #10171bd9; color: #c7d4d9; font-size: .85rem; pointer-events: none; }
 aside a { color: #9adff0; pointer-events: auto; }
+.loading-overlay { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(circle at 18% 12%, #2f4958f2, #0f161ae8 55%); backdrop-filter: blur(3px); z-index: 20; transition: opacity 220ms ease; }
+.loading-overlay.is-hidden { opacity: 0; pointer-events: none; }
+.loading-card { width: min(560px, calc(100% - 48px)); padding: 28px; border: 1px solid #9adff06b; border-radius: 14px; background: #162128e8; box-shadow: 0 16px 50px #0000006e; }
+.loading-kicker { margin: 0; color: #9adff0; font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
+.loading-card h2 { margin: .5rem 0; font-size: clamp(1.45rem, 3.7vw, 2.1rem); letter-spacing: -.02em; }
+.loading-card p { margin: .35rem 0; color: #c3d2d8; }
+.loading-track { height: 10px; margin: 14px 0 10px; border: 1px solid #3e5a66; border-radius: 999px; background: #0d1317; overflow: hidden; }
+.loading-bar { height: 100%; width: 100%; transform-origin: left center; transform: scaleX(0); background: linear-gradient(90deg, #56bdd7, #8ff7da); transition: transform 130ms linear; }
 @media (max-width: 650px) { .game { grid-template-columns: 1fr; } aside span { display: none; } }

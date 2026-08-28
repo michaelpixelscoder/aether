@@ -11,12 +11,14 @@
     <p class="eyebrow">AETHER ISLES</p>
     <h1>Prototype Lobby</h1>
     <p class="intro">Choose a game or systems experiment.</p>
-    <section id="games" class="games"><p>Loading games…</p></section>
+    <section id="games" class="games"><p>Loading games...</p></section>
   </main>
-  <script type="module">
-    import init from '/lobby_web.js';
-    init();
-  </script>
+  <canvas id="aether-canvas" aria-label="Aether game canvas"></canvas>
+  <aside class="engine-status"><span id="engine-status">Preparing shared engine</span><div class="engine-track"><div id="engine-progress"></div></div></aside>
+  <div id="game-loading" class="game-loading">
+    <div class="game-loading-card"><p id="game-title">Loading game</p><div class="engine-track"><div id="game-loading-progress"></div></div><span id="game-loading-label">Preparing game assets</span><span id="game-help"></span></div>
+  </div>
+  <script type="module" src="/lobby-loader.js"></script>
 </body>
 </html>
 

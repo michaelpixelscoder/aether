@@ -4,6 +4,14 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 
+[[bin]]
+name = "shipwright_exec"
+path = "src/main.rs"
+
+[lib]
+name = "shipwright_game"
+crate-type = ["rlib", "cdylib"]
+
 [dependencies]
 bevy.workspace = true
 aether_app.workspace = true
