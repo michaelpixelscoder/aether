@@ -42,7 +42,7 @@ jobs:
         run: cargo install wasm-bindgen-cli --version 0.2.127 --locked
 
       - name: Build web distribution
-        run: ./scripts/build-web.sh
+        run: ./scripts/build-web.sh --prefix /aether-public
 
       - name: Publish to public repository
         if: env.AETHER_PUBLIC_REPO_TOKEN != ''

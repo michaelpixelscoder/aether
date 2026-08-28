@@ -7,7 +7,9 @@ const gameLoadingLabel = document.getElementById("game-loading-label");
 const gameLoadingProgress = document.getElementById("game-loading-progress");
 const gameTitle = document.getElementById("game-title");
 const gameHelp = document.getElementById("game-help");
-const engineUrl = "/lobby_web_bg.wasm";
+const basePath = "__AETHER_PREFIX__";
+const sitePath = path => `${basePath}${path}`;
+const engineUrl = sitePath("/lobby_web_bg.wasm");
 
 let host;
 let manifest = [];
@@ -53,7 +55,7 @@ async function preloadEngine() {
   engineStatus.textContent = "Downloading shared engine";
   const bytes = await readResource(engineUrl, value => setBar(engineProgress, value));
   engineStatus.textContent = "Compiling shared engine";
-  const module = await import("/lobby_web.js");
+  const module = await import(sitePath("/lobby_web.js"));
   await module.default(bytes);
   host = module;
   engineStatus.textContent = "Engine ready";
@@ -62,7 +64,7 @@ async function preloadEngine() {
 
 function renderManifest() {
   games.innerHTML = manifest.map(game => `
-    <a class="game" href="/game/${game.id}/" data-game="${game.id}">
+    <a class="game" href="${sitePath(`/game/${game.id}/`)}" data-game="${game.id}">
       <span class="game-title">${game.name}</span>
       <span>${game.description}</span>
       <strong>Launch -&gt;</strong>
@@ -81,7 +83,7 @@ async function preloadGame(game) {
   gameLoadingLabel.textContent = `Loading ${game.name}`;
   setBar(gameLoadingProgress, 0);
   for (let index = 0; index < game.assets.length; index += 1) {
-    await readResource(game.assets[index], value => {
+    await readResource(sitePath(`/${game.assets[index]}`), value => {
       setBar(gameLoadingProgress, (index + value) / game.assets.length);
     });
   }
@@ -92,7 +94,7 @@ async function selectGame(id, updateUrl) {
   const game = manifest.find(item => item.id === id);
   if (!game || activeGame) return;
   activeGame = game;
-  if (updateUrl) history.pushState({ game: id }, "", `/game/${id}/`);
+  if (updateUrl) history.pushState({ game: id }, "", sitePath(`/game/${id}/`));
   await engineReady;
   await preloadGame(game);
   gameTitle.textContent = game.name;
@@ -109,20 +111,20 @@ async function selectGame(id, updateUrl) {
 }
 
 async function boot() {
-  manifest = await fetch("/games.json", { cache: "force-cache" }).then(response => response.json());
+  manifest = await fetch(sitePath("/games.json"), { cache: "force-cache" }).then(response => response.json());
   renderManifest();
   engineReady = preloadEngine().catch(error => {
     engineStatus.textContent = "Engine failed to load";
     console.error(error);
     throw error;
   });
-  const route = location.pathname.match(/^\/game\/([^/]+)\/?$/);
+  const route = location.pathname.slice(basePath.length).match(/^\/game\/([^/]+)\/?$/);
   if (route) selectGame(route[1], false);
 }
 
 window.addEventListener("popstate", () => {
   if (!activeGame) {
-    const route = location.pathname.match(/^\/game\/([^/]+)\/?$/);
+    const route = location.pathname.slice(basePath.length).match(/^\/game\/([^/]+)\/?$/);
     if (route) selectGame(route[1], false);
   }
 });

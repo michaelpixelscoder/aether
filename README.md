@@ -69,6 +69,12 @@ npm install
 npm run test:browser
 ```
 
+For GitHub Pages under a repository path, pass the deployment prefix explicitly:
+
+```sh
+./scripts/build-web.sh --prefix /aether-public
+```
+
 ## Web deployment
 
 Every push to `main` builds the single-page web distribution and publishes it to [`michaelpixelscoder/aether-public`](https://github.com/michaelpixelscoder/aether-public). The workflow is [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).

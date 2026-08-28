@@ -5,7 +5,7 @@
     "description": "Third-person lane running and jumping",
     "start": "runner.start",
     "dependencies": ["runner_game"],
-    "assets": ["/assets/characters/kaykit/Knight.glb"]
+    "assets": ["assets/characters/kaykit/Knight.glb"]
   },
   {
     "name": "Aether Shipwright",
@@ -14,11 +14,11 @@
     "start": "shipwright.start",
     "dependencies": ["shipwright_game"],
     "assets": [
-      "/assets/textures/shipwright/wood.png",
-      "/assets/textures/shipwright/stone.png",
-      "/assets/textures/shipwright/grass.png",
-      "/assets/textures/shipwright/iron.png",
-      "/assets/textures/shipwright/glass.png"
+      "assets/textures/shipwright/wood.png",
+      "assets/textures/shipwright/stone.png",
+      "assets/textures/shipwright/grass.png",
+      "assets/textures/shipwright/iron.png",
+      "assets/textures/shipwright/glass.png"
     ]
   },
   {
