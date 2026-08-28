@@ -150,6 +150,8 @@ struct OrbitCamera {
     yaw: f32,
     pitch: f32,
     radius: f32,
+    target_radius: f32,
+    center: Vec3,
 }
 
 #[derive(Component)]
@@ -186,6 +188,8 @@ fn setup(
                 yaw: 0.70,
                 pitch: -0.48,
                 radius: 15.0,
+                target_radius: 15.0,
+                center: Vec3::new(0.0, 1.5, 0.0),
             },
         ))
         .with_child((
@@ -415,7 +419,7 @@ fn spawn_ui(commands: &mut Commands) {
                 panel.spawn((Text::new("1 voxel"), TextFont::from_font_size(25.0), TextColor(PARCHMENT), CountText));
                 panel.spawn((Text::new("Selected: Wood"), TextFont::from_font_size(16.0), TextColor(Color::WHITE), MaterialText));
                 panel.spawn((
-                    Text::new("Click a block face to add\nShift + click to remove\nDrag to orbit · Wheel to zoom"),
+                    Text::new("Click a block face to add\nShift + click to remove\nDrag to orbit · Shift/middle drag to pan\nWheel to zoom"),
                     TextFont::from_font_size(14.0),
                     TextColor(Color::srgb(0.65, 0.72, 0.79)),
                     HelpText,
@@ -583,10 +587,12 @@ fn cursor_in_viewport(window: &Window) -> bool {
 fn orbit_camera(
     windows: Query<&Window, With<PrimaryWindow>>,
     buttons: Res<ButtonInput<MouseButton>>,
+    keys: Res<ButtonInput<KeyCode>>,
     mut motion: MessageReader<MouseMotion>,
     mut wheel: MessageReader<MouseWheel>,
     mut editor: ResMut<EditorState>,
     mut cameras: Query<(&mut OrbitCamera, &mut Transform)>,
+    time: Res<Time>,
 ) {
     let Ok(window) = windows.single() else { return };
     let delta = motion.read().map(|event| event.delta).sum::<Vec2>();
@@ -597,18 +603,33 @@ fn orbit_camera(
         editor.drag_distance += delta.length();
     }
     let scroll = wheel.read().map(|event| event.y).sum::<f32>();
+    let shift = keys.pressed(KeyCode::ShiftLeft) || keys.pressed(KeyCode::ShiftRight);
     for (mut orbit, mut transform) in &mut cameras {
-        if buttons.pressed(MouseButton::Left) && cursor_in_viewport(window) && delta != Vec2::ZERO {
+        let panning =
+            buttons.pressed(MouseButton::Middle) || (buttons.pressed(MouseButton::Left) && shift);
+        if panning && cursor_in_viewport(window) && delta != Vec2::ZERO {
+                const PAN_SPEED: f32 = 0.01;
+            let right = transform.rotation * Vec3::X;
+            let up = transform.rotation * Vec3::Y;
+                orbit.center -= (right * delta.x - up * delta.y) * PAN_SPEED;
+        } else if buttons.pressed(MouseButton::Left)
+            && !shift
+            && cursor_in_viewport(window)
+            && delta != Vec2::ZERO
+        {
             orbit.yaw -= delta.x * 0.007;
             orbit.pitch = (orbit.pitch - delta.y * 0.007).clamp(-1.25, -0.08);
         }
         if cursor_in_viewport(window) && scroll != 0.0 {
-            orbit.radius = (orbit.radius - scroll * 0.75).clamp(5.0, 32.0);
+            let scroll = scroll.clamp(-3.0, 3.0);
+            orbit.target_radius = (orbit.target_radius * 0.92_f32.powf(scroll)).clamp(5.0, 128.0);
         }
-        let target = Vec3::new(0.0, 1.5, 0.0);
+        let smoothing = 1.0 - (-12.0 * time.delta_secs()).exp();
+        orbit.radius += (orbit.target_radius - orbit.radius) * smoothing;
         let offset = Quat::from_euler(EulerRot::YXZ, orbit.yaw, orbit.pitch, 0.0)
             * Vec3::new(0.0, 0.0, orbit.radius);
-        *transform = Transform::from_translation(target + offset).looking_at(target, Vec3::Y);
+        *transform =
+            Transform::from_translation(orbit.center + offset).looking_at(orbit.center, Vec3::Y);
     }
 }
 
