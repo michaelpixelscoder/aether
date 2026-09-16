@@ -1,0 +1,10 @@
+[package]
+name = "aether_voxels"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+bevy.workspace = true
+voxelize-core.workspace = true
+voxelize-mesher.workspace = true

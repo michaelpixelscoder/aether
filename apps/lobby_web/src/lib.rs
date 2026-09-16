@@ -1,6 +1,8 @@
 #[cfg(target_arch = "wasm32")]
 use bevy::prelude::App;
 #[cfg(target_arch = "wasm32")]
+use fabric_rope_demo_game::configure as configure_fabric_rope_demo;
+#[cfg(target_arch = "wasm32")]
 use runner_game::configure as configure_runner;
 #[cfg(target_arch = "wasm32")]
 use sandbox_game::configure as configure_sandbox;
@@ -16,6 +18,7 @@ fn configure_game(app: &mut App, game: &str) -> Result<(), String> {
         "sandbox" => configure_sandbox(app),
         "runner" => configure_runner(app),
         "shipwright" => configure_shipwright(app),
+        "fabric-rope-demo" => configure_fabric_rope_demo(app),
         _ => return Err(format!("Unknown game: {game}")),
     }
     Ok(())

@@ -1,0 +1,10 @@
+[package]
+name = "aether_voxel_render_tests"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aether_voxels.workspace = true
+bevy.workspace = true
+image.workspace = true

@@ -1,0 +1,44 @@
+{
+  "prompt_id": "6959dff8-5c1f-49ed-99b3-ee26014736c9",
+  "client_id": "488ad8cc-fd19-4530-a606-0f0df49c507a",
+  "workflow": "assets/voxel_materials/wooden_plank/source/workflow.api.json",
+  "input_namespace": "aether/wooden_plank",
+  "texture_prompt_file": "assets/voxel_materials/wooden_plank/texture_prompt.md",
+  "texture_prompt_sha256": "ab8fb23e2c87d02ce384a9cc09d5dfd108aaea556e87a9076ff91aa19cab51a1",
+  "outputs": [
+    "assets/voxel_materials/wooden_plank/textures/height.png",
+    "assets/voxel_materials/wooden_plank/textures/base_color.png",
+    "assets/voxel_materials/wooden_plank/textures/tiled_preview.png",
+    "assets/voxel_materials/wooden_plank/textures/normal.png",
+    "assets/voxel_materials/wooden_plank/textures/ao.png",
+    "assets/voxel_materials/wooden_plank/textures/orm.png"
+  ],
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "6959dff8-5c1f-49ed-99b3-ee26014736c9",
+          "timestamp": 1789435943538
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "6959dff8-5c1f-49ed-99b3-ee26014736c9",
+          "timestamp": 1789435943582
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "6959dff8-5c1f-49ed-99b3-ee26014736c9",
+          "timestamp": 1789435947031
+        }
+      ]
+    ]
+  }
+}

@@ -1,9 +1,17 @@
 use std::collections::HashMap;
+#[cfg(not(target_arch = "wasm32"))]
+use std::path::Path;
 
 use aether_app::AetherAppPlugin;
+use aether_voxels::{
+    MacroAtlasRegion, VoxelWorld as AetherVoxelWorld, greedy_mesh, map_quads_to_macro_atlas,
+};
 use bevy::asset::RenderAssetUsages;
+use bevy::image::{ImageAddressMode, ImageLoaderSettings, ImageSampler, ImageSamplerDescriptor};
 use bevy::input::mouse::{MouseMotion, MouseWheel};
+use bevy::mesh::Indices;
 use bevy::prelude::*;
+use bevy::render::render_resource::PrimitiveTopology;
 use bevy::render::render_resource::{Extent3d, TextureDimension, TextureFormat};
 use bevy::window::PrimaryWindow;
 
@@ -19,7 +27,7 @@ pub fn configure(app: &mut App) {
     })
     .insert_resource(ClearColor(Color::NONE))
     .insert_resource(EditorState::default())
-    .insert_resource(VoxelWorld::default())
+    .insert_resource(new_ship_world())
     .add_systems(Startup, setup)
     .add_systems(
         Update,
@@ -54,16 +62,58 @@ pub unsafe extern "C" fn aether_register_game(app: *mut App) {
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Hash)]
 enum BlockKind {
     #[default]
-    Wood,
+    WoodenPlank,
     Stone,
     Grass,
     Iron,
     Glass,
 }
 
+type VoxelWorld = AetherVoxelWorld<BlockKind>;
+
+// Packed complete-plank templates for the greedy-quad shape vocabulary.
+const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 9] = [
+    MacroAtlasRegion {
+        origin: [0, 0],
+        size: [1, 1],
+    },
+    MacroAtlasRegion {
+        origin: [1, 0],
+        size: [3, 1],
+    },
+    MacroAtlasRegion {
+        origin: [4, 0],
+        size: [1, 1],
+    },
+    MacroAtlasRegion {
+        origin: [0, 1],
+        size: [4, 1],
+    },
+    MacroAtlasRegion {
+        origin: [4, 1],
+        size: [1, 1],
+    },
+    MacroAtlasRegion {
+        origin: [0, 2],
+        size: [2, 1],
+    },
+    MacroAtlasRegion {
+        origin: [2, 2],
+        size: [2, 1],
+    },
+    MacroAtlasRegion {
+        origin: [4, 2],
+        size: [1, 1],
+    },
+    MacroAtlasRegion {
+        origin: [0, 3],
+        size: [5, 2],
+    },
+];
+
 impl BlockKind {
     const ALL: [Self; 5] = [
-        Self::Wood,
+        Self::WoodenPlank,
         Self::Stone,
         Self::Grass,
         Self::Iron,
@@ -72,7 +122,7 @@ impl BlockKind {
 
     fn name(self) -> &'static str {
         match self {
-            Self::Wood => "Wood",
+            Self::WoodenPlank => "Wooden plank",
             Self::Stone => "Stone",
             Self::Grass => "Grass",
             Self::Iron => "Iron",
@@ -82,7 +132,7 @@ impl BlockKind {
 
     fn color(self) -> Color {
         match self {
-            Self::Wood => Color::srgb(0.34, 0.17, 0.075),
+            Self::WoodenPlank => Color::srgb(0.34, 0.17, 0.075),
             Self::Stone => Color::srgb(0.40, 0.43, 0.46),
             Self::Grass => Color::srgb(0.28, 0.48, 0.16),
             Self::Iron => Color::srgb(0.24, 0.28, 0.34),
@@ -91,19 +141,8 @@ impl BlockKind {
     }
 }
 
-#[derive(Resource)]
-struct VoxelWorld {
-    blocks: HashMap<IVec3, BlockKind>,
-    revision: u64,
-}
-
-impl Default for VoxelWorld {
-    fn default() -> Self {
-        Self {
-            blocks: HashMap::from([(IVec3::ZERO, BlockKind::Wood)]),
-            revision: 1,
-        }
-    }
+fn new_ship_world() -> VoxelWorld {
+    VoxelWorld::single(IVec3::ZERO, BlockKind::WoodenPlank)
 }
 
 #[derive(Clone)]
@@ -124,7 +163,7 @@ struct EditorState {
 impl Default for EditorState {
     fn default() -> Self {
         Self {
-            material: BlockKind::Wood,
+            material: BlockKind::WoodenPlank,
             hover: None,
             undo: Vec::new(),
             redo: Vec::new(),
@@ -417,7 +456,7 @@ fn spawn_ui(commands: &mut Commands) {
             .with_children(|panel| {
                 panel.spawn((Text::new("SHIP STATUS"), TextFont::from_font_size(13.0), TextColor(BRASS)));
                 panel.spawn((Text::new("1 voxel"), TextFont::from_font_size(25.0), TextColor(PARCHMENT), CountText));
-                panel.spawn((Text::new("Selected: Wood"), TextFont::from_font_size(16.0), TextColor(Color::WHITE), MaterialText));
+                panel.spawn((Text::new("Selected: Wooden plank"), TextFont::from_font_size(16.0), TextColor(Color::WHITE), MaterialText));
                 panel.spawn((
                     Text::new("Click a block face to add\nShift + click to remove\nDrag to orbit · Shift/middle drag to pan\nWheel to zoom"),
                     TextFont::from_font_size(14.0),
@@ -510,7 +549,7 @@ fn action_buttons(
             ActionButton::Redo => redo(&mut world, &mut editor),
             ActionButton::New => {
                 world.blocks.clear();
-                world.blocks.insert(IVec3::ZERO, BlockKind::Wood);
+                world.blocks.insert(IVec3::ZERO, BlockKind::WoodenPlank);
                 world.revision += 1;
                 editor.undo.clear();
                 editor.redo.clear();
@@ -526,7 +565,7 @@ fn keyboard_shortcuts(
     mut editor: ResMut<EditorState>,
 ) {
     for (key, kind) in [
-        (KeyCode::Digit1, BlockKind::Wood),
+        (KeyCode::Digit1, BlockKind::WoodenPlank),
         (KeyCode::Digit2, BlockKind::Stone),
         (KeyCode::Digit3, BlockKind::Grass),
         (KeyCode::Digit4, BlockKind::Iron),
@@ -608,10 +647,10 @@ fn orbit_camera(
         let panning =
             buttons.pressed(MouseButton::Middle) || (buttons.pressed(MouseButton::Left) && shift);
         if panning && cursor_in_viewport(window) && delta != Vec2::ZERO {
-                const PAN_SPEED: f32 = 0.01;
+            const PAN_SPEED: f32 = 0.01;
             let right = transform.rotation * Vec3::X;
             let up = transform.rotation * Vec3::Y;
-                orbit.center -= (right * delta.x - up * delta.y) * PAN_SPEED;
+            orbit.center -= (right * delta.x - up * delta.y) * PAN_SPEED;
         } else if buttons.pressed(MouseButton::Left)
             && !shift
             && cursor_in_viewport(window)
@@ -776,30 +815,61 @@ fn sync_voxel_scene(
     for entity in &entities {
         commands.entity(entity).despawn();
     }
-    let cube = meshes.add(Cuboid::from_size(Vec3::splat(0.96)));
     let mut material_handles = HashMap::new();
     for kind in BlockKind::ALL {
         let glass = kind == BlockKind::Glass;
         let texture_path = match kind {
-            BlockKind::Wood => "textures/shipwright/wood.png",
+            BlockKind::WoodenPlank => "voxel_materials/wooden_plank/textures/base_color.png",
             BlockKind::Stone => "textures/shipwright/stone.png",
             BlockKind::Grass => "textures/shipwright/grass.png",
             BlockKind::Iron => "textures/shipwright/iron.png",
             BlockKind::Glass => "textures/shipwright/glass.png",
         };
+        let technical_maps = technical_map_paths(texture_path);
+        let normal_map_texture = technical_maps
+            .as_ref()
+            .map(|maps| load_clamped_texture(&asset_server, maps.normal.clone(), false));
+        let depth_map = technical_maps
+            .as_ref()
+            .map(|maps| load_clamped_texture(&asset_server, maps.height.clone(), false));
+        let orm_texture = technical_maps
+            .as_ref()
+            .map(|maps| load_clamped_texture(&asset_server, maps.orm.clone(), false));
+        let uses_orm = orm_texture.is_some();
         let handle = materials.add(StandardMaterial {
             base_color: if glass {
                 Color::srgba(0.58, 0.88, 0.96, 0.48)
             } else {
                 Color::WHITE
             },
-            base_color_texture: Some(asset_server.load(texture_path)),
-            metallic: if kind == BlockKind::Iron { 0.72 } else { 0.0 },
-            perceptual_roughness: match kind {
-                BlockKind::Iron => 0.38,
-                BlockKind::Glass => 0.10,
-                BlockKind::Wood => 0.72,
-                _ => 0.82,
+            base_color_texture: Some(load_clamped_texture(
+                &asset_server,
+                texture_path.to_owned(),
+                true,
+            )),
+            normal_map_texture,
+            depth_map,
+            // Keep the authored bevel visible at grazing angles without making
+            // a single voxel appear deeply displaced.
+            parallax_depth_scale: 0.025,
+            metallic_roughness_texture: orm_texture.clone(),
+            occlusion_texture: orm_texture,
+            metallic: if uses_orm {
+                1.0
+            } else if kind == BlockKind::Iron {
+                0.72
+            } else {
+                0.0
+            },
+            perceptual_roughness: if uses_orm {
+                1.0
+            } else {
+                match kind {
+                    BlockKind::Iron => 0.38,
+                    BlockKind::Glass => 0.10,
+                    BlockKind::WoodenPlank => 0.72,
+                    _ => 0.82,
+                }
             },
             alpha_mode: if glass {
                 AlphaMode::Blend
@@ -811,15 +881,75 @@ fn sync_voxel_scene(
         });
         material_handles.insert(kind, handle);
     }
-    for (&cell, &kind) in &world.blocks {
+    for voxel_mesh in greedy_mesh(&world.blocks, |_| true) {
+        let voxel_mesh = if voxel_mesh.material == BlockKind::WoodenPlank {
+            map_quads_to_macro_atlas(&voxel_mesh, [5, 5], [1280, 1280], &WOODEN_PLANK_5X5_ATLAS)
+        } else {
+            voxel_mesh
+        };
+        let mut mesh = Mesh::new(
+            PrimitiveTopology::TriangleList,
+            RenderAssetUsages::default(),
+        );
+        mesh.insert_attribute(Mesh::ATTRIBUTE_POSITION, voxel_mesh.positions);
+        mesh.insert_attribute(Mesh::ATTRIBUTE_NORMAL, voxel_mesh.normals);
+        let uvs = if voxel_mesh.material == BlockKind::WoodenPlank {
+            voxel_mesh.uvs
+        } else {
+            voxel_mesh.uvs
+        };
+        mesh.insert_attribute(Mesh::ATTRIBUTE_UV_0, uvs);
+        mesh.insert_indices(Indices::U32(voxel_mesh.indices));
+        mesh.generate_tangents()
+            .expect("voxel mesh must support tangent generation for optional normal maps");
         commands.spawn((
-            Mesh3d(cube.clone()),
-            MeshMaterial3d(material_handles[&kind].clone()),
-            Transform::from_translation(cell.as_vec3()),
+            Mesh3d(meshes.add(mesh)),
+            MeshMaterial3d(material_handles[&voxel_mesh.material].clone()),
             VoxelEntity,
         ));
     }
     *last_revision = world.revision;
+}
+
+struct TechnicalMapPaths {
+    height: String,
+    normal: String,
+    orm: String,
+}
+
+fn technical_map_paths(base_color: &str) -> Option<TechnicalMapPaths> {
+    let directory = base_color.strip_suffix("/base_color.png")?;
+    let maps = TechnicalMapPaths {
+        height: format!("{directory}/height.png"),
+        normal: format!("{directory}/normal.png"),
+        orm: format!("{directory}/orm.png"),
+    };
+    technical_maps_exist(&maps).then_some(maps)
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+fn technical_maps_exist(maps: &TechnicalMapPaths) -> bool {
+    let asset_root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../assets");
+    asset_root.join(&maps.height).is_file()
+        && asset_root.join(&maps.normal).is_file()
+        && asset_root.join(&maps.orm).is_file()
+}
+
+#[cfg(target_arch = "wasm32")]
+fn technical_maps_exist(_maps: &TechnicalMapPaths) -> bool {
+    // Web assets are declared in web/games.json and preloaded before the game starts.
+    true
+}
+
+fn load_clamped_texture(asset_server: &AssetServer, path: String, is_srgb: bool) -> Handle<Image> {
+    asset_server.load_with_settings(path, move |settings: &mut ImageLoaderSettings| {
+        settings.is_srgb = is_srgb;
+        settings.sampler = ImageSampler::Descriptor(ImageSamplerDescriptor {
+            address_mode_u: ImageAddressMode::ClampToEdge,
+            address_mode_v: ImageAddressMode::ClampToEdge,
+            ..default()
+        });
+    })
 }
 
 fn sync_hud(
@@ -883,9 +1013,9 @@ mod tests {
 
     #[test]
     fn new_world_starts_with_one_centered_wood_voxel() {
-        let world = VoxelWorld::default();
+        let world = new_ship_world();
         assert_eq!(world.blocks.len(), 1);
-        assert_eq!(world.blocks[&IVec3::ZERO], BlockKind::Wood);
+        assert_eq!(world.blocks[&IVec3::ZERO], BlockKind::WoodenPlank);
     }
 
     #[test]
@@ -893,10 +1023,26 @@ mod tests {
         let hit = raycast_voxels(
             Vec3::new(0.0, 0.0, 5.0),
             Vec3::NEG_Z,
-            &VoxelWorld::default().blocks,
+            &new_ship_world().blocks,
         )
         .expect("center voxel should be hit");
         assert_eq!(hit.cell, IVec3::ZERO);
         assert_eq!(hit.normal, IVec3::Z);
+    }
+
+    #[test]
+    fn generated_technical_maps_are_discovered_beside_base_color() {
+        let maps = technical_map_paths("voxel_materials/wooden_plank/textures/base_color.png")
+            .expect("checked-in wooden plank maps should be discovered");
+        assert_eq!(
+            maps.height,
+            "voxel_materials/wooden_plank/textures/height.png"
+        );
+        assert_eq!(
+            maps.normal,
+            "voxel_materials/wooden_plank/textures/normal.png"
+        );
+        assert_eq!(maps.orm, "voxel_materials/wooden_plank/textures/orm.png");
+        assert!(technical_map_paths("textures/shipwright/stone.png").is_none());
     }
 }

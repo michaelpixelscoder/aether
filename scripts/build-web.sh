@@ -28,10 +28,11 @@ sed "s|__AETHER_PREFIX__|$web_prefix|g" "$project_root/web/lobby.html" > "$outpu
 cp "$project_root/web/style.css" "$output_dir/style.css"
 sed "s|__AETHER_PREFIX__|$web_prefix|g" "$project_root/web/lobby-loader.js" > "$output_dir/lobby-loader.js"
 sed "s|__AETHER_PREFIX__|$web_prefix|g" "$project_root/web/games.json" > "$output_dir/games.json"
-mkdir -p "$output_dir/game/runner" "$output_dir/game/shipwright" "$output_dir/game/sandbox"
+mkdir -p "$output_dir/game/runner" "$output_dir/game/shipwright" "$output_dir/game/sandbox" "$output_dir/game/fabric-rope-demo"
 cp "$output_dir/index.html" "$output_dir/game/runner/index.html"
 cp "$output_dir/index.html" "$output_dir/game/shipwright/index.html"
 cp "$output_dir/index.html" "$output_dir/game/sandbox/index.html"
+cp "$output_dir/index.html" "$output_dir/game/fabric-rope-demo/index.html"
 mkdir -p "$output_dir/assets"
 cp -R "$project_root/assets/." "$output_dir/assets/"
 wasm-bindgen "$wasm_target/lobby_web.wasm" --out-dir "$output_dir" --target web --no-typescript

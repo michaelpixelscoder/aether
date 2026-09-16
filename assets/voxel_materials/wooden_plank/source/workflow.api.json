@@ -1,0 +1,82 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {"image": "aether/wooden_plank/base_color.png"},
+    "_meta": {"title": "Reviewed AI base color"}
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {"image": "aether/wooden_plank/height.png"},
+    "_meta": {"title": "Shared geometry prior"}
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {"image": "aether/wooden_plank/roughness.png"},
+    "_meta": {"title": "Wood/brass roughness mask"}
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {"image": "aether/wooden_plank/metallic.png"},
+    "_meta": {"title": "Brass fixation material ID"}
+  },
+  "5": {
+    "class_type": "HeightToNormal",
+    "inputs": {
+      "height": ["2", 0],
+      "strength": 5.0,
+      "method": "scharr",
+      "output_format": "OpenGL",
+      "blur_radius": 0.7
+    },
+    "_meta": {"title": "TextureAlchemy: coherent OpenGL normal"}
+  },
+  "6": {
+    "class_type": "AOApproximator",
+    "inputs": {
+      "height": ["2", 0],
+      "normal": ["5", 0],
+      "radius": 12,
+      "strength": 2.1,
+      "samples": 24,
+      "contrast": 1.25,
+      "use_normal": true
+    },
+    "_meta": {"title": "TextureAlchemy: AO from the same height"}
+  },
+  "7": {
+    "class_type": "ChannelPacker",
+    "inputs": {
+      "red_channel": ["10", 0],
+      "green_channel": ["3", 0],
+      "blue_channel": ["4", 0],
+      "preset": "custom"
+    },
+    "_meta": {"title": "TextureAlchemy: Bevy/glTF ORM packing"}
+  },
+  "8": {
+    "class_type": "TextureTiler",
+    "inputs": {
+      "image": ["1", 0],
+      "tile_x": 3,
+      "tile_y": 3,
+      "scale_to_input": true
+    },
+    "_meta": {"title": "TextureAlchemy: 3x3 repeat proof"}
+  },
+  "9": {
+    "class_type": "SeamlessTiling",
+    "inputs": {"image": ["5", 0], "method": "blend_edges", "blend_width": 0.02},
+    "_meta": {"title": "TextureAlchemy: reconcile normal convolution borders"}
+  },
+  "10": {
+    "class_type": "SeamlessTiling",
+    "inputs": {"image": ["6", 0], "method": "blend_edges", "blend_width": 0.02},
+    "_meta": {"title": "TextureAlchemy: reconcile AO convolution borders"}
+  },
+  "20": {"class_type": "SaveImage", "inputs": {"images": ["1", 0], "filename_prefix": "base_color"}},
+  "21": {"class_type": "SaveImage", "inputs": {"images": ["2", 0], "filename_prefix": "height"}},
+  "22": {"class_type": "SaveImage", "inputs": {"images": ["9", 0], "filename_prefix": "normal"}},
+  "23": {"class_type": "SaveImage", "inputs": {"images": ["10", 0], "filename_prefix": "ao"}},
+  "24": {"class_type": "SaveImage", "inputs": {"images": ["7", 0], "filename_prefix": "orm"}},
+  "25": {"class_type": "SaveImage", "inputs": {"images": ["8", 0], "filename_prefix": "tiled_preview"}}
+}

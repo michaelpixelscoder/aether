@@ -15,4 +15,5 @@ crate-type = ["rlib", "cdylib"]
 [dependencies]
 bevy.workspace = true
 aether_app.workspace = true
+aether_voxels.workspace = true
 

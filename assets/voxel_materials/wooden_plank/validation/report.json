@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "checks": {
+    "matching_dimensions": true,
+    "periodic_edges": true,
+    "packed_macro_atlas_layout": true,
+    "wood_and_brass_material_ids": true,
+    "recessed_seams": true,
+    "pixel_perfect_five_plank_frame": true,
+    "unit_length_normals": true
+  },
+  "measurements": {
+    "sizes": {
+      "base_color": [
+        1280,
+        1280
+      ],
+      "height": [
+        1280,
+        1280
+      ],
+      "normal": [
+        1280,
+        1280
+      ],
+      "ao": [
+        1280,
+        1280
+      ],
+      "orm": [
+        1280,
+        1280
+      ]
+    },
+    "edge_mae_8bit": {
+      "base_color": {
+        "left_right_mae": 0.0,
+        "top_bottom_mae": 0.0
+      },
+      "height": {
+        "left_right_mae": 0.0,
+        "top_bottom_mae": 0.0
+      },
+      "normal": {
+        "left_right_mae": 0.0,
+        "top_bottom_mae": 0.0
+      },
+      "ao": {
+        "left_right_mae": 0.0,
+        "top_bottom_mae": 0.0
+      },
+      "orm": {
+        "left_right_mae": 0.0,
+        "top_bottom_mae": 0.0
+      }
+    },
+    "nail_metallic_mean_8bit": 234.67603550295857,
+    "wood_metallic_mean_8bit": 0.0,
+    "seam_height_mean_8bit": 215.439375,
+    "board_body_height_mean_8bit": 90.8128539644013,
+    "seam_row_means_8bit": [
+      216.96913580246914,
+      215.4948559670782,
+      217.98456790123456,
+      215.72942386831275,
+      213.02366255144034,
+      216.96913580246914
+    ],
+    "board_center_row_means_8bit": [
+      90.51954732510288,
+      90.85185185185185,
+      90.54320987654322,
+      91.08127572016461,
+      90.84156378600824
+    ],
+    "bottom_is_final_bevel": true,
+    "normal_mean_length_error": 0.005881111736659747
+  }
+}

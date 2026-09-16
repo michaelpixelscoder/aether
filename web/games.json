@@ -1,5 +1,13 @@
 [
   {
+    "name": "Fabric & Rope Lab",
+    "id": "fabric-rope-demo",
+    "description": "Simulate voxel fabric, rope tension, wind, and failure",
+    "start": "fabric-rope-demo.start",
+    "dependencies": ["fabric_rope_demo_game"],
+    "assets": []
+  },
+  {
     "name": "Skyway Runner",
     "id": "runner",
     "description": "Third-person lane running and jumping",
@@ -14,7 +22,10 @@
     "start": "shipwright.start",
     "dependencies": ["shipwright_game"],
     "assets": [
-      "assets/textures/shipwright/wood.png",
+      "assets/voxel_materials/wooden_plank/textures/base_color.png",
+      "assets/voxel_materials/wooden_plank/textures/height.png",
+      "assets/voxel_materials/wooden_plank/textures/normal.png",
+      "assets/voxel_materials/wooden_plank/textures/orm.png",
       "assets/textures/shipwright/stone.png",
       "assets/textures/shipwright/grass.png",
       "assets/textures/shipwright/iron.png",

@@ -1,0 +1,128 @@
+{
+  "source": "assets/voxel_materials/wooden_plank/source/albedo_macro_master_v1.png",
+  "source_sha256": "3e65b369cd9fe8330e52d2c2336df0a8ca7f30c2ddd5230f2650626157aed5ac",
+  "size": [
+    1280,
+    1280
+  ],
+  "framing": {
+    "output_size": 1280,
+    "plank_height_px": 256,
+    "source_boundaries_at_1254": [
+      0,
+      244,
+      486,
+      730,
+      973,
+      1214
+    ],
+    "discarded_source_rows": [
+      1214,
+      1254
+    ]
+  },
+  "continuous_master": "macro_master.png",
+  "base_color_role": "packed greedy-quad template atlas",
+  "periodic_blend_width_px": 18,
+  "plank_count": 5,
+  "macro_voxels": [
+    5,
+    5
+  ],
+  "atlas_regions": [
+    {
+      "origin": [
+        0,
+        0
+      ],
+      "size": [
+        1,
+        1
+      ]
+    },
+    {
+      "origin": [
+        1,
+        0
+      ],
+      "size": [
+        3,
+        1
+      ]
+    },
+    {
+      "origin": [
+        4,
+        0
+      ],
+      "size": [
+        1,
+        1
+      ]
+    },
+    {
+      "origin": [
+        0,
+        1
+      ],
+      "size": [
+        4,
+        1
+      ]
+    },
+    {
+      "origin": [
+        4,
+        1
+      ],
+      "size": [
+        1,
+        1
+      ]
+    },
+    {
+      "origin": [
+        0,
+        2
+      ],
+      "size": [
+        2,
+        1
+      ]
+    },
+    {
+      "origin": [
+        2,
+        2
+      ],
+      "size": [
+        2,
+        1
+      ]
+    },
+    {
+      "origin": [
+        4,
+        2
+      ],
+      "size": [
+        1,
+        1
+      ]
+    },
+    {
+      "origin": [
+        0,
+        3
+      ],
+      "size": [
+        5,
+        2
+      ]
+    }
+  ],
+  "nail_columns_normalized": [
+    0.052,
+    0.948
+  ]
+}

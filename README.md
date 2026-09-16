@@ -34,6 +34,12 @@ Run the voxel ship editor directly with:
 cargo shipwright
 ```
 
+Run the fabric and rope physics demo with:
+
+```sh
+cargo fabric-rope-demo
+```
+
 ## Browser
 
 ```sh
@@ -56,11 +62,41 @@ The voxel ship editor has the stable route:
 Controls: WASD to move, Space/left Shift to move vertically, and hold the left mouse button while moving the mouse to look.
 The lane runner is available at `/game/runner/`.
 
+The fabric and rope lab is available at `/game/fabric-rope-demo/`.
+
+Fabric and rope controls: A/D moves the right anchor, W toggles wind, X cuts a rope, T tears a fabric connection, 1–3 compare tile orientation treatments, P pauses, N single-steps, and R resets the canonical scene.
+
 Runner controls: Left/Right Arrow or A/D changes lane and Space jumps. While airborne, Space toggles the glider on or off. Jump near a glowing anchor and hold F or E to attach the rope; release to launch with your swing momentum. Mobile supports horizontal swipes, swipe-up for jump/glide toggle, and touch-and-hold for the rope. Sandbox controls remain WASD, Space/left Shift, and hold-left-mouse look.
 
 The browser build is a single-page host. `lobby_web` contains the shared Bevy engine and all game plugins; `web/lobby-loader.js` preloads and instantiates that engine while the lobby is visible, then selects one game plugin on click without reloading the document. Game URLs are updated with the History API, and `web/games.json` declares each game's plugin dependency and assets. The generated route aliases allow direct refreshes of `/game/<name>/` to return to the same shell.
 
-Shipwright controls: click an exposed voxel face to add the selected material, Shift-click to remove, drag to orbit, scroll to zoom, use 1–5 to select wood/stone/grass/iron/glass, and Ctrl/Cmd+Z to undo.
+Shipwright controls: click an exposed voxel face to add the selected material, Shift-click to remove, drag to orbit, scroll to zoom, use 1–5 to select wooden plank/stone/grass/iron/glass, and Ctrl/Cmd+Z to undo.
+
+Generate the deterministic voxel-shading review gallery with:
+
+```sh
+./scripts/render-voxel-gallery.sh
+```
+
+The command renders every predefined construction and writes labeled PNGs, a contact sheet, metrics, and a browsable index to `target/voxel-render-gallery/`. Open `target/voxel-render-gallery/index.html` to review the result.
+
+## PBR texture authoring
+
+The optional project-local ComfyUI toolchain is pinned and documented in
+[`tools/comfyui`](tools/comfyui/README.md). Install it, start its API, and rebuild
+the wooden-plank material with:
+
+```sh
+tools/comfyui/setup.sh
+tools/comfyui/start.sh
+# In another terminal:
+scripts/generate_tech_maps assets/voxel_materials/wooden_plank
+```
+
+Reviewed maps live beside their prompt, source candidate, workflow, generation
+manifest, tiled preview, and validation report under
+`assets/voxel_materials/wooden_plank/`. ComfyUI itself, model weights, caches,
+and scratch output remain ignored.
 
 With the web server running, execute the browser smoke test with:
 

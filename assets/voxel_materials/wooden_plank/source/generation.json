@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "material": "wooden_plank",
+  "status": "continuous_macro_master_pbr_v3",
+  "albedo_source": {
+    "generator": "OpenAI image generation",
+    "mode": "edit",
+    "file": "albedo_macro_master_v1.png",
+    "prompt_file": "../texture_prompt.md",
+    "imagegen_execution_prompt": "macro_master_imagegen_prompt.md",
+    "prompt_provenance": "built-in image edit prompt creates one continuous macro master; deterministic framing and atlas metadata follow generation",
+    "license_review": "project-owned generated asset; confirm project policy before distribution"
+  },
+  "resources": [
+    {"name": "ComfyUI", "url": "https://github.com/Comfy-Org/ComfyUI", "license": "GPL-3.0"},
+    {"name": "ComfyUI-TextureAlchemy", "url": "https://github.com/amtarr/ComfyUI-TextureAlchemy", "license": "Apache-2.0"}
+  ],
+  "processing": {
+    "orchestrator": "ComfyUI",
+    "comfyui_revision": "02d39c8cd7828566f48ccf783c1c75b8336044f5",
+    "custom_node": "ComfyUI-TextureAlchemy",
+    "texture_alchemy_revision": "0afda45713c7b33afbf9d4f757493cca2004f65f",
+    "workflow": "workflow.api.json",
+    "requires_diffusion_checkpoint": false
+  },
+  "maps": {
+    "base_color": "sRGB, no lighting",
+    "height": "linear grayscale for Bevy parallax; black raised, white recessed",
+    "normal": "linear OpenGL tangent space (Y+)",
+    "ao": "linear grayscale; white unoccluded",
+    "orm": "linear RGB: R=AO, G=roughness, B=metallic"
+  },
+  "geometry": {
+    "plank_count": 5,
+    "horizontal_seams": true,
+    "beveled_left_right_borders": true,
+    "fasteners_per_plank": 2,
+    "fastener_material": "aged brass",
+    "periodic_edges": true,
+    "pixel_frame": "1280 square; five exact 256-pixel bands; bottom ends before source row 1214 where the sixth plank begins",
+    "macro_atlas": "one continuous generated source is deterministically packed into complete 1x1, 1x2, 1x3, 1x4, and 2x5 greedy-quad templates; no per-voxel texture cropping"
+  }
+}

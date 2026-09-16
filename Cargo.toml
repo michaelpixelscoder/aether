@@ -6,10 +6,14 @@ members = [
     "games/sandbox",
     "games/shipwright",
     "games/runner",
+    "games/fabric_rope_demo",
     "crates/foundation/aether_app",
     "crates/features/aether_first_person",
     "crates/features/aether_runner",
     "crates/presentation/aether_grid_ground",
+    "crates/presentation/aether_voxel_render_tests",
+    "crates/features/aether_voxels",
+    "crates/features/aether_flexible",
 ]
 
 [workspace.package]
@@ -56,6 +60,11 @@ aether_app = { path = "crates/foundation/aether_app" }
 aether_first_person = { path = "crates/features/aether_first_person" }
 aether_runner = { path = "crates/features/aether_runner" }
 aether_grid_ground = { path = "crates/presentation/aether_grid_ground" }
+aether_voxels = { path = "crates/features/aether_voxels" }
+aether_flexible = { path = "crates/features/aether_flexible" }
+voxelize-core = "3.0.0"
+voxelize-mesher = "3.0.0"
+image = { version = "0.25.8", default-features = false, features = ["png"] }
 
 [profile.dev]
 opt-level = 1

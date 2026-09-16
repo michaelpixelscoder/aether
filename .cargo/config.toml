@@ -3,6 +3,7 @@ lobby = "run -p lobby"
 sandbox = "run -p sandbox"
 shipwright = "run -p shipwright"
 runner = "run -p runner"
+fabric-rope-demo = "run -p fabric_rope_demo"
 
 [target.wasm32-unknown-unknown]
 rustflags = ["--cfg", "getrandom_backend=\"wasm_js\""]

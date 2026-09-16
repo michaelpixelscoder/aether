@@ -1,6 +1,14 @@
 /target
+/.target-verify
 /dist
 /node_modules
 /test-results
 /playwright-report
 *.wasm
+__pycache__/
+*.pyc
+**/validation/comfyui.log
+
+# Project-local ComfyUI runtime, models, cache, and generated scratch output.
+# Reproducible inputs/workflows and selected material outputs live outside this tree.
+/tools/comfyui/.runtime/

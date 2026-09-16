@@ -1,0 +1,11 @@
+{
+  "prepare": "source/prepare_inputs.py",
+  "workflow": "source/workflow.api.json",
+  "input_dir": "source/inputs",
+  "input_namespace": "aether/wooden_plank",
+  "output_dir": "textures",
+  "validator": "validate.py",
+  "runtime_aliases": {
+    "textures/base_color.png": "assets/textures/shipwright/wooden_plank.png"
+  }
+}

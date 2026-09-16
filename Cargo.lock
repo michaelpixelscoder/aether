@@ -80,6 +80,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "aether_flexible"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+]
+
+[[package]]
 name = "aether_grid_ground"
 version = "0.1.0"
 dependencies = [
@@ -94,6 +101,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "aether_voxel_render_tests"
+version = "0.1.0"
+dependencies = [
+ "aether_voxels",
+ "bevy",
+ "image",
+]
+
+[[package]]
+name = "aether_voxels"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+ "voxelize-core",
+ "voxelize-mesher",
+]
+
+[[package]]
+name = "ahash"
+version = "0.8.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75"
+dependencies = [
+ "cfg-if",
+ "once_cell",
+ "version_check",
+ "zerocopy",
+]
+
+[[package]]
 name = "aho-corasick"
 version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -101,6 +138,12 @@ checksum = "c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba"
 dependencies = [
  "memchr",
 ]
+
+[[package]]
+name = "allocator-api2"
+version = "0.2.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
 
 [[package]]
 name = "android-activity"
@@ -2124,6 +2167,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "fabric_rope_demo"
+version = "0.1.0"
+dependencies = [
+ "aether_app",
+ "aether_flexible",
+ "bevy",
+]
+
+[[package]]
 name = "fastrand"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2521,6 +2573,17 @@ dependencies = [
 
 [[package]]
 name = "hashbrown"
+version = "0.14.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e5274423e17b7c9fc20b6e7e208532f9b19825d82dfd615708b70edd83df41f1"
+dependencies = [
+ "ahash",
+ "allocator-api2",
+ "serde",
+]
+
+[[package]]
+name = "hashbrown"
 version = "0.15.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1"
@@ -2817,6 +2880,7 @@ name = "lobby_web"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "fabric_rope_demo",
  "runner",
  "sandbox",
  "shipwright",
@@ -3853,6 +3917,7 @@ name = "shipwright"
 version = "0.1.0"
 dependencies = [
  "aether_app",
+ "aether_voxels",
  "bevy",
 ]
 
@@ -4344,6 +4409,26 @@ name = "version_check"
 version = "0.9.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
+
+[[package]]
+name = "voxelize-core"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ae063f0a8927a2b5efb8c1efef67ac166117e0b6e652ef7e94d00f421ce167c"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "voxelize-mesher"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8c8088031b0bd9889918bb8f4ca6be1469655c729d76095faba3e9e8d713424c"
+dependencies = [
+ "hashbrown 0.14.5",
+ "serde",
+ "voxelize-core",
+]
 
 [[package]]
 name = "walkdir"
