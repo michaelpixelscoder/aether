@@ -2,6 +2,7 @@
   "name": "aether-browser-tests",
   "private": true,
   "scripts": {
+    "dev:web": "./scripts/dev-web.sh",
     "test:browser": "playwright test tests/browser/aether.spec.js --workers=1"
   },
   "devDependencies": {

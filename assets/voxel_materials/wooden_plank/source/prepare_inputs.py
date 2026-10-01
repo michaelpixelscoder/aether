@@ -8,11 +8,12 @@ import json
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 
 
 ROOT = Path(__file__).resolve().parents[4]
 SOURCE = Path(__file__).resolve().parent / "albedo_macro_master_v1.png"
+END_GRAIN_SOURCE = Path(__file__).resolve().parent / "end_grain_generated_v1.png"
 OUT = Path(__file__).resolve().parent / "inputs"
 OUTPUT_SIZE = 1280
 # The AI master is treated as one continuous 5×5 panel. Slice each complete
@@ -90,9 +91,36 @@ def build_macro_atlas(master: Image.Image) -> Image.Image:
     atlas.paste(plank(0, 2), (0, 2 * CELL))
     atlas.paste(plank(1, 2), (2 * CELL, 2 * CELL))
     atlas.paste(plank(2, 1), (4 * CELL, 2 * CELL))
-    # 2×5: two whole plank rows, retained at one texel-per-voxel density.
-    atlas.paste(master.crop((0, 3 * CELL, OUTPUT_SIZE, 5 * CELL)), (0, 3 * CELL))
+    # 2×5 variation: two real deck courses with staggered plank lengths. The
+    # first reads as [---][--], the second as [--][---], avoiding a repeated
+    # five-voxel board while retaining a single 2×5 greedy-quad template.
+    atlas.paste(plank(3, 3), (0, 3 * CELL))
+    atlas.paste(plank(4, 2), (3 * CELL, 3 * CELL))
+    atlas.paste(plank(1, 2), (0, 4 * CELL))
+    atlas.paste(plank(2, 3), (2 * CELL, 4 * CELL))
     return atlas
+
+
+def build_debug_atlas() -> Image.Image:
+    """A diagnostic atlas: each selectable template is a labeled color block."""
+    debug = Image.new("RGB", (OUTPUT_SIZE, OUTPUT_SIZE), (17, 21, 29))
+    draw = ImageDraw.Draw(debug)
+    zones = [
+        (0, 0, 1, 1, "1x1", (235, 86, 86)),
+        (1, 0, 3, 1, "1x3", (247, 163, 62)),
+        (4, 0, 1, 1, "1x1", (244, 221, 74)),
+        (0, 1, 4, 1, "1x4", (86, 202, 102)),
+        (4, 1, 1, 1, "1x1", (67, 190, 180)),
+        (0, 2, 2, 1, "1x2", (76, 146, 236)),
+        (2, 2, 2, 1, "1x2", (117, 95, 222)),
+        (4, 2, 1, 1, "1x1", (206, 89, 212)),
+        (0, 3, 5, 2, "2x5 / deck", (220, 74, 129)),
+    ]
+    for x, y, w, h, label, color in zones:
+        box = (x * CELL, y * CELL, (x + w) * CELL - 1, (y + h) * CELL - 1)
+        draw.rectangle(box, fill=color, outline=(255, 255, 255), width=8)
+        draw.text((box[0] + 20, box[1] + 20), label, fill=(8, 10, 16), stroke_width=2, stroke_fill=(255, 255, 255))
+    return debug
 
 
 def build_maps(base: Image.Image) -> tuple[Image.Image, Image.Image, Image.Image]:
@@ -155,8 +183,17 @@ def main() -> None:
     }
     for name, image in maps.items():
         image.save(OUT / name, optimize=True)
+    build_debug_atlas().save(OUT / "debug_atlas.png", optimize=True)
+    # Cut faces use an independently authored end-grain image rather than a
+    # stretched long plank. Clamp-safe edge reconciliation prevents a dark
+    # fringe when a greedy end face is wider than one voxel.
+    end_grain = Image.open(END_GRAIN_SOURCE).convert("RGB").resize(
+        (OUTPUT_SIZE, OUTPUT_SIZE), Image.Resampling.LANCZOS
+    )
+    reconcile_periodic_edges(end_grain).save(OUT / "end_grain.png", optimize=True)
     metadata = {
         "source": str(SOURCE.relative_to(ROOT)),
+        "end_grain_source": str(END_GRAIN_SOURCE.relative_to(ROOT)),
         "source_sha256": hashlib.sha256(source_bytes).hexdigest(),
         "size": list(base.size),
         "framing": {

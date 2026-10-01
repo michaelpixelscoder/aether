@@ -1,5 +1,6 @@
 {
   "source": "assets/voxel_materials/wooden_plank/source/albedo_macro_master_v1.png",
+  "end_grain_source": "assets/voxel_materials/wooden_plank/source/end_grain_generated_v1.png",
   "source_sha256": "3e65b369cd9fe8330e52d2c2336df0a8ca7f30c2ddd5230f2650626157aed5ac",
   "size": [
     1280,

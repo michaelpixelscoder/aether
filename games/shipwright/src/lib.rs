@@ -1,10 +1,11 @@
 use std::collections::HashMap;
 #[cfg(not(target_arch = "wasm32"))]
-use std::path::Path;
+use std::{fs, path::Path};
 
 use aether_app::AetherAppPlugin;
 use aether_voxels::{
-    MacroAtlasRegion, VoxelWorld as AetherVoxelWorld, greedy_mesh, map_quads_to_macro_atlas,
+    MacroAtlasRegion, VoxelWorld as AetherVoxelWorld, greedy_mesh, normalized_quad_uvs,
+    partition_quads_by_normal_axis, tile_quads_with_macro_atlas,
 };
 use bevy::asset::RenderAssetUsages;
 use bevy::image::{ImageAddressMode, ImageLoaderSettings, ImageSampler, ImageSamplerDescriptor};
@@ -20,6 +21,7 @@ const PANEL: Color = Color::srgba(0.025, 0.055, 0.095, 0.96);
 const BRASS: Color = Color::srgb(0.78, 0.55, 0.23);
 const PARCHMENT: Color = Color::srgb(0.96, 0.87, 0.68);
 const VIOLET: Color = Color::srgb(0.55, 0.25, 0.94);
+const BLUEPRINT_FILE: &str = "shipwright-ship.vox";
 
 pub fn configure(app: &mut App) {
     app.add_plugins(AetherAppPlugin {
@@ -27,6 +29,8 @@ pub fn configure(app: &mut App) {
     })
     .insert_resource(ClearColor(Color::NONE))
     .insert_resource(EditorState::default())
+    .insert_resource(BlueprintStatus::default())
+    .insert_resource(DebugState::default())
     .insert_resource(new_ship_world())
     .add_systems(Startup, setup)
     .add_systems(
@@ -69,10 +73,56 @@ enum BlockKind {
     Glass,
 }
 
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+enum TechMapView {
+    #[default]
+    BaseColor,
+    Height,
+    Normal,
+    AmbientOcclusion,
+    Orm,
+    EndGrain,
+}
+
+impl TechMapView {
+    fn next(self) -> Self {
+        match self {
+            Self::BaseColor => Self::Height,
+            Self::Height => Self::Normal,
+            Self::Normal => Self::AmbientOcclusion,
+            Self::AmbientOcclusion => Self::Orm,
+            Self::Orm => Self::EndGrain,
+            Self::EndGrain => Self::BaseColor,
+        }
+    }
+
+    fn label(self) -> &'static str {
+        match self {
+            Self::BaseColor => "Base color",
+            Self::Height => "Height",
+            Self::Normal => "Normal",
+            Self::AmbientOcclusion => "Ambient occlusion",
+            Self::Orm => "ORM",
+            Self::EndGrain => "End grain",
+        }
+    }
+
+    fn texture_path(self) -> &'static str {
+        match self {
+            Self::BaseColor => "voxel_materials/wooden_plank/textures/base_color.png",
+            Self::Height => "voxel_materials/wooden_plank/textures/height.png",
+            Self::Normal => "voxel_materials/wooden_plank/textures/normal.png",
+            Self::AmbientOcclusion => "voxel_materials/wooden_plank/textures/ao.png",
+            Self::Orm => "voxel_materials/wooden_plank/textures/orm.png",
+            Self::EndGrain => "voxel_materials/wooden_plank/textures/end_grain.png",
+        }
+    }
+}
+
 type VoxelWorld = AetherVoxelWorld<BlockKind>;
 
 // Packed complete-plank templates for the greedy-quad shape vocabulary.
-const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 9] = [
+const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 11] = [
     MacroAtlasRegion {
         origin: [0, 0],
         size: [1, 1],
@@ -109,9 +159,39 @@ const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 9] = [
         origin: [0, 3],
         size: [5, 2],
     },
+    MacroAtlasRegion {
+        origin: [0, 3],
+        size: [5, 1],
+    },
+    MacroAtlasRegion {
+        origin: [0, 4],
+        size: [5, 1],
+    },
 ];
 
 impl BlockKind {
+    fn vox_color_index(self) -> u8 {
+        match self {
+            Self::WoodenPlank => 1,
+            Self::Stone => 2,
+            Self::Grass => 3,
+            Self::Iron => 4,
+            Self::Glass => 5,
+        }
+    }
+
+    fn from_vox_color_index(value: u8) -> Self {
+        match value {
+            2 => Self::Stone,
+            3 => Self::Grass,
+            4 => Self::Iron,
+            5 => Self::Glass,
+            // Imported MagicaVoxel palettes are intentionally treated as
+            // wooden planks so external shape edits preserve this material.
+            _ => Self::WoodenPlank,
+        }
+    }
+
     const ALL: [Self; 5] = [
         Self::WoodenPlank,
         Self::Stone,
@@ -142,7 +222,34 @@ impl BlockKind {
 }
 
 fn new_ship_world() -> VoxelWorld {
-    VoxelWorld::single(IVec3::ZERO, BlockKind::WoodenPlank)
+    let mut blocks = HashMap::new();
+    // Compact all-wood starter hull: floor, raised gunwales, tapered bow, and
+    // a shallow stern. It intentionally exercises long side runs, 2×5 floor
+    // sections, outside corners, and exposed end faces.
+    for x in 1..=10 {
+        for z in -2..=2 {
+            blocks.insert(IVec3::new(x, 0, z), BlockKind::WoodenPlank);
+        }
+        blocks.insert(IVec3::new(x, 1, -3), BlockKind::WoodenPlank);
+        blocks.insert(IVec3::new(x, 1, 3), BlockKind::WoodenPlank);
+    }
+    for z in -1..=1 {
+        blocks.insert(IVec3::new(0, 1, z), BlockKind::WoodenPlank);
+        blocks.insert(IVec3::new(11, 1, z), BlockKind::WoodenPlank);
+        blocks.insert(IVec3::new(0, 2, z), BlockKind::WoodenPlank);
+    }
+    for x in [1, 2, 9, 10] {
+        blocks.insert(IVec3::new(x, 2, -3), BlockKind::WoodenPlank);
+        blocks.insert(IVec3::new(x, 2, 3), BlockKind::WoodenPlank);
+    }
+    let blocks = blocks
+        .into_iter()
+        .map(|(cell, kind)| (cell - IVec3::new(6, 0, 0), kind))
+        .collect();
+    VoxelWorld {
+        blocks,
+        revision: 1,
+    }
 }
 
 #[derive(Clone)]
@@ -158,6 +265,16 @@ struct EditorState {
     undo: Vec<Edit>,
     redo: Vec<Edit>,
     drag_distance: f32,
+}
+
+#[derive(Resource, Default)]
+struct BlueprintStatus(String);
+
+#[derive(Resource, Clone, Copy, Debug, Default, PartialEq, Eq)]
+struct DebugState {
+    uv_view: bool,
+    wireframe: bool,
+    tech_map: TechMapView,
 }
 
 impl Default for EditorState {
@@ -182,6 +299,9 @@ struct Hit {
 struct VoxelEntity;
 
 #[derive(Component)]
+struct WireframeEntity;
+
+#[derive(Component)]
 struct HoverGhost;
 
 #[derive(Component)]
@@ -201,6 +321,11 @@ enum ActionButton {
     Undo,
     Redo,
     New,
+    Import,
+    Export,
+    ToggleUvDebug,
+    ToggleWireframe,
+    CycleTechMap,
     Capture,
 }
 
@@ -212,6 +337,12 @@ struct MaterialText;
 
 #[derive(Component)]
 struct HelpText;
+
+#[derive(Component)]
+struct BlueprintStatusText;
+
+#[derive(Component)]
+struct DebugStatusText;
 
 fn setup(
     mut commands: Commands,
@@ -367,8 +498,49 @@ fn spawn_ui(commands: &mut Commands) {
                     spawn_action(actions, "Undo", ActionButton::Undo, false);
                     spawn_action(actions, "Redo", ActionButton::Redo, false);
                     spawn_action(actions, "New", ActionButton::New, false);
+                    spawn_action(actions, "Import", ActionButton::Import, false);
+                    spawn_action(actions, "Export", ActionButton::Export, true);
                     spawn_action(actions, "Capture", ActionButton::Capture, true);
                 });
+            });
+
+            root.spawn((
+                Node {
+                    position_type: PositionType::Absolute,
+                    left: px(18),
+                    // The five 56px material controls extend past 500px from
+                    // the viewport top; keep debug controls below that panel.
+                    top: px(548),
+                    width: px(276),
+                    padding: UiRect::all(px(14)),
+                    flex_direction: FlexDirection::Column,
+                    row_gap: px(8),
+                    border: UiRect::all(px(1)),
+                    border_radius: BorderRadius::all(px(10)),
+                    ..default()
+                },
+                BackgroundColor(PANEL),
+                BorderColor::all(Color::srgb(0.25, 0.55, 0.72)),
+            ))
+            .with_children(|panel| {
+                panel.spawn((
+                    Text::new("DEBUG RENDER"),
+                    TextFont::from_font_size(13.0),
+                    TextColor(Color::srgb(0.45, 0.78, 1.0)),
+                ));
+                panel.spawn(Node { column_gap: px(8), ..default() }).with_children(|row| {
+                    spawn_action(row, "UV zones", ActionButton::ToggleUvDebug, false);
+                    spawn_action(row, "Wireframe", ActionButton::ToggleWireframe, false);
+                });
+                panel.spawn(Node { column_gap: px(8), ..default() }).with_children(|row| {
+                    spawn_action(row, "Next map", ActionButton::CycleTechMap, false);
+                });
+                panel.spawn((
+                    Text::new("UV: off · Wire: off · Map: Base color"),
+                    TextFont::from_font_size(12.0),
+                    TextColor(Color::srgb(0.68, 0.76, 0.84)),
+                    DebugStatusText,
+                ));
             });
 
             root.spawn((
@@ -458,7 +630,13 @@ fn spawn_ui(commands: &mut Commands) {
                 panel.spawn((Text::new("1 voxel"), TextFont::from_font_size(25.0), TextColor(PARCHMENT), CountText));
                 panel.spawn((Text::new("Selected: Wooden plank"), TextFont::from_font_size(16.0), TextColor(Color::WHITE), MaterialText));
                 panel.spawn((
-                    Text::new("Click a block face to add\nShift + click to remove\nDrag to orbit · Shift/middle drag to pan\nWheel to zoom"),
+                    Text::new("Blueprint ready"),
+                    TextFont::from_font_size(13.0),
+                    TextColor(Color::srgb(0.65, 0.72, 0.79)),
+                    BlueprintStatusText,
+                ));
+                panel.spawn((
+                    Text::new("MagicaVoxel .vox import/export\nUses shipwright-ship.vox in this folder\n\nClick a block face to add\nShift + click to remove\nDrag to orbit · Shift/middle drag to pan\nWheel to zoom"),
                     TextFont::from_font_size(14.0),
                     TextColor(Color::srgb(0.65, 0.72, 0.79)),
                     HelpText,
@@ -539,6 +717,8 @@ fn action_buttons(
     interactions: Query<(&Interaction, &ActionButton), Changed<Interaction>>,
     mut world: ResMut<VoxelWorld>,
     mut editor: ResMut<EditorState>,
+    mut blueprint_status: ResMut<BlueprintStatus>,
+    mut debug: ResMut<DebugState>,
 ) {
     for (interaction, action) in &interactions {
         if *interaction != Interaction::Pressed {
@@ -553,10 +733,202 @@ fn action_buttons(
                 world.revision += 1;
                 editor.undo.clear();
                 editor.redo.clear();
+                blueprint_status.0 = "New empty ship".into();
             }
+            ActionButton::Export => export_blueprint(&world, &mut blueprint_status),
+            ActionButton::Import => {
+                import_blueprint(&mut world, &mut editor, &mut blueprint_status)
+            }
+            ActionButton::ToggleUvDebug => debug.uv_view = !debug.uv_view,
+            ActionButton::ToggleWireframe => debug.wireframe = !debug.wireframe,
+            ActionButton::CycleTechMap => debug.tech_map = debug.tech_map.next(),
             ActionButton::Capture => {}
         }
     }
+}
+
+fn write_u32(bytes: &mut Vec<u8>, value: u32) {
+    bytes.extend(value.to_le_bytes());
+}
+
+fn read_u32(bytes: &[u8], offset: &mut usize) -> Result<u32, String> {
+    let end = offset.checked_add(4).ok_or("VOX offset overflow")?;
+    let chunk = bytes
+        .get(*offset..end)
+        .ok_or("unexpected end of VOX file")?;
+    *offset = end;
+    Ok(u32::from_le_bytes(chunk.try_into().expect("four bytes")))
+}
+
+fn serialize_blueprint(world: &VoxelWorld) -> Result<Vec<u8>, String> {
+    let mut blocks = world.blocks.iter().collect::<Vec<_>>();
+    blocks.sort_by_key(|(cell, _)| (cell.x, cell.y, cell.z));
+    let min = blocks
+        .iter()
+        .map(|(cell, _)| **cell)
+        .reduce(|a, b| a.min(b))
+        .ok_or("cannot export an empty ship")?;
+    let max = blocks
+        .iter()
+        .map(|(cell, _)| **cell)
+        .reduce(|a, b| a.max(b))
+        .expect("non-empty blocks");
+    let size = max - min + IVec3::ONE;
+    if size.x > 256 || size.y > 256 || size.z > 256 {
+        return Err("MagicaVoxel .vox export supports a maximum 256×256×256 model".into());
+    }
+    let mut size_chunk = Vec::new();
+    for value in [size.x, size.y, size.z] {
+        write_u32(&mut size_chunk, value as u32);
+    }
+    let mut xyzi_chunk = Vec::with_capacity(4 + blocks.len() * 4);
+    write_u32(&mut xyzi_chunk, blocks.len() as u32);
+    for (cell, kind) in blocks {
+        let local = *cell - min;
+        xyzi_chunk.extend([
+            local.x as u8,
+            local.y as u8,
+            local.z as u8,
+            kind.vox_color_index(),
+        ]);
+    }
+    let mut children = Vec::new();
+    for (id, content) in [(b"SIZE", size_chunk), (b"XYZI", xyzi_chunk)] {
+        children.extend(id);
+        write_u32(&mut children, content.len() as u32);
+        write_u32(&mut children, 0);
+        children.extend(content);
+    }
+    let mut output = Vec::with_capacity(20 + children.len());
+    output.extend(b"VOX ");
+    write_u32(&mut output, 150);
+    output.extend(b"MAIN");
+    write_u32(&mut output, 0);
+    write_u32(&mut output, children.len() as u32);
+    output.extend(children);
+    Ok(output)
+}
+
+fn parse_blueprint(bytes: &[u8]) -> Result<HashMap<IVec3, BlockKind>, String> {
+    if bytes.get(0..4) != Some(b"VOX ") {
+        return Err("expected MagicaVoxel `VOX ` header".into());
+    }
+    let mut offset = 4;
+    let version = read_u32(bytes, &mut offset)?;
+    if version < 150 {
+        return Err(format!("unsupported VOX version {version}"));
+    }
+    if bytes.get(offset..offset + 4) != Some(b"MAIN") {
+        return Err("missing MAIN VOX chunk".into());
+    }
+    offset += 4;
+    let main_content = read_u32(bytes, &mut offset)? as usize;
+    let main_children = read_u32(bytes, &mut offset)? as usize;
+    offset = offset
+        .checked_add(main_content)
+        .ok_or("invalid MAIN chunk")?;
+    let end = offset
+        .checked_add(main_children)
+        .ok_or("invalid MAIN child length")?
+        .min(bytes.len());
+    let mut size = None;
+    let mut voxels = None;
+    while offset < end {
+        let id = bytes
+            .get(offset..offset + 4)
+            .ok_or("truncated VOX chunk id")?;
+        offset += 4;
+        let content_len = read_u32(bytes, &mut offset)? as usize;
+        let child_len = read_u32(bytes, &mut offset)? as usize;
+        let content_end = offset
+            .checked_add(content_len)
+            .ok_or("invalid VOX content length")?;
+        let content = bytes
+            .get(offset..content_end)
+            .ok_or("truncated VOX content")?;
+        if id == b"SIZE" && content.len() >= 12 {
+            let mut cursor = 0;
+            size = Some(IVec3::new(
+                read_u32(content, &mut cursor)? as i32,
+                read_u32(content, &mut cursor)? as i32,
+                read_u32(content, &mut cursor)? as i32,
+            ));
+        } else if id == b"XYZI" && content.len() >= 4 {
+            let mut cursor = 0;
+            let count = read_u32(content, &mut cursor)? as usize;
+            if content.len() < 4 + count * 4 {
+                return Err("truncated XYZI voxel list".into());
+            }
+            voxels = Some(content[4..4 + count * 4].to_vec());
+        }
+        offset = content_end
+            .checked_add(child_len)
+            .ok_or("invalid VOX child length")?;
+    }
+    let size = size.ok_or("VOX file has no SIZE chunk")?;
+    let voxels = voxels.ok_or("VOX file has no XYZI chunk")?;
+    if size.x <= 0 || size.y <= 0 || size.z <= 0 || size.x > 256 || size.y > 256 || size.z > 256 {
+        return Err("VOX dimensions must be in 1..=256".into());
+    }
+    let mut blocks = HashMap::new();
+    for voxel in voxels.chunks_exact(4) {
+        let cell = IVec3::new(
+            voxel[0] as i32 - size.x / 2,
+            voxel[1] as i32,
+            voxel[2] as i32 - size.z / 2,
+        );
+        blocks.insert(cell, BlockKind::from_vox_color_index(voxel[3]));
+    }
+    if blocks.is_empty() {
+        return Err("blueprint contains no voxels".into());
+    }
+    Ok(blocks)
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+fn export_blueprint(world: &VoxelWorld, status: &mut BlueprintStatus) {
+    match serialize_blueprint(world)
+        .and_then(|bytes| fs::write(BLUEPRINT_FILE, bytes).map_err(|error| error.to_string()))
+    {
+        Ok(()) => status.0 = format!("Exported {} voxels to {BLUEPRINT_FILE}", world.blocks.len()),
+        Err(error) => status.0 = format!("Export failed: {error}"),
+    }
+}
+
+#[cfg(target_arch = "wasm32")]
+fn export_blueprint(_world: &VoxelWorld, status: &mut BlueprintStatus) {
+    status.0 = "Export is available in the native Shipwright build".into();
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+fn import_blueprint(
+    world: &mut VoxelWorld,
+    editor: &mut EditorState,
+    status: &mut BlueprintStatus,
+) {
+    match fs::read(BLUEPRINT_FILE)
+        .map_err(|error| error.to_string())
+        .and_then(|bytes| parse_blueprint(&bytes))
+    {
+        Ok(blocks) => {
+            let count = blocks.len();
+            world.blocks = blocks;
+            world.revision += 1;
+            editor.undo.clear();
+            editor.redo.clear();
+            status.0 = format!("Imported {count} voxels from {BLUEPRINT_FILE}");
+        }
+        Err(error) => status.0 = format!("Import failed: {error}"),
+    }
+}
+
+#[cfg(target_arch = "wasm32")]
+fn import_blueprint(
+    _world: &mut VoxelWorld,
+    _editor: &mut EditorState,
+    status: &mut BlueprintStatus,
+) {
+    status.0 = "Import is available in the native Shipwright build".into();
 }
 
 fn keyboard_shortcuts(
@@ -807,9 +1179,10 @@ fn sync_voxel_scene(
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
     asset_server: Res<AssetServer>,
-    mut last_revision: Local<u64>,
+    debug: Res<DebugState>,
+    mut last_render: Local<Option<(u64, DebugState)>>,
 ) {
-    if *last_revision == world.revision {
+    if *last_render == Some((world.revision, *debug)) {
         return;
     }
     for entity in &entities {
@@ -819,13 +1192,20 @@ fn sync_voxel_scene(
     for kind in BlockKind::ALL {
         let glass = kind == BlockKind::Glass;
         let texture_path = match kind {
-            BlockKind::WoodenPlank => "voxel_materials/wooden_plank/textures/base_color.png",
+            BlockKind::WoodenPlank if debug.uv_view => {
+                "voxel_materials/wooden_plank/textures/debug_atlas.png"
+            }
+            BlockKind::WoodenPlank => debug.tech_map.texture_path(),
             BlockKind::Stone => "textures/shipwright/stone.png",
             BlockKind::Grass => "textures/shipwright/grass.png",
             BlockKind::Iron => "textures/shipwright/iron.png",
             BlockKind::Glass => "textures/shipwright/glass.png",
         };
-        let technical_maps = technical_map_paths(texture_path);
+        let show_technical_map = kind == BlockKind::WoodenPlank
+            && (debug.uv_view || debug.tech_map != TechMapView::BaseColor);
+        let technical_maps = (!show_technical_map)
+            .then(|| technical_map_paths(texture_path))
+            .flatten();
         let normal_map_texture = technical_maps
             .as_ref()
             .map(|maps| load_clamped_texture(&asset_server, maps.normal.clone(), false));
@@ -851,7 +1231,7 @@ fn sync_voxel_scene(
             depth_map,
             // Keep the authored bevel visible at grazing angles without making
             // a single voxel appear deeply displaced.
-            parallax_depth_scale: 0.025,
+            parallax_depth_scale: if show_technical_map { 0.0 } else { 0.025 },
             metallic_roughness_texture: orm_texture.clone(),
             occlusion_texture: orm_texture,
             metallic: if uses_orm {
@@ -877,38 +1257,131 @@ fn sync_voxel_scene(
                 AlphaMode::Opaque
             },
             reflectance: if glass { 0.7 } else { 0.35 },
+            unlit: show_technical_map,
             ..default()
         });
         material_handles.insert(kind, handle);
     }
+    // Cut faces run perpendicular to the hull's long X axis.  A separate
+    // end-grain texture avoids the almost-black, vertically stretched plank
+    // appearance those faces get when they reuse the long-grain atlas.
+    let wooden_end_grain = materials.add(StandardMaterial {
+        base_color_texture: Some(load_clamped_texture(
+            &asset_server,
+            "voxel_materials/wooden_plank/textures/end_grain.png".to_owned(),
+            true,
+        )),
+        perceptual_roughness: 0.68,
+        reflectance: 0.32,
+        // End grain is an authored diagnostic layer: keeping it unlit ensures
+        // the cut-ring read remains visible even on inward-facing hull caps.
+        unlit: true,
+        ..default()
+    });
+    let wire_mesh = debug
+        .wireframe
+        .then(|| meshes.add(Cuboid::new(1.0, 1.0, 1.0)));
+    let wire_material = debug.wireframe.then(|| {
+        materials.add(StandardMaterial {
+            base_color: Color::srgb(0.20, 0.92, 1.0),
+            emissive: Color::srgb(0.08, 0.45, 0.55).into(),
+            unlit: true,
+            ..default()
+        })
+    });
     for voxel_mesh in greedy_mesh(&world.blocks, |_| true) {
-        let voxel_mesh = if voxel_mesh.material == BlockKind::WoodenPlank {
-            map_quads_to_macro_atlas(&voxel_mesh, [5, 5], [1280, 1280], &WOODEN_PLANK_5X5_ATLAS)
+        let mesh_layers = if voxel_mesh.material == BlockKind::WoodenPlank {
+            let (mut end_grain, long_grain) = partition_quads_by_normal_axis(&voxel_mesh, 0);
+            end_grain.uvs = normalized_quad_uvs(&end_grain.surface_coordinates);
+            vec![(end_grain, true), (long_grain, false)]
         } else {
-            voxel_mesh
+            vec![(voxel_mesh, false)]
         };
-        let mut mesh = Mesh::new(
-            PrimitiveTopology::TriangleList,
-            RenderAssetUsages::default(),
-        );
-        mesh.insert_attribute(Mesh::ATTRIBUTE_POSITION, voxel_mesh.positions);
-        mesh.insert_attribute(Mesh::ATTRIBUTE_NORMAL, voxel_mesh.normals);
-        let uvs = if voxel_mesh.material == BlockKind::WoodenPlank {
-            voxel_mesh.uvs
-        } else {
-            voxel_mesh.uvs
-        };
-        mesh.insert_attribute(Mesh::ATTRIBUTE_UV_0, uvs);
-        mesh.insert_indices(Indices::U32(voxel_mesh.indices));
-        mesh.generate_tangents()
-            .expect("voxel mesh must support tangent generation for optional normal maps");
-        commands.spawn((
-            Mesh3d(meshes.add(mesh)),
-            MeshMaterial3d(material_handles[&voxel_mesh.material].clone()),
-            VoxelEntity,
-        ));
+        for (voxel_mesh, is_end_grain) in mesh_layers {
+            if voxel_mesh.positions.is_empty() {
+                continue;
+            }
+            let voxel_mesh = if voxel_mesh.material == BlockKind::WoodenPlank && !is_end_grain {
+                tile_quads_with_macro_atlas(
+                    &voxel_mesh,
+                    [5, 5],
+                    [1280, 1280],
+                    &WOODEN_PLANK_5X5_ATLAS,
+                )
+            } else {
+                voxel_mesh
+            };
+            let mut mesh = Mesh::new(
+                PrimitiveTopology::TriangleList,
+                RenderAssetUsages::default(),
+            );
+            let wire_edges = debug.wireframe.then(|| quad_edges(&voxel_mesh.positions));
+            mesh.insert_attribute(Mesh::ATTRIBUTE_POSITION, voxel_mesh.positions);
+            mesh.insert_attribute(Mesh::ATTRIBUTE_NORMAL, voxel_mesh.normals);
+            let uvs = if voxel_mesh.material == BlockKind::WoodenPlank {
+                voxel_mesh.uvs
+            } else {
+                voxel_mesh.uvs
+            };
+            mesh.insert_attribute(Mesh::ATTRIBUTE_UV_0, uvs);
+            mesh.insert_indices(Indices::U32(voxel_mesh.indices));
+            mesh.generate_tangents()
+                .expect("voxel mesh must support tangent generation for optional normal maps");
+            let material = if is_end_grain {
+                wooden_end_grain.clone()
+            } else {
+                material_handles[&voxel_mesh.material].clone()
+            };
+            commands.spawn((
+                Mesh3d(meshes.add(mesh)),
+                MeshMaterial3d(material),
+                VoxelEntity,
+            ));
+            if let (Some(wire_mesh), Some(wire_material), Some(wire_edges)) =
+                (&wire_mesh, &wire_material, wire_edges)
+            {
+                for (start, end) in wire_edges {
+                    let delta = end - start;
+                    let length = delta.length();
+                    if length <= f32::EPSILON {
+                        continue;
+                    }
+                    commands.spawn((
+                        Mesh3d(wire_mesh.clone()),
+                        MeshMaterial3d(wire_material.clone()),
+                        Transform {
+                            translation: (start + end) * 0.5,
+                            rotation: Quat::from_rotation_arc(Vec3::Y, delta / length),
+                            scale: Vec3::new(0.022, length + 0.035, 0.022),
+                        },
+                        VoxelEntity,
+                        WireframeEntity,
+                    ));
+                }
+            }
+        }
     }
-    *last_revision = world.revision;
+    *last_render = Some((world.revision, *debug));
+}
+
+fn quad_edges(positions: &[[f32; 3]]) -> Vec<(Vec3, Vec3)> {
+    positions
+        .chunks_exact(4)
+        .flat_map(|quad| {
+            let vertices = [
+                Vec3::from_array(quad[0]),
+                Vec3::from_array(quad[1]),
+                Vec3::from_array(quad[2]),
+                Vec3::from_array(quad[3]),
+            ];
+            [
+                (vertices[0], vertices[1]),
+                (vertices[1], vertices[2]),
+                (vertices[2], vertices[3]),
+                (vertices[3], vertices[0]),
+            ]
+        })
+        .collect()
 }
 
 struct TechnicalMapPaths {
@@ -955,8 +1428,41 @@ fn load_clamped_texture(asset_server: &AssetServer, path: String, is_srgb: bool)
 fn sync_hud(
     world: Res<VoxelWorld>,
     editor: Res<EditorState>,
-    mut count: Query<&mut Text, (With<CountText>, Without<MaterialText>)>,
-    mut selected: Query<&mut Text, (With<MaterialText>, Without<CountText>)>,
+    blueprint_status: Res<BlueprintStatus>,
+    debug: Res<DebugState>,
+    mut count: Query<
+        &mut Text,
+        (
+            With<CountText>,
+            Without<MaterialText>,
+            Without<BlueprintStatusText>,
+        ),
+    >,
+    mut selected: Query<
+        &mut Text,
+        (
+            With<MaterialText>,
+            Without<CountText>,
+            Without<BlueprintStatusText>,
+        ),
+    >,
+    mut status: Query<
+        &mut Text,
+        (
+            With<BlueprintStatusText>,
+            Without<CountText>,
+            Without<MaterialText>,
+        ),
+    >,
+    mut debug_status: Query<
+        &mut Text,
+        (
+            With<DebugStatusText>,
+            Without<CountText>,
+            Without<MaterialText>,
+            Without<BlueprintStatusText>,
+        ),
+    >,
 ) {
     if world.is_changed() {
         if let Ok(mut text) = count.single_mut() {
@@ -970,6 +1476,21 @@ fn sync_hud(
     if editor.is_changed() {
         if let Ok(mut text) = selected.single_mut() {
             **text = format!("Selected: {}", editor.material.name());
+        }
+    }
+    if blueprint_status.is_changed() {
+        if let Ok(mut text) = status.single_mut() {
+            **text = blueprint_status.0.clone();
+        }
+    }
+    if debug.is_changed() {
+        if let Ok(mut text) = debug_status.single_mut() {
+            **text = format!(
+                "UV: {} · Wire: {} · Map: {}",
+                if debug.uv_view { "on" } else { "off" },
+                if debug.wireframe { "on" } else { "off" },
+                debug.tech_map.label(),
+            );
         }
     }
 }
@@ -1012,22 +1533,67 @@ mod tests {
     use super::*;
 
     #[test]
-    fn new_world_starts_with_one_centered_wood_voxel() {
+    fn new_world_starts_with_a_centered_wooden_boat() {
         let world = new_ship_world();
-        assert_eq!(world.blocks.len(), 1);
-        assert_eq!(world.blocks[&IVec3::ZERO], BlockKind::WoodenPlank);
+        assert_eq!(world.blocks.len(), 87);
+        assert!(
+            world
+                .blocks
+                .values()
+                .all(|kind| *kind == BlockKind::WoodenPlank)
+        );
     }
 
     #[test]
-    fn ray_hits_front_face_of_center_voxel() {
+    fn ray_hits_front_face_of_starter_boat() {
         let hit = raycast_voxels(
             Vec3::new(0.0, 0.0, 5.0),
             Vec3::NEG_Z,
             &new_ship_world().blocks,
         )
-        .expect("center voxel should be hit");
-        assert_eq!(hit.cell, IVec3::ZERO);
+        .expect("starter boat should be hit");
         assert_eq!(hit.normal, IVec3::Z);
+    }
+
+    #[test]
+    fn blueprint_round_trip_preserves_cells_and_materials() {
+        // The portable MagicaVoxel subset stores model-local coordinates; the
+        // importer centers X/Z in the editor, matching a centered export.
+        let mut world = VoxelWorld::single(IVec3::new(-3, 1, 2), BlockKind::WoodenPlank);
+        world.blocks.insert(IVec3::new(2, 0, -3), BlockKind::Iron);
+        let restored = parse_blueprint(&serialize_blueprint(&world).expect("blueprint writes"))
+            .expect("blueprint parses");
+        assert_eq!(restored, world.blocks);
+    }
+
+    #[test]
+    fn blueprint_rejects_non_vox_data() {
+        assert!(
+            parse_blueprint(b"not a voxel file")
+                .unwrap_err()
+                .contains("VOX")
+        );
+    }
+
+    #[test]
+    fn tech_map_cycle_returns_to_base_color() {
+        let mut map = TechMapView::BaseColor;
+        for _ in 0..6 {
+            map = map.next();
+        }
+        assert_eq!(map, TechMapView::BaseColor);
+    }
+
+    #[test]
+    fn quad_edge_builder_emits_four_edges_per_quad() {
+        let edges = quad_edges(&[
+            [0.0, 0.0, 0.0],
+            [1.0, 0.0, 0.0],
+            [1.0, 1.0, 0.0],
+            [0.0, 1.0, 0.0],
+        ]);
+        assert_eq!(edges.len(), 4);
+        assert_eq!(edges[0], (Vec3::ZERO, Vec3::X));
     }
 
     #[test]

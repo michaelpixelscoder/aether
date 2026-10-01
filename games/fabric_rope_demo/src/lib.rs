@@ -15,8 +15,8 @@ const PURPLE_LIGHT: Color = Color::srgb(0.62, 0.30, 0.96);
 const GOLD: Color = Color::srgb(0.84, 0.57, 0.18);
 const ROPE: Color = Color::srgb(0.38, 0.20, 0.08);
 const PARCHMENT: Color = Color::srgb(0.96, 0.88, 0.69);
-const FABRIC_WIDTH: usize = 128;
-const FABRIC_HEIGHT: usize = 128;
+const FABRIC_WIDTH: usize = 16;
+const FABRIC_HEIGHT: usize = 12;
 const SPACING: f32 = 0.42;
 const DEFAULT_TILE_SIZE: f32 = 0.36;
 const DEFAULT_STITCH_GAP: f32 = 0.025;
@@ -95,8 +95,6 @@ struct DemoState {
     tile_mode: TileMode,
     cuts: u32,
     tile_size: f32,
-    fabric_width: usize,
-    fabric_height: usize,
     stitch_gap: f32,
     stitch_damping: f32,
     thickness: f32,
@@ -123,11 +121,7 @@ impl DemoState {
             fabric.node(0, FABRIC_HEIGHT - 1),
             fabric.node(FABRIC_WIDTH - 1, FABRIC_HEIGHT - 1),
         ];
-        let tile_width = DEFAULT_TILE_SIZE + DEFAULT_STITCH_GAP;
-        let anchor_positions = [
-            Vec3::new(-(FABRIC_WIDTH as f32) * tile_width * 0.5, (FABRIC_HEIGHT as f32) * tile_width + 2.0, 0.0),
-            Vec3::new((FABRIC_WIDTH as f32) * tile_width * 0.5, (FABRIC_HEIGHT as f32) * tile_width + 2.0, 0.0)
-        ];
+        let anchor_positions = [Vec3::new(-3.25, 4.85, 0.0), Vec3::new(3.25, 4.85, 0.0)];
         let mut ropes = Vec::new();
         let mut rendered_links = Vec::new();
         let mut anchor_nodes = Vec::new();
@@ -161,8 +155,6 @@ impl DemoState {
         Self {
             graph,
             fabric,
-            fabric_width: FABRIC_WIDTH,
-            fabric_height: FABRIC_HEIGHT,
             ropes,
             rendered_links,
             anchor_nodes,
@@ -333,7 +325,7 @@ fn spawn_ui(commands: &mut Commands) {
                 position_type: PositionType::Absolute,
                 left: px(20),
                 top: px(20),
-                flex_direction: FlexDirection::Row,
+                flex_direction: FlexDirection::Column,
                 row_gap: px(7),
                 padding: UiRect::all(px(16)),
                 border: UiRect::all(px(1)),
@@ -361,27 +353,27 @@ fn spawn_ui(commands: &mut Commands) {
                 ));
             });
 
-            // root.spawn((
-            //     Node {
-            //         position_type: PositionType::Absolute,
-            //         left: px(20),
-            //         right: px(20),
-            //         bottom: px(20),
-            //         padding: UiRect::axes(px(16), px(10)),
-            //         justify_content: JustifyContent::Center,
-            //         align_items: AlignItems::Center,
-            //         border: UiRect::all(px(1)),
-            //         border_radius: BorderRadius::all(px(18)),
-            //         ..default()
-            //     },
-            //     BackgroundColor(Color::srgba(0.015, 0.035, 0.07, 0.92)),
-            //     BorderColor::all(Color::srgba(0.84, 0.57, 0.18, 0.65)),
-            // ))
-            // .with_child((
-            //     Text::new("Right-drag orbit · Shift-right/middle pan · Wheel zoom\nA/D move anchor · W wind · X cut rope · T tear fabric · 1/2/3 tiles · P pause · N step · R reset\n[/] tile size · ,/. stitch gap · -/= stitch damping · ;/' thickness"),
-            //     TextFont::from_font_size(13.0),
-            //     TextColor(Color::srgb(0.76, 0.80, 0.88)),
-            // ));
+            root.spawn((
+                Node {
+                    position_type: PositionType::Absolute,
+                    left: px(20),
+                    right: px(20),
+                    bottom: px(-100),
+                    padding: UiRect::axes(px(16), px(10)),
+                    justify_content: JustifyContent::Center,
+                    align_items: AlignItems::Center,
+                    border: UiRect::all(px(1)),
+                    border_radius: BorderRadius::all(px(18)),
+                    ..default()
+                },
+                BackgroundColor(Color::srgba(0.015, 0.035, 0.07, 0.92)),
+                BorderColor::all(Color::srgba(0.84, 0.57, 0.18, 0.65)),
+            ))
+            .with_child((
+                Text::new("Right-drag orbit · Shift-right/middle pan · Wheel zoom\nA/D move anchor · W wind · X cut rope · T tear fabric · 1/2/3 tiles · P pause · N step · R reset\n[/] tile size · ,/. stitch gap · -/= stitch damping · ;/' thickness"),
+                TextFont::from_font_size(13.0),
+                TextColor(Color::srgb(0.76, 0.80, 0.88)),
+            ));
         });
 }
 

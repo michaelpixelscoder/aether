@@ -38,6 +38,65 @@ pub struct VoxelMesh<T> {
     pub indices: Vec<u32>,
 }
 
+/// Partitions a voxel mesh's quads by the axis of their outward normal.
+///
+/// A ship hull uses this to give its fore/aft cut faces an end-grain material,
+/// while its deck and hull planks retain long grain.  The function intentionally
+/// retains complete quads, so the authored macro-atlas UVs are never cut apart.
+pub fn partition_quads_by_normal_axis<T>(
+    mesh: &VoxelMesh<T>,
+    axis: usize,
+) -> (VoxelMesh<T>, VoxelMesh<T>)
+where
+    T: Copy,
+{
+    assert!(axis < 3, "normal axis must be x, y, or z");
+    assert!(mesh.positions.len().is_multiple_of(4));
+    assert!(mesh.normals.len() == mesh.positions.len());
+    assert!(mesh.surface_coordinates.len() == mesh.positions.len());
+    assert!(mesh.uvs.len() == mesh.positions.len());
+
+    let empty = || VoxelMesh {
+        material: mesh.material,
+        positions: Vec::new(),
+        normals: Vec::new(),
+        surface_coordinates: Vec::new(),
+        uvs: Vec::new(),
+        indices: Vec::new(),
+    };
+    let mut aligned = empty();
+    let mut other = empty();
+    for quad_index in 0..(mesh.positions.len() / 4) {
+        let source = quad_index * 4;
+        let target = if mesh.normals[source][axis].abs() > 0.5 {
+            &mut aligned
+        } else {
+            &mut other
+        };
+        let base = target.positions.len() as u32;
+        target
+            .positions
+            .extend_from_slice(&mesh.positions[source..source + 4]);
+        target
+            .normals
+            .extend_from_slice(&mesh.normals[source..source + 4]);
+        target
+            .surface_coordinates
+            .extend_from_slice(&mesh.surface_coordinates[source..source + 4]);
+        target.uvs.extend_from_slice(&mesh.uvs[source..source + 4]);
+        // Preserve the source winding: negative-facing quads have the reverse
+        // index order so their geometric normal agrees with their stored normal.
+        // Rebuilding every quad as forward-facing makes one side of a hull
+        // receive no direct PBR lighting.
+        target.indices.extend(
+            mesh.indices[quad_index * 6..quad_index * 6 + 6]
+                .iter()
+                .map(|index| base + (*index - source as u32)),
+        );
+    }
+    (aligned, other)
+}
+
 /// Converts face-oriented body-space coordinates into UVs that cover each
 /// greedy quad exactly once.
 ///
@@ -218,28 +277,179 @@ where
             .filter(|region| region.size == size)
             .collect::<Vec<_>>();
         let selected = if candidates.is_empty() {
-            None
+            // A face can exceed the currently authored vocabulary. Stretch the
+            // nearest complete plank template, never the whole atlas (whose
+            // unused packing area would otherwise render as a black end face).
+            regions.iter().min_by_key(|region| {
+                (region.size[0] - size[0]).abs() + (region.size[1] - size[1]).abs()
+            })
         } else {
             let seed = u_min.floor() as i32 + v_min.floor() as i32 * 31;
             Some(candidates[seed.rem_euclid(candidates.len() as i32) as usize])
         };
-        let (min, max) = selected.map_or(([0.0, 0.0], [1.0, 1.0]), |region| {
-            (
-                [
-                    region.origin[0] as f32 / atlas_cells[0] as f32 + inset[0],
-                    region.origin[1] as f32 / atlas_cells[1] as f32 + inset[1],
-                ],
-                [
-                    (region.origin[0] + region.size[0]) as f32 / atlas_cells[0] as f32 - inset[0],
-                    (region.origin[1] + region.size[1]) as f32 / atlas_cells[1] as f32 - inset[1],
-                ],
-            )
-        });
+        let region = selected.expect("atlas must provide at least one region");
+        let (min, max) = (
+            [
+                region.origin[0] as f32 / atlas_cells[0] as f32 + inset[0],
+                region.origin[1] as f32 / atlas_cells[1] as f32 + inset[1],
+            ],
+            [
+                (region.origin[0] + region.size[0]) as f32 / atlas_cells[0] as f32 - inset[0],
+                (region.origin[1] + region.size[1]) as f32 / atlas_cells[1] as f32 - inset[1],
+            ],
+        );
         mapped
             .uvs
             .extend([min, [max[0], min[1]], max, [min[0], max[1]]]);
     }
     mapped
+}
+
+/// Decomposes arbitrary greedy quads into complete authored atlas templates.
+///
+/// Unlike [`map_quads_to_macro_atlas`], this function never stretches the
+/// nearest template over an oversized face. A 5×10 deck, for example, becomes
+/// five 5×2 authored courses. Long 5×1 textures may also be rotated to cover
+/// a 1×5 vertical face, keeping the wood fibre direction coherent.
+pub fn tile_quads_with_macro_atlas<T>(
+    mesh: &VoxelMesh<T>,
+    atlas_cells: [i32; 2],
+    atlas_pixels: [u32; 2],
+    regions: &[MacroAtlasRegion],
+) -> VoxelMesh<T>
+where
+    T: Copy,
+{
+    assert!(
+        !regions.is_empty(),
+        "atlas must provide at least one region"
+    );
+    let mut tiled = VoxelMesh {
+        material: mesh.material,
+        positions: Vec::new(),
+        normals: Vec::new(),
+        surface_coordinates: Vec::new(),
+        uvs: Vec::new(),
+        indices: Vec::new(),
+    };
+    let inset = [0.5 / atlas_pixels[0] as f32, 0.5 / atlas_pixels[1] as f32];
+    for quad_index in 0..(mesh.positions.len() / 4) {
+        let vertex = quad_index * 4;
+        let coordinates = &mesh.surface_coordinates[vertex..vertex + 4];
+        let u_min = coordinates
+            .iter()
+            .map(|p| p[0])
+            .fold(f32::INFINITY, f32::min);
+        let u_max = coordinates
+            .iter()
+            .map(|p| p[0])
+            .fold(f32::NEG_INFINITY, f32::max);
+        let v_min = coordinates
+            .iter()
+            .map(|p| p[1])
+            .fold(f32::INFINITY, f32::min);
+        let v_max = coordinates
+            .iter()
+            .map(|p| p[1])
+            .fold(f32::NEG_INFINITY, f32::max);
+        let width = (u_max - u_min).round() as i32;
+        let height = (v_max - v_min).round() as i32;
+        let forward = mesh.indices[quad_index * 6 + 1] == (vertex + 1) as u32;
+        let positions = &mesh.positions[vertex..vertex + 4];
+        let normal = mesh.normals[vertex];
+
+        let mut occupied = vec![false; (width * height) as usize];
+        while let Some((x, y)) = (0..height).find_map(|y| {
+            (0..width)
+                .find(|x| !occupied[(y * width + x) as usize])
+                .map(|x| (x, y))
+        }) {
+            let mut candidates = regions
+                .iter()
+                .enumerate()
+                .flat_map(|(index, region)| {
+                    [
+                        (region.size[0], region.size[1], false, index, region),
+                        (region.size[1], region.size[0], true, index, region),
+                    ]
+                })
+                .filter(|(tile_w, tile_h, _, _, _)| {
+                    *tile_w <= width - x
+                        && *tile_h <= height - y
+                        && (0..*tile_h).all(|dy| {
+                            (0..*tile_w).all(|dx| !occupied[((y + dy) * width + x + dx) as usize])
+                        })
+                })
+                .collect::<Vec<_>>();
+            candidates
+                .sort_by_key(|(tile_w, tile_h, _, index, _)| (-tile_w * tile_h, *index as i32));
+            // Prefer the largest complete tile. When variants have the same
+            // dimensions, cycle them deterministically by body-space cell.
+            let largest_area = candidates
+                .iter()
+                .map(|(tile_w, tile_h, _, _, _)| tile_w * tile_h)
+                .max()
+                .expect("1×1 atlas template must cover every greedy quad");
+            let same_size = candidates
+                .iter()
+                .filter(|(w, h, _, _, _)| *w * *h == largest_area)
+                .collect::<Vec<_>>();
+            let &(tile_w, tile_h, rotated, _, region) =
+                same_size[((x + y * 31).rem_euclid(same_size.len() as i32)) as usize];
+            let u0 = x as f32 / width as f32;
+            let u1 = (x + tile_w) as f32 / width as f32;
+            let v0 = y as f32 / height as f32;
+            let v1 = (y + tile_h) as f32 / height as f32;
+            let point = |u: f32, v: f32| {
+                let top = lerp3(positions[0], positions[1], u);
+                let bottom = lerp3(positions[3], positions[2], u);
+                lerp3(top, bottom, v)
+            };
+            let first = tiled.positions.len() as u32;
+            tiled
+                .positions
+                .extend([point(u0, v0), point(u1, v0), point(u1, v1), point(u0, v1)]);
+            tiled.normals.extend([normal; 4]);
+            tiled.surface_coordinates.extend([
+                [u_min + x as f32, v_min + y as f32],
+                [u_min + (x + tile_w) as f32, v_min + y as f32],
+                [u_min + (x + tile_w) as f32, v_min + (y + tile_h) as f32],
+                [u_min + x as f32, v_min + (y + tile_h) as f32],
+            ]);
+            let min = [
+                region.origin[0] as f32 / atlas_cells[0] as f32 + inset[0],
+                region.origin[1] as f32 / atlas_cells[1] as f32 + inset[1],
+            ];
+            let max = [
+                (region.origin[0] + region.size[0]) as f32 / atlas_cells[0] as f32 - inset[0],
+                (region.origin[1] + region.size[1]) as f32 / atlas_cells[1] as f32 - inset[1],
+            ];
+            if rotated {
+                tiled
+                    .uvs
+                    .extend([min, [min[0], max[1]], max, [max[0], min[1]]]);
+            } else {
+                tiled
+                    .uvs
+                    .extend([min, [max[0], min[1]], max, [min[0], max[1]]]);
+            }
+            if forward {
+                tiled
+                    .indices
+                    .extend([first, first + 1, first + 2, first, first + 2, first + 3]);
+            } else {
+                tiled
+                    .indices
+                    .extend([first, first + 2, first + 1, first, first + 3, first + 2]);
+            }
+            for dy in 0..tile_h {
+                for dx in 0..tile_w {
+                    occupied[((y + dy) * width + x + dx) as usize] = true;
+                }
+            }
+        }
+    }
+    tiled
 }
 
 #[allow(clippy::too_many_arguments)]

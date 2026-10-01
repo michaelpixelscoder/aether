@@ -4,7 +4,10 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use aether_voxels::{MacroAtlasRegion, greedy_mesh, map_quads_to_macro_atlas};
+use aether_voxels::{
+    MacroAtlasRegion, greedy_mesh, normalized_quad_uvs, partition_quads_by_normal_axis,
+    tile_quads_with_macro_atlas,
+};
 use bevy::{
     app::AppExit,
     asset::RenderAssetUsages,
@@ -23,7 +26,7 @@ const WIDTH: u32 = 800;
 const HEIGHT: u32 = 600;
 const WARMUP_FRAMES: u32 = 30;
 
-const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 9] = [
+const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 11] = [
     MacroAtlasRegion {
         origin: [0, 0],
         size: [1, 1],
@@ -59,6 +62,14 @@ const WOODEN_PLANK_5X5_ATLAS: [MacroAtlasRegion; 9] = [
     MacroAtlasRegion {
         origin: [0, 3],
         size: [5, 2],
+    },
+    MacroAtlasRegion {
+        origin: [0, 3],
+        size: [5, 1],
+    },
+    MacroAtlasRegion {
+        origin: [0, 4],
+        size: [5, 1],
     },
 ];
 
@@ -231,6 +242,7 @@ impl GalleryState {
 #[derive(Resource)]
 struct GalleryAssets {
     wooden_plank: Handle<StandardMaterial>,
+    wooden_end_grain: Handle<StandardMaterial>,
     textures: Vec<Handle<Image>>,
 }
 
@@ -250,6 +262,14 @@ fn setup(
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
+    // Keep the shaded, outward-facing end grain readable in the gallery. The
+    // directional key still defines form; this only prevents the opposite bow
+    // from collapsing into an indistinguishable black silhouette.
+    commands.insert_resource(GlobalAmbientLight {
+        color: Color::srgb(0.32, 0.38, 0.46),
+        brightness: 350.0,
+        affects_lightmapped_meshes: true,
+    });
     let wooden_plank_texture = asset_server.load_with_settings(
         gallery.texture.clone(),
         |settings: &mut ImageLoaderSettings| {
@@ -285,10 +305,29 @@ fn setup(
         reflectance: 0.32,
         ..default()
     });
+    let end_grain_texture = asset_server.load_with_settings(
+        "voxel_materials/wooden_plank/textures/end_grain.png",
+        |settings: &mut ImageLoaderSettings| {
+            settings.sampler = ImageSampler::Descriptor(ImageSamplerDescriptor {
+                address_mode_u: ImageAddressMode::ClampToEdge,
+                address_mode_v: ImageAddressMode::ClampToEdge,
+                ..default()
+            });
+        },
+    );
+    let wooden_end_grain = materials.add(StandardMaterial {
+        base_color_texture: Some(end_grain_texture.clone()),
+        perceptual_roughness: 0.68,
+        reflectance: 0.32,
+        unlit: true,
+        ..default()
+    });
     commands.insert_resource(GalleryAssets {
         wooden_plank,
+        wooden_end_grain,
         textures: vec![
             wooden_plank_texture,
+            end_grain_texture,
             height_texture,
             normal_texture,
             orm_texture,
@@ -357,13 +396,33 @@ fn gallery_tick(
         let fixture = gallery.fixtures[gallery.index].clone();
         let voxel_meshes = greedy_mesh(&fixture.blocks, |_| true)
             .into_iter()
-            .map(|mesh| {
-                map_quads_to_macro_atlas(&mesh, [5, 5], [1280, 1280], &WOODEN_PLANK_5X5_ATLAS)
+            .flat_map(|mesh| {
+                let (mut end_grain, long_grain) = partition_quads_by_normal_axis(&mesh, 0);
+                end_grain.uvs = normalized_quad_uvs(&end_grain.surface_coordinates);
+                [
+                    (end_grain, true),
+                    (
+                        tile_quads_with_macro_atlas(
+                            &long_grain,
+                            [5, 5],
+                            [1280, 1280],
+                            &WOODEN_PLANK_5X5_ATLAS,
+                        ),
+                        false,
+                    ),
+                ]
             })
+            .filter(|(mesh, _)| !mesh.positions.is_empty())
             .collect::<Vec<_>>();
-        gallery.current_vertices = voxel_meshes.iter().map(|mesh| mesh.positions.len()).sum();
-        gallery.current_indices = voxel_meshes.iter().map(|mesh| mesh.indices.len()).sum();
-        for voxel_mesh in voxel_meshes {
+        gallery.current_vertices = voxel_meshes
+            .iter()
+            .map(|(mesh, _)| mesh.positions.len())
+            .sum();
+        gallery.current_indices = voxel_meshes
+            .iter()
+            .map(|(mesh, _)| mesh.indices.len())
+            .sum();
+        for (voxel_mesh, is_end_grain) in voxel_meshes {
             let mut mesh = Mesh::new(
                 PrimitiveTopology::TriangleList,
                 RenderAssetUsages::default(),
@@ -377,17 +436,27 @@ fn gallery_tick(
                 .expect("voxel mesh must support tangent generation for normal mapping");
             commands.spawn((
                 Mesh3d(meshes.add(mesh)),
-                MeshMaterial3d(gallery_assets.wooden_plank.clone()),
+                MeshMaterial3d(if is_end_grain {
+                    gallery_assets.wooden_end_grain.clone()
+                } else {
+                    gallery_assets.wooden_plank.clone()
+                }),
                 fixture.body_transform,
                 FixtureScene,
             ));
         }
         let (center, radius) = fixture.center_and_radius();
         let view_direction = Vec3::new(1.25, 0.9, 1.45).normalize();
-        **camera = Transform::from_translation(center + view_direction * (radius * 2.2 + 3.0))
-            .looking_at(center, Vec3::Y);
+        let distance_scale = if fixture.slug == "starter-boat" {
+            1.35
+        } else {
+            2.2
+        };
+        **camera =
+            Transform::from_translation(center + view_direction * (radius * distance_scale + 2.0))
+                .looking_at(center, Vec3::Y);
         ***label = format!(
-            "Cycle 1 | {}\n{} voxels | body-local 4x4 macro mapping",
+            "Wood atlas | {}\n{} voxels | greedy face-size mapping",
             fixture.title,
             fixture.blocks.len()
         );
@@ -563,6 +632,24 @@ fn fixtures() -> Vec<Fixture> {
         (0..6).flat_map(|x| (0..3).map(move |y| IVec3::new(x, y, 0))),
     )
     .transformed(Vec3::new(-4.0, 0.0, 3.0), Quat::from_rotation_y(0.65));
+    let mut boat_cells = Vec::new();
+    for x in 1..=10 {
+        for z in -2..=2 {
+            boat_cells.push(IVec3::new(x, 0, z));
+        }
+        boat_cells.extend([IVec3::new(x, 1, -3), IVec3::new(x, 1, 3)]);
+    }
+    for z in -1..=1 {
+        boat_cells.extend([
+            IVec3::new(0, 1, z),
+            IVec3::new(11, 1, z),
+            IVec3::new(0, 2, z),
+        ]);
+    }
+    for x in [1, 2, 9, 10] {
+        boat_cells.extend([IVec3::new(x, 2, -3), IVec3::new(x, 2, 3)]);
+    }
+    let boat = Fixture::new("starter-boat", "Simple all-wood starter boat", boat_cells);
 
     vec![
         single,
@@ -573,6 +660,7 @@ fn fixtures() -> Vec<Fixture> {
         chunk_seam,
         hull,
         transformed,
+        boat,
     ]
 }
 

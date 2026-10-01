@@ -42,6 +42,19 @@ cargo fabric-rope-demo
 
 ## Browser
 
+For development, run the browser host with autoreload:
+
+```sh
+npm run dev:web
+```
+
+It serves `http://localhost:8080/`, watches the Rust workspace, web host files,
+and copied assets, then rebuilds and refreshes connected tabs after each successful
+change. Use `AETHER_WEB_PORT=3000 npm run dev:web` (or `-- --port 3000`) to choose
+another port.
+
+For a one-off production-style build:
+
 ```sh
 ./scripts/build-web.sh
 python3 -m http.server --directory dist 8080
