@@ -1,0 +1,647 @@
+[
+  {
+    "path": ".cargo/config.toml",
+    "bytes": 210,
+    "sha256": "c457897ee2616ecf524ce2a6994c0d23a1f7c6b20b27b4f314078677c6155edf"
+  },
+  {
+    "path": "Cargo.lock",
+    "bytes": 149543,
+    "sha256": "8771d14cf40fbcf112e45d41e06afd1a3e270cb1e3fb565263f11c2dd5397832"
+  },
+  {
+    "path": "Cargo.toml",
+    "bytes": 1274,
+    "sha256": "8c14490c9eaf834cc4e6cbf7480c5e748487dd6298aeb6aace6f233846e41651"
+  },
+  {
+    "path": "assets/art/anchor.glb",
+    "bytes": 175944,
+    "sha256": "73afc2031610a04760694193ff00394480cdd5c592bd74309361d8291118d00e"
+  },
+  {
+    "path": "assets/art/harpoon.glb",
+    "bytes": 2523376,
+    "sha256": "1e097a8ea18fe1c15d652cdb2c7261e9516804cc9d09386832c10a2a318680c9"
+  },
+  {
+    "path": "assets/art/helm.glb",
+    "bytes": 2509296,
+    "sha256": "ab24e2bb5d3502281cc323a051c64151c6ca76fd92e6b5a8367df7820f386487"
+  },
+  {
+    "path": "assets/art/island-0.glb",
+    "bytes": 12619760,
+    "sha256": "f31a9f1d6b9c9d71737ddb08f93876e76fcb4b095e4e25e235f74dd272259e65"
+  },
+  {
+    "path": "assets/art/island-1.glb",
+    "bytes": 21629412,
+    "sha256": "81384eb221ea6d6fff73d463dd455889ed122350ed19e42a37385cbb1b52a75b"
+  },
+  {
+    "path": "assets/art/island-2.glb",
+    "bytes": 10801132,
+    "sha256": "d2d97fd726a743654ed2a83babe9048e7cdc8a3ab421a7707747bd11558458b0"
+  },
+  {
+    "path": "assets/art/lift.glb",
+    "bytes": 114416,
+    "sha256": "d9efd855ca276e833de8a1a98a2e3f98d897d4bb6476fa73e318f5388dc421b6"
+  },
+  {
+    "path": "assets/art/sail.glb",
+    "bytes": 22407308,
+    "sha256": "b9abaaec6a8513b18ea9fb0711ebd3ec3b9c9031368edca14e93126dc0f34833"
+  },
+  {
+    "path": "assets/art/sanctuary.glb",
+    "bytes": 6877644,
+    "sha256": "c344894d3b8393a8085ff36f268d3a295b758f7e4c6d45c53866a377f039e9ef"
+  },
+  {
+    "path": "assets/art/tank.glb",
+    "bytes": 111080,
+    "sha256": "1f1f0ebce0c9bfb5e71a4e8852e18e7b35d293f2efda3e570d1b53accb165bcd"
+  },
+  {
+    "path": "assets/audio/bell.wav",
+    "bytes": 48554,
+    "sha256": "ab96607a5c932952da8e2710d0253ecbdfd67cc93ba8938ec4ab1e6184462ed4"
+  },
+  {
+    "path": "assets/audio/click.wav",
+    "bytes": 6658,
+    "sha256": "de4b9c2b31c54a4d400e346716b16f77382e347f5968ab302c8b7e0cdf60e1a5"
+  },
+  {
+    "path": "assets/audio/tension.wav",
+    "bytes": 15920,
+    "sha256": "9633c7bc83762f6cba34faac0d48d56cb47af79e27aaca5b128100e4325cc7c7"
+  },
+  {
+    "path": "assets/audio/warning.wav",
+    "bytes": 22094,
+    "sha256": "9ab77aa047af322258f4861953c7100b530044d6bf31c6b7b279e38b259101d2"
+  },
+  {
+    "path": "assets/characters/Knight.glb",
+    "bytes": 3659532,
+    "sha256": "60428e3abc09ba83e595d256e3af8c5c976b46cdae599f0802fc82b4a3445168"
+  },
+  {
+    "path": "assets/characters/LICENSE.txt",
+    "bytes": 923,
+    "sha256": "efdd298aae817351e8939a4ea60600cf33aea87c1ce188e5710beff655c23173"
+  },
+  {
+    "path": "assets/characters/README.md",
+    "bytes": 484,
+    "sha256": "032b5847c78cf84ecc6559fa33a4f1e40fc753287bdb3f5081dbcbf929c9c155"
+  },
+  {
+    "path": "assets/fonts/cormorantgaramond-OFL.txt",
+    "bytes": 4387,
+    "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+  },
+  {
+    "path": "assets/fonts/cormorantgaramond.ttf",
+    "bytes": 1195560,
+    "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0"
+  },
+  {
+    "path": "assets/fonts/notosans-OFL.txt",
+    "bytes": 4396,
+    "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+  },
+  {
+    "path": "assets/fonts/notosans.ttf",
+    "bytes": 2049096,
+    "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d"
+  },
+  {
+    "path": "assets/shaders/sky.wgsl",
+    "bytes": 1086,
+    "sha256": "11b2d5ccf4cc78f4750e743c71546cd59903b8104c8dff72b439323a11c8fa89"
+  },
+  {
+    "path": "assets/textures/PROVENANCE.txt",
+    "bytes": 985,
+    "sha256": "7a33ee470aec7ed5c1a9bb156b38a5d66322a9e0874a994bde7173b489e351cb"
+  },
+  {
+    "path": "assets/textures/cedar-normal.png",
+    "bytes": 2147020,
+    "sha256": "49e4159f90440c1ea9265635e841a76f20d116f02db21709bbee90a8079860bc"
+  },
+  {
+    "path": "assets/textures/cedar.png",
+    "bytes": 2455540,
+    "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914"
+  },
+  {
+    "path": "assets/textures/grass.png",
+    "bytes": 118783,
+    "sha256": "33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca"
+  },
+  {
+    "path": "assets/textures/indigo-canvas.png",
+    "bytes": 3217993,
+    "sha256": "959ad02e433763268115086d4f01cca41458e85a5187501a1831d6c02ddf3c98"
+  },
+  {
+    "path": "assets/textures/sky-panorama-v2.png",
+    "bytes": 1833063,
+    "sha256": "7ba401ae8b91de1fede63b67c041204db3c1d9d38e5e902d24f829226679d6cd"
+  },
+  {
+    "path": "assets/textures/stone.png",
+    "bytes": 81691,
+    "sha256": "1865d728650a2300014e0686325c4631b07afe234f572394597099f4f8126a5d"
+  },
+  {
+    "path": "crates/aether_core/Cargo.toml",
+    "bytes": 248,
+    "sha256": "5d957f7950b9c3d211c95e184141a1bd9118698132e7a0be737c8f6d3201ba5a"
+  },
+  {
+    "path": "crates/aether_core/examples/art_scene.rs",
+    "bytes": 1070,
+    "sha256": "b5bc2b9533a5b762adde29f3dbceefc3db2f4742c5521910887e7f20eda9e5b9"
+  },
+  {
+    "path": "crates/aether_core/examples/mesh_bench.rs",
+    "bytes": 1671,
+    "sha256": "7f9e83dcb366cd3d052c0b536c6de89f494a3fd76d27e50e64d8becfb5115020"
+  },
+  {
+    "path": "crates/aether_core/src/body.rs",
+    "bytes": 10709,
+    "sha256": "ca1e682f4a284d41ab279c7014b4745654832abac12c60cf0f6862d1acbfdf0f"
+  },
+  {
+    "path": "crates/aether_core/src/edit.rs",
+    "bytes": 3515,
+    "sha256": "355958165fdfac010df7505df8ec4d685c1c112fec40138cfa9a6c189b9e0c86"
+  },
+  {
+    "path": "crates/aether_core/src/fields.rs",
+    "bytes": 3254,
+    "sha256": "a19dba8a9f5a664abf7242cf0aa936c5e083a0b4d953ec375a5bc199ef738672"
+  },
+  {
+    "path": "crates/aether_core/src/fixtures.rs",
+    "bytes": 2999,
+    "sha256": "449fded66ef6bf4c2c2af1785ea5a0c4f3325ce2f131489b99b8d86318119e59"
+  },
+  {
+    "path": "crates/aether_core/src/grid.rs",
+    "bytes": 4698,
+    "sha256": "dcc6aee16a164d849ee9108b64d7c36e0a0cbbfbfa5b5600e1bf89fbf192796a"
+  },
+  {
+    "path": "crates/aether_core/src/lib.rs",
+    "bytes": 488,
+    "sha256": "d51f2d559fe6dfe53321b976377d7ad763ba7dd9c5bc29b5bbca5162f92ad4de"
+  },
+  {
+    "path": "crates/aether_core/src/mesh.rs",
+    "bytes": 4699,
+    "sha256": "bbde14ccb8c6610e25bd1cb428f572592702ec1283a8dd9d9e2de129779dba30"
+  },
+  {
+    "path": "crates/aether_core/src/picking.rs",
+    "bytes": 3054,
+    "sha256": "6b89308e1d82ef052386399e18cbd008f535a4691914e3b842076a8c0a4fba5a"
+  },
+  {
+    "path": "crates/aether_core/src/save.rs",
+    "bytes": 6362,
+    "sha256": "bbf10cb398f2116976471eca6f074a8917573907d33d24ec7b9fd0a06498e66c"
+  },
+  {
+    "path": "crates/aether_core/src/terrain.rs",
+    "bytes": 10543,
+    "sha256": "98ebb40d98c2d3038794351dfa182f0a633db73dd941cdc864126c36c8965265"
+  },
+  {
+    "path": "crates/aether_core/src/tuning.rs",
+    "bytes": 941,
+    "sha256": "e2a751642c22d15f33c54bac3b7818d8253e32cfb9f874d190ab5be7e2aebda3"
+  },
+  {
+    "path": "crates/aether_core/tests/domain.rs",
+    "bytes": 18531,
+    "sha256": "395de8f0f4152c2d501b6c5f9b4ada92e676104a810bd38b201376c1d2a921cc"
+  },
+  {
+    "path": "crates/aether_game/Cargo.toml",
+    "bytes": 983,
+    "sha256": "752a1b018ef190843e2b2a3f1d48b97cc3485877857773bf83f59b3619d4381f"
+  },
+  {
+    "path": "crates/aether_game/examples/export_fixtures.rs",
+    "bytes": 1138,
+    "sha256": "d1eae81da74bd361d7f8f82fdcf8a7adc1b69bbf3d63b3dc4917d1bc050fc9c5"
+  },
+  {
+    "path": "crates/aether_game/src/app.rs",
+    "bytes": 11840,
+    "sha256": "91bf3665e6b4c40813591e5744677e1eb90ba9ea095faa7603e8af6f94d9cbd2"
+  },
+  {
+    "path": "crates/aether_game/src/audio.rs",
+    "bytes": 2260,
+    "sha256": "45b73df01798bf987351c9d4d8b27412ecee2bd2c2980656627d9ae933d43a3c"
+  },
+  {
+    "path": "crates/aether_game/src/bindings.rs",
+    "bytes": 8211,
+    "sha256": "eba2db7808104faae0088a3ecc6e30a794444627216ea4fa0e8bbbb806cc9115"
+  },
+  {
+    "path": "crates/aether_game/src/camera.rs",
+    "bytes": 3625,
+    "sha256": "e2e44d65f0dcae0cafcd49b3eb981dba75931e596011fec672b8d8db62b961ae"
+  },
+  {
+    "path": "crates/aether_game/src/closing.rs",
+    "bytes": 1953,
+    "sha256": "0da1a5ca365092423b3762e419b1d7df6e29ab47776a208797b57de98477a300"
+  },
+  {
+    "path": "crates/aether_game/src/controls.rs",
+    "bytes": 24935,
+    "sha256": "183d9084a25c8eda862d0006eda140b5e5e3b8992590c1a184ca1367ecf167fe"
+  },
+  {
+    "path": "crates/aether_game/src/diagnostics.rs",
+    "bytes": 25892,
+    "sha256": "630908e6e25e1a99caad42a9c2853ee169cd0628ba3587db46025ef8971d5604"
+  },
+  {
+    "path": "crates/aether_game/src/editor.rs",
+    "bytes": 15981,
+    "sha256": "3398c447fc40835f6c51033523f6f79256d57cd2564b45f9322c3a82c3aa322a"
+  },
+  {
+    "path": "crates/aether_game/src/interface.rs",
+    "bytes": 27495,
+    "sha256": "4a5c041ec3a051110782b9235652f7ea92a97ebbf739283cdffdccc8d72cec2f"
+  },
+  {
+    "path": "crates/aether_game/src/lib.rs",
+    "bytes": 282,
+    "sha256": "af1f4afd64a0b6b59a440cf11093afcaed17d6ed17b0ad926a8665f6f6bf9a85"
+  },
+  {
+    "path": "crates/aether_game/src/main.rs",
+    "bytes": 168,
+    "sha256": "b860c2367fad4341b4d6c6508b6033876a486211b7d0c23b5f8ca13742864c7b"
+  },
+  {
+    "path": "crates/aether_game/src/persistence.rs",
+    "bytes": 17165,
+    "sha256": "a6e46f221ebcbcf609cb970cb7e2dd6024700b124d8532a0e6a7e90392d7e540"
+  },
+  {
+    "path": "crates/aether_game/src/scenario.rs",
+    "bytes": 6815,
+    "sha256": "2e1373dc29b3ba3e173239996abf92b5a56b6277612552f9408c205d8439a21c"
+  },
+  {
+    "path": "crates/aether_game/src/session.rs",
+    "bytes": 9169,
+    "sha256": "d63e755fb6e869d8723d39f27653043f6a104b972157891736a60bf9d1e87c24"
+  },
+  {
+    "path": "crates/aether_game/src/tutorial.rs",
+    "bytes": 5437,
+    "sha256": "8f67aaedb95641665741b9f884224d11c3f86d660618d63e169d8037619a9c2d"
+  },
+  {
+    "path": "crates/aether_game/tests/storage.rs",
+    "bytes": 4628,
+    "sha256": "8069d869e9850cefcf90e5d1bffb85364b627d5fbd9ee71c0ba28e16f70dcd29"
+  },
+  {
+    "path": "crates/aether_sim/Cargo.toml",
+    "bytes": 315,
+    "sha256": "43cf257b6cce662fcf62a9850a1b7a16cf4b1df157891f54ea586c85d17e657b"
+  },
+  {
+    "path": "crates/aether_sim/examples/pair_benchmark.rs",
+    "bytes": 3321,
+    "sha256": "a0c23a90f184291526af8940361b9f98485b33c1b72aa6020020cf9c8ad04212"
+  },
+  {
+    "path": "crates/aether_sim/src/character.rs",
+    "bytes": 5652,
+    "sha256": "03e85541454ebd46ede7b8f741c9af1e7b9db1fc30a6f041cf407251e0a9da2d"
+  },
+  {
+    "path": "crates/aether_sim/src/flight.rs",
+    "bytes": 4736,
+    "sha256": "2f18b68ef39975be88e4f70951af01ee8e9a804aeb630dd18c80db8f2a5508b7"
+  },
+  {
+    "path": "crates/aether_sim/src/lib.rs",
+    "bytes": 1235,
+    "sha256": "db051cd13158d020f68f6f098711c001e980331d610afd9314ee7fe143ac7105"
+  },
+  {
+    "path": "crates/aether_sim/src/vessel.rs",
+    "bytes": 5247,
+    "sha256": "1c44d74416e1f23b29e0c09b69f8f0c8d315a6c57410be99b50d20631667bf1e"
+  },
+  {
+    "path": "crates/aether_sim/src/world.rs",
+    "bytes": 3525,
+    "sha256": "ccc7fc81d58f900586d1a5b3dafb89115a21d377a21cc0960f904dd372bde637"
+  },
+  {
+    "path": "crates/aether_sim/tests/common/mod.rs",
+    "bytes": 1255,
+    "sha256": "e415ce451953778c29874a80105d47774aa4a36d3a3499e652f0c7ecb79e5be9"
+  },
+  {
+    "path": "crates/aether_sim/tests/envelope.rs",
+    "bytes": 13390,
+    "sha256": "d4d9ec93babee40f1459fab9a727f10b360ccf2e9a4a90d006d8751948db5502"
+  },
+  {
+    "path": "crates/aether_sim/tests/physics.rs",
+    "bytes": 6180,
+    "sha256": "b4302849d9d90f72fb00fec6ad9cfca5cd4526c28a56e1a0234eec28c6a2e75f"
+  },
+  {
+    "path": "crates/aether_sim/tests/scenarios.rs",
+    "bytes": 19336,
+    "sha256": "fa3a9d7f66192888a134f87b9021559fc497418a9e9a85cc1197a999ab9162cb"
+  },
+  {
+    "path": "crates/aether_view/Cargo.toml",
+    "bytes": 418,
+    "sha256": "8d29a81d69ba0843991bef3107a8d919fc8df8afcb17dfb093607a9a7b257377"
+  },
+  {
+    "path": "crates/aether_view/examples/gallery.rs",
+    "bytes": 5370,
+    "sha256": "a94bcd594862b270defcf58171e158c0921da24fab4fea27a2e9a8f091cda84b"
+  },
+  {
+    "path": "crates/aether_view/src/art.rs",
+    "bytes": 4416,
+    "sha256": "d90ccdcd72715657194c12d614c4ef9d2aacddc4b0ead33a19da4b353d88ce8b"
+  },
+  {
+    "path": "crates/aether_view/src/avatar.rs",
+    "bytes": 3310,
+    "sha256": "9694e7b4ff7dd09779eb45f9352d0d2fe630391dede500c239931a5e047cbc6d"
+  },
+  {
+    "path": "crates/aether_view/src/craft.rs",
+    "bytes": 14266,
+    "sha256": "48b9591b253a8720f957288518e6a072bb3ada70d835bbb6230521fca8b6cf3e"
+  },
+  {
+    "path": "crates/aether_view/src/environment.rs",
+    "bytes": 6745,
+    "sha256": "1570299842d91e6bff2f7518f62e28cb6e1ae65893d859c0eb6d6994c8d6c5f7"
+  },
+  {
+    "path": "crates/aether_view/src/lib.rs",
+    "bytes": 2032,
+    "sha256": "d2311383481f78ae5406fa89ba80df132c71dafaf662e59b69a146b7400c7803"
+  },
+  {
+    "path": "crates/aether_view/src/materials.rs",
+    "bytes": 5615,
+    "sha256": "3d4d14aa0ef0722b15bf379e862efe0c38c699ce7845a86751c969a6559b30ba"
+  },
+  {
+    "path": "crates/aether_view/src/mipmaps.rs",
+    "bytes": 5820,
+    "sha256": "b645936329ea0da8724ee32047bf9dc84a07cf476ad8caeee0ce24752bc41b30"
+  },
+  {
+    "path": "crates/aether_view/src/sail.rs",
+    "bytes": 3785,
+    "sha256": "907ec7b4c18685d80f024e59134890b65616664c41e19e27bccb9ea3032afd3e"
+  },
+  {
+    "path": "crates/aether_view/src/voxel.rs",
+    "bytes": 16597,
+    "sha256": "a0d8d84e122c173b11a3e174ab6f8afc5daf6d5d187e36348f99266bf22c2446"
+  },
+  {
+    "path": "crates/aether_view/src/widgets.rs",
+    "bytes": 1601,
+    "sha256": "79bb870263e08884e0f8d439e94d3e052b9364c4717dd3a91352a819212d34ec"
+  },
+  {
+    "path": "rust-toolchain.toml",
+    "bytes": 123,
+    "sha256": "4fa9bb6bd7f294f1263c756536469205af1121722344467eae22aea242c90a18"
+  },
+  {
+    "path": "tools/apply-rust-suggestions.mjs",
+    "bytes": 1791,
+    "sha256": "1e555ef1526a49ca7bd9610f42f9fa99e8374d3f5438a23e41e37b6ee3f37862"
+  },
+  {
+    "path": "tools/art-capture.mjs",
+    "bytes": 2645,
+    "sha256": "35590c1b446eb82ded418db7bee6da96c3eef389dafeb84eea57755d368aabca"
+  },
+  {
+    "path": "tools/art/PROMPTS.md",
+    "bytes": 4548,
+    "sha256": "fd5bc0050c72feedfff0e8c409e6bc76c890a7b2d4a2e68e5cfed6b00f783d30"
+  },
+  {
+    "path": "tools/art/README.md",
+    "bytes": 2228,
+    "sha256": "ddece0bcbcdc3ff199d02fe748c58a3a0f772301643153f2298c7ce88f8ea710"
+  },
+  {
+    "path": "tools/art/build_art.py",
+    "bytes": 15298,
+    "sha256": "609609a66db43cac0f77086c8f9eb1d8f24660bf6540a9b56e242c321247f9de"
+  },
+  {
+    "path": "tools/art/scene.json",
+    "bytes": 144353,
+    "sha256": "56b816c30b4c6fda62b772f34603d05b3da720c3994d2e0eea11d86aded1e2b8"
+  },
+  {
+    "path": "tools/art/source/anchor.blend",
+    "bytes": 124652,
+    "sha256": "db5cd0073a43f0595eb4a1457e789f9eb14e830b09b8e3fe4bd79102491853b3"
+  },
+  {
+    "path": "tools/art/source/harpoon.blend",
+    "bytes": 114561,
+    "sha256": "9d3f7d9ca86ee812208d5ad32c3787108a7e34073399cc1733561b5f4d1ea35f"
+  },
+  {
+    "path": "tools/art/source/helm.blend",
+    "bytes": 111456,
+    "sha256": "4a154d548ed5ab94e98436e66c48c8464bf778e261fc27466277326783c4027b"
+  },
+  {
+    "path": "tools/art/source/island-0.blend",
+    "bytes": 1539107,
+    "sha256": "7e433d8794617667142a6a057612002351e07a67c7723d97bf6e71d9c27bb8f0"
+  },
+  {
+    "path": "tools/art/source/island-1.blend",
+    "bytes": 3292809,
+    "sha256": "8fcf3993a763e59281dd84bdfe1b7ab9c0d8edb7a4df6524eda642341d734384"
+  },
+  {
+    "path": "tools/art/source/island-2.blend",
+    "bytes": 1159877,
+    "sha256": "3caa498b9e5e0b6794fdf54788ace5a88f436e17df9e0cdf19e333064ff5cf8c"
+  },
+  {
+    "path": "tools/art/source/lift.blend",
+    "bytes": 121112,
+    "sha256": "178e88dea6ca3b499bb587e08e8c44a3494001336c5a3c1a620082ff693ab528"
+  },
+  {
+    "path": "tools/art/source/sail.blend",
+    "bytes": 1884750,
+    "sha256": "b0ef908ef77cd5d3a69bbedba445be276979b55ee0509dfb7bc7c3b4a26ae257"
+  },
+  {
+    "path": "tools/art/source/sanctuary.blend",
+    "bytes": 218852,
+    "sha256": "db1aa096e0a266c8e91fd801d6c5ef50b5e9035a1bd27ec4c82d7c615e4ccf96"
+  },
+  {
+    "path": "tools/art/source/tank.blend",
+    "bytes": 118044,
+    "sha256": "15d0fcc5fead3aaad78e4975f1e3e6c87b59fe19d243947e1b862e64a8f76517"
+  },
+  {
+    "path": "tools/art/verify.mjs",
+    "bytes": 2581,
+    "sha256": "57174077e1c26967cda8f0c5a568315a17e8187390e1513b89aad4a3b8849b9e"
+  },
+  {
+    "path": "tools/clean-source.ps1",
+    "bytes": 1231,
+    "sha256": "82f45f6022d791bf98e0e2599f4072b2a2cb2fd832288496e3857f3498649124"
+  },
+  {
+    "path": "tools/contrast-check.mjs",
+    "bytes": 1618,
+    "sha256": "5efaf7b0e5aae8b411a3844c0b05831598d211b6cbeb3def20e280c9beb7d38c"
+  },
+  {
+    "path": "tools/e2e/game.spec.mjs",
+    "bytes": 12046,
+    "sha256": "22b5196866f282f1d922bc77f5c73def6a03430d46e48e8a20fa0710ba638d7e"
+  },
+  {
+    "path": "tools/e2e/lifecycle.spec.mjs",
+    "bytes": 7373,
+    "sha256": "cb62fd2847880c93db9ce781cd38ea863020e0801f12b285dccb47dd4b8e3df5"
+  },
+  {
+    "path": "tools/e2e/sail.spec.mjs",
+    "bytes": 2285,
+    "sha256": "134632ae81df63516161a5a1427c68f6ee26339e77844c58e6e2c0d4ddcde037"
+  },
+  {
+    "path": "tools/edit-latency.mjs",
+    "bytes": 3075,
+    "sha256": "8736c938147135507de877766bda6652adcc1aa4960dabf9ebec85188406d787"
+  },
+  {
+    "path": "tools/generate-audio.mjs",
+    "bytes": 969,
+    "sha256": "fc35231e8b1fc3eae556567a8d89e054a61fd030a0a9e634d228c8f69df12322"
+  },
+  {
+    "path": "tools/native-validation.ps1",
+    "bytes": 2853,
+    "sha256": "579a5ccd14f32e842483a00d53f0e8c2f35b9a3f386bc0530514a9e8367324d4"
+  },
+  {
+    "path": "tools/package-lock.json",
+    "bytes": 1648,
+    "sha256": "50a601a41eae38f8676a088f3733b6c37d8191c0e3c46f99217728bc938d31ea"
+  },
+  {
+    "path": "tools/package-web-check.mjs",
+    "bytes": 4784,
+    "sha256": "b14585ba3a385bf581b7f3b4ce3d727e2b27c10c1eeecb904d9974f457f42ddd"
+  },
+  {
+    "path": "tools/package.json",
+    "bytes": 167,
+    "sha256": "02a4bf4da00168d2f3d7e32d73140f7585c3915eb512eeb72fcca5f5462d2ea4"
+  },
+  {
+    "path": "tools/package.mjs",
+    "bytes": 6781,
+    "sha256": "3967bb7c15362b721c1bbd9660076151e1a7fc3116a5038f7cb7be82a7286e90"
+  },
+  {
+    "path": "tools/package.ps1",
+    "bytes": 1008,
+    "sha256": "031574b2b2effa4bf324763452dd8a60cae66f3ecb97277c191106dc4a06e4e3"
+  },
+  {
+    "path": "tools/playwright.config.mjs",
+    "bytes": 562,
+    "sha256": "b5b149ff3a3bf1e7e88d04deb454866068e425bf7edcf0c64dacded8125a9324"
+  },
+  {
+    "path": "tools/portable-validation.ps1",
+    "bytes": 2482,
+    "sha256": "8f62b36400135204f5586ec10d142166b63c9014c24d8d1b77f4911b4ad6a9fc"
+  },
+  {
+    "path": "tools/run.ps1",
+    "bytes": 765,
+    "sha256": "13f4ece55e7b1b9223ce12a8b01a7c863b3fd0d9e5eec566a219a939e0fbb77e"
+  },
+  {
+    "path": "tools/serve.mjs",
+    "bytes": 1656,
+    "sha256": "7faa88df7a33ebddfc2715fffc6a06159336f9118bf3562a87bbb221c0901fc8"
+  },
+  {
+    "path": "tools/setup.ps1",
+    "bytes": 1542,
+    "sha256": "942e37350969e93ced3d3254fce76d8dda9deb400dba2cc800e0022037ac9134"
+  },
+  {
+    "path": "tools/soak.mjs",
+    "bytes": 6345,
+    "sha256": "4b69ef939310666c041e51e65ee8516dd3daeb42223075e93d0338832ac15085"
+  },
+  {
+    "path": "tools/task-ledger.mjs",
+    "bytes": 28773,
+    "sha256": "59b6204290ed79fabfb8d8168970943e866ffbd751bba4988cf49f3f07417e00"
+  },
+  {
+    "path": "tools/validation-report.mjs",
+    "bytes": 10388,
+    "sha256": "da515494c556fa63a42c1bd72ca71adbdf72b11d1553d77ffaa9c6cbcf8c8d5d"
+  },
+  {
+    "path": "tools/verify.ps1",
+    "bytes": 1499,
+    "sha256": "53975a37a14989434e08ccd8863b67cb3669701f5e614695fc378aeee23c2bbc"
+  },
+  {
+    "path": "web/index.html",
+    "bytes": 5202,
+    "sha256": "e56f12be1008b0d599de80662ee0ef3c11eb2ba9a522a7a0a1f51f000a8c4a29"
+  }
+]

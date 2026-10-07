@@ -1,0 +1,301 @@
+"""Portable original sky renderer and exact continuous-volume recipe rebuild.
+
+Open tools/art/sky-source/sky-world.blend with Blender, then pass --verify-scene,
+--rebuild-volumes, --hero, --final, --ibl, or --refresh after a source edit.
+No external raster, image retouching, resizing or source-grid regeneration occurs.
+"""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import gc
+import hashlib
+import importlib.util
+import json
+import math
+import re
+import sys
+import time
+from pathlib import Path
+from mathutils import Vector
+
+ROOT=Path(__file__).resolve().parents[2]
+SOURCE=ROOT/'tools/art/sky-source'
+MANIFEST=SOURCE/'manifest.json'
+HDR=SOURCE/'sky-world-linear.hdr'
+KTX=SOURCE/'reference/sky-world-rgba16.ktx2'
+EXPOSURE=-.90
+WIDTH,HEIGHT=8192,4096
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def write(path,value):
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
+
+def module(name):
+    spec=importlib.util.spec_from_file_location(name,SOURCE/(name+'.py'))
+    result=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(result)
+    return result
+
+def file_record(path):
+    return {'file':path.relative_to(ROOT).as_posix(),'sha256':sha(path),'bytes':path.stat().st_size}
+
+def final_configuration():
+    scene=bpy.context.scene
+    scene.world.node_tree.nodes['IBL omit direct camera disk | 0 hero, 1 future IBL'].inputs[1].default_value=0
+    scene.world.cycles.sampling_method='MANUAL'
+    scene.world.cycles.sample_map_resolution=4096
+    scene.cycles.device='GPU'
+    scene.cycles.samples=128
+    scene.cycles.adaptive_min_samples=16
+    scene.cycles.use_adaptive_sampling=True
+    scene.cycles.adaptive_threshold=.018
+    scene.cycles.use_denoising=True
+    scene.cycles.denoising_input_passes='RGB'
+    scene.cycles.denoising_use_gpu=False
+    scene.camera.data.type='PANO'
+    scene.camera.data.panorama_type='EQUIRECTANGULAR'
+    scene.camera.rotation_euler=(math.pi/2,0,0)
+    scene.render.use_border=False
+    scene.render.resolution_x,scene.render.resolution_y=WIDTH,HEIGHT
+    scene.render.resolution_percentage=100
+    scene.render.image_settings.file_format='HDR'
+    scene.render.image_settings.color_mode='RGB'
+    scene.view_settings.view_transform='Raw'
+    scene.view_settings.look='None'
+    scene.view_settings.exposure=0
+    scene.view_settings.gamma=1
+
+def verify_scene():
+    manifest=json.loads(MANIFEST.read_text())
+    assert Path(bpy.data.filepath).resolve()==(SOURCE/manifest['source']).resolve()
+    assert sha(Path(bpy.data.filepath))==manifest['source_sha256']
+    final_configuration()
+    fp=module('scene_fingerprint')
+    actual=fp.digest(fp.descriptor(bpy.context.scene))
+    assert actual==manifest['composite_provenance']['descriptor_sha256'], 'Render-relevant source changed; refresh and rerender required'
+    for obj in bpy.context.scene.objects:
+        if obj.type=='VOLUME':
+            assert obj.data.filepath.startswith('//'), 'Volume reference must be relative'
+            path=Path(bpy.path.abspath(obj.data.filepath)).resolve()
+            assert path.is_relative_to(SOURCE.resolve()) and path.is_file()
+    print('PORTABLE_SCENE_VERIFIED',actual,flush=True)
+    return manifest
+
+def rebuild_volumes():
+    started=time.perf_counter()
+    manifest=verify_scene()
+    recipe=json.loads((SOURCE/'recipe.json').read_text())
+    for item in recipe['density_inputs']:
+        assert sha(SOURCE/item['file'])==item['sha256']
+    field=module('volume_union')
+    output=ROOT/'.dream-loop/sky-volume-rebuild'
+    output.mkdir(parents=True,exist_ok=True)
+    data_cache={}
+    materials={}
+    expected={Path(r['file']).name:r for r in manifest['volume_grids']}
+    results=[]
+    for group in recipe['groups']:
+        objects=[]
+        for record in group['cells']:
+            key=(record['grid'],record['density'])
+            if key not in data_cache:
+                if record['density'] not in materials:
+                    material=bpy.data.materials.new('Recipe density '+str(record['density']))
+                    material.use_nodes=True
+                    material.node_tree.nodes.clear()
+                    volume=material.node_tree.nodes.new('ShaderNodeVolumePrincipled')
+                    volume.inputs['Density'].default_value=record['density']
+                    materials[record['density']]=material
+                data=bpy.data.volumes.new('Recipe '+Path(record['grid']).stem)
+                data.filepath=str(SOURCE/record['grid'])
+                data.materials.append(materials[record['density']])
+                data_cache[key]=data
+            obj=bpy.data.objects.new('Recipe | '+record['name'],data_cache[key])
+            bpy.context.scene.collection.objects.link(obj)
+            obj.rotation_mode=record['rotation_mode']
+            obj.location=record['location']
+            obj.rotation_euler=record['rotation_euler']
+            obj.scale=record['scale']
+            objects.append(obj)
+        result=field.union(objects,output/Path(group['file']).name,bpy.data.materials[group['material_name']],group['voxel_metres'])
+        # OpenVDB emits a fresh file UUID on every serialization. Replay only
+        # that recorded header identifier; density/topology bytes are untouched.
+        path=output/Path(group['file']).name
+        data=bytearray(path.read_bytes())
+        identity=group['vdb_file_identifier']
+        offset=identity['offset']
+        identifier=identity['ascii'].encode('ascii')
+        assert len(identifier)==36 and 8<=offset<256
+        pattern=rb'[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}'
+        assert re.fullmatch(pattern,bytes(data[offset:offset+36])) and re.fullmatch(pattern,identifier)
+        payload_hash=hashlib.sha256(data[:offset]+data[offset+36:]).hexdigest()
+        data[offset:offset+36]=identifier
+        assert hashlib.sha256(data[:offset]+data[offset+36:]).hexdigest()==payload_hash
+        path.write_bytes(data)
+        result.update({'sha256':sha(path),'serialization_file_uuid_replayed':True,
+                       'bytes_outside_uuid_sha256':payload_hash})
+        reference=expected[Path(group['file']).name]
+        assert result['sha256']==reference['sha256'], 'Rebuilt density bytes differ: '+result['file']
+        results.append(result)
+        for obj in objects:
+            bpy.data.objects.remove(obj,do_unlink=True)
+    field.SOURCE_CACHE.clear()
+    gc.collect()
+    report={'status':'passed','grid_count':len(results),'original_density_inputs':len(recipe['density_inputs']),
+        'all_derived_sha256_equal':True,'cells':recipe['cells'],'seconds':round(time.perf_counter()-started,3),'grids':results}
+    proof=ROOT/'docs/evidence/sky-volume-rebuild.json'
+    write(proof,report)
+    manifest['rebuild_proof']=proof.relative_to(ROOT).as_posix()
+    manifest['supporting_files']=[r for r in manifest['supporting_files'] if r['file']!=manifest['rebuild_proof']]
+    manifest['supporting_files'].append(file_record(proof))
+    manifest['generator_sha256']=sha(Path(__file__))
+    write(MANIFEST,manifest)
+    print('PORTABLE_VOLUME_REBUILD',json.dumps({k:v for k,v in report.items() if k!='grids'}),flush=True)
+
+def refresh():
+    manifest=json.loads(MANIFEST.read_text())
+    final_configuration()
+    fp=module('scene_fingerprint')
+    value=fp.descriptor(bpy.context.scene)
+    descriptor=SOURCE/'render-scene-descriptor.json'
+    write(descriptor,value)
+    manifest['source_sha256']=sha(SOURCE/manifest['source'])
+    manifest['generator_sha256']=sha(Path(__file__))
+    manifest['output_needs_render']=True
+    manifest['composite_provenance']['status']='modified source awaiting original final render'
+    manifest['composite_provenance']['descriptor_sha256']=fp.digest(value)
+    for record in manifest['supporting_files']:
+        if record['file']==descriptor.relative_to(ROOT).as_posix():
+            record.update(file_record(descriptor))
+    write(MANIFEST,manifest)
+    print('SOURCE_REFRESHED_OUTPUT_REQUIRES_RENDER',flush=True)
+
+def render_ibl():
+    """Original lower-resolution environment; star omitted only on camera rays."""
+    manifest=verify_scene()
+    scene=bpy.context.scene
+    preferences=bpy.context.preferences.addons['cycles'].preferences
+    preferences.compute_device_type='OPTIX';preferences.get_devices()
+    assert any(device.type=='OPTIX' for device in preferences.devices)
+    for device in preferences.devices:device.use=device.type=='OPTIX'
+    scene.world.node_tree.nodes['IBL omit direct camera disk | 0 hero, 1 future IBL'].inputs[1].default_value=1
+    scene.render.resolution_x,scene.render.resolution_y=1024,512
+    output=SOURCE/'sky-world-ibl-linear.hdr'
+    scene.render.filepath=str(output)
+    fp=module('scene_fingerprint');descriptor=fp.descriptor(scene)
+    descriptor_path=SOURCE/'ibl-render-scene-descriptor.json'
+    write(descriptor_path,descriptor)
+    started=time.perf_counter();bpy.ops.render.render(write_still=True)
+    pixels=module('sky_io').read_linear_hdr(output)
+    assert pixels.shape==(512,1024,3)
+    record={'file':output.name,'sha256':sha(output),'bytes':output.stat().st_size,
+        'dimensions':[1024,512],'original_render_dimensions':[1024,512],
+        'view_transform_applied':False,'raw_exposure_stops':0,'runtime_reference_exposure_stops':EXPOSURE,
+        'seconds':time.perf_counter()-started,'samples_max':128,'renderer':'Cycles OPTIX',
+        'source_sha256':manifest['source_sha256'],'generator_sha256':sha(Path(__file__)),
+        'render_descriptor_sha256':fp.digest(descriptor),'camera_solar_disk_visible':False,
+        'solar_illumination_active':True,'radiance_min':float(pixels.min()),'radiance_max':float(pixels.max()),
+        'finite_nonnegative':True,'resampled':False,'descriptor':descriptor_path.name}
+    code=SOURCE/'history'/('ibl-rendered-portable-'+sha(Path(__file__))+'.py.txt')
+    code.write_bytes(Path(__file__).read_bytes())
+    proof=SOURCE/'history'/('ibl-render-record-'+sha(output)+'.json')
+    write(proof,record)
+    record['rendered_generator_evidence']=code.relative_to(SOURCE).as_posix()
+    record['render_record']=proof.relative_to(SOURCE).as_posix()
+    manifest['ibl_authoring']=record
+    replacements=[file_record(p) for p in (output,descriptor_path,code,proof)]
+    names={r['file'] for r in replacements}
+    manifest['supporting_files']=[r for r in manifest['supporting_files'] if r['file'] not in names]+replacements
+    manifest['generator_sha256']=sha(Path(__file__))
+    write(MANIFEST,manifest)
+    print('ORIGINAL_IBL_RENDERED',json.dumps(record),flush=True)
+
+def render(hero=False):
+    manifest=verify_scene()
+    scene=bpy.context.scene
+    preferences=bpy.context.preferences.addons['cycles'].preferences
+    preferences.compute_device_type='OPTIX'
+    preferences.get_devices()
+    assert any(device.type=='OPTIX' for device in preferences.devices)
+    for device in preferences.devices:
+        device.use=device.type=='OPTIX'
+    if hero:
+        scene.camera.data.type='PERSP'
+        scene.camera.data.sensor_fit='VERTICAL'
+        scene.camera.data.sensor_height=24
+        scene.camera.data.lens=12/math.tan(math.radians(45)/2)
+        scene.camera.rotation_euler=Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+        scene.render.resolution_x,scene.render.resolution_y=1672,941
+        scene.cycles.samples=64
+        scene.cycles.adaptive_threshold=.045
+        scene.render.image_settings.file_format='PNG'
+        scene.view_settings.view_transform='AgX'
+        scene.view_settings.look='AgX - Medium High Contrast'
+        scene.view_settings.exposure=EXPOSURE
+        output=ROOT/'.dream-loop/sky-portable-hero.png'
+    else:
+        output=HDR
+    output.parent.mkdir(parents=True,exist_ok=True)
+    scene.render.filepath=str(output)
+    started=time.perf_counter()
+    bpy.ops.render.render(write_still=True)
+    elapsed=time.perf_counter()-started
+    if hero:
+        print('ORIGINAL_HERO_RENDERED',output.relative_to(ROOT).as_posix(),elapsed,flush=True)
+        return
+    import numpy as np
+    io=module('sky_io')
+    pixels=io.read_linear_hdr(HDR)
+    assert pixels.shape==(HEIGHT,WIDTH,3)
+    maximum=float(pixels.max())
+    encoding=.25  # Explicit exact RGBE power-of-two encoding keeps production gain stable.
+    assert maximum*encoding<=65504, 'Stable encoding cannot represent this source; reject' 
+    rgba=np.ones((HEIGHT,WIDTH,4),dtype='<f2')
+    for y in range(HEIGHT):
+        rgba[y,:,:3]=pixels[y]*encoding
+    assert np.isfinite(rgba).all()
+    assert np.array_equal(rgba[:,:,:3].astype(np.float32)/encoding,pixels), 'HDR to fp16 lost source values'
+    KTX.parent.mkdir(parents=True,exist_ok=True)
+    io.write_rgba16_ktx2(KTX,rgba)
+    hdr_record={'file':HDR.name,'sha256':sha(HDR),'bytes':HDR.stat().st_size,'dimensions':[WIDTH,HEIGHT],
+        'original_render_dimensions':[WIDTH,HEIGHT],'view_transform_applied':False,'raw_exposure_stops':0,'resampled':False,
+        'runtime_reference_exposure_stops':EXPOSURE,'render_descriptor_sha256':manifest['composite_provenance']['descriptor_sha256'],
+        'seconds':elapsed,'samples_max':128,
+        'renderer':'Cycles OPTIX','source_sha256':manifest['source_sha256'],'generator_sha256':sha(Path(__file__))}
+    manifest.update({'output_needs_render':False,'generator_sha256':sha(Path(__file__)),'output':KTX.relative_to(ROOT).as_posix(),'output_sha256':sha(KTX),
+                     'bytes':KTX.stat().st_size,'authoring_hdr':hdr_record,'render_seconds':elapsed})
+    manifest['linear_encoding'].update({'encoding_scale':encoding,'recommended_runtime_multiplier':2**EXPOSURE/encoding,
+        'source_radiance_min':float(pixels.min()),'source_radiance_max':maximum,
+        'encoded_radiance_min':float(rgba[:,:,:3].min()),'encoded_radiance_max':float(rgba[:,:,:3].max())})
+    manifest['integration'].update({'encoding_scale':encoding,'radiance_gain_f32':round(2**EXPOSURE/encoding,7)})
+    code=SOURCE/'history'/('rendered-portable-'+sha(Path(__file__))+'.py.txt')
+    code.write_bytes(Path(__file__).read_bytes())
+    proof=SOURCE/'history'/('render-record-'+sha(HDR)+'.json')
+    write(proof,hdr_record)
+    manifest['supporting_files'] += [file_record(code),file_record(proof)]
+    manifest['composite_provenance'].update({'status':'rendered from packaged scene','rendered_scene_sha256':manifest['source_sha256'],
+        'rendered_generator_sha256':sha(Path(__file__)),'rendered_generator_evidence':code.relative_to(SOURCE).as_posix(),
+        'render_record':proof.relative_to(SOURCE).as_posix()})
+    write(MANIFEST,manifest)
+    print('ORIGINAL_8K_RENDERED',json.dumps(hdr_record),flush=True)
+
+if __name__=='__main__':
+    args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+    if '--verify-scene' in args:
+        verify_scene()
+    elif '--rebuild-volumes' in args or '--prepare' in args:
+        rebuild_volumes()
+    elif '--refresh' in args:
+        refresh()
+    elif '--hero' in args or '--preview' in args:
+        render(hero=True)
+    elif '--final' in args:
+        render()
+    elif '--ibl' in args:
+        render_ibl()
+    else:
+        raise ValueError('Use --verify-scene, --rebuild-volumes, --hero, --final, --ibl or --refresh')

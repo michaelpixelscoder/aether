@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "recipe": "r55-directional-reflected-light",
+  "status": "Portable isolated candidate, native visual review accepted; final performance/integration owned by parent",
+  "generator": "tools/art/build_cloud_lighting.mjs",
+  "generator_sha256": "ad7ebbc793f06db058e4e3ce22963b1e237d5d64a9c1900a57099ffcb07c3a5d",
+  "output": "assets/shaders/clouds.wgsl",
+  "output_sha256": "ffcc09fbaea8702ddcab1938c3ee1e2c3c8c5431a765a1c00002b2f7ef9119b6",
+  "source_baseline": "tools/art/cloud-r55/archive/captured-clouds-r54.wgsl",
+  "source_baseline_sha256": "ebd34cf654f6b9fa4a37640a7d37b15405cbd317a00a0ec31204b4ab5b823d48",
+  "density_and_bindings_byte_identical": true,
+  "fragment_integration_byte_identical": true,
+  "sky_modified": false,
+  "cache_modified": false,
+  "r47_immutable": {
+    "tools/art/cloud-r47/contract.json": "3cd7bf04fc7632dc7a04203bcf0c9d453fc2252a001c5fff635d4900b8d47752",
+    "docs/evidence/cloud-r47-audit.json": "2a80be11aff187bb79376b43b784d73b892a5b38a6e12e0b51e358f19bf1be8a",
+    "docs/evidence/cloud-r47-ray-comparison.json": "e46c2a91c07613c30c200500ad729df327caa67545c992ac4c338010b34f24d0",
+    "docs/evidence/cloud-cache-fidelity.json": "f890fbf40795f4adabd0004b999b278a25b98f61d716939a5edca3ad296535a4",
+    "tools/art/review_cloud_field_cpu.py": "38c019e756a41e518fdac9755c3e8a782ca76976853a219f1cd4492d6140573b",
+    "tools/art/compare_cloud_rays_cpu.py": "72e6d97c2742d2761ca0ce1d3c10a841505bda0a9057dd9f642cd89edf909c41",
+    "tools/art/verify_cloud_cache.py": "95429a2e918830bb2a9d5788916657fd12349ab41eca4db7318dd0213da85724",
+    "tools/art/verify-cloud-cache.mjs": "3771ce5821585f0fa68afec8fad6c3c880d33db28d6c021e3434fc84b8471a94"
+  },
+  "lighting": {
+    "sun_direction": [
+      -0.85356265,
+      -0.050973576,
+      -0.5184906
+    ],
+    "bounce_elevation_degrees": 42,
+    "bounce_strength": 0.35,
+    "bounce_radiance": [
+      3,
+      1.86,
+      0.96
+    ],
+    "direct_radiance": [
+      3,
+      2.55,
+      1.95
+    ],
+    "phase_g": 0.45,
+    "shadow_taps_per_lobe": 4,
+    "lighting_refresh_steps": [
+      4,
+      2
+    ],
+    "daylight_factor": 1
+  },
+  "validation": {
+    "report": "docs/evidence/cloud-r55-lighting-fidelity.json",
+    "report_sha256": "f9ed1ead732865f40e99a8dfc84b512e51871d2f56c161d155a391c5717940f4",
+    "maximum_opaque_rmse": 0.017313651463302257,
+    "maximum_edge_opacity_p99": 0.07571425557136527,
+    "negative_cases": 12,
+    "limits_unchanged": true,
+    "all_opacity_errors_identical_to_r47": true,
+    "cpu_seconds": 254.791858500001,
+    "maximum_cpu_threads": 4
+  },
+  "native_review": [
+    {
+      "file": "tools/art/cloud-r55/archive/world-r55-cloud-bounce.png",
+      "sha256": "2bc9ae1ce8094b1a12e3deb8dc30834ce5ea85d0e8b87f5a8633a6675908c00d"
+    },
+    {
+      "file": "tools/art/cloud-r55/archive/world-r55-cloud-hollow.png",
+      "sha256": "c0872d3b1faa0654173f956a7be4476e1df9fbc576bb4ee54b71b3c9b8fadfd4"
+    }
+  ],
+  "limitations": [
+    "fixed-noise orthographic CPU field fidelity, not a runtime image match",
+    "directional reflected-light approximation, not an exact multiple-scattering solution",
+    "native timing comparison not isolated from other scene changes",
+    "full target golden opening not solved"
+  ]
+}

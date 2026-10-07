@@ -1,0 +1,142 @@
+{
+  "generator": "tools/art/build_ship.py",
+  "generator_sha256": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd",
+  "units": "metres",
+  "axes": "right-handed glTF, Y up, +Z exterior",
+  "shared_images": [
+    {
+      "file": "assets/textures/cedar.png",
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914"
+    },
+    {
+      "file": "assets/textures/cedar-normal.png",
+      "sha256": "49e4159f90440c1ea9265635e841a76f20d116f02db21709bbee90a8079860bc"
+    }
+  ],
+  "modules": {
+    "rail": {
+      "file": "assets/ship/rail.glb",
+      "sha256": "a6c4fc1eb06f3bd4a705953776c6130c327bb038580ac70762ffad92f5447d7a",
+      "bytes": 136448,
+      "source": "tools/art/ship-source/rail.blend",
+      "source_sha256": "bbf54407b6349fa9e479f9ea602f321082cfb15f22eeccc1dca4d0e40471bba5",
+      "triangles": 1742,
+      "meshes": 3,
+      "materials": 3,
+      "bounds_xyz_m": [
+        [
+          -0.25,
+          0.25
+        ],
+        [
+          0.0,
+          0.6
+        ],
+        [
+          -0.032,
+          0.031
+        ]
+      ],
+      "origin": "foot centre on deck surface",
+      "dimensions_m": [
+        0.5,
+        0.6,
+        0.064
+      ],
+      "attachment": "X horizontal; Y up; \u00b1Z visible"
+    },
+    "trim": {
+      "file": "assets/ship/trim.glb",
+      "sha256": "474fa6218c12b16a29cdcc43d3d11f3d585fc3a62b7fc1a876206998f603c3ce",
+      "bytes": 42052,
+      "source": "tools/art/ship-source/trim.blend",
+      "source_sha256": "3c05f8d9e3350f627a7a2473216a37d1a8974151eca8a3cfa7f8af88b1cf9b89",
+      "triangles": 360,
+      "meshes": 3,
+      "materials": 3,
+      "bounds_xyz_m": [
+        [
+          -0.25,
+          0.25
+        ],
+        [
+          -0.125,
+          0.125
+        ],
+        [
+          -0.0,
+          0.025
+        ]
+      ],
+      "origin": "centre of rear attachment plane Z=0",
+      "dimensions_m": [
+        0.5,
+        0.25,
+        0.025
+      ],
+      "attachment": "X horizontal; Y up; relief projects toward +Z"
+    },
+    "cabin-detail": {
+      "file": "assets/ship/cabin-detail.glb",
+      "sha256": "4b664783470395b2f9f84c49b050fa8784b8d1aa6474c82d2cbecd18e08a9629",
+      "bytes": 97224,
+      "source": "tools/art/ship-source/cabin-detail.blend",
+      "source_sha256": "62d78f0bc22f9e5c0a00dd431525511679fbcf5f46fa93aad6968e51bab808fb",
+      "triangles": 868,
+      "meshes": 3,
+      "materials": 3,
+      "bounds_xyz_m": [
+        [
+          -0.25,
+          0.25
+        ],
+        [
+          -0.25,
+          0.25
+        ],
+        [
+          -0.0,
+          0.065
+        ]
+      ],
+      "origin": "centre of rear attachment plane Z=0",
+      "dimensions_m": [
+        0.5,
+        0.5,
+        0.065
+      ],
+      "attachment": "X horizontal; Y up; exterior +Z; open window aperture"
+    },
+    "lantern": {
+      "file": "assets/ship/lantern.glb",
+      "sha256": "14721e1cc4e55780a5794be914650edbb6606847b6e0224d6733ecf40b93b6c1",
+      "bytes": 76644,
+      "source": "tools/art/ship-source/lantern.blend",
+      "source_sha256": "d077ea9c8bfe76f3e5255788a24ca1f1daa9fc6c24575b6564c30ec2a51c7d68",
+      "triangles": 896,
+      "meshes": 3,
+      "materials": 3,
+      "bounds_xyz_m": [
+        [
+          -0.087769,
+          0.087769
+        ],
+        [
+          0.0,
+          0.45
+        ],
+        [
+          -0.094187,
+          0.094187
+        ]
+      ],
+      "origin": "foot centre",
+      "dimensions_m": [
+        0.19,
+        0.45,
+        0.19
+      ],
+      "attachment": "Y up; latch faces +Z"
+    }
+  }
+}

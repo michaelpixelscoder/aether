@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "native_png_sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+  "derived_ktx2_sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+  "generator_sha256": "f7bdbf8ba55e6763fafe66cfab9ea60950357289e1fb9c6f07f533765dd58c14",
+  "format": "Rgba8UnormSrgb / VK43",
+  "alpha": "straight; linear alpha sample flagged in DFD",
+  "method": "Iterated box-area average over complete source footprint: linear RGB weighted by alpha, alpha average, unpremultiply, sRGB encode and round to nearest RGBA8. NPOT floor-halving; no coverage MASK or alpha rescale.",
+  "native_level0_decoded_rgba_byte_exact": true,
+  "native_rgba_sha256": "86483a9ec5af97fb938f9e358d460e6285728596ff0b02595e6c6ba20aca218a",
+  "gpu_bytes": 8384072,
+  "file_bytes": 8384632,
+  "levels": [
+    {
+      "level": 0,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "gpu_bytes": 6290064,
+      "sha256": "86483a9ec5af97fb938f9e358d460e6285728596ff0b02595e6c6ba20aca218a",
+      "offset": 2094568
+    },
+    {
+      "level": 1,
+      "dimensions": [
+        627,
+        627
+      ],
+      "gpu_bytes": 1572516,
+      "sha256": "1dc0d06e47fed5b6be1ff66b4ea64d0d32a9b8f80901aa8c89ff42dd8814f29d",
+      "offset": 522048
+    },
+    {
+      "level": 2,
+      "dimensions": [
+        313,
+        313
+      ],
+      "gpu_bytes": 391876,
+      "sha256": "3776695dc09b5643bbe4b2a5d2271479367bb20d1377420b247013680a61a3ae",
+      "offset": 130168
+    },
+    {
+      "level": 3,
+      "dimensions": [
+        156,
+        156
+      ],
+      "gpu_bytes": 97344,
+      "sha256": "baf693837f46b00a6d98a887b6b78047f26d8c2c1107268f4a852af5371ba4df",
+      "offset": 32824
+    },
+    {
+      "level": 4,
+      "dimensions": [
+        78,
+        78
+      ],
+      "gpu_bytes": 24336,
+      "sha256": "0621a9cdeae67c95f8ab11dd917412b58814ca1881fd5026b83db598365c6246",
+      "offset": 8488
+    },
+    {
+      "level": 5,
+      "dimensions": [
+        39,
+        39
+      ],
+      "gpu_bytes": 6084,
+      "sha256": "fb71265ba3c0784d95d854660823ac96f16cd7726b211b9e702e3ccd5af3c123",
+      "offset": 2400
+    },
+    {
+      "level": 6,
+      "dimensions": [
+        19,
+        19
+      ],
+      "gpu_bytes": 1444,
+      "sha256": "a7f2fe78748a320b5ade6853287f44ffabf1d84f496cf6fe01d8d956448e0bfe",
+      "offset": 952
+    },
+    {
+      "level": 7,
+      "dimensions": [
+        9,
+        9
+      ],
+      "gpu_bytes": 324,
+      "sha256": "3bb07b66ec1df22dc579ceedc17b27f254d8e1bd15fd202243b7e1ae3916f6a5",
+      "offset": 624
+    },
+    {
+      "level": 8,
+      "dimensions": [
+        4,
+        4
+      ],
+      "gpu_bytes": 64,
+      "sha256": "ef090c042afdf0d99d55d183d264ddff679f97a5e31c80fc702933fd4ebcd50c",
+      "offset": 560
+    },
+    {
+      "level": 9,
+      "dimensions": [
+        2,
+        2
+      ],
+      "gpu_bytes": 16,
+      "sha256": "bafff7a336c2e8c0ad353f8191b2c58fa144455a957b0058ae54dc771797b08f",
+      "offset": 544
+    },
+    {
+      "level": 10,
+      "dimensions": [
+        1,
+        1
+      ],
+      "gpu_bytes": 4,
+      "sha256": "087a4fa493a982acb69f4e3d215dffa20fa55fbd5ce3243a14f7268548061efd",
+      "offset": 536
+    }
+  ],
+  "tests_passed": [
+    "constant RGBA through odd-sized chain",
+    "transparent cyan cannot contaminate opaque red",
+    "fully transparent color discarded in derived levels",
+    "linear-light black/white mean encodes as sRGB188"
+  ],
+  "seconds": 1.207219100000657
+}

@@ -1,0 +1,397 @@
+{
+  "id": "0.1.0-27bffa9ee363",
+  "browser": "154.0.8037.95",
+  "base": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/",
+  "network": {
+    "download_mbit_per_second": 50,
+    "upload_mbit_per_second": 10,
+    "latency_ms": 40
+  },
+  "runs": [
+    {
+      "phase": "cold",
+      "first_interactive_seconds": 10.290315299999998,
+      "wasm_linear_memory_bytes": 423297024,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/aether_game.js",
+          "transfer_bytes": 18662,
+          "decoded_bytes": 117113,
+          "duration_ms": 71.3000000002794
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/snippets/aether_game-c1a7554f8ff6d85f/inline0.js",
+          "transfer_bytes": 403,
+          "decoded_bytes": 179,
+          "duration_ms": 58.700000000186265
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/snippets/aether_game-c1a7554f8ff6d85f/inline1.js",
+          "transfer_bytes": 378,
+          "decoded_bytes": 119,
+          "duration_ms": 58.89999999990687
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/snippets/aether_game-c1a7554f8ff6d85f/inline2.js",
+          "transfer_bytes": 1119,
+          "decoded_bytes": 2022,
+          "duration_ms": 58.6999999997206
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/aether_game_bg.wasm",
+          "transfer_bytes": 11043691,
+          "decoded_bytes": 97815930,
+          "duration_ms": 1990.1000000000931
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/shaders/sky.wgsl",
+          "transfer_bytes": 1386,
+          "decoded_bytes": 1086,
+          "duration_ms": 72.89999999990687
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/textures/cedar-normal.png",
+          "transfer_bytes": 2147320,
+          "decoded_bytes": 2147020,
+          "duration_ms": 2084.899999999907
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/textures/cedar.png",
+          "transfer_bytes": 2455840,
+          "decoded_bytes": 2455540,
+          "duration_ms": 2381.9000000003725
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/fonts/notosans.ttf",
+          "transfer_bytes": 1054819,
+          "decoded_bytes": 2049096,
+          "duration_ms": 1070.1000000000931
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/fonts/cormorantgaramond.ttf",
+          "transfer_bytes": 267308,
+          "decoded_bytes": 1195560,
+          "duration_ms": 321.29999999981374
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/textures/sky-panorama-v2.png",
+          "transfer_bytes": 1833363,
+          "decoded_bytes": 1833063,
+          "duration_ms": 1787
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/helm.glb",
+          "transfer_bytes": 2445382,
+          "decoded_bytes": 2509296,
+          "duration_ms": 2428.7000000001863
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/sail.glb",
+          "transfer_bytes": 7850072,
+          "decoded_bytes": 22407308,
+          "duration_ms": 6266.100000000093
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/tank.glb",
+          "transfer_bytes": 13834,
+          "decoded_bytes": 111080,
+          "duration_ms": 1132.1000000000931
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/lift.glb",
+          "transfer_bytes": 14355,
+          "decoded_bytes": 114416,
+          "duration_ms": 1193.8999999999069
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/harpoon.glb",
+          "transfer_bytes": 2447179,
+          "decoded_bytes": 2523376,
+          "duration_ms": 3581.600000000093
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/island-0.glb",
+          "transfer_bytes": 3384839,
+          "decoded_bytes": 12619760,
+          "duration_ms": 5094.699999999721
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/island-1.glb",
+          "transfer_bytes": 4044899,
+          "decoded_bytes": 21629412,
+          "duration_ms": 5702.699999999721
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/island-2.glb",
+          "transfer_bytes": 3255038,
+          "decoded_bytes": 10801132,
+          "duration_ms": 5328
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/anchor.glb",
+          "transfer_bytes": 23799,
+          "decoded_bytes": 175944,
+          "duration_ms": 3659.3000000002794
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/sanctuary.glb",
+          "transfer_bytes": 5896563,
+          "decoded_bytes": 6877644,
+          "duration_ms": 6295.399999999907
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 1057570,
+          "decoded_bytes": 3659532,
+          "duration_ms": 4740.600000000093
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 4741.299999999814
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 4741.5999999996275
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 4742
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/click.wav",
+          "transfer_bytes": 5003,
+          "decoded_bytes": 6658,
+          "duration_ms": 4798.200000000186
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/bell.wav",
+          "transfer_bytes": 30175,
+          "decoded_bytes": 48554,
+          "duration_ms": 4875.5
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/warning.wav",
+          "transfer_bytes": 13952,
+          "decoded_bytes": 22094,
+          "duration_ms": 4932.299999999814
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/tension.wav",
+          "transfer_bytes": 9669,
+          "decoded_bytes": 15920,
+          "duration_ms": 4999.800000000279
+        }
+      ]
+    },
+    {
+      "phase": "warm",
+      "first_interactive_seconds": 8.633726900000001,
+      "wasm_linear_memory_bytes": 454688768,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/aether_game.js",
+          "transfer_bytes": 0,
+          "decoded_bytes": 117113,
+          "duration_ms": 0
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/snippets/aether_game-c1a7554f8ff6d85f/inline0.js",
+          "transfer_bytes": 0,
+          "decoded_bytes": 179,
+          "duration_ms": 0
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/snippets/aether_game-c1a7554f8ff6d85f/inline1.js",
+          "transfer_bytes": 0,
+          "decoded_bytes": 119,
+          "duration_ms": 0
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/snippets/aether_game-c1a7554f8ff6d85f/inline2.js",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2022,
+          "duration_ms": 0
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/build/aether_game_bg.wasm",
+          "transfer_bytes": 11043691,
+          "decoded_bytes": 97815930,
+          "duration_ms": 2000.4000000003725
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/shaders/sky.wgsl",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1086,
+          "duration_ms": 0.7999999998137355
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/textures/cedar-normal.png",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2147020,
+          "duration_ms": 344.70000000018626
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/textures/cedar.png",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2455540,
+          "duration_ms": 346.20000000018626
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/fonts/notosans.ttf",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2049096,
+          "duration_ms": 13.200000000186265
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/fonts/cormorantgaramond.ttf",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1195560,
+          "duration_ms": 9.799999999813735
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/textures/sky-panorama-v2.png",
+          "transfer_bytes": 0,
+          "decoded_bytes": 1833063,
+          "duration_ms": 14.399999999906868
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/helm.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2509296,
+          "duration_ms": 361.20000000018626
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/sail.glb",
+          "transfer_bytes": 7850072,
+          "decoded_bytes": 22407308,
+          "duration_ms": 5560.800000000279
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/tank.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 111080,
+          "duration_ms": 19.600000000093132
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/lift.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 114416,
+          "duration_ms": 20.300000000279397
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/harpoon.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 2523376,
+          "duration_ms": 362.29999999981374
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/island-0.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 12619760,
+          "duration_ms": 663.5
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/island-1.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 21629412,
+          "duration_ms": 5245.800000000279
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/island-2.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 10801132,
+          "duration_ms": 710.1000000000931
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/sanctuary.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 6877644,
+          "duration_ms": 538.5
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/art/anchor.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 175944,
+          "duration_ms": 46.09999999962747
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 404.5
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 404.8000000002794
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 405.10000000009313
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+          "transfer_bytes": 0,
+          "decoded_bytes": 3659532,
+          "duration_ms": 405.39999999990687
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/click.wav",
+          "transfer_bytes": 0,
+          "decoded_bytes": 6658,
+          "duration_ms": 58.09999999962747
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/bell.wav",
+          "transfer_bytes": 0,
+          "decoded_bytes": 48554,
+          "duration_ms": 58.8000000002794
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/warning.wav",
+          "transfer_bytes": 0,
+          "decoded_bytes": 22094,
+          "duration_ms": 58.90000000037253
+        },
+        {
+          "url": "http://127.0.0.1:4174/0.1.0-27bffa9ee363/r/0.1.0-27bffa9ee363/assets/audio/tension.wav",
+          "transfer_bytes": 0,
+          "decoded_bytes": 15920,
+          "duration_ms": 59
+        }
+      ]
+    }
+  ],
+  "wasm_headers": {
+    "content-type": "application/wasm",
+    "cache-control": "public, max-age=31536000, immutable",
+    "x-content-type-options": "nosniff",
+    "vary": "Accept-Encoding",
+    "content-length": "11043391",
+    "content-encoding": "br",
+    "date": "Fri, 02 Oct 2026 07:58:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "errors": [],
+  "saved_session_after_launcher_reload": true,
+  "rollback": {
+    "visited_builds": [
+      "0.1.0-27bffa9ee363",
+      "0.1.0-bee01d98961e",
+      "0.1.0-27bffa9ee363"
+    ],
+    "restored_cells": 151,
+    "save_format": 1,
+    "mixed_asset_versions": false
+  }
+}

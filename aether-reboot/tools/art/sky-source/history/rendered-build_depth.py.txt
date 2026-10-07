@@ -1,0 +1,363 @@
+"""Original multiscale distant weather fields, staged only; no production writes."""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import gc
+import hashlib
+import importlib.util
+import json
+import math
+import random
+import sys
+import time
+from collections import defaultdict
+from pathlib import Path
+from mathutils import Vector
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+BREAK=Vector((-.85356265,.51849060,-.05097358)).normalized()
+EXPOSURE=-.90
+SEED=46031003
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    result=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(result)
+    return result
+
+def prepare():
+    started=time.perf_counter()
+    assert Path(bpy.data.filepath).name=='sky-r43.blend'
+    field=module('continuous_volume',STAGE/'volume_union.py')
+    original=json.loads((STAGE/'manifest.json').read_text())
+    rng=random.Random(SEED)
+    records={r['name']:r for r in original['instances']}
+    centres=defaultdict(list)
+    for record in records.values():
+        group=record['name'].split(' | ')[0]
+        centres[group].append(Vector(record['density_center']))
+    centres={name:sum(points,Vector())/len(points) for name,points in centres.items()}
+    scene=bpy.context.scene
+    body=bpy.data.materials['R43 | illuminated cumulus body']
+    veil=bpy.data.materials['R43 | optically thin sunlit vapour']
+    radial=Vector((BREAK.x,BREAK.y,0)).normalized()
+    tangent=Vector((-radial.y,radial.x,0))
+    pocket_center=BREAK*34000
+    groups=defaultdict(list)
+    placements=[]
+    excluded=[]
+
+    def clear(position,radius,height):
+        relative=position-pocket_center
+        return ((relative.dot(tangent)/(2450+radius*.6))**2
+                +(relative.dot(radial)/(34000+radius*.3))**2
+                +(relative.z/(1900+height*.6))**2)<1
+
+    # Recede the complete geometry about each front's centre. Keeping angular
+    # silhouettes near 40-50% avoids giant panels behind the actual islands.
+    for obj in list(scene.objects):
+        if not obj.get('r43_cell'):
+            continue
+        record=records[obj.name]
+        group=obj.name.split(' | ')[0]
+        if group.startswith('Dawn gap translucent edge'):
+            obj.hide_render=True
+            excluded.append(obj.name)
+            continue
+        center=Vector(record['density_center'])
+        anchor=centres[group]
+        if group in ('Western oblique front','Dawn descending shoulder'):
+            distance,extent,size,depth=1.95,.90,.80,.60
+        elif group in ('Eastern diagonal crest','Eastern rising towers'):
+            distance,extent,size,depth=2.05,.92,.82,.65
+        elif group in ('Distant northwest crest','Central remote turrets'):
+            distance,extent,size,depth=1.55,.84,.74,.65
+        elif group in ('Deep central cloud islands','Western middle shelves','Eastern middle shelves','Lower drift left','Lower drift right'):
+            distance,extent,size,depth=1.75,.85,.74,.65
+        elif group.startswith('Remote eroded remnants'):
+            distance,extent,size,depth=1.15,1.,.90,.75
+        else:
+            distance,extent,size,depth=1.5,.88,.80,.72
+        position=anchor*distance+(center-anchor)*extent
+        radius=record['radius_metres']*size
+        height=record['height_metres']*size
+        if clear(position,radius,height):
+            obj.hide_render=True
+            excluded.append(obj.name)
+            continue
+        ratio=Vector((size,size*depth,size))
+        rotation=obj.rotation_euler.to_matrix()
+        offset=rotation.inverted()@(center-obj.location)
+        obj.location=position-rotation@Vector(tuple(offset[i]*ratio[i] for i in range(3)))
+        obj.scale=Vector(tuple(obj.scale[i]*ratio[i] for i in range(3)))
+        groups[group].append(obj)
+        placements.append({'name':obj.name,'group':group,'center':list(position),'radius':radius,'height':height,
+                           'distance_factor':distance,'extent_factor':extent,'size_factor':size,'radial_depth_factor':depth})
+
+    templates=sorted([o for o in scene.objects if o.type=='VOLUME' and not o.get('r43_cell')
+                      and o.name.startswith(('Horizon cumulus','Intermediate drifting bank'))],key=lambda o:o.name)[::2]
+    cache={}
+    bounds={}
+    for template in templates:
+        mesh=bpy.data.objects[template.name.split(' | ')[0]]
+        extent=Vector(tuple(max(p[i] for p in mesh.bound_box)-min(p[i] for p in mesh.bound_box) for i in range(3)))
+        center=Vector(tuple((max(p[i] for p in mesh.bound_box)+min(p[i] for p in mesh.bound_box))*.5 for i in range(3)))
+        bounds[template.name]=(extent,center)
+
+    def cell(group,position,radius,height,depth=.7,thin=False):
+        if not thin and clear(position,radius,height):
+            return
+        template=rng.choice(templates)
+        key=(template.name,thin)
+        if key not in cache:
+            data=template.data.copy()
+            data.materials.clear()
+            data.materials.append(veil if thin else body)
+            cache[key]=data
+        extent,local_center=bounds[template.name]
+        obj=bpy.data.objects.new(f'{group} | cell {len(groups[group]):02}',cache[key])
+        scene.collection.objects.link(obj)
+        obj['r43_cell']=True
+        obj.scale=(2*radius/extent.x,2*radius*depth/extent.y,2*height/extent.z)
+        azimuth=math.atan2(position.y,position.x)
+        obj.rotation_euler.z=azimuth+math.pi/2+rng.uniform(-.4,.4)
+        obj.location=position-obj.rotation_euler.to_matrix()@Vector(tuple(local_center[i]*obj.scale[i] for i in range(3)))
+        groups[group].append(obj)
+        placements.append({'name':obj.name,'group':group,'center':list(position),'radius':radius,'height':height,'depth_ratio':depth,'thin':thin})
+
+    # Angular positions are scattered with minimum separation, not rows/slices.
+    # Each irregular ensemble has three sizes of subordinate lobes; depth and
+    # radius vary independently, so distant outlines remain visibly finer.
+    accepted=[]
+    for layer,(count,d_min,d_max,r_min,r_max) in enumerate([
+        (16,32000,42000,620,1350),(19,45000,57000,450,1050),(16,61000,73000,340,780)]):
+        for index in range(count):
+            for attempt in range(200):
+                a=rng.uniform(84,168)
+                e=rng.uniform(-40,-4)
+                if all(((a-p[0])*math.cos(math.radians(e)))**2+(e-p[1])**2>3.6**2 for p in accepted):
+                    break
+            accepted.append((a,e))
+            distance=rng.uniform(d_min,d_max)
+            radius=rng.uniform(r_min,r_max)
+            azimuth=math.radians(a)
+            forward=Vector((math.cos(azimuth),math.sin(azimuth),0))
+            across=Vector((-forward.y,forward.x,0))
+            anchor=forward*distance+Vector((0,0,math.tan(math.radians(e))*distance))
+            group=f'Far weather layer {layer+1} cluster {index:02}'
+            count_lobes=rng.randint(3,6)
+            slope=rng.uniform(-.7,.7)
+            for lobe in range(count_lobes):
+                along=rng.uniform(-1.7,1.7)*radius
+                center=anchor+across*along+forward*rng.uniform(-.55,.55)*radius
+                center.z+=along*slope+rng.uniform(-.30,.45)*radius
+                r=radius*rng.uniform(.45,1.1)
+                cell(group,center,r,r*rng.uniform(.38,.70),rng.uniform(.35,.65))
+                for _ in range(rng.randint(1,3)):
+                    p=center+across*rng.uniform(-.8,.8)*r+forward*rng.uniform(-.3,.3)*r
+                    p.z+=r*rng.uniform(.35,.70)
+                    cell(group,p,r*rng.uniform(.18,.38),r*rng.uniform(.20,.46),.55)
+                p=center+across*rng.choice((-1,1))*r*.8+Vector((0,0,r*.05))
+                cell(group,p,r*.20,r*.15,.4)
+
+    # Weather curtains carry many small connected lobes, rather than enlarging
+    # a handful of nearby sculptures into flat panels. Random samples in a
+    # curved oblique ribbon, independent depth and branched subordinate lobes
+    # prevent a line of equally spaced pearls or horizontal layers.
+    curtains=[
+        ('Western distant curtain',[(168,4),(164,-6),(156,-16),(165,-28)],46000,3.4,160,650,1250),
+        ('Upper broken canopy',[(158,3),(147,4),(138,1),(127,-3)],55000,1.8,105,450,1050),
+        ('Eastern distant curtain',[(112,2),(108,-6),(96,-13),(87,-25)],62000,3.6,170,650,1400),
+        ('Central broken weather',[(139,-14),(131,-18),(121,-18),(111,-25)],63000,2.5,115,450,1050),
+        ('Lower remote cloud sea',[(160,-21),(148,-27),(140,-39),(122,-34),(109,-44),(93,-34)],48000,3.8,200,550,1150),
+    ]
+    for group,anchors,distance,width,count,r_min,r_max in curtains:
+        for index in range(count):
+            along=rng.random()*(len(anchors)-1)
+            section=min(int(along),len(anchors)-2)
+            t=along-section
+            a0,e0=anchors[section]
+            a1,e1=anchors[section+1]
+            # Smooth centreline with variable ribbon width and real gaps.
+            tangent_a,tangent_e=a1-a0,e1-e0
+            length=math.hypot(tangent_a,tangent_e)
+            width_here=width*(.65+.35*math.sin(along*2.4+.5)**2)
+            across=rng.gauss(0,width_here*.62)
+            a=a0+(a1-a0)*t-tangent_e/length*across+rng.uniform(-.45,.45)
+            e=e0+(e1-e0)*t+tangent_a/length*across+rng.uniform(-.4,.4)
+            d=distance+rng.uniform(-1700,1700)
+            azimuth=math.radians(a)
+            forward=Vector((math.cos(azimuth),math.sin(azimuth),0))
+            tangent_dir=Vector((-forward.y,forward.x,0))
+            center=forward*d+Vector((0,0,math.tan(math.radians(e))*d))
+            # The actual visible plume occupies substantially less than its
+            # sculpt's bounding box. Overlap those plumes, not merely bounds.
+            r=rng.uniform(r_min,r_max)*1.75
+            cell(group,center,r,r*rng.uniform(.43,.72),rng.uniform(.28,.48))
+            for _ in range(rng.randint(1,2)):
+                p=center+tangent_dir*rng.uniform(-.85,.85)*r+forward*rng.uniform(-.18,.18)*r
+                p.z+=r*rng.uniform(.3,.6)
+                cell(group,p,r*rng.uniform(.2,.4),r*rng.uniform(.22,.43),.38)
+
+    # A light, asymmetric rim around a real, kilometre-scale weather pocket.
+    # These filaments retain the existing sun and physically thin scattering.
+    for i,(along,vertical,radius,height) in enumerate([
+        (-2600,-950,1000,350),(-2300,520,850,500),(-1420,1870,1000,290),
+        (-220,2150,850,270),(1600,1620,1050,310),(2350,300,750,440),
+        (1600,-1350,830,270),(-700,-1780,700,220)]):
+        position=pocket_center+tangent*along+Vector((0,0,vertical))+radial*rng.uniform(-1200,1200)
+        cell('Thin opening rim',position,radius,height,.13,True)
+
+    air=bpy.data.materials['R43 | finite aerial scattering'].node_tree
+    rayleigh=next(n for n in air.nodes if n.type=='VOLUME_SCATTER')
+    output=next(n for n in air.nodes if n.type=='OUTPUT_MATERIAL')
+    mie=air.nodes.new('ShaderNodeVolumeScatter')
+    mie.inputs['Color'].default_value=(.98,.985,1,1)
+    mie.inputs['Density'].default_value=.0000012
+    mie.inputs['Anisotropy'].default_value=.72
+    add=air.nodes.new('ShaderNodeAddShader')
+    air.links.new(rayleigh.outputs[0],add.inputs[0])
+    air.links.new(mie.outputs[0],add.inputs[1])
+    air.links.new(add.outputs[0],output.inputs['Volume'])
+    out_dir=STAGE/'depth-volumes'
+    out_dir.mkdir(exist_ok=True)
+    outputs=[]
+    for group,objects in groups.items():
+        voxel=24. if group=='Thin opening rim' else (32. if group.startswith(('Far weather','Remote eroded')) else 48.)
+        result=field.union(objects,out_dir/(group.lower().replace(' ','-')+'.vdb'),veil if group=='Thin opening rim' else body,voxel)
+        result['group']=group
+        result['file']='depth-volumes/'+result['file']
+        outputs.append(result)
+    for path,expected in field.SOURCE_RECORDS.items():
+        assert digest(path)==expected
+    cache_bytes=sum(a[0].nbytes for a in field.SOURCE_CACHE.values())
+    field.SOURCE_CACHE.clear()
+    gc.collect()
+    scene.cycles.denoising_input_passes='RGB'
+    scene.view_settings.exposure=EXPOSURE
+    scene.render.use_border=False
+    scene.compositing_node_group=None
+    bpy.context.preferences.filepaths.save_version=0
+    output_blend=STAGE/'sky-r46-depth.blend'
+    bpy.ops.wm.save_as_mainfile(filepath=str(output_blend),compress=True)
+    sources=[{'file':p.relative_to(ROOT).as_posix(),'sha256':digest(p),'bytes':p.stat().st_size}
+             for p in [Path(__file__),STAGE/'volume_union.py',STAGE/'sky-r43.blend',STAGE/'build_candidate.py',
+                       ROOT/'tools/art/build_sky.py',ROOT/'tools/art/sky-source/sky-world.blend']]
+    sources+=original['volume_grids']
+    sources+=[{'file':(STAGE/r['file']).relative_to(ROOT).as_posix(),'sha256':r['sha256'],'bytes':r['bytes']} for r in outputs]
+    manifest={'status':'depth candidate prepared; unpublished','output_needs_render':True,
+        'source':output_blend.name,'source_sha256':digest(output_blend),'source_files':sources,
+        'original_3d_render':True,'external_assets':[],'retouching':False,'upscaling':False,'image_resampling':False,
+        'seed':SEED,'density_derivation':'bounded maximum of trilinearly sampled original 3D sculptures; stored zero halo',
+        'continuous_fronts':outputs,'placements':placements,'excluded_original_cells':excluded,
+        'clear_pocket':{'center':list(pocket_center),'tangent_radius':2450,'radial_radius':34000,'vertical_radius':1900},
+        'sun_game_direction':[-80,38,-60],'sun_color_linear_rgb':[1,.76,.48],'sun_energy':9.3,
+        'diffuse_sky_strength':.09,'display_exposure_stops':EXPOSURE,'camera_mapping':original['camera_mapping'],
+        'denoising':'OpenImageDenoise RGB only','build_seconds':round(time.perf_counter()-started,3),
+        'source_dense_cache_bytes':cache_bytes,'derived_vdb_bytes':sum(r['bytes'] for r in outputs)}
+    (STAGE/'depth-manifest.json').write_text(json.dumps(manifest,indent=2))
+    print('DEPTH_PREPARED',json.dumps({'fronts':len(outputs),'cells':len(placements),'seconds':manifest['build_seconds'],'bytes':manifest['derived_vdb_bytes']}),flush=True)
+
+def render(cpu=False,final=False,large=False):
+    scene=bpy.context.scene
+    assert Path(bpy.data.filepath).name=='sky-r46-depth.blend'
+    backend='CPU'
+    if not cpu:
+        prefs=bpy.context.preferences.addons['cycles'].preferences
+        prefs.compute_device_type='OPTIX'
+        prefs.get_devices()
+        assert any(d.type=='OPTIX' for d in prefs.devices)
+        for device in prefs.devices:
+            device.use=device.type=='OPTIX'
+        scene.cycles.device='GPU'
+        backend='OPTIX'
+    else:
+        scene.cycles.device='CPU'
+    scene.cycles.samples=128 if final else (8 if cpu else 64)
+    scene.cycles.adaptive_min_samples=4 if cpu else 16
+    scene.cycles.use_adaptive_sampling=True
+    scene.cycles.adaptive_threshold=.018 if final else .045
+    scene.cycles.use_denoising=True
+    scene.cycles.denoising_input_passes='RGB'
+    scene.cycles.denoising_use_gpu=False
+    if final:
+        scene.camera.data.type='PANO'
+        scene.camera.data.panorama_type='EQUIRECTANGULAR'
+        scene.camera.rotation_euler=(math.pi/2,0,0)
+        scene.render.resolution_x,scene.render.resolution_y=(8192,4096) if large else (4096,2048)
+        scene.render.image_settings.file_format='HDR'
+        scene.render.image_settings.color_mode='RGB'
+        scene.view_settings.view_transform='Raw'
+        scene.view_settings.look='None'
+        scene.view_settings.exposure=0
+        scene.view_settings.gamma=1
+        output=STAGE/('sky-r46-depth-8k-linear.hdr' if large else 'sky-r46-depth-4k-linear.hdr')
+    else:
+        scene.camera.data.type='PERSP'
+        scene.camera.data.sensor_fit='VERTICAL'
+        scene.camera.data.sensor_height=24
+        scene.camera.data.lens=12/math.tan(math.radians(45)/2)
+        scene.camera.rotation_euler=Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+        scene.render.resolution_x,scene.render.resolution_y=(640,360) if cpu else (1672,941)
+        scene.render.image_settings.file_format='PNG'
+        output=STAGE/('depth-hero-cpu.png' if cpu else 'depth-hero.png')
+    scene.render.filepath=str(output)
+    started=time.perf_counter()
+    last=[0.]
+    def progress(stats):
+        now=time.perf_counter()
+        if now-last[0]>20:
+            print('DEPTH_RENDER_PROGRESS',stats,flush=True)
+            last[0]=now
+    bpy.app.handlers.render_stats.append(progress)
+    bpy.ops.render.render(write_still=True)
+    bpy.app.handlers.render_stats.remove(progress)
+    record={'file':output.name,'sha256':digest(output),'bytes':output.stat().st_size,
+        'dimensions':[scene.render.resolution_x,scene.render.resolution_y],'seconds':round(time.perf_counter()-started,3),
+        'samples_max':scene.cycles.samples,'renderer':'Cycles '+backend,'source_sha256':digest(Path(bpy.data.filepath)),
+        'generator_sha256':digest(Path(__file__)),'denoising':'OpenImageDenoise RGB only'}
+    (STAGE/(output.stem+'.json')).write_text(json.dumps(record,indent=2))
+    if final:
+        import numpy as np
+        base=module('original_sky',ROOT/'tools/art/build_sky.py')
+        pixels=base.read_linear_hdr(output)
+        width,height=scene.render.resolution_x,scene.render.resolution_y
+        assert pixels.shape==(height,width,3)
+        maximum=float(pixels.max())
+        encoding=2.**min(0,math.floor(math.log2(65504./max(maximum,1e-20))))
+        rgba=np.ones((height,width,4),dtype='<f2')
+        for y in range(height):
+            rgba[y,:,:3]=pixels[y]*encoding
+        assert np.isfinite(rgba).all()
+        ktx=STAGE/('sky-r46-depth-8k-linear.ktx2' if large else 'sky-r46-depth-4k-linear.ktx2')
+        base.write_rgba16_ktx2(ktx,rgba)
+        metadata={'format':'VK_FORMAT_R16G16B16A16_SFLOAT','vk_format':97,'orientation':'rd','transfer':'linear',
+            'primaries':'Rec.709','dimensions':[width,height],'mip_levels':1,'gpu_bytes':rgba.nbytes,
+            'encoding_scale':encoding,'recommended_runtime_multiplier':2**EXPOSURE/encoding,
+            'source_radiance_min':float(pixels.min()),'source_radiance_max':maximum,
+            'encoded_radiance_min':float(rgba[:,:,:3].min()),'encoded_radiance_max':float(rgba[:,:,:3].max()),
+            'finite_nonnegative':True,'alpha':1,'resampled':False}
+        manifest=json.loads((STAGE/'depth-manifest.json').read_text())
+        manifest.update({'status':f'original{width}x{height} rendered candidate; unpublished','output_needs_render':False,
+                         'output':ktx.name,'output_sha256':digest(ktx),'bytes':ktx.stat().st_size,
+                         'authoring_hdr':record,'linear_encoding':metadata})
+        (STAGE/'depth-manifest.json').write_text(json.dumps(manifest,indent=2))
+        print('DEPTH_KTX2_PACKED',json.dumps(metadata),flush=True)
+    print('DEPTH_RENDERED',json.dumps(record),flush=True)
+
+if __name__=='__main__':
+    if '--prepare' in sys.argv:
+        prepare()
+    elif '--cpu-preview' in sys.argv:
+        render(cpu=True)
+    elif '--hero' in sys.argv:
+        render()
+    elif '--final' in sys.argv:
+        render(final=True,large='--8k' in sys.argv)
+    else:
+        raise ValueError('Use --prepare, --cpu-preview, --hero or --final')

@@ -1,0 +1,74 @@
+addon_utils.disable: bl_ext.lab_blender_org.mcp not enabled
+10:49:16 | INFO: Data are loaded, start creating Blender stuff
+10:49:16 | INFO: Blender create Mesh node 01 | Fractured limestone
+10:49:16 | INFO: Blender create Mesh node 02 | Deep strata
+10:49:16 | INFO: Blender create Mesh node 03 | Dressed masonry
+10:49:16 | INFO: Blender create Mesh node 04 | Worn cornice
+10:49:16 | INFO: Blender create Mesh node 05 | Brushed antique brass
+10:49:16 | INFO: Blender create Mesh node 06 | Cedar and roots
+10:49:16 | INFO: Blender create Mesh node 07 | Enamel and shadow
+10:49:16 | INFO: Blender create Mesh node 08 | Deep foliage
+10:49:17 | INFO: Blender create Mesh node 09 | Sunlit foliage
+10:49:17 | INFO: Blender create Mesh node 10 | Lantern glass
+10:49:17 | INFO: Blender create Mesh node 11 | Aether mineral
+10:49:17 | INFO: Blender create Mesh node 12 | Surface biome
+10:49:17 | INFO: glTF import finished in 0.61s
+C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review_cpu.py:19: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world=bpy.data.worlds.new('Fixed cool diagnostic fill');world.use_nodes=True;scene.world=world;world.node_tree.nodes['Background'].inputs['Color'].default_value=(.14,.23,.40,1);world.node_tree.nodes['Background'].inputs['Strength'].default_value=.65
+00:04.062  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-baseline-wide.png'
+00:07.718  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-baseline-close.png'
+Info: Saved as "dawn-baseline-review-full.blend"
+10:49:22 | INFO: Data are loaded, start creating Blender stuff
+10:49:22 | INFO: Blender create Mesh node 01 | Fractured limestone
+10:49:22 | INFO: Blender create Mesh node 02 | Deep strata
+10:49:22 | INFO: Blender create Mesh node 03 | Dressed masonry
+10:49:22 | INFO: Blender create Mesh node 04 | Worn cornice
+10:49:22 | INFO: Blender create Mesh node 05 | Brushed antique brass
+10:49:23 | INFO: Blender create Mesh node 06 | Cedar and roots
+10:49:23 | INFO: Blender create Mesh node 07 | Enamel and shadow
+10:49:23 | INFO: Blender create Mesh node 08 | Deep foliage
+10:49:23 | INFO: Blender create Mesh node 09 | Sunlit foliage
+10:49:23 | INFO: Blender create Mesh node 10 | Lantern glass
+10:49:23 | INFO: Blender create Mesh node 11 | Aether mineral
+10:49:23 | INFO: Blender create Mesh node 12 | Surface biome
+10:49:23 | INFO: glTF import finished in 0.53s
+00:09.968  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-candidate-wide.png'
+00:13.750  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-candidate-close.png'
+Info: Saved as "dawn-candidate-review-full.blend"
+10:49:28 | INFO: Data are loaded, start creating Blender stuff
+10:49:28 | INFO: Blender create Mesh node 01 | Fractured limestone
+10:49:28 | INFO: Blender create Mesh node 02 | Deep strata
+10:49:28 | INFO: Blender create Mesh node 03 | Dressed masonry
+10:49:28 | INFO: Blender create Mesh node 04 | Worn cornice
+10:49:28 | INFO: Blender create Mesh node 05 | Brushed antique brass
+10:49:28 | INFO: Blender create Mesh node 06 | Cedar and roots
+10:49:28 | INFO: Blender create Mesh node 07 | Enamel and shadow
+10:49:28 | INFO: Blender create Mesh node 08 | Deep foliage
+10:49:29 | INFO: Blender create Mesh node 09 | Sunlit foliage
+10:49:29 | INFO: Blender create Mesh node 10 | Lantern glass
+10:49:29 | INFO: Blender create Mesh node 11 | Aether mineral
+10:49:29 | INFO: Blender create Mesh node 12 | Surface biome
+10:49:29 | INFO: glTF import finished in 0.41s
+00:15.703  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-watch-baseline-wide.png'
+00:19.218  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-watch-baseline-close.png'
+Info: Saved as "dawn-watch-baseline-review-full.blend"
+10:49:34 | INFO: Data are loaded, start creating Blender stuff
+10:49:34 | INFO: Blender create Mesh node 01 | Fractured limestone
+10:49:34 | INFO: Blender create Mesh node 02 | Deep strata
+10:49:34 | INFO: Blender create Mesh node 03 | Dressed masonry
+10:49:34 | INFO: Blender create Mesh node 04 | Worn cornice
+10:49:34 | INFO: Blender create Mesh node 05 | Brushed antique brass
+10:49:34 | INFO: Blender create Mesh node 06 | Cedar and roots
+10:49:34 | INFO: Blender create Mesh node 07 | Enamel and shadow
+10:49:34 | INFO: Blender create Mesh node 08 | Deep foliage
+10:49:34 | INFO: Blender create Mesh node 09 | Sunlit foliage
+10:49:34 | INFO: Blender create Mesh node 10 | Lantern glass
+10:49:34 | INFO: Blender create Mesh node 11 | Aether mineral
+10:49:34 | INFO: Blender create Mesh node 12 | Surface biome
+10:49:34 | INFO: glTF import finished in 0.38s
+00:21.062  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-watch-candidate-wide.png'
+00:24.281  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\cliff-r59-study\review\dawn-watch-candidate-close.png'
+Info: Saved as "dawn-watch-candidate-review-full.blend"
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:38:20)
+
+Blender quit

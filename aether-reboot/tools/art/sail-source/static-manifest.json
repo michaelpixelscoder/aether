@@ -1,0 +1,9 @@
+{
+  "triangles": 8328,
+  "meshes": 4,
+  "generator_sha256": "b9cd3bcf13e20ef339f71e0cd9a16c68fcdd0bba542e834bd24971ca10da5804",
+  "helper_sha256": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd",
+  "cpu_threads": 4,
+  "blend_sha256": "b2b1cea3a9ebc91e6066ad322ec2074a96768aebbf445d7f35691652f845a689",
+  "rig_glb_sha256": "6c8d8f1e14ccee3a9a7344015fa3bc48e5e96984722fd2a5f815fe5e13809569"
+}

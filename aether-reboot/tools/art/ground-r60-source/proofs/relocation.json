@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "passed": true,
+  "outside_workspace": true,
+  "baselines": [
+    {
+      "revision": "r56",
+      "real_archived_input": true,
+      "all4_glbs_rebuilt_byte_exact": true,
+      "independent_node_delta_gate_pass": true
+    },
+    {
+      "revision": "r59",
+      "real_archived_input": true,
+      "all4_glbs_rebuilt_byte_exact": true,
+      "independent_node_delta_gate_pass": true
+    }
+  ],
+  "corruptions_rejected": [
+    "other11 materials",
+    "roughness12",
+    "yellow factor",
+    "geometry BIN",
+    "UV accessor",
+    "existing images",
+    "historical manifest",
+    "runtime PNG",
+    "native author PNG",
+    "patch provenance"
+  ],
+  "script_sha256": "0b13cb04121c8ebcf16cdfb201c9919f25aca449c8e3e6e02776152448449368",
+  "native_gpu_compile": false,
+  "canonical_mutations": false
+}

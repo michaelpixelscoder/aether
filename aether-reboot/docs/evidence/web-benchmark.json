@@ -1,0 +1,464 @@
+{
+  "allocated_entity_indices": 32768,
+  "asset_samples_20_cycles": [],
+  "avatar_fallbacks": 0,
+  "benchmark": true,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 65,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 10000,
+  "checkpoint": 0,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "contact_manifolds_active": 2,
+  "contact_pairs_active": 1,
+  "contact_pairs_sleeping": 0,
+  "couriers": [
+    {
+      "id": 6,
+      "position": [
+        55.126243591308594,
+        72.3397445678711,
+        -228.19735717773438
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        3.550224781036377,
+        67.14707946777344,
+        -1048.6402587890625
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -589.9945068359375,
+        124.76962280273438,
+        -549.1348266601562
+      ]
+    },
+    {
+      "id": 1,
+      "position": [
+        -475.8422546386719,
+        280.32379150390625,
+        -379.7546691894531
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -66.27339935302734,
+        283.1676940917969,
+        -990.5437622070312
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -2217.006103515625,
+        424.34881591796875,
+        -1358.285888671875
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -1382.99365234375,
+        424.348876953125,
+        -1441.7138671875
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        1174.8463134765625,
+        799.1024169921875,
+        -1971.53955078125
+      ]
+    }
+  ],
+  "decoration_cpu_ms_p50_p95_p99": [
+    0.4,
+    5.2,
+    9.6
+  ],
+  "docked": false,
+  "edit_point": [
+    942.3916015625,
+    570.5433959960938
+  ],
+  "elapsed_seconds": 35.77427673339844,
+  "entities": 25458,
+  "entity_samples_20_cycles": [],
+  "expedition": {
+    "cargo": [
+      12,
+      4,
+      4,
+      0,
+      12,
+      0
+    ],
+    "contracts": [],
+    "credits": 160,
+    "destination": 100,
+    "harvested": [],
+    "observed_species": [],
+    "portal_ready_tick": 0,
+    "visited": [
+      0
+    ]
+  },
+  "frame_ms_p50_p95_p99": [
+    17.500000074505806,
+    21.700000390410423,
+    24.59999918937683
+  ],
+  "fuel": 1121.976806640625,
+  "gpu_timestamps_measured": false,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "loading": {
+    "elapsed": 11.93079948425293,
+    "error": "",
+    "pending": []
+  },
+  "mass_kg": 186504,
+  "material_assets": 414,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.1,
+    0.2,
+    0.2
+  ],
+  "mesh_assets": 926,
+  "mesh_max_ms": 1.1,
+  "mesh_p95_ms": 0.7,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    4802.6,
+    6777,
+    6934.2
+  ],
+  "navigation": {
+    "angular_y": 0.00008848122524796054,
+    "intent": {
+      "brake": false,
+      "climb": 0,
+      "throttle": 0,
+      "turn": 0
+    },
+    "position": [
+      -0.1481926441192627,
+      14.38532543182373,
+      -0.08459227532148361
+    ],
+    "target_altitude": 12,
+    "velocity": [
+      -0.0012368548195809126,
+      -0.00005692524428013712,
+      -0.000924780557397753
+    ],
+    "yaw": 0.0021634986624121666
+  },
+  "notice": "Réserve basse ! Rejoignez un quai ou utilisez R pour demander secours.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physical_keys": [],
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.1,
+      0.2,
+      0.2
+    ],
+    "avian/collision/update_contacts": [
+      1.3,
+      1.5,
+      1.6
+    ],
+    "avian/solver/apply_restitution": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/finalize": [
+      0,
+      0,
+      0.1
+    ],
+    "avian/solver/integrate_positions": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/integrate_velocities": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/prepare_constraints": [
+      0,
+      0,
+      0.1
+    ],
+    "avian/solver/relax_velocities": [
+      0,
+      0,
+      0.1
+    ],
+    "avian/solver/solve_constraints": [
+      0,
+      0,
+      0.1
+    ],
+    "avian/solver/store_impulses": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/swept_ccd": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/update_velocity_increments": [
+      0,
+      0,
+      0.1
+    ],
+    "avian/solver/warm_start": [
+      0,
+      0,
+      0.1
+    ]
+  },
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0,
+      0,
+      0
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.1,
+      0.2,
+      0.2
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.1,
+      0.1,
+      0.2
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.9,
+      1.2,
+      1.4
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.7,
+      1,
+      1.2
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.2,
+      0.3,
+      0.3
+    ],
+    "render/ssao/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/taa/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/ui/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ]
+  },
+  "residents": [
+    {
+      "id": 1,
+      "position": [
+        -667.6898803710938,
+        -1398.1019287109375,
+        -1589.2657470703125
+      ],
+      "species": "Guardian"
+    },
+    {
+      "id": 2,
+      "position": [
+        1280.477294921875,
+        -2198.10205078125,
+        -3085.792724609375
+      ],
+      "species": "Guardian"
+    },
+    {
+      "id": 3,
+      "position": [
+        -606.9552001953125,
+        -1363.4515380859375,
+        -1623.1866455078125
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 4,
+      "position": [
+        -593.4158325195312,
+        -1363.3262939453125,
+        -1779.2774658203125
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 5,
+      "position": [
+        1338.8551025390625,
+        -2156.89599609375,
+        -3209.707763671875
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 6,
+      "position": [
+        1361.181396484375,
+        -2157.35595703125,
+        -3194.35546875
+      ],
+      "species": "Cavewing"
+    }
+  ],
+  "sail_motion": [
+    {
+      "normal_wind": -10.258336067199707,
+      "seconds": 35.516666412353516,
+      "speed": 10.561956405639648,
+      "weights": [
+        -0.854861319065094,
+        -0.6178056597709656,
+        -0.43298256397247314
+      ]
+    },
+    {
+      "normal_wind": -10.258336067199707,
+      "seconds": 35.516666412353516,
+      "speed": 10.561956405639648,
+      "weights": [
+        -0.854861319065094,
+        -0.6178056597709656,
+        -0.43298256397247314
+      ]
+    },
+    {
+      "normal_wind": -10.258336067199707,
+      "seconds": 35.516666412353516,
+      "speed": 10.561956405639648,
+      "weights": [
+        -0.854861319065094,
+        -0.6178056597709656,
+        -0.43298256397247314
+      ]
+    },
+    {
+      "normal_wind": -10.258336067199707,
+      "seconds": 35.516666412353516,
+      "speed": 10.561956405639648,
+      "weights": [
+        -0.854861319065094,
+        -0.6178056597709656,
+        -0.43298256397247314
+      ]
+    },
+    {
+      "normal_wind": -10.258336067199707,
+      "seconds": 35.516666412353516,
+      "speed": 10.561956405639648,
+      "weights": [
+        -0.854861319065094,
+        -0.6178056597709656,
+        -0.43298256397247314
+      ]
+    }
+  ],
+  "tick": 2131,
+  "tick_ms_p50_p95_p99": [
+    3,
+    3.7,
+    5.1000000000000005
+  ],
+  "triangles_in_mesh_assets": 4038960,
+  "tutorial_flags": 12,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 651
+    },
+    {
+      "action": "Atlas",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 601
+    },
+    {
+      "action": "Tether",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 550
+    },
+    {
+      "action": "Dock",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 500
+    },
+    {
+      "action": "Edit",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 449
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": 1390608384,
+  "window_focused": true
+}

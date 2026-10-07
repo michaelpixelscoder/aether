@@ -1,0 +1,96 @@
+[
+  {
+    "kind": "dawn",
+    "sha256": "77c38267abdbce3208f891b1e472a6bc522eccdee7fcf5e62402a7721449acc4",
+    "bytes": 19450664,
+    "triangles": 181520,
+    "rock_triangles": 22100,
+    "baseline_regeneration_payload_exact": true,
+    "before_bounds": [
+      [
+        -72.27836608886719,
+        80.40911865234375
+      ],
+      [
+        -88.74075317382812,
+        88.98600006103516
+      ],
+      [
+        -80.10235595703125,
+        89
+      ]
+    ],
+    "after_bounds": [
+      [
+        -72.27836608886719,
+        80.40911865234375
+      ],
+      [
+        -88.74075317382812,
+        88.98600006103516
+      ],
+      [
+        -80.10235595703125,
+        89
+      ]
+    ],
+    "bounds_exact": true,
+    "degenerate_triangles": 0,
+    "inverted_triangles": 0,
+    "max_normal_length_error": 1.3258611830657685e-7,
+    "max_tangent_length_error": 0.00006741918633434985,
+    "min_normal_dot": 0.9999999835190915,
+    "max_metric_uv_height_error": 2.384185791015625e-7,
+    "protected_root_triangles": 252,
+    "protected_root_attributes_and_corners_exact": true,
+    "substrate_connected_components": 1,
+    "original_terrain_components": 1
+  },
+  {
+    "kind": "dawn-watch",
+    "sha256": "be0f58ae2c3a8d91b18b0b994b69c97f83ecc042cb0578b07f1faf39b92092f6",
+    "bytes": 12942980,
+    "triangles": 124521,
+    "rock_triangles": 24586,
+    "baseline_regeneration_payload_exact": true,
+    "before_bounds": [
+      [
+        -73.1258316040039,
+        61.38911819458008
+      ],
+      [
+        -113,
+        95.68000030517578
+      ],
+      [
+        -78.82537841796875,
+        89
+      ]
+    ],
+    "after_bounds": [
+      [
+        -73.1258316040039,
+        61.38911819458008
+      ],
+      [
+        -113,
+        95.68000030517578
+      ],
+      [
+        -78.82537841796875,
+        89
+      ]
+    ],
+    "bounds_exact": true,
+    "degenerate_triangles": 0,
+    "inverted_triangles": 0,
+    "max_normal_length_error": 1.380215670643281e-7,
+    "max_tangent_length_error": 0.0000684034325018068,
+    "min_normal_dot": 0.9999999917059974,
+    "max_metric_uv_height_error": 2.384185791015625e-7,
+    "protected_root_triangles": 180,
+    "protected_root_attributes_and_corners_exact": true,
+    "substrate_connected_components": 2,
+    "original_terrain_components": 2
+  }
+]

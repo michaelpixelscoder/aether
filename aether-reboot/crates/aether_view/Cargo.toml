@@ -1,0 +1,15 @@
+[package]
+name = "aether_view"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aether_core.workspace = true
+futures-lite = "2"
+serde.workspace = true
+serde_json.workspace = true
+bevy = { workspace = true, features = ["3d_bevy_render", "bevy_asset", "bevy_ui_render", "bevy_winit", "bevy_scene", "bevy_world_serialization", "bevy_audio", "wav", "default_font", "keyboard", "mouse", "webgpu", "x11"] }
+
+[lints]
+workspace = true

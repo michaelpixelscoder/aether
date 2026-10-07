@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "passed": true,
+  "recipe": "r57-blue-fill-warm-direct",
+  "negative_cases": 20,
+  "tests": [
+    {
+      "test": "R57 opaque RMSE .026 rejected",
+      "rejected": true
+    },
+    {
+      "test": "R57 edge opacity p99 .081 rejected",
+      "rejected": true
+    },
+    {
+      "test": "two-step cadence cannot be omitted",
+      "rejected": true
+    },
+    {
+      "test": "ray camera cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "R55 cannot be relabelled current proof",
+      "rejected": true
+    },
+    {
+      "test": "sun direction must remain exact",
+      "rejected": true
+    },
+    {
+      "test": "bounce cannot be omitted",
+      "rejected": true
+    },
+    {
+      "test": "opacity may not change even inside tolerance",
+      "rejected": true
+    },
+    {
+      "test": "limits may not be loosened",
+      "rejected": true
+    },
+    {
+      "test": "wrong incident gains rejected",
+      "rejected": true
+    },
+    {
+      "test": "old shader is not current shader",
+      "rejected": true
+    },
+    {
+      "test": "CPU gains cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "CPU direct radiance cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "CPU integration cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "shader density and integration cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "stored ray floats cannot be rescaled",
+      "rejected": true
+    },
+    {
+      "test": "historical R55 comparison must stay exact",
+      "rejected": true
+    },
+    {
+      "test": "historical R47 comparison must stay exact",
+      "rejected": true
+    },
+    {
+      "test": "historical R55 verifier source remains exact",
+      "rejected": true
+    },
+    {
+      "test": "compatibility acceptance logic cannot drift even with refreshed source SHA",
+      "rejected": true
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+"""Portable r50 package; all original/source history retained, no promotion."""
+import bpy
+import copy
+import hashlib
+import importlib.util
+import json
+import shutil
+from pathlib import Path
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+BASEPACKAGE=ROOT/'.dream-loop/sky-r49-promotion'
+BASESOURCE=BASEPACKAGE/'tools/art/sky-source'
+PACKAGE=ROOT/'.dream-loop/sky-r50-promotion'
+SOURCE=PACKAGE/'tools/art/sky-source'
+assert PACKAGE.resolve().parent==(ROOT/'.dream-loop').resolve()
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def write(path,value):
+    path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
+def record(path):return {'file':path.relative_to(PACKAGE).as_posix(),'sha256':sha(path),'bytes':path.stat().st_size}
+def cp(a,b):
+    a=Path(a);b=Path(b);assert b.resolve().is_relative_to(PACKAGE.resolve())
+    b.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(a,b);assert sha(a)==sha(b);return record(b)
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    obj=importlib.util.module_from_spec(spec);spec.loader.exec_module(obj);return obj
+
+assert Path(bpy.data.filepath).resolve()==(STAGE/'sky-r50-low-sun.blend').resolve()
+stage=json.loads((STAGE/'manifest.json').read_text());assert stage['output_needs_render'] is False
+assert stage['ibl_authoring']['camera_solar_disk_visible'] is False
+for r in stage['canonical_frozen']:assert sha(ROOT/r['file'])==r['sha256']
+baseline=json.loads((BASESOURCE/'manifest.json').read_text())
+for r in baseline['volume_grids']+baseline['authoring_grids']:cp(BASESOURCE/r['file'],SOURCE/r['file'])
+for r in baseline['supporting_files']:cp(BASEPACKAGE/r['file'],PACKAGE/r['file'])
+history=[]
+for source,name in [
+    (BASESOURCE/'manifest.json','r49-manifest.json'),
+    (BASESOURCE/'sky-world.blend','r49-source.blend.bin'),
+    (BASESOURCE/'render-equivalence.json','r49-render-equivalence.json'),
+    (BASESOURCE/'render-scene-descriptor.json','r49-render-scene-descriptor.json'),
+    (BASESOURCE/'scene_fingerprint.py','r49-scene-fingerprint.py.txt'),
+    (BASEPACKAGE/'tools/art/build_sky.py','r49-portable-controller.py.txt'),
+    (BASEPACKAGE/'tools/art/verify-sky.mjs','r49-validator.mjs.txt'),
+    (STAGE/'build_low_sun.py','r50-prepare.py.txt'),
+    (STAGE/'render_exports.py','r50-render.py.txt'),
+    (ROOT/'tools/art/build_sky.py','r50-render-controller-dependency.py.txt'),
+    (STAGE/'manifest.json','r50-stage-manifest.json'),
+    (STAGE/'4k-render-record.json','r50-render-record.json'),
+    (STAGE/'ibl-render-record.json','r50-ibl-render-record.json'),
+    (STAGE/'source-audit.json','r50-hero-source-audit.json'),
+    (STAGE/'scene-descriptor-before.json','r50-descriptor-before-source-replacement.json'),
+    (STAGE/'scene-descriptor-after.json','r50-descriptor-after-source-replacement.json'),
+    (STAGE/'sky-r50-low-sun.blend','r50-rendered-source.blend.bin'),
+    (STAGE/'README.md','r50-author-review.md'),
+    (STAGE/'occlusion-upper-bound.json','r50-runtime-cloud-occlusion.json'),
+    (Path(__file__),'r50-package.py.txt'),
+]:history.append(cp(source,SOURCE/'history'/name))
+cp(STAGE/'portable_build_sky.py',PACKAGE/'tools/art/build_sky.py')
+cp(STAGE/'portable_verify_sky.mjs',PACKAGE/'tools/art/verify-sky.mjs')
+cp(STAGE/'scene_fingerprint.py',SOURCE/'scene_fingerprint.py')
+old_report=BASEPACKAGE/'docs/evidence/sky-assets.json'
+if old_report.exists():cp(old_report,PACKAGE/'docs/evidence/sky-history'/('r49-'+sha(old_report)+'.json'))
+controller=module('r50_portable_controller',PACKAGE/'tools/art/build_sky.py');controller.final_configuration()
+scene=bpy.context.scene;scene.render.resolution_percentage=100
+fp=module('r50_fingerprint',SOURCE/'scene_fingerprint.py')
+before=fp.descriptor(scene);before_sha=fp.digest(before)
+assert before_sha==stage['render_descriptor_sha256'],'Portable configuration differs from actual original4K render'
+for obj in scene.objects:
+    if obj.type=='VOLUME':
+        original=Path(bpy.path.abspath(obj.data.filepath)).resolve()
+        replacement=SOURCE/'cloud-volumes'/original.name
+        assert sha(original)==sha(replacement);obj.data.filepath=str(replacement)
+assert fp.digest(fp.descriptor(scene))==before_sha
+scene.render.filepath='//sky-world-linear.hdr'
+bpy.context.preferences.filepaths.save_version=0
+blend=SOURCE/'sky-world.blend'
+bpy.ops.wm.save_as_mainfile(filepath=str(blend),compress=True,relative_remap=False)
+for obj in scene.objects:
+    if obj.type=='VOLUME':obj.data.filepath=bpy.path.relpath(obj.data.filepath)
+bpy.ops.wm.save_as_mainfile(filepath=str(blend),compress=True,relative_remap=False)
+assert fp.digest(fp.descriptor(scene))==before_sha
+assert all(obj.data.filepath.startswith('//') for obj in scene.objects if obj.type=='VOLUME')
+write(SOURCE/'render-scene-descriptor.json',before)
+cp(STAGE/'ibl-render-scene-descriptor.json',SOURCE/'ibl-render-scene-descriptor.json')
+equivalence={'schema':1,'status':'passed','operation':'remap unchanged volume bytes to package-relative paths; same single source and World importance settings',
+    'new_render_performed':False,'rendered_scene_sha256':stage['source_sha256'],'packaged_scene_sha256':sha(blend),
+    'before_descriptor_sha256':before_sha,'after_descriptor_sha256':before_sha,'visible_volume_count':86,
+    'input_raster_images':0,'source_scene_retained_in_working_evidence':'tools/art/sky-source/history/r50-rendered-source.blend.bin',
+    'descriptor_scope':'geometry, density hashes, materials, angular emitter/world graph, World importance sampling, camera, Cycles/integrator and linear output configuration'}
+write(SOURCE/'render-equivalence.json',equivalence)
+cp(STAGE/stage['output'],PACKAGE/'assets/textures/sky-world-linear.ktx2')
+cp(ROOT/stage['authoring_hdr']['file'],SOURCE/'sky-world-linear.hdr')
+cp(ROOT/stage['ibl_authoring']['file'],SOURCE/'sky-world-ibl-linear.hdr')
+manifest=copy.deepcopy(baseline)
+manifest.update({'source_sha256':sha(blend),'generator_sha256':sha(PACKAGE/'tools/art/build_sky.py'),
+    'output_sha256':stage['output_sha256'],'bytes':stage['bytes'],'output_needs_render':False,
+    'linear_encoding':stage['linear_encoding'],'render_seconds':stage['authoring_hdr']['seconds'],
+    'sun_game_direction':stage['sun_game_direction'],'sun_color_linear_rgb':[1,.62,.32],
+    'sun_energy':stage['world_authoring']['key_normal_irradiance_red_channel'],
+    'sun_energy_interpretation':'Normal red-channel irradiance of the single angular World emitter; no active SUN object',
+    'sun_emitter_type':'uniform-radiance angular World source','diffuse_sky_strength':1.0,
+    'authoring_hdr':{**stage['authoring_hdr'],'file':'sky-world-linear.hdr'},
+    'atmosphere_authoring':stage['world_authoring'],'require_authoring_ibl':True,
+    'ibl_authoring':{**stage['ibl_authoring'],'file':'sky-world-ibl-linear.hdr','descriptor':'ibl-render-scene-descriptor.json',
+        'render_record':'history/r50-ibl-render-record.json','rendered_generator_evidence':'history/r50-render.py.txt'},
+    'limitations':['The real source is visible in the authoring hero; the broad golden opening is still not resolved.',
+        'Runtime ACES, source-matched IBL and low directional key require joint game review.',
+        'The explicit broad blue boundary is art-directed rather than a strict planetary atmosphere.',
+        'This portable source is linked to original renders by exact descriptor equivalence, not a second render.']})
+manifest['composite_provenance'].update({'status':'render-preserving packaging; no new render',
+    'rendered_scene_sha256':stage['source_sha256'],'rendered_generator_sha256':stage['authoring_hdr']['generator_sha256'],
+    'rendered_generator_evidence':'history/r50-render.py.txt','render_record':'history/r50-render-record.json',
+    'descriptor_sha256':before_sha,'source_lineage':baseline['composite_provenance']['source_lineage']+
+        ' -> r50 planetless shared blue field and one angular low-sun emitter, density unchanged -> original4K plus original1024x512 sun-free-camera IBL'})
+manifest['integration'].update({'radiance_gain_f32':round(stage['linear_encoding']['recommended_runtime_multiplier'],7),
+    'encoding_scale':stage['linear_encoding']['encoding_scale'],'rust_change_applied':False,
+    'first_runtime_review_exposure_stops':-.90,'sun_game_direction':stage['sun_game_direction'],
+    'sun_elevation_degrees':stage['sun_elevation_degrees'],
+    'ibl_raw_radiance_to_visible_reference_multiplier':2**(-.90)})
+paths={r['file'] for r in baseline['supporting_files']}|{r['file'] for r in history}
+paths|={'tools/art/verify-sky.mjs','tools/art/sky-source/render-scene-descriptor.json',
+        'tools/art/sky-source/render-equivalence.json','tools/art/sky-source/scene_fingerprint.py',
+        'tools/art/sky-source/ibl-render-scene-descriptor.json','tools/art/sky-source/sky-world-ibl-linear.hdr'}
+manifest['supporting_files']=[record(PACKAGE/p) for p in sorted(paths)]
+write(SOURCE/'manifest.json',manifest)
+for r in stage['canonical_frozen']:assert sha(ROOT/r['file'])==r['sha256']
+print('R50_PORTABLE_PACKAGED',json.dumps({'root':PACKAGE.relative_to(ROOT).as_posix(),'scene_sha256':sha(blend),
+    'descriptor_sha256':before_sha,'volume_count':86,'supporting_files':len(manifest['supporting_files'])}),flush=True)

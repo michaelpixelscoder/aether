@@ -1,0 +1,66 @@
+[
+  {
+    "kind": "dawn",
+    "mesh": "01 | Fractured limestone",
+    "triangles": 39836,
+    "loops": 119508,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn",
+    "mesh": "02 | Deep strata",
+    "triangles": 252,
+    "loops": 756,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn-watch",
+    "mesh": "01 | Fractured limestone",
+    "triangles": 48836,
+    "loops": 146508,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn-watch",
+    "mesh": "02 | Deep strata",
+    "triangles": 120,
+    "loops": 360,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn-garden",
+    "mesh": "01 | Fractured limestone",
+    "triangles": 42660,
+    "loops": 127980,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn-garden",
+    "mesh": "02 | Deep strata",
+    "triangles": 120,
+    "loops": 360,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn-ruin",
+    "mesh": "01 | Fractured limestone",
+    "triangles": 43364,
+    "loops": 130092,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  },
+  {
+    "kind": "dawn-ruin",
+    "mesh": "02 | Deep strata",
+    "triangles": 120,
+    "loops": 360,
+    "nonunit_tangents": [],
+    "maximum_metric_uv_error": 0
+  }
+]

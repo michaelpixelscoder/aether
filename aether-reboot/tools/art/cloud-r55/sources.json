@@ -1,0 +1,7 @@
+{
+  "tools/art/build_cloud_lighting.mjs": "ad7ebbc793f06db058e4e3ce22963b1e237d5d64a9c1900a57099ffcb07c3a5d",
+  "tools/art/review_cloud_light_cpu.py": "c58bd4edca76f4b1bfc93e611b8557ba58f3eded021978f488e5c1cc365f08c1",
+  "tools/art/compare_cloud_light_rays_cpu.py": "ba33e5c5667c517c0f37b96bcec431824fa195349b552bec38c8cccff22c7875",
+  "tools/art/verify-cloud-lighting.mjs": "f6d04678a62dbd4252c9252a131e2f453bee2723048daa4e007b35112165cd7a",
+  "tools/art/cloud-r55/test-gate.mjs": "95217e6c4e44c18c8609ce5e66dad6b6f6cb1178cca5f8dcccd83056c87fca65"
+}

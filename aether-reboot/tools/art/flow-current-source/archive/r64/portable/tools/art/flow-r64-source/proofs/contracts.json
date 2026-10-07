@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "mips": 11,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "gpu_bytes": 8384072,
+  "level0_rgba_sha256": "9bc3903ea5167a450682dd0cb848436ef21cc0b584ed74fb15eb95ce0369c18d",
+  "native_png_sha256": "eaf534efc2a2e30632fcfee7f3d5b731efe77dcd19f0849216e6c74c662497c3",
+  "current_ktx_sha256": "68755a59545f61bc047975e7af6c301bd98164468a6f293a1336e9bdbb5b1f05",
+  "shader_sha256": "0861bdc4197dab68fb10826a6165fa6ef5e325fa52ad6d42331a6b65e30c5cf5",
+  "new_current_only_asset": true,
+  "historical_cascade_pool_shader_sampler_texture_exact": true,
+  "current_handle_wiring": "PENDING root diagnostic override; bytes alone do not prove runtime binding",
+  "negative_cases_rejected": [
+    "native PNG bytes/CRC",
+    "source SHA authority",
+    "native dimension metadata",
+    "KTX Vulkan color format",
+    "DFD sRGB transfer",
+    "DFD alpha linear qualifier",
+    "actual complete mip count",
+    "KTX native width",
+    "native level0 including alpha",
+    "derived payload byte identity",
+    "mip index overlap",
+    "mip index alignment",
+    "container truncation",
+    "original waterfall texture",
+    "project clock",
+    "waterfall alpha",
+    "pool wave",
+    "new asset UV crop",
+    "historical haze",
+    "reserved identifier"
+  ],
+  "gpu_compile": "PENDING",
+  "performance": "UNMEASURED",
+  "promotion_authorized": false
+}

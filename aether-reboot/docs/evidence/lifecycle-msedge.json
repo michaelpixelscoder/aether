@@ -1,0 +1,10 @@
+{
+  "suspension_method": "CDP Debugger.pause / resume, real JS execution suspension",
+  "freeze_seconds": 65,
+  "before_tick": 112,
+  "after_tick": 168,
+  "resume_ticks": 56,
+  "history_save_restored": true,
+  "bfcache_claimed": false,
+  "os_suspend_claimed": false
+}

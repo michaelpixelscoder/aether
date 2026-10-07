@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "operation": "remove hidden authoring objects and unused datablocks; remap identical volume bytes to package-relative paths",
+  "new_render_performed": false,
+  "rendered_scene_sha256": "84cc18b39dca2baf9fe64b65b3708326143083eb3eb5e23f6e66371d23fd35e8",
+  "packaged_scene_sha256": "511aa38ce88b522b4efebfe96b48d8077df5de0d97ad816ed0a1384afeda5764",
+  "before_descriptor_sha256": "c2354d611a447b99b3179a33bde3681ee152d4e7e908cc9756af831c589b2bc3",
+  "after_descriptor_sha256": "c2354d611a447b99b3179a33bde3681ee152d4e7e908cc9756af831c589b2bc3",
+  "visible_volume_count": 86,
+  "input_raster_images": 0,
+  "source_scene_retained_in_working_evidence": ".dream-loop/sky-r43-candidate/sky-r46-depth.blend",
+  "descriptor_scope": "visible geometry, grids by SHA, materials and node graphs, sun, camera, world, Cycles/integrator and output color configuration"
+}

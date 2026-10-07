@@ -1,0 +1,60 @@
+"""Read-only portable R57 source proof against unchanged R53 geometry/materials."""
+import bpy, json, hashlib
+from pathlib import Path
+STUDY=Path(__file__).resolve().parent
+ROOT=STUDY.parents[2]
+PACKAGE=ROOT/'.dream-loop/sky-r57-promotion'
+BASE=ROOT/'tools/art/sky-source/sky-world.blend'
+FINAL=PACKAGE/'tools/art/sky-source/sky-world.blend'
+sha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+assert sha(BASE)=='4196ff61f70037e5fb373ccdd840c52ff714fc82e6b03ae243b1cea65571acea'
+assert sha(FINAL)=='bcbb3f5b72fb72be0de5df2bd7e65c92420e4ca5b39b4dcea68ef1203a85e397'
+
+def value(v):
+    if v is None or isinstance(v,(bool,str,int,float)): return v
+    try: return [value(x) for x in v]
+    except TypeError: return str(v)
+
+def fingerprint(file, portable=False):
+    bpy.ops.wm.open_mainfile(filepath=str(file))
+    rows=[]; relative=[]
+    for o in sorted(bpy.context.scene.objects,key=lambda x:x.name):
+        row={'name':o.name,'type':o.type,'matrix':[[float(v) for v in r] for r in o.matrix_world]}
+        if o.type=='MESH':
+            row['vertices']=[list(v.co) for v in o.data.vertices]
+            row['polygons']=[list(p.vertices) for p in o.data.polygons]
+        if o.type=='VOLUME':
+            p=Path(bpy.path.abspath(o.data.filepath)).resolve()
+            row['volume_sha256']=sha(p)
+            if portable:
+                assert o.data.filepath.replace('\\','/').startswith('//cloud-volumes/'),repr(o.data.filepath)
+                assert p.is_relative_to(PACKAGE.resolve())
+                relative.append({'object':o.name,'path':o.data.filepath,'sha256':row['volume_sha256']})
+        rows.append(row)
+    materials={}
+    for m in bpy.data.materials:
+        if not m.use_nodes: continue
+        nodes=[]
+        for n in m.node_tree.nodes:
+            nodes.append({'name':n.name,'type':n.bl_idname,
+                'operation':getattr(n,'operation',None),'phase':getattr(n,'phase',None),
+                'inputs':{str(i)+':'+s.name:value(s.default_value) for i,s in enumerate(n.inputs) if hasattr(s,'default_value')}})
+        links=[[l.from_node.name,l.from_socket.identifier,l.to_node.name,l.to_socket.identifier] for l in m.node_tree.links]
+        materials[m.name]={'nodes':sorted(nodes,key=lambda n:n['name']),'links':sorted(links)}
+    digest=lambda x: hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+    return rows,materials,relative,digest(rows),digest(materials)
+
+a,am,_,ad,amd=fingerprint(BASE)
+b,bm,relative,bd,bmd=fingerprint(FINAL,True)
+assert a==b and am==bm
+assert len(relative)==98
+report={'schema':1,'status':'PASS','reference_sha256':sha(BASE),'source_sha256':sha(FINAL),
+    'geometry_digest':ad,'materials_digest':amd,'object_count':len(a),'volume_count':len(relative),
+    'material_count':len(am),'all_world_matrices_mesh_vertices_polygons_vdb_bytes_exact_r53':True,
+    'all_material_nodes_inputs_links_exact_r53':True,'all_active_volume_paths_relative_and_within_package':True,
+    'relative_volume_paths':relative,'neutral_air_density':3e-7,'neutral_air_anisotropy':.9,
+    'limitations':['World illumination intentionally differs and is checked separately by verify-sky-field.mjs.',
+        'Archived R53 blend bytes are preserved at a historical path; restore it to sky-source/ to resolve its original relative paths.']}
+target=PACKAGE/'docs/evidence/sky-r57-source-portable.json'
+target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+print('R57_PORTABLE_SOURCE_EXACT',json.dumps({k:v for k,v in report.items() if k!='relative_volume_paths'}),flush=True)

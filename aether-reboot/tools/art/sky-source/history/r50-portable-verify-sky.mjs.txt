@@ -1,0 +1,513 @@
+#!/usr/bin/env node
+// Standalone CPU validation of the original baked sky. No npm dependency.
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { createReadStream } from 'node:fs';
+import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
+import { dirname, resolve, relative, isAbsolute, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { inflateSync, deflateSync } from 'node:zlib';
+
+function argument(flag) {
+  const index=process.argv.indexOf(flag);
+  if(index<0) return undefined;
+  assert(index+1<process.argv.length&&!process.argv[index+1].startsWith('--'),`Missing value for ${flag}`);
+  return process.argv[index+1];
+}
+const root = resolve(argument('--root')??resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
+const source = resolve(root, 'tools/art/sky-source');
+const candidate = process.argv.includes('--candidate');
+const reportPath = resolve(root, argument('--report')??(candidate ? '.dream-loop/sky-recompose/candidate-validation.json' : 'docs/evidence/sky-assets.json'));
+const ktxSignature = Buffer.from([171,75,84,88,32,50,48,187,13,10,26,10]);
+const signature = Buffer.from([137,80,78,71,13,10,26,10]);
+const crcTable = new Uint32Array(256);
+for (let n=0;n<256;n++) {
+  let c=n;
+  for(let k=0;k<8;k++) c=(c&1)?0xedb88320^(c>>>1):c>>>1;
+  crcTable[n]=c>>>0;
+}
+function crc32(bytes) {
+  let c=0xffffffff;
+  for(const b of bytes) c=crcTable[(c^b)&255]^(c>>>8);
+  return (c^0xffffffff)>>>0;
+}
+function paeth(a,b,c) {
+  const p=a+b-c, pa=Math.abs(p-a), pb=Math.abs(p-b), pc=Math.abs(p-c);
+  return pa<=pb&&pa<=pc?a:pb<=pc?b:c;
+}
+export function decodePng(bytes) {
+  assert(bytes.subarray(0,8).equals(signature),'Invalid PNG signature');
+  let pos=8, header, ended=false, chunks=0;
+  const idat=[];
+  while(pos<bytes.length) {
+    assert(pos+12<=bytes.length,'Truncated PNG chunk');
+    const length=bytes.readUInt32BE(pos), type=bytes.toString('ascii',pos+4,pos+8);
+    const end=pos+12+length;
+    assert(end<=bytes.length,'Truncated PNG chunk data');
+    assert.equal(crc32(bytes.subarray(pos+4,pos+8+length)),bytes.readUInt32BE(pos+8+length),`PNG CRC mismatch: ${type}`);
+    const data=bytes.subarray(pos+8,pos+8+length);
+    if(type==='IHDR') {
+      assert(!header&&chunks===0&&length===13,'Invalid PNG header order');
+      header={width:data.readUInt32BE(0),height:data.readUInt32BE(4),bitDepth:data[8],colorType:data[9]};
+      assert(header.width>0&&header.height>0&&header.width<=16384&&header.height<=16384,'Unsafe PNG dimensions');
+      assert.equal(header.bitDepth,8,'Expected 8-bit PNG');
+      assert([2,6].includes(header.colorType),'Expected RGB/RGBA PNG');
+      assert(data[10]===0&&data[11]===0&&data[12]===0,'Unsupported PNG compression/filter/interlace');
+    } else if(type==='IDAT') { assert(header,'IDAT before header'); idat.push(data); }
+    else if(type==='IEND') { assert.equal(length,0); assert.equal(end,bytes.length,'Trailing PNG data'); ended=true; }
+    pos=end; chunks++;
+  }
+  assert(header&&ended&&idat.length,'Incomplete PNG');
+  const channels=header.colorType===2?3:4, stride=header.width*channels;
+  const expected=(stride+1)*header.height;
+  const raw=inflateSync(Buffer.concat(idat),{maxOutputLength:expected});
+  assert.equal(raw.length,expected,'Unexpected inflated PNG length');
+  const pixels=Buffer.allocUnsafe(stride*header.height);
+  for(let y=0;y<header.height;y++) {
+    const start=y*(stride+1), filter=raw[start], row=y*stride;
+    assert(filter<=4,'Invalid PNG row filter');
+    for(let x=0;x<stride;x++) {
+      const left=x>=channels?pixels[row+x-channels]:0;
+      const up=y?pixels[row+x-stride]:0;
+      const corner=y&&x>=channels?pixels[row+x-stride-channels]:0;
+      const prediction=filter===0?0:filter===1?left:filter===2?up:filter===3?((left+up)>>>1):paeth(left,up,corner);
+      pixels[row+x]=(raw[start+1+x]+prediction)&255;
+    }
+  }
+  return {...header,channels,pixels,chunks};
+}
+export function decodeKtx2(bytes) {
+  assert(bytes.length>=104&&bytes.subarray(0,12).equals(ktxSignature),'Invalid/truncated KTX2 header');
+  const u32=o=>bytes.readUInt32LE(o), u64=o=>{
+    const n=bytes.readBigUInt64LE(o); assert(n<=BigInt(Number.MAX_SAFE_INTEGER),'Unsafe KTX2 offset'); return Number(n);
+  };
+  assert.equal(u32(12),97,'Expected RGBA16Float VkFormat');
+  assert.equal(u32(16),2,'Expected half-float type size');
+  const width=u32(20),height=u32(24);
+  assert(width>0&&height>0&&width<=8192&&height<=4096,'Unsafe KTX2 dimensions');
+  assert.deepEqual([u32(28),u32(32),u32(36),u32(40),u32(44)],[0,0,1,1,0],'Expected one uncompressed 2D KTX2 level');
+  const dfdOffset=u32(48),dfdLength=u32(52),kvdOffset=u32(56),kvdLength=u32(60);
+  assert.equal(u64(64),0); assert.equal(u64(72),0);
+  const offset=u64(80),length=u64(88),rawLength=u64(96);
+  assert.equal(length,width*height*8,'KTX2 byte length does not match RGBA16Float dimensions');
+  assert.equal(rawLength,length); assert.equal(offset%8,0,'KTX2 payload alignment');
+  assert.equal(offset+length,bytes.length,'Truncated or trailing KTX2 payload');
+  assert(dfdOffset>=104&&dfdLength===92&&dfdOffset+dfdLength<=kvdOffset&&kvdOffset+kvdLength<=offset,'Invalid KTX2 section bounds');
+  const dfd=bytes.subarray(dfdOffset,dfdOffset+dfdLength);
+  assert.equal(dfd.readUInt32LE(0),92); assert.equal(dfd.readUInt32LE(4),0);
+  assert.equal(dfd.readUInt16LE(8),2); assert.equal(dfd.readUInt16LE(10),88);
+  assert.deepEqual([...dfd.subarray(12,28)],[1,1,1,0,0,0,0,0,8,0,0,0,0,0,0,0],'Expected linear Rec.709 RGBSDA DFD');
+  for(let c=0;c<4;c++) {
+    const p=28+c*16;
+    assert.equal(dfd.readUInt16LE(p),c*16); assert.equal(dfd[p+2],15);
+    assert.equal(dfd[p+3],0xc0|[0,1,2,15][c]);
+    assert.equal(dfd.readUInt32LE(p+4),0);
+    assert.equal(dfd.readUInt32LE(p+8),0xbf800000); assert.equal(dfd.readUInt32LE(p+12),0x3f800000);
+  }
+  const metadata={};
+  for(let p=kvdOffset;p<kvdOffset+kvdLength;) {
+    assert(p+4<=kvdOffset+kvdLength,'Truncated KTX2 metadata');
+    const n=u32(p);p+=4;assert(n>1&&p+n<=kvdOffset+kvdLength,'Invalid KTX2 metadata bounds');
+    const pair=bytes.subarray(p,p+n),zero=pair.indexOf(0);assert(zero>0,'Invalid KTX2 metadata key');
+    const key=pair.toString('utf8',0,zero);assert(!(key in metadata),'Duplicate KTX2 metadata key');
+    metadata[key]=pair.toString('utf8',zero+1).replace(/\0$/,'');p+=(n+3)&~3;
+  }
+  assert.equal(metadata.KTXorientation,'rd','KTX2 must preserve top-left panorama orientation');
+  return {width,height,channels:4,format:'RGBA16Float',pixels:bytes.subarray(offset),metadata,payload_bytes:length};
+}
+const halfToFloat=Float64Array.from({length:65536},(_,bits)=>{
+  const sign=bits&0x8000?-1:1,exponent=(bits>>10)&31,mantissa=bits&1023;
+  return exponent===31?(mantissa?NaN:sign*Infinity):sign*(exponent?(1+mantissa/1024)*2**(exponent-15):mantissa*2**-24);
+});
+export function radianceHdrStats(bytes) {
+  let position=0;
+  const line=()=>{const end=bytes.indexOf(10,position);assert(end>=0&&end-position<4096,'Truncated HDR header');
+    const value=bytes.toString('ascii',position,end).replace(/\r$/,'');position=end+1;return value;};
+  assert(/^#\?(RADIANCE|RGBE)$/.test(line()),'Invalid Radiance signature');
+  const header=[];for(let entry=line();entry!=='';entry=line())header.push(entry);
+  assert(header.includes('FORMAT=32-bit_rle_rgbe'),'Expected RGBE scanline encoding');
+  const match=/^-Y (\d+) \+X (\d+)$/.exec(line());assert(match,'Unexpected HDR orientation');
+  const height=Number(match[1]),width=Number(match[2]);
+  assert(width>=8&&width<=8192&&height>0&&height<=4096,'Unsafe HDR dimensions');
+  const row=new Uint8Array(width*4);let min=Infinity,max=0;const sum=[0,0,0];
+  for(let y=0;y<height;y++) {
+    assert(position+4<=bytes.length,'Truncated HDR scanline');
+    assert.deepEqual([...bytes.subarray(position,position+4)],[2,2,width>>8,width&255]);position+=4;
+    for(let channel=0;channel<4;channel++) {
+      let x=0;
+      while(x<width) {
+        assert(position<bytes.length,'Truncated HDR run');const count=bytes[position++];
+        assert(count>0,'Invalid HDR run');const length=count>128?count-128:count;
+        assert(x+length<=width,'HDR run overflow');
+        if(count>128) {assert(position<bytes.length,'Truncated HDR run');row.fill(bytes[position++],channel*width+x,channel*width+x+length);}
+        else {assert(position+length<=bytes.length,'Truncated HDR literal');row.set(bytes.subarray(position,position+length),channel*width+x);position+=length;}
+        x+=length;
+      }
+    }
+    for(let x=0;x<width;x++)for(let c=0;c<3;c++) {
+      const e=row[3*width+x],value=e?row[c*width+x]*2**(e-136):0;
+      assert(Number.isFinite(value)&&value>=0,'Invalid HDR radiance');
+      min=Math.min(min,value);max=Math.max(max,value);sum[c]+=value;
+    }
+  }
+  assert.equal(position,bytes.length,'Trailing HDR bytes');
+  return {width,height,radiance_min:min,radiance_max:max,mean_rgb:sum.map(v=>v/(width*height)),all_samples_finite_nonnegative:true};
+}
+export function assertIblSceneMatches(main,ibl) {
+  const expected=structuredClone(main);
+  expected.render.resolution_x=1024;expected.render.resolution_y=512;
+  const gate=expected.world.nodes.find(n=>n.name==='IBL omit direct camera disk | 0 hero, 1 future IBL');
+  assert(gate&&gate.inputs['1:Value']===0,'Visible sky must retain the actual solar disk');
+  gate.inputs['1:Value']=1;
+  assert.deepEqual(ibl,expected,'IBL may only change original resolution and direct camera disk visibility');
+}
+function hdrStats(image,gain) {
+  const {width,height,pixels}=image;
+  assert(Number.isFinite(gain)&&gain>0,'Invalid HDR exposure calibration');
+  const read=(pixel,c)=>halfToFloat[pixels.readUInt16LE(pixel*8+c*2)];
+  let minimum=Infinity,maximum=0,black=0,aboveOne=0;
+  for(let p=0;p<width*height;p++) {
+    let largest=0;
+    for(let c=0;c<3;c++) {
+      const value=read(p,c);assert(Number.isFinite(value)&&value>=0,'Non-finite or negative HDR radiance');
+      minimum=Math.min(minimum,value);maximum=Math.max(maximum,value);largest=Math.max(largest,value);
+      if(value>1) aboveOne++;
+    }
+    assert.equal(read(p,3),1,'HDR alpha must be opaque');if(largest===0) black++;
+  }
+  // Bounded analytic radiance coordinates make seams comparable even at a
+  // bright solar disk. These values are metrics only; the image is untouched.
+  const metric=(p,c)=>{const x=read(p,c)*gain;return x/(1+x);};
+  const seam=[],adjacent=[],poles=[];
+  for(let y=0;y<height;y++) for(let c=0;c<3;c++) {
+    seam.push(Math.abs(metric(y*width,c)-metric((y+1)*width-1,c)));
+    adjacent.push(Math.abs(metric(y*width,c)-metric(y*width+1,c)));
+  }
+  for(const y of [0,height-1]) {
+    let spread=0;
+    for(let c=0;c<3;c++) {
+      const values=Array.from({length:width},(_,x)=>metric(y*width+x,c)).sort((a,b)=>a-b);
+      spread=Math.max(spread,values[Math.floor(width*.99)]-values[Math.floor(width*.01)]);
+    }
+    poles.push(spread);
+  }
+  const mean=a=>a.reduce((s,v)=>s+v,0)/a.length;seam.sort((a,b)=>a-b);
+  return {radiance_min:minimum,radiance_max:maximum,finite_nonnegative:true,opaque_alpha:true,
+    above_one_channel_fraction:aboveOne/(width*height*3),black_pixel_fraction:black/(width*height),
+    seam_mean_exposure_compressed_rgb:mean(seam),seam_p99_exposure_compressed_rgb:seam[Math.floor(seam.length*.99)],
+    adjacent_mean_exposure_compressed_rgb:mean(adjacent),pole_p99_p01_exposure_compressed_rgb:poles,
+    metric_transform:'x = linear radiance * runtime multiplier; x/(1+x), numerical metrics only'};
+}
+function imageStats(image) {
+  const {width,height,channels,pixels}=image;
+  const linear=Float64Array.from({length:256},(_,i)=>i/255<=.04045?(i/255)/12.92:((i/255+.055)/1.055)**2.4);
+  const seam=[], adjacent=[], poles=[];
+  for(let y=0;y<height;y++) for(let c=0;c<3;c++) {
+    const p=y*width*channels+c;
+    seam.push(Math.abs(linear[pixels[p]]-linear[pixels[p+(width-1)*channels]]));
+    adjacent.push(Math.abs(linear[pixels[p]]-linear[pixels[p+channels]]));
+  }
+  for(const y of [0,height-1]) {
+    const ranges=[];
+    for(let c=0;c<3;c++) {
+      const values=[];
+      for(let x=0;x<width;x++) values.push(linear[pixels[(y*width+x)*channels+c]]);
+      values.sort((a,b)=>a-b);
+      ranges.push({full:values.at(-1)-values[0],p99_p01:values[Math.floor(width*.99)]-values[Math.floor(width*.01)]});
+    }
+    poles.push({max_range_linear_rgb:Math.max(...ranges.map(r=>r.full)),p99_p01_range_linear_rgb:Math.max(...ranges.map(r=>r.p99_p01))});
+  }
+  let white=0,black=0,transparent=0;
+  for(let p=0;p<pixels.length;p+=channels) {
+    if(pixels[p]===255&&pixels[p+1]===255&&pixels[p+2]===255) white++;
+    if(pixels[p]===0&&pixels[p+1]===0&&pixels[p+2]===0) black++;
+    if(channels===4&&pixels[p+3]!==255) transparent++;
+  }
+  const mean=a=>a.reduce((s,v)=>s+v,0)/a.length;
+  seam.sort((a,b)=>a-b);
+  return {seam_mean_linear_rgb:mean(seam),seam_p99_linear_rgb:seam[Math.floor(seam.length*.99)],
+    adjacent_mean_linear_rgb:mean(adjacent),top_pole:poles[0],bottom_pole:poles[1],
+    clipped_white_fraction:white/(width*height),clipped_black_fraction:black/(width*height),transparent_pixels:transparent};
+}
+async function sha256(file) {
+  const hash=createHash('sha256');
+  for await(const data of createReadStream(file)) hash.update(data);
+  return hash.digest('hex');
+}
+function inside(base,path) {
+  const full=resolve(base,path), rel=relative(base,full);
+  assert(!isAbsolute(rel)&&rel!=='..'&&!rel.startsWith('..'+sep),`Path escapes source: ${path}`);
+  return full;
+}
+async function verifyDigest(file,expected) {
+  assert.match(expected,/^[a-f0-9]{64}$/,'Invalid expected SHA-256');
+  const actual=await sha256(file);
+  assert.equal(actual,expected,`SHA-256 mismatch: ${relative(root,file)}`);
+  return {file:relative(root,file).replaceAll('\\','/'),sha256:actual,bytes:(await stat(file)).size};
+}
+function assertRenderCurrent(manifest) {
+  assert.notEqual(manifest.output_needs_render,true,
+    'Sky source requires a new final render: output_needs_render=true');
+}
+function validateRecipe(recipe,manifest) {
+  assert.equal(recipe.schema,1);
+  assert.equal(recipe.groups.length,manifest.visible_volume_count);
+  const outputs=new Set(manifest.volume_grids.map(g=>g.file));
+  const inputs=new Set(manifest.authoring_grids.map(g=>g.file));
+  const used=new Set();let cells=0;
+  assert.equal(outputs.size,manifest.visible_volume_count);
+  assert.equal(inputs.size,manifest.cloud_sculptures);
+  for(const group of recipe.groups) {
+    assert(outputs.delete(group.file),'Unknown or duplicate rebuilt field');
+    assert(Number.isFinite(group.voxel_metres)&&group.voxel_metres>0);
+    assert(Number.isInteger(group.vdb_file_identifier.offset)&&group.vdb_file_identifier.offset>=8&&group.vdb_file_identifier.offset<256);
+    assert.match(group.vdb_file_identifier.ascii,/^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$/);
+    assert(group.cells.length>0);
+    for(const cell of group.cells) {
+      assert(inputs.has(cell.grid),'Recipe density source is not hashed');used.add(cell.grid);
+      for(const property of ['location','rotation_euler','scale']) {
+        assert.equal(cell[property].length,3);assert(cell[property].every(Number.isFinite));
+      }
+      assert(cell.scale.every(x=>x>0));assert(Number.isFinite(cell.density)&&cell.density>0);
+      assert.equal(typeof cell.rotation_mode,'string');cells++;
+    }
+  }
+  assert.equal(outputs.size,0);assert.equal(used.size,inputs.size,'Unused original grid in portable authoring package');
+  assert.equal(cells,recipe.cells);assert.equal(cells,manifest.compiled_cell_placements);
+}
+async function verify() {
+  const manifest=JSON.parse(await readFile(resolve(source,candidate?'candidate-manifest.json':'manifest.json'),'utf8'));
+  assertRenderCurrent(manifest);
+  assert.equal(manifest.original_3d_render,true);
+  assert.equal(manifest.upscaling,false);
+  assert.equal(manifest.retouching,false);
+  assert.deepEqual(manifest.external_assets,[]);
+  const composite=manifest.schema===3;
+  if(composite) {
+    assert.equal(manifest.volume_grids.length,manifest.visible_volume_count);
+    assert.equal(manifest.authoring_grids.length,manifest.cloud_sculptures);
+    assert(manifest.visible_volume_count>0&&manifest.cloud_sculptures>0);
+  } else {
+    assert.equal(manifest.cloud_sculptures,36);
+    assert.equal(manifest.volume_grids.length,36);
+  }
+  assert.equal(new Set(manifest.volume_grids.map(g=>g.file)).size,manifest.volume_grids.length);
+  const [generator,blend,output,...grids]=await Promise.all([
+    verifyDigest(inside(root,manifest.generator),manifest.generator_sha256),
+    verifyDigest(inside(source,manifest.source),manifest.source_sha256),
+    verifyDigest(inside(root,manifest.output),manifest.output_sha256),
+    ...manifest.volume_grids.map(g=>verifyDigest(inside(source,g.file),g.sha256))
+  ]);
+  assert.equal(output.bytes,manifest.bytes);
+  for(let i=0;i<grids.length;i++) assert.equal(grids[i].bytes,manifest.volume_grids[i].bytes);
+  let authoring=[],supporting=[],compositeProof,iblProof;
+  if(composite) {
+    [authoring,supporting]=await Promise.all([
+      Promise.all(manifest.authoring_grids.map(g=>verifyDigest(inside(source,g.file),g.sha256))),
+      Promise.all(manifest.supporting_files.map(g=>verifyDigest(inside(root,g.file),g.sha256)))
+    ]);
+    for(let i=0;i<authoring.length;i++) assert.equal(authoring[i].bytes,manifest.authoring_grids[i].bytes);
+    for(let i=0;i<supporting.length;i++) assert.equal(supporting[i].bytes,manifest.supporting_files[i].bytes);
+    const hashed=new Set(supporting.map(g=>resolve(root,g.file)));
+    const loadProof=async file=>{
+      const path=inside(source,file);assert(hashed.has(path),'Composite proof must have a verified supporting digest');
+      return JSON.parse(await readFile(path,'utf8'));
+    };
+    const chain=manifest.composite_provenance;
+    const recipe=await loadProof(chain.recipe);validateRecipe(recipe,manifest);
+    const rendered=await loadProof(chain.render_record);
+    assert.equal(rendered.source_sha256,chain.rendered_scene_sha256);
+    assert.equal(rendered.generator_sha256,chain.rendered_generator_sha256);
+    assert.equal(rendered.sha256,manifest.authoring_hdr.sha256);
+    const renderedCode=inside(source,chain.rendered_generator_evidence);
+    assert(hashed.has(renderedCode));assert.equal(await sha256(renderedCode),chain.rendered_generator_sha256);
+    if(chain.status==='render-preserving packaging; no new render') {
+      const equivalence=await loadProof(chain.equivalence_report);
+      assert.equal(equivalence.status,'passed');assert.equal(equivalence.new_render_performed,false);
+      assert.equal(equivalence.rendered_scene_sha256,chain.rendered_scene_sha256);
+      assert.equal(equivalence.packaged_scene_sha256,manifest.source_sha256);
+      assert.equal(equivalence.before_descriptor_sha256,chain.descriptor_sha256);
+      assert.equal(equivalence.after_descriptor_sha256,chain.descriptor_sha256);
+      assert.equal(equivalence.visible_volume_count,manifest.visible_volume_count);
+    } else {
+      assert.equal(chain.status,'rendered from packaged scene');
+      assert.equal(chain.rendered_scene_sha256,manifest.source_sha256);
+    }
+    const descriptorPath=inside(source,chain.descriptor);assert(hashed.has(descriptorPath));
+    if(manifest.require_authoring_ibl) assert(manifest.ibl_authoring,'Original authored IBL is required');
+    if(manifest.ibl_authoring) {
+      const ibl=manifest.ibl_authoring;
+      assert.equal(ibl.camera_solar_disk_visible,false);assert.equal(ibl.solar_illumination_active,true);
+      assert.equal(ibl.view_transform_applied,false);assert.equal(ibl.raw_exposure_stops,0);
+      assert.equal(ibl.resampled,false);assert.deepEqual(ibl.original_render_dimensions,[1024,512]);
+      const equivalentSources=new Set([manifest.source_sha256,chain.rendered_scene_sha256]);
+      if(chain.equivalence_report) {
+        const equivalence=await loadProof(chain.equivalence_report);
+        if(equivalence.status==='passed'&&equivalence.packaged_scene_sha256===manifest.source_sha256
+          &&equivalence.after_descriptor_sha256===chain.descriptor_sha256) equivalentSources.add(equivalence.rendered_scene_sha256);
+      }
+      assert(equivalentSources.has(ibl.source_sha256),'IBL source lacks exact scene equivalence');
+      const iblPath=inside(source,ibl.file);assert(hashed.has(iblPath));
+      const iblBytes=await readFile(iblPath);assert.equal(iblBytes.length,ibl.bytes);
+      assert.equal(await sha256(iblPath),ibl.sha256);
+      const stats=radianceHdrStats(iblBytes);assert.deepEqual([stats.width,stats.height],[1024,512]);
+      assert.equal(stats.radiance_min,ibl.radiance_min);assert.equal(stats.radiance_max,ibl.radiance_max);
+      const iblScene=await loadProof(ibl.descriptor);
+      const mainScene=JSON.parse(await readFile(descriptorPath,'utf8'));
+      assertIblSceneMatches(mainScene,iblScene);
+      assert(!mainScene.objects.some(o=>o.type==='LIGHT'),'Authored source must not retain a second SUN/light');
+      const n=name=>mainScene.world.nodes.find(node=>node.name===name);
+      const radiance=n('Calibrated finite angular radiance').inputs['1:Value'];
+      const radius=manifest.atmosphere_authoring.disk_angular_diameter_degrees*Math.PI/360;
+      assert(Math.abs(radiance*Math.PI*Math.sin(radius)**2-manifest.sun_energy)<1e-4,'Stellar irradiance metadata differs from actual node graph');
+      assert.equal(manifest.diffuse_sky_strength,1);
+      assert.deepEqual(n('Single warm stellar emitter | no additional SUN object').inputs['0:Color'].slice(0,3),
+        manifest.sun_color_linear_rgb.map(Math.fround));
+      const [sx,sy,sz]=manifest.sun_game_direction;
+      assert.deepEqual(n('Dot with actual stellar direction').inputs['1:Vector'],[sx,-sz,sy]);
+      const iblRecord=await loadProof(ibl.render_record);
+      assert.equal(iblRecord.sha256,ibl.sha256);assert.equal(iblRecord.source_sha256,ibl.source_sha256);
+      assert.equal(iblRecord.render_descriptor_sha256,ibl.render_descriptor_sha256);
+      assert.equal(iblRecord.generator_sha256,ibl.generator_sha256);
+      const iblCode=inside(source,ibl.rendered_generator_evidence);assert(hashed.has(iblCode));
+      assert.equal(await sha256(iblCode),ibl.generator_sha256);
+      iblProof={...stats,file:relative(root,iblPath),sha256:ibl.sha256,bytes:ibl.bytes,
+        original_render_dimensions:[1024,512],camera_disk_omitted:true,solar_illumination_retained:true,
+        identical_scene_except_resolution_and_camera_disk:true};
+    }
+    const rebuildPath=inside(root,manifest.rebuild_proof);assert(hashed.has(rebuildPath));
+    const rebuild=JSON.parse(await readFile(rebuildPath,'utf8'));
+    assert.equal(rebuild.status,'passed');assert.equal(rebuild.all_derived_sha256_equal,true);
+    assert.equal(rebuild.grid_count,manifest.visible_volume_count);assert.equal(rebuild.cells,manifest.compiled_cell_placements);
+    const rebuilt=new Map(rebuild.grids.map(g=>[g.file,g.sha256]));
+    for(const grid of manifest.volume_grids) assert.equal(rebuilt.get(grid.file.split('/').at(-1)),grid.sha256);
+    compositeProof={status:chain.status,rendered_scene_sha256:chain.rendered_scene_sha256,
+      packaged_scene_sha256:manifest.source_sha256,render_descriptor_sha256:chain.descriptor_sha256,
+      visible_fields:manifest.visible_volume_count,original_density_inputs:authoring.length,
+      exact_rebuilt_field_hashes:rebuild.grid_count,compiled_cell_placements:rebuild.cells};
+  }
+  const isHdr=manifest.output.endsWith('.ktx2');
+  const bytes=await readFile(inside(root,manifest.output));
+  const decoded=isHdr?decodeKtx2(bytes):decodePng(bytes);
+  let metrics,format,authoringHdr;
+  if(isHdr) {
+    assert.deepEqual([decoded.width,decoded.height],[4096,2048]);
+    assert.deepEqual(manifest.dimensions,[4096,2048]);
+    const encoding=manifest.linear_encoding;
+    assert.equal(encoding.resampled,false);assert.equal(encoding.transfer,'linear');
+    assert.equal(encoding.gpu_bytes,decoded.payload_bytes);
+    assert.equal(encoding.vk_format,97);assert.equal(encoding.encoding_scale>0,true);
+    assert.equal(encoding.encoding_scale<=1,true);
+    assert(Number.isInteger(Math.log2(encoding.encoding_scale)),'HDR encoding scale must be a power of two');
+    assert(Math.abs(encoding.recommended_runtime_multiplier-2**manifest.display_exposure_stops/encoding.encoding_scale)<1e-10);
+    metrics=hdrStats(decoded,encoding.recommended_runtime_multiplier);
+    assert.equal(metrics.radiance_min,encoding.encoded_radiance_min);
+    assert.equal(metrics.radiance_max,encoding.encoded_radiance_max);
+    assert(metrics.radiance_max>1,'HDR must retain radiance above display white');
+    assert(metrics.black_pixel_fraction<.001,'Excessive black pixels');
+    assert(metrics.seam_mean_exposure_compressed_rgb<.01,'Mean HDR seam discontinuity too large');
+    assert(metrics.seam_mean_exposure_compressed_rgb<=metrics.adjacent_mean_exposure_compressed_rgb*1.5+.001,'HDR seam exceeds ordinary adjacent-column variation');
+    assert.equal(manifest.authoring_hdr.view_transform_applied,false);
+    assert.deepEqual(manifest.authoring_hdr.original_render_dimensions,[4096,2048]);
+    authoringHdr=await verifyDigest(inside(source,manifest.authoring_hdr.file),manifest.authoring_hdr.sha256);
+    assert.equal(authoringHdr.bytes,manifest.authoring_hdr.bytes);
+    const hdrHeader=(await readFile(inside(source,manifest.authoring_hdr.file))).subarray(0,2048).toString('ascii');
+    assert.match(hdrHeader,/#\?(RADIANCE|RGBE)/);assert.match(hdrHeader,/FORMAT=32-bit_rle_rgbe/);
+    assert.match(hdrHeader,/-Y 2048 \+X 4096/);
+    format={ktx2:{vk_format:97,texture_format:'Rgba16Float',type_size:2,transfer:'linear',primaries:'Rec.709',
+      orientation:decoded.metadata.KTXorientation,mip_levels:1,payload_bytes:decoded.payload_bytes,
+      dfd_and_section_bounds_verified:true,all_half_float_samples_verified:true,
+      encoding_scale:encoding.encoding_scale,runtime_multiplier:encoding.recommended_runtime_multiplier}};
+  } else {
+    assert.deepEqual([decoded.width,decoded.height],[8192,4096]);
+    metrics=imageStats(decoded);
+    assert(metrics.seam_mean_linear_rgb<.01,'Mean seam discontinuity too large');
+    assert(metrics.seam_mean_linear_rgb<=metrics.adjacent_mean_linear_rgb*1.5+.001,'Seam exceeds ordinary adjacent-column variation');
+    assert(metrics.clipped_white_fraction<.005,'Excessive white clipping');
+    assert(metrics.clipped_black_fraction<.001,'Excessive black clipping');
+    assert.equal(metrics.transparent_pixels,0);
+    format={png:{bit_depth:decoded.bitDepth,color_type:decoded.colorType,chunks_crc_verified:decoded.chunks,inflate_and_all_row_filters_verified:true}};
+  }
+  return {schema:composite?3:2,status:'passed',generated_at:new Date().toISOString(),
+    command:'node tools/art/verify-sky.mjs'+(candidate?' --candidate':''),dimensions:[decoded.width,decoded.height],
+    ...format,authoring_hdr:authoringHdr,ibl_authoring:iblProof,
+    provenance:{original_3d_render:true,external_assets:[],retouching:false,upscaling:false},
+    generator,source:blend,output,volume_grids:grids,authoring_grids:authoring,supporting_files:supporting,
+    composite_provenance:compositeProof,hashes_verified:3+grids.length+authoring.length+supporting.length+(authoringHdr?1:0),metrics,
+    render:{renderer:manifest.renderer,seconds:manifest.render_seconds,samples_max:manifest.samples_max,volume_bounces:manifest.volume_bounces},
+    integration:{u:'fract(0.75 - input.uv.x)',v:'input.uv.y',u_sampler:'Repeat',v_sampler:'ClampToEdge',mirror_seam_blend:false},
+    limits:['This CPU report validates files and numerical continuity; it does not certify visual fidelity or runtime frame rate.',
+      'Pole extrema include path-tracing and dithering variation; robust ranges are reported without requiring identical pixels.']};
+}
+function selfTest() {
+  const hdr=Buffer.concat([Buffer.from('#?RADIANCE\nFORMAT=32-bit_rle_rgbe\n\n-Y 1 +X 8\n'),Buffer.from([2,2,0,8,136,128,136,64,136,32,136,129])]);
+  assert.deepEqual(radianceHdrStats(hdr),{width:8,height:1,radiance_min:.25,radiance_max:1,mean_rgb:[1,.5,.25],all_samples_finite_nonnegative:true});
+  assert.throws(()=>radianceHdrStats(hdr.subarray(0,-1)),/Truncated/);
+  const mainScene={render:{resolution_x:4096,resolution_y:2048},world:{nodes:[{name:'IBL omit direct camera disk | 0 hero, 1 future IBL',inputs:{'1:Value':0}}]},unchanged_light:[1,.62,.32]};
+  const iblScene=structuredClone(mainScene);iblScene.render={resolution_x:1024,resolution_y:512};iblScene.world.nodes[0].inputs['1:Value']=1;
+  assert.doesNotThrow(()=>assertIblSceneMatches(mainScene,iblScene));
+  const changedIbl=structuredClone(iblScene);changedIbl.unchanged_light[0]=2;
+  assert.throws(()=>assertIblSceneMatches(mainScene,changedIbl),/IBL may only change/);
+  assert.equal(crc32(Buffer.from('IEND')),0xae426082);
+  const chunk=(name,data)=>{const b=Buffer.alloc(data.length+12);b.writeUInt32BE(data.length);b.write(name,4);data.copy(b,8);b.writeUInt32BE(crc32(b.subarray(4,-4)),b.length-4);return b;};
+  const header=Buffer.alloc(13);header.writeUInt32BE(2);header.writeUInt32BE(5,4);header[8]=8;header[9]=2;
+  // One row of each PNG filter, with independently specified decoded values.
+  const raw=Buffer.from([0,10,20,30,40,50,60, 1,11,21,31,31,32,33, 2,1,2,3,4,5,6,
+    3,1,2,3,4,5,6, 4,1,2,3,4,5,6]);
+  const png=Buffer.concat([signature,chunk('IHDR',header),chunk('IDAT',deflateSync(raw)),chunk('IEND',Buffer.alloc(0))]);
+  const decoded=decodePng(png);
+  assert.deepEqual([...decoded.pixels],[10,20,30,40,50,60,11,21,31,42,53,64,12,23,34,46,58,70,7,13,20,30,40,51,8,15,23,34,45,57]);
+  const damaged=Buffer.from(png);damaged[damaged.length-1]^=1;
+  assert.throws(()=>decodePng(damaged),/CRC mismatch/);
+  assert.throws(()=>decodePng(png.subarray(0,png.length-1)),/Truncated/);
+  assert.throws(()=>inside(source,'../../../../outside.vdb'),/escapes/);
+  assert.throws(()=>assertRenderCurrent({output_needs_render:true}),/requires a new final render/);
+  assert.doesNotThrow(()=>assertRenderCurrent({output_needs_render:false}));
+  const cell={grid:'original/a.vdb',location:[0,0,0],rotation_euler:[0,0,0],scale:[1,1,1],density:.009,rotation_mode:'XYZ'};
+  const recipe={schema:1,cells:1,groups:[{file:'cloud/a.vdb',voxel_metres:32,cells:[cell],vdb_file_identifier:{offset:21,ascii:'00000000-0000-0000-0000-000000000000'}}]};
+  const composite={visible_volume_count:1,cloud_sculptures:1,compiled_cell_placements:1,
+    volume_grids:[{file:'cloud/a.vdb'}],authoring_grids:[{file:'original/a.vdb'}]};
+  assert.doesNotThrow(()=>validateRecipe(recipe,composite));
+  assert.throws(()=>validateRecipe({...recipe,cells:2},composite));
+  assert.throws(()=>validateRecipe({...recipe,groups:[{...recipe.groups[0],cells:[{...cell,grid:'missing.vdb'}]}]},composite),/not hashed/);
+  assert.throws(()=>validateRecipe(recipe,{...composite,volume_grids:[{file:'wrong.vdb'}]}),/Unknown/);
+  assert.equal(halfToFloat[0x3c00],1);assert.equal(halfToFloat[0x4000],2);
+  assert.equal(halfToFloat[0x7bff],65504);assert.equal(halfToFloat[1],2**-24);
+  assert.equal(halfToFloat[0x7c00],Infinity);assert(Number.isNaN(halfToFloat[0x7e00]));
+  // Independent binary fixture covers layout, DFD, orientation, and HDR range.
+  const ktx=Buffer.alloc(232+16);ktxSignature.copy(ktx);
+  const fields=[97,2,2,1,0,0,1,1,0,104,92,196,24];
+  fields.forEach((n,i)=>ktx.writeUInt32LE(n,12+i*4));
+  [232n,16n,16n].forEach((n,i)=>ktx.writeBigUInt64LE(n,80+i*8));
+  ktx.writeUInt32LE(92,104);ktx.writeUInt16LE(2,112);ktx.writeUInt16LE(88,114);
+  Buffer.from([1,1,1,0,0,0,0,0,8,0,0,0,0,0,0,0]).copy(ktx,116);
+  for(let c=0;c<4;c++) {const p=132+c*16;ktx.writeUInt16LE(c*16,p);ktx[p+2]=15;ktx[p+3]=0xc0|[0,1,2,15][c];ktx.writeUInt32LE(0xbf800000,p+8);ktx.writeUInt32LE(0x3f800000,p+12);}
+  const orientation=Buffer.from('KTXorientation\0rd\0');ktx.writeUInt32LE(orientation.length,196);orientation.copy(ktx,200);
+  [0x3c00,0x4000,0x7bff,0x3c00,0x3000,0,0x3c00,0x3c00].forEach((v,i)=>ktx.writeUInt16LE(v,232+i*2));
+  const halfImage=decodeKtx2(ktx);assert.equal(hdrStats(halfImage,1).radiance_max,65504);
+  assert.throws(()=>decodeKtx2(ktx.subarray(0,-1)),/Truncated/);
+  const wrongFormat=Buffer.from(ktx);wrongFormat.writeUInt32LE(109,12);assert.throws(()=>decodeKtx2(wrongFormat),/RGBA16Float/);
+  const wrongTransfer=Buffer.from(ktx);wrongTransfer[118]=2;assert.throws(()=>decodeKtx2(wrongTransfer),/linear Rec.709/);
+  const nan=Buffer.from(ktx);nan.writeUInt16LE(0x7e00,232);assert.throws(()=>hdrStats(decodeKtx2(nan),1),/Non-finite/);
+  const negative=Buffer.from(ktx);negative.writeUInt16LE(0xbc00,232);assert.throws(()=>hdrStats(decodeKtx2(negative),1),/negative/);
+  const alpha=Buffer.from(ktx);alpha.writeUInt16LE(0,238);assert.throws(()=>hdrStats(decodeKtx2(alpha),1),/opaque/);
+  console.log('Sky validator self-test passed: PNG/CRC, KTX2/DFD/fp16, Radiance RLE, matched IBL scene, path containment, stale-render gate and recipe integrity.');
+}
+if(process.argv.includes('--self-test')) selfTest();
+else {
+  let report;
+  try {report=await verify();} catch(error) {report={schema:1,status:'failed',generated_at:new Date().toISOString(),error:error.message};process.exitCode=1;}
+  await mkdir(dirname(reportPath),{recursive:true});
+  // Preserve earlier source/output evidence before updating the stable path
+  // consumed by verify-open-world. Ordinary repeated checks need no duplicate.
+  try {
+    const priorBytes=await readFile(reportPath), prior=JSON.parse(priorBytes.toString('utf8'));
+    if(prior.output?.sha256!==report.output?.sha256||prior.source?.sha256!==report.source?.sha256||prior.status!==report.status) {
+      const history=resolve(dirname(reportPath),'sky-history');await mkdir(history,{recursive:true});
+      const hash=createHash('sha256').update(priorBytes).digest('hex');
+      try {await writeFile(resolve(history,hash+'.json'),priorBytes,{flag:'wx'});} catch(error) {if(error.code!=='EEXIST') throw error;}
+    }
+  } catch(error) {if(error.code!=='ENOENT') throw error;}
+  await writeFile(reportPath,JSON.stringify(report,null,2)+'\n');
+  console.log(JSON.stringify({status:report.status,report:relative(root,reportPath),error:report.error,dimensions:report.dimensions,metrics:report.metrics},null,2));
+}

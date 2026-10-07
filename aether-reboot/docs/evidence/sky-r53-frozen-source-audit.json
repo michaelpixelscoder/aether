@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "canonical_and_prior_candidate_files_unchanged": 12,
+  "approved_r53_source_unchanged": true,
+  "original_dimensions": [
+    8192,
+    4096
+  ],
+  "ibl_original_dimensions": [
+    1024,
+    512
+  ],
+  "gain": 2.1435469250725863,
+  "encoding_scale": 0.25,
+  "rgba16f_gpu_bytes": 268435456,
+  "source_sha256": "4196ff61f70037e5fb373ccdd840c52ff714fc82e6b03ae243b1cea65571acea",
+  "output_sha256": "a26bfa6900f6e46cab19738b01027dd7f1e33c6a682787bac3ab0c0bb04193fb",
+  "original_hdr_sha256": "e588df650412ae7fe6ace40ecbf78367d8583996409e059cf9fae3e653ff2b99",
+  "original_ibl_sha256": "789a304b0f403e3dcee09268b0883b87d4266bf83c621e117fa46affa55fb075",
+  "descriptor_sha256": "6c214eef069d7008cdadd466e1f569ed59bfe4ab2f6cd58a3745bc8b4cd3cd4b",
+  "rebuild_fields": 98,
+  "external_assets": [],
+  "retouching": false,
+  "upscaling": false
+}

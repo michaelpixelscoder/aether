@@ -1,0 +1,81 @@
+"""One authorized original 4K HDR render; output stays in this isolated stage."""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import hashlib
+import importlib.util
+import json
+import math
+import time
+from pathlib import Path
+import numpy as np
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+SOURCE=ROOT/'tools/art/sky-source'
+
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def record(path):
+    path=Path(path).resolve()
+    return {'file':path.relative_to(ROOT).as_posix(),'sha256':sha(path),'bytes':path.stat().st_size}
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result)
+    return result
+
+assert Path(bpy.data.filepath).resolve()==(STAGE/'sky-r49-atmosphere.blend').resolve()
+manifest=json.loads((STAGE/'manifest.json').read_text())
+for item in manifest['canonical_frozen']:assert sha(ROOT/item['file'])==item['sha256']
+scene=bpy.context.scene
+controller=module('r49_portable_controller',ROOT/'tools/art/build_sky.py')
+controller.final_configuration()
+preferences=bpy.context.preferences.addons['cycles'].preferences
+preferences.compute_device_type='OPTIX';preferences.get_devices()
+assert any(d.type=='OPTIX' for d in preferences.devices)
+for device in preferences.devices:device.use=device.type=='OPTIX'
+scene.render.resolution_percentage=100
+hdr=STAGE/'sky-r49-atmosphere-4k-linear.hdr'
+ktx=STAGE/'sky-r49-atmosphere-4k-linear.ktx2'
+scene.render.filepath=str(hdr)
+fp=module('r49_fingerprint',SOURCE/'scene_fingerprint.py')
+descriptor=fp.descriptor(scene)
+descriptor_sha=fp.digest(descriptor)
+(STAGE/'render-scene-descriptor.json').write_text(json.dumps(descriptor,indent=2)+'\n')
+start=time.perf_counter();last=[0.]
+def progress(stats):
+    now=time.perf_counter()
+    if now-last[0]>20:
+        print('R49_FINAL_PROGRESS',stats,flush=True);last[0]=now
+bpy.app.handlers.render_stats.append(progress)
+bpy.ops.render.render(write_still=True)
+bpy.app.handlers.render_stats.remove(progress)
+elapsed=time.perf_counter()-start
+io=module('r49_sky_io',SOURCE/'sky_io.py')
+pixels=io.read_linear_hdr(hdr)
+assert pixels.shape==(2048,4096,3) and np.isfinite(pixels).all() and pixels.min()>=0
+maximum=float(pixels.max())
+encoding=2.**min(0,math.floor(math.log2(65504./max(maximum,1e-20))))
+rgba=np.ones((2048,4096,4),dtype='<f2')
+for y in range(2048):rgba[y,:,:3]=pixels[y]*encoding
+assert np.isfinite(rgba).all()
+io.write_rgba16_ktx2(ktx,rgba)
+hdr_record={**record(hdr),'dimensions':[4096,2048],'original_render_dimensions':[4096,2048],
+    'view_transform_applied':False,'seconds':elapsed,'samples_max':128,'renderer':'Cycles OPTIX',
+    'denoising':'OpenImageDenoise RGB only','source_sha256':sha(bpy.data.filepath),
+    'generator_sha256':sha(__file__),'render_descriptor_sha256':descriptor_sha}
+metadata={'format':'VK_FORMAT_R16G16B16A16_SFLOAT','vk_format':97,'orientation':'rd','transfer':'linear',
+    'primaries':'Rec.709','dimensions':[4096,2048],'mip_levels':1,'gpu_bytes':rgba.nbytes,
+    'encoding_scale':encoding,'recommended_runtime_multiplier':2**(-.90)/encoding,
+    'source_radiance_min':float(pixels.min()),'source_radiance_max':maximum,
+    'encoded_radiance_min':float(rgba[:,:,:3].min()),'encoded_radiance_max':float(rgba[:,:,:3].max()),
+    'finite_nonnegative':True,'alpha':1,'resampled':False}
+manifest.update({'status':'original 4K candidate rendered; unpublished','output_needs_render':False,
+    'output':ktx.name,'output_sha256':sha(ktx),'bytes':ktx.stat().st_size,'dimensions':[4096,2048],
+    'authoring_hdr':hdr_record,'linear_encoding':metadata,'final_generator':record(Path(__file__)),
+    'final_controller_dependency':record(ROOT/'tools/art/build_sky.py'),
+    'io_dependency':record(SOURCE/'sky_io.py'),'render_descriptor_sha256':descriptor_sha})
+for item in manifest['canonical_frozen']:assert sha(ROOT/item['file'])==item['sha256']
+(STAGE/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+(STAGE/'render-record.json').write_text(json.dumps(hdr_record,indent=2)+'\n')
+print('R49_ORIGINAL_4K_RENDERED',json.dumps({'hdr':hdr_record,'ktx':record(ktx),'encoding':metadata}),flush=True)

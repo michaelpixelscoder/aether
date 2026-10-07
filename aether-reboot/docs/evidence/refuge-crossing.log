@@ -1,0 +1,12 @@
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 2.27s
+     Running tests\scenarios.rs (target\debug\deps\scenarios-e5c4cea6a0253390.exe)
+
+running 1 test
+refuge t=0 p=Vec3(0.0, 12.0, 0.0) v=Vec3(0.0, 0.0, 0.0) attached=false released=false distance=102
+refuge t=10 p=Vec3(4.1786804, 12.138106, -45.52769) v=Vec3(1.149645, 0.005616337, -10.896673) attached=true released=false distance=61.692257
+refuge t=20 p=Vec3(-21.934113, 8.23068, -91.25273) v=Vec3(-0.4282223, -0.16516143, -1.4722438) attached=true released=true distance=9.076003
+test harpoon_swing_reaches_the_refuge_branch_and_releases_continuously ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.35s
+

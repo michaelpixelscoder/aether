@@ -1,0 +1,2964 @@
+{
+  "contracts": {
+    "collisions.json": {
+      "byte_identical": true,
+      "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd"
+    },
+    "landmarks.json": {
+      "byte_identical": true,
+      "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50"
+    },
+    "vault-collisions.json": {
+      "byte_identical": true,
+      "sha256": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70"
+    }
+  },
+  "models": [
+    {
+      "file": "dawn.glb",
+      "triangles": 198220,
+      "foliage_triangles": 20484,
+      "wood_triangles_including_architecture": 6318,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 394751,
+      "finite_tangents": 394751,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-lod.glb",
+      "triangles": 11928,
+      "foliage_triangles": 1040,
+      "wood_triangles_including_architecture": 506,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 23579,
+      "finite_tangents": 23579,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "crystal.glb",
+      "triangles": 101210,
+      "foliage_triangles": 10116,
+      "wood_triangles_including_architecture": 1202,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 201374,
+      "finite_tangents": 201374,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "crystal-lod.glb",
+      "triangles": 7462,
+      "foliage_triangles": 240,
+      "wood_triangles_including_architecture": 126,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 15498,
+      "finite_tangents": 15498,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "nomad.glb",
+      "triangles": 97236,
+      "foliage_triangles": 4344,
+      "wood_triangles_including_architecture": 1190,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 194003,
+      "finite_tangents": 194003,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "nomad-lod.glb",
+      "triangles": 4940,
+      "foliage_triangles": 80,
+      "wood_triangles_including_architecture": 98,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 9831,
+      "finite_tangents": 9831,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "ember.glb",
+      "triangles": 79638,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 344,
+      "foliage_materials": 0,
+      "materials": 10,
+      "finite_normals": 158432,
+      "finite_tangents": 158432,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "ember-lod.glb",
+      "triangles": 6926,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 12,
+      "foliage_materials": 0,
+      "materials": 10,
+      "finite_normals": 13660,
+      "finite_tangents": 13660,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "frost.glb",
+      "triangles": 109966,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 344,
+      "foliage_materials": 0,
+      "materials": 10,
+      "finite_normals": 222596,
+      "finite_tangents": 222596,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "frost-lod.glb",
+      "triangles": 7900,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 12,
+      "foliage_materials": 0,
+      "materials": 9,
+      "finite_normals": 15934,
+      "finite_tangents": 15934,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "verdant.glb",
+      "triangles": 93728,
+      "foliage_triangles": 20088,
+      "wood_triangles_including_architecture": 5920,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 181874,
+      "finite_tangents": 181874,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "verdant-lod.glb",
+      "triangles": 6532,
+      "foliage_triangles": 1280,
+      "wood_triangles_including_architecture": 1380,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 13176,
+      "finite_tangents": 13176,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "storm.glb",
+      "triangles": 94166,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 344,
+      "foliage_materials": 0,
+      "materials": 10,
+      "finite_normals": 192934,
+      "finite_tangents": 192934,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "storm-lod.glb",
+      "triangles": 5176,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 12,
+      "foliage_materials": 0,
+      "materials": 10,
+      "finite_normals": 10504,
+      "finite_tangents": 10504,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "hollow.glb",
+      "triangles": 130528,
+      "foliage_triangles": 10192,
+      "wood_triangles_including_architecture": 2858,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 279726,
+      "finite_tangents": 279726,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "hollow-lod.glb",
+      "triangles": 9890,
+      "foliage_triangles": 240,
+      "wood_triangles_including_architecture": 138,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 20851,
+      "finite_tangents": 20851,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "underforge.glb",
+      "triangles": 122822,
+      "foliage_triangles": 2940,
+      "wood_triangles_including_architecture": 864,
+      "foliage_materials": 1,
+      "materials": 11,
+      "finite_normals": 261864,
+      "finite_tangents": 261864,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "underforge-lod.glb",
+      "triangles": 10684,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 24,
+      "foliage_materials": 0,
+      "materials": 10,
+      "finite_normals": 22244,
+      "finite_tangents": 22244,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-watch.glb",
+      "triangles": 111045,
+      "foliage_triangles": 43344,
+      "wood_triangles_including_architecture": 12856,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 213914,
+      "finite_tangents": 213914,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "triangles": 10509,
+      "foliage_triangles": 3824,
+      "wood_triangles_including_architecture": 1652,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 21581,
+      "finite_tangents": 21581,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "triangles": 102994,
+      "foliage_triangles": 46008,
+      "wood_triangles_including_architecture": 16866,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 196302,
+      "finite_tangents": 196302,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "triangles": 10662,
+      "foliage_triangles": 3952,
+      "wood_triangles_including_architecture": 2218,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 21982,
+      "finite_tangents": 21982,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "triangles": 85752,
+      "foliage_triangles": 32064,
+      "wood_triangles_including_architecture": 7924,
+      "foliage_materials": 2,
+      "materials": 12,
+      "finite_normals": 192645,
+      "finite_tangents": 192645,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "triangles": 8964,
+      "foliage_triangles": 2640,
+      "wood_triangles_including_architecture": 1248,
+      "foliage_materials": 1,
+      "materials": 10,
+      "finite_normals": 18506,
+      "finite_tangents": 18506,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "arch-vault.glb",
+      "triangles": 93944,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 0,
+      "foliage_materials": 0,
+      "materials": 5,
+      "finite_normals": 210356,
+      "finite_tangents": 210356,
+      "structural_mesh_positions_exact": true
+    },
+    {
+      "file": "arch-vault-lod.glb",
+      "triangles": 11646,
+      "foliage_triangles": 0,
+      "wood_triangles_including_architecture": 0,
+      "foliage_materials": 0,
+      "materials": 5,
+      "finite_normals": 26918,
+      "finite_tangents": 26918,
+      "structural_mesh_positions_exact": true
+    }
+  ],
+  "non_foliage_materials": [
+    {
+      "file": "dawn.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.001",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.001",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.001",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.001",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.001",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.001",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.001",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.001",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.001",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "crystal.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.002",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.002",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.002",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.002",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.002",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.002",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.002",
+          "base_color_factor": [
+            0.04100000113248825,
+            0.014999999664723873,
+            0.18000000715255737,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.002",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.002",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.002",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "crystal-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.003",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.003",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.003",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.003",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.003",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.003",
+          "base_color_factor": [
+            0.04100000113248825,
+            0.014999999664723873,
+            0.18000000715255737,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.003",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.003",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.003",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "nomad.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.004",
+          "base_color_factor": [
+            0.3785199764198054,
+            0.23929805195628012,
+            0.11652839073247855,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.004",
+          "base_color_factor": [
+            0.27206123305173513,
+            0.17199547484357636,
+            0.08375478083896895,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.004",
+          "base_color_factor": [
+            0.4963407665983115,
+            0.3751320049048034,
+            0.19184752877643618,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.004",
+          "base_color_factor": [
+            0.65,
+            0.5005000000000001,
+            0.2665,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.004",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.004",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.004",
+          "base_color_factor": [
+            0.6000000238418579,
+            0.1599999964237213,
+            0.03500000014901161,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.004",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.004",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.004",
+          "base_color_factor": [
+            0.5,
+            0.36000001430511475,
+            0.1599999964237213,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "nomad-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.005",
+          "base_color_factor": [
+            0.3785199764198054,
+            0.23929805195628012,
+            0.11652839073247855,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.005",
+          "base_color_factor": [
+            0.27206123305173513,
+            0.17199547484357636,
+            0.08375478083896895,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.005",
+          "base_color_factor": [
+            0.4963407665983115,
+            0.3751320049048034,
+            0.19184752877643618,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.005",
+          "base_color_factor": [
+            0.65,
+            0.5005000000000001,
+            0.2665,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.005",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.005",
+          "base_color_factor": [
+            0.6000000238418579,
+            0.1599999964237213,
+            0.03500000014901161,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.005",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.005",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.005",
+          "base_color_factor": [
+            0.5,
+            0.36000001430511475,
+            0.1599999964237213,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "ember.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.006",
+          "base_color_factor": [
+            0.09589172735968403,
+            0.08302177312768903,
+            0.0885615769566837,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.006",
+          "base_color_factor": [
+            0.06892217903977291,
+            0.05967189943552649,
+            0.0636536334376164,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.006",
+          "base_color_factor": [
+            0.1588290453114597,
+            0.13641163814720123,
+            0.1169802004734367,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.006",
+          "base_color_factor": [
+            0.20800000000000002,
+            0.18200000000000002,
+            0.1625,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.006",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.006",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.006",
+          "base_color_factor": [
+            0.1599999964237213,
+            0.14000000059604645,
+            0.14000000059604645,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.006",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.006",
+          "base_color_factor": [
+            0.25999999046325684,
+            0.017999999225139618,
+            0.6899999976158142,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.006",
+          "base_color_factor": [
+            0.12999999523162842,
+            0.11500000208616257,
+            0.10499999672174454,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "ember-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.007",
+          "base_color_factor": [
+            0.09589172735968403,
+            0.08302177312768903,
+            0.0885615769566837,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.007",
+          "base_color_factor": [
+            0.06892217903977291,
+            0.05967189943552649,
+            0.0636536334376164,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.007",
+          "base_color_factor": [
+            0.1588290453114597,
+            0.13641163814720123,
+            0.1169802004734367,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.007",
+          "base_color_factor": [
+            0.20800000000000002,
+            0.18200000000000002,
+            0.1625,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.007",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.007",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.007",
+          "base_color_factor": [
+            0.1599999964237213,
+            0.14000000059604645,
+            0.14000000059604645,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.007",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.007",
+          "base_color_factor": [
+            0.25999999046325684,
+            0.017999999225139618,
+            0.6899999976158142,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.007",
+          "base_color_factor": [
+            0.12999999523162842,
+            0.11500000208616257,
+            0.10499999672174454,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "frost.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.008",
+          "base_color_factor": [
+            0.17159572264364512,
+            0.258832586809854,
+            0.3122960871630425,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.008",
+          "base_color_factor": [
+            0.12333442565011993,
+            0.18603592176958259,
+            0.22446281264843682,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.008",
+          "base_color_factor": [
+            0.35240194428480115,
+            0.4238504471002324,
+            0.4679208018937468,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.008",
+          "base_color_factor": [
+            0.46149999999999997,
+            0.5655,
+            0.65,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.008",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.008",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.008",
+          "base_color_factor": [
+            0.054999999701976776,
+            0.12999999523162842,
+            0.23000000417232513,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.008",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.008",
+          "base_color_factor": [
+            0.11999999731779099,
+            0.75,
+            1,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.008",
+          "base_color_factor": [
+            0.7200000286102295,
+            0.8799999952316284,
+            0.9900000095367432,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "frost-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.009",
+          "base_color_factor": [
+            0.17159572264364512,
+            0.258832586809854,
+            0.3122960871630425,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.009",
+          "base_color_factor": [
+            0.12333442565011993,
+            0.18603592176958259,
+            0.22446281264843682,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.009",
+          "base_color_factor": [
+            0.35240194428480115,
+            0.4238504471002324,
+            0.4679208018937468,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.009",
+          "base_color_factor": [
+            0.46149999999999997,
+            0.5655,
+            0.65,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.009",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.009",
+          "base_color_factor": [
+            0.054999999701976776,
+            0.12999999523162842,
+            0.23000000417232513,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.009",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.009",
+          "base_color_factor": [
+            0.11999999731779099,
+            0.75,
+            1,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.009",
+          "base_color_factor": [
+            0.7200000286102295,
+            0.8799999952316284,
+            0.9900000095367432,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "verdant.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.010",
+          "base_color_factor": [
+            0.26748745000332913,
+            0.29301802280360834,
+            0.21441223894776051,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.010",
+          "base_color_factor": [
+            0.19225660468989283,
+            0.2106067038900935,
+            0.15410879674370287,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.010",
+          "base_color_factor": [
+            0.3077312752909531,
+            0.31666987427028853,
+            0.21056436085218608,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.010",
+          "base_color_factor": [
+            0.403,
+            0.42250000000000004,
+            0.29250000000000004,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.010",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.010",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.010",
+          "base_color_factor": [
+            0.10000000149011612,
+            0.1899999976158142,
+            0.11999999731779099,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.010",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.010",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.010",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "verdant-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.011",
+          "base_color_factor": [
+            0.26748745000332913,
+            0.29301802280360834,
+            0.21441223894776051,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.011",
+          "base_color_factor": [
+            0.19225660468989283,
+            0.2106067038900935,
+            0.15410879674370287,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.011",
+          "base_color_factor": [
+            0.3077312752909531,
+            0.31666987427028853,
+            0.21056436085218608,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.011",
+          "base_color_factor": [
+            0.403,
+            0.42250000000000004,
+            0.29250000000000004,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.011",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.011",
+          "base_color_factor": [
+            0.10000000149011612,
+            0.1899999976158142,
+            0.11999999731779099,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.011",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.011",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.011",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "storm.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.012",
+          "base_color_factor": [
+            0.10093866037861478,
+            0.11232357540804985,
+            0.1351729332496751,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.012",
+          "base_color_factor": [
+            0.07254966214712938,
+            0.08073256982453583,
+            0.09715554577320398,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.012",
+          "base_color_factor": [
+            0.14393882231351032,
+            0.16564270346445864,
+            0.1778099047196238,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.012",
+          "base_color_factor": [
+            0.1885,
+            0.22100000000000003,
+            0.24700000000000003,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.012",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.012",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.012",
+          "base_color_factor": [
+            0.09000000357627869,
+            0.054999999701976776,
+            0.1599999964237213,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.012",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.012",
+          "base_color_factor": [
+            0.23000000417232513,
+            0.008999999612569809,
+            0.7099999785423279,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.012",
+          "base_color_factor": [
+            0.10000000149011612,
+            0.14000000059604645,
+            0.10000000149011612,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "storm-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.013",
+          "base_color_factor": [
+            0.10093866037861478,
+            0.11232357540804985,
+            0.1351729332496751,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.013",
+          "base_color_factor": [
+            0.07254966214712938,
+            0.08073256982453583,
+            0.09715554577320398,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.013",
+          "base_color_factor": [
+            0.14393882231351032,
+            0.16564270346445864,
+            0.1778099047196238,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.013",
+          "base_color_factor": [
+            0.1885,
+            0.22100000000000003,
+            0.24700000000000003,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.013",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.013",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.013",
+          "base_color_factor": [
+            0.09000000357627869,
+            0.054999999701976776,
+            0.1599999964237213,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.013",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.013",
+          "base_color_factor": [
+            0.23000000417232513,
+            0.008999999612569809,
+            0.7099999785423279,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.013",
+          "base_color_factor": [
+            0.10000000149011612,
+            0.14000000059604645,
+            0.10000000149011612,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "hollow.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.014",
+          "base_color_factor": [
+            0.10093866037861478,
+            0.11232357540804985,
+            0.1351729332496751,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.014",
+          "base_color_factor": [
+            0.07254966214712938,
+            0.08073256982453583,
+            0.09715554577320398,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.014",
+          "base_color_factor": [
+            0.14393882231351032,
+            0.16564270346445864,
+            0.1778099047196238,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.014",
+          "base_color_factor": [
+            0.1885,
+            0.22100000000000003,
+            0.24700000000000003,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.014",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.014",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.014",
+          "base_color_factor": [
+            0.09000000357627869,
+            0.054999999701976776,
+            0.1599999964237213,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.014",
+          "base_color_factor": [
+            0.25999999046325684,
+            0.75,
+            0.06499999761581421,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.014",
+          "base_color_factor": [
+            0.23000000417232513,
+            0.008999999612569809,
+            0.7099999785423279,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.014",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "hollow-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.015",
+          "base_color_factor": [
+            0.10093866037861478,
+            0.11232357540804985,
+            0.1351729332496751,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.015",
+          "base_color_factor": [
+            0.07254966214712938,
+            0.08073256982453583,
+            0.09715554577320398,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.015",
+          "base_color_factor": [
+            0.14393882231351032,
+            0.16564270346445864,
+            0.1778099047196238,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.015",
+          "base_color_factor": [
+            0.1885,
+            0.22100000000000003,
+            0.24700000000000003,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.015",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.015",
+          "base_color_factor": [
+            0.09000000357627869,
+            0.054999999701976776,
+            0.1599999964237213,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.015",
+          "base_color_factor": [
+            0.25999999046325684,
+            0.75,
+            0.06499999761581421,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.015",
+          "base_color_factor": [
+            0.23000000417232513,
+            0.008999999612569809,
+            0.7099999785423279,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.015",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "underforge.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.016",
+          "base_color_factor": [
+            0.09589172735968403,
+            0.08302177312768903,
+            0.0885615769566837,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.016",
+          "base_color_factor": [
+            0.06892217903977291,
+            0.05967189943552649,
+            0.0636536334376164,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.016",
+          "base_color_factor": [
+            0.1588290453114597,
+            0.13641163814720123,
+            0.1169802004734367,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.016",
+          "base_color_factor": [
+            0.20800000000000002,
+            0.18200000000000002,
+            0.1625,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.016",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.016",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.016",
+          "base_color_factor": [
+            0.1599999964237213,
+            0.14000000059604645,
+            0.14000000059604645,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.016",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.016",
+          "base_color_factor": [
+            0.25999999046325684,
+            0.017999999225139618,
+            0.6899999976158142,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.016",
+          "base_color_factor": [
+            0.12999999523162842,
+            0.11500000208616257,
+            0.10499999672174454,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "underforge-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.017",
+          "base_color_factor": [
+            0.09589172735968403,
+            0.08302177312768903,
+            0.0885615769566837,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.017",
+          "base_color_factor": [
+            0.06892217903977291,
+            0.05967189943552649,
+            0.0636536334376164,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.017",
+          "base_color_factor": [
+            0.1588290453114597,
+            0.13641163814720123,
+            0.1169802004734367,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.017",
+          "base_color_factor": [
+            0.20800000000000002,
+            0.18200000000000002,
+            0.1625,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.017",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.017",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.017",
+          "base_color_factor": [
+            0.1599999964237213,
+            0.14000000059604645,
+            0.14000000059604645,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.017",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.017",
+          "base_color_factor": [
+            0.25999999046325684,
+            0.017999999225139618,
+            0.6899999976158142,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.017",
+          "base_color_factor": [
+            0.12999999523162842,
+            0.11500000208616257,
+            0.10499999672174454,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-watch.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.001",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.001",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.001",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.001",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.001",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.001",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.001",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.001",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.001",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.002",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.002",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.002",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.002",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.002",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.002",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.002",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.002",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.002",
+          "base_color_factor": [
+            0.019999999552965164,
+            0.18000000715255737,
+            0.8199999928474426,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.002",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.003",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.003",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.003",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.003",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.003",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.003",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.003",
+          "base_color_factor": [
+            1,
+            0.3799999952316284,
+            0.04500000178813934,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "12 | Surface biome.003",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.003",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.004",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.004",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.004",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.004",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "05 | Brushed antique brass.004",
+          "base_color_factor": [
+            0.5799999833106995,
+            0.3199999928474426,
+            0.08500000089406967,
+            1
+          ],
+          "roughness_factor": 0.3700000047683716
+        },
+        {
+          "name": "06 | Cedar and roots.004",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.004",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.004",
+          "base_color_factor": [
+            0.5,
+            0.03500000014901161,
+            1,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.004",
+          "base_color_factor": [
+            0.27000001072883606,
+            0.012000000104308128,
+            0.75,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.004",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Fractured limestone.005",
+          "base_color_factor": [
+            0.3230037132115673,
+            0.3369707262241496,
+            0.33560176530953817,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Deep strata.005",
+          "base_color_factor": [
+            0.23215891887081397,
+            0.24219770947360753,
+            0.24121376881623058,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Dressed masonry.005",
+          "base_color_factor": [
+            0.4367798746065142,
+            0.4238504471002324,
+            0.36965743349606,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.4000000059604645
+        },
+        {
+          "name": "04 | Worn cornice.005",
+          "base_color_factor": [
+            0.5720000000000001,
+            0.5655,
+            0.5135000000000001,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "06 | Cedar and roots.005",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        },
+        {
+          "name": "07 | Enamel and shadow.005",
+          "base_color_factor": [
+            0.012000000104308128,
+            0.05299999937415123,
+            0.10999999940395355,
+            1
+          ],
+          "roughness_factor": 0.49000000953674316
+        },
+        {
+          "name": "10 | Lantern glass.005",
+          "base_color_factor": [
+            0.5,
+            0.03500000014901161,
+            1,
+            1
+          ],
+          "roughness_factor": 0.30000001192092896
+        },
+        {
+          "name": "11 | Aether mineral.005",
+          "base_color_factor": [
+            0.27000001072883606,
+            0.012000000104308128,
+            0.75,
+            1
+          ],
+          "roughness_factor": 0.12999999523162842
+        },
+        {
+          "name": "12 | Surface biome.005",
+          "base_color_factor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "roughness_factor": 0.8799999952316284
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "arch-vault.glb",
+      "materials": [
+        {
+          "name": "01 | Vault weathered limestone",
+          "base_color_factor": [
+            0.3312049793673297,
+            0.3510111731501558,
+            0.3495851721974356,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Vault deep fracture",
+          "base_color_factor": [
+            0.21291748673614055,
+            0.228920330315319,
+            0.2330567814649571,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Vault silver strata",
+          "base_color_factor": [
+            0.29,
+            0.3,
+            0.29,
+            1
+          ],
+          "roughness_factor": 0.9100000262260437
+        },
+        {
+          "name": "04 | Vault muted lichen",
+          "base_color_factor": [
+            0.07500000298023224,
+            0.10199999809265137,
+            0.08100000023841858,
+            1
+          ],
+          "roughness_factor": 1
+        },
+        {
+          "name": "05 | Vault mineral lichen",
+          "base_color_factor": [
+            0.12999999523162842,
+            0.1550000011920929,
+            0.13199999928474426,
+            1
+          ],
+          "roughness_factor": 0.9599999785423279
+        }
+      ],
+      "exact": true
+    },
+    {
+      "file": "arch-vault-lod.glb",
+      "materials": [
+        {
+          "name": "01 | Vault weathered limestone.001",
+          "base_color_factor": [
+            0.3312049793673297,
+            0.3510111731501558,
+            0.3495851721974356,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "02 | Vault deep fracture.001",
+          "base_color_factor": [
+            0.21291748673614055,
+            0.228920330315319,
+            0.2330567814649571,
+            1
+          ],
+          "roughness_factor": 1,
+          "normal_scale": 0.6499999761581421
+        },
+        {
+          "name": "03 | Vault silver strata.001",
+          "base_color_factor": [
+            0.29,
+            0.3,
+            0.29,
+            1
+          ],
+          "roughness_factor": 0.9100000262260437
+        },
+        {
+          "name": "04 | Vault muted lichen.001",
+          "base_color_factor": [
+            0.07500000298023224,
+            0.10199999809265137,
+            0.08100000023841858,
+            1
+          ],
+          "roughness_factor": 1
+        },
+        {
+          "name": "05 | Vault mineral lichen.001",
+          "base_color_factor": [
+            0.12999999523162842,
+            0.1550000011920929,
+            0.13199999928474426,
+            1
+          ],
+          "roughness_factor": 0.9599999785423279
+        }
+      ],
+      "exact": true
+    }
+  ],
+  "numeric_roundoff": [],
+  "source_hashes": {
+    "build_world.py": "05ed139ba15ee228679f588bb99605caa4bec32dac5eadeec57613507a2727e1",
+    "build_world_variants.py": "d72627b51b6f492be3ca93292695383768cfd24c13ca2feadc40456306a66446",
+    "build_vault.py": "777f17711e542f453363b361ac5fa01579ba8953696032b3d6268afedc1f1fbf",
+    "foliage.py": "49c6410d31de7e6e9de403df3b0fe6c5af2bda0846d47f50ce0915d95a283766",
+    "textures/oak-sprig.png": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb",
+    "textures/oak-canopy.png": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229"
+  },
+  "canonical_untouched": true,
+  "lod_runtime": {
+    "islands": "300.0 + island.radius() * 8.0 metres",
+    "transition_metres": 120,
+    "vault_metres": 2600
+  },
+  "checked_at": "2026-10-02T23:15:03.845Z"
+}

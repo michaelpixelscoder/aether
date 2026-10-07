@@ -1,0 +1,357 @@
+{
+  "dawn": {
+    "high": {
+      "file": "dawn.glb",
+      "triangles": 181520,
+      "materials": 12,
+      "bytes": 19450572,
+      "sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c"
+    },
+    "lod": {
+      "file": "dawn-lod.glb",
+      "triangles": 11928,
+      "materials": 10,
+      "bytes": 1218624,
+      "sha256": "727e814e40a920ad23b0d7280566a8b40b0419f5e13bd232331992db4e646dc9"
+    },
+    "colliders": 1066,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+    "architecture_r54": {
+      "generator": "tools/art/build_facades_r54.py",
+      "generator_sha256": "53eeb54c4faff248d44383841963546225cc60c4901e6967cde873258ba5922a",
+      "patch": "tools/art/facades_r54.py",
+      "patch_sha256": "dea7054c0e601406b4ba3f796185a9db62ac7b1c315b793a39a5fb30bcabe2bb",
+      "base_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+      "variant_sha256": null,
+      "scope": "house façades only; collision/landmarks/LOD unchanged",
+      "assembled_original_payloads": [
+        "01 | Fractured limestone",
+        "02 | Deep strata",
+        "06 | Cedar and roots",
+        "08 | Deep foliage",
+        "09 | Sunlit foliage",
+        "11 | Aether mineral",
+        "12 | Surface biome"
+      ],
+      "original_glb_sha256": "9d72afb49de26b661de6e5321279fa08ec496c329a04f08d4cd4d3f5e37e803b",
+      "assembly_sha256": "e374dd36f6060a995d68356cdfed85112b49552805845cabd32a3a8b3ddd97b4"
+    },
+    "terraces_r56": {
+      "author": "build_terraces.py",
+      "author_sha256": "f9daeb138b87fb676ac2f76d03d896c20e397617004fcebf76543f30b511ffec",
+      "frozen_helpers_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+      "baseline_glb_sha256": "dc7c806f70c77b711683abc6adfc9c9ce6e83f8642df86af061b98728ef68af8",
+      "additions_glb_sha256": "22bb121da25e448168263a5fd7069f671386a30912f36460601a61923c8dc506",
+      "assembly_sha256": "22b7a029cdb6ffa7975049c68c72b2460ffc36aef8a14bc13d139214ba60f2e3",
+      "scope": "Append only06/08/09; all original vertex attributes/corners/materials/nodes/images retained; collision/landmarks/terrain/LOD exact",
+      "added_triangles": 4880
+    },
+    "cliff_r59": {
+      "baseline_glb_sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+      "baseline_rock_payload_sha256": "32c4df768d03e7a7e2c2ee7cdd66d8b7f1a3926b1260e93b75d6946fcdbe9bf0",
+      "candidate_rock_payload_sha256": "9d776ecb5d68136e2b55d5f283f3e08cd6534759532134b2146f9b8ba2d4c9e8",
+      "author_sha256": "c8e8fc0d0e1ce3c215438b0dd14835856e5a31d3b1d33588cf62ee9260a92a53",
+      "assembly_sha256": "da9f3a9153c07a9ee376dc5dee159658606e202392b40010829d11ba90ea88e3",
+      "scope": "Replace 01 decorative cliff geometry only; all 11 other batch payloads, material/nodes/images/LOD and gameplay authority unchanged"
+    }
+  },
+  "crystal": {
+    "high": {
+      "file": "crystal.glb",
+      "triangles": 105722,
+      "materials": 12,
+      "bytes": 11117508,
+      "sha256": "8d357621043680bb99b9eaf9873341c82e89054e802dd9e606c8acea24f460ed"
+    },
+    "lod": {
+      "file": "crystal-lod.glb",
+      "triangles": 7462,
+      "materials": 10,
+      "bytes": 803636,
+      "sha256": "dfe524b0726711d56137798cf8b622a8a0ea792b29ebf1bb051e6d593d3fc9b6"
+    },
+    "colliders": 963,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "nomad": {
+    "high": {
+      "file": "nomad.glb",
+      "triangles": 97428,
+      "materials": 12,
+      "bytes": 9940316,
+      "sha256": "87eece42bc898a60d86a5da7b02fe142d7e1736f9c586efc6fa5e16e036fbf4b"
+    },
+    "lod": {
+      "file": "nomad-lod.glb",
+      "triangles": 4940,
+      "materials": 10,
+      "bytes": 516560,
+      "sha256": "26831e5464222c951147f380997e51c9b8fa9167a6acefae6afda6683165a9c7"
+    },
+    "colliders": 687,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "ember": {
+    "high": {
+      "file": "ember.glb",
+      "triangles": 79830,
+      "materials": 10,
+      "bytes": 8325980,
+      "sha256": "dabedd26eee4b72023b53197b71c57bf9b71c96f65dd9df9c2806c57e741bd7b"
+    },
+    "lod": {
+      "file": "ember-lod.glb",
+      "triangles": 6926,
+      "materials": 10,
+      "bytes": 712020,
+      "sha256": "acd524edf6e848afc0ff62dab339bcede2000715bb9d22bf639467c20de92bb0"
+    },
+    "colliders": 720,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "frost": {
+    "high": {
+      "file": "frost.glb",
+      "triangles": 110830,
+      "materials": 10,
+      "bytes": 11696388,
+      "sha256": "1f195cb9b260b79c5152cc77ea312014ffdb730a5f1aea715222ccfff2ffdce8"
+    },
+    "lod": {
+      "file": "frost-lod.glb",
+      "triangles": 7900,
+      "materials": 9,
+      "bytes": 825840,
+      "sha256": "481375e46cf7f2ac0ce8bf2013807a50b7d283faf631918535fcae37e1dfb95d"
+    },
+    "colliders": 848,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "verdant": {
+    "high": {
+      "file": "verdant.glb",
+      "triangles": 93920,
+      "materials": 12,
+      "bytes": 9535632,
+      "sha256": "c744d13cb6b8db06ed5c37c0b3c489835c58a3b40d8f04d61f13da5df0724802"
+    },
+    "lod": {
+      "file": "verdant-lod.glb",
+      "triangles": 6532,
+      "materials": 9,
+      "bytes": 685596,
+      "sha256": "190dc0f588500fa52604c7ce048dcf6cec375ed1de324075acd575cb2aef7944"
+    },
+    "colliders": 580,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "storm": {
+    "high": {
+      "file": "storm.glb",
+      "triangles": 95894,
+      "materials": 10,
+      "bytes": 10296052,
+      "sha256": "238540a5125a9e22840877b5c05217dc459ded8452bb4e05db5a4f9fd6740afe"
+    },
+    "lod": {
+      "file": "storm-lod.glb",
+      "triangles": 5176,
+      "materials": 10,
+      "bytes": 550048,
+      "sha256": "ad4bc8e411186036b2f6b1b438c5140af09026a495ae940a17eb704309d3c8df"
+    },
+    "colliders": 742,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "hollow": {
+    "high": {
+      "file": "hollow.glb",
+      "triangles": 132352,
+      "materials": 12,
+      "bytes": 14721516,
+      "sha256": "bbabf15356505568941d983a4962656d4fe499294d7fde1c6fd1e6e3d04dc833"
+    },
+    "lod": {
+      "file": "hollow-lod.glb",
+      "triangles": 9890,
+      "materials": 9,
+      "bytes": 1074060,
+      "sha256": "e51df00c953c89b78c3188d86c9349f1fa03215739622c945e7b7cae43af9896"
+    },
+    "colliders": 1436,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "underforge": {
+    "high": {
+      "file": "underforge.glb",
+      "triangles": 123206,
+      "materials": 11,
+      "bytes": 13622804,
+      "sha256": "09750f4f994f7296b82e53a6b1dd188e49b33403c5ff2d93d1afddcc84c0a6e2"
+    },
+    "lod": {
+      "file": "underforge-lod.glb",
+      "triangles": 10684,
+      "materials": 10,
+      "bytes": 1149908,
+      "sha256": "96f50b8b143125b6b82c75edef7ccd51d9252b573bd6510c7c019104cf4ded9e"
+    },
+    "colliders": 1349,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "dawn-watch": {
+    "high": {
+      "file": "dawn-watch.glb",
+      "triangles": 124521,
+      "materials": 12,
+      "bytes": 12942888,
+      "sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353"
+    },
+    "lod": {
+      "file": "dawn-watch-lod.glb",
+      "triangles": 10509,
+      "materials": 10,
+      "bytes": 1114056,
+      "sha256": "448ea68f0496c1e4d69346f53c618b8b04a9f0e751ac9dfd91e3f5af9f6e8902"
+    },
+    "colliders": 782,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366",
+    "base_generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+    "architecture_r54": {
+      "generator": "tools/art/build_facades_r54.py",
+      "generator_sha256": "53eeb54c4faff248d44383841963546225cc60c4901e6967cde873258ba5922a",
+      "patch": "tools/art/facades_r54.py",
+      "patch_sha256": "dea7054c0e601406b4ba3f796185a9db62ac7b1c315b793a39a5fb30bcabe2bb",
+      "base_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+      "variant_sha256": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366",
+      "scope": "house façades only; collision/landmarks/LOD unchanged",
+      "assembled_original_payloads": [
+        "01 | Fractured limestone",
+        "02 | Deep strata",
+        "06 | Cedar and roots",
+        "08 | Deep foliage",
+        "09 | Sunlit foliage",
+        "11 | Aether mineral",
+        "12 | Surface biome"
+      ],
+      "original_glb_sha256": "b39634f784a041afd0e1f33c485bc088b0b3720eb162895e19717c1c268f74cb",
+      "assembly_sha256": "e374dd36f6060a995d68356cdfed85112b49552805845cabd32a3a8b3ddd97b4"
+    },
+    "terraces_r56": {
+      "author": "build_terraces.py",
+      "author_sha256": "f9daeb138b87fb676ac2f76d03d896c20e397617004fcebf76543f30b511ffec",
+      "frozen_helpers_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+      "baseline_glb_sha256": "95b16cf5db02dbc788f385d1d9c9cc69557b23c37d691e1c91e13571b7ceee45",
+      "additions_glb_sha256": "4b0502feebe360f9d0285356619fdca550a5bb1e3c19016c3932a4d00ae615a7",
+      "assembly_sha256": "22b7a029cdb6ffa7975049c68c72b2460ffc36aef8a14bc13d139214ba60f2e3",
+      "scope": "Append only06/08/09; all original vertex attributes/corners/materials/nodes/images retained; collision/landmarks/terrain/LOD exact",
+      "added_triangles": 5116
+    },
+    "cliff_r59": {
+      "baseline_glb_sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+      "baseline_rock_payload_sha256": "618054d96b0262938f4a2d17670534850b812a38bf6907cb398fdd5a3a818ce9",
+      "candidate_rock_payload_sha256": "572680038949887941696443a3322bf92544196e2c871ad89069cc645a2ca778",
+      "author_sha256": "c8e8fc0d0e1ce3c215438b0dd14835856e5a31d3b1d33588cf62ee9260a92a53",
+      "assembly_sha256": "da9f3a9153c07a9ee376dc5dee159658606e202392b40010829d11ba90ea88e3",
+      "scope": "Replace 01 decorative cliff geometry only; all 11 other batch payloads, material/nodes/images/LOD and gameplay authority unchanged"
+    }
+  },
+  "dawn-garden": {
+    "high": {
+      "file": "dawn-garden.glb",
+      "triangles": 130182,
+      "materials": 12,
+      "bytes": 14419056,
+      "sha256": "486ada3f3bc26a3f0707f5eb6d693bec6fbffb32e80c4851f342824e14328ea1"
+    },
+    "lod": {
+      "file": "dawn-garden-lod.glb",
+      "triangles": 10662,
+      "materials": 10,
+      "bytes": 1135232,
+      "sha256": "dca7d383c4e94d7aad5d4888c3b75f13c43b41887f7727c337dd56a4fc37f4ad"
+    },
+    "colliders": 725,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366",
+    "base_generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  },
+  "dawn-ruin": {
+    "high": {
+      "file": "dawn-ruin.glb",
+      "triangles": 116844,
+      "materials": 12,
+      "bytes": 14065152,
+      "sha256": "1abd3235e0aea65f9a45c383ffe24e41a6c1df29efe424dcb2ecfcd141fbc7a3"
+    },
+    "lod": {
+      "file": "dawn-ruin-lod.glb",
+      "triangles": 8964,
+      "materials": 9,
+      "bytes": 955860,
+      "sha256": "a0cec5d9a89d3029e91e82d44f86775fc2afc7f9c30d43722049a9c5783f155e"
+    },
+    "colliders": 772,
+    "dock": [
+      0,
+      3,
+      88
+    ],
+    "generator_sha256": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366",
+    "base_generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+  }
+}

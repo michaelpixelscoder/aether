@@ -1,0 +1,534 @@
+{
+  "allocated_entity_indices": 32768,
+  "asset_samples_20_cycles": [],
+  "avatar_fallbacks": 0,
+  "benchmark": true,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 65.0,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 10000,
+  "checkpoint": 0,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "contact_manifolds_active": 2,
+  "contact_pairs_active": 1,
+  "contact_pairs_sleeping": 0,
+  "couriers": [
+    {
+      "id": 1,
+      "position": [
+        -456.3361511230469,
+        282.808349609375,
+        -370.59649658203125
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -86.1953125,
+        286.09490966796875,
+        -998.625244140625
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -2213.258544921875,
+        419.196533203125,
+        -1337.543701171875
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -1386.7412109375,
+        419.1966247558594,
+        -1462.4561767578125
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        1160.140869140625,
+        797.7893676757812,
+        -1955.641845703125
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        65.50750732421875,
+        67.5482177734375,
+        -246.54449462890625
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -16.57820701599121,
+        69.28104400634766,
+        -1056.6251220703125
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -586.5902709960938,
+        119.32460021972656,
+        -528.4931030273438
+      ]
+    }
+  ],
+  "decoration_cpu_ms_p50_p95_p99": [
+    0.0477,
+    4.2657,
+    16.967
+  ],
+  "docked": false,
+  "edit_point": [
+    942.3833618164062,
+    570.5416870117188
+  ],
+  "elapsed_seconds": 35.0019645690918,
+  "entities": 25727,
+  "entity_samples_20_cycles": [],
+  "expedition": {
+    "cargo": [
+      12,
+      4,
+      4,
+      0,
+      12,
+      0
+    ],
+    "contracts": [],
+    "credits": 160,
+    "destination": 100,
+    "harvested": [],
+    "observed_species": [],
+    "portal_ready_tick": 0,
+    "visited": [
+      0
+    ]
+  },
+  "frame_ms_p50_p95_p99": [
+    13.476000167429447,
+    17.5074003636837,
+    19.240200519561768
+  ],
+  "fuel": 1151.5255126953125,
+  "gpu_timestamps_measured": true,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "loading": {
+    "elapsed": 0.0,
+    "error": "",
+    "pending": []
+  },
+  "mass_kg": 186504.0,
+  "material_assets": 417,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.034,
+    0.14459999999999998,
+    0.1888
+  ],
+  "mesh_assets": 1000,
+  "mesh_max_ms": 0.6975,
+  "mesh_p95_ms": 0.42260000000000003,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    1708.0231,
+    2141.3763,
+    2875.1869
+  ],
+  "navigation": {
+    "angular_y": 0.00008854650513967499,
+    "intent": {
+      "brake": false,
+      "climb": 0.0,
+      "throttle": 0.0,
+      "turn": 0.0
+    },
+    "position": [
+      -0.14053428173065186,
+      14.38526439666748,
+      -0.07872070372104645
+    ],
+    "target_altitude": 12.0,
+    "velocity": [
+      -0.0012374467914924026,
+      -0.00005289850014378317,
+      -0.0009259986109100282
+    ],
+    "yaw": 0.001939047477208078
+  },
+  "notice": "Réserve basse ! Rejoignez un quai ou utilisez R pour demander secours.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physical_keys": [],
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.0468,
+      0.07339999999999999,
+      4.9949
+    ],
+    "avian/collision/update_contacts": [
+      0.6829,
+      0.7559,
+      1.0326
+    ],
+    "avian/solver/apply_restitution": [
+      0.00039999999999999996,
+      0.0007,
+      0.001
+    ],
+    "avian/solver/finalize": [
+      0.011600000000000001,
+      0.018600000000000002,
+      0.0288
+    ],
+    "avian/solver/integrate_positions": [
+      0.045899999999999996,
+      0.08739999999999999,
+      0.2344
+    ],
+    "avian/solver/integrate_velocities": [
+      0.054599999999999996,
+      0.0888,
+      0.2453
+    ],
+    "avian/solver/prepare_constraints": [
+      0.0092,
+      0.0214,
+      0.0314
+    ],
+    "avian/solver/relax_velocities": [
+      0.0017000000000000001,
+      0.0028,
+      0.0042
+    ],
+    "avian/solver/solve_constraints": [
+      0.0024,
+      0.0036,
+      0.0048
+    ],
+    "avian/solver/store_impulses": [
+      0.00009999999999999999,
+      0.00039999999999999996,
+      0.0009
+    ],
+    "avian/solver/swept_ccd": [
+      0.0005,
+      0.0011,
+      0.0015999999999999999
+    ],
+    "avian/solver/update_velocity_increments": [
+      0.0213,
+      0.0365,
+      0.06949999999999999
+    ],
+    "avian/solver/warm_start": [
+      0.0015999999999999999,
+      0.0026,
+      0.0037
+    ]
+  },
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0.0109,
+      0.0191,
+      0.025
+    ],
+    "render/bin_unpacking/elapsed_gpu": [
+      0.162304,
+      1.417728,
+      2.586624
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.0415,
+      0.0629,
+      0.08270000000000001
+    ],
+    "render/bloom/elapsed_gpu": [
+      0.07936,
+      0.0832,
+      0.104448
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.0162,
+      0.0244,
+      0.0324
+    ],
+    "render/clustering/elapsed_gpu": [
+      0.063232,
+      0.237824,
+      0.806144
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.0352,
+      0.0553,
+      0.0718
+    ],
+    "render/early prepass/elapsed_gpu": [
+      1.30304,
+      1.696512,
+      2.011904
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0.0042,
+      0.0069,
+      0.009000000000000001
+    ],
+    "render/early_mesh_preprocessing/elapsed_gpu": [
+      0.020736,
+      0.028928,
+      0.365056
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.022500000000000003,
+      0.033,
+      0.056799999999999996
+    ],
+    "render/main_opaque_pass_3d/elapsed_gpu": [
+      2.502912,
+      2.851584,
+      3.698944
+    ],
+    "render/main_transmissive_pass_3d/elapsed_cpu": [
+      0.0108,
+      0.0176,
+      0.0244
+    ],
+    "render/main_transmissive_pass_3d/elapsed_gpu": [
+      0.01664,
+      0.018176,
+      0.027136
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.0714,
+      0.1078,
+      0.1428
+    ],
+    "render/main_transparent_pass_3d/elapsed_gpu": [
+      2.12352,
+      2.360064,
+      2.56768
+    ],
+    "render/ssao/elapsed_cpu": [
+      0.0049,
+      0.0084,
+      0.0115
+    ],
+    "render/ssao/elapsed_gpu": [
+      0.131584,
+      0.13696,
+      0.301312
+    ],
+    "render/taa/elapsed_cpu": [
+      0.0015,
+      0.0025,
+      0.0035
+    ],
+    "render/taa/elapsed_gpu": [
+      0.048896,
+      0.055808,
+      0.057856
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0.0017000000000000001,
+      0.0040999999999999995,
+      0.0056
+    ],
+    "render/tonemapping/elapsed_gpu": [
+      0.015104,
+      0.016128,
+      0.025344
+    ],
+    "render/ui/elapsed_cpu": [
+      0.007700000000000001,
+      0.0122,
+      0.0156
+    ],
+    "render/ui/elapsed_gpu": [
+      0.009728,
+      0.01024,
+      0.010496
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0.0018,
+      0.0031999999999999997,
+      0.0047
+    ],
+    "render/upscaling/elapsed_gpu": [
+      0.009984,
+      0.010752,
+      0.012544
+    ]
+  },
+  "residents": [
+    {
+      "id": 1,
+      "position": [
+        -668.14892578125,
+        -1398.1019287109375,
+        -1589.6806640625
+      ],
+      "species": "Guardian"
+    },
+    {
+      "id": 2,
+      "position": [
+        1281.1400146484375,
+        -2198.10205078125,
+        -3085.9541015625
+      ],
+      "species": "Guardian"
+    },
+    {
+      "id": 3,
+      "position": [
+        -603.2886352539062,
+        -1361.1436767578125,
+        -1606.31982421875
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 4,
+      "position": [
+        -597.159423828125,
+        -1360.7476806640625,
+        -1794.795654296875
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 5,
+      "position": [
+        1339.214111328125,
+        -2160.90576171875,
+        -3173.597900390625
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 6,
+      "position": [
+        1360.651123046875,
+        -2161.29345703125,
+        -3230.303466796875
+      ],
+      "species": "Cavewing"
+    }
+  ],
+  "sail_motion": [
+    {
+      "normal_wind": -11.348837852478027,
+      "seconds": 33.96666717529297,
+      "speed": 11.703496932983398,
+      "weights": [
+        -0.9457364678382874,
+        0.31092891097068787,
+        0.7759891748428345
+      ]
+    },
+    {
+      "normal_wind": -11.348837852478027,
+      "seconds": 33.96666717529297,
+      "speed": 11.703496932983398,
+      "weights": [
+        -0.9457364678382874,
+        0.31092891097068787,
+        0.7759891748428345
+      ]
+    },
+    {
+      "normal_wind": -11.348837852478027,
+      "seconds": 33.96666717529297,
+      "speed": 11.703496932983398,
+      "weights": [
+        -0.9457364678382874,
+        0.31092891097068787,
+        0.7759891748428345
+      ]
+    },
+    {
+      "normal_wind": -11.348837852478027,
+      "seconds": 33.96666717529297,
+      "speed": 11.703496932983398,
+      "weights": [
+        -0.9457364678382874,
+        0.31092891097068787,
+        0.7759891748428345
+      ]
+    },
+    {
+      "normal_wind": -11.348837852478027,
+      "seconds": 33.96666717529297,
+      "speed": 11.703496932983398,
+      "weights": [
+        -0.9457364678382874,
+        0.31092891097068787,
+        0.7759891748428345
+      ]
+    }
+  ],
+  "tick": 2038,
+  "tick_ms_p50_p95_p99": [
+    2.5635,
+    4.053400000000001,
+    10.3672
+  ],
+  "triangles_in_mesh_assets": 3951000,
+  "tutorial_flags": 12,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 651.0
+    },
+    {
+      "action": "Atlas",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 601.0
+    },
+    {
+      "action": "Tether",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 550.0
+    },
+    {
+      "action": "Dock",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 500.0
+    },
+    {
+      "action": "Edit",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 449.0
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null,
+  "window_focused": true
+}

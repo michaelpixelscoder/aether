@@ -1,0 +1,59 @@
+{
+  "high": {
+    "file": "arch-vault.glb",
+    "triangles": 93944,
+    "materials": 5,
+    "bytes": 10961004,
+    "sha256": "fe07743c021a247fefe81eabb50220bdf241121ee12bfa80e2eab220c9556ffb"
+  },
+  "lod": {
+    "file": "arch-vault-lod.glb",
+    "triangles": 11646,
+    "materials": 5,
+    "bytes": 1368984,
+    "sha256": "b14848ec935fd547d11b88d6130ac077f7dc10d8ce8ebb683c62e398145c0019"
+  },
+  "generator_sha256": "7d073365cdb7aa02175a2190b3e29d1015e89b81cb6c32e641a5205f3234b684",
+  "base_generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+  "colliders": 3318,
+  "coordinate_system": "Y-up metres",
+  "floor": false,
+  "roof_y": [
+    350,
+    450
+  ],
+  "outer_massif_y": [
+    418,
+    650
+  ],
+  "wall_y": [
+    -600,
+    400
+  ],
+  "entries": [
+    {
+      "axis": "Z",
+      "minimum_width": 500
+    }
+  ],
+  "skylights": [
+    {
+      "center": [
+        -700,
+        400,
+        0
+      ],
+      "minimum_diameter": 400
+    },
+    {
+      "center": [
+        700,
+        400,
+        0
+      ],
+      "minimum_diameter": 400
+    }
+  ],
+  "navigation_clear_radius": 1400,
+  "navigation_clear_below_y": 300
+}

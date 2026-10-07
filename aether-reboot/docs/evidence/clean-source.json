@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "git_used": false,
+  "target_directory": "C:\\Users\\Damien\\Documents\\Perso\\Game\\Aether-git\\aether-reboot\\target",
+  "source_directory": "C:\\Users\\Damien\\AppData\\Local\\Temp\\Aether source clean fc78ff283a4845948c9037656ddeed28",
+  "dependency_cache_shared": true,
+  "elapsed_seconds": 8.2609155,
+  "command": "cargo check --workspace --all-targets --locked --offline"
+}

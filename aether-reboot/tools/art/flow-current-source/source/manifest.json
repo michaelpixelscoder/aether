@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "R64 fresh current native asset plus R66 uniform optical conversion",
+  "status": "ART PACKAGE ONLY; production Rust binding/capture and promotion owned by root",
+  "deltas": [
+    {
+      "revision": "R53 to R62",
+      "scope": "Current branch/helper sampling rewrite; authentic current alpha/UV/body/radiance delta; every outside-current byte restored to full R53 after explicit CRLF-to-LF normalization",
+      "baseline_shader": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+      "output_shader": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+      "author_sources": [
+        "archive/r62/portable/tools/art/flow-r62-source/source/current-block.wgsl",
+        "archive/r62/portable/tools/art/flow-r62-source/source/current-sampling.wgsl"
+      ],
+      "history_note": "R62 visual prototype rejected; shader structure reused by R64 fresh asset, not a standalone accepted visual claim"
+    },
+    {
+      "revision": "R62 to R64",
+      "scope": "Fresh untouched ImageGen current-only native PNG and linear associated mips; crop .42+.29 both widths and five exact label/UV substitutions; original cascade/pool texture retained",
+      "baseline_shader": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+      "output_shader": "0861bdc4197dab68fb10826a6165fa6ef5e325fa52ad6d42331a6b65e30c5cf5",
+      "author_sources": [
+        "source/world-flow-current-native.png",
+        "source/native-r64.json",
+        "source/prompt-invocation.txt",
+        "archive/r64/portable/tools/art/flow-r64-source/build_mips.py"
+      ],
+      "gpu_bytes": 8384072,
+      "mip_count": 11,
+      "native_dimensions": [
+        1254,
+        1254
+      ],
+      "native_rgba_sha256": "9bc3903ea5167a450682dd0cb848436ef21cc0b584ed74fb15eb95ce0369c18d",
+      "native_png_sha256": "eaf534efc2a2e30632fcfee7f3d5b731efe77dcd19f0849216e6c74c662497c3",
+      "tool": "image_gen.imagegen",
+      "generation_parameters": {
+        "transparent_background": true
+      },
+      "omitted_parameters": [
+        "referenced_image_paths",
+        "num_last_images_to_include"
+      ]
+    },
+    {
+      "revision": "R64 to R66",
+      "scope": "One exact expression optical_profile=.12+1.88*middle -> optical_profile=1.0; no gain compensation; image hierarchy native",
+      "baseline_shader": "0861bdc4197dab68fb10826a6165fa6ef5e325fa52ad6d42331a6b65e30c5cf5",
+      "output_shader": "b76e67027f1b34cf6f9d56192bcdf315ad43810ff32c4e64e075297ab9a16c31",
+      "author_sources": [
+        "archive/r66/portable/tools/art/flow-r66-source/build_shader.py",
+        "archive/r66/portable/tools/art/flow-r66-source/probe.py"
+      ],
+      "coverage_and_mass_exact_to_r64": true,
+      "total_radiance_conserved": false,
+      "core_mask_exact": true,
+      "core_luminosity_may_decrease": true
+    }
+  ],
+  "binding_contract": {
+    "current_only_texture": "assets/textures/world-flow-current-r64.ktx2",
+    "historical_cascade_pool_texture": "assets/textures/world-flow.ktx2",
+    "must_be_distinct_image_handles": true,
+    "production_implementation_and_native_level0_mip_capture": "REQUIRED ROOT; NOT PART OF THIS ART PACKAGE"
+  },
+  "gate_contract": {
+    "runtime_api": "validate.mjs::validateAndRecoverR53({root,runtimeShader})",
+    "historical_gate_adapter": "../flow-source/verify.mjs",
+    "global_gate_unchanged": "../verify-open-world.mjs already invokes flow-source/verify",
+    "legacy_metadata_inventory": "source/r53-authority.json",
+    "all_historical_gates_and_thresholds_preserved": true,
+    "current_fetches": 5,
+    "cascade_fetches": 2,
+    "no_performance_claim": true
+  },
+  "native_diagnostic": {
+    "file": "review/world-r66-uniform-current.png",
+    "sha256": "b8249d0e3c647bed8a7cb3f6f16cf76461a460bc3d22eb27717ecdcb9d96bab5",
+    "review": "Root reports exterior bands more readable and coherent arcs; not judge-ready or definitive quality; diagnostic current-only gallery",
+    "production_binding_proven": false
+  },
+  "historical_proof_policy": "All archived frozen inventories match their authentic original SHAs; original PENDING/rejected statuses kept. Scratch reconstruction allows only elapsed seconds comparison outside semantic mip proof, then restores original proof without rewriting history.",
+  "promotion_applied": false
+}

@@ -1,0 +1,94 @@
+    Updating crates.io index
+     Locking 27 packages to latest Rust 1.98.0 compatible versions
+      Adding alsa v0.11.0
+      Adding alsa-sys v0.4.0
+      Adding bevy_audio v0.19.1
+      Adding cesu8 v1.1.0
+      Adding coreaudio-rs v0.14.2
+      Adding cpal v0.17.3
+      Adding dasp_sample v0.11.0
+      Adding hound v3.5.1
+      Adding jni v0.21.1
+      Adding mach2 v0.5.0
+      Adding num-bigint v0.4.8
+      Adding num-integer v0.1.47
+      Adding num-rational v0.4.2
+      Adding objc2-audio-toolbox v0.3.2
+      Adding objc2-avf-audio v0.3.2
+      Adding objc2-core-audio v0.3.2
+      Adding objc2-core-audio-types v0.3.2
+      Adding rodio v0.22.2
+      Adding windows-sys v0.45.0
+      Adding windows-targets v0.42.2
+      Adding windows_aarch64_gnullvm v0.42.2
+      Adding windows_aarch64_msvc v0.42.2
+      Adding windows_i686_gnu v0.42.2
+      Adding windows_i686_msvc v0.42.2
+      Adding windows_x86_64_gnu v0.42.2
+      Adding windows_x86_64_gnullvm v0.42.2
+      Adding windows_x86_64_msvc v0.42.2
+ Downloading crates ...
+  Downloaded hound v3.5.1
+  Downloaded num-rational v0.4.2
+  Downloaded dasp_sample v0.11.0
+  Downloaded num-integer v0.1.47
+  Downloaded num-bigint v0.4.8
+  Downloaded rodio v0.22.2
+  Downloaded bevy_audio v0.19.1
+  Downloaded cpal v0.17.3
+    Checking windows v0.62.2
+    Checking num-integer v0.1.47
+   Compiling cpal v0.17.3
+    Checking dasp_sample v0.11.0
+    Checking hound v3.5.1
+    Checking aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+    Checking num-bigint v0.4.8
+    Checking num-rational v0.4.2
+    Checking gpu-allocator v0.28.0
+    Checking accesskit_windows v0.32.1
+    Checking wgpu-hal v29.0.4
+    Checking rodio v0.22.2
+    Checking accesskit_winit v0.32.2
+    Checking bevy_winit v0.19.1
+    Checking bevy_audio v0.19.1
+    Checking wgpu-core-deps-windows-linux-android v29.0.4
+    Checking wgpu-core v29.0.4
+    Checking wgpu v29.0.4
+    Checking bevy_render v0.19.1
+    Checking bevy_core_pipeline v0.19.1
+    Checking bevy_sprite_render v0.19.1
+    Checking bevy_pbr v0.19.1
+    Checking bevy_anti_alias v0.19.1
+    Checking bevy_post_process v0.19.1
+    Checking bevy_ui_render v0.19.1
+    Checking bevy_gizmos_render v0.19.1
+    Checking bevy_internal v0.19.1
+    Checking bevy v0.19.0
+    Checking bevy-tnua-physics-integration-layer v0.13.0
+    Checking bevy_transform_interpolation v0.5.0
+    Checking aether_view v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+    Checking bevy-tnua v0.32.0
+warning: type `AvatarPlayer` is more private than the item `animate`
+  --> crates\aether_view\src\avatar.rs:46:1
+   |
+46 | pub fn animate(assets: Res<AvatarAssets>, avatars: Query<&AvatarVisual>, mut players: Query<(&mut AnimationPlayer, &mut AvatarPlayer)>) {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function `animate` is reachable at visibility `pub`
+   |
+note: but type `AvatarPlayer` is only usable at visibility `pub(self)`
+  --> crates\aether_view\src\avatar.rs:12:1
+   |
+12 | struct AvatarPlayer { root: Entity, motion: usize }
+   | ^^^^^^^^^^^^^^^^^^^
+   = note: `#[warn(private_interfaces)]` on by default
+
+error: type `AvatarPlayer` is private
+  --> crates\aether_view\src\lib.rs:14:9
+   |
+14 | /         app.add_systems(Startup, materials::setup)
+15 | |             .add_systems(Startup, avatar::setup)
+16 | |             .add_systems(Update, avatar::animate)
+   | |_________________________________________________^ private type
+
+warning: `aether_view` (lib) generated 1 warning
+error: could not compile `aether_view` (lib) due to 1 previous error; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...

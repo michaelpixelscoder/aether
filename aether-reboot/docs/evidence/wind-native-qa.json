@@ -1,0 +1,602 @@
+{
+  "allocated_entity_indices": 2048,
+  "asset_samples_20_cycles": [
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ]
+  ],
+  "avatar_fallbacks": 0,
+  "benchmark": false,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 14.0,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 151,
+  "checks": [
+    "nouvelle partie",
+    "atelier au quai",
+    "ajout transactionnel",
+    "annulation",
+    "rétablissement",
+    "sauvegarde confirmée",
+    "nouvelle session nettoyée",
+    "reprise de la construction",
+    "poses, équipements et picking après reprise",
+    "marche et incarnation",
+    "reprise du personnage",
+    "départ",
+    "harpon et joint unique",
+    "reconstruction des attaches",
+    "point local après reprise attachée",
+    "libération du câble",
+    "secours au quai",
+    "scission exacte",
+    "poses et picking après scission",
+    "annulation de scission",
+    "rétablissement de scission",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "100 éditions puis annulations",
+    "arrivée et checkpoint"
+  ],
+  "contact_manifolds_active": 0,
+  "contact_pairs_active": 0,
+  "contact_pairs_sleeping": 0,
+  "decoration_cpu_ms_p50_p95_p99": [
+    0.00019999999999999998,
+    1.0839,
+    1.466
+  ],
+  "docked": true,
+  "edit_point": [
+    644.933349609375,
+    582.4842529296875
+  ],
+  "elapsed_seconds": 22.162899017333984,
+  "entities": 1058,
+  "entity_samples_20_cycles": [
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059,
+    1059
+  ],
+  "frame_ms_p50_p95_p99": [
+    7.157499901950359,
+    22.6610004901886,
+    28.727300465106964
+  ],
+  "fuel": 180.0,
+  "gpu_timestamps_measured": true,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "material_assets": 111,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.025599999999999998,
+    0.0596,
+    0.0923
+  ],
+  "mesh_assets": 186,
+  "mesh_max_ms": 0.5729,
+  "mesh_p95_ms": 0.3215,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    23.6829,
+    43.0717,
+    46.592
+  ],
+  "navigation": {
+    "angular_y": 0.0,
+    "position": [
+      65.0,
+      20.0,
+      -154.0
+    ],
+    "target_altitude": 20.0,
+    "velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "yaw": 0.0
+  },
+  "notice": "Remorquage au dernier quai. Construction conservée, fragments abandonnés.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.001,
+      0.013699999999999999,
+      0.0217
+    ],
+    "avian/collision/update_contacts": [
+      0.0018,
+      0.0147,
+      0.14889999999999998
+    ],
+    "avian/solver/apply_restitution": [
+      0.00019999999999999998,
+      0.0005,
+      0.0007
+    ],
+    "avian/solver/finalize": [
+      0.0007999999999999999,
+      0.0076,
+      0.0213
+    ],
+    "avian/solver/integrate_positions": [
+      0.0015,
+      0.0401,
+      0.2498
+    ],
+    "avian/solver/integrate_velocities": [
+      0.0024,
+      0.05,
+      0.1938
+    ],
+    "avian/solver/prepare_constraints": [
+      0.0007,
+      0.0019,
+      0.0147
+    ],
+    "avian/solver/relax_velocities": [
+      0.00039999999999999996,
+      0.0015,
+      0.0042
+    ],
+    "avian/solver/solve_constraints": [
+      0.00039999999999999996,
+      0.001,
+      0.0036
+    ],
+    "avian/solver/store_impulses": [
+      0.00009999999999999999,
+      0.00019999999999999998,
+      0.00039999999999999996
+    ],
+    "avian/solver/swept_ccd": [
+      0.0005,
+      0.0007999999999999999,
+      0.0011
+    ],
+    "avian/solver/update_velocity_increments": [
+      0.0017000000000000001,
+      0.0193,
+      0.050300000000000004
+    ],
+    "avian/solver/warm_start": [
+      0.00039999999999999996,
+      0.0013,
+      0.003
+    ]
+  },
+  "progress": 4,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 35,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0.0098,
+      0.0161,
+      0.0201
+    ],
+    "render/bin_unpacking/elapsed_gpu": [
+      0.091904,
+      0.100864,
+      0.112128
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.0406,
+      0.057800000000000004,
+      0.0876
+    ],
+    "render/bloom/elapsed_gpu": [
+      0.094464,
+      2.541312,
+      9.869056
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.016399999999999998,
+      0.0242,
+      0.031
+    ],
+    "render/clustering/elapsed_gpu": [
+      0.065536,
+      0.078592,
+      0.085248
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.020999999999999998,
+      0.0335,
+      0.0431
+    ],
+    "render/early prepass/elapsed_gpu": [
+      0.094208,
+      0.107776,
+      2.54208
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0.0038,
+      0.0065,
+      0.0083
+    ],
+    "render/early_mesh_preprocessing/elapsed_gpu": [
+      0.018688,
+      0.019712,
+      0.021504
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.0162,
+      0.0241,
+      0.036000000000000004
+    ],
+    "render/main_opaque_pass_3d/elapsed_gpu": [
+      0.151808,
+      0.79232,
+      7.990528
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.0108,
+      0.0171,
+      0.022600000000000002
+    ],
+    "render/main_transparent_pass_3d/elapsed_gpu": [
+      0.02944,
+      0.0704,
+      0.434944
+    ],
+    "render/ssao/elapsed_cpu": [
+      0.0055,
+      0.0087,
+      0.0109
+    ],
+    "render/ssao/elapsed_gpu": [
+      0.183552,
+      1.25056,
+      7.71328
+    ],
+    "render/taa/elapsed_cpu": [
+      0.0015,
+      0.0027,
+      0.0036
+    ],
+    "render/taa/elapsed_gpu": [
+      0.070912,
+      1.138944,
+      8.45952
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0.0017000000000000001,
+      0.0046,
+      0.0058000000000000005
+    ],
+    "render/tonemapping/elapsed_gpu": [
+      0.020992,
+      0.026368,
+      0.039168
+    ],
+    "render/ui/elapsed_cpu": [
+      0.008,
+      0.0123,
+      0.0194
+    ],
+    "render/ui/elapsed_gpu": [
+      0.011264,
+      0.013824,
+      0.014592
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0.0019,
+      0.0043,
+      0.0058000000000000005
+    ],
+    "render/upscaling/elapsed_gpu": [
+      0.013056,
+      0.014592,
+      0.020224
+    ]
+  },
+  "sail_motion": [
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7620892524719238,
+        0.5612939596176147,
+        -0.35716694593429565
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7620892524719238,
+        0.5612939596176147,
+        -0.35716694593429565
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7620892524719238,
+        0.5612939596176147,
+        -0.35716694593429565
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7620892524719238,
+        0.5612939596176147,
+        -0.35716694593429565
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7620892524719238,
+        0.5612939596176147,
+        -0.35716694593429565
+      ]
+    }
+  ],
+  "tick": 48,
+  "tick_ms_p50_p95_p99": [
+    0.5901,
+    1.3328,
+    7.6588
+  ],
+  "triangles_in_mesh_assets": 660486,
+  "tutorial_flags": 189,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 493.3333435058594
+    },
+    {
+      "action": "Tether",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 451.3333435058594
+    },
+    {
+      "action": "Dock",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 409.3333435058594
+    },
+    {
+      "action": "Edit",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 367.3333435058594
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null
+}

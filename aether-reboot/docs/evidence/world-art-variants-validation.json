@@ -1,0 +1,148 @@
+{
+  "glbs": [
+    {
+      "file": "dawn-watch.glb",
+      "triangles": 124521,
+      "materials": 12,
+      "meshes": 12,
+      "closed_columns": 0,
+      "rotor": null
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "triangles": 10509,
+      "materials": 10,
+      "meshes": 10,
+      "closed_columns": 318,
+      "rotor": null
+    },
+    {
+      "file": "dawn-garden.glb",
+      "triangles": 130182,
+      "materials": 12,
+      "meshes": 13,
+      "closed_columns": 0,
+      "rotor": {
+        "extras": {
+          "aether_animation_axis": "local Z",
+          "aether_angular_speed": 0.24
+        },
+        "mesh": 12,
+        "name": "WindmillRotor",
+        "translation": [
+          24,
+          49,
+          -20.200000762939453
+        ]
+      }
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "triangles": 10662,
+      "materials": 10,
+      "meshes": 10,
+      "closed_columns": 338,
+      "rotor": {
+        "extras": {
+          "aether_animation_axis": "local Z",
+          "aether_angular_speed": 0.24
+        },
+        "mesh": 9,
+        "name": "WindmillRotor",
+        "translation": [
+          24,
+          49,
+          -20.200000762939453
+        ]
+      }
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "triangles": 116844,
+      "materials": 12,
+      "meshes": 12,
+      "closed_columns": 0,
+      "rotor": null,
+      "ruin_gate_maximum_y": 64.5,
+      "ruin_ring_upward_vertices": 256
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "triangles": 8964,
+      "materials": 9,
+      "meshes": 9,
+      "closed_columns": 338,
+      "rotor": null,
+      "ruin_gate_maximum_y": 64.5,
+      "ruin_ring_upward_vertices": 160
+    }
+  ],
+  "stairs": [
+    {
+      "name": "dawn-watch",
+      "route": "terrace 1",
+      "clear": true
+    },
+    {
+      "name": "dawn-watch",
+      "route": "terrace 2",
+      "clear": true
+    },
+    {
+      "name": "dawn-watch",
+      "route": "terrace 3",
+      "clear": true
+    },
+    {
+      "name": "dawn-watch",
+      "route": "terrace 4",
+      "clear": true
+    },
+    {
+      "name": "dawn-garden",
+      "route": "terrace 1",
+      "clear": true
+    },
+    {
+      "name": "dawn-garden",
+      "route": "terrace 2",
+      "clear": true
+    },
+    {
+      "name": "dawn-garden",
+      "route": "terrace 3",
+      "clear": true
+    },
+    {
+      "name": "dawn-garden",
+      "route": "terrace 4",
+      "clear": true
+    },
+    {
+      "name": "dawn-ruin",
+      "route": "terrace 1",
+      "clear": true
+    },
+    {
+      "name": "dawn-ruin",
+      "route": "terrace 2",
+      "clear": true
+    },
+    {
+      "name": "dawn-ruin",
+      "route": "terrace 3",
+      "clear": true
+    },
+    {
+      "name": "dawn-ruin",
+      "route": "terrace 4",
+      "clear": true
+    },
+    {
+      "name": "dawn-ruin",
+      "route": "portal court",
+      "clear": true
+    }
+  ],
+  "original_assets_preserved": true
+}

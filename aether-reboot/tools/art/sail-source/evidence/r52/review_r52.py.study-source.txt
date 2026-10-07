@@ -1,0 +1,42 @@
+"""Reimported baseline/candidate geometry under identical CPU review lighting.
+Not a Bevy runtime screenshot or a frame-rate claim.
+"""
+import bpy,math
+from pathlib import Path
+from mathutils import Vector
+ROOT=Path(__file__).resolve().parents[2]
+def vec(p):return Vector((p[0],-p[2],p[1]))
+def light(name,p,power,color,size):
+    data=bpy.data.lights.new(name,'AREA');data.energy=power;data.color=color;data.shape='DISK';data.size=size
+    o=bpy.data.objects.new(name,data);bpy.context.collection.objects.link(o);o.location=vec(p);o.rotation_euler=(vec((0,.3,0))-o.location).to_track_quat('-Z','Y').to_euler()
+def render(name,asset,pressure,view):
+    for o in list(bpy.data.objects):bpy.data.objects.remove(o,do_unlink=True)
+    bpy.ops.import_scene.gltf(filepath=str(ROOT/asset))
+    for o in bpy.context.scene.objects:
+        if o.type!='MESH':continue
+        if o.data.shape_keys:
+            for key,val in zip(o.data.shape_keys.key_blocks[1:],[pressure,.27,.12]):key.value=val
+        for mat in o.data.materials:
+            if mat.name.startswith('Indigo canvas'):
+                bsdf=mat.node_tree.nodes.get('Principled BSDF');links=list(bsdf.inputs['Base Color'].links)
+                if links:
+                    source=links[0].from_socket;mat.node_tree.links.remove(links[0])
+                    factor=(.33,.47,.75) if mat.name.startswith('Indigo canvas variation') else (.30,.44,.72)
+                    mix=mat.node_tree.nodes.new('ShaderNodeMixRGB');mix.blend_type='MULTIPLY';mix.inputs[0].default_value=1;mix.inputs[2].default_value=(.8/factor[0],.86/factor[1],1/factor[2],1)
+                    mat.node_tree.links.new(source,mix.inputs[1]);mat.node_tree.links.new(mix.outputs[0],bsdf.inputs['Base Color'])
+    scene=bpy.context.scene;scene.render.engine='CYCLES';scene.cycles.device='CPU';scene.cycles.samples=16;scene.cycles.use_denoising=True
+    scene.render.threads_mode='FIXED';scene.render.threads=4
+    scene.world.use_nodes=True;bg=scene.world.node_tree.nodes['Background'];bg.inputs['Color'].default_value=(.19,.27,.38,1);bg.inputs['Strength'].default_value=.4
+    light('Broad neutral key',(-3.2,4.5,5),450,(1,.89,.76),4)
+    light('Cool fill',(3,1.5,4),220,(.65,.78,1),3)
+    light('Rim',(-.4,3,-3),350,(1,.79,.5),2)
+    data=bpy.data.cameras.new('Identical inspection camera');data.type='ORTHO';data.ortho_scale=4.0
+    o=bpy.data.objects.new(data.name,data);bpy.context.collection.objects.link(o);o.location=vec(view);o.rotation_euler=(vec((0,.12,0))-o.location).to_track_quat('-Z','Y').to_euler();scene.camera=o
+    scene.view_settings.view_transform='AgX';scene.render.resolution_x=850;scene.render.resolution_y=850;scene.render.resolution_percentage=100
+    scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/'evidence'/name)
+    bpy.ops.render.render(write_still=True)
+    print('CPU_REVIEW',name,flush=True)
+for name,asset in [('baseline','evidence/baseline-sail.glb'),('candidate','assets/art/sail.glb')]:
+    render(name+'-p058-front.png',asset,.58,(4,2.4,10))
+    render(name+'-p100-side.png',asset,1,(9,1.4,5))
+    if name=='candidate':render(name+'-n100-side.png',asset,-1,(9,1.4,5))

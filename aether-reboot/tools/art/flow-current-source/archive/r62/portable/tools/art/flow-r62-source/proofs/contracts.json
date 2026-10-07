@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "shader_sha256": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+  "native_texture_exact": true,
+  "cascade_pool_haze_clock_bindings_vertex_alpha_exact": true,
+  "current_alpha_and_sampler_delta_explicit": true,
+  "current_fetches": 5,
+  "cascade_fetches": 2,
+  "helpers_derivative_free": true,
+  "negative_cases_rejected": [
+    "clock",
+    "cascade alpha",
+    "pool wave",
+    "haze",
+    "vertex alpha",
+    "bindings",
+    "discard",
+    "crop",
+    "coverage",
+    "reserved identifier"
+  ],
+  "cpu_material_passed": true,
+  "gpu_compile": "PENDING ROOT NATIVE CAPTURE",
+  "performance": "UNMEASURED",
+  "promotion_authorized": false
+}

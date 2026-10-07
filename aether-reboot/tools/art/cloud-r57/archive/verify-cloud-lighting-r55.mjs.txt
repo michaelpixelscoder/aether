@@ -1,0 +1,75 @@
+// Distinct R55 proof. R47 remains an immutable, separately named historical gate.
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+import {generate} from './build_cloud_lighting.mjs';
+import {verify as verifyR47} from './verify-cloud-cache.mjs';
+
+const defaultRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const limits={gpu_bytes:59768832,density_mean:.006,regional_density_p99:.05,high_density_p99:.035,analytic_derivative_p99_degrees:.05,opaque_display_rmse:.025,edge_opacity_p99:.08};
+const recipe='r55-directional-reflected-light';
+export function verify(root=defaultRoot,{write=true}={}) {
+ const bytes=f=>fs.readFileSync(path.join(root,f));
+ const hash=f=>crypto.createHash('sha256').update(bytes(f)).digest('hex');
+ const read=f=>JSON.parse(bytes(f));
+ const contract=read('tools/art/cloud-r55/contract.json');
+ assert.equal(contract.recipe,recipe);
+ assert.deepEqual(contract.limits,limits,'R47 acceptance limits may not be silently changed');
+ assert.deepEqual(contract.lighting,{sun_direction:[-.85356265,-.050973576,-.5184906],bounce_elevation_degrees:42,bounce_strength:.35,bounce_radiance:[3,1.86,.96],direct_radiance:[3,2.55,1.95],phase_g:.45,shadow_taps_per_lobe:4,lighting_refresh_steps:[4,2],daylight_factor:1});
+ for(const [f,expected] of Object.entries(contract.r47_unchanged))assert.equal(hash(f),expected,`${f}: R47 evidence must remain historical and unchanged`);
+ const historicalAssetProof=hash('docs/evidence/cloud-cache-assets.json');
+ const original=verifyR47(root);
+ assert.equal(hash('docs/evidence/cloud-cache-assets.json'),historicalAssetProof,'The R47 report must remain byte-identical');
+ assert.equal(original.passed,true);
+ const shaderFile='assets/shaders/clouds.wgsl';
+ assert.equal(hash(shaderFile),contract.shader_sha256);
+ assert.equal(contract.shader_sha256,'ffcc09fbaea8702ddcab1938c3ee1e2c3c8c5431a765a1c00002b2f7ef9119b6');
+ assert.equal(bytes(shaderFile).toString(),generate(root),'Reviewed shader must reproduce exactly');
+ const baseline=bytes('tools/art/cloud-r55/archive/captured-clouds-r54.wgsl').toString(),shader=bytes(shaderFile).toString();
+ assert.equal(baseline.slice(0,baseline.indexOf('fn sunlight(')),shader.slice(0,shader.indexOf('// R55 isolated lighting prototype.')),'Density, normals and bindings unchanged');
+ assert.equal(baseline.slice(baseline.indexOf('@fragment')),shader.slice(shader.indexOf('@fragment')),'Fragment integration unchanged');
+ const sourceHashes=read('tools/art/cloud-r55/sources.json');
+ for(const [f,expected] of Object.entries(sourceHashes))assert.equal(hash(f),expected,`${f}: stale R55 source proof`);
+ for(const f of ['tools/art/build_cloud_lighting.mjs','tools/art/review_cloud_light_cpu.py','tools/art/compare_cloud_light_rays_cpu.py'])assert(f in sourceHashes);
+ const reportFile='docs/evidence/cloud-r55-ray-comparison.json',rays=read(reportFile);
+ assert.equal(rays.recipe,recipe);assert.equal(rays.schema,1);
+ for(const [field,f] of Object.entries({generator_sha256:'tools/art/build_cloud_cache.py',renderer_sha256:'tools/art/review_cloud_light_cpu.py',comparison_sha256:'tools/art/compare_cloud_light_rays_cpu.py',shader_sha256:shaderFile,r47_contract_sha256:'tools/art/cloud-r47/contract.json',historical_ray_comparison_sha256:'docs/evidence/cloud-r47-ray-comparison.json',config_sha256:'assets/atmosphere/cloud-banks.json'}))assert.equal(rays[field],hash(f),`${field}: stale comparison`);
+ assert.deepEqual(rays.dimensions,[240,150]);assert.equal(rays.views.length,8);
+ const expected=[4,2].flatMap(refresh=>['hollow','underforge'].flatMap(bank=>['oblique','grazing'].map(view=>`${bank}/${view}/${refresh}`)));
+ assert.deepEqual(rays.views.map(v=>`${v.bank}/${v.view}/${v.lighting_refresh_steps}`),expected);
+ const historical=read('docs/evidence/cloud-r47-ray-comparison.json');
+ const summaries=[];
+ for(const v of rays.views) {
+  assert.deepEqual(v.images.map(im=>im.mode),['analytic','cache','cache-density-analytic-normal']);
+  for(const im of v.images) {
+   assert.equal(im.bank,v.bank);assert.deepEqual(im.dimensions,[240,150]);assert.equal(im.steps,128);
+   assert.equal(im.lighting_refresh_steps,v.lighting_refresh_steps);assert.equal(im.lighting_recipe,recipe);
+   assert.equal(im.shadow_taps_per_lobe,4);assert.equal(im.daylight_factor,1);
+   assert.deepEqual(im.origin_local,v.view==='oblique'?[3250,2200,3600]:[3300,550,3800]);
+   assert.deepEqual(im.target_local,v.view==='oblique'?[0,-90,0]:[0,-140,0]);
+   assert.equal(im.orthographic_span,v.view==='oblique'?6200:5600);
+   assert.equal(im.live_noise,'held at R=.70,G/B=.65,A=.50 for both fields');
+   assert.deepEqual(im.sun_direction,[-0.8535626530647278,-0.05097357556223869,-0.5184906125068665]);
+   assert.deepEqual(im.bounce_direction,[-0.6351463198661804,0.6691306233406067,-0.38581517338752747]);
+  }
+  const c=v.comparisons.cache_vs_analytic;
+  for(const category of ['all','opaque_alpha_gt_095','edge_alpha_005_to_095','empty_alpha_lte_005']) {
+   assert(c[category]);assert(Number.isFinite(c[category].display_rmse));
+   assert(c[category].opacity_absolute.p50_p95_p99_max.every(Number.isFinite));
+  }
+  const rmse=c.opaque_alpha_gt_095.display_rmse,alpha=c.edge_alpha_005_to_095.opacity_absolute.p50_p95_p99_max[2];
+  assert(rmse<limits.opaque_display_rmse,`${v.bank}/${v.view}: opaque RMSE ${rmse} exceeds unchanged .025`);
+  assert(alpha<limits.edge_opacity_p99,`${v.bank}/${v.view}: edge alpha p99 ${alpha} exceeds unchanged .08`);
+  const old=historical.views.find(h=>h.bank===v.bank&&h.view===v.view);
+  assert(old);
+  for(const category of Object.keys(c))assert.deepEqual(c[category].opacity_absolute,old.comparisons.cache_vs_analytic[category].opacity_absolute,'Lighting must leave the original ray opacity errors exactly unchanged');
+  summaries.push({bank:v.bank,view:v.view,lighting_refresh_steps:v.lighting_refresh_steps,opaque_display_rmse:rmse,edge_opacity_p99:alpha});
+ }
+ const report={schema:1,passed:true,recipe,shader_sha256:hash(shaderFile),contract_sha256:hash('tools/art/cloud-r55/contract.json'),source_hashes:sourceHashes,ray_comparison_sha256:hash(reportFile),r47_historical_ray_comparison_sha256:hash('docs/evidence/cloud-r47-ray-comparison.json'),r47_evidence_preserved:true,legacy_regional_pointwise_gate_pass:false,limits,views:summaries};
+ if(write)fs.writeFileSync(path.join(root,'docs/evidence/cloud-r55-lighting-fidelity.json'),JSON.stringify(report,null,2)+'\n');
+ console.log('R55 analytic/cache lighting: four fixed views at both 4-step and 2-step refresh pass unchanged RMSE/alpha limits; R47 history intact.');
+ return report;
+}
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))verify();

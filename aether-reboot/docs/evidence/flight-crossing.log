@@ -1,0 +1,10 @@
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 7.13s
+     Running tests\scenarios.rs (target\debug\deps\scenarios-e5c4cea6a0253390.exe)
+
+running 1 test
+test current_and_sail_reach_the_gardens_without_pose_teleportation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.53s
+

@@ -1,0 +1,108 @@
+{
+  "sources": {
+    "build_world.py": "7796650781250bea376ce5421aff35e32fa82349d5ca3443a12337153f84debd",
+    "build_world_variants.py": "8815a9e4aa56e1452fdd940c9b9cc7bb96e10b9c37237791eb17a8d9a1ac87dd"
+  },
+  "contracts": {
+    "manifest.json": "882d01b71db1e911528c11c2671cbb1129d443e39e423e8b7514691f01db4f62",
+    "collisions.json": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+    "landmarks.json": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50"
+  },
+  "models": {
+    "dawn": {
+      "high": {
+        "file": "dawn.glb",
+        "triangles": 198220,
+        "materials": 12,
+        "bytes": 20744520,
+        "sha256": "dd4ba7d39357a38c7392e3fa691d28717a20593a02279010aff5420068b35cf4"
+      },
+      "lod": {
+        "file": "dawn-lod.glb",
+        "triangles": 11928,
+        "materials": 10,
+        "bytes": 1217812,
+        "sha256": "b9e2e2596a82eaf4536de2ebea74de23424c200a55666d3fcdbff3f02f46e11a"
+      },
+      "colliders": 1066,
+      "dock": [
+        0,
+        3,
+        88
+      ],
+      "generator_sha256": "7796650781250bea376ce5421aff35e32fa82349d5ca3443a12337153f84debd"
+    },
+    "dawn-watch": {
+      "high": {
+        "file": "dawn-watch.glb",
+        "triangles": 111045,
+        "materials": 12,
+        "bytes": 10951492,
+        "sha256": "38f8d637e3b4a5a2b26384294840214faf18bd700f1c5f9a015e125acd9ca8bc"
+      },
+      "lod": {
+        "file": "dawn-watch-lod.glb",
+        "triangles": 10509,
+        "materials": 10,
+        "bytes": 1113236,
+        "sha256": "b5c00d948435c209c77950a4440421fdf67d5ef5b6238dcfe021b956557aa2b4"
+      },
+      "colliders": 782,
+      "dock": [
+        0,
+        3,
+        88
+      ],
+      "generator_sha256": "8815a9e4aa56e1452fdd940c9b9cc7bb96e10b9c37237791eb17a8d9a1ac87dd",
+      "base_generator_sha256": "7796650781250bea376ce5421aff35e32fa82349d5ca3443a12337153f84debd"
+    },
+    "dawn-garden": {
+      "high": {
+        "file": "dawn-garden.glb",
+        "triangles": 102994,
+        "materials": 12,
+        "bytes": 10060784,
+        "sha256": "9fd416882a66212d4f722381c2c597f40b8e1233943e9254fd4bdc74f6025336"
+      },
+      "lod": {
+        "file": "dawn-garden-lod.glb",
+        "triangles": 10662,
+        "materials": 10,
+        "bytes": 1135232,
+        "sha256": "0564491a978e9732229961febd1ad0719ceaa48d7e06caabcf8c469216fac8b8"
+      },
+      "colliders": 725,
+      "dock": [
+        0,
+        3,
+        88
+      ],
+      "generator_sha256": "8815a9e4aa56e1452fdd940c9b9cc7bb96e10b9c37237791eb17a8d9a1ac87dd",
+      "base_generator_sha256": "7796650781250bea376ce5421aff35e32fa82349d5ca3443a12337153f84debd"
+    },
+    "dawn-ruin": {
+      "high": {
+        "file": "dawn-ruin.glb",
+        "triangles": 85752,
+        "materials": 12,
+        "bytes": 9778816,
+        "sha256": "f3f2060c7bc477b905cc08ac4e2896852cba4abce8e2f5053475baf6dd9c62f7"
+      },
+      "lod": {
+        "file": "dawn-ruin-lod.glb",
+        "triangles": 8964,
+        "materials": 10,
+        "bytes": 956332,
+        "sha256": "ed837d94d9e50092a4b7713dc192a2b3e1d3d0f28f4b76241ea587e3beed9616"
+      },
+      "colliders": 772,
+      "dock": [
+        0,
+        3,
+        88
+      ],
+      "generator_sha256": "8815a9e4aa56e1452fdd940c9b9cc7bb96e10b9c37237791eb17a8d9a1ac87dd",
+      "base_generator_sha256": "7796650781250bea376ce5421aff35e32fa82349d5ca3443a12337153f84debd"
+    }
+  }
+}

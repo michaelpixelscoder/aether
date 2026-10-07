@@ -1,0 +1,376 @@
+{
+  "schema": 1,
+  "note": "Every measured unchanged-surface floating-point drift in a full Blender 5.2.1 CPU rebuild. Positions and normals have no exceptions. This freezes exact corners and before/after values, not a blanket epsilon.",
+  "cases": [
+    {
+      "file": "ember.glb",
+      "mesh": "04 | Worn cornice",
+      "material": "04 | Worn cornice.006",
+      "attributes": {
+        "POSITION": {
+          "before": "cc9247c176ad9c5c70f2d32b98ffaee4d83b876c48ab6a28dbcfc152e39bab7d",
+          "after": "cc9247c176ad9c5c70f2d32b98ffaee4d83b876c48ab6a28dbcfc152e39bab7d",
+          "exact": true
+        },
+        "NORMAL": {
+          "before": "30ff0b289b8ec00c6880b32865d25bb32e67ebb903663f7cd9ac6ec93f96aee5",
+          "after": "30ff0b289b8ec00c6880b32865d25bb32e67ebb903663f7cd9ac6ec93f96aee5",
+          "exact": true
+        },
+        "TEXCOORD_0": {
+          "before": "48b53134bc09df258e276b497981e9e4466dcdefddfe97ed590fb511c6dc40fa",
+          "after": "970c3ed9759effffdc1ec950ca5b56a001e16c1e9b3badcee8b51b79d11d9af4",
+          "exact": false
+        },
+        "TANGENT": {
+          "before": "761afa906091882d137f49d2941df1027820875e70c74063f24c753168074580",
+          "after": "761afa906091882d137f49d2941df1027820875e70c74063f24c753168074580",
+          "exact": true
+        }
+      },
+      "points": [
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 257,
+          "component": 0,
+          "historical": -1.1582999229431152,
+          "observed": -1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 566,
+          "component": 0,
+          "historical": 1.1582999229431152,
+          "observed": 1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 1003,
+          "component": 0,
+          "historical": -1.1582999229431152,
+          "observed": -1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 1466,
+          "component": 0,
+          "historical": 1.1582999229431152,
+          "observed": 1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 1468,
+          "component": 0,
+          "historical": 1.1582999229431152,
+          "observed": 1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 1755,
+          "component": 0,
+          "historical": -1.1582999229431152,
+          "observed": -1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 1991,
+          "component": 0,
+          "historical": 1.1582999229431152,
+          "observed": 1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 13192,
+          "component": 0,
+          "historical": -1.1582999229431152,
+          "observed": -1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 13196,
+          "component": 0,
+          "historical": -1.1582999229431152,
+          "observed": -1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 13661,
+          "component": 0,
+          "historical": 1.1582999229431152,
+          "observed": 1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 13947,
+          "component": 0,
+          "historical": -1.1582999229431152,
+          "observed": -1.1582998037338257,
+          "abs": 1.1920928955078125e-7,
+          "evidence": "D69 / tools/art/masonry-r42-verification.json"
+        }
+      ]
+    },
+    {
+      "file": "frost.glb",
+      "mesh": "03 | Dressed masonry",
+      "material": "03 | Dressed masonry.008",
+      "attributes": {
+        "POSITION": {
+          "before": "ad86484bac07e24da00adc3348409b9331352ee185724f406f012863fc4a0d7b",
+          "after": "ad86484bac07e24da00adc3348409b9331352ee185724f406f012863fc4a0d7b",
+          "exact": true
+        },
+        "NORMAL": {
+          "before": "3797c7cd370356b7f1a698e7810d486dc58a341e7eff912e703700f88a6d7f1f",
+          "after": "3797c7cd370356b7f1a698e7810d486dc58a341e7eff912e703700f88a6d7f1f",
+          "exact": true
+        },
+        "TEXCOORD_0": {
+          "before": "cf2ec92de791f88a76299b145ee8fde0e33619263151556bbd2e3c77ac0c9350",
+          "after": "73e21de5423e3de49a303035205078093a3ff2068ffa1c1ecdd7007e07709fdc",
+          "exact": false
+        },
+        "TANGENT": {
+          "before": "5cd65fdb70f57774f00a033b5f256466d187ccb5487c71d96a2e27c372bddaca",
+          "after": "5cd65fdb70f57774f00a033b5f256466d187ccb5487c71d96a2e27c372bddaca",
+          "exact": true
+        }
+      },
+      "points": [
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15543,
+          "component": 0,
+          "historical": 0.8355554938316345,
+          "observed": 0.8355555534362793,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15575,
+          "component": 0,
+          "historical": -0.838333249092102,
+          "observed": -0.8383333086967468,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15575,
+          "component": 1,
+          "historical": -1.7155556678771973,
+          "observed": -1.7155554294586182,
+          "abs": 2.384185791015625e-7
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15667,
+          "component": 0,
+          "historical": 0.8355554938316345,
+          "observed": 0.8355555534362793,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15678,
+          "component": 0,
+          "historical": -0.838333249092102,
+          "observed": -0.8383333086967468,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15678,
+          "component": 1,
+          "historical": -1.7155556678771973,
+          "observed": -1.7155554294586182,
+          "abs": 2.384185791015625e-7
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15801,
+          "component": 0,
+          "historical": -0.838333249092102,
+          "observed": -0.8383333086967468,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 15801,
+          "component": 1,
+          "historical": -1.7155556678771973,
+          "observed": -1.7155554294586182,
+          "abs": 2.384185791015625e-7
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 34909,
+          "component": 0,
+          "historical": 0.8355554938316345,
+          "observed": 0.8355555534362793,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 34940,
+          "component": 0,
+          "historical": 0.8355554938316345,
+          "observed": 0.8355555534362793,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 34948,
+          "component": 0,
+          "historical": -0.838333249092102,
+          "observed": -0.8383333086967468,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 34948,
+          "component": 1,
+          "historical": -1.7155556678771973,
+          "observed": -1.7155554294586182,
+          "abs": 2.384185791015625e-7
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 34950,
+          "component": 0,
+          "historical": -0.838333249092102,
+          "observed": -0.8383333086967468,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 34950,
+          "component": 1,
+          "historical": -1.7155556678771973,
+          "observed": -1.7155554294586182,
+          "abs": 2.384185791015625e-7
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 35073,
+          "component": 0,
+          "historical": -0.838333249092102,
+          "observed": -0.8383333086967468,
+          "abs": 5.960464477539063e-8
+        },
+        {
+          "attribute": "TEXCOORD_0",
+          "corner": 35073,
+          "component": 1,
+          "historical": -1.7155556678771973,
+          "observed": -1.7155554294586182,
+          "abs": 2.384185791015625e-7
+        }
+      ]
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage.002",
+      "attributes": {
+        "POSITION": {
+          "before": "ea4039dd6d9f23beed76169292b10043a6ebe05a7574c7983733ecbb70918335",
+          "after": "ea4039dd6d9f23beed76169292b10043a6ebe05a7574c7983733ecbb70918335",
+          "exact": true
+        },
+        "NORMAL": {
+          "before": "4dceebcd8fdd44788aa31b1b0e2491791c81a7d1c9d0c78056775aada6358b94",
+          "after": "4dceebcd8fdd44788aa31b1b0e2491791c81a7d1c9d0c78056775aada6358b94",
+          "exact": true
+        },
+        "TEXCOORD_0": {
+          "before": "291d0548cb9246bbc536c60f5129c87bd9f85f94079037ea2878fdcbfc6cfa2f",
+          "after": "291d0548cb9246bbc536c60f5129c87bd9f85f94079037ea2878fdcbfc6cfa2f",
+          "exact": true
+        },
+        "TANGENT": {
+          "before": "6273e43abc44414aa3ec3f551df610a5b563e0c42d21068288c0ba6a4bb2dc1a",
+          "after": "6c534cca94b5016aa36b3cf5e00b1a69d9ab03e32ff2b016bcd35e5e4078c38d",
+          "exact": false
+        }
+      },
+      "points": [
+        {
+          "corner": 40315,
+          "component": 0,
+          "historical": -0.15309999883174896,
+          "observed": -0.15320000052452087,
+          "abs": 0.00010000169277191162,
+          "attribute": "TANGENT"
+        },
+        {
+          "corner": 43441,
+          "component": 0,
+          "historical": 0.3955000042915344,
+          "observed": 0.3953999876976013,
+          "abs": 0.00010001659393310547,
+          "attribute": "TANGENT"
+        },
+        {
+          "corner": 43443,
+          "component": 0,
+          "historical": 0.3955000042915344,
+          "observed": 0.3953999876976013,
+          "abs": 0.00010001659393310547,
+          "attribute": "TANGENT"
+        },
+        {
+          "corner": 92084,
+          "component": 0,
+          "historical": -0.15309999883174896,
+          "observed": -0.15320000052452087,
+          "abs": 0.00010000169277191162,
+          "attribute": "TANGENT"
+        },
+        {
+          "corner": 92086,
+          "component": 0,
+          "historical": -0.15309999883174896,
+          "observed": -0.15320000052452087,
+          "abs": 0.00010000169277191162,
+          "attribute": "TANGENT"
+        },
+        {
+          "corner": 95210,
+          "component": 0,
+          "historical": 0.3955000042915344,
+          "observed": 0.3953999876976013,
+          "abs": 0.00010001659393310547,
+          "attribute": "TANGENT"
+        },
+        {
+          "corner": 95211,
+          "component": 0,
+          "historical": 0.3955000042915344,
+          "observed": 0.3953999876976013,
+          "abs": 0.00010001659393310547,
+          "attribute": "TANGENT"
+        }
+      ]
+    }
+  ]
+}

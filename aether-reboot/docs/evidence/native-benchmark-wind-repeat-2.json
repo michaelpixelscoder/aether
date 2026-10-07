@@ -1,0 +1,361 @@
+{
+  "allocated_entity_indices": 8192,
+  "asset_samples_20_cycles": [],
+  "avatar_fallbacks": 0,
+  "benchmark": true,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 42.0,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 10000,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "contact_manifolds_active": 5,
+  "contact_pairs_active": 3,
+  "contact_pairs_sleeping": 0,
+  "decoration_cpu_ms_p50_p95_p99": [
+    1.2218,
+    1.5701,
+    1.5962999999999998
+  ],
+  "docked": false,
+  "edit_point": [
+    931.215576171875,
+    587.2750244140625
+  ],
+  "elapsed_seconds": 35.00762176513672,
+  "entities": 5695,
+  "entity_samples_20_cycles": [],
+  "frame_ms_p50_p95_p99": [
+    4.985500127077103,
+    7.660199888050556,
+    8.860600180923939
+  ],
+  "fuel": 1046.4580078125,
+  "gpu_timestamps_measured": true,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "material_assets": 111,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.0201,
+    0.0613,
+    0.0903
+  ],
+  "mesh_assets": 735,
+  "mesh_max_ms": 0.6970000000000001,
+  "mesh_p95_ms": 0.3769,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    530.1731,
+    728.6797,
+    744.0402
+  ],
+  "navigation": {
+    "angular_y": 0.0000852107914397493,
+    "position": [
+      0.1465025544166565,
+      14.263290405273438,
+      0.4503479599952698
+    ],
+    "target_altitude": 12.0,
+    "velocity": [
+      -0.0011412062449380755,
+      -0.000014969284165999852,
+      -0.0009118810412473977
+    ],
+    "yaw": -0.01979757845401764
+  },
+  "notice": "Votre premier vaisseau vous attend au chantier.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.0263,
+      0.08660000000000001,
+      0.1974
+    ],
+    "avian/collision/update_contacts": [
+      2.3691,
+      2.6252,
+      3.0125
+    ],
+    "avian/solver/apply_restitution": [
+      0.0005,
+      0.0007,
+      0.0007999999999999999
+    ],
+    "avian/solver/finalize": [
+      0.0103,
+      0.0246,
+      0.0995
+    ],
+    "avian/solver/integrate_positions": [
+      0.0421,
+      0.1506,
+      0.3452
+    ],
+    "avian/solver/integrate_velocities": [
+      0.051,
+      0.18100000000000002,
+      0.3572
+    ],
+    "avian/solver/prepare_constraints": [
+      0.0156,
+      0.044199999999999996,
+      0.1811
+    ],
+    "avian/solver/relax_velocities": [
+      0.009000000000000001,
+      0.0144,
+      0.018199999999999997
+    ],
+    "avian/solver/solve_constraints": [
+      0.0104,
+      0.014199999999999999,
+      0.0162
+    ],
+    "avian/solver/store_impulses": [
+      0.0003,
+      0.0007,
+      0.0011
+    ],
+    "avian/solver/swept_ccd": [
+      0.0005,
+      0.0007999999999999999,
+      0.001
+    ],
+    "avian/solver/update_velocity_increments": [
+      0.0193,
+      0.0576,
+      0.1929
+    ],
+    "avian/solver/warm_start": [
+      0.0031,
+      0.0053,
+      0.0069
+    ]
+  },
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0.0076,
+      0.0122,
+      0.013900000000000001
+    ],
+    "render/bin_unpacking/elapsed_gpu": [
+      0.09216,
+      0.36736,
+      1.079808
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.0352,
+      0.0441,
+      0.049499999999999995
+    ],
+    "render/bloom/elapsed_gpu": [
+      0.079616,
+      0.08704,
+      0.48128
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.0111,
+      0.015000000000000001,
+      0.0184
+    ],
+    "render/clustering/elapsed_gpu": [
+      0.06144,
+      0.079104,
+      0.830976
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.015000000000000001,
+      0.0207,
+      0.0258
+    ],
+    "render/early prepass/elapsed_gpu": [
+      0.840192,
+      1.893632,
+      2.100992
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0.0031,
+      0.005,
+      0.0067
+    ],
+    "render/early_mesh_preprocessing/elapsed_gpu": [
+      0.018944,
+      0.020224,
+      0.022016
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.0125,
+      0.0165,
+      0.0198
+    ],
+    "render/main_opaque_pass_3d/elapsed_gpu": [
+      0.665344,
+      1.416448,
+      1.8944
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.0092,
+      0.0131,
+      0.0155
+    ],
+    "render/main_transparent_pass_3d/elapsed_gpu": [
+      0.024576,
+      0.032256,
+      0.03584
+    ],
+    "render/ssao/elapsed_cpu": [
+      0.004,
+      0.0066,
+      0.007700000000000001
+    ],
+    "render/ssao/elapsed_gpu": [
+      0.134144,
+      0.323328,
+      0.975872
+    ],
+    "render/taa/elapsed_cpu": [
+      0.0009,
+      0.0018,
+      0.0023
+    ],
+    "render/taa/elapsed_gpu": [
+      0.051456,
+      0.057344,
+      0.073728
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0.0013,
+      0.0031999999999999997,
+      0.0045000000000000005
+    ],
+    "render/tonemapping/elapsed_gpu": [
+      0.015104,
+      0.016128,
+      0.0192
+    ],
+    "render/ui/elapsed_cpu": [
+      0.0056,
+      0.0081,
+      0.0094
+    ],
+    "render/ui/elapsed_gpu": [
+      0.009216,
+      0.009472,
+      0.009984
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0.0015999999999999999,
+      0.0033,
+      0.0045000000000000005
+    ],
+    "render/upscaling/elapsed_gpu": [
+      0.009984,
+      0.010496,
+      0.01152
+    ]
+  },
+  "sail_motion": [
+    {
+      "normal_wind": -10.425582885742188,
+      "seconds": 34.983333587646484,
+      "speed": 10.689519882202148,
+      "weights": [
+        -0.8696110844612122,
+        0.2695830762386322,
+        -0.7151404619216919
+      ]
+    },
+    {
+      "normal_wind": -10.425582885742188,
+      "seconds": 34.983333587646484,
+      "speed": 10.689519882202148,
+      "weights": [
+        -0.8696110844612122,
+        0.2695830762386322,
+        -0.7151404619216919
+      ]
+    },
+    {
+      "normal_wind": -10.425582885742188,
+      "seconds": 34.983333587646484,
+      "speed": 10.689519882202148,
+      "weights": [
+        -0.8696110844612122,
+        0.2695830762386322,
+        -0.7151404619216919
+      ]
+    },
+    {
+      "normal_wind": -10.425582885742188,
+      "seconds": 34.983333587646484,
+      "speed": 10.689519882202148,
+      "weights": [
+        -0.8696110844612122,
+        0.2695830762386322,
+        -0.7151404619216919
+      ]
+    },
+    {
+      "normal_wind": -10.425582885742188,
+      "seconds": 34.983333587646484,
+      "speed": 10.689519882202148,
+      "weights": [
+        -0.8696110844612122,
+        0.2695830762386322,
+        -0.7151404619216919
+      ]
+    }
+  ],
+  "tick": 2099,
+  "tick_ms_p50_p95_p99": [
+    3.33,
+    4.0573,
+    6.0467
+  ],
+  "triangles_in_mesh_assets": 1840634,
+  "tutorial_flags": 12,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 567.0
+    },
+    {
+      "action": "Tether",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 516.0
+    },
+    {
+      "action": "Dock",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 466.0
+    },
+    {
+      "action": "Edit",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 415.0
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null
+}

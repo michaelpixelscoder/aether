@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "passed": true,
+  "shader_sha256": "1347a50437a2f07bfc2d931ef47abe6e2a93d23185905c7205608cca89b14525",
+  "probe_sha256": "ff3b534deb1d749bf19da8c9f2ee6c721365ed545cdb7bc7a98091706f883604",
+  "mips": [
+    {
+      "mip": 0,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.0844801197156941,
+      "alpha_max": 0.5620640578954395,
+      "premul_luma_mean": 0.08506778193998876,
+      "mean_luma_ratio_to_R61": 0.7751898387346209,
+      "p99_luma": 0.9472218951367486,
+      "strong_coverage_fraction": 0.15459635416666667
+    },
+    {
+      "mip": 1,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.08941255455505503,
+      "alpha_max": 0.5618169972253833,
+      "premul_luma_mean": 0.08653779657740683,
+      "mean_luma_ratio_to_R61": 0.8020788706340323,
+      "p99_luma": 0.9046231594730887,
+      "strong_coverage_fraction": 0.164375
+    },
+    {
+      "mip": 2,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.09734387708442019,
+      "alpha_max": 0.5603273682364265,
+      "premul_luma_mean": 0.08743752072676383,
+      "mean_luma_ratio_to_R61": 0.8436587715657882,
+      "p99_luma": 0.8556110494794352,
+      "strong_coverage_fraction": 0.17776041666666667
+    },
+    {
+      "mip": 3,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.11106076613820819,
+      "alpha_max": 0.5598290752451903,
+      "premul_luma_mean": 0.09035237652217086,
+      "mean_luma_ratio_to_R61": 0.8821538857258958,
+      "p99_luma": 0.7913830940039163,
+      "strong_coverage_fraction": 0.20559895833333333
+    },
+    {
+      "mip": 4,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.13806355642768847,
+      "alpha_max": 0.5586097116773453,
+      "premul_luma_mean": 0.09771165276363168,
+      "mean_luma_ratio_to_R61": 0.9078461991198574,
+      "p99_luma": 0.6929763983169948,
+      "strong_coverage_fraction": 0.26428385416666667
+    },
+    {
+      "mip": 5,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.17825194100182812,
+      "alpha_max": 0.5574514441984084,
+      "premul_luma_mean": 0.10523754580551734,
+      "mean_luma_ratio_to_R61": 0.9291870738413899,
+      "p99_luma": 0.6280439283470352,
+      "strong_coverage_fraction": 0.3549609375
+    },
+    {
+      "mip": 6,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.22100868434617776,
+      "alpha_max": 0.54994003567211,
+      "premul_luma_mean": 0.11742131267586017,
+      "mean_luma_ratio_to_R61": 1.0129382785362353,
+      "p99_luma": 0.5249933905106713,
+      "strong_coverage_fraction": 0.4533203125
+    },
+    {
+      "mip": 7,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.25372333619270526,
+      "alpha_max": 0.5302382780062614,
+      "premul_luma_mean": 0.12264302616819076,
+      "mean_luma_ratio_to_R61": 1.085156293205964,
+      "p99_luma": 0.42698521865367967,
+      "strong_coverage_fraction": 0.6127734375
+    },
+    {
+      "mip": 8,
+      "finite_nonnegative": true,
+      "alpha_mean": 0.27720600344857466,
+      "alpha_max": 0.3781956464692416,
+      "premul_luma_mean": 0.13782377222859915,
+      "mean_luma_ratio_to_R61": 1.1800022283255496,
+      "p99_luma": 0.26379976805314914,
+      "strong_coverage_fraction": 0.8729427083333333
+    }
+  ],
+  "crops": [
+    {
+      "scale": 0.42,
+      "start": 0.29,
+      "mean_strong_segments": 19.583333333333332,
+      "median_strong_segments": 19.5,
+      "criterion": "Native linear energy>.09; not screen width/count guarantee"
+    },
+    {
+      "scale": 0.16,
+      "start": 0.42,
+      "mean_strong_segments": 7.125,
+      "median_strong_segments": 8.0,
+      "criterion": "Native linear energy>.09; not screen width/count guarantee"
+    }
+  ],
+  "continuity_max_delta": 1.1987169906968465e-05,
+  "jacobian_max_error": 1.2789769243681803e-13,
+  "authentic_current_alpha_delta": true,
+  "weak_body_coverage_max": 0.033,
+  "current_fetches": 5,
+  "gpu_compile": "PENDING",
+  "gameplay_proof": false,
+  "bitmap_outputs": false,
+  "performance_claim": false,
+  "limits": [
+    "CPU uses fixed mip values, not exact GPU anisotropic footprints or Bevy bloom/ACES",
+    "Temporal movement/coherent pixel widths need actual native comparison",
+    "Soft HDR rolloff can reduce spiral intensity; native core must stay15\u201325px",
+    "All current alpha differences are explicit; no historical alpha-exact claim"
+  ]
+}

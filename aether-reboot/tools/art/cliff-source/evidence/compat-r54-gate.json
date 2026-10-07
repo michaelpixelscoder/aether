@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "77c38267abdbce3208f891b1e472a6bc522eccdee7fcf5e62402a7721449acc4",
+      "triangles": 181520,
+      "unchanged_material_batches": [
+        {
+          "mesh": "02 | Deep strata",
+          "max_error": 0,
+          "later_append_only": false
+        },
+        {
+          "mesh": "06 | Cedar and roots",
+          "max_error": 0,
+          "later_append_only": true
+        },
+        {
+          "mesh": "08 | Deep foliage",
+          "max_error": 0,
+          "later_append_only": true
+        },
+        {
+          "mesh": "09 | Sunlit foliage",
+          "max_error": 0,
+          "later_append_only": true
+        },
+        {
+          "mesh": "11 | Aether mineral",
+          "max_error": 0,
+          "later_append_only": false
+        },
+        {
+          "mesh": "12 | Surface biome",
+          "max_error": 0,
+          "later_append_only": false
+        }
+      ],
+      "later_r59_rock_delta": -17736,
+      "material12_r60_validated": false,
+      "lod_material12_r60_validated": false,
+      "max_normal_length_error": 1.3773697538077556e-7,
+      "max_tangent_length_error": 0.00008414063282713435,
+      "degenerate_triangles": 0,
+      "inverted_triangles": 0,
+      "min_normal_dot": 0.6945203728174703,
+      "lod_geometry_and_projected_json_exact": true,
+      "lod_file_byte_exact": true,
+      "nodes_and_pivots_exact": true,
+      "materials_and_images_exact_before_r60": true,
+      "whole_island_extents_exact": true
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "be0f58ae2c3a8d91b18b0b994b69c97f83ecc042cb0578b07f1faf39b92092f6",
+      "triangles": 124521,
+      "unchanged_material_batches": [
+        {
+          "mesh": "02 | Deep strata",
+          "max_error": 0,
+          "later_append_only": false
+        },
+        {
+          "mesh": "06 | Cedar and roots",
+          "max_error": 0,
+          "later_append_only": true
+        },
+        {
+          "mesh": "08 | Deep foliage",
+          "max_error": 0,
+          "later_append_only": true
+        },
+        {
+          "mesh": "09 | Sunlit foliage",
+          "max_error": 0,
+          "later_append_only": true
+        },
+        {
+          "mesh": "11 | Aether mineral",
+          "max_error": 0,
+          "later_append_only": false
+        },
+        {
+          "mesh": "12 | Surface biome",
+          "max_error": 0,
+          "later_append_only": false
+        }
+      ],
+      "later_r59_rock_delta": -24250,
+      "material12_r60_validated": false,
+      "lod_material12_r60_validated": false,
+      "max_normal_length_error": 1.4414317539568344e-7,
+      "max_tangent_length_error": 0.00007695204550028922,
+      "degenerate_triangles": 0,
+      "inverted_triangles": 0,
+      "min_normal_dot": 0.6510627084095039,
+      "lod_geometry_and_projected_json_exact": true,
+      "lod_file_byte_exact": true,
+      "nodes_and_pivots_exact": true,
+      "materials_and_images_exact_before_r60": true,
+      "whole_island_extents_exact": true
+    }
+  ]
+}

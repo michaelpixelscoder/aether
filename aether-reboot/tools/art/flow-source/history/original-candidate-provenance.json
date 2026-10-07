@@ -1,0 +1,118 @@
+{
+  "schema": 2,
+  "tool": "built-in image_gen.imagegen",
+  "fallback_cli": false,
+  "generation_mode": "new original RGBA game texture; no image edit references passed",
+  "prompt": {
+    "file": "source/flow-r53-prompt.txt",
+    "sha256": "cf03adcd920f23c1b68f4de9838e7d30c7e6b6f873b2c58b516ddf72bb5ca6c4",
+    "bytes": 3019
+  },
+  "native": {
+    "file": "source/flow-r53-native.png",
+    "sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+    "bytes": 2685518
+  },
+  "runtime_png": {
+    "file": "assets/textures/flow-r53.png",
+    "sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+    "bytes": 2685518
+  },
+  "derived_runtime_ktx2": {
+    "file": "assets/textures/flow-r53.ktx2",
+    "sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+    "bytes": 8384632
+  },
+  "shader": {
+    "file": "assets/shaders/world-flow.wgsl",
+    "sha256": "7323e79d4dc1efe56cdbb226a6af263c3a2acda46a2c626564c1d7d532b4b5a5",
+    "bytes": 4143
+  },
+  "default_generated_source": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-f9d8b43e-030a-47da-a377-4e97ba47b719.png",
+  "no_native_pixels_modified": true,
+  "native_alpha_min_max": [
+    0.03529411764705882,
+    0.9725490196078431
+  ],
+  "native_has_fully_transparent_pixels": false,
+  "visual_reference": {
+    "name": "aether_isle_33.png",
+    "sha256": "be092b3e14d9975b3d65204c09378370a0a80feea47f9cb31910109bc38d1630",
+    "role": "Visually inspected target; surface requirements described in the prompt."
+  },
+  "prior_captures_reviewed": [
+    {
+      "name": "world-r51-bounce035.png",
+      "sha256": "1529c7d41bcd2b5d832133b03043f282a5fc4616d4124c69cf715d5b082511f7",
+      "role": "Valid prior engine capture inspected to diagnose broad soap lamellae; not rendered or retouched by this author."
+    },
+    {
+      "name": "world-r51-bounce065.png",
+      "sha256": "5a92e9ea3216a137537acf5d6607a605f29029ddbd8ed37a69e96ccf12bcd1ea",
+      "role": "Valid prior engine capture inspected to diagnose broad soap lamellae; not rendered or retouched by this author."
+    }
+  ],
+  "baseline_shader": {
+    "file": "source/baseline-world-flow-r52.wgsl",
+    "sha256": "69078509c08b01ca11e31fdbde632902624daca7bee34c30e7558d65dd74f7fc",
+    "bytes": 4507
+  },
+  "generator": {
+    "file": "build_liquid_mips.py",
+    "sha256": "8a871787495a9bf09694496126bc1ef56001298670747df6fb9fd6e510da3c57",
+    "bytes": 7384
+  },
+  "validator": {
+    "file": "verify_liquid.mjs",
+    "sha256": "f90fcf5c4a5aa20bddba77ce13f05341e5b92de156ed998d8adb6b50dbd5b6b4",
+    "bytes": 6023
+  },
+  "cpu_review": {
+    "file": "review_liquid_cpu.py",
+    "sha256": "88e8534a336c1c1476b76e626e3399232f0aae304fb04211e851b094a1964f91",
+    "bytes": 6593
+  },
+  "provenance_recorder": {
+    "file": "record_bundle.py",
+    "sha256": "aff341a3c2ba44b875252cc11802b813f01859885e4401c853d9bf694364c8f7",
+    "bytes": 4242
+  },
+  "proofs": [
+    {
+      "file": "liquid-r53-mip-verification.json",
+      "sha256": "b996aec7efa88a4944e797465375e46882616d828e7cb20a5dc4fdacf8938cad",
+      "bytes": 3600
+    },
+    {
+      "file": "liquid-r53-container-verification.json",
+      "sha256": "6552e5355f7139de178d9df16efdd43b5c4647855193ffea86ff569ade2a0c83",
+      "bytes": 2107
+    },
+    {
+      "file": "liquid-r53-material-verification.json",
+      "sha256": "49b99945d52251038be16d29bfe9fa9b203ce33322eba78981d9481a830ca03b",
+      "bytes": 5798
+    },
+    {
+      "file": "contracts.json",
+      "sha256": "cd0af6dbe154fad183687a3723b526d92436b18aec92b54803b30499bae06cff",
+      "bytes": 1296
+    }
+  ],
+  "relocated_rebuild": {
+    "source_sha256": "8a871787495a9bf09694496126bc1ef56001298670747df6fb9fd6e510da3c57",
+    "native_sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+    "ktx_sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+    "byte_exact": true
+  },
+  "gpu_bytes": 8384072,
+  "alpha_semantics": "Blend; fragment returns straight RGB and alpha",
+  "native_validation": "Pending parent engine capture; CPU material swatches are not in-engine screenshots.",
+  "author_scope": "Only this isolated candidate was modified. No canonical/Rust/geometry/clock changes or GPU engine actions.",
+  "review_notes": "Fine connected crests and dark gaps present in CPU probes; material is much quieter than R51, violet subtle, far waterfalls faint. Parent exposure and bloom still need native inspection.",
+  "naga_keyword_guard": {
+    "file": "source/naga-wgsl-reserved-29.0.4.json",
+    "sha256": "ef248c41c1f7e204c46902256d70ff65c674916bfa19917cff4d67c6a25a6fc7",
+    "bytes": 2419
+  }
+}

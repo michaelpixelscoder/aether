@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "recipe": "r47-regional-plume-crown-fold-r2",
+  "accepted_by": "Parent review after native Dawn capture and four matched CPU ray comparisons; explicit artistic approximation compromise, not retroactive success of the historical .035 gate.",
+  "generator_sha256": "df160c3ebf3b57b3cf4c161d3bd53416c27789048a58f2ef0afedebbe62aadea",
+  "limits": {
+    "gpu_bytes": 59768832,
+    "density_mean": 0.006,
+    "regional_density_p99": 0.05,
+    "high_density_p99": 0.035,
+    "analytic_derivative_p99_degrees": 0.05,
+    "opaque_display_rmse": 0.025,
+    "edge_opacity_p99": 0.08
+  },
+  "config": [
+    {
+      "key": "hollow",
+      "center": [
+        -600,
+        -450,
+        -1700
+      ],
+      "extent": [
+        4700,
+        900,
+        4700
+      ],
+      "shape": [
+        0.59,
+        0.032,
+        0,
+        1
+      ],
+      "resolution": [
+        256,
+        96,
+        256
+      ],
+      "padding": [
+        224,
+        0,
+        224
+      ]
+    },
+    {
+      "key": "underforge",
+      "center": [
+        1350,
+        -550,
+        -3200
+      ],
+      "extent": [
+        4700,
+        900,
+        4700
+      ],
+      "shape": [
+        0.59,
+        0.032,
+        0.37,
+        1
+      ],
+      "resolution": [
+        256,
+        96,
+        256
+      ],
+      "padding": [
+        224,
+        0,
+        224
+      ]
+    },
+    {
+      "key": "west",
+      "center": [
+        -5100,
+        250,
+        -2600
+      ],
+      "extent": [
+        1300,
+        1050,
+        1300
+      ],
+      "shape": [
+        0.57,
+        0.026,
+        1.13,
+        0
+      ],
+      "resolution": [
+        96,
+        64,
+        96
+      ],
+      "padding": [
+        224,
+        0,
+        224
+      ]
+    },
+    {
+      "key": "east",
+      "center": [
+        2800,
+        400,
+        -4500
+      ],
+      "extent": [
+        1200,
+        1050,
+        1400
+      ],
+      "shape": [
+        0.58,
+        0.026,
+        2.47,
+        0
+      ],
+      "resolution": [
+        96,
+        64,
+        96
+      ],
+      "padding": [
+        224,
+        0,
+        224
+      ]
+    },
+    {
+      "key": "north",
+      "center": [
+        -1500,
+        150,
+        -8500
+      ],
+      "extent": [
+        1500,
+        1100,
+        1400
+      ],
+      "shape": [
+        0.57,
+        0.024,
+        3.19,
+        0
+      ],
+      "resolution": [
+        96,
+        64,
+        96
+      ],
+      "padding": [
+        224,
+        0,
+        224
+      ]
+    },
+    {
+      "key": "south",
+      "center": [
+        5200,
+        600,
+        -7500
+      ],
+      "extent": [
+        1400,
+        1100,
+        1300
+      ],
+      "shape": [
+        0.58,
+        0.024,
+        4.71,
+        0
+      ],
+      "resolution": [
+        96,
+        64,
+        96
+      ],
+      "padding": [
+        224,
+        0,
+        224
+      ]
+    }
+  ],
+  "reviewed_cache_sha256": {
+    "hollow": "fc96de520c22f4c0266f0a17b04791adec792bf14618a835951612edcd8cbdfe",
+    "underforge": "64a2f7749544bc3bb718da534b4ee0744c6414dd3fc9d0a32ff59ddd1a972840",
+    "west": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40",
+    "east": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5",
+    "north": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71",
+    "south": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d"
+  },
+  "archive": [
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/cloud-banks.json",
+      "sha256": "699823d6864524ea3ec208d91326b693a6a0fb21867113e973d7ebcb4aa7c9b1"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/cloud-cache-manifest.json",
+      "sha256": "c4c0935d917a05ffaa60c0ed0620dc18431fd904e0778bcd7a1aaa2c572be0b7"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/east-shape.ktx2",
+      "sha256": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/hollow-shape.ktx2",
+      "sha256": "8f1000730e35857c255e5d1f361e95242e1af85b4e2dea12867deacb920ecfa9"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/north-shape.ktx2",
+      "sha256": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/south-shape.ktx2",
+      "sha256": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/underforge-shape.ktx2",
+      "sha256": "5d327e5b623a4d0d5c24ec14d0e0a78425d344ee872ba7abb1cf69675d89cec0"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/assets/atmosphere/west-shape.ktx2",
+      "sha256": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/baseline/tools/art/build_cloud_cache.py",
+      "sha256": "82978e1290b6471216bf103c87ce4b850c6f6651f25ed360480b6447ab6fd5f1"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/cloud-cache-assets.json",
+      "sha256": "7a15d0adddc56c39465a5eca61e4b36e618fc4ee5b05df1169698aa4d60d98dd"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/cloud-cache.json",
+      "sha256": "b99a338386c6ae9a424246f1c920674b9e33a72a0c540a0b02d3897ad4c8cd2a"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/verify-cloud-cache.mjs",
+      "sha256": "76b62dec0fdbc77a9ce3ccd05ad3f1367815fe8d6540b6d95a70876a019815cf"
+    },
+    {
+      "file": "tools/art/cloud-r47/archive/verify_cloud_cache.py",
+      "sha256": "fb90096c46d405acf0c21eb76883025c3224ed2a2cfc893bb7e91dadfa6dd07b"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "frozen": true,
+  "files": [
+    {
+      "path": "portable/assets/shaders/world-flow.wgsl",
+      "bytes": 9392,
+      "sha256": "b76e67027f1b34cf6f9d56192bcdf315ad43810ff32c4e64e075297ab9a16c31"
+    },
+    {
+      "path": "portable/assets/textures/world-flow-current-r64.ktx2",
+      "bytes": 8384632,
+      "sha256": "68755a59545f61bc047975e7af6c301bd98164468a6f293a1336e9bdbb5b1f05"
+    },
+    {
+      "path": "portable/assets/textures/world-flow.ktx2",
+      "bytes": 8384632,
+      "sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/build_shader.py",
+      "bytes": 595,
+      "sha256": "8c13ab2fb9ee777b4820805fa3769f63cd52e35f31da90f6c7cf983e69933085"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/history/r65-measure.py",
+      "bytes": 7198,
+      "sha256": "3775260f00248386a15fca31dfc0a28a8d72434db2c1b4f240637bfa86eb9eb5"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/history/world-flow-r64.wgsl",
+      "bytes": 9404,
+      "sha256": "0861bdc4197dab68fb10826a6165fa6ef5e325fa52ad6d42331a6b65e30c5cf5"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/probe.py",
+      "bytes": 4286,
+      "sha256": "1f414e15ca7a0be888e38e8b9aaa68e0b353f8b3527c3d1aac6ddd33e8f389a0"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/proofs/radiance-delta.json",
+      "bytes": 44521,
+      "sha256": "3317a7fd6dcaf7bb236d7187460e29a809752f2cbee0fb73b82f7dcb89c57c30"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/r65_math.py",
+      "bytes": 7198,
+      "sha256": "3775260f00248386a15fca31dfc0a28a8d72434db2c1b4f240637bfa86eb9eb5"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/source/native-r64.json",
+      "bytes": 1700,
+      "sha256": "048166ddabf0b1191f9d53e3a09f0a1e0b203048ed45464c1c994e6c4b4817ab"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/source/prompt-invocation.txt",
+      "bytes": 2071,
+      "sha256": "5d2a8aa50e0945c0bd366c1ce4977930e0372419e55282a365bbb91382321ce4"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/source/prompt.txt",
+      "bytes": 2072,
+      "sha256": "0d93afaf056ad48968d6849e7a0882cd89febc3ee90ef360394ceba05476b591"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/source/r64_encoder.py",
+      "bytes": 8024,
+      "sha256": "16f7b46c3ac989a7c0fddf62d7a87061943cfda94e60500d9c315c3e6edb9f3b"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/source/world-flow-current-native.png",
+      "bytes": 2082221,
+      "sha256": "eaf534efc2a2e30632fcfee7f3d5b731efe77dcd19f0849216e6c74c662497c3"
+    },
+    {
+      "path": "portable/tools/art/flow-r66-source/verify.mjs",
+      "bytes": 4568,
+      "sha256": "784a8b5396f0a4afeadeed3092c41023c2f52b81ffa9674b9ea6691086eb1ab6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5143,
+      "sha256": "f1b8e871b48314e42d2f3e240441c3f8819bd5017e4697b7eed94466295bc01b"
+    },
+    {
+      "path": "test_portability.py",
+      "bytes": 1515,
+      "sha256": "9c80fe74abd5a4a84cd5f8221e3cba01e5eb4227c683f91a709eff12e4088662"
+    }
+  ]
+}

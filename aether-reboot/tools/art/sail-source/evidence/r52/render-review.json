@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "kind": "Blender CPU reimport geometry study; not runtime",
+  "runtime_capture": false,
+  "blender": "5.2.1 LTS",
+  "threads": 4,
+  "renderer": "Cycles CPU",
+  "samples": 16,
+  "resolution": [
+    850,
+    850
+  ],
+  "review_script_sha256": "dbab7c4d42dba4e6fdd50673d4baf36e1d2f28e6a5089db09f1094c7925475a4",
+  "candidate_glb_sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23",
+  "baseline_glb_sha256": "6fe29c97310f96a8c42e632da69684915571177fd341ea7734731f20567b4466",
+  "frames": [
+    {
+      "file": "baseline-p058-front.png",
+      "sha256": "fe0831ecaa152f55f6849aa97624e7dcff31e46093d1ae13e8ae31278a701e74",
+      "weights": [
+        0.58,
+        0.27,
+        0.12
+      ],
+      "camera": [
+        4,
+        2.4,
+        10
+      ],
+      "target": [
+        0,
+        0.12,
+        0
+      ],
+      "orthographic_scale": 4
+    },
+    {
+      "file": "baseline-p100-side.png",
+      "sha256": "e4b44bd3e3c87ea6bf9903a863fd3ece7473cfc2bbb8ebfd00ae5005783aedd5",
+      "weights": [
+        1,
+        0.27,
+        0.12
+      ],
+      "camera": [
+        9,
+        1.4,
+        5
+      ],
+      "target": [
+        0,
+        0.12,
+        0
+      ],
+      "orthographic_scale": 4
+    },
+    {
+      "file": "candidate-p058-front.png",
+      "sha256": "709698b6d58ea5ad2c844fef58b5f93196f9ef0166baaaf5802c1023260d8aae",
+      "weights": [
+        0.58,
+        0.27,
+        0.12
+      ],
+      "camera": [
+        4,
+        2.4,
+        10
+      ],
+      "target": [
+        0,
+        0.12,
+        0
+      ],
+      "orthographic_scale": 4
+    },
+    {
+      "file": "candidate-p100-side.png",
+      "sha256": "d7fdf1078f10c450ee3a775b4bc5cb52d9cf127508e12fcc1bb9404ba42662fd",
+      "weights": [
+        1,
+        0.27,
+        0.12
+      ],
+      "camera": [
+        9,
+        1.4,
+        5
+      ],
+      "target": [
+        0,
+        0.12,
+        0
+      ],
+      "orthographic_scale": 4
+    },
+    {
+      "file": "candidate-n100-side.png",
+      "sha256": "32e7a78f574e7a075526e6de1ecd123548e9eef210d0520e60906e478885cfe7",
+      "weights": [
+        -1,
+        0.27,
+        0.12
+      ],
+      "camera": [
+        9,
+        1.4,
+        5
+      ],
+      "target": [
+        0,
+        0.12,
+        0
+      ],
+      "orthographic_scale": 4
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "file": "sky-world-ibl-linear.hdr",
+  "sha256": "789a304b0f403e3dcee09268b0883b87d4266bf83c621e117fa46affa55fb075",
+  "bytes": 545370,
+  "dimensions": [
+    1024,
+    512
+  ],
+  "original_render_dimensions": [
+    1024,
+    512
+  ],
+  "view_transform_applied": false,
+  "raw_exposure_stops": 0,
+  "runtime_reference_exposure_stops": -0.9,
+  "seconds": 12.476697499998409,
+  "samples_max": 128,
+  "renderer": "Cycles OPTIX",
+  "source_sha256": "4196ff61f70037e5fb373ccdd840c52ff714fc82e6b03ae243b1cea65571acea",
+  "generator_sha256": "f0e7708b1f2be566da23d693b73d80cecbb95584c0b102fe741f385aa58f0678",
+  "render_descriptor_sha256": "c3c0db5235793fe6459f615588458471d6d58cda04e6e71c28fb2ae553ad59ac",
+  "camera_solar_disk_visible": false,
+  "solar_illumination_active": true,
+  "radiance_min": 0.046875,
+  "radiance_max": 11.625,
+  "finite_nonnegative": true,
+  "resampled": false,
+  "descriptor": "ibl-render-scene-descriptor.json"
+}

@@ -1,0 +1,15 @@
+{
+  "transparent_background": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+  "usage": "Versioned terrain albedo study; no canonical promotion",
+  "generated_at_utc": "2026-10-03",
+  "resampled": false,
+  "retouched": false,
+  "tool": "image_gen.imagegen built-in",
+  "physical_patch_m": 4,
+  "original_path": "C:/Users/Damien/.codex/generated_images/01a0f81f-371e-7440-ba13-362c122d50e5/exec-cbfe5555-b2a7-43f7-8ae6-03732c4bb982.png"
+}

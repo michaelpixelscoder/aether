@@ -1,0 +1,85 @@
+"""Canonical render-relevant scene descriptor; paths are represented by hashes."""
+import bpy
+import hashlib
+import json
+from pathlib import Path
+
+def simple_properties(value,excluded=()):
+    result={}
+    for prop in value.bl_rna.properties:
+        name=prop.identifier
+        if name in {'rna_type','name','name_full','users','use_fake_user','use_extra_user','is_embedded_data',
+                    'is_evaluated','is_missing','is_runtime_data','tag','is_library_indirect','is_editable',
+                    'session_uid','is_updated','is_updated_data'} or name in excluded:
+            continue
+        if prop.type in {'BOOLEAN','INT','FLOAT','STRING','ENUM'}:
+            try:
+                item=getattr(value,name)
+                if isinstance(item,set):
+                    item=sorted(item)
+                elif getattr(prop,'is_array',False):
+                    item=list(item)
+                json.dumps(item,allow_nan=False)
+                result[name]=item
+            except (TypeError,ValueError,AttributeError):
+                pass
+    return result
+
+def tree_descriptor(tree):
+    if tree is None:
+        return None
+    nodes=[]
+    for node in sorted(tree.nodes,key=lambda n:n.name):
+        inputs={}
+        for index,socket in enumerate(node.inputs):
+            if hasattr(socket,'default_value'):
+                value=socket.default_value
+                if isinstance(value,bpy.types.ID):
+                    raise AssertionError('Unexpected external node input ID')
+                try:
+                    value=list(value)
+                except TypeError:
+                    pass
+                inputs[f'{index}:{socket.name}']=value
+        assert not getattr(node,'image',None), 'No input rasters permitted'
+        record={'name':node.name,'type':node.bl_idname,'properties':simple_properties(node),'inputs':inputs}
+        if getattr(node,'node_tree',None):
+            record['group']=tree_descriptor(node.node_tree)
+        nodes.append(record)
+    links=sorted((l.from_node.name,list(l.from_node.outputs).index(l.from_socket),l.to_node.name,list(l.to_node.inputs).index(l.to_socket)) for l in tree.links)
+    return {'nodes':nodes,'links':links}
+
+def descriptor(scene):
+    objects=[]
+    materials={}
+    for obj in sorted(scene.objects,key=lambda o:o.name):
+        if obj.hide_render or obj.type not in {'VOLUME','MESH','LIGHT','CAMERA'}:
+            continue
+        assert not obj.constraints and not obj.modifiers
+        record={'name':obj.name,'type':obj.type,'matrix_world':[list(row) for row in obj.matrix_world],
+                'visibility':{k:getattr(obj,k) for k in ('visible_camera','visible_diffuse','visible_glossy','visible_transmission','visible_volume_scatter','visible_shadow')}}
+        if obj.type=='VOLUME':
+            path=Path(bpy.path.abspath(obj.data.filepath)).resolve()
+            record['grid_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+            record['volume_properties']=simple_properties(obj.data,{'filepath','is_loaded','is_sequence','frame_start','frame_duration','frame_offset','sequence_mode'})
+        elif obj.type=='MESH':
+            geometry={'vertices':[list(v.co) for v in obj.data.vertices],
+                      'polygons':[list(p.vertices) for p in obj.data.polygons],
+                      'smooth':[p.use_smooth for p in obj.data.polygons]}
+            record['geometry_sha256']=hashlib.sha256(json.dumps(geometry,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+        else:
+            record['data']=simple_properties(obj.data)
+        if hasattr(obj.data,'materials'):
+            record['materials']=[m.name for m in obj.data.materials]
+            for material in obj.data.materials:
+                materials[material.name]={'properties':simple_properties(material),'nodes':tree_descriptor(material.node_tree)}
+        objects.append(record)
+    return {'objects':objects,'materials':materials,'world':tree_descriptor(scene.world.node_tree),
+            'camera':scene.camera.name,'cycles':simple_properties(scene.cycles),
+            'render':simple_properties(scene.render,{'filepath','has_multiple_engines','is_movie_format','use_lock_interface'}),
+            'image_settings':simple_properties(scene.render.image_settings),
+            'view_settings':simple_properties(scene.view_settings),'display_settings':simple_properties(scene.display_settings),
+            'frame':scene.frame_current}
+
+def digest(value):
+    return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()

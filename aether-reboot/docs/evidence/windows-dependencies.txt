@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 14.51.36246.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file target\release\aether_game.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    kernel32.dll
+    oleaut32.dll
+    user32.dll
+    uiautomationcore.dll
+    api-ms-win-core-synch-l1-2-0.dll
+    ole32.dll
+    combase.dll
+    shell32.dll
+    ntdll.dll
+    setupapi.dll
+    gdi32.dll
+    bcryptprimitives.dll
+    imm32.dll
+    dwmapi.dll
+    uxtheme.dll
+    VCRUNTIME140.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+
+  Summary
+
+       44000 .data
+      27B000 .pdata
+     10D3000 .rdata
+       92000 .reloc
+     3E03000 .text

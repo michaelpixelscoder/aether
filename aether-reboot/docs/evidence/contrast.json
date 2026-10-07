@@ -1,0 +1,111 @@
+{
+  "method": "WCAG sRGB relative luminance; same ratios in luminance grayscale",
+  "states": [
+    {
+      "state": "Texte principal / panneau",
+      "foreground": [
+        0.93,
+        0.92,
+        0.86
+      ],
+      "background": [
+        0.045,
+        0.064,
+        0.09
+      ],
+      "ratio": 15.834834755887766,
+      "minimum": 4.5
+    },
+    {
+      "state": "Texte secondaire / panneau translucide, fond blanc",
+      "foreground": [
+        0.58,
+        0.65,
+        0.69
+      ],
+      "background": [
+        0.1315,
+        0.14500000000000002,
+        0.1675
+      ],
+      "ratio": 6.094388515706307,
+      "minimum": 4.5
+    },
+    {
+      "state": "Bouton principal et appuyé",
+      "foreground": [
+        0.045,
+        0.064,
+        0.09
+      ],
+      "background": [
+        0.65,
+        0.49,
+        1
+      ],
+      "ratio": 6.336683457540793,
+      "minimum": 4.5
+    },
+    {
+      "state": "Bouton secondaire",
+      "foreground": [
+        0.93,
+        0.92,
+        0.86
+      ],
+      "background": [
+        0.1,
+        0.135,
+        0.18
+      ],
+      "ratio": 13.278768039462262,
+      "minimum": 4.5
+    },
+    {
+      "state": "Survol principal",
+      "foreground": [
+        0.045,
+        0.064,
+        0.09
+      ],
+      "background": [
+        0.77,
+        0.65,
+        1
+      ],
+      "ratio": 9.278878818169908,
+      "minimum": 4.5
+    },
+    {
+      "state": "Survol secondaire",
+      "foreground": [
+        0.93,
+        0.92,
+        0.86
+      ],
+      "background": [
+        0.26,
+        0.24,
+        0.39
+      ],
+      "ratio": 8.369069962133588,
+      "minimum": 4.5
+    },
+    {
+      "state": "Focus clavier",
+      "foreground": [
+        0.93,
+        0.92,
+        0.86
+      ],
+      "background": [
+        0.26,
+        0.24,
+        0.39
+      ],
+      "ratio": 8.369069962133588,
+      "minimum": 4.5
+    }
+  ],
+  "pass": true
+}

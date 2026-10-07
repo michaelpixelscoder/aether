@@ -1,0 +1,155 @@
+
+Running 5 tests using 1 worker
+
+(node:53784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\game.spec.mjs:19:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus (19.3s)
+(node:65100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 e2e\game.spec.mjs:69:1 › scénario intégré avec IndexedDB, câble, scission et vingt reprises (1.8m)
+(node:57324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 e2e\game.spec.mjs:78:1 › capacité GPU absente : erreur explicite et bouton de reprise (198ms)
+  x  4 e2e\game.spec.mjs:85:1 › asset critique absent : erreur récupérable puis rechargement (19.5s)
+(node:50424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  5 e2e\game.spec.mjs:91:1 › stockage refusé : pas de faux succès, export toujours possible (19.6s)
+
+
+  1) e2e\game.spec.mjs:19:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Menu"
+    Received: undefined
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      2 | import fs from 'node:fs/promises';
+      3 | const snapshot=page=>page.evaluate(()=>window.aetherProbe);
+    > 4 | async function phase(page, expected){await expect.poll(async()=>(await snapshot(page))?.phase).toBe(expected);}
+        |                                                                                                ^
+      5 | async function click(page,action){
+      6 |   await expect.poll(async()=>!!(await snapshot(page))?.ui_targets?.find(t=>t.action===action&&t.width>0)).toBe(true);
+      7 |   const target=(await snapshot(page)).ui_targets.find(t=>t.action===action);
+        at phase (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:4:96)
+        at ready (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:15:9)
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:20:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e\game.spec.mjs:69:1 › scénario intégré avec IndexedDB, câble, scission et vingt reprises ───
+
+    TimeoutError: page.waitForFunction: Timeout 110000ms exceeded.
+
+      70 |   const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+      71 |   await page.goto('./?qa=1');
+    > 72 |   await page.waitForFunction(()=>window.aetherProbe?.qa_finished,{},{timeout:110000});
+         |              ^
+      73 |   const report=await snapshot(page);
+      74 |   await fs.writeFile('../docs/evidence/web-qa.json',JSON.stringify(report,null,2));
+      75 |   expect(report.qa_failure).toBeNull();expect(report.entity_samples_20_cycles).toHaveLength(20);
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:72:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-scénario-intégré-avec-84f73--scission-et-vingt-reprises\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-scénario-intégré-avec-84f73--scission-et-vingt-reprises\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-scénario-intégré-avec-84f73--scission-et-vingt-reprises\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-scénario-intégré-avec-84f73--scission-et-vingt-reprises\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) e2e\game.spec.mjs:85:1 › asset critique absent : erreur récupérable puis rechargement ─────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Error"
+    Received: undefined
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      2 | import fs from 'node:fs/promises';
+      3 | const snapshot=page=>page.evaluate(()=>window.aetherProbe);
+    > 4 | async function phase(page, expected){await expect.poll(async()=>(await snapshot(page))?.phase).toBe(expected);}
+        |                                                                                                ^
+      5 | async function click(page,action){
+      6 |   await expect.poll(async()=>!!(await snapshot(page))?.ui_targets?.find(t=>t.action===action&&t.width>0)).toBe(true);
+      7 |   const target=(await snapshot(page)).ui_targets.find(t=>t.action===action);
+        at phase (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:4:96)
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:87:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-asset-critique-absent-a5bbe-cupérable-puis-rechargement\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-asset-critique-absent-a5bbe-cupérable-puis-rechargement\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-asset-critique-absent-a5bbe-cupérable-puis-rechargement\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-asset-critique-absent-a5bbe-cupérable-puis-rechargement\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) e2e\game.spec.mjs:91:1 › stockage refusé : pas de faux succès, export toujours possible ───────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Menu"
+    Received: undefined
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      2 | import fs from 'node:fs/promises';
+      3 | const snapshot=page=>page.evaluate(()=>window.aetherProbe);
+    > 4 | async function phase(page, expected){await expect.poll(async()=>(await snapshot(page))?.phase).toBe(expected);}
+        |                                                                                                ^
+      5 | async function click(page,action){
+      6 |   await expect.poll(async()=>!!(await snapshot(page))?.ui_targets?.find(t=>t.action===action&&t.width>0)).toBe(true);
+      7 |   const target=(await snapshot(page)).ui_targets.find(t=>t.action===action);
+        at phase (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:4:96)
+        at ready (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:15:9)
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:93:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-stockage-refusé-pas-d-855f8-ès-export-toujours-possible\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-stockage-refusé-pas-d-855f8-ès-export-toujours-possible\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-stockage-refusé-pas-d-855f8-ès-export-toujours-possible\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-stockage-refusé-pas-d-855f8-ès-export-toujours-possible\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    e2e\game.spec.mjs:19:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus 
+    e2e\game.spec.mjs:69:1 › scénario intégré avec IndexedDB, câble, scission et vingt reprises ────
+    e2e\game.spec.mjs:85:1 › asset critique absent : erreur récupérable puis rechargement ──────────
+    e2e\game.spec.mjs:91:1 › stockage refusé : pas de faux succès, export toujours possible ────────
+  1 passed (2.8m)

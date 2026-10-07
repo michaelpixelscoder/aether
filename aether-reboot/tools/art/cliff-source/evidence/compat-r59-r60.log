@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "ad650143d24404c301022f008eebab25173a3d22f0bbb830530137c2776e4c7c",
+      "triangles": 181520,
+      "rock_triangles": 22100,
+      "non_rock_batches_byte_exact": 11,
+      "physical_root_triangles_exact": 252,
+      "bounds_exact": true,
+      "max_normal_length_error": 1.3773697538077556e-7,
+      "max_tangent_length_error": 0.00008414063282713435,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "min_normal_dot": 0.6945203728174703,
+      "closed_substrate_components": 1,
+      "original_terrain_components": 1,
+      "closed_geological_joint_solids": true,
+      "actual_mesh_topology": {
+        "closed_substrate_solids": 281,
+        "closed_fracture_solids": 1252,
+        "actual_mesh_faces_verified": true,
+        "original_physical_cells": 249,
+        "actual_connected_components": 1,
+        "original_terrain_components": 1
+      },
+      "material12_r60_independent_contract": {
+        "passed": true,
+        "input_sha256": "77c38267abdbce3208f891b1e472a6bc522eccdee7fcf5e62402a7721449acc4",
+        "output_sha256": "ad650143d24404c301022f008eebab25173a3d22f0bbb830530137c2776e4c7c",
+        "native_png_sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+        "bin_byte_exact": true,
+        "all_unrelated_json_exact": true
+      },
+      "terrain_soil_collision_lod_landmarks_routes_unchanged": true
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "7cb3a6a54c4ec339179670ac149928dbf64241838ff7cf3d2fb795e2ea22581f",
+      "triangles": 124521,
+      "rock_triangles": 24586,
+      "non_rock_batches_byte_exact": 11,
+      "physical_root_triangles_exact": 180,
+      "bounds_exact": true,
+      "max_normal_length_error": 1.4414317539568344e-7,
+      "max_tangent_length_error": 0.00007695204550028922,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "min_normal_dot": 0.6510627084095039,
+      "closed_substrate_components": 2,
+      "original_terrain_components": 2,
+      "closed_geological_joint_solids": true,
+      "actual_mesh_topology": {
+        "closed_substrate_solids": 386,
+        "closed_fracture_solids": 1351,
+        "actual_mesh_faces_verified": true,
+        "original_physical_cells": 318,
+        "actual_connected_components": 2,
+        "original_terrain_components": 2
+      },
+      "material12_r60_independent_contract": {
+        "passed": true,
+        "input_sha256": "be0f58ae2c3a8d91b18b0b994b69c97f83ecc042cb0578b07f1faf39b92092f6",
+        "output_sha256": "7cb3a6a54c4ec339179670ac149928dbf64241838ff7cf3d2fb795e2ea22581f",
+        "native_png_sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+        "bin_byte_exact": true,
+        "all_unrelated_json_exact": true
+      },
+      "terrain_soil_collision_lod_landmarks_routes_unchanged": true
+    }
+  ],
+  "lod": [
+    {
+      "file": "dawn-lod.glb",
+      "material12_r60_validated": true,
+      "all_geometry_bin_and_projected_json_exact": true
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "material12_r60_validated": true,
+      "all_geometry_bin_and_projected_json_exact": true
+    }
+  ],
+  "corruptions": [
+    {
+      "kind": "dawn",
+      "case": "header",
+      "rejected": true,
+      "reason": "GLB size\n+ actual - expected\n\n+ 19451024\n- 19451028\n         ^\n"
+    },
+    {
+      "kind": "dawn",
+      "case": "architecture-position",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn",
+      "case": "soil-position",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-normal-nan",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-tangent-zero",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-bounds",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "header",
+      "rejected": true,
+      "reason": "GLB size\n+ actual - expected\n\n+ 12943340\n- 12943344\n         ^\n"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "architecture-position",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "soil-position",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-normal-nan",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-tangent-zero",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-bounds",
+      "rejected": true,
+      "reason": "Entire BIN byte-exact; no UV/geometry/index/COLOR_0 waiver"
+    }
+  ]
+}

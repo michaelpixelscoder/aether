@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "diagnostic_only_not_Bevy_quality_or_GPU_performance": true,
+  "author_sha256": "fb52100afa4f6815fa6825fe217a32c33c72c7e80ab77b557b46a1cdf38e982d",
+  "frames": [
+    {
+      "kind": "dawn",
+      "variant": "baseline",
+      "view": "wide",
+      "geometry_sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+      "camera_location_game_m": [
+        170,
+        105,
+        255
+      ],
+      "camera_target_game_m": [
+        0,
+        -17,
+        0
+      ],
+      "orthographic_scale_m": 320,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "e16022cf9b87b6a349215d5bd7e56f7e0e211dda87182a6c25591098f17416c7",
+      "seconds": 1.8453154563903809
+    },
+    {
+      "kind": "dawn",
+      "variant": "baseline",
+      "view": "close",
+      "geometry_sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+      "camera_location_game_m": [
+        95,
+        57,
+        170
+      ],
+      "camera_target_game_m": [
+        5,
+        -10,
+        48
+      ],
+      "orthographic_scale_m": 115,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "2eb721ca00dd706f40b8376e2de1438c6842d0f5d3843d84b5535b07f6d09224",
+      "seconds": 3.66095232963562
+    },
+    {
+      "kind": "dawn",
+      "variant": "candidate",
+      "view": "wide",
+      "geometry_sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c",
+      "camera_location_game_m": [
+        170,
+        105,
+        255
+      ],
+      "camera_target_game_m": [
+        0,
+        -17,
+        0
+      ],
+      "orthographic_scale_m": 320,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "2c56bbad7708c0b65329bb64941c8696e8699f3242dd792fde8b02247dae0e97",
+      "seconds": 1.6339530944824219
+    },
+    {
+      "kind": "dawn",
+      "variant": "candidate",
+      "view": "close",
+      "geometry_sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c",
+      "camera_location_game_m": [
+        95,
+        57,
+        170
+      ],
+      "camera_target_game_m": [
+        5,
+        -10,
+        48
+      ],
+      "orthographic_scale_m": 115,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "2e4f3dae2c31db64bec81e792410fc038f8ab03fed56e04bfa728a7535138175",
+      "seconds": 3.7903552055358887
+    },
+    {
+      "kind": "dawn-watch",
+      "variant": "baseline",
+      "view": "wide",
+      "geometry_sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+      "camera_location_game_m": [
+        170,
+        105,
+        255
+      ],
+      "camera_target_game_m": [
+        0,
+        -17,
+        0
+      ],
+      "orthographic_scale_m": 320,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "c22fe8848b9119618f8cf64e10b6910aeae39d1616a59a13a6634c594ba3bfe3",
+      "seconds": 1.4451756477355957
+    },
+    {
+      "kind": "dawn-watch",
+      "variant": "baseline",
+      "view": "close",
+      "geometry_sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+      "camera_location_game_m": [
+        95,
+        57,
+        170
+      ],
+      "camera_target_game_m": [
+        5,
+        -10,
+        48
+      ],
+      "orthographic_scale_m": 115,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "ad4997d0a61723720ab32c917bea6c67148d41473ecaa0a8a56484a99636abb2",
+      "seconds": 3.5271661281585693
+    },
+    {
+      "kind": "dawn-watch",
+      "variant": "candidate",
+      "view": "wide",
+      "geometry_sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353",
+      "camera_location_game_m": [
+        170,
+        105,
+        255
+      ],
+      "camera_target_game_m": [
+        0,
+        -17,
+        0
+      ],
+      "orthographic_scale_m": 320,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "ce6daec0bcedbb73cf8b33c94b31d9d3516f32c2f9485dc31f26781c82ea9494",
+      "seconds": 1.3621249198913574
+    },
+    {
+      "kind": "dawn-watch",
+      "variant": "candidate",
+      "view": "close",
+      "geometry_sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353",
+      "camera_location_game_m": [
+        95,
+        57,
+        170
+      ],
+      "camera_target_game_m": [
+        5,
+        -10,
+        48
+      ],
+      "orthographic_scale_m": 115,
+      "sun_direction_game": [
+        -0.79,
+        -0.342,
+        -0.51
+      ],
+      "sun_linear_color": [
+        1,
+        0.74,
+        0.47
+      ],
+      "cpu_threads": 4,
+      "cpu_samples": 4,
+      "gpu_used": false,
+      "frame_original_resolution": [
+        1672,
+        941
+      ],
+      "frame_sha256": "ef74cba9d43b0e05f2dc03ff9013ab9367cbb2bd921a1cee2bc161227650279b",
+      "seconds": 3.234137535095215
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark": true,
+  "cells": 10000,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "docked": false,
+  "edit_point": [
+    934.6070556640625,
+    614.4996337890625
+  ],
+  "elapsed_seconds": 35.10073471069336,
+  "entities": 4952,
+  "entity_samples_20_cycles": [],
+  "frame_ms_p50_p95_p99": [
+    9.154999628663063,
+    149.61349964141846,
+    211.14110946655273
+  ],
+  "fuel": 1348.34716796875,
+  "gpu_timestamps_measured": false,
+  "material_assets": 14,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.019700000000000002,
+    0.0455,
+    0.055099999999999996
+  ],
+  "mesh_assets": 277,
+  "mesh_max_ms": 0.8053,
+  "mesh_p95_ms": 0.5549,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    253.8141,
+    367.7441,
+    374.0385
+  ],
+  "navigation": {
+    "angular_y": -0.035225238651037216,
+    "position": [
+      -0.07166285812854767,
+      16.172697067260742,
+      0.07519976049661636
+    ],
+    "target_altitude": 12.0,
+    "velocity": [
+      0.3440932035446167,
+      2.780346155166626,
+      0.7874534726142883
+    ],
+    "yaw": 0.008033153600990772
+  },
+  "notice": "Votre premier vaisseau vous attend au chantier.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "tick": 1721,
+  "tick_ms_p50_p95_p99": [
+    11.7618,
+    36.0554,
+    57.323100000000004
+  ],
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 541.0
+    },
+    {
+      "action": "Tether",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 490.0
+    },
+    {
+      "action": "Dock",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 440.0
+    },
+    {
+      "action": "Edit",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 389.0
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null
+}

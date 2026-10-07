@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "relocation_on_D": true,
+  "outside_project": true,
+  "shader_rebuild_byte_exact": true,
+  "cpu_probe_passed": true,
+  "ten_contract_corruptions_rejected": true,
+  "native_art_untouched": true,
+  "gpu_used": false,
+  "canonical_mutations": false,
+  "script_sha256": "1bed2384b12d04b0c04dea9ceca47d3d89507d03d26929c529f87ee9b3c678c5"
+}

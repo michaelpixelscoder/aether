@@ -1,0 +1,60 @@
+[
+  {
+    "kind": "dawn",
+    "sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+    "triangles": 199256,
+    "added_triangles": 4880,
+    "materials": 12,
+    "nodes": 12,
+    "meshes": 12,
+    "changes": [
+      {
+        "material": "06 | Cedar and roots",
+        "old_triangles": 6318,
+        "added_triangles": 1744,
+        "old_attributes_byte_exact_prefix": true
+      },
+      {
+        "material": "08 | Deep foliage",
+        "old_triangles": 17764,
+        "added_triangles": 832,
+        "old_attributes_byte_exact_prefix": true
+      },
+      {
+        "material": "09 | Sunlit foliage",
+        "old_triangles": 2720,
+        "added_triangles": 2304,
+        "old_attributes_byte_exact_prefix": true
+      }
+    ]
+  },
+  {
+    "kind": "dawn-watch",
+    "sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+    "triangles": 148771,
+    "added_triangles": 5116,
+    "materials": 12,
+    "nodes": 12,
+    "meshes": 12,
+    "changes": [
+      {
+        "material": "06 | Cedar and roots",
+        "old_triangles": 12856,
+        "added_triangles": 1868,
+        "old_attributes_byte_exact_prefix": true
+      },
+      {
+        "material": "08 | Deep foliage",
+        "old_triangles": 31880,
+        "added_triangles": 848,
+        "old_attributes_byte_exact_prefix": true
+      },
+      {
+        "material": "09 | Sunlit foliage",
+        "old_triangles": 11464,
+        "added_triangles": 2400,
+        "old_attributes_byte_exact_prefix": true
+      }
+    ]
+  }
+]

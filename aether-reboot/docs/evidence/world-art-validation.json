@@ -1,0 +1,362 @@
+{
+  "generator_sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+  "glbs": [
+    {
+      "file": "dawn.glb",
+      "triangles": 181520,
+      "materials": 12,
+      "bytes": 19451028,
+      "bounds": {
+        "min": [
+          -72.27836608886719,
+          -88.74075317382812,
+          -80.10235595703125
+        ],
+        "max": [
+          80.40911865234375,
+          88.98600006103516,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "dawn-lod.glb",
+      "triangles": 11928,
+      "materials": 10,
+      "bytes": 1218984,
+      "bounds": {
+        "min": [
+          -68,
+          -88.66075134277344,
+          -76
+        ],
+        "max": [
+          76,
+          85.53600311279297,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 249
+    },
+    {
+      "file": "crystal.glb",
+      "triangles": 105722,
+      "materials": 12,
+      "bytes": 11117508,
+      "bounds": {
+        "min": [
+          -69.59505462646484,
+          -91.6003646850586,
+          -69.59663391113281
+        ],
+        "max": [
+          77.54703521728516,
+          98.51399993896484,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "crystal-lod.glb",
+      "triangles": 7462,
+      "materials": 10,
+      "bytes": 803636,
+      "bounds": {
+        "min": [
+          -68,
+          -90.44419860839844,
+          -68
+        ],
+        "max": [
+          76,
+          95.06400299072266,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 222
+    },
+    {
+      "file": "nomad.glb",
+      "triangles": 97428,
+      "materials": 12,
+      "bytes": 9940316,
+      "bounds": {
+        "min": [
+          -69.5847396850586,
+          -91.73026275634766,
+          -69.57920837402344
+        ],
+        "max": [
+          69.58187103271484,
+          68.37799835205078,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "nomad-lod.glb",
+      "triangles": 4940,
+      "materials": 10,
+      "bytes": 516560,
+      "bounds": {
+        "min": [
+          -68,
+          -90.0174331665039,
+          -68
+        ],
+        "max": [
+          68,
+          64.9280014038086,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 202
+    },
+    {
+      "file": "ember.glb",
+      "triangles": 79830,
+      "materials": 10,
+      "bytes": 8325980,
+      "bounds": {
+        "min": [
+          -77.5997085571289,
+          -91.72716522216797,
+          -77.59883117675781
+        ],
+        "max": [
+          69.5948486328125,
+          97.82499694824219,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "ember-lod.glb",
+      "triangles": 6926,
+      "materials": 10,
+      "bytes": 712020,
+      "bounds": {
+        "min": [
+          -76,
+          -88.79377746582031,
+          -76
+        ],
+        "max": [
+          68,
+          97.82499694824219,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 213
+    },
+    {
+      "file": "frost.glb",
+      "triangles": 110830,
+      "materials": 10,
+      "bytes": 11696388,
+      "bounds": {
+        "min": [
+          -77.58708953857422,
+          -87.933837890625,
+          -77.55805969238281
+        ],
+        "max": [
+          77.5998764038086,
+          85,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "frost-lod.glb",
+      "triangles": 7900,
+      "materials": 9,
+      "bytes": 825840,
+      "bounds": {
+        "min": [
+          -76,
+          -87.27363586425781,
+          -76
+        ],
+        "max": [
+          76,
+          85,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 246
+    },
+    {
+      "file": "verdant.glb",
+      "triangles": 93920,
+      "materials": 12,
+      "bytes": 9535632,
+      "bounds": {
+        "min": [
+          -69.59773254394531,
+          -91.68858337402344,
+          -69.59944152832031
+        ],
+        "max": [
+          69.58869934082031,
+          91.97953796386719,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "verdant-lod.glb",
+      "triangles": 6532,
+      "materials": 9,
+      "bytes": 685596,
+      "bounds": {
+        "min": [
+          -68,
+          -89.15558624267578,
+          -68
+        ],
+        "max": [
+          68,
+          87.54666900634766,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 210
+    },
+    {
+      "file": "storm.glb",
+      "triangles": 95894,
+      "materials": 10,
+      "bytes": 10296052,
+      "bounds": {
+        "min": [
+          -77.58233642578125,
+          -91.70551300048828,
+          -77.5118179321289
+        ],
+        "max": [
+          77.58407592773438,
+          60.81999969482422,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "storm-lod.glb",
+      "triangles": 5176,
+      "materials": 10,
+      "bytes": 550048,
+      "bounds": {
+        "min": [
+          -76,
+          -89.30150604248047,
+          -76
+        ],
+        "max": [
+          76,
+          60.81999969482422,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 228
+    },
+    {
+      "file": "hollow.glb",
+      "triangles": 132352,
+      "materials": 12,
+      "bytes": 14721516,
+      "bounds": {
+        "min": [
+          -69.59382629394531,
+          -83.93898010253906,
+          -69.55545043945312
+        ],
+        "max": [
+          77.58326721191406,
+          108,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "hollow-lod.glb",
+      "triangles": 9890,
+      "materials": 9,
+      "bytes": 1074060,
+      "bounds": {
+        "min": [
+          -68,
+          -80.19999694824219,
+          -68
+        ],
+        "max": [
+          76,
+          108,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 140
+    },
+    {
+      "file": "underforge.glb",
+      "triangles": 123206,
+      "materials": 11,
+      "bytes": 13622804,
+      "bounds": {
+        "min": [
+          -69.56446075439453,
+          -80.29816436767578,
+          -69.5749740600586
+        ],
+        "max": [
+          77.572021484375,
+          108,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 0
+    },
+    {
+      "file": "underforge-lod.glb",
+      "triangles": 10684,
+      "materials": 10,
+      "bytes": 1149908,
+      "bounds": {
+        "min": [
+          -68,
+          -80.19999694824219,
+          -68
+        ],
+        "max": [
+          76,
+          108,
+          89
+        ]
+      },
+      "lod_terrain_columns_with_both_caps": 140
+    }
+  ],
+  "shared_images": 16,
+  "colliders": {
+    "dawn": 1066,
+    "crystal": 963,
+    "nomad": 687,
+    "ember": 720,
+    "frost": 848,
+    "verdant": 580,
+    "storm": 742,
+    "hollow": 1436,
+    "underforge": 1349
+  },
+  "portal_openings_clear": true,
+  "cavern_channels_clear": true,
+  "external_textures_hash_verified": true
+}

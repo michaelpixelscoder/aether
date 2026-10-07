@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "blender": "5.2.1 LTS",
+  "gpu_used": false,
+  "threads": 4,
+  "results": [
+    {
+      "kind": "dawn",
+      "final_glb_sha256": "dc7c806f70c77b711683abc6adfc9c9ce6e83f8642df86af061b98728ef68af8",
+      "portable_glb_sha256": "dc7c806f70c77b711683abc6adfc9c9ce6e83f8642df86af061b98728ef68af8",
+      "byte_exact_rebuild": true,
+      "pre_packaging_glb_sha256": "7e6e1985f664b021b895f42ef1342f6a7d82ada8d896d5aeda008b1e7c4b16ed",
+      "geometry_binary_unchanged_by_packaging": true,
+      "stable_document_unchanged": true,
+      "bin_sha256": "e033913dfc4034d5dfb6648df4816e59ea3b4dfa022227f002cf6e8c6fdfc7dc"
+    },
+    {
+      "kind": "dawn-watch",
+      "final_glb_sha256": "95b16cf5db02dbc788f385d1d9c9cc69557b23c37d691e1c91e13571b7ceee45",
+      "portable_glb_sha256": "95b16cf5db02dbc788f385d1d9c9cc69557b23c37d691e1c91e13571b7ceee45",
+      "byte_exact_rebuild": true,
+      "pre_packaging_glb_sha256": "25a7309bf0624e06340d0425ebb845feac78291b80c6362bfbab02a9e308e276",
+      "geometry_binary_unchanged_by_packaging": true,
+      "stable_document_unchanged": true,
+      "bin_sha256": "abe39d2c5d6079c9e875f2965e6b9f694b7196b236c88f767b186ae80a7c9601"
+    }
+  ]
+}

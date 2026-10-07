@@ -1,0 +1,4846 @@
+{
+  "schema": 1,
+  "candidate_only": true,
+  "islands": [
+    {
+      "kind": "dawn",
+      "houses": 18,
+      "before_triangles": 184368,
+      "after": {
+        "file": "dawn.glb",
+        "triangles": 194376,
+        "materials": 12,
+        "bytes": 21816884,
+        "sha256": "f321a0585e528d334c6169bdc85630fca4d64748eaeeb648b802ad3e2d26e269"
+      },
+      "triangle_delta": 10008,
+      "meshes": 12,
+      "nodes": 12,
+      "collision_exact": true,
+      "landmarks_exact": true,
+      "source_sha256": "4cf90b333e9fcd91a3c5f260590245cdd219c7e5c187be195d5064d4df2fea74",
+      "details": [
+        {
+          "centre": [
+            -18,
+            25,
+            -31
+          ],
+          "dimensions": [
+            9,
+            13,
+            19
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -20.52,
+                32.28,
+                -21.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -18.0,
+                32.28,
+                -21.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -15.48,
+                32.28,
+                -21.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -15.48,
+                32.28,
+                -40.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -18.0,
+                32.28,
+                -40.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -20.52,
+                32.28,
+                -40.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -13.5,
+                32.28,
+                -26.25
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -13.5,
+                32.28,
+                -35.75
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -22.5,
+                32.28,
+                -35.75
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -22.5,
+                32.28,
+                -26.25
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 29.29,
+              "top": 35.269999999999996,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.11,
+            13,
+            17.11
+          ]
+        },
+        {
+          "centre": [
+            18,
+            25,
+            -31
+          ],
+          "dimensions": [
+            9,
+            16,
+            19
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                15.48,
+                33.96,
+                -21.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                18.0,
+                33.96,
+                -21.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                20.52,
+                33.96,
+                -21.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                20.52,
+                33.96,
+                -40.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                18.0,
+                33.96,
+                -40.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                15.48,
+                33.96,
+                -40.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                22.5,
+                33.96,
+                -26.25
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                22.5,
+                33.96,
+                -35.75
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                13.5,
+                33.96,
+                -35.75
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                13.5,
+                33.96,
+                -26.25
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 30.28,
+              "top": 37.64,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.11,
+            16,
+            17.11
+          ]
+        },
+        {
+          "centre": [
+            -46,
+            7,
+            8
+          ],
+          "dimensions": [
+            12,
+            16,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -49.36,
+                15.96,
+                14.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -46.0,
+                15.96,
+                14.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -42.64,
+                15.96,
+                14.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -42.64,
+                15.96,
+                2.0000000000000004
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -46.0,
+                15.96,
+                2.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -49.36,
+                15.96,
+                1.9999999999999996
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -40.0,
+                15.96,
+                11.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -40.0,
+                15.96,
+                5.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -52.0,
+                15.96,
+                5.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -52.0,
+                15.96,
+                11.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.280000000000001,
+              "top": 19.64,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            16,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            -47,
+            7,
+            -17
+          ],
+          "dimensions": [
+            12,
+            19,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -50.36,
+                17.64,
+                -11.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -47.0,
+                17.64,
+                -11.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -43.64,
+                17.64,
+                -11.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -43.64,
+                17.64,
+                -23.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -47.0,
+                17.64,
+                -23.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -50.36,
+                17.64,
+                -23.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -41.0,
+                17.64,
+                -14.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -41.0,
+                17.64,
+                -20.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -53.0,
+                17.64,
+                -20.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -53.0,
+                17.64,
+                -14.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 13.27,
+              "top": 22.01,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            19,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            -32,
+            7,
+            32
+          ],
+          "dimensions": [
+            12,
+            12,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -35.36,
+                13.72,
+                38.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -32.0,
+                13.72,
+                38.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -28.64,
+                13.72,
+                38.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -28.64,
+                13.72,
+                26.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -32.0,
+                13.72,
+                26.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -35.36,
+                13.72,
+                26.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -26.0,
+                13.72,
+                35.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -26.0,
+                13.72,
+                29.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -38.0,
+                13.72,
+                29.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -38.0,
+                13.72,
+                35.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            12,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            40,
+            16,
+            24
+          ],
+          "dimensions": [
+            12,
+            13,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                36.64,
+                23.28,
+                30.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                40.0,
+                23.28,
+                30.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                43.36,
+                23.28,
+                30.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                43.36,
+                23.28,
+                18.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                40.0,
+                23.28,
+                18.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                36.64,
+                23.28,
+                18.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                46.0,
+                23.28,
+                27.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                46.0,
+                23.28,
+                21.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                34.0,
+                23.28,
+                21.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                34.0,
+                23.28,
+                27.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.29,
+              "top": 26.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            13,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            54,
+            16,
+            25
+          ],
+          "dimensions": [
+            12,
+            18,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                50.64,
+                26.08,
+                31.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                54.0,
+                26.08,
+                31.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                57.36,
+                26.08,
+                31.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                57.36,
+                26.08,
+                19.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                54.0,
+                26.08,
+                19.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                50.64,
+                26.08,
+                19.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                60.0,
+                26.08,
+                28.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                60.0,
+                26.08,
+                22.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                48.0,
+                26.08,
+                22.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                48.0,
+                26.08,
+                28.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 21.94,
+              "top": 30.22,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            18,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            42,
+            16,
+            -31
+          ],
+          "dimensions": [
+            12,
+            15,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                38.64,
+                24.4,
+                -25.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                42.0,
+                24.4,
+                -25.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                45.36,
+                24.4,
+                -25.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                45.36,
+                24.4,
+                -37.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                42.0,
+                24.4,
+                -37.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                38.64,
+                24.4,
+                -37.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                48.0,
+                24.4,
+                -28.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                48.0,
+                24.4,
+                -34.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                36.0,
+                24.4,
+                -34.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                36.0,
+                24.4,
+                -28.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 20.95,
+              "top": 27.85,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            15,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            -21,
+            0,
+            -59
+          ],
+          "dimensions": [
+            12,
+            14,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -24.36,
+                7.84,
+                -53.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -21.0,
+                7.84,
+                -53.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -17.64,
+                7.84,
+                -53.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -17.64,
+                7.84,
+                -65.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -21.0,
+                7.84,
+                -65.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -24.36,
+                7.84,
+                -65.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -15.0,
+                7.84,
+                -56.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -15.0,
+                7.84,
+                -62.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -27.0,
+                7.84,
+                -62.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -27.0,
+                7.84,
+                -56.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.62,
+              "top": 11.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            14,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            20,
+            0,
+            -61
+          ],
+          "dimensions": [
+            12,
+            15,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                16.64,
+                8.4,
+                -55.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                20.0,
+                8.4,
+                -55.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                23.36,
+                8.4,
+                -55.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                23.36,
+                8.4,
+                -67.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                20.0,
+                8.4,
+                -67.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                16.64,
+                8.4,
+                -67.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                26.0,
+                8.4,
+                -58.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                26.0,
+                8.4,
+                -64.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                14.0,
+                8.4,
+                -64.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                14.0,
+                8.4,
+                -58.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 4.95,
+              "top": 11.850000000000001,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            15,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            -58,
+            7,
+            37
+          ],
+          "dimensions": [
+            9,
+            12,
+            10
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -60.52,
+                13.72,
+                42.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -58.0,
+                13.72,
+                42.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -55.48,
+                13.72,
+                42.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -55.48,
+                13.72,
+                32.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -58.0,
+                13.72,
+                32.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -60.52,
+                13.72,
+                32.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -53.5,
+                13.72,
+                39.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -53.5,
+                13.72,
+                34.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -62.5,
+                13.72,
+                34.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -62.5,
+                13.72,
+                39.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 10.96,
+              "top": 16.48,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.11,
+            12,
+            8.11
+          ]
+        },
+        {
+          "centre": [
+            -61,
+            7,
+            6
+          ],
+          "dimensions": [
+            9,
+            17,
+            11
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -63.52,
+                16.52,
+                11.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -61.0,
+                16.52,
+                11.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -58.48,
+                16.52,
+                11.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -58.48,
+                16.52,
+                0.5000000000000003
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -61.0,
+                16.52,
+                0.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -63.52,
+                16.52,
+                0.49999999999999967
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -56.5,
+                16.52,
+                8.75
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -56.5,
+                16.52,
+                3.25
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -65.5,
+                16.52,
+                3.25
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -65.5,
+                16.52,
+                8.75
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 12.61,
+              "top": 20.43,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.11,
+            17,
+            9.11
+          ]
+        },
+        {
+          "centre": [
+            -56,
+            7,
+            -30
+          ],
+          "dimensions": [
+            11,
+            21,
+            10
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -59.08,
+                18.759999999999998,
+                -25.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.76,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -56.0,
+                18.759999999999998,
+                -25.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.76,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -52.92,
+                18.759999999999998,
+                -25.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.76,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -52.92,
+                18.759999999999998,
+                -35.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.76,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -56.0,
+                18.759999999999998,
+                -35.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.76,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -59.08,
+                18.759999999999998,
+                -35.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.76,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -50.5,
+                18.759999999999998,
+                -27.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -50.5,
+                18.759999999999998,
+                -32.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -61.5,
+                18.759999999999998,
+                -32.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -61.5,
+                18.759999999999998,
+                -27.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 13.93,
+              "top": 23.59,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            8.9,
+            21,
+            7.9
+          ]
+        },
+        {
+          "centre": [
+            -39,
+            7,
+            -48
+          ],
+          "dimensions": [
+            12,
+            13,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -42.36,
+                14.28,
+                -42.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.0,
+                14.28,
+                -42.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -35.64,
+                14.28,
+                -42.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -35.64,
+                14.28,
+                -54.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.0,
+                14.28,
+                -54.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -42.36,
+                14.28,
+                -54.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -33.0,
+                14.28,
+                -45.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -33.0,
+                14.28,
+                -51.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -45.0,
+                14.28,
+                -51.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -45.0,
+                14.28,
+                -45.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 11.29,
+              "top": 17.27,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            13,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            56,
+            16,
+            -33
+          ],
+          "dimensions": [
+            10,
+            17,
+            11
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                53.2,
+                25.52,
+                -27.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                56.0,
+                25.52,
+                -27.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                58.8,
+                25.52,
+                -27.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                58.8,
+                25.52,
+                -38.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                56.0,
+                25.52,
+                -38.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                53.2,
+                25.52,
+                -38.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                61.0,
+                25.52,
+                -30.25
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                61.0,
+                25.52,
+                -35.75
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                51.0,
+                25.52,
+                -35.75
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                51.0,
+                25.52,
+                -30.25
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 21.61,
+              "top": 29.43,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.9,
+            17,
+            8.9
+          ]
+        },
+        {
+          "centre": [
+            45,
+            16,
+            -51
+          ],
+          "dimensions": [
+            12,
+            24,
+            11
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                41.64,
+                29.44,
+                -45.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                45.0,
+                29.44,
+                -45.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                48.36,
+                29.44,
+                -45.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                48.36,
+                29.44,
+                -56.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                45.0,
+                29.44,
+                -56.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                41.64,
+                29.44,
+                -56.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                51.0,
+                29.44,
+                -48.25
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                51.0,
+                29.44,
+                -53.75
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                39.0,
+                29.44,
+                -53.75
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                39.0,
+                29.44,
+                -48.25
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 23.92,
+              "top": 34.96,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.69,
+            24,
+            8.69
+          ]
+        },
+        {
+          "centre": [
+            27,
+            0,
+            47
+          ],
+          "dimensions": [
+            9,
+            10,
+            8
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                24.48,
+                5.6000000000000005,
+                51.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                27.0,
+                5.6000000000000005,
+                51.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                29.52,
+                5.6000000000000005,
+                51.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                29.52,
+                5.6000000000000005,
+                43.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                27.0,
+                5.6000000000000005,
+                43.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                24.48,
+                5.6000000000000005,
+                43.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                31.5,
+                5.6000000000000005,
+                49.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                31.5,
+                5.6000000000000005,
+                45.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                22.5,
+                5.6000000000000005,
+                45.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                22.5,
+                5.6000000000000005,
+                49.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 3.3000000000000003,
+              "top": 7.9,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.32,
+            10,
+            6.32
+          ]
+        },
+        {
+          "centre": [
+            -39,
+            0,
+            49
+          ],
+          "dimensions": [
+            10,
+            8,
+            8
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -41.8,
+                4.48,
+                53.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.0,
+                4.48,
+                53.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -36.2,
+                4.48,
+                53.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -36.2,
+                4.48,
+                45.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.0,
+                4.48,
+                45.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -41.8,
+                4.48,
+                45.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -34.0,
+                4.48,
+                51.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -34.0,
+                4.48,
+                47.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -44.0,
+                4.48,
+                47.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -44.0,
+                4.48,
+                51.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.44,
+              "bottom": 2.64,
+              "top": 6.32,
+              "recess_m": 0.84,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            8.32,
+            8,
+            6.32
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "dawn-watch",
+      "houses": 7,
+      "before_triangles": 139763,
+      "after": {
+        "file": "dawn-watch.glb",
+        "triangles": 143655,
+        "materials": 12,
+        "bytes": 16112644,
+        "sha256": "bb1f94964568ba6c1f14cc726a91dc9dd64147f7b3e8e0974d1b9a940d9c6cf4"
+      },
+      "triangle_delta": 3892,
+      "meshes": 12,
+      "nodes": 12,
+      "collision_exact": true,
+      "landmarks_exact": true,
+      "source_sha256": "97feb02dca333027bf2d7cdef6a0ba25a39d521aac771e32ea9c811af5df154e",
+      "details": [
+        {
+          "centre": [
+            -43,
+            23,
+            -33
+          ],
+          "dimensions": [
+            12,
+            14,
+            18
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -46.36,
+                30.84,
+                -24.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -43.0,
+                30.84,
+                -24.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.64,
+                30.84,
+                -24.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.64,
+                30.84,
+                -42.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -43.0,
+                30.84,
+                -42.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -46.36,
+                30.84,
+                -42.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -37.0,
+                30.84,
+                -28.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -37.0,
+                30.84,
+                -37.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -49.0,
+                30.84,
+                -37.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -49.0,
+                30.84,
+                -28.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.8,
+              "bottom": 27.62,
+              "top": 34.06,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            14,
+            15.6
+          ]
+        },
+        {
+          "centre": [
+            -28,
+            4,
+            29
+          ],
+          "dimensions": [
+            12,
+            9,
+            11
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -31.36,
+                9.04,
+                34.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -28.0,
+                9.04,
+                34.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -24.64,
+                9.04,
+                34.5
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -24.64,
+                9.04,
+                23.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -28.0,
+                9.04,
+                23.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -31.36,
+                9.04,
+                23.5
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -22.0,
+                9.04,
+                31.75
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -22.0,
+                9.04,
+                26.25
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -34.0,
+                9.04,
+                26.25
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -34.0,
+                9.04,
+                31.75
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.98,
+              "bottom": 6.970000000000001,
+              "top": 11.11,
+              "recess_m": 1.155,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.69,
+            9,
+            8.69
+          ]
+        },
+        {
+          "centre": [
+            -44,
+            9,
+            8
+          ],
+          "dimensions": [
+            10,
+            12,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -46.8,
+                15.72,
+                14.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -44.0,
+                15.72,
+                14.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -41.2,
+                15.72,
+                14.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.6,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -41.2,
+                15.72,
+                2.0000000000000004
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -44.0,
+                15.72,
+                2.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -46.8,
+                15.72,
+                1.9999999999999996
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.6,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.0,
+                15.72,
+                11.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -39.0,
+                15.72,
+                5.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -49.0,
+                15.72,
+                5.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -49.0,
+                15.72,
+                11.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.96,
+              "top": 18.48,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.9,
+            12,
+            9.9
+          ]
+        },
+        {
+          "centre": [
+            29,
+            4,
+            32
+          ],
+          "dimensions": [
+            11,
+            10,
+            10
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                25.92,
+                9.600000000000001,
+                37.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.76,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                29.0,
+                9.600000000000001,
+                37.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.76,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                32.08,
+                9.600000000000001,
+                37.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.76,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                32.08,
+                9.600000000000001,
+                27.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.76,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                29.0,
+                9.600000000000001,
+                27.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.76,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                25.92,
+                9.600000000000001,
+                27.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.76,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                34.5,
+                9.600000000000001,
+                34.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                34.5,
+                9.600000000000001,
+                29.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                23.5,
+                9.600000000000001,
+                29.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                23.5,
+                9.600000000000001,
+                34.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 7.300000000000001,
+              "top": 11.9,
+              "recess_m": 1.05,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            8.9,
+            10,
+            7.9
+          ]
+        },
+        {
+          "centre": [
+            39,
+            9,
+            6
+          ],
+          "dimensions": [
+            12,
+            11,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                35.64,
+                15.16,
+                12.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                39.0,
+                15.16,
+                12.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                42.36,
+                15.16,
+                12.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                42.36,
+                15.16,
+                4.114813245135107e-16
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                39.0,
+                15.16,
+                0.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                35.64,
+                15.16,
+                -4.114813245135107e-16
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.92,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                45.0,
+                15.16,
+                9.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                45.0,
+                15.16,
+                3.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                33.0,
+                15.16,
+                3.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                33.0,
+                15.16,
+                9.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 12.63,
+              "top": 17.69,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            9.6,
+            11,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            31,
+            23,
+            -34
+          ],
+          "dimensions": [
+            13,
+            12,
+            12
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                27.36,
+                29.72,
+                -28.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 2.08,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                31.0,
+                29.72,
+                -28.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 2.08,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                34.64,
+                29.72,
+                -28.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 2.08,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                34.64,
+                29.72,
+                -40.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 2.08,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                31.0,
+                29.72,
+                -40.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 2.08,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                27.36,
+                29.72,
+                -40.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 2.08,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                37.5,
+                29.72,
+                -31.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                37.5,
+                29.72,
+                -37.0
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                24.5,
+                29.72,
+                -37.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                24.5,
+                29.72,
+                -31.0
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 2.16,
+              "bottom": 26.96,
+              "top": 32.480000000000004,
+              "recess_m": 1.2,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            10.6,
+            12,
+            9.6
+          ]
+        },
+        {
+          "centre": [
+            -43,
+            15,
+            -17
+          ],
+          "dimensions": [
+            9,
+            8,
+            10
+          ],
+          "old_window_and_body_raw_triangles": 1004,
+          "new_shell_raw_triangles": 1592,
+          "raw_net_triangles": 588,
+          "windows": [
+            {
+              "centre": [
+                -45.52,
+                19.48,
+                -12.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -43.0,
+                19.48,
+                -12.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -40.48,
+                19.48,
+                -12.0
+              ],
+              "normal": [
+                0.0,
+                0,
+                1.0
+              ],
+              "width": 1.44,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -40.48,
+                19.48,
+                -22.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -43.0,
+                19.48,
+                -22.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -45.52,
+                19.48,
+                -22.0
+              ],
+              "normal": [
+                1.2246467991473532e-16,
+                0,
+                -1.0
+              ],
+              "width": 1.44,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -38.5,
+                19.48,
+                -14.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -38.5,
+                19.48,
+                -19.5
+              ],
+              "normal": [
+                1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -47.5,
+                19.48,
+                -19.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            },
+            {
+              "centre": [
+                -47.5,
+                19.48,
+                -14.5
+              ],
+              "normal": [
+                -1.0,
+                0,
+                6.123233995736766e-17
+              ],
+              "width": 1.7999999999999998,
+              "bottom": 17.64,
+              "top": 21.32,
+              "recess_m": 0.945,
+              "max_projection_m": 0.39
+            }
+          ],
+          "core_dimensions": [
+            7.11,
+            8,
+            8.11
+          ]
+        }
+      ]
+    }
+  ]
+}

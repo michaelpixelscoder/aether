@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "candidate_only": true,
+  "glb_sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23",
+  "baseline_sha256": "6fe29c97310f96a8c42e632da69684915571177fd341ea7734731f20567b4466",
+  "per_surface": [
+    {
+      "name": "Embroidered gold thread.001",
+      "vertices": 16896,
+      "triangles": 7744,
+      "morphs": 3
+    },
+    {
+      "name": "Embroidered gold thread.002",
+      "vertices": 96,
+      "triangles": 48,
+      "morphs": 3
+    },
+    {
+      "name": "Indigo canvas",
+      "vertices": 91008,
+      "triangles": 41712,
+      "morphs": 3
+    },
+    {
+      "name": "Indigo canvas variation",
+      "vertices": 45696,
+      "triangles": 20944,
+      "morphs": 3
+    },
+    {
+      "name": "Indigo canvas.001",
+      "vertices": 672,
+      "triangles": 308,
+      "morphs": 3
+    }
+  ],
+  "wind_states": [
+    [
+      -1,
+      0,
+      1
+    ],
+    [
+      -1,
+      1,
+      6.123233995736766e-17
+    ],
+    [
+      -1,
+      1.2246467991473532e-16,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1.8369701987210297e-16
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      6.123233995736766e-17
+    ],
+    [
+      0,
+      1.2246467991473532e-16,
+      -1
+    ],
+    [
+      0,
+      -1,
+      -1.8369701987210297e-16
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      6.123233995736766e-17
+    ],
+    [
+      1,
+      1.2246467991473532e-16,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1.8369701987210297e-16
+    ]
+  ],
+  "bounds_all_morph_extremes_xyz_m": [
+    [
+      -1.25,
+      1.25
+    ],
+    [
+      -1.151991367340088,
+      1.5950000286102295
+    ],
+    [
+      -0.7199407815933228,
+      0.17727892100811005
+    ]
+  ],
+  "grand_sail_minimum_cloth_y_above_owner_m": 1.1200215816497803,
+  "normals": {
+    "rest_max_length_error": 1.3208275917442336e-7,
+    "deformed_min_length": 0.9663381003338116,
+    "deformed_max_length": 1.1095621074408324,
+    "min_geometric_normal_dot": 0.9965665323493877
+  },
+  "minimum_triangle_double_area_m2": 5.596169054707443e-7,
+  "pressure": {
+    "negative_z_vertices": 0,
+    "maximum_z_displacement_m": 0.17997434735298157,
+    "sign_preserved": true
+  },
+  "embedded_images_unchanged": true,
+  "materials_unchanged": true,
+  "source_pipeline": {
+    "sources": [
+      {
+        "role": "canvas",
+        "path": "tools/art/build_sail_r52.py",
+        "sha256": "f1c8b2b3ed2d40951590f4d87abc4cf56b6a8c7f8cd9d4e91b9397dc3c3ed276"
+      },
+      {
+        "role": "archived_canvas",
+        "path": "tools/art/sail-source/archive/r44-canvas.blend",
+        "sha256": "467bb211fc896e20ecafa01ef206d321cbfb1eb3ad21c7291039c801ae518487"
+      },
+      {
+        "role": "spars",
+        "path": "tools/art/build_sail_rig.py",
+        "sha256": "b9cd3bcf13e20ef339f71e0cd9a16c68fcdd0bba542e834bd24971ca10da5804"
+      },
+      {
+        "role": "primitive_helpers",
+        "path": "tools/art/build_ship.py",
+        "sha256": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd"
+      },
+      {
+        "role": "assembly",
+        "path": "tools/art/merge_sail_rig.mjs",
+        "sha256": "02fde852b48d0d029991f570202d8710ac4744aeb40d5955741a2c0f15478183"
+      },
+      {
+        "role": "provenance_validation",
+        "path": "tools/art/sail_provenance.mjs",
+        "sha256": "e6035dbcf51ebe3e83612ddce90e18c2b05347f90704944661f42bab4e4e676f"
+      }
+    ],
+    "cloth_payload_sha256": "edec8c9d1d92ed8cb1a7d3e1f44ebcc4ee8e454624b06b4a20ffe3cf2d6c09d0",
+    "static_payload_sha256": "a880915d9cc1c36d64757f787f6d217625664c19a692674d1944ef966246183d",
+    "triangles": 79084
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "operation": "remap unchanged volume bytes to package-relative paths; same single source and World importance settings",
+  "new_render_performed": false,
+  "rendered_scene_sha256": "cdba75ae0c1b5dd86e4c3a662e6f2d66c5ec5db0a025903f7b208fd2c6514087",
+  "packaged_scene_sha256": "50a1d2152e6760df7dadfbffe8ebb964e48a077ed471258434d4808fbdb49974",
+  "before_descriptor_sha256": "f8bb8a5b71a3f83d5f47a53dfde576e1c73384f9d9c85effc53f3ff28c1ed9ca",
+  "after_descriptor_sha256": "f8bb8a5b71a3f83d5f47a53dfde576e1c73384f9d9c85effc53f3ff28c1ed9ca",
+  "visible_volume_count": 86,
+  "input_raster_images": 0,
+  "source_scene_retained_in_working_evidence": "tools/art/sky-source/history/r50-rendered-source.blend.bin",
+  "descriptor_scope": "geometry, density hashes, materials, angular emitter/world graph, World importance sampling, camera, Cycles/integrator and linear output configuration"
+}

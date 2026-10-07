@@ -1,0 +1,14 @@
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 5.32s
+     Running tests\scenarios.rs (target\debug\deps\scenarios-e5c4cea6a0253390.exe)
+
+running 1 test
+t=0 p=Vec3(0.0, 12.0, 0.0) speed=0.00 yaw=0.00 desired=-0.08 waypoint=0 distance=167.35
+t=10 p=Vec3(4.6895814, 14.134673, -45.784714) speed=10.91 yaw=-0.05 desired=-0.02 waypoint=0 distance=124.03
+t=20 p=Vec3(40.436665, 19.963243, -139.64526) speed=2.02 yaw=-0.96 desired=-1.04 waypoint=2 distance=28.45
+t=30 p=Vec3(52.635612, 20.06052, -150.39404) speed=1.61 yaw=-1.22 desired=-1.29 waypoint=2 distance=12.88
+test current_and_sail_reach_the_gardens_without_pose_teleportation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.45s
+

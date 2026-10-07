@@ -1,0 +1,52 @@
+{
+  "canonical_sha256": "7e06e8574ab769ad877bfefae88d8ea8bb12366390ae963a54aa604d086f6752",
+  "candidate_sha256": "7b6f4e166a125bd70111d74ce10aaeffdc08ce13fd0becdfa803f2a70fd0c5b3",
+  "canonical_bytes": 22407308,
+  "candidate_bytes": 23004264,
+  "canonical_triangles": 71996,
+  "candidate_triangles": 78744,
+  "delta_triangles": 6748,
+  "canonical_meshes": 9,
+  "candidate_meshes": 9,
+  "materials": 7,
+  "cloth_meshes_unchanged": 5,
+  "cloth_binary_exact": true,
+  "morph_targets": [
+    "WindPressure",
+    "RippleSin",
+    "RippleCos"
+  ],
+  "normals": {
+    "min_length": 0.9999999239995081,
+    "max_length": 1.0000001369454365,
+    "invalid": 0,
+    "inward_triangles": 0
+  },
+  "new_degenerate_triangles": 0,
+  "new_static_bounds_xyz": [
+    [
+      -1.369065523147583,
+      1.369065523147583
+    ],
+    [
+      -1.4900000095367432,
+      1.7599999904632568
+    ],
+    [
+      -0.10300000011920929,
+      0.20499999821186066
+    ]
+  ],
+  "existing_envelope_contained": true,
+  "canonical_files": {
+    "assets/art/sail.glb": "7e06e8574ab769ad877bfefae88d8ea8bb12366390ae963a54aa604d086f6752",
+    "tools/art/build_art.py": "4f362af19f5e33a67012f1436d1df1fb888de6284ec67061f360eb7899ee4449",
+    "tools/art/build_ship.py": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd",
+    "crates/aether_core/src/body.rs": "fc50af4d83aac1edd3cf120412da71789005408c2b9084ac687c18970f465b44",
+    "crates/aether_core/src/naval.rs": "13da9a80c811e7fff1351792a8a75222a2dd76e578e3dbc971b95c9ad135fd46",
+    "crates/aether_core/src/fixtures.rs": "e0befcf5a840b1654ced933ffa37456f5a0e4bf56d78ff047f3462507deb06a5",
+    "crates/aether_view/src/ship.rs": "162a9a0d5d4c190a221c5c779ad1ca156ae49ff1704d1e7cdcb2c3dfd2e1f8c2",
+    "crates/aether_view/src/craft.rs": "188837ef9eb7fdb1edec09f1175dd56bc07dbffd2230f3dfdb300441cd821f00",
+    "crates/aether_view/src/sail.rs": "a3c597dfe7eb37e7c713875d130c9bbffa0f5b89ae588a5098b1f768d19a749f"
+  }
+}

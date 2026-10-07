@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "only_outside_isolated_assets_mutated": true,
+  "restored_exactly": true,
+  "tests": [
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "HD-soil-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "HD-soil-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "HD-soil-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "HD-rock-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "HD-rock-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "HD-rock-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "HD-other-material",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "All other materials"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "HD-other-material",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "All other materials"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "HD-other-material",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "All other materials"
+    },
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "HD-soil-roughness",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Material12 roughness"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "HD-soil-roughness",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Material12 roughness"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "HD-soil-roughness",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Material12 roughness"
+    },
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "HD-transform-scale",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Expected values"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "HD-transform-scale",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Expected values"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "HD-transform-scale",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Expected values"
+    },
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "LOD-soil-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "LOD-soil-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "LOD-soil-position",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Entire BIN byte-exact"
+    },
+    {
+      "gate": "cliff-source/verify.mjs",
+      "case": "LOD-soil-roughness",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Material12 roughness"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "LOD-soil-roughness",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Material12 roughness"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "LOD-soil-roughness",
+      "current_manifest_sha_and_bytes_recomputed": true,
+      "rejected": true,
+      "independent_r60_contract_reason": "Material12 roughness"
+    }
+  ]
+}

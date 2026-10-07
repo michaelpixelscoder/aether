@@ -1,0 +1,281 @@
+info: compiling to WebAssembly...
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+   Compiling aether_view v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+warning: unused import: `AsyncComputeTaskPool`
+  --> crates\aether_view\src\voxel.rs:11:13
+   |
+11 |     tasks::{AsyncComputeTaskPool, Task},
+   |             ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+warning: `aether_view` (lib) generated 1 warning (run `cargo fix --lib -p aether_view` to apply 1 suggestion)
+    Finished `web` profile [optimized] target(s) in 10.47s
+info: bundling JavaScript bindings...
+warning: failed to run wasm-bindgen, trying to find automatic fix...
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded wasm-bindgen-cli v0.2.129
+  Installing wasm-bindgen-cli v0.2.129
+warning: default toolchain implicitly overridden with `1.98.0-x86_64-pc-windows-msvc` by rustup toolchain file
+  |
+  = help: use `cargo +stable install` if you meant to use the stable toolchain
+  = note: rustup selects the toolchain based on the parent environment and not the environment of the package being installed
+    Updating crates.io index
+     Locking 207 packages to latest compatible versions
+      Adding shlex v1.3.0 (available: v2.0.1)
+      Adding wasmparser v0.245.1 (available: v0.260.0)
+ Downloading crates ...
+  Downloaded alloc-no-stdlib v2.0.4
+  Downloaded anstyle-wincon v3.0.11
+  Downloaded base64 v0.23.1
+  Downloaded buf_redux v0.8.4
+  Downloaded chunked_transfer v1.5.0
+  Downloaded env_filter v2.0.0
+  Downloaded id-arena v2.3.0
+  Downloaded brotli-decompressor v5.0.3
+  Downloaded colorchoice v1.0.5
+  Downloaded idna_adapter v1.2.2
+  Downloaded httpdate v1.0.3
+  Downloaded is_terminal_polyfill v1.70.2
+  Downloaded defmt-parser v1.0.0
+  Downloaded alloc-stdlib v0.2.4
+  Downloaded num_cpus v1.17.0
+  Downloaded quick-error v1.2.3
+  Downloaded leb128fmt v0.1.0
+  Downloaded heck v0.5.0
+  Downloaded leb128 v0.2.7
+  Downloaded form_urlencoded v1.2.2
+  Downloaded anstream v1.0.0
+  Downloaded anstyle-parse v1.0.0
+  Downloaded anstyle-query v1.1.5
+  Downloaded filetime v0.2.29
+  Downloaded rand_chacha v0.3.1
+  Downloaded getrandom v0.2.17
+  Downloaded env_logger v0.11.11
+  Downloaded ascii v1.1.0
+  Downloaded defmt v1.1.1
+  Downloaded rustc-demangle v0.1.28
+  Downloaded anyhow v1.0.104
+  Downloaded fallible-iterator v0.3.0
+  Downloaded defmt-macros v1.1.1
+  Downloaded clap_derive v4.6.7
+  Downloaded mime_guess v2.0.5
+  Downloaded rustls-pki-types v1.15.1
+  Downloaded deranged v0.5.8
+  Downloaded powerfmt v0.2.0
+  Downloaded httparse v1.10.1
+  Downloaded base64 v0.13.1
+  Downloaded multipart v0.18.0
+  Downloaded http v1.5.0
+  Downloaded safemem v0.3.3
+  Downloaded mime v0.3.17
+  Downloaded num-conv v0.2.2
+  Downloaded once_cell_polyfill v1.70.2
+  Downloaded rand_core v0.6.4
+  Downloaded shlex v1.3.0
+  Downloaded jiff-core v0.1.1
+  Downloaded utf8-zero v0.8.1
+  Downloaded idna v1.1.0
+  Downloaded threadpool v1.8.1
+  Downloaded untrusted v0.9.0
+  Downloaded rand v0.8.8
+  Downloaded rustls-webpki v0.103.15
+  Downloaded sha1_smol v1.0.1
+  Downloaded utf8parse v0.2.2
+  Downloaded walrus-macro v0.26.0
+  Downloaded subtle v2.6.1
+  Downloaded rouille v3.6.2
+  Downloaded strsim v0.11.1
+  Downloaded unicase v2.9.0
+  Downloaded tiny_http v0.12.0
+  Downloaded chrono v0.4.45
+  Downloaded ureq-proto v0.6.4
+  Downloaded gimli v0.32.3
+  Downloaded wasm-encoder v0.245.1
+  Downloaded webpki-roots v1.0.9
+  Downloaded walrus v0.27.2
+  Downloaded wasmparser v0.245.1
+  Downloaded rustls v0.23.45
+  Downloaded time v0.3.55
+  Downloaded jiff v0.2.37
+  Downloaded time-core v0.1.9
+  Downloaded url v2.5.8
+  Downloaded wasm-bindgen-test-shared v0.2.129
+  Downloaded twoway v0.1.8
+  Downloaded ureq v3.4.2
+  Downloaded zeroize v1.9.0
+  Downloaded ring v0.17.14
+  Downloaded wasm-bindgen-cli-support v0.2.129
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling stable_deref_trait v1.2.1
+   Compiling cfg-if v1.0.5
+   Compiling serde_core v1.0.229
+   Compiling windows-link v0.2.1
+   Compiling memchr v2.8.3
+   Compiling log v0.4.34
+   Compiling crossbeam-utils v0.8.23
+   Compiling litemap v0.8.3
+   Compiling crossbeam-epoch v0.9.21
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+   Compiling writeable v0.6.4
+   Compiling zerocopy v0.8.59
+   Compiling crossbeam-deque v0.8.8
+   Compiling icu_properties_data v2.3.0
+   Compiling icu_normalizer_data v2.3.0
+   Compiling utf8_iter v1.0.4
+   Compiling serde v1.0.229
+   Compiling rayon-core v1.13.0
+   Compiling itoa v1.0.18
+   Compiling httparse v1.10.1
+   Compiling unicase v2.9.0
+   Compiling autocfg v1.5.1
+   Compiling getrandom v0.4.3
+   Compiling utf8parse v0.2.2
+   Compiling equivalent v1.0.2
+   Compiling anstyle v1.0.14
+   Compiling zmij v1.0.23
+   Compiling smallvec v1.16.2
+   Compiling getrandom v0.2.17
+   Compiling windows-sys v0.61.2
+   Compiling hashbrown v0.17.1
+   Compiling zeroize v1.9.0
+   Compiling once_cell v1.21.4
+   Compiling heck v0.5.0
+   Compiling once_cell_polyfill v1.70.2
+   Compiling mime_guess v2.0.5
+   Compiling anstyle-parse v1.0.0
+   Compiling regex-syntax v0.8.11
+   Compiling anyhow v1.0.104
+   Compiling rand_core v0.6.4
+   Compiling rustls-pki-types v1.15.1
+   Compiling either v1.18.0
+   Compiling cc v1.5.1
+   Compiling untrusted v0.9.0
+   Compiling colorchoice v1.0.5
+   Compiling aho-corasick v1.1.5
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling crc32fast v1.5.2
+   Compiling serde_json v1.0.151
+   Compiling foldhash v0.2.0
+   Compiling percent-encoding v2.3.2
+   Compiling num-traits v0.2.19
+   Compiling safemem v0.3.3
+   Compiling adler2 v2.0.1
+   Compiling fastrand v2.5.0
+   Compiling wasm-bindgen-shared v0.2.129
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling bytes v1.12.1
+   Compiling bitflags v2.13.2
+   Compiling simd-adler32 v0.3.10
+   Compiling rustls v0.23.45
+   Compiling semver v1.0.28
+   Compiling anstyle-wincon v3.0.11
+   Compiling anstyle-query v1.1.5
+   Compiling mime v0.3.17
+   Compiling fallible-iterator v0.3.0
+   Compiling leb128fmt v0.1.0
+   Compiling form_urlencoded v1.2.2
+   Compiling buf_redux v0.8.4
+   Compiling twoway v0.1.8
+   Compiling miniz_oxide v0.9.1
+   Compiling anstream v1.0.0
+   Compiling wasm-encoder v0.245.1
+   Compiling alloc-stdlib v0.2.4
+   Compiling tempfile v3.27.0
+   Compiling powerfmt v0.2.0
+   Compiling time-core v0.1.9
+   Compiling num-conv v0.2.2
+   Compiling chunked_transfer v1.5.0
+   Compiling httpdate v1.0.3
+   Compiling jiff-core v0.1.1
+   Compiling clap_lex v1.1.1
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling num_cpus v1.17.0
+   Compiling base64 v0.23.1
+   Compiling strsim v0.11.1
+   Compiling leb128 v0.2.7
+   Compiling deranged v0.5.8
+   Compiling subtle v2.6.1
+   Compiling quick-error v1.2.3
+   Compiling regex-automata v0.4.18
+   Compiling ascii v1.1.0
+   Compiling threadpool v1.8.1
+   Compiling http v1.5.0
+   Compiling clap_builder v4.6.7
+   Compiling flate2 v1.1.10
+   Compiling brotli-decompressor v5.0.3
+   Compiling tiny_http v0.12.0
+   Compiling webpki-roots v1.0.9
+   Compiling filetime v0.2.29
+   Compiling base64 v0.22.1
+   Compiling rustc-demangle v0.1.28
+   Compiling ring v0.17.14
+   Compiling chrono v0.4.45
+   Compiling utf8-zero v0.8.1
+   Compiling base64 v0.13.1
+   Compiling sha1_smol v1.0.1
+   Compiling shlex v1.3.0
+   Compiling wasm-bindgen-test-shared v0.2.129
+   Compiling rayon v1.12.0
+   Compiling ureq-proto v0.6.4
+   Compiling jiff v0.2.37
+   Compiling time v0.3.55
+   Compiling indexmap v2.14.2
+   Compiling hashbrown v0.16.1
+   Compiling regex v1.13.1
+   Compiling walrus-macro v0.26.0
+   Compiling gimli v0.32.3
+   Compiling env_filter v2.0.0
+   Compiling id-arena v2.3.0
+   Compiling synstructure v0.14.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_chacha v0.3.1
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.4
+   Compiling zerovec-derive v0.11.6
+   Compiling displaydoc v0.2.7
+   Compiling serde_derive v1.0.229
+   Compiling clap_derive v4.6.7
+   Compiling env_logger v0.11.11
+   Compiling rand v0.8.8
+   Compiling zerofrom v0.1.8
+   Compiling multipart v0.18.0
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling zerotrie v0.2.5
+   Compiling clap v4.6.7
+   Compiling rustls-webpki v0.103.15
+   Compiling tinystr v0.8.4
+   Compiling potential_utf v0.1.6
+   Compiling icu_collections v2.3.0
+   Compiling icu_locale_core v2.3.0
+   Compiling wasmparser v0.245.1
+   Compiling icu_provider v2.3.1
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling idna_adapter v1.2.2
+   Compiling idna v1.1.0
+   Compiling url v2.5.8
+   Compiling rouille v3.6.2
+   Compiling ureq v3.4.2
+   Compiling walrus v0.27.2
+   Compiling wasm-bindgen-cli-support v0.2.129
+   Compiling wasm-bindgen-cli v0.2.129
+    Finished `release` profile [optimized] target(s) in 24.66s
+warning: the following packages contain code that will be rejected by a future version of Rust: buf_redux v0.8.4, multipart v0.18.0
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+  Installing C:\Users\Damien\.cargo\bin\wasm-bindgen-test-runner.exe
+  Installing C:\Users\Damien\.cargo\bin\wasm-bindgen.exe
+  Installing C:\Users\Damien\.cargo\bin\wasm2es6js.exe
+   Installed package `wasm-bindgen-cli v0.2.129` (executables `wasm-bindgen-test-runner.exe`, `wasm-bindgen.exe`, `wasm2es6js.exe`)
+info: using workspace assets.
+info: using custom workspace web assets.
+warning: custom web assets don't contain index.html, using default.
+info: created bundle at file://C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\target\bevy_web\web\aether_game

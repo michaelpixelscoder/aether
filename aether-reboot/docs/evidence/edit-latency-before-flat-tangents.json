@@ -1,0 +1,116 @@
+{
+  "channel": "chrome",
+  "samples_ms": [
+    165.47760000000017,
+    168.33560000000034,
+    158.84959999999955,
+    155.1826999999994,
+    160.84269999999924,
+    155.5641999999989,
+    167.22439999999915,
+    155.78100000000086,
+    154.41829999999936,
+    152.57250000000022,
+    157.82799999999952,
+    158.7373000000007,
+    154.41940000000068,
+    162.6803,
+    154.38440000000082,
+    157.9987999999994,
+    153.15270000000055,
+    154.1877000000004,
+    153.28080000000045,
+    157.29459999999926
+  ],
+  "stages": [
+    {
+      "validated_and_mesh_ready_ms": 117.46360000000095,
+      "readback_and_png_ms": 48.013999999999214
+    },
+    {
+      "validated_and_mesh_ready_ms": 123.20520000000033,
+      "readback_and_png_ms": 45.13040000000001
+    },
+    {
+      "validated_and_mesh_ready_ms": 117.58590000000004,
+      "readback_and_png_ms": 41.26369999999952
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.91139999999905,
+      "readback_and_png_ms": 39.27130000000034
+    },
+    {
+      "validated_and_mesh_ready_ms": 121.00799999999981,
+      "readback_and_png_ms": 39.83469999999943
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.5687999999991,
+      "readback_and_png_ms": 39.99539999999979
+    },
+    {
+      "validated_and_mesh_ready_ms": 125.58929999999964,
+      "readback_and_png_ms": 41.63509999999951
+    },
+    {
+      "validated_and_mesh_ready_ms": 116.1317999999992,
+      "readback_and_png_ms": 39.649200000001656
+    },
+    {
+      "validated_and_mesh_ready_ms": 116.37229999999909,
+      "readback_and_png_ms": 38.04600000000028
+    },
+    {
+      "validated_and_mesh_ready_ms": 114.9994999999999,
+      "readback_and_png_ms": 37.57300000000032
+    },
+    {
+      "validated_and_mesh_ready_ms": 116.90040000000045,
+      "readback_and_png_ms": 40.927599999999074
+    },
+    {
+      "validated_and_mesh_ready_ms": 119.6778000000013,
+      "readback_and_png_ms": 39.05949999999939
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.12089999999989,
+      "readback_and_png_ms": 39.298500000000786
+    },
+    {
+      "validated_and_mesh_ready_ms": 123.75890000000072,
+      "readback_and_png_ms": 38.92139999999927
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.3827999999994,
+      "readback_and_png_ms": 39.00160000000142
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.3849999999984,
+      "readback_and_png_ms": 42.61380000000099
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.32799999999952,
+      "readback_and_png_ms": 37.82470000000103
+    },
+    {
+      "validated_and_mesh_ready_ms": 114.99209999999948,
+      "readback_and_png_ms": 39.19560000000092
+    },
+    {
+      "validated_and_mesh_ready_ms": 113.5515000000014,
+      "readback_and_png_ms": 39.72929999999906
+    },
+    {
+      "validated_and_mesh_ready_ms": 115.49269999999888,
+      "readback_and_png_ms": 41.80190000000039
+    }
+  ],
+  "p50_p95_p99_ms": [
+    157.29459999999926,
+    168.33560000000034,
+    168.33560000000034
+  ],
+  "warmup_edits": 3,
+  "method": "Input dispatch → validated cell + mesh queue complete → 64×64 PNG render readback around edited point. Includes polling, browser IPC, screenshot encoding; upper bound, not photon latency or GPU upload time. Full screenshot is outside timing.",
+  "wasm_sha256": "423ec1afe86cd690fcb1ec56c6e00c025a7dc2d29ec49a6e6281cd6dbe5f505e",
+  "errors": []
+}

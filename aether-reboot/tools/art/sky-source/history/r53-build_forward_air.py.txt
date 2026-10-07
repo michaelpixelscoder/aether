@@ -1,0 +1,82 @@
+"""Single isolated R52 comparison: neutral finite-air HG g=.72 -> .90."""
+import os
+for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):os.environ[k]='4'
+import bpy,copy,hashlib,importlib.util,json,math,sys,time
+from pathlib import Path
+from mathutils import Vector
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+BASE=ROOT/'.dream-loop/sky-r52-corona-candidate'
+OUT=STAGE/'sky-r53-forward-air.blend'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def record(p):
+    p=Path(p).resolve();return {'file':p.relative_to(ROOT).as_posix(),'sha256':sha(p),'bytes':p.stat().st_size}
+def write(p,o):Path(p).write_text(json.dumps(o,indent=2)+'\n',encoding='utf-8')
+def load_module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+def prepare():
+    assert Path(bpy.data.filepath).resolve()==(BASE/'sky-r52-corona.blend').resolve()
+    assert not OUT.exists(),'Preserve candidate evidence'
+    base=json.loads((BASE/'manifest.json').read_text())
+    assert sha(BASE/'sky-r52-corona.blend')==base['source_sha256']
+    fp=load_module('r53_fp',ROOT/'.dream-loop/sky-r50-promotion/tools/art/sky-source/scene_fingerprint.py')
+    before=fp.descriptor(bpy.context.scene)
+    assert fp.digest(before)==base['after_descriptor_sha256']
+    material=bpy.data.materials['R43 | finite aerial scattering']
+    node=material.node_tree.nodes['Volume Scatter.001']
+    assert abs(node.inputs['Anisotropy'].default_value-.72)<1e-6
+    assert abs(node.inputs['Density'].default_value-3e-7)<1e-12
+    node.inputs['Anisotropy'].default_value=.90
+    after=fp.descriptor(bpy.context.scene)
+    expected=copy.deepcopy(before)
+    entry=next(n for n in expected['materials'][material.name]['nodes']['nodes'] if n['name']==node.name)
+    entry['inputs']['2:Anisotropy']=node.inputs['Anisotropy'].default_value
+    assert after==expected,'Only one material input may change'
+    frozen=base['frozen']+[record(BASE/n) for n in ('sky-r52-corona.blend','manifest.json','build_corona.py','corona-hero.png')]
+    # Resolve while the file still has the R52 base, then write portable refs
+    # after the isolated source has been saved into its own folder.
+    for obj in bpy.context.scene.objects:
+        if obj.type=='VOLUME':obj.data.filepath=str(Path(bpy.path.abspath(obj.data.filepath)).resolve())
+    bpy.context.preferences.filepaths.save_version=0
+    bpy.ops.wm.save_as_mainfile(filepath=str(OUT),compress=True,relative_remap=False)
+    for obj in bpy.context.scene.objects:
+        if obj.type=='VOLUME':obj.data.filepath=bpy.path.relpath(obj.data.filepath)
+    bpy.ops.wm.save_as_mainfile(filepath=str(OUT),compress=True,relative_remap=False)
+    assert fp.digest(fp.descriptor(bpy.context.scene))==fp.digest(after)
+    for item in frozen:assert sha(ROOT/item['file'])==item['sha256']
+    m={'status':'isolated single-input experiment prepared','output_needs_render':True,
+       'source':OUT.name,'source_sha256':sha(OUT),'generator_sha256':sha(__file__),
+       'base':record(BASE/'sky-r52-corona.blend'),'frozen':frozen,'source_files':base['source_files'],
+       'change':{'material':material.name,'node':node.name,'input':'2:Anisotropy','before':.7200000286102295,'after':node.inputs['Anisotropy'].default_value},
+       'all_other_descriptor_fields_identical':True,'before_descriptor_sha256':fp.digest(before),'after_descriptor_sha256':fp.digest(after),
+       'external_assets':[],'bitmap_edits':False,'upscaling':False,'exposure_stops':-.90}
+    write(STAGE/'manifest.json',m);write(STAGE/'scene-descriptor-before.json',before);write(STAGE/'scene-descriptor-after.json',after)
+    print('R53_PREPARED',json.dumps(m['change']),flush=True)
+def hero():
+    assert Path(bpy.data.filepath).resolve()==OUT.resolve()
+    assert not (STAGE/'forward-air-hero.png').exists(),'One original hero only'
+    m=json.loads((STAGE/'manifest.json').read_text());assert sha(OUT)==m['source_sha256']
+    scene=bpy.context.scene;prefs=bpy.context.preferences.addons['cycles'].preferences
+    prefs.compute_device_type='OPTIX';prefs.get_devices();assert any(d.type=='OPTIX' for d in prefs.devices)
+    for device in prefs.devices:device.use=device.type=='OPTIX'
+    scene.cycles.device='GPU';scene.cycles.samples=64;scene.cycles.adaptive_min_samples=16
+    scene.cycles.adaptive_threshold=.035;scene.cycles.use_adaptive_sampling=True
+    scene.cycles.use_denoising=True;scene.cycles.denoising_input_passes='RGB';scene.cycles.denoising_use_gpu=False
+    scene.camera.data.type='PERSP';scene.camera.data.sensor_fit='VERTICAL'
+    scene.camera.data.sensor_height=24;scene.camera.data.lens=12/math.tan(math.pi/8)
+    scene.camera.rotation_euler=Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+    scene.render.resolution_x,scene.render.resolution_y=1672,941;scene.render.resolution_percentage=100
+    scene.render.use_border=False;scene.render.image_settings.file_format='PNG';scene.render.image_settings.color_mode='RGB'
+    scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast'
+    scene.view_settings.exposure=-.90;scene.view_settings.gamma=1
+    scene.render.filepath=str(STAGE/'forward-air-hero.png');started=time.perf_counter()
+    bpy.ops.render.render(write_still=True)
+    m['hero']={**record(scene.render.filepath),'dimensions':[1672,941],'samples_max':64,'seconds':time.perf_counter()-started,
+       'source_sha256':sha(OUT),'exposure_stops':-.90,'renderer':'Cycles OPTIX','display_transform':'AgX Medium High Contrast'}
+    m['status']='single original hero rendered; no panorama authorized'
+    for item in m['frozen']:assert sha(ROOT/item['file'])==item['sha256']
+    write(STAGE/'manifest.json',m);print('R53_HERO_RENDERED',json.dumps(m['hero']),flush=True)
+if __name__=='__main__':
+    if '--prepare' in sys.argv:prepare()
+    elif '--hero' in sys.argv:hero()
+    else:raise ValueError('Only --prepare or one --hero is authorized')

@@ -1,0 +1,22 @@
+[
+  {
+    "bytes": 50766327,
+    "name": "aether-isles-web-0.1.0-311ed9bde2d5.zip",
+    "sha256": "6069BCDB2535E0CF4E3D3932C308F6256A54216DD872BD5B52F06E979A5045D7"
+  },
+  {
+    "bytes": 50765598,
+    "name": "aether-isles-web-0.1.0-bee01d98961e.zip",
+    "sha256": "B3E59CFF6D6862073F15326DADE59063A8D0C5A4DA313B16A36B5169FFC6BC14"
+  },
+  {
+    "bytes": 35466629,
+    "name": "aether-isles-windows-0.1.0-311ed9bde2d5.zip",
+    "sha256": "E6F49DF09ADE786E6DCE3255127D657164840204C0C8671BDCF92902B537D2BA"
+  },
+  {
+    "bytes": 35467378,
+    "name": "aether-isles-windows-0.1.0-bee01d98961e.zip",
+    "sha256": "99140ECF8A2FF68BD61D5C026445CF057B739FDAF3A9AE5F412A16B0277F6D81"
+  }
+]

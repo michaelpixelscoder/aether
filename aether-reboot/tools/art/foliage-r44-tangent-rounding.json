@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "baseline_sha256": "697164c2f6ca62083b2be70e79948aecbdc155241f53b3b387a4c6d7770d1f92",
+  "reason": "Blender 5.2.1 CPU calc_tangents is numerically nondeterministic on identical mesh inputs. glTF exporter rounds tangent XYZ to four decimals. Only the measured historical/observed pairs below may vary; every other component must reconstruct the historical SHA exactly.",
+  "rounding_digits": 4,
+  "max_abs": 0.00010002,
+  "max_angle_degrees": 0.006,
+  "source_proofs": [
+    {
+      "file": "foliage-r44-rebuild/rebuild-differences.json",
+      "sha256": "760144b1ecfd343403950bd019a2717dc943a725b3f426db45d7e668bd9d0447"
+    },
+    {
+      "file": "foliage-r44-rebuild/raw-blend-comparison.json",
+      "sha256": "e2b4715d73c02fbb52be32918519c14fc5eb429692da4bd9a7eaa4dc7f4fca0f"
+    },
+    {
+      "file": "foliage-r44-rebuild/repeat-tangents.json",
+      "sha256": "e72e8242846640bfd628eaecd04597aedb0972070f16fd072a343763b48cf11a"
+    }
+  ],
+  "cases": [
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage",
+      "corners": 53292,
+      "historical_sha256": "17d09c607beb9d4806a45d894c4925dcddda58cfc93688ebff48a431728b9491",
+      "observed_sha256": "0d4ee5922581852c5a990001e8e15c2c163cf0cdd9d4c9b55e39d85143a30589",
+      "points": [
+        {
+          "corner": 8486,
+          "component": 0,
+          "historical": 0.9538000226020813,
+          "observed": 0.9537000060081482
+        },
+        {
+          "corner": 8487,
+          "component": 0,
+          "historical": 0.9538000226020813,
+          "observed": 0.9537000060081482
+        },
+        {
+          "corner": 20431,
+          "component": 2,
+          "historical": 0.34209999442100525,
+          "observed": 0.34220001101493835
+        },
+        {
+          "corner": 20435,
+          "component": 2,
+          "historical": 0.34209999442100525,
+          "observed": 0.34220001101493835
+        },
+        {
+          "corner": 21141,
+          "component": 2,
+          "historical": 0.9693999886512756,
+          "observed": 0.9695000052452087
+        },
+        {
+          "corner": 35133,
+          "component": 0,
+          "historical": 0.9538000226020813,
+          "observed": 0.9537000060081482
+        },
+        {
+          "corner": 47078,
+          "component": 2,
+          "historical": 0.34209999442100525,
+          "observed": 0.34220001101493835
+        },
+        {
+          "corner": 47785,
+          "component": 2,
+          "historical": 0.9693999886512756,
+          "observed": 0.9695000052452087
+        },
+        {
+          "corner": 47787,
+          "component": 2,
+          "historical": 0.9693999886512756,
+          "observed": 0.9695000052452087
+        }
+      ],
+      "measurements": {
+        "max_abs": 0.00010001659393310547,
+        "max_angle_degrees": 0.005384775802703353,
+        "max_ulp": 3356,
+        "unique_vertices": 3
+      }
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage.002",
+      "corners": 103536,
+      "historical_sha256": "4cb410a4a609e209ad83b4aef4b90136ac7c073a9ba3fe0de0a31b04f70c7de7",
+      "observed_sha256": "8e07e3b08fa4d9545c4f16405382bcbde6b9af1db99d14a11d8a2b3edbec0425",
+      "points": [
+        {
+          "corner": 43441,
+          "component": 0,
+          "historical": 0.3953999876976013,
+          "observed": 0.3955000042915344
+        },
+        {
+          "corner": 43443,
+          "component": 0,
+          "historical": 0.3953999876976013,
+          "observed": 0.3955000042915344
+        },
+        {
+          "corner": 95210,
+          "component": 0,
+          "historical": 0.3953999876976013,
+          "observed": 0.3955000042915344
+        },
+        {
+          "corner": 95211,
+          "component": 0,
+          "historical": 0.3953999876976013,
+          "observed": 0.3955000042915344
+        }
+      ],
+      "measurements": {
+        "max_abs": 0.00010001659393310547,
+        "max_angle_degrees": 0.005263362128041128,
+        "max_ulp": 3356,
+        "unique_vertices": 1
+      }
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "material": "09 | Sunlit foliage.002",
+      "corners": 34488,
+      "historical_sha256": "b4a1d3d81337a083564afbbbfac3213dddd748200abae3cceac03bf04daa074b",
+      "observed_sha256": "179e5776b6a394cdc84b8b44550cfbdfc2b5ddee720ef28643ec05bed92bab92",
+      "points": [
+        {
+          "corner": 20610,
+          "component": 0,
+          "historical": 0.6593999862670898,
+          "observed": 0.659500002861023
+        },
+        {
+          "corner": 33676,
+          "component": 0,
+          "historical": 0.6593999862670898,
+          "observed": 0.659500002861023
+        },
+        {
+          "corner": 33678,
+          "component": 0,
+          "historical": 0.6593999862670898,
+          "observed": 0.659500002861023
+        }
+      ],
+      "measurements": {
+        "max_abs": 0.00010001659393310547,
+        "max_angle_degrees": 0.004307942800356694,
+        "max_ulp": 1678,
+        "unique_vertices": 1
+      }
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage.004",
+      "corners": 71160,
+      "historical_sha256": "2a3160bd91162da19692d83a565386e2d0d6b7c5aa423699db6e3d966a6dcf11",
+      "observed_sha256": "ff454a801cfe1c0348e633a1b6bd8704edf341d3ed094e429627278b60080305",
+      "points": [
+        {
+          "corner": 26809,
+          "component": 2,
+          "historical": 0.9695000052452087,
+          "observed": 0.9693999886512756
+        },
+        {
+          "corner": 26811,
+          "component": 2,
+          "historical": 0.9695000052452087,
+          "observed": 0.9693999886512756
+        },
+        {
+          "corner": 62390,
+          "component": 2,
+          "historical": 0.9695000052452087,
+          "observed": 0.9693999886512756
+        },
+        {
+          "corner": 62391,
+          "component": 2,
+          "historical": 0.9695000052452087,
+          "observed": 0.9693999886512756
+        }
+      ],
+      "measurements": {
+        "max_abs": 0.00010001659393310547,
+        "max_angle_degrees": 0.0014057498027807023,
+        "max_ulp": 1678,
+        "unique_vertices": 1
+      }
+    }
+  ],
+  "cpu_reproduction": {
+    "blender": "5.2.1 LTS",
+    "runs_per_identical_mesh": 8,
+    "max_raw_abs": 1.7881393432617188E-07,
+    "raw_position_topology_uv_normal_identical": true,
+    "exporter": "io_scene_gltf2/blender/exp/primitive_extract.py:1529",
+    "rounding_constant": "io_scene_gltf2/io/com/constants.py:160, ROUNDING_DIGIT = 4",
+    "rounding_operation": "numpy.round(tangents, ROUNDING_DIGIT)"
+  }
+}

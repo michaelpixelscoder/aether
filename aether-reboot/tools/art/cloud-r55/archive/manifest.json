@@ -1,0 +1,13 @@
+{
+  "status": "CPU checked; awaiting native capture",
+  "baseline_sha256": "ebd34cf654f6b9fa4a37640a7d37b15405cbd317a00a0ec31204b4ab5b823d48",
+  "prototype_sha256": "ffcc09fbaea8702ddcab1938c3ee1e2c3c8c5431a765a1c00002b2f7ef9119b6",
+  "density_and_bindings_byte_identical": true,
+  "fragment_integration_byte_identical": true,
+  "sky_r53_untouched": true,
+  "canonical_mutations": false,
+  "shadow_samples_per_shade": [
+    4,
+    8
+  ]
+}

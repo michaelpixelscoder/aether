@@ -1,0 +1,3 @@
+chromium { device: true, vendor: 'nvidia', architecture: 'blackwell' }
+chrome { device: true, vendor: 'nvidia', architecture: 'blackwell' }
+msedge { device: true, vendor: 'nvidia', architecture: 'blackwell' }

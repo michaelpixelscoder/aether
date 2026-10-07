@@ -1,0 +1,2175 @@
+{
+  "total": 240,
+  "counts": {
+    "Adapté": 9,
+    "Fait": 189,
+    "Préparé": 3,
+    "Non applicable": 4,
+    "Externe": 9,
+    "À faire": 14,
+    "Conditionnel différé": 9,
+    "En cours": 3
+  },
+  "tasks": [
+    {
+      "id": "GOV-01",
+      "title": "Enregistrer commit historique, état Git, documents de référence et périmètre du reboot dans une fiche de démarrage.",
+      "acceptance": "Le point de départ est identifiable et les fichiers locaux existants sont inventoriés.",
+      "dependencies": "—",
+      "initial_estimate_hours": 1,
+      "status": "Adapté",
+      "assessment": "Références copiées ; empreinte SHA256 des sources livrées. Inspection Git exclue par instruction explicite."
+    },
+    {
+      "id": "GOV-02",
+      "title": "Écrire la promesse de la démo : construire au quai, traverser, s'ancrer, réparer et recommencer ; définir ses exclusions.",
+      "acceptance": "Une page décrit début, objectif, échec, reprise et durée visée de 10–15 minutes.",
+      "dependencies": "GOV-01",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "README : chantier, traversée, refuge, échec et secours ; protocole 10–15 min dans PLAYTEST."
+    },
+    {
+      "id": "GOV-03",
+      "title": "Adopter le registre D01–D24 comme défaut proposé et consigner les décisions produit de Damien lorsqu'elles arrivent.",
+      "acceptance": "Chaque réserve utilisateur est reliée à un choix ; aucune hypothèse n'est présentée comme validée.",
+      "dependencies": "GOV-02",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "DECISIONS consigne les choix initiaux et les corrections de fermeture."
+    },
+    {
+      "id": "GOV-04",
+      "title": "Décrire les quatre crates et les imports autorisés ; placer les contrats partagés dans le domaine.",
+      "acceptance": "Graphe sans cycle ; galerie indépendante de `game` ; simulation testable sans fenêtre.",
+      "dependencies": "GOV-03",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "ARCHITECTURE ; quatre crates, galerie sans simulation/game, tests sans GPU."
+    },
+    {
+      "id": "GOV-05",
+      "title": "Préparer `AGENTS.md` avec question de valeur, architecture, limites, commandes et définition de terminé.",
+      "acceptance": "Un contributeur trouve comment valider sa modification ; règles courtes et propres au projet.",
+      "dependencies": "GOV-04",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "AGENTS.md : règles locales, validation, limites et absence de Git."
+    },
+    {
+      "id": "GOV-06",
+      "title": "Vérifier les outils d'agents utilisés ; ajouter si nécessaire `CLAUDE.md` avec import `@AGENTS.md`.",
+      "acceptance": "Les instructions chargées sont vérifiées sur les versions installées ; contenu maintenu une seule fois.",
+      "dependencies": "GOV-05",
+      "initial_estimate_hours": 1,
+      "status": "Adapté",
+      "assessment": "AGENTS chargé par Codex ; CLAUDE.md importe les mêmes règles. Aucun lancement de Claude annoncé."
+    },
+    {
+      "id": "GOV-07",
+      "title": "Créer un modèle de décision d'une page : problème, défaut, déclencheur, essai limité et résultat.",
+      "acceptance": "Une décision exemple contient un seuil et un repli sans comparaison obligatoire.",
+      "dependencies": "GOV-03",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "Modèle de décision, seuils et replis dans DECISIONS."
+    },
+    {
+      "id": "GOV-08",
+      "title": "Inventorier actifs réutilisables, provenance, licences et consommateurs : Knight, textures, fixtures, solveur.",
+      "acceptance": "Chaque actif repris a une source ; dépendances non consommées ne migrent pas par défaut.",
+      "dependencies": "GOV-01",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "ASSETS, licences jointes, seuls actifs consommés repris."
+    },
+    {
+      "id": "GOV-09",
+      "title": "Définir les scénarios canoniques et graines : pont, coque, deux chunks, câble et archipel.",
+      "acceptance": "Même entrée produit les mêmes données de scène indépendamment de l'ordre des HashMap.",
+      "dependencies": "GOV-02",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Fixtures core et terrain partagé ; graine 7391 ; ordre stable BTreeMap."
+    },
+    {
+      "id": "GOV-10",
+      "title": "Fixer format des preuves : commit, cible, matériel, commande, résultat et limites.",
+      "acceptance": "Un exemple de mesure est reproductible et distingue CPU, GPU, tick et frame.",
+      "dependencies": "GOV-09",
+      "initial_estimate_hours": 1,
+      "status": "Adapté",
+      "assessment": "VALIDATION et JSON de mesure ; empreinte de sources remplace le commit demandé."
+    },
+    {
+      "id": "GOV-11",
+      "title": "Mettre les anciennes initiatives en référence historique et définir une seule feuille de route active.",
+      "acceptance": "Les liens entrants indiquent clairement le document actif ; aucune preuve ancienne n'est supprimée.",
+      "dependencies": "GOV-01, GOV-07",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "Références historiques conservées ; TASKS est le suivi actif de cette livraison."
+    },
+    {
+      "id": "GOV-12",
+      "title": "Relire périmètre, décisions, risques et ordre des lots ; ouvrir seulement les prochaines tâches exécutables.",
+      "acceptance": "Promesse et décisions cohérentes, questions restantes explicites, liste courte de travaux prêts.",
+      "dependencies": "GOV-03, GOV-04, GOV-05, GOV-08, GOV-09, GOV-10, GOV-11",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "Décisions confrontées aux tests ; limites et prochains travaux explicités dans VALIDATION."
+    },
+    {
+      "id": "ENV-01",
+      "title": "Relever Windows, CPU/GPU/RAM, pilotes, Rust, Node et outils disponibles ; désigner la machine de référence.",
+      "acceptance": "Fiche matérielle et versions enregistrées, résolution 1080p et navigateur de test choisis.",
+      "dependencies": "GOV-01",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "evidence/environment.json : machine, pilotes, outils et résolution de référence."
+    },
+    {
+      "id": "ENV-02",
+      "title": "Installer/configurer MSVC C++ et SDK Windows manquants ; vérifier le linker dans un shell reproductible.",
+      "acceptance": "Un petit exécutable Rust compile et se lance ; chemin et installation documentés.",
+      "dependencies": "ENV-01",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "MSVC déjà disponible ; compilation et lancement Windows réussis."
+    },
+    {
+      "id": "ENV-03",
+      "title": "Créer la zone de reboot isolée, le workspace et les quatre crates sans déplacer le prototype.",
+      "acceptance": "`cargo metadata` expose les packages attendus ; historique et assets originaux accessibles.",
+      "dependencies": "GOV-04, ENV-02",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Dossier aether-reboot isolé, workspace quatre crates ; prototype conservé."
+    },
+    {
+      "id": "ENV-04",
+      "title": "Épingler Rust compatible, Bevy 0.19 et Avian 0.7 ; générer le lockfile et déclarer les cibles.",
+      "acceptance": "Compilation minimale réussie avec `--locked` ; rustfmt, Clippy et cible WASM disponibles.",
+      "dependencies": "ENV-03",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Rust 1.98, Bevy 0.19, Avian 0.7, Cargo.lock et cible WASM."
+    },
+    {
+      "id": "ENV-05",
+      "title": "Aligner `glam` 0.32, Bevy Math et futures intégrations ; inspecter les versions dupliquées pertinentes.",
+      "acceptance": "Un vecteur du domaine est utilisé sans conversion de version ; arbre Cargo archivé.",
+      "dependencies": "ENV-04",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "glam public 0.32.1 ; arbre des dépendances dans evidence/dependencies.txt."
+    },
+    {
+      "id": "ENV-06",
+      "title": "Définir features natives/web et profils dev, release ; activer seulement les besoins réels.",
+      "acceptance": "Build native sans features web inutiles ; build WASM sans backend natif imposé.",
+      "dependencies": "ENV-04",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Features explicites et profils dev/release/web-release ; builds des deux cibles."
+    },
+    {
+      "id": "ENV-07",
+      "title": "Installer une version verrouillée du CLI web et des outils nécessaires ; écrire les commandes Windows.",
+      "acceptance": "Un utilisateur peut retrouver installation, build, lancement et nettoyage sans Bash GNU.",
+      "dependencies": "ENV-04",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "setup.ps1, CLI verrouillé et SHA256 vérifié ; documentation Windows."
+    },
+    {
+      "id": "ENV-08",
+      "title": "Tenter baseline historique, tests et captures pendant 2 h au maximum ; archiver succès ou échec.",
+      "acceptance": "Log daté et limites connues ; l'échec ne bloque pas APP ni PHY.",
+      "dependencies": "ENV-02, GOV-08",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Sept tests voxel historiques exécutés ; résultat et limites legacy archivés, sans déduire la jouabilité du prototype."
+    },
+    {
+      "id": "ENV-09",
+      "title": "Créer CI PR : fmt, Clippy, tests headless et vérification native Windows avec lockfile.",
+      "acceptance": "Un échec significatif bloque le job ; aucun token de déploiement nécessaire à la validation.",
+      "dependencies": "ENV-06",
+      "initial_estimate_hours": 3,
+      "status": "Préparé",
+      "assessment": "ci/windows-validation.yml prêt ; activation distante exclue de cette livraison locale."
+    },
+    {
+      "id": "ENV-10",
+      "title": "Ajouter build WASM à la CI et archive de logs ; contrôler la correspondance wasm-bindgen/lockfile.",
+      "acceptance": "Le job compile avec outils épinglés et échoue avec diagnostic exploitable si incompatible.",
+      "dependencies": "ENV-07, ENV-09",
+      "initial_estimate_hours": 2,
+      "status": "Préparé",
+      "assessment": "Étape WASM et archivage des logs dans le modèle CI ; exécution locale faite, distante non faite."
+    },
+    {
+      "id": "ENV-11",
+      "title": "Documenter un parcours depuis checkout neuf ; faire une répétition dans un répertoire propre.",
+      "acceptance": "Aucune dépendance cachée au répertoire initial ; commandes réellement exécutées et durée relevée.",
+      "dependencies": "ENV-09, ENV-10",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Copie source propre hors workspace vérifiée avec cache de dépendances partagé ; clean-source.json."
+    },
+    {
+      "id": "ENV-12",
+      "title": "Valider D01, D04 et environnement ; noter outils retenus et installer un suivi des temps de build.",
+      "acceptance": "Nouveau socle compilable ; problèmes legacy séparés ; preuve des deux cibles.",
+      "dependencies": "ENV-05, ENV-06, ENV-07, ENV-09, ENV-10, ENV-11",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "verify.ps1 journalise builds natif/web ; socle et limites legacy séparés."
+    },
+    {
+      "id": "APP-01",
+      "title": "Composer les plugins depuis un point d'entrée court ; créer une scène vide et un outil galerie minimal.",
+      "acceptance": "`view` ne dépend pas de `game` ; mêmes fonctions de rendu accessibles à la galerie.",
+      "dependencies": "ENV-12, GOV-04",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Point de composition app.rs ; galerie autonome avec renderer partagé."
+    },
+    {
+      "id": "APP-02",
+      "title": "Implémenter états Boot, Menu, Loading, Playing, Paused, Error et sortie ; définir les transitions légales.",
+      "acceptance": "Une transition illégale ne lance pas une deuxième session ; test de cycle menu-jeu-menu.",
+      "dependencies": "APP-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Boot/Loading/Error/Menu/Playing/Editing/Paused/Settings ; retours pause et préférences distincts."
+    },
+    {
+      "id": "APP-03",
+      "title": "Donner un propriétaire de session aux entités/ressources temporaires et une procédure de nettoyage.",
+      "acceptance": "Dix lancements/retours ne multiplient pas caméras, lumières ou systèmes de session.",
+      "dependencies": "APP-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "SessionEntity et nettoyage ; vingt reprises avec comptage stable des entités."
+    },
+    {
+      "id": "APP-04",
+      "title": "Initialiser fenêtre, caméra, éclairage sobre et carte de sol ; inclure commandes de debug.",
+      "acceptance": "Une image identique dans les grandes lignes est obtenue en natif et galerie.",
+      "dependencies": "APP-01",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Caméra HDR, éclairage, terrain, F3 ; captures jeu et galerie."
+    },
+    {
+      "id": "APP-05",
+      "title": "Ajouter chargement d'assets observé, erreur visible et tentative de reprise ; finir Loading après disponibilité réelle.",
+      "acceptance": "Asset absent produit un écran récupérable, pas une barre figée ou un canvas vide.",
+      "dependencies": "APP-02, APP-04",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "LoadState réel, timeout, Retry ; asset critique absent puis restauré testé navigateur."
+    },
+    {
+      "id": "APP-06",
+      "title": "Démarrer la scène minimale WebGPU sur Chrome/Edge cible ; tester absence d'adapter GPU.",
+      "acceptance": "Première image et input reçus ; erreur de capacité lisible ; décision D02 enregistrée.",
+      "dependencies": "ENV-07, APP-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Chrome/Edge WebGPU ; GPU absent testé avec message et reprise."
+    },
+    {
+      "id": "APP-07",
+      "title": "Définir collecte d'input, consommation au tick et interpolation du rendu dans des SystemSets ordonnés.",
+      "acceptance": "Un schéma de schedule correspond au code ; aucune double avance de physique.",
+      "dependencies": "APP-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Intention de frame consommée dans PhysicsSchedule à 60 Hz ; interpolation Avian."
+    },
+    {
+      "id": "APP-08",
+      "title": "Ajouter overlay dev : frame/tick, corps, contacts, jobs et état ; journaux structurés désactivables.",
+      "acceptance": "Un capture de diagnostic identifie la scène et les compteurs sans polluer l'UI publique.",
+      "dependencies": "APP-04, APP-07",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "F3/JSON : entités actives distinctes des indices alloués, contacts, triangles, CPU et passes GPU reçues."
+    },
+    {
+      "id": "APP-09",
+      "title": "Créer harnais headless avec temps piloté et captures d'état finies ; enregistrer les graines.",
+      "acceptance": "Tests rapides sans fenêtre ni GPU, nombre exact de ticks pilotable.",
+      "dependencies": "APP-07, GOV-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Harnais MinimalPlugins, temps piloté, nombre de ticks exact et scénarios finis."
+    },
+    {
+      "id": "APP-10",
+      "title": "Définir comportement de pause, perte de focus et reprise d'onglet ; borner le rattrapage des ticks.",
+      "acceptance": "Après absence prolongée, pas de saut catastrophique ni de séquence d'actions répétée.",
+      "dependencies": "APP-07, APP-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Perte réelle du focus canvas, pause et suspension JS de 65 s éprouvées ; rattrapage borné."
+    },
+    {
+      "id": "APP-11",
+      "title": "Ajouter profils de test reproductibles et export de mesures ; isoler échauffement et séquence mesurée.",
+      "acceptance": "Même scénario fournit CSV/JSON de résultats avec métadonnées et unités explicites.",
+      "dependencies": "APP-08, APP-09",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Benchmarks exportés, 5 s d’échauffement, p50/p95/p99 et unités."
+    },
+    {
+      "id": "APP-12",
+      "title": "Faire revue de socle : cycle de session, erreur d'asset, première image web et dépendances des crates.",
+      "acceptance": "J0 documenté ; failures non masquées ; scène prête pour intégration physique.",
+      "dependencies": "APP-03, APP-05, APP-06, APP-09, APP-10, APP-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Socle natif/web vérifié ; erreurs et limites récapitulées dans VALIDATION."
+    },
+    {
+      "id": "PHY-01",
+      "title": "Installer Avian dans le schedule choisi ; déclarer axes, unités m/kg/s, gravité et autorité des poses.",
+      "acceptance": "Corps simple tombe et repose ; un test identifie l'ordre tick-forces-contacts-publication.",
+      "dependencies": "APP-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Avian FixedPostUpdate/PhysicsSchedule, SI et poses autoritaires ; chute/contact testés."
+    },
+    {
+      "id": "PHY-02",
+      "title": "Créer île statique, petite coque dynamique et points d'ancrage locaux à partir de fixtures.",
+      "acceptance": "Deux corps indépendants se déplacent sans mélanger leurs coordonnées ; poses inspectables.",
+      "dependencies": "PHY-01",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Îles statiques, corps distincts, ancres et points locaux partagés avec le domaine."
+    },
+    {
+      "id": "PHY-03",
+      "title": "Produire collider voxel de la fixture et afficher collider/mesh superposés pour diagnostic.",
+      "acceptance": "Alignement centres de cellules et échelle 0,5 m vérifié sur corps tourné.",
+      "dependencies": "PHY-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Voxel collider enfant compensé de −0,25 m ; surface et masse vérifiées."
+    },
+    {
+      "id": "PHY-04",
+      "title": "Tester coque/île, coque/coque, sphère/pont et franchissement d'arêtes internes en debug/release.",
+      "acceptance": "Rapport de contacts : absence de pénétration persistante, de saut injustifié et de panic observés.",
+      "dependencies": "PHY-03, APP-09",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Contacts coque/paroi/coque, pont, arêtes, pentes et escaliers éprouvés en dev et release."
+    },
+    {
+      "id": "PHY-05",
+      "title": "Si PHY-04 échoue, isoler le cas ≤ 4 h puis implémenter repli en boîtes fusionnées.",
+      "acceptance": "Même batterie passée avec le repli, défaut voxel enregistré ; sinon tâche non applicable. Les 8 h estimées incluent diagnostic et intégration du repli.",
+      "dependencies": "PHY-04",
+      "initial_estimate_hours": 8,
+      "status": "Non applicable",
+      "assessment": "Les contacts de référence passent avec le collider voxel ; repli boîtes inutile."
+    },
+    {
+      "id": "PHY-06",
+      "title": "Choisir et verrouiller le chemin collision initial ; enregistrer le coût par type de paire.",
+      "acceptance": "D09 résolu avec preuve et limites de tailles/vitesses ; aucune promesse implicite de toutes formes.",
+      "dependencies": "PHY-04, PHY-05",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "Trois paires isolées, phases broad/narrow, échauffement et percentiles : evidence/pair-benchmark.json."
+    },
+    {
+      "id": "PHY-07",
+      "title": "Calculer masse, centre et inertie des fixtures ; éviter qu'Avian les recalcule différemment sans contrôle.",
+      "acceptance": "Bloc symétrique et masse décentrée correspondent à leurs valeurs analytiques.",
+      "dependencies": "PHY-02",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Masse, centre et inertie explicites ; volumes tournés et théorème des axes parallèles."
+    },
+    {
+      "id": "PHY-08",
+      "title": "Appliquer force et couple à un point local transformé ; exposer commandes d'essai bornées.",
+      "acceptance": "Force centrale translate ; force excentrée tourne ; signe et unités testés.",
+      "dependencies": "PHY-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Forces au point et couples locaux ; voile décentrée, sustentation et commandes bornées."
+    },
+    {
+      "id": "PHY-09",
+      "title": "Tester sommeil/réveil, contact après téléportation de debug et remise au quai.",
+      "acceptance": "Aucune vitesse résiduelle non voulue ; réveil lors d'une commande ou nouvelle force.",
+      "dependencies": "PHY-06, PHY-08",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Sommeil/réveil, téléportation avec reset interpolation et reprise des contacts éprouvés."
+    },
+    {
+      "id": "PHY-10",
+      "title": "Valider vitesse maximale initiale, petite épaisseur, chute et activation de CCD si nécessaire.",
+      "acceptance": "Une scène à vitesse maximale ne traverse pas la paroi ; coût de CCD enregistré.",
+      "dependencies": "PHY-06",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "CCD linéaire : coque à 40 m/s et sphère à 100 m/s arrêtées par une paroi mince."
+    },
+    {
+      "id": "PHY-11",
+      "title": "Jouer mêmes intentions à 30/60/120 FPS et avec frames irrégulières, à ticks physiques constants.",
+      "acceptance": "Écart de poses sous tolérance proposée 1 cm/0,5° dans la fixture ; aucun input doublé/perdu.",
+      "dependencies": "PHY-08, APP-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "300 ticks à 30/60/120 FPS et frames irrégulières ; <1 cm, <0,5°, réserve <0,001."
+    },
+    {
+      "id": "PHY-12",
+      "title": "Enregistrer paramètres physiques initiaux et revue de stabilité ; fermer les alternatives non nécessaires.",
+      "acceptance": "Dix minutes simulées finies et contacts de référence acceptés ; D11 documenté.",
+      "dependencies": "PHY-06, PHY-07, PHY-09, PHY-10, PHY-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Tuning versionné ; essais de 10 et 30 minutes simulées sans NaN."
+    },
+    {
+      "id": "CHR-01",
+      "title": "Intégrer `bevy-tnua` 0.32, adaptateur Avian3d 0.12 et couche commune ; capsule de test.",
+      "acceptance": "Résolution unique cohérente et marche sur sol statique, en natif et compilation WASM.",
+      "dependencies": "PHY-12, ENV-05",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Tnua 0.32 / adaptateur 0.12 ; même PhysicsSchedule, builds natif/WASM."
+    },
+    {
+      "id": "CHR-02",
+      "title": "Éprouver support en translation, rotation et inclinaison avec Tnua pendant ≤ 4 h.",
+      "acceptance": "Immobilité relative au pont : dérive proposée < 5 cm/30 s sur translations 5 m/s et rotations 30°/s.",
+      "dependencies": "CHR-01",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Support à 5 m/s et 30°/s : dérive <5 cm/30 s ; pentes 15/30/39° vérifiées séparément."
+    },
+    {
+      "id": "CHR-03",
+      "title": "Éprouver marche, bord, saut et atterrissage sur le même pont pendant ≤ 4 h.",
+      "acceptance": "Vitesse héritée au saut et retour au pont cohérents ; aucun verrouillage ni lancement artificiel.",
+      "dependencies": "CHR-02",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Marche, saut, atterrissage ; conservation du mouvement du support testée à 5 m/s."
+    },
+    {
+      "id": "CHR-04",
+      "title": "Tester interaction masse personnage/navire, escalier, plafond et variation des FPS dans le budget restant.",
+      "acceptance": "Effort du contrôleur ne retourne pas une coque raisonnable ; limites de pente documentées ou vérification déclarée non validée.",
+      "dependencies": "CHR-03",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Pentes 15/30/39° à 30/60/120 Hz, arêtes internes, escaliers et plafond bas : matrice envelope."
+    },
+    {
+      "id": "CHR-05",
+      "title": "Décider marche embarquée ou repli après plafond ; fixer le périmètre de la démo.",
+      "acceptance": "D10 contient traces et résultat ; un échec ou essai incomplet n'est jamais marqué marche validée.",
+      "dependencies": "CHR-01, CHR-02, CHR-03, CHR-04",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "Marche embarquée retenue, limites d’essais explicites dans D10."
+    },
+    {
+      "id": "CHR-06",
+      "title": "Créer état pilotage : attache locale au poste, neutralisation du contrôleur, commandes de navire.",
+      "acceptance": "Une seule autorité de mouvement ; rotation du navire suivie sans corps dynamique parenté deux fois.",
+      "dependencies": "CHR-05, APP-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Pilotage sans personnage physique actif ; une seule autorité des poses."
+    },
+    {
+      "id": "CHR-07",
+      "title": "Définir entrée/sortie du poste et, si repli, autoriser débarquement seulement au quai immobile.",
+      "acceptance": "Pas de sortie dans le vide ; position et vitesses rétablies explicitement.",
+      "dependencies": "CHR-06",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Recherche d’une cellule avec hauteur libre près du poste ; héritage des vitesses et refus si aucun emplacement."
+    },
+    {
+      "id": "CHR-08",
+      "title": "Ajouter intention par acteur contrôlable, focus UI et raccourcis configurables de base.",
+      "acceptance": "Saisir du texte ne déplace pas le joueur ; clavier maintenu après focus perdu ne reste pas actif.",
+      "dependencies": "CHR-06, APP-07",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Dix-huit commandes ; AZERTY/QWERTY, Maj, refus visible et échange atomique. R75 conserve les entités UI, le focus, les positions et la surbrillance après attribution/conflit. Clic+frappe, Entrée consommée, persistance et pilotage remappé testés. Voir D108–D109 et VALIDATION."
+    },
+    {
+      "id": "CHR-09",
+      "title": "Créer caméra de suivi amortie en secondes, orbit de construction et transition de mode.",
+      "acceptance": "Même délai de suivi à 30/120 FPS ; aucune caméra ne réécrit la pose physique.",
+      "dependencies": "CHR-06, APP-04",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Suivi amorti en secondes, orbit et modes ; caméra ne modifie aucune pose physique."
+    },
+    {
+      "id": "CHR-10",
+      "title": "Réutiliser Knight et animations utiles ; prévoir capsule visible de remplacement en cas d'asset absent.",
+      "acceptance": "Idle/marche/chute changent avec l'état ; modèle manquant reste jouable.",
+      "dependencies": "CHR-08, GOV-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Knight Idle/Walk/Jump ; absence du GLB éprouvée dans les deux navigateurs, représentation de secours et marche utilisables."
+    },
+    {
+      "id": "CHR-11",
+      "title": "Créer récupération joueur hors limites et après perte de support ; dernier quai valide.",
+      "acceptance": "Chute ou déconnexion du pont conduit à une reprise explicite, sans sauver un état impossible.",
+      "dependencies": "CHR-07, APP-10",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Récupération hors limites et R au dernier quai ; construction conservée, fragments abandonnés."
+    },
+    {
+      "id": "CHR-12",
+      "title": "Rejouer scène embarquée ou poste fixe dans les deux builds ; publier limitations connues.",
+      "acceptance": "J1 permet de piloter une coque ; voie retenue validée, état de marche libre affiché dans la preuve, pas supposé.",
+      "dependencies": "CHR-05, CHR-07, CHR-08, CHR-09, CHR-10, CHR-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Scénarios intégrés natif/web incarnent puis sauvegardent/rechargent le personnage."
+    },
+    {
+      "id": "DAT-01",
+      "title": "Définir IDs stables de corps, blocs, matériaux et composants ; séparer IDs du domaine et Entity Bevy.",
+      "acceptance": "Export d'un corps ne contient aucune adresse ni Entity transitoire ; références résolues explicitement.",
+      "dependencies": "GOV-04, ENV-05",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "BodyId et catalogues sérialisables distincts des Entity/Handle."
+    },
+    {
+      "id": "DAT-02",
+      "title": "Définir conventions cellule-centre, axes, rotations autorisées, mètres et conversions monde/local.",
+      "acceptance": "Un aller-retour sur corps translaté/tourné retrouve la même cellule, y compris coordonnées négatives.",
+      "dependencies": "DAT-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Cellules centrées de 0,5 m ; transformations tournées et coordonnées négatives testées."
+    },
+    {
+      "id": "DAT-03",
+      "title": "Créer ChunkCoord et CellCoord avec division euclidienne et indexation 16³.",
+      "acceptance": "Cas -17, -16, -1, 0, 15, 16, 17 correctement répartis ; accès hors bornes refusé.",
+      "dependencies": "DAT-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Division euclidienne 16³ ; cas limites et extrêmes i32 testés."
+    },
+    {
+      "id": "DAT-04",
+      "title": "Implémenter chunks denses alloués à la demande dans une table sparse ; itération stable d'export.",
+      "acceptance": "Chunk vide libérable ; deux ordres d'insertion donnent mêmes données sérialisées.",
+      "dependencies": "DAT-03",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Chunks denses dans BTreeMap sparse ; libération du vide et export stable."
+    },
+    {
+      "id": "DAT-05",
+      "title": "Définir catalogue minimal bois/métal/verre avec masse, visibilité, collision et matériau distincts.",
+      "acceptance": "Un ID inconnu échoue proprement ; rendu et physique ne partagent pas un enum privé d'éditeur.",
+      "dependencies": "DAT-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Bois/métal/verre : masses, occlusion et matériaux explicites."
+    },
+    {
+      "id": "DAT-06",
+      "title": "Définir composants fonctionnels : sustentateur, réservoir, voile, poste et harpon ; empreintes et attaches.",
+      "acceptance": "Placement orienté multi-cellules détecte chevauchement ; attaches identifiées hors renderer.",
+      "dependencies": "DAT-02, DAT-05",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Poste, voile, sustentateur, réservoir, harpon ; empreintes orientées et supports validés."
+    },
+    {
+      "id": "DAT-07",
+      "title": "Introduire BodyDefinition, pose de session et révision ; mettre limites 10 000 cellules/128 par axe.",
+      "acceptance": "Dépassements rejetés avant allocation importante ; définition et état dynamique distincts.",
+      "dependencies": "DAT-04, DAT-06",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Construction privée, révision, plafonds 10k cellules/128 par axe/coordonnées bornées."
+    },
+    {
+      "id": "DAT-08",
+      "title": "Définir commandes Add/Remove/PlaceComponent et résultat transactionnel avec cellules/chunks affectés.",
+      "acceptance": "Commande invalide ne modifie ni données ni révision ; transaction fournit inverse et changements.",
+      "dependencies": "DAT-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "propose partagé aperçu/commit ; transaction refusée sans mutation, chunks affectés retournés."
+    },
+    {
+      "id": "DAT-09",
+      "title": "Adapter les fixtures PHY au domaine ; construire une table BodyId vers entités de simulation.",
+      "acceptance": "Deux corps identiques ont IDs différents et aucune référence croisée accidentelle.",
+      "dependencies": "DAT-07, PHY-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Fixtures du domaine et résolution explicite des IDs lors du chargement."
+    },
+    {
+      "id": "DAT-10",
+      "title": "Extraire calculs masse, centre et tenseur d'inertie des voxels et composants, avec unités.",
+      "acceptance": "Résultats testés sur cube plein, coque creuse et composant décentré ; masse supprimée explicitée.",
+      "dependencies": "DAT-05, DAT-06, PHY-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Masse, centre et inertie analytique des cellules et équipements."
+    },
+    {
+      "id": "DAT-11",
+      "title": "Définir snapshots immuables pour rendu et calculs asynchrones ; révision corps/chunk dans chaque résultat.",
+      "acceptance": "Le consumer peut refuser un résultat ancien sans lire un pointeur mutable du domaine.",
+      "dependencies": "DAT-07, DAT-08",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Arc de snapshot immutable ; révisions avant application des résultats."
+    },
+    {
+      "id": "DAT-12",
+      "title": "Revue des invariants et tests sans Bevy renderer ; figer contrats initiaux et échelle D05.",
+      "acceptance": "Grille, IDs, limites, commandes et masses vérifiés ; aucune extraction de crate supplémentaire requise.",
+      "dependencies": "DAT-03, DAT-04, DAT-05, DAT-06, DAT-08, DAT-09, DAT-10, DAT-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Tests purs du domaine, dont équivalence volume et 9 000 intersections du terrain fusionné."
+    },
+    {
+      "id": "MSH-01",
+      "title": "Définir prédicat de face visible selon matériau source/voisin, avec règles air/opaque/verre.",
+      "acceptance": "Tests des paires et même verre ; aucune disparition d'une paroi opaque vue derrière une vitre.",
+      "dependencies": "DAT-05, DAT-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Prédicat air/opaque/verre testé ; verre ne cache pas l’opaque."
+    },
+    {
+      "id": "MSH-02",
+      "title": "Implémenter greedy simple par masque de tranche, ordre déterministe et partition par matériau.",
+      "acceptance": "Cube, paroi, damier et trou produisent faces attendues, normales et winding corrects.",
+      "dependencies": "MSH-01",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Greedy déterministe par masque, normales et winding testés."
+    },
+    {
+      "id": "MSH-03",
+      "title": "Fournir halo voisin de chaque chunk et invalider les faces voisines après édition sur frontière.",
+      "acceptance": "Deux chunks réellement distincts ne produisent ni trou ni face intérieure à leur jonction.",
+      "dependencies": "MSH-02, DAT-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Voisins des vrais chunks lus ; invalidation des faces aux frontières."
+    },
+    {
+      "id": "MSH-04",
+      "title": "Transporter coordonnées de surface locales continues et orientation des faces indépendantes des UV finaux.",
+      "acceptance": "Déplacer ou tourner un corps ne fait pas glisser la texture ; raccord du halo conservé.",
+      "dependencies": "MSH-02, DAT-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "UV en mètres locaux, invariants à translation/rotation du corps."
+    },
+    {
+      "id": "MSH-05",
+      "title": "Convertir résultats en meshes Bevy avec handles réutilisés ; centraliser matériaux et textures du catalogue.",
+      "acceptance": "Deux éditions ne recréent pas les matériaux stables ; assets chargés depuis racine runtime.",
+      "dependencies": "MSH-04, APP-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Palette partagée, handles et racine runtime ; aucun chemin source obligatoire."
+    },
+    {
+      "id": "MSH-06",
+      "title": "Séparer rendu opaque/verre ; choisir paramètres transparents simples et documenter limites de tri.",
+      "acceptance": "Fixture vitrage/coque lisible depuis dehors et dedans ; pas de régression sur normales/culling.",
+      "dependencies": "MSH-01, MSH-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Mesh/verre séparé, culling désactivé, limites du tri alpha documentées."
+    },
+    {
+      "id": "MSH-07",
+      "title": "Créer matériaux sobres de départ et fallback ; brancher les textures bois existantes par données.",
+      "acceptance": "Jeu et galerie utilisent même définition ; les cartes manquantes gardent un rendu utilisable.",
+      "dependencies": "MSH-05, GOV-08",
+      "initial_estimate_hours": 3,
+      "status": "Adapté",
+      "assessment": "Bois PBR commun et couleurs du catalogue ; cartes essentielles manquantes donnent Error/Retry, pas un fallback silencieux."
+    },
+    {
+      "id": "MSH-08",
+      "title": "Créer file de chunks sales, dédoublonnage, priorité caméra/édition et annulation logique des anciens jobs.",
+      "acceptance": "Rafale de 100 éditions borne la file ; seul le dernier résultat valable est appliqué.",
+      "dependencies": "MSH-03, DAT-11",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Corps édité prioritaire puis distance caméra ; file stable et dédoublonnée."
+    },
+    {
+      "id": "MSH-09",
+      "title": "Exécuter meshing en tâches natives sans partager de mutation ; appliquer les résultats au bon tick/frame.",
+      "acceptance": "Aucun blocage global par édition simple ; résultat périmé rejeté dans un test de réordonnancement.",
+      "dependencies": "MSH-08",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Test du vrai ordonnanceur : résultat récent puis obsolète, révision récente conservée."
+    },
+    {
+      "id": "MSH-10",
+      "title": "Fournir chemin web coopératif avec tranches de travail bornées, sans supposer Rayon multithread.",
+      "acceptance": "L'input reste traité pendant une reconstruction ; mémoire des buffers et files plafonnée.",
+      "dependencies": "MSH-08, APP-06",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "WASM coopératif : 96 masques bornés/chunk et budget 1,5 ms par frame."
+    },
+    {
+      "id": "MSH-11",
+      "title": "Instrumenter temps mesh, application/upload, triangles et latence commande-vers-image.",
+      "acceptance": "Rapport p50/p95 après échauffement ; temps thread principal distinct des jobs et du GPU.",
+      "dependencies": "MSH-09, MSH-10, APP-11",
+      "initial_estimate_hours": 3,
+      "status": "Adapté",
+      "assessment": "CPU maillage/application/file et passes GPU instrumentés ; 20 éditions input→PNG donnent une borne haute, pas un délai écran/photon."
+    },
+    {
+      "id": "MSH-12",
+      "title": "Tester scènes 1k/10k et stress 50k, adopter greedy sauf seuil D07 réellement dépassé.",
+      "acceptance": "Aucun changement de bibliothèque sans trace de profilage ; limites de la démo enregistrées.",
+      "dependencies": "MSH-06, MSH-07, MSH-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Benchmark 1k/10k/50k répartis ; greedy simple conservé, plafond public inchangé."
+    },
+    {
+      "id": "EDT-01",
+      "title": "Calculer viewport interactif depuis layout UI ; exclure pointeurs capturés par panneaux et boutons.",
+      "acceptance": "Placement impossible sous UI ; tailles 1280×720, 1920×1080 et petite fenêtre vérifiées.",
+      "dependencies": "CHR-12, CAB-01, MSH-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Interaction UI bloque la construction ; 720p, 1080p et petite fenêtre testées."
+    },
+    {
+      "id": "EDT-02",
+      "title": "Implémenter DDA local avec intervalle de rayon et filtre AABB des corps ; règles aux frontières.",
+      "acceptance": "Rayon parallèle, origine intérieure, face exacte et corps tourné sélectionnent une cellule cohérente.",
+      "dependencies": "DAT-02, DAT-07, EDT-01",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "DDA local borné par AABB ; parallèles, intérieur, négatifs et corps tournés testés."
+    },
+    {
+      "id": "EDT-03",
+      "title": "Montrer aperçu d'ajout/retrait, face ciblée et raison du refus ; distinguer clic et déplacement caméra.",
+      "acceptance": "Un drag ne construit jamais à la relâche ; orientation et visibilité du ghost correctes.",
+      "dependencies": "EDT-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Aperçu commun aux règles, ajout/retrait/refus, seuil clic/drag et orbit séparés."
+    },
+    {
+      "id": "EDT-04",
+      "title": "Relier outils Add/Remove aux commandes validées ; décrire blocage du dernier élément fonctionnel requis.",
+      "acceptance": "Une action produit une transaction ; refus lisible sans modification partielle.",
+      "dependencies": "EDT-03, DAT-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Ajout/retrait transactionnels ; départ refusé sans fonctions requises."
+    },
+    {
+      "id": "EDT-05",
+      "title": "Ajouter placement/rotation des composants à empreinte ; afficher attaches et conflits.",
+      "acceptance": "Voile et poste ne se superposent pas ; références d'attaches appartiennent au corps visé.",
+      "dependencies": "EDT-04, DAT-06",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Rotation par quart de tour, empreinte complète et conflits visibles."
+    },
+    {
+      "id": "EDT-06",
+      "title": "Implémenter historique borné de transactions et redo ; invalider redo seulement après nouvelle édition.",
+      "acceptance": "100 opérations puis undo/redo restaurent cellules/composants ; limite mémoire et nouvelle partie explicites.",
+      "dependencies": "EDT-04, EDT-05",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Historique 128 transactions/16 Mio ; 100 éditions et annulations vérifiées."
+    },
+    {
+      "id": "EDT-07",
+      "title": "Passer édition/pilotage au quai ; mettre à jour masse/collider/mesh en transaction avant reprise.",
+      "acceptance": "Le corps ne repart pas avec un collider périmé ; l'UI indique construction en préparation.",
+      "dependencies": "EDT-06, PHY-06, DAT-10, MSH-08, CHR-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Atelier au quai ; reconstruction collider/masses/meshes avant départ."
+    },
+    {
+      "id": "EDT-08",
+      "title": "Définir graphe structurel par voisinage de faces et liens de composants ; calculer connexité exacte.",
+      "acceptance": "Pont fin, boucle de contournement et plusieurs îlots donnent les composantes attendues.",
+      "dependencies": "DAT-06, DAT-08",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Connexité exacte par faces ; pont et boucle distante testés."
+    },
+    {
+      "id": "EDT-09",
+      "title": "Préparer scission sur snapshot, nouvelles origines/IDs et transfert des composants/attaches.",
+      "acceptance": "Aucun composant dupliqué ; somme des masses des fragments égale la masse restante.",
+      "dependencies": "EDT-08, DAT-10, DAT-11",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Scission sur blueprint, IDs neufs, composants répartis et masse conservée."
+    },
+    {
+      "id": "EDT-10",
+      "title": "Appliquer scission et vitesses de corps rigide : v fragment = v parent + ω × décalage du centre.",
+      "acceptance": "Poses mondiales inchangées à la séparation ; vitesses cohérentes pour corps tournant.",
+      "dependencies": "EDT-09, PHY-08",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Origine locale conservée ; vitesse du fragment calculée au nouveau centre de masse."
+    },
+    {
+      "id": "EDT-11",
+      "title": "Borner débris actifs et durée de calcul ; définir suppression d'une attache et annulation au quai.",
+      "acceptance": "Coupure n'entraîne ni joint orphelin ni freeze ; toute limite produit un comportement explicite.",
+      "dependencies": "EDT-10, EDT-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "32 corps maximum ; attachages libérés, undo flotte borné au quai."
+    },
+    {
+      "id": "EDT-12",
+      "title": "Rejouer construction complète, reset récupérable, scission et undo au quai sur natif/web.",
+      "acceptance": "Corps reconstruit et contrôlable ; limites D15/D16 et défauts d'UI fermés ou déclarés.",
+      "dependencies": "EDT-01, EDT-06, EDT-07, EDT-11, MSH-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Scission, undo/redo et reprise vérifiés par QA native et navigateur."
+    },
+    {
+      "id": "SAV-01",
+      "title": "Définir blueprint v1 : unités, catalogue, cellules, composants, orientations et attaches ; ordre stable.",
+      "acceptance": "Un exemple asymétrique documente origine et rotation ; format sans Entity ni Handle runtime.",
+      "dependencies": "DAT-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Blueprint v1 et fixture asymétrique avec rotation dans examples-data."
+    },
+    {
+      "id": "SAV-02",
+      "title": "Définir session v1 : poses/vitesses, acteur/mode, progression, réservoir et connexions ; enveloppe versionnée.",
+      "acceptance": "Différence blueprint/session explicite ; champs extensibles, pas de cache de solveur sérialisé.",
+      "dependencies": "SAV-01, CHR-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Session v1 : poses, consignes, réserves, acteur, progression et câble."
+    },
+    {
+      "id": "SAV-03",
+      "title": "Implémenter encode/decode avec plafonds de taille, cellules, corps et valeurs finies.",
+      "acceptance": "16 Mio de fichier max initial, dimensions et références invalides rejetées avant publication.",
+      "dependencies": "SAV-01, SAV-02",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "16 Mio maximum, 32 corps, 10k cellules par corps ; validation des valeurs/IDs."
+    },
+    {
+      "id": "SAV-04",
+      "title": "Construire validation sémantique transactionnelle et staging de chargement.",
+      "acceptance": "Un fichier corrompu ne remplace jamais la session active ni la sauvegarde précédente.",
+      "dependencies": "SAV-03, APP-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Decode et validation avant remplacement ; import corrompu ne modifie pas la session."
+    },
+    {
+      "id": "SAV-05",
+      "title": "Écrire adaptateur disque : temporaire, flush selon garantie choisie, remplacement Windows et copie de secours.",
+      "acceptance": "Coupure simulée à chaque étape laisse ancienne ou nouvelle version chargeable ; garantie documentée.",
+      "dependencies": "SAV-04",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Douze interruptions injectées aux frontières backup/principale ; au moins une sauvegarde valide conservée."
+    },
+    {
+      "id": "SAV-06",
+      "title": "Créer adapter IndexedDB avec quota/permission/indisponibilité gérés ; stockage après confirmation de transaction.",
+      "acceptance": "Succès UI affiché seulement après commit ; refus conserve session et propose export.",
+      "dependencies": "SAV-04, APP-06",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "IndexedDB strict ; succès après oncomplete ; quota et abort testés."
+    },
+    {
+      "id": "SAV-07",
+      "title": "Implémenter export/import manuel JSON natif et web ; noms sûrs et messages de résultat.",
+      "acceptance": "Fichier téléchargé réimporte mêmes données ; annuler sélection ne modifie rien.",
+      "dependencies": "SAV-04, SAV-05, SAV-06",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Import/export JSON natif et web ; téléchargement et aller-retour navigateur vérifiés."
+    },
+    {
+      "id": "SAV-08",
+      "title": "Définir autosave temporisé aux frontières sûres, sérialisation snapshot et limite des écritures simultanées.",
+      "acceptance": "Rafale d'éditions produit des saves bornées ; l'ancienne session ne remplace pas une nouvelle.",
+      "dependencies": "SAV-05, SAV-06, EDT-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Autosave aux frontières sûres, mailbox unique ; mutations concurrentes d’identité bloquées."
+    },
+    {
+      "id": "SAV-09",
+      "title": "Écrire tests round-trip de corps déplacé/tourné, composants et valeurs de session ; prévoir migration testée.",
+      "acceptance": "Version inconnue et champ manquant ont une issue définie ; origine ne se recentre pas implicitement.",
+      "dependencies": "SAV-03, SAV-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Round-trip tourné/déplacé, valeurs, version inconnue et premières v1 testés."
+    },
+    {
+      "id": "SAV-10",
+      "title": "Restaurer session en phases : données, corps, composants, attaches, acteur, puis reprise des ticks.",
+      "acceptance": "Aucun joint vers corps absent ; le premier tick ne consomme pas une ancienne intention.",
+      "dependencies": "SAV-04, DAT-09, CHR-07, APP-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Restauration corps→attaches→acteur ; intentions remises à zéro."
+    },
+    {
+      "id": "SAV-11",
+      "title": "Tester sauvegarde en cours de fermeture, quota saturé, fichier tronqué et recovery depuis backup.",
+      "acceptance": "La dernière sauvegarde valide reste accessible ; message distingue non enregistré et enregistré.",
+      "dependencies": "SAV-08, SAV-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Backup disque/web, JSON tronqué, quota, transaction abortée et fermeture native exercés."
+    },
+    {
+      "id": "SAV-12",
+      "title": "Valider D17/D18 sur package déplacé et navigateur rechargé ; livrer exemples versionnés.",
+      "acceptance": "Session à la limite de contenu autorisée sauvegardable/rechargeable ; ajuster plafond de fichier si nécessaire ; aucun chemin de compilation requis.",
+      "dependencies": "SAV-07, SAV-09, SAV-11, EDT-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Flotte maximale encode/decode ; package déplacé et navigateur rechargé ; exemples versionnés."
+    },
+    {
+      "id": "FLT-01",
+      "title": "Définir enveloppe de vol : masse, vitesses, altitude locale, rotation et limites de forces.",
+      "acceptance": "Paramètres nommés avec unités et valeurs dans configuration versionnée, pas dispersés en constantes.",
+      "dependencies": "PHY-12, DAT-10",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "tuning.rs : coefficients SI, plafonds de forces/rotation/altitude versionnés."
+    },
+    {
+      "id": "FLT-02",
+      "title": "Créer champ de vent constant puis variation douce déterministe par graine et temps physique.",
+      "acceptance": "À position/tick égaux, même vent ; intensité n'est pas liée au framerate de rendu.",
+      "dependencies": "FLT-01, APP-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Vent seedé, temps SimClock à 60 Hz ; variation continue."
+    },
+    {
+      "id": "FLT-03",
+      "title": "Échantillonner vent relatif à la vitesse du point d'application, incluant rotation du navire.",
+      "acceptance": "Une voile excentrée sur un corps tournant reçoit un vent relatif différent et explicable.",
+      "dependencies": "FLT-02, PHY-08, DAT-06",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Vitesse linéaire + ω×r au point de voile dans le vent relatif."
+    },
+    {
+      "id": "FLT-04",
+      "title": "Appliquer poussée simplifiée selon aire/orientation, avec coefficients bornés et force au bon point.",
+      "acceptance": "Voile de profil et face au vent se distinguent ; aucune division nulle ni force infinie.",
+      "dependencies": "FLT-03",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Poussée selon normale/aire ; plafond et test face/profil."
+    },
+    {
+      "id": "FLT-05",
+      "title": "Implémenter réglage de voile et commande de direction avec autorité limitée et coût physique explicite.",
+      "acceptance": "Le joueur oriente sa trajectoire sans téléporter le navire ; braquage maximum contrôlé.",
+      "dependencies": "FLT-04, CHR-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Réglage de voile et couple de direction limités ; aucune téléportation de pilotage."
+    },
+    {
+      "id": "FLT-06",
+      "title": "Ajouter traînée linéaire/angulaire temporellement cohérente et limites de confort.",
+      "acceptance": "À force coupée, ralentissement reproductible ; pas de damping différent à 30/120 FPS.",
+      "dependencies": "FLT-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Traînée et frein au tick ; invariance FPS testée."
+    },
+    {
+      "id": "FLT-07",
+      "title": "Fournir interface de sustentation au composant Aether : force verticale demandée et point d'application.",
+      "acceptance": "Mode fixture peut maintenir une coque ; la voile n'est pas responsable du vol stationnaire.",
+      "dependencies": "FLT-01, DAT-06, PHY-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Demande verticale PD appliquée au centre des sustentateurs ; indépendante de la voile."
+    },
+    {
+      "id": "FLT-08",
+      "title": "Ajouter indicateurs de vent, vitesse, altitude et direction réellement utiles au pilotage.",
+      "acceptance": "Trois orientations de voile produisent un retour perceptible sans ouvrir le debug.",
+      "dependencies": "FLT-05, CHR-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "HUD vent/vitesse/altitude/trim, cap et distance du quai ; particules de direction."
+    },
+    {
+      "id": "FLT-09",
+      "title": "Construire trajet simple de deux quais et contrôler départ/arrivée, freinage et accostage.",
+      "acceptance": "Départ sans collision, île cible visible, arrivée reconnue par un critère spatial stable.",
+      "dependencies": "FLT-06, FLT-07, APP-02",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Traversée aux intentions physiques et aux touches navigateur ; seuil <9 m et <3,5 m/s."
+    },
+    {
+      "id": "FLT-10",
+      "title": "Comparer deux constructions prescrites : masse ajoutée et voile déplacée ; enregistrer effets.",
+      "acceptance": "Variation de comportement attendue observée et expliquée dans une fiche, pas simple changement visuel.",
+      "dependencies": "FLT-09, EDT-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Masse/consommation et voile décalée ±0,5 m mesurées ; COMPARAISONS.md."
+    },
+    {
+      "id": "FLT-11",
+      "title": "Régler confort : mouvements caméra, accélération initiale et commandes ; essai interne court.",
+      "acceptance": "Traversée terminable en quelques minutes ; aucune action cachée indispensable.",
+      "dependencies": "FLT-08, FLT-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Traversées aux intentions et touches, caméra amortie/réduction du mouvement ; appréciation humaine réservée à PLY."
+    },
+    {
+      "id": "FLT-12",
+      "title": "Valider première traversée technique avec sustentation de fixture puis préparer branchement Aether réel.",
+      "acceptance": "Navigation fonctionne ; ce résultat ne compte pas comme traversée finale tant qu'AET-12 échoue.",
+      "dependencies": "FLT-09, FLT-10, FLT-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Traversée finale directement éprouvée avec sustentation Aether réelle."
+    },
+    {
+      "id": "AET-01",
+      "title": "Définir quantité/capacité d'Aether en unités de jeu, débit de consommation et états du sustentateur.",
+      "acceptance": "Unités distinctes de masse et force ; quantité bornée entre zéro et capacité.",
+      "dependencies": "DAT-06, FLT-07",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Unités de jeu distinctes ; capacité et quantité bornées."
+    },
+    {
+      "id": "AET-02",
+      "title": "Relier réservoir unique du navire aux consommateurs par référence validée, sans réseau spatial.",
+      "acceptance": "Référence absente désactive proprement la sustentation avec cause affichable.",
+      "dependencies": "AET-01, DAT-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Réserve par corps issue des réservoirs ; zéro capacité désactive le vol."
+    },
+    {
+      "id": "AET-03",
+      "title": "Calculer demande de sustentation, capacité maximale et force disponible selon masse et commande.",
+      "acceptance": "Une coque trop lourde ne flotte pas artificiellement ; le déficit est mesurable.",
+      "dependencies": "AET-02, DAT-10, FLT-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Demande limitée à 22 kN/sustentateur ; coque lourde testée sans flottement artificiel."
+    },
+    {
+      "id": "AET-04",
+      "title": "Débiter la consommation au tick selon commande choisie ; arrêter force à épuisement sans quantité négative.",
+      "acceptance": "Même durée simulée consomme la même quantité à différents FPS ; pause ne consomme pas.",
+      "dependencies": "AET-03, APP-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Débit au tick et force réduite à l’épuisement ; invariant FPS/pause."
+    },
+    {
+      "id": "AET-05",
+      "title": "Ajouter recharge au quai avec déclenchement clair, débit borné et arrêt à capacité.",
+      "acceptance": "Départ/retour rejouables ; rester au quai n'engendre ni dépassement ni double recharge.",
+      "dependencies": "AET-04, FLT-09",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Recharge bornée de 25 unités/s au quai ; test de non-déplacement et recharge."
+    },
+    {
+      "id": "AET-06",
+      "title": "Donner aux composants une représentation violette et un indicateur de quantité réel.",
+      "acceptance": "Le joueur relie couleur/intensité et niveau ; texte/icône accompagne la couleur.",
+      "dependencies": "AET-04, FLT-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Équipements violets et barre de réserve avec texte chiffré."
+    },
+    {
+      "id": "AET-07",
+      "title": "Signaler réserve basse, déficit de sustentation et panne ; ajouter action de secours cohérente.",
+      "acceptance": "Un novice dispose d'un avertissement avant chute ; le secours a une règle distincte documentée.",
+      "dependencies": "AET-06, CHR-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Avertissements réserve/déficit, son et R de secours documenté."
+    },
+    {
+      "id": "AET-08",
+      "title": "Persister quantité, état et recharge dans session ; blueprint stocke capacité/configuration sans dupliquer du carburant.",
+      "acceptance": "Charger, importer ou undo une coque ne crée pas d'Aether ; règles de remplissage explicites.",
+      "dependencies": "AET-05, SAV-10",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Session contient réserve ; blueprint/undo/import ne créent pas de carburant."
+    },
+    {
+      "id": "AET-09",
+      "title": "Définir réservoir supprimé/scindé et répartition du contenu ; borner inventaire perdu/récupéré.",
+      "acceptance": "Somme de quantité conservée sauf perte intentionnelle documentée ; aucun contenu dupliqué.",
+      "dependencies": "AET-08, EDT-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Retrait plafonne la réserve ; scission répartit proportionnellement aux capacités."
+    },
+    {
+      "id": "AET-10",
+      "title": "Tester panne en vol et retour à un quai/checkpoint ; prévenir une reprise irrémédiablement bloquée.",
+      "acceptance": "Après réserve nulle, une action claire permet de recommencer sans perdre toute la construction.",
+      "dependencies": "AET-07, AET-08, SAV-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Panne coupe sustentation ; secours recrée la construction au dernier quai."
+    },
+    {
+      "id": "AET-11",
+      "title": "Régler capacité initiale et coût du parcours ; comparer coque légère et chargée.",
+      "acceptance": "La ressource influe sur un choix sans interrompre constamment le pilotage ; mesures enregistrées.",
+      "dependencies": "AET-09, AET-10, FLT-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Réserve et panne mesurées sur navire chargé ; recharge et récupération testées. Frustration perçue à observer avec PLY."
+    },
+    {
+      "id": "AET-12",
+      "title": "Effectuer traversée avec Aether réel, save/reload et panne volontaire ; fermer J3.",
+      "acceptance": "Construction, voile, consommation et récupération forment une boucle complète jouable.",
+      "dependencies": "AET-06, AET-08, AET-10, AET-11, FLT-12",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Traversée physique réelle, reprise/câble/personnage et secours dans les scénarios intégrés."
+    },
+    {
+      "id": "CAB-01",
+      "title": "Dès J1, vérifier API/features DistanceJoint sur coque de fixture ; créer ancre fixe et longueur maximale.",
+      "acceptance": "À distance inférieure à L, pas de compression imposée ; limite supérieure active ; scène finie dix minutes.",
+      "dependencies": "PHY-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "DistanceJoint min=0/max=L ; absence de compression et dix minutes bornées."
+    },
+    {
+      "id": "CAB-02",
+      "title": "Représenter ancrage fixe et harpon par IDs et points locaux, avec cycle attaché/détaché.",
+      "acceptance": "Une rotation de coque transporte le bon point ; références jamais liées au renderer.",
+      "dependencies": "CAB-01, DAT-01, DAT-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Harpon local et index d’ancre persistés ; IDs validés."
+    },
+    {
+      "id": "CAB-03",
+      "title": "Créer ciblage à portée et ligne de vue ; feedback valide/invalide ; limite initiale un câble actif.",
+      "acceptance": "Cible derrière île ou hors portée refusée ; bouton ne crée pas plusieurs joints.",
+      "dependencies": "CAB-02, CHR-08, EDT-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Portée 70 m, visibilité exacte contre terrain, un seul câble."
+    },
+    {
+      "id": "CAB-04",
+      "title": "Attacher au tick sans imposer instantanément une longueur incompatible ; borner paramètres autorisés.",
+      "acceptance": "Accrochage ne téléporte pas la coque ; mauvaise configuration échoue explicitement.",
+      "dependencies": "CAB-03, APP-07",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Longueur initiale égale à la distance ; attache sans repositionner le corps."
+    },
+    {
+      "id": "CAB-05",
+      "title": "Libérer ou couper le câble en conservant l'état physique courant ; effacer le joint une seule fois.",
+      "acceptance": "Trajectoire continue à la libération, sans ancienne vitesse du runner ni impulsion ajoutée.",
+      "dependencies": "CAB-04, PHY-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Suppression du joint seule ; test de continuité des vitesses au lâcher."
+    },
+    {
+      "id": "CAB-06",
+      "title": "Lire l'effort disponible dans le solveur ou définir un indicateur approché clairement nommé.",
+      "acceptance": "HUD ne présente pas une force inventée en Newtons ; tension estimée identifiée si nécessaire.",
+      "dependencies": "CAB-04",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Indicateur géométrique souple/tendu ; aucune force prétendue en newtons."
+    },
+    {
+      "id": "CAB-07",
+      "title": "Rendre câble lâche/tendu entre points interpolés, avec couleur et son de tension.",
+      "acceptance": "Extrémités suivent coque/ancre sans tremblement majeur ; aucun coût physique dépend du nombre de segments visuels.",
+      "dependencies": "CAB-05, CAB-06, CHR-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Courbe visuelle souple/tendue, couleur et signal audio de transition."
+    },
+    {
+      "id": "CAB-08",
+      "title": "Définir câble traversant un obstacle : bloquer attache initiale, avertir ou rompre selon règle du prototype.",
+      "acceptance": "Comportement reproductible ; aucun enroulement promis si absent.",
+      "dependencies": "CAB-03, CAB-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Attache initiale occultée refusée ; obstacle ultérieur libère le câble ; aucun wrapping."
+    },
+    {
+      "id": "CAB-09",
+      "title": "Gérer destruction/scission de la cellule d'attache et suppression du corps ; transférer ou libérer.",
+      "acceptance": "Pas de joint orphelin ; corps fragment receveur correct quand transfert prévu.",
+      "dependencies": "CAB-02, EDT-11",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Suppression/scission libère les attaches ; nettoyage avec la session."
+    },
+    {
+      "id": "CAB-10",
+      "title": "Sauver et restaurer câble après reconstruction des corps ; ID stable et longueur validée.",
+      "acceptance": "Reload en tension ne joint pas deux mauvais corps ; valeur hors limite rejetée.",
+      "dependencies": "CAB-09, SAV-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Chargement après corps, validation du harpon et de la longueur ; QA save/load attaché."
+    },
+    {
+      "id": "CAB-11",
+      "title": "Éprouver masse maximale, vitesse maximale, pause/reprise et 30/60/120 FPS ; enregistrer erreur de longueur.",
+      "acceptance": "Erreur p95 visée < 2 % hors accrochage ; pas d'énergie explosive ni NaN sur dix minutes.",
+      "dependencies": "CAB-05, CAB-08, CAB-10, PHY-11",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "54 combinaisons masse 1k/10k/900k, vitesse 0/25/80, longueur 3/80, FPS 30/60/120 ; pause et reprise incluses."
+    },
+    {
+      "id": "CAB-12",
+      "title": "Régler une manœuvre de balancier autour d'ancre ; appliquer repli borné si échec.",
+      "acceptance": "Le joueur change de direction par attache/libération ; D12 et limites connues enregistrées.",
+      "dependencies": "CAB-07, CAB-11, AET-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Balancier vers refuge avec accroche/lâcher réels, sans téléportation, scénario headless."
+    },
+    {
+      "id": "CUR-01",
+      "title": "Définir trajet 3D du courant avec segments/tube, rayon, direction, intensité et zones de transition.",
+      "acceptance": "Paramètres en mètres et secondes ; géométrie affichable pour debug et jeu.",
+      "dependencies": "FLT-02, GOV-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Tubes de segments 3D avec rayon, vitesse et mélange bornés."
+    },
+    {
+      "id": "CUR-02",
+      "title": "Implémenter échantillonnage continu de vitesse cible et poids d'influence près des joints de segments.",
+      "acceptance": "Frontière et jonction ne changent pas brutalement la direction ; points hors courant poids nul.",
+      "dependencies": "CUR-01",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Champ continu et nul hors volume ; test de frontière."
+    },
+    {
+      "id": "CUR-03",
+      "title": "Convertir champ en force de relaxation bornée sur la vitesse relative, avec constante de temps explicite.",
+      "acceptance": "Entrée/extraction progressives ; le courant ne téléporte pas les corps ni ne réécrit leur pose.",
+      "dependencies": "CUR-02, PHY-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Relaxation 2 s, accélération maximale 8 m/s² ; forces uniquement."
+    },
+    {
+      "id": "CUR-04",
+      "title": "Définir quelles entités reçoivent le courant et éviter double application au personnage attaché.",
+      "acceptance": "Vaisseau/débris libres reçoivent force une fois ; ancre fixe reste fixe.",
+      "dependencies": "CUR-03, CHR-06",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Forces sur Vessel dynamique seulement ; personnage et ancres exclus."
+    },
+    {
+      "id": "CUR-05",
+      "title": "Composer un embranchement avec choix de trajectoire et destination de récupération pour branche ratée.",
+      "acceptance": "Les deux issues sont atteignables par la physique, sans déclencheur téléportant arbitrairement.",
+      "dependencies": "CUR-03, FLT-09",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Jardins et refuge atteints avec physique/obstacles de production."
+    },
+    {
+      "id": "CUR-06",
+      "title": "Placer ancre et obstacles lisibles autour de l'embranchement ; régler portée et fenêtre d'action.",
+      "acceptance": "CAB permet une sortie alternative, avec temps de réaction vérifié en essai interne.",
+      "dependencies": "CUR-05, CAB-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Approche sans téléportation, portée et visibilité réelles ; retard 0/0,5/1,5 s avant accroche, refuge atteint et réserve positive."
+    },
+    {
+      "id": "CUR-07",
+      "title": "Dessiner ruban violet, particules de direction et variation de densité au cœur du courant.",
+      "acceptance": "Direction compréhensible depuis cockpit ; éléments visuels ne modifient pas le champ physique.",
+      "dependencies": "CUR-02, APP-04",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Courant lumineux orienté selon le champ, texte et indicateurs ; couleur seule jamais nécessaire."
+    },
+    {
+      "id": "CUR-08",
+      "title": "Assembler deux îles, quais et repères de navigation ; préserver lignes de vue du trajet et du but.",
+      "acceptance": "Joueur voit où aller et où s'ancrer sans carte volumétrique complexe.",
+      "dependencies": "CUR-06, CUR-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Trois îles, quais, ruines et observatoire ; géométrie et visibilité du domaine partagées avec Blender."
+    },
+    {
+      "id": "CUR-09",
+      "title": "Définir progression départ, première traversée, manœuvre, arrivée ; événements persistants.",
+      "acceptance": "Objectif ne se déclenche pas deux fois au reload ; reprise conserve étape logique.",
+      "dependencies": "CUR-08, SAV-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Étapes de progression persistées, arrivée reconnue au quai."
+    },
+    {
+      "id": "CUR-10",
+      "title": "Ajouter checkpoint sûr et réparation/ravitaillement entre essais ; garder coût d'échec court.",
+      "acceptance": "Branche ratée ne force pas à reconstruire intégralement ; boucle recommençable.",
+      "dependencies": "CUR-09, AET-10",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Checkpoint et récupération de la coque principale avec recharge."
+    },
+    {
+      "id": "CUR-11",
+      "title": "Tester combinaisons courant/voile/câble, réserve faible et navire chargé dans le même scénario.",
+      "acceptance": "Toutes forces bornées ; trajectoires possibles documentées, aucun cas impossible par défaut.",
+      "dependencies": "CUR-10, FLT-10, CAB-11",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Navire chargé combinant voile, courant, câble, faible réserve puis panne ; fixture intégrée réussie."
+    },
+    {
+      "id": "CUR-12",
+      "title": "Jouer scénario complet sans commandes de debug et préparer capture de référence J4.",
+      "acceptance": "Les décisions de construction et pilotage expliquent réussite/échec ; début et fin accessibles.",
+      "dependencies": "CUR-07, CUR-09, CUR-10, CUR-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Traversée navigateur aux touches réelles, sonde uniquement en lecture ; capture d’arrivée."
+    },
+    {
+      "id": "UX-01",
+      "title": "Définir thème partagé, hiérarchie des actions et vocabulaire français/clé de texte centralisé.",
+      "acceptance": "Construire, piloter, s'ancrer et recharger utilisent les mêmes noms partout.",
+      "dependencies": "GOV-02, APP-02",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Thème partagé, interface française et terminologie cohérente ; pas de système i18n général."
+    },
+    {
+      "id": "UX-02",
+      "title": "Rendre panneaux adaptatifs au viewport et à l'échelle UI ; min-size et état compact explicites.",
+      "acceptance": "Aucun panneau hors écran aux tailles cibles ; zone 3D calculée reste alignée.",
+      "dependencies": "EDT-01, UX-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Échelle UI selon fenêtre ; boutons dans le viewport à 960×640."
+    },
+    {
+      "id": "UX-03",
+      "title": "Afficher raccourcis contextuels, verrouillage quai/pilotage et explications de refus de commande.",
+      "acceptance": "Une action indisponible n'a pas l'air de fonctionner ; aucune commande Capture vide.",
+      "dependencies": "EDT-07, CHR-07, UX-02",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Raccourcis contextuels et refus dans le footer. R75 : voyage rapide par pause/atlas, toutes les îles et lieux remarquables répartis en quatre catégories paginées ; collision d'arrivée vérifiée avant mutation, retour au pilotage sans réinitialiser les ressources. Voir D110 et VALIDATION."
+    },
+    {
+      "id": "UX-04",
+      "title": "Créer tutoriel par actions réelles : bloc, voile, énergie, départ, câble ; étapes rejouables.",
+      "acceptance": "Progression ne dépend pas d'une durée fixe et fonctionne après save/reload.",
+      "dependencies": "CUR-09, UX-03",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Huit étapes observées dans les actions réelles, persistées et rejouables ; navigateur vérifie les huit bits."
+    },
+    {
+      "id": "UX-05",
+      "title": "Ajouter HUD compact de réserve, sustentation, vitesse, objectif et état de câble.",
+      "acceptance": "Les causes de panne sont distinctes ; information principale lisible sans overlay dev.",
+      "dependencies": "AET-07, CAB-06, CUR-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "HUD réserve, déficit, navigation, objectif et état du câble."
+    },
+    {
+      "id": "UX-06",
+      "title": "Ajouter réglages volume, sensibilité, inversion et caméra ; persister préférences séparées de la session.",
+      "acceptance": "Nouvelle partie ne perd pas les préférences ; valeurs extrêmes validées.",
+      "dependencies": "CHR-09, SAV-05, UX-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Volume, sensibilité, inversion, réduction du mouvement ; préférences séparées et validées."
+    },
+    {
+      "id": "UX-07",
+      "title": "Préparer feedback audio utile : pose/refus, tension, réserve et arrivée, avec provenance des sons.",
+      "acceptance": "Sons désactivables ; aucun signal essentiel exclusivement audio ; mix non saturé.",
+      "dependencies": "UX-05, GOV-08",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Quatre sons originaux reproductibles, provenance et volume ; messages doublent les alertes."
+    },
+    {
+      "id": "UX-08",
+      "title": "Vérifier contrastes, texte, sens du vent et états indépendants de la couleur ; réduire mouvements caméra.",
+      "acceptance": "Les états restent reconnaissables en niveaux de gris et avec effets caméra réduits.",
+      "dependencies": "UX-05, UX-06, CUR-07",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Contraste sRGB ≥4,5:1, focus et états compris ; informations doublées par texte, caméra réduite."
+    },
+    {
+      "id": "UX-09",
+      "title": "Centraliser PBR du bois, sampler et modes debug ; supprimer paths de compilation et doublons runtime.",
+      "acceptance": "Package utilise mêmes textures que galerie ; end-grain éclairé ou exception artistique documentée.",
+      "dependencies": "MSH-07, GOV-08",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Cèdre albedo/normal, toile indigo, UV métriques, mipmaps en lumière linéaire, anisotropie et éclairage d’environnement."
+    },
+    {
+      "id": "UX-10",
+      "title": "Créer galerie canonique : corps tourné, verre, vrais chunks, coque et composants, plusieurs lumières utiles.",
+      "acceptance": "Caméras/graines/résolution fixes ; assets attendus et timeout ; erreurs donnent sortie non nulle.",
+      "dependencies": "UX-09, MSH-06, APP-11",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Galerie partagée avec coque, composants, vitrage tourné et chunks négatifs ; capture/timeout/code de sortie."
+    },
+    {
+      "id": "UX-11",
+      "title": "Capturer et relire les fixtures ainsi qu'une scène de jeu à vitesse normale.",
+      "acceptance": "Défauts de couture, lisibilité et UI notés avec images ; renderer identique à celui du jeu.",
+      "dependencies": "UX-10, CUR-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Captures natives et navigateur inspectées ; raccords, répétition bois, volumes et panneaux revus."
+    },
+    {
+      "id": "UX-12",
+      "title": "Valider compréhension de l'interface lors d'un essai interne sans explication orale.",
+      "acceptance": "Blocages du tutoriel corrigés ; choix purement décoratifs reportés si hors budget.",
+      "dependencies": "UX-04, UX-07, UX-08, UX-11",
+      "initial_estimate_hours": 2,
+      "status": "Externe",
+      "assessment": "Compréhension autonome sans explication à évaluer avec une personne ; un robot ne remplace pas cet essai."
+    },
+    {
+      "id": "WEB-01",
+      "title": "Séparer assets runtime et sources d'auteur ; produire manifeste avec tailles et empreintes.",
+      "acceptance": "Aucun prompt, script source ou PNG candidat inutile dans le bundle ; actifs requis tous présents.",
+      "dependencies": "GOV-08, UX-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Assets runtime séparés, manifestes SHA256, tailles et notices de provenance."
+    },
+    {
+      "id": "WEB-02",
+      "title": "Produire package Windows autonome et définir répertoires lecture seule/données utilisateur.",
+      "acceptance": "Démarrage depuis dossier neuf sans dépôt ; création de sauvegarde à un emplacement permis.",
+      "dependencies": "SAV-12, WEB-01",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Package Windows déplacé hors dépôt ; assets relatifs exe et données utilisateur distinctes."
+    },
+    {
+      "id": "WEB-03",
+      "title": "Configurer bundle Bevy CLI avec préfixe de déploiement ; fallback wrapper seulement après 4 h de blocage.",
+      "acceptance": "Routes et assets fonctionnent sous `/` et sous un préfixe ; aucune dépendance Bash GNU.",
+      "dependencies": "ENV-07, WEB-01, APP-06",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Bundle CLI testé à la racine et sous préfixe ; serveur Windows/Node."
+    },
+    {
+      "id": "WEB-04",
+      "title": "Versionner noms/manifestes du JS, WASM et assets ; éviter mélange de versions après déploiement.",
+      "acceptance": "Rechargement avec ancien cache charge un ensemble cohérent ou affiche reprise contrôlée.",
+      "dependencies": "WEB-03",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Ensemble immuable r/version-empreinte et launcher non caché ; manifeste de chaque livraison."
+    },
+    {
+      "id": "WEB-05",
+      "title": "Afficher phases téléchargement, initialisation et première image jouable ; gérer erreurs et retry.",
+      "acceptance": "Barre reflète sa phase ; double clic et réseau coupé ne bloquent pas définitivement la session.",
+      "dependencies": "WEB-04, APP-05",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Vérification GPU, chargement module/initialisation, Loading assets, erreurs/retry/timeout ; aucun pourcentage fictif."
+    },
+    {
+      "id": "WEB-06",
+      "title": "Définir URL initiale et retour menu cohérents avec une seule application ; traiter back/forward.",
+      "acceptance": "Rafraîchir, revenir et relancer donnent URL et état concordants, sans moteur doublé.",
+      "dependencies": "WEB-05, APP-03",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Retour/avance historique avec rechargement et sauvegarde conservée ; pas de certification bfcache."
+    },
+    {
+      "id": "WEB-07",
+      "title": "Tester clavier/souris, focus, redimensionnement, plein écran et permissions de téléchargement.",
+      "acceptance": "Aucun input bloqué après changement d'onglet ; session sauvegardée ou erreur signalée.",
+      "dependencies": "WEB-06, SAV-06, CHR-08",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Clavier/souris, focus, plein écran, redimensionnement 960×640 et suspension JS 65 s éprouvés."
+    },
+    {
+      "id": "WEB-08",
+      "title": "Mesurer bundle compressé, mémoire et démarrage froid/chaud ; identifier le plus gros contributeur.",
+      "acceptance": "Rapport sur réseau simulé 50 Mbit/s ; objectif initial première interaction < 20 s, à confirmer.",
+      "dependencies": "WEB-05, MSH-10, APP-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Tailles Brotli, mémoire linéaire WASM, démarrage froid/chaud à 50 Mbit/s mesurés."
+    },
+    {
+      "id": "WEB-09",
+      "title": "Ajouter smoke Playwright sur menu, première image, construction, save/load et retour ; conserver erreurs dès le début.",
+      "acceptance": "Le test échoue si erreur runtime ou asset critique absent, pas seulement si canvas manquant.",
+      "dependencies": "WEB-07, UX-12",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Quinze tests dans Chrome et Edge : parcours, QA, erreurs, stockage, commandes, tutoriel, focus, historique, plein écran et voile animée."
+    },
+    {
+      "id": "WEB-10",
+      "title": "Préparer pipeline de release : réutilisation artefact validé, checksums, numéro de version et notes.",
+      "acceptance": "Build distribué traçable au commit testé ; sortie des laboratoires exclue.",
+      "dependencies": "WEB-02, WEB-08, WEB-09",
+      "initial_estimate_hours": 3,
+      "status": "Adapté",
+      "assessment": "Packages reproductibles, checksums et source-manifest ; empreinte remplace commit, aucune opération Git."
+    },
+    {
+      "id": "WEB-11",
+      "title": "Vérifier sauvegardes entre deux builds compatibles et préparer restauration de version précédente.",
+      "acceptance": "Procédure de retour testée localement ; compatibilité de format indiquée sans faux résultat live.",
+      "dependencies": "WEB-10, SAV-09",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Première v1 et v1 actuelle compatibles ; entrée non cachée basculée nouveau → ancien → nouveau entre deux builds réels, IndexedDB conservé et assets cohérents."
+    },
+    {
+      "id": "WEB-12",
+      "title": "Revue de package natif/web, capacités affichées et procédure de publication pour décision ultérieure.",
+      "acceptance": "Archive prête à distribuer avec limitations et guide ; aucune publication déduite de la planification.",
+      "dependencies": "WEB-02, WEB-08, WEB-09, WEB-10, WEB-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Archives Windows/web, licences, contrôles et procédure RELEASE ; aucune publication."
+    },
+    {
+      "id": "QA-01",
+      "title": "Constituer matrice courte des parcours critiques : nouvelle partie, construire, traverser, câble, échec, reprise.",
+      "acceptance": "Chaque parcours cite état initial, actions et résultat ; distinguer automatisation headless, navigateur et observation humaine.",
+      "dependencies": "CUR-12, SAV-12, GOV-10",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Matrice et preuves dans VALIDATION ; automatisation distinguée des observations humaines."
+    },
+    {
+      "id": "QA-02",
+      "title": "Exécuter scénario intégré de 30 minutes avec navigation, édition au quai et sauvegardes répétées.",
+      "acceptance": "Aucun crash, NaN, corps perdu ou progression irrécupérable ; anomalies conservées avec graine et dernière action.",
+      "dependencies": "QA-01, UX-12",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Session rendue ≥30 min, cycles édition/undo/redo/save/load/navigation/câble/marche/recovery ; sonde en lecture seule."
+    },
+    {
+      "id": "QA-03",
+      "title": "Mesurer vingt cycles menu/session et cent éditions/annulations/scissions dans une fixture bornée.",
+      "acceptance": "Entités, handles et files reviennent à un niveau stable ; croissance mémoire durable expliquée ou corrigée.",
+      "dependencies": "APP-03, EDT-12, APP-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Vingt recréations et cent éditions/annulations ; comptage des entités réellement actives, meshes, matériaux et file."
+    },
+    {
+      "id": "QA-04",
+      "title": "Vérifier synchronisation poses physiques, meshes, picking, ancrages et interpolation après scission/reprise.",
+      "acceptance": "Un point repère reste cohérent à 30/60/120 FPS ; erreur tolérée explicitée en unités monde, sans masquer un tick de retard logique.",
+      "dependencies": "EDT-12, CAB-10, PHY-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Interpolation mesurée en mètres et reset téléportation ; points d’équipements et picking vérifiés après reprise/scission."
+    },
+    {
+      "id": "QA-05",
+      "title": "Rejouer intentions enregistrées dans le même build et comparer invariants, énergie bornée et progression.",
+      "acceptance": "Les écarts sont mesurés ; aucune promesse de déterminisme bit à bit entre CPU, natif et WASM.",
+      "dependencies": "APP-09, CUR-11, QA-04",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Intentions physiques répétées et ticks exacts ; tolérances documentées, aucun déterminisme inter-CPU promis."
+    },
+    {
+      "id": "QA-06",
+      "title": "Renforcer validation des entrées : JSON tronqué, IDs répétés, valeurs non finies, dimensions extrêmes et jobs obsolètes.",
+      "acceptance": "Cas refusés sans mutation partielle ni allocation excessive ; tests génératifs bornés sur codecs et coordonnées sensibles.",
+      "dependencies": "SAV-03, SAV-04, MSH-08, DAT-12",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Tests génératifs bornés, i32 extrêmes, JSON/IDs/limites, poids et fichiers invalides refusés."
+    },
+    {
+      "id": "QA-07",
+      "title": "Mesurer scène cible à 1080p : navire 10 000 cellules, au plus 32 corps actifs, îles et effets du parcours.",
+      "acceptance": "Rapporter p50/p95/p99 CPU/GPU/frame et mémoire ; objectif proposé p95 frame ≤ 16,7 ms natif, ≤ 33,3 ms web sur machine ENV-01.",
+      "dependencies": "APP-11, WEB-08, CUR-12",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Baseline finale 1080p 10k cellules/32 corps, CPU/contact/triangles, GPU natif et mémoire. GPU web absent explicitement."
+    },
+    {
+      "id": "QA-08",
+      "title": "Tester dépassement des limites : 50 000 cellules en fixture de stress, import hors borne, trop de débris et backlog de meshing.",
+      "acceptance": "Refus ou dégradation contrôlés ; l'essai de stress ne change pas la limite publique de 10 000 cellules par navire.",
+      "dependencies": "QA-07, EDT-11, SAV-03, MSH-11",
+      "initial_estimate_hours": 3,
+      "status": "Fait",
+      "assessment": "Stress 50k répartis, plafond d’import et flotte maximale testés ; limite publique conservée."
+    },
+    {
+      "id": "QA-09",
+      "title": "Injecter échec disque/quota web, perte de focus, fermeture pendant save et asset absent dans le package.",
+      "acceptance": "Dernière sauvegarde valide récupérable ; écran d'erreur permet reprise ; pas de succès affiché sur écriture ratée.",
+      "dependencies": "WEB-12, SAV-11, APP-10",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Stockage refusé/interrompu, backup, fermeture native, assets absents et suspension JS prolongée testés."
+    },
+    {
+      "id": "QA-10",
+      "title": "Exécuter matrice Windows natif, Chrome WebGPU et Edge WebGPU ; documenter pilotes/résolutions testés.",
+      "acceptance": "Rapport distingue vérifié, échoué et non testé ; fallback WebGL2 testé seulement s'il a été retenu.",
+      "dependencies": "QA-02, QA-09, WEB-12",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Windows natif, Chrome et Edge réels ; versions et options d’automatisation consignées."
+    },
+    {
+      "id": "QA-11",
+      "title": "Sélectionner les régressions à maintenir en CI et conserver artefacts utiles sans captures inutiles à chaque commit.",
+      "acceptance": "Une régression représentative est détectée ; temps de CI connu ; tests visuels séparés des tests sans GPU.",
+      "dependencies": "QA-03, QA-05, QA-06, WEB-09",
+      "initial_estimate_hours": 3,
+      "status": "Préparé",
+      "assessment": "Régressions et logs sélectionnés dans verify/CI ; durée distante de CI inconnue tant que non activée."
+    },
+    {
+      "id": "QA-12",
+      "title": "Trier défauts et fermer le jalon technique : P0 perte/crash, P1 parcours bloqué, P2 gêne bornée, P3 cosmétique.",
+      "acceptance": "Aucun P0/P1 ouvert pour les cibles annoncées ; budgets dépassés ont une correction ou une réduction de périmètre explicite.",
+      "dependencies": "QA-07, QA-08, QA-10, QA-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Aucun défaut P0/P1 observé dans les scénarios validés ; limites et défauts résiduels consignés dans DEFAUTS.md."
+    },
+    {
+      "id": "PLY-01",
+      "title": "Écrire protocole de 10–15 minutes sans assistance : construire une amélioration, partir, utiliser courant/câble, revenir.",
+      "acceptance": "Objectif compréhensible, point de départ reproductible ; secours et arrêt de test prévus si le parcours bloque.",
+      "dependencies": "GOV-02, UX-12, CUR-12",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "PLAYTEST : protocole 10–15 min, départ, amélioration, courant/câble et secours."
+    },
+    {
+      "id": "PLY-02",
+      "title": "Définir grille d'observation : temps jusqu'au départ, erreurs, compréhension de l'Aether et envie de modifier le vaisseau.",
+      "acceptance": "Séparer fait observé, parole du joueur et interprétation ; aucun objectif de FPS utilisé comme mesure du plaisir.",
+      "dependencies": "PLY-01",
+      "initial_estimate_hours": 1,
+      "status": "Fait",
+      "assessment": "Grille vierge faits/paroles/interprétation et indicateurs de compréhension."
+    },
+    {
+      "id": "PLY-03",
+      "title": "Préparer build candidat, fiche de commandes et instructions de lancement pour les personnes choisies par Damien.",
+      "acceptance": "Package identifié et réinstallable ; l'invitation décrit la durée et les informations recueillies, sans envoi automatique.",
+      "dependencies": "QA-12, WEB-12, PLY-01",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Candidat identifié, archives, commandes, lancement et invitation modèle sans envoi."
+    },
+    {
+      "id": "PLY-04",
+      "title": "Faire une répétition du protocole avec une personne connaissant peu la version pour déceler ses défauts.",
+      "acceptance": "Consignes ne révèlent pas la solution ; problèmes d'installation distincts des problèmes du jeu.",
+      "dependencies": "PLY-02, PLY-03",
+      "initial_estimate_hours": 2,
+      "status": "Externe",
+      "assessment": "Répétition avec une personne non réalisée ; fiche et build prêts."
+    },
+    {
+      "id": "PLY-05",
+      "title": "Observer cinq personnes séparément ; prendre notes et, avec leur accord, captures utiles du parcours.",
+      "acceptance": "Cinq fiches exploitables, aide apportée consignée ; arrêter et corriger si un défaut empêche tous les essais.",
+      "dependencies": "PLY-04",
+      "initial_estimate_hours": 4,
+      "status": "Externe",
+      "assessment": "Cinq personnes à observer ; aucune fiche ni satisfaction inventée."
+    },
+    {
+      "id": "PLY-06",
+      "title": "Consolider observations sans surinterpréter le petit échantillon ; classer fréquence, gravité et étape concernée.",
+      "acceptance": "Les nombres indiquent leur dénominateur ; un joueur satisfait ne masque pas les blocages des autres.",
+      "dependencies": "PLY-05",
+      "initial_estimate_hours": 2,
+      "status": "Externe",
+      "assessment": "Consolidation dépend des cinq observations réelles."
+    },
+    {
+      "id": "PLY-07",
+      "title": "Évaluer hypothèse centrale : une modification du vaisseau produit-elle un effet compris et une nouvelle tentative volontaire ?",
+      "acceptance": "Rapport cite exemples et contre-exemples ; seuil indicatif de compréhension autonome 4/5, à confronter aux notes qualitatives.",
+      "dependencies": "PLY-06, FLT-10",
+      "initial_estimate_hours": 2,
+      "status": "Externe",
+      "assessment": "Hypothèse de plaisir/compréhension à confronter aux observations, pas aux FPS."
+    },
+    {
+      "id": "PLY-08",
+      "title": "Choisir au plus trois corrections de parcours et une hypothèse de plaisir pour un cycle court ; estimer avant de modifier.",
+      "acceptance": "Décision liée à des observations ; nouvelle fonctionnalité majeure devient une proposition séparée avec coût.",
+      "dependencies": "PLY-07",
+      "initial_estimate_hours": 2,
+      "status": "Externe",
+      "assessment": "Trois corrections maximum à choisir sur les faits recueillis."
+    },
+    {
+      "id": "PLY-09",
+      "title": "Réaliser le cycle de corrections sélectionné, en conservant la portée de la démo.",
+      "acceptance": "Limite initiale de 8 h ; tests affectés repassés ; tout dépassement provoque une nouvelle décision, pas une extension silencieuse.",
+      "dependencies": "PLY-08",
+      "initial_estimate_hours": 8,
+      "status": "Externe",
+      "assessment": "Cycle de correction dépend du choix PLY-08 ; aucun changement spéculatif présenté comme validé."
+    },
+    {
+      "id": "PLY-10",
+      "title": "Faire un second essai ciblé avec au moins deux personnes disponibles, en distinguant nouveaux joueurs et joueurs déjà formés.",
+      "acceptance": "L'amélioration attendue est observée ou l'hypothèse est rejetée ; limites de comparaison explicites.",
+      "dependencies": "PLY-09",
+      "initial_estimate_hours": 3,
+      "status": "Externe",
+      "assessment": "Second essai avec deux personnes après corrections ; non réalisable par automatisation."
+    },
+    {
+      "id": "PLY-11",
+      "title": "Préparer notes de version, contrôles, limitations connues, procédure de récupération et archive du candidat retenu.",
+      "acceptance": "Les documents correspondent au build ; marche embarquée, navigateurs et limites voxel annoncés honnêtement.",
+      "dependencies": "PLY-10, WEB-11, QA-12",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Notes, contrôles, récupération, limites et archives de ce candidat technique."
+    },
+    {
+      "id": "PLY-12",
+      "title": "Décider avec Damien : démo prête, second cycle ciblé ou changement de priorité ; classer les extensions par bénéfice constaté.",
+      "acceptance": "Dossier J5 comprend build, preuves techniques, cinq observations, dettes et prochaine décision ; aucune publication implicite.",
+      "dependencies": "PLY-07, PLY-10, PLY-11",
+      "initial_estimate_hours": 2,
+      "status": "Externe",
+      "assessment": "Décision de produit avec Damien après essais ; dossier technique préparé, jalon humain non fermé."
+    },
+    {
+      "id": "FLEX-01",
+      "title": "Formuler l'interaction manquante et une scène où le modèle simplifié échoue ; accepter ou refuser l'activation.",
+      "acceptance": "Une observation de jeu justifie le coût ; si aucune n'existe, le lot entier est reporté avec motif.",
+      "dependencies": "PLY-12",
+      "initial_estimate_hours": 2,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-02",
+      "title": "Isoler noyau flexible Rust avec `glam` aligné et états privés ; définir nœuds, contraintes et révisions de topologie.",
+      "acceptance": "Aucune dépendance à `game` ; mutation par API contrôlée ; ancienne voie parallèle unsafe absente du défaut.",
+      "dependencies": "FLEX-01, ENV-05",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-03",
+      "title": "Porter intégration séquentielle, masses, ancrages et amortissement en secondes ; conserver fixtures historiques utiles.",
+      "acceptance": "Nœud libre, fixé et pendule de référence restent finis ; changer sous-pas ne change pas arbitrairement le damping.",
+      "dependencies": "FLEX-02",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-04",
+      "title": "Commencer XPBD à 10 sous-pas × 1 itération ; mesurer erreur et coût sur une seule scène justifiée.",
+      "acceptance": "Réglage et unité de compliance consignés ; essai 20×1 seulement si seuil d'erreur prédéfini échoue, investigation totale ≤ 4 h.",
+      "dependencies": "FLEX-03",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-05",
+      "title": "Implémenter corde unilatérale et tension exploitable ; distinguer mou, tendu et rupture.",
+      "acceptance": "Corde molle ne pousse pas ses extrémités ; unités et influence du pas vérifiées sur masse suspendue.",
+      "dependencies": "FLEX-04",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-06",
+      "title": "Définir un seul transfert d'efforts avec Avian et l'ordre des sous-pas ; tester corps/nœud et deux corps.",
+      "acceptance": "Réaction aux ancrages mesurée, aucune double force ; énergie reste bornée dans une fixture sans apport externe.",
+      "dependencies": "FLEX-05, PHY-08",
+      "initial_estimate_hours": 6,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-07",
+      "title": "Prototyper voile à grille grossière et forces de vent réparties ; rendre une surface plus détaillée sans changer la poussée.",
+      "acceptance": "Raffiner le rendu conserve réponse mécanique ; budget CPU comparé à la voile simplifiée sur la même traversée.",
+      "dependencies": "FLEX-06, FLT-04",
+      "initial_estimate_hours": 6,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-08",
+      "title": "Traiter suppression et rupture de contrainte comme transaction de topologie ; conserver historique et attaches valides.",
+      "acceptance": "Aucun index pendant ; rupture a un seuil observable avant correction ; save/reload restitue le graphe supporté.",
+      "dependencies": "FLEX-05, SAV-09",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-09",
+      "title": "Tester contacts simplifiés de corde seulement si la scène FLEX-01 les exige ; borner nombre de contacts et rayon.",
+      "acceptance": "Une interaction définie fonctionne ou est déclarée hors portée ; aucun wrapping complet promis par ce prototype de 4 h.",
+      "dependencies": "FLEX-06",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-10",
+      "title": "Profiler avant toute parallélisation ; si nécessaire, établir groupes sans conflits et comparer à la référence séquentielle.",
+      "acceptance": "Invariants de disjonction vérifiés après mutation ; implémentation sûre privilégiée ; gain mesuré avant activation.",
+      "dependencies": "FLEX-08, FLEX-09",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-11",
+      "title": "Mesurer le même graphe natif/WASM et sauvegarde/reprise avec un navire mobile.",
+      "acceptance": "Budgets du jeu restent respectés ; mode simple utilisable si flexibles désactivés ; erreurs et capacités affichées.",
+      "dependencies": "FLEX-07, FLEX-08, FLEX-10, QA-07",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "FLEX-12",
+      "title": "Faire essai joueur ciblé et décider intégration, maintien expérimental ou abandon.",
+      "acceptance": "Gain de compréhension/plaisir comparé au surcoût ; nouvelle liste de production si le prototype nécessite encore du travail.",
+      "dependencies": "FLEX-11, PLY-02",
+      "initial_estimate_hours": 2,
+      "status": "À faire",
+      "assessment": "La demande de toutes les fonctionnalités des planches autorise la poursuite de ce lot. Les morph targets actuels animent la voile ; ils ne constituent pas une simulation XPBD ni une corde avec contacts. Développement et critères FLEX restent ouverts ; ancien motif « déclencheur absent » remplacé. Aucun résultat de ce lot n’est déclaré fait."
+    },
+    {
+      "id": "OPT-01",
+      "title": "Capturer un profil d'édition lente et attribuer le coût : extraction, meshing, allocation, upload, collider ou attente.",
+      "acceptance": "Une mesure identifie le poste dominant ; si ce n'est pas le mesher, OPT-02 à 04 sont non applicables.",
+      "dependencies": "MSH-12, APP-11",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "CPU maillage/décoration/application/file et édition→PNG mesurés. Sonde 5 Hz corrigée (D41), profil CDP attribuant le délai résiduel aux tangentes décoratives (D45). Contacts Edge traités séparément ; COMPARAISONS."
+    },
+    {
+      "id": "OPT-02",
+      "title": "Si meshing dominant, brancher `binary-greedy-meshing` 0.5.2 sur fixture via adaptateur isolé.",
+      "acceptance": "Coût de conversion/padding et granularité 16³ inclus ; aucune modification globale du format de chunks pour satisfaire le benchmark.",
+      "dependencies": "OPT-01",
+      "initial_estimate_hours": 2,
+      "status": "Non applicable",
+      "assessment": "Les coûts dominants étaient les contacts et les tangentes décoratives, pas le greedy ; aucune raison mesurée de remplacer ce dernier."
+    },
+    {
+      "id": "OPT-03",
+      "title": "Vérifier sorties de l'adaptateur : faces, matériaux, halos, UV, transparence et cellules de coordonnées négatives.",
+      "acceptance": "Fixtures de correction de MSH réutilisées ; incompatibilité ou travail hors budget autorise le rejet de l'alternative.",
+      "dependencies": "OPT-02",
+      "initial_estimate_hours": 2,
+      "status": "Non applicable",
+      "assessment": "Aucune stratégie de meshing concurrente retenue ; comparaison artificielle non nécessaire."
+    },
+    {
+      "id": "OPT-04",
+      "title": "Mesurer gain complet et choisir conserver greedy simple ou intégrer adaptateur.",
+      "acceptance": "Comparaison mêmes données/build/machine ; budget de latence atteint ou prochaine cause identifiée ; décision prise à 8 h cumulées.",
+      "dependencies": "OPT-03",
+      "initial_estimate_hours": 2,
+      "status": "Non applicable",
+      "assessment": "Greedy actuel conservé, priorité et ordonnanceur éprouvés ; pas de migration sans gain mesuré."
+    },
+    {
+      "id": "OPT-05",
+      "title": "Si mémoire des chunks domine, mesurer occupation puis prototyper palette locale ou stockage uniforme des chunks pleins/vides.",
+      "acceptance": "Gain net incluant décompression/jobs ; sauvegardes inchangées ou migrées ; pas de régression des éditions mesurées.",
+      "dependencies": "QA-08, DAT-04",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Le profilage ne déclenche pas cette expérimentation particulière ; garder les seuils du plan."
+    },
+    {
+      "id": "OPT-06",
+      "title": "Si l'occlusion améliore la lecture observée, ajouter AO par sommet avec règle de fusion compatible.",
+      "acceptance": "Coutures, diagonales et changement de voisin testés ; coût et hausse de triangles comparés ; désactivation possible.",
+      "dependencies": "UX-11, MSH-12, PLY-07",
+      "initial_estimate_hours": 4,
+      "status": "Adapté",
+      "assessment": "SSAO/TAA du renderer partagé au lieu d’un AO par sommet, contrôlés en jeu et galerie."
+    },
+    {
+      "id": "OPT-07",
+      "title": "Si textures/draw calls dominent, essayer une seule évolution d'atlas ou d'array de textures sur le renderer partagé.",
+      "acceptance": "Pas de couture/mipmap incorrect sur fixture tournée ; pas de shader propre à la galerie ; gain GPU mesuré.",
+      "dependencies": "QA-07, UX-09, UX-10",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Le profilage ne déclenche pas cette expérimentation particulière ; garder les seuils du plan."
+    },
+    {
+      "id": "OPT-08",
+      "title": "Si le travail coopératif web dépasse durablement les budgets, évaluer workers/threads avec contraintes d'hébergement réelles.",
+      "acceptance": "Essai ≤ 4 h ; coût de transfert et configuration documentés ; fallback coopératif conservé si gain insuffisant.",
+      "dependencies": "WEB-08, MSH-10, QA-07",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Le profilage ne déclenche pas cette expérimentation particulière ; garder les seuils du plan."
+    },
+    {
+      "id": "OPT-09",
+      "title": "Si les colliders dominent les éditions, regrouper reconstructions et réutiliser résultats par révision de corps.",
+      "acceptance": "Aucune collision périmée après transaction ; mesure inclut upload et temps jusqu'à corps de nouveau éditable.",
+      "dependencies": "OPT-01, EDT-07, PHY-06",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Le profilage ne déclenche pas cette expérimentation particulière ; garder les seuils du plan."
+    },
+    {
+      "id": "OPT-10",
+      "title": "Si le démarrage web est trop long, réduire le contributeur dominant identifié : features, compression ou assets initiaux.",
+      "acceptance": "Nouvelle mesure froide/chaude comparable ; chargement différé conserve erreurs et reprise ; intégrité du package validée.",
+      "dependencies": "WEB-08, WEB-04, QA-10",
+      "initial_estimate_hours": 4,
+      "status": "Fait",
+      "assessment": "Compression Brotli/gzip, ensemble versionné et démarrage froid/chaud mesurés."
+    },
+    {
+      "id": "OPT-11",
+      "title": "Si trop de débris actifs coûtent cher, éprouver sommeil, regroupement visuel ou expiration annoncée des fragments secondaires.",
+      "acceptance": "Règle n'efface pas le navire principal ni une ressource requise ; budgets tenus et conséquences produit approuvées.",
+      "dependencies": "QA-08, EDT-11, AET-09",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Le profilage ne déclenche pas cette expérimentation particulière ; garder les seuils du plan."
+    },
+    {
+      "id": "OPT-12",
+      "title": "Mettre à jour baseline de performance et décision de chaque optimisation tentée ; retirer prototypes inutiles du chemin distribué.",
+      "acceptance": "Comparaison avant/après et régressions pertinentes repassées ; pas d'obligation de réaliser les optimisations non activées.",
+      "dependencies": "OPT-01",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Baseline finale et historique avant/après conservés ; aucun prototype concurrent dans le chemin distribué."
+    },
+    {
+      "id": "EXT-01",
+      "title": "Choisir une extension à partir des observations et rédiger hypothèse, scène minimale, plafond et condition d'abandon.",
+      "acceptance": "Une seule extension produit active ; coût de maintenance et influence sur sauvegardes identifiés avant prototype.",
+      "dependencies": "PLY-12",
+      "initial_estimate_hours": 2,
+      "status": "Fait",
+      "assessment": "Demande explicite de Damien : monde vaste inspiré des 41 planches, propulsion praticable et détail élevé. Périmètre, critères et limites dans MONDE-OUVERT, RENDU et DECISIONS."
+    },
+    {
+      "id": "EXT-02",
+      "title": "Si import `.vox` utile, intégrer `dot_vox` 5.2 avec limites et mapping palette/axes ; traiter modèles et origine explicitement.",
+      "acceptance": "Fichier asymétrique de référence importé correctement ; matériaux inconnus signalés ; le codec ne devient pas format de session.",
+      "dependencies": "EXT-01, SAV-03, DAT-05",
+      "initial_estimate_hours": 6,
+      "status": "Conditionnel différé",
+      "assessment": "Déclencheur du plan absent : aucune observation joueur ne justifie cette extension. D22/D23 ; lot non activé."
+    },
+    {
+      "id": "EXT-03",
+      "title": "Si échange externe utile, exporter `.vox` puis faire aller-retour réel dans MagicaVoxel sur fixture asymétrique.",
+      "acceptance": "Axes, couleurs, dimensions et origine vérifiés ; pertes de composants/état annoncées à l'utilisateur.",
+      "dependencies": "EXT-02, SAV-07",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Déclencheur du plan absent : aucune observation joueur ne justifie cette extension. D22/D23 ; lot non activé."
+    },
+    {
+      "id": "EXT-04",
+      "title": "Prototyper réseau Aether par segments connectés avec capacité commune et débits bornés, sur un navire de test.",
+      "acceptance": "Ajout/retrait de tuyau relie/isole correctement réservoir et consommateur ; conservation mesurée sans simulation volumétrique.",
+      "dependencies": "EXT-01, AET-12",
+      "initial_estimate_hours": 6,
+      "status": "En cours",
+      "assessment": "Atelier logique V3, vannes et réserve raccordés à la coque. Suites complètes Chrome/Edge R67f17/17 et migration réelle V1→V2→V3 PASS. Fondation spatiale R72 pure125mm/280mm, six tests PASS ; kit industriel R69 chargé HD/LOD isolément. Raccords réels, pose des conduites, collisions et dommages restent ouverts (D103–D105, CONDUITES)."
+    },
+    {
+      "id": "EXT-05",
+      "title": "Étudier coupure, fuite et scission du réseau ; définir distribution de quantité lors des changements de topologie.",
+      "acceptance": "Deux fixtures conservent quantité moins fuite/consommation explicites ; transaction compatible avec EDT et SAV.",
+      "dependencies": "EXT-04, EDT-11, AET-09",
+      "initial_estimate_hours": 4,
+      "status": "En cours",
+      "assessment": "Conservation entière sur10000 opérations, fuites/réparation/recharge, scission de vraie coque, plafond d’annulation exact et compteurs persistants. Workspace R72 complet158 tests PASS ; V3 rechargé par vrais binaires. Déclenchement des dégâts, transferts jouables, maillage et scission des conduites physiques restent ouverts."
+    },
+    {
+      "id": "EXT-06",
+      "title": "Seulement si l'eau volumique a une interaction nécessaire, prototyper automate borné dans un bassin statique.",
+      "acceptance": "Conservation et frontières mesurées ; budget et limites connus ; couplage complet aux navires reste une étude séparée.",
+      "dependencies": "EXT-01",
+      "initial_estimate_hours": 6,
+      "status": "À faire",
+      "assessment": "Lot autorisé dans le périmètre des planches. Bassins et cascades actuels sont des représentations et points de collecte ; automate volumique conservatif, interactions et couplage physique restent à développer. Aucun résultat volumique annoncé."
+    },
+    {
+      "id": "EXT-07",
+      "title": "Prototyper un seul état de matériau motivé par le jeu, par exemple mouillé ou endommagé, avec effet visible.",
+      "acceptance": "Coût de stockage, sauvegarde et effet mécanique identifiés ; pas de simulation combinée feu/eau/chaleur sans nouvelle décision.",
+      "dependencies": "EXT-01, DAT-05, SAV-09",
+      "initial_estimate_hours": 4,
+      "status": "À faire",
+      "assessment": "Lot autorisé dans le périmètre des planches. Les fuites de réserve sont persistantes ; elles ne constituent pas encore un état de matériau mouillé ou endommagé ni une cause jouable de dommage. Effet visible, stockage et effet mécanique restent à développer."
+    },
+    {
+      "id": "EXT-08",
+      "title": "Étudier streaming d'îles si le nombre d'îles nécessaire dépasse la scène chargée ; charger/décharger deux régions de fixture.",
+      "acceptance": "Attaches, checkpoints et corps actifs restent cohérents ; cache borné ; aucune revendication de monde infini.",
+      "dependencies": "EXT-01, CUR-08, SAV-10",
+      "initial_estimate_hours": 6,
+      "status": "Adapté",
+      "assessment": "Catalogue de 204 îles plus trois quais ; collisions chargées par proximité avec hystérésis, représentation HD/LOD. Le trajet Aube→Hollow traverse les régions. Les actifs graphiques restent résidents : aucun streaming disque complet n'est revendiqué."
+    },
+    {
+      "id": "EXT-09",
+      "title": "Si erreur de précision observée loin de l'origine, quantifier seuil puis essayer repère flottant et version compatible de `big_space`.",
+      "acceptance": "Ne pas intégrer 0.12 directement à Bevy 0.19 ; dérive avant/après et impact Avian/joints/picking mesurés ; rejet possible.",
+      "dependencies": "EXT-01, QA-04, PHY-11",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Déclencheur du plan absent : aucune observation joueur ne justifie cette extension. D22/D23 ; lot non activé."
+    },
+    {
+      "id": "EXT-10",
+      "title": "Prototyper génération reproductible d'une petite île utile au parcours, avec contraintes d'atterrissage et ressources lisibles.",
+      "acceptance": "Graine et version du générateur enregistrées ; partie rechargeable malgré évolution ultérieure du générateur.",
+      "dependencies": "EXT-01, CUR-08, SAV-02",
+      "initial_estimate_hours": 6,
+      "status": "Adapté",
+      "assessment": "Modèles Blender rédigés et placement déterministe, avec quais, bassins, cristaux et portes partagés par le rendu et la physique. Catalogue et couloirs testés ; pas de génération de terrain infinie."
+    },
+    {
+      "id": "EXT-11",
+      "title": "Si coopération demandée, rédiger étude réseau bornée : autorité serveur, commandes d'édition, IDs, reconnexion et coût physique.",
+      "acceptance": "Comparer besoins concrets à la simulation existante ; aucune supposition de lockstep déterministe ; prototype réseau fait l'objet d'un autre plan.",
+      "dependencies": "EXT-01, QA-05, DAT-08",
+      "initial_estimate_hours": 4,
+      "status": "Conditionnel différé",
+      "assessment": "Déclencheur du plan absent : aucune observation joueur ne justifie cette extension. D22/D23 ; lot non activé."
+    },
+    {
+      "id": "EXT-12",
+      "title": "Pour l'extension choisie, conclure conserver/abandonner, chiffrer mise en production et mettre à jour décisions actives.",
+      "acceptance": "Preuve d'utilité et risques restants ; prototype n'est pas déclaré fini pour la production ; autres extensions restent reportées.",
+      "dependencies": "EXT-01",
+      "initial_estimate_hours": 2,
+      "status": "En cours",
+      "assessment": "R67f Chrome/Edge complets17/17 et migration réelle V1→V2→V3 PASS ; world-tour R60 dix étapes historique PASS. R72 workspace158 tests et QA140 contrôles PASS, Windows/Web compilables. R66 courants promus/global PASS ; maison entière R71 non promue après quatre captures. Dernier jugeR47 4/10 ; benchmark calme R72 p95 18,51 ms dépasse 16,7 ms. Endurance finale, fonctionnalités restantes des planches et paquet0.2 ouverts."
+    }
+  ]
+}

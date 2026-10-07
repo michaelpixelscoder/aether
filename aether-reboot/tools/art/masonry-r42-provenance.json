@@ -1,0 +1,393 @@
+{
+  "tool": "built-in image_gen",
+  "asset_type": "registered dressed limestone masonry PBR",
+  "inputs": {
+    "reference": "../aether/design/initial_researches/aether_isle_33.png",
+    "live": ".dream-loop/world-r41-dawn.png"
+  },
+  "prompts": {
+    "albedo": "Use case: photorealistic-natural. Asset type: seamless PBR BASE COLOR / ALBEDO tile for sophisticated dressed limestone architecture in an in-engine fantasy citadel. Generate one square 2048x2048 full-bleed flat orthographic texture, representing a 9 x 9 metre wall patch. Exactly about six broad horizontal courses of finely cut ASHLAR limestone, course heights mildly unequal, stone lengths varying between 1.5 and 3 metres, vertical joints staggered carefully. These are large architectural blocks of a monumental Renaissance-like citadel, not small bricks, not rustic rubble, not a toy wall. Precise understated masonry: narrow recessed fine limestone mortar joints 5–8 cm wide, slightly chipped sharp arrises, a few quiet repaired corners, restrained subtly different warm-gray/off-white stone slabs. Broad stone faces remain visually quiet, with very fine tool marks and restrained natural mineral variation, no coarse mottling or noisy grit. Useful contrast: exposed stones approximately sRGB (227,221,210), mortar softly darker warm gray approximately (165,160,150), not black. Actual PBR albedo only: NO baked directional shadows, NO highlights, NO directional lighting, NO perspective, NO ambient-occlusion halos, no extruded/puffy bevel rendering. The course pattern should tile seamlessly on every edge. Full tile average should remain pale cream limestone close to 0.85 sRGB. No moss, grass, earth, water, vines, stains, symbols, letters, labels, border, inset panels, no color palette. Output ONLY the seamless albedo image.",
+    "normal": "Use case: precise-object-edit. Asset type: registered seamless OpenGL tangent-space NORMAL MAP for an architectural limestone masonry PBR material. The input image is the exact albedo edit target: preserve every block, every horizontal course, every vertical joint and every chipped corner at exactly the same pixel positions, framing, square aspect and size. Change only the representation to a technical RGB tangent-space normal map. Positive Y green convention: image upper facing bevels are green, lower facing bevels are magenta; right facing bevels red, left facing bevels cyan. Neutral flat broad stone faces RGB(128,128,255); narrow recessed joints with restrained smooth arrises and occasional tiny chips. Major stone planes are flat, not bulging pillows. Most of the image is nearly flat blue with subtle fine tooling; strong normal variation only at the original joints and edge chips. No albedo color, no grayscale height, no directional light or shadows, no artistic blue material rendering. Preserve the exact original six-course pattern and all vertical mortar joint positions, do not add or move joints. Repeat seamlessly. Output only the full-bleed technical normal map.",
+    "roughness": "Use case: precise-object-edit. Asset type: registered LINEAR ROUGHNESS MAP for an architectural limestone masonry PBR material. The input is the exact albedo edit target. Preserve every block, horizontal course, vertical mortar joint and chipped corner at exactly the same pixel positions, framing, square aspect and size. Convert only into a grayscale technical roughness map with identical RGB channels. This dry limestone is matte: broad faces mean pixel225 of255 with extremely restrained variation in range214–235, recessed mortar and chips about238–245. NO dark outlines, no shadows, no highlights, no color. White means rough. No noise added. This is raw linear non-color scalar data, not a photograph or height map. Keep registration exact, all six horizontal courses and all vertical joints unchanged, tile seamlessly. Output only the full-bleed grayscale roughness map.",
+    "normal_v2": "Use case: precise-object-edit. Asset type: corrected OpenGL tangent-space normal map. This image is an existing registered normal map. ONLY neutralize the background plane bias and halve the tiny surface noise; preserve the exact image dimensions, every stone outline, joint position and strong bevel vector at every joint. Current broad blue planes have mean RGB about117,126,246 and their unwanted red-channel bias tilts every wall. Make broad flat planes exactly neutral RGB128,128,255 with extremely subtle 1–3 RGB levels of microdetail. Preserve existing strong edge vectors at the original recessed mortar joints, top edge green / lower edge magenta, right edge red / left edge cyan. No new joints or features, no moving edges, no perspective, no light. Just a clean technical normal map, a flat neutral128128255 background between the existing accurately located edges. Output only the corrected map.",
+    "roughness_v2": "Use case: precise-object-edit. Asset type: corrected linear scalar ROUGHNESS MAP. Edit this existing roughness image only by greatly reducing its contrast and raising its values. Keep exact framing, every block, every joint, every chip in precisely the same pixel coordinates. Most stone faces must have grayscale pixel value225 of255, with gentle sparse 220–232 variation. All mortar must be 240. MINIMUM pixel value210 in the entire image; absolutely no black or middle gray pixel, no dark outlines, no shadows or shading, no specular. RGB channels all identical grayscale. The current image averages199/255 and is too low and too noisy; the corrected image must average226/255. It should look almost white, quiet and low contrast with just faintly visible registered joints. Keep image dimensions and joint registration exact. Output only the full technical roughness tile."
+  },
+  "selected": {
+    "albedo": "exec-7cf4620e-7f11-459f-9a6e-1c598673c071.png",
+    "normal": "exec-95d2b3bd-a41d-4b7b-8cda-1b6865fe8dc2.png",
+    "roughness": "exec-8d52d5cd-983e-4748-b680-c2e5fe84c49d.png"
+  },
+  "native_resolution": [
+    1254,
+    1254
+  ],
+  "image_processing": "Original generated PNG copied verbatim. No programmatic painting or upscaling.",
+  "tile_metres": 9,
+  "normal_scale": 0.4,
+  "albedo_gain_linear_rgb": [
+    1.2408519164957788,
+    1.2179610548857251,
+    1.169802004734367
+  ],
+  "scope": "Only the shared architectural STONE slot. Cornices/TRIM, rock r41 and geological vault silver strata unchanged. Geometry, material count, nodes and collider/landmark JSON exact.",
+  "texture_statistics": [
+    {
+      "mean_raw": [
+        0.8980380622364199,
+        0.8461832361649807,
+        0.7724271914938626
+      ],
+      "max": [
+        0.9686274509803922,
+        0.9294117647058824,
+        0.8901960784313725
+      ],
+      "samples": 98596,
+      "file": "dressed-limestone-r11.png",
+      "height": 1254,
+      "min": [
+        0.7450980392156863,
+        0.6588235294117647,
+        0.5450980392156862
+      ],
+      "mean_linear": [
+        0.7840848486630468,
+        0.6859143017179984,
+        0.5593976658581649
+      ],
+      "width": 1254
+    },
+    {
+      "mean_raw": [
+        0.8132895261229719,
+        0.7721628527265855,
+        0.717230106777432
+      ],
+      "max": [
+        0.996078431372549,
+        0.984313725490196,
+        0.9607843137254902
+      ],
+      "samples": 98596,
+      "file": "dressed-masonry-r42-albedo.png",
+      "height": 1254,
+      "min": [
+        0.43529411764705883,
+        0.396078431372549,
+        0.35294117647058826
+      ],
+      "mean_linear": [
+        0.6318923622065536,
+        0.563166037999757,
+        0.4781985871063627
+      ],
+      "width": 1254
+    },
+    {
+      "mean_raw": [
+        0.47593383655509075,
+        0.540450592992292,
+        0.9636606981639417
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "samples": 98596,
+      "file": "dressed-masonry-r42-normal.png",
+      "height": 1254,
+      "min": [
+        0,
+        0,
+        0.19215686274509805
+      ],
+      "mean_linear": [
+        0.19727476511315561,
+        0.2648656823527798,
+        0.9316686356881086
+      ],
+      "width": 1254
+    },
+    {
+      "mean_raw": [
+        0.8766926073445207,
+        0.8757072036492813,
+        0.8765235275823238
+      ],
+      "max": [
+        0.996078431372549,
+        0.996078431372549,
+        0.996078431372549
+      ],
+      "samples": 98596,
+      "file": "dressed-masonry-r42-roughness.png",
+      "height": 1254,
+      "min": [
+        0.7058823529411765,
+        0.7019607843137254,
+        0.7058823529411765
+      ],
+      "mean_linear": [
+        0.742585649505913,
+        0.7407108825472333,
+        0.7422596985415554
+      ],
+      "width": 1254
+    }
+  ],
+  "texture_files": {
+    "albedo": {
+      "file": "assets/textures/dressed-masonry-r42-albedo.png",
+      "sha256": "b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c"
+    },
+    "normal": {
+      "file": "assets/textures/dressed-masonry-r42-normal.png",
+      "sha256": "0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401"
+    },
+    "roughness": {
+      "file": "assets/textures/dressed-masonry-r42-roughness.png",
+      "sha256": "282bffa8b782ed93cce593ba04607ffd8d8e8c7e268a40f8bb70240a87277631"
+    }
+  },
+  "generator": {
+    "file": "tools/art/build_world.py",
+    "sha256": "a895248f58cad9040c445c3c474799656594e0a7065b12ae42acafeb275b1f4e"
+  },
+  "normal_orientation_samples": {
+    "bottom_edge_of_upper_stone": {
+      "xy": [
+        600,
+        230
+      ],
+      "rgb": [
+        129,
+        2,
+        164
+      ],
+      "direction": "negative tangent Y"
+    },
+    "top_edge_of_lower_stone": {
+      "xy": [
+        600,
+        239
+      ],
+      "rgb": [
+        132,
+        247,
+        148
+      ],
+      "direction": "positive tangent Y"
+    },
+    "right_edge_of_left_stone": {
+      "xy": [
+        348,
+        100
+      ],
+      "rgb": [
+        242,
+        124,
+        105
+      ],
+      "direction": "positive tangent X"
+    },
+    "left_edge_of_right_stone": {
+      "xy": [
+        354,
+        100
+      ],
+      "rgb": [
+        0,
+        122,
+        218
+      ],
+      "direction": "negative tangent X"
+    }
+  },
+  "roughness_channel": "Linear/non-color green channel; GLB metallicFactor=0, roughnessFactor omitted/default1; measured mean=0.8757072036492813.",
+  "validation": {
+    "commands": [
+      "node tools/art/verify-open-world.mjs",
+      "node tools/art/verify-rock-materials.mjs --before .dream-loop/masonry-material-before",
+      "node tools/art/verify-masonry-materials.mjs"
+    ],
+    "glbs": 34,
+    "rebuilt_world_glbs": 26,
+    "editable_blends": 13,
+    "exact_geometry_and_node_contracts": 26,
+    "finite_normals_and_tangents": true,
+    "exact_non_stone_materials_textures_normals_tangents": true,
+    "collision_landmark_json_byte_identical": true,
+    "triangle_counts_unchanged": true,
+    "material_counts_unchanged": true,
+    "uv_exception": "11 indexed Ember TRIM U components differ by exactly one float32 ULP (1.1920928955078125e-7 UV, 0.0001494884490966797 texel). Numeric bevel export roundoff; all other non-STONE UV values exact. Baseline recovered from frozen R41 bundle and verified against pre-edit SHA256.",
+    "gpu_rendered": false,
+    "visual_status": "Maps inspected at native resolution; final live material assessment remains for the parent r43 capture."
+  },
+  "decisions": [
+    "Apply the coherent architectural STONE slot to facades/floors/stairs as authorized; retain a separate quiet TRIM slot, no 13th material.",
+    "Six large dressed courses per 9m tile, signed metric U and continuous V=y/9 on both vertical wall axes. Horizontal masonry uses the same scale.",
+    "Preserve r41 rock texture factors, UVs, normal scale and all sampled vertex attributes exactly.",
+    "Vault aliases STONE/TRIM for geological silver strata, so its material and UV are excluded from the architectural branch.",
+    "Use original ImageGen PNGs verbatim. The initial roughness was rejected at mean0.780678; revised roughness mean0.875707 matches the old0.88 dry stone response.",
+    "Mean linear RGB gain retains the old STONE mean reflected color; roughness variation and normal relief provide the material change without changing lighting or geometry."
+  ],
+  "stone_material_factors": {
+    "crystal-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "crystal.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-garden-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-garden.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-ruin-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-ruin.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-watch-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-watch.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "ember-lod.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "ember.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "frost-lod.glb": [
+      0.35240194428480115,
+      0.4238504471002324,
+      0.4679208018937468,
+      1
+    ],
+    "frost.glb": [
+      0.35240194428480115,
+      0.4238504471002324,
+      0.4679208018937468,
+      1
+    ],
+    "hollow-lod.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "hollow.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "nomad-lod.glb": [
+      0.4963407665983115,
+      0.3751320049048034,
+      0.19184752877643618,
+      1
+    ],
+    "nomad.glb": [
+      0.4963407665983115,
+      0.3751320049048034,
+      0.19184752877643618,
+      1
+    ],
+    "storm-lod.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "storm.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "underforge-lod.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "underforge.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "verdant-lod.glb": [
+      0.3077312752909531,
+      0.31666987427028853,
+      0.21056436085218608,
+      1
+    ],
+    "verdant.glb": [
+      0.3077312752909531,
+      0.31666987427028853,
+      0.21056436085218608,
+      1
+    ]
+  },
+  "proofs": {
+    "masonry": "tools/art/masonry-r42-verification.json",
+    "finite_normals": "docs/evidence/rock-materials.json",
+    "world": "docs/evidence/open-world-assets.json",
+    "baseline": ".dream-loop/masonry-material-before",
+    "build_logs": [
+      ".dream-loop/masonry-material-world.log",
+      ".dream-loop/masonry-material-variants.log",
+      ".dream-loop/masonry-material-vault.log"
+    ]
+  },
+  "completed_at": "2026-10-02T22:14:49.587Z"
+}

@@ -1,0 +1,8 @@
+{
+  "profile": "release",
+  "capture": "docs/evidence/gallery.png",
+  "exit_code": 0,
+  "elapsed_seconds": 13.1119392,
+  "executable_sha256": "6221f595935c8191937c3eae101ed49ec653bb25e48d72b6c38ddf37694dae49",
+  "capture_sha256": "179fb864612e1c53efe4319927d87825007eeb226a8e6d44112b44ccb2822147"
+}

@@ -1,0 +1,15 @@
+{
+  "file": "sky-r46-depth-4k-linear.hdr",
+  "sha256": "a49b68399b645ddd7603efceb18b607dcb422b9cf9fa3359716bebf8b26dd8b0",
+  "bytes": 9135189,
+  "dimensions": [
+    4096,
+    2048
+  ],
+  "seconds": 126.452,
+  "samples_max": 128,
+  "renderer": "Cycles OPTIX",
+  "source_sha256": "84cc18b39dca2baf9fe64b65b3708326143083eb3eb5e23f6e66371d23fd35e8",
+  "generator_sha256": "832b0e2fa21de3d91c103c9e423b2062a7303169cc64bc346ee17407fdddb004",
+  "denoising": "OpenImageDenoise RGB only"
+}

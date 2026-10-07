@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "real_r59_caller_authenticated": true,
+  "full_candidate_bin_exact": true,
+  "projection_only_after_full_delta_validation": true,
+  "corruptions_rejected": [
+    "caller SHA authentication",
+    "mandatory caller authority",
+    "original PNG",
+    "BIN geometry",
+    "other material",
+    "soil roughness",
+    "hidden texture-info extension",
+    "texCoord override",
+    "normal map",
+    "existing image mutation",
+    "existing UV metadata",
+    "new image URI",
+    "sampler override",
+    "added extras"
+  ]
+}

@@ -1,0 +1,43 @@
+
+Running 1 test using 1 worker
+
+(node:65984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\game.spec.mjs:19:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus (25.2s)
+
+
+  1) e2e\game.spec.mjs:19:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 82
+    Received: 83
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      29 |   await expect.poll(async()=>(await snapshot(page)).cells).toBe(original+1);
+      30 |   await page.keyboard.press('Control+z');
+    > 31 |   await expect.poll(async()=>(await snapshot(page)).cells).toBe(original);
+         |                                                            ^
+      32 |   await page.keyboard.press('Control+y');
+      33 |   await expect.poll(async()=>(await snapshot(page)).cells).toBe(original+1);
+      34 |   // Clicking interface controls must not also place a voxel in the scene.
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:31:60
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-parcours-réel-clavier-0a863--navigateur-export-et-menus\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e\game.spec.mjs:19:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus 

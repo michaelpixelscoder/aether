@@ -1,0 +1,4 @@
+2026-10-02T01:18:44.138215Z  WARN bevy_ecs::relationship: The bevy_ecs::hierarchy::ChildOf(432v0) relationship on entity 851v0 relates to an entity that does not exist. The invalid bevy_ecs::hierarchy::ChildOf relationship has been removed.
+2026-10-02T01:18:44.138717Z  WARN bevy_ecs::relationship: The bevy_ecs::hierarchy::ChildOf(464v0) relationship on entity 852v0 relates to an entity that does not exist. The invalid bevy_ecs::hierarchy::ChildOf relationship has been removed.
+2026-10-02T01:18:44.138847Z  WARN bevy_ecs::relationship: The bevy_ecs::hierarchy::ChildOf(464v0) relationship on entity 853v0 relates to an entity that does not exist. The invalid bevy_ecs::hierarchy::ChildOf relationship has been removed.
+2026-10-02T01:18:44.138960Z  WARN bevy_ecs::relationship: The bevy_ecs::hierarchy::ChildOf(432v0) relationship on entity 854v0 relates to an entity that does not exist. The invalid bevy_ecs::hierarchy::ChildOf relationship has been removed.

@@ -1,0 +1,39 @@
+{
+  "label": "underforge-oblique-refresh4-cache-density-analytic-normal",
+  "bank": "underforge",
+  "mode": "cache-density-analytic-normal",
+  "seconds": 20.543752499999755,
+  "dimensions": [
+    240,
+    150
+  ],
+  "origin_local": [
+    3250,
+    2200,
+    3600
+  ],
+  "target_local": [
+    0,
+    -90,
+    0
+  ],
+  "orthographic_span": 6200,
+  "steps": 128,
+  "lighting_refresh_steps": 4,
+  "lighting_recipe": "r57-blue-fill-warm-direct",
+  "sun_direction": [
+    -0.8535626530647278,
+    -0.05097357556223869,
+    -0.5184906125068665
+  ],
+  "bounce_direction": [
+    -0.6351463198661804,
+    0.6691306233406067,
+    -0.38581517338752747
+  ],
+  "shadow_taps_per_lobe": 4,
+  "daylight_factor": 1,
+  "live_noise": "held at R=.70,G/B=.65,A=.50 for both fields",
+  "alpha_mean": 0.3095119893550873,
+  "note": "CPU field inspection, not a runtime screenshot"
+}

@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "passed": true,
+  "method": "Copied package to an explicitly named new root; rebuilt KTX and shader, regenerated CPU proof and ran the no-argument validator there. No GPU, external asset source or canonical dependency.",
+  "tools": [
+    {
+      "tool": "build_mips.py",
+      "exit_code": 0
+    },
+    {
+      "tool": "build_shader.py",
+      "exit_code": 0
+    },
+    {
+      "tool": "review_material.py",
+      "exit_code": 0
+    },
+    {
+      "tool": "verify.mjs",
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "assets/shaders/world-flow.wgsl",
+      "sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+      "bytes": 4672,
+      "relocated_rebuild_byte_exact": true
+    },
+    {
+      "file": "assets/textures/world-flow.ktx2",
+      "sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+      "bytes": 8384632,
+      "relocated_rebuild_byte_exact": true
+    },
+    {
+      "file": "tools/art/flow-source/source/world-flow-native.png",
+      "sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+      "bytes": 2685518,
+      "relocated_rebuild_byte_exact": true
+    }
+  ],
+  "test_source_sha256": "355a3a633d49c9f15d2975fbba5c6a6dab01801e6d236eaa19c9afb8b064c636"
+}

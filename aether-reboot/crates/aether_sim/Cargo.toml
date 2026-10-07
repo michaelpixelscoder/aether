@@ -1,0 +1,16 @@
+[package]
+name = "aether_sim"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aether_core.workspace = true
+bevy.workspace = true
+avian3d.workspace = true
+bevy-tnua = "=0.32.0"
+bevy-tnua-avian3d = "=0.12.0"
+bevy_transform_interpolation = "=0.5.0"
+
+[lints]
+workspace = true

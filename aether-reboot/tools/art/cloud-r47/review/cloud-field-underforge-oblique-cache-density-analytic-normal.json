@@ -1,0 +1,26 @@
+{
+  "label": "underforge-oblique-cache-density-analytic-normal",
+  "bank": "underforge",
+  "mode": "cache-density-analytic-normal",
+  "seconds": 8.970322999997734,
+  "dimensions": [
+    240,
+    150
+  ],
+  "origin_local": [
+    3250,
+    2200,
+    3600
+  ],
+  "target_local": [
+    0,
+    -90,
+    0
+  ],
+  "orthographic_span": 6200,
+  "steps": 128,
+  "lighting_refresh_steps": 4,
+  "live_noise": "held at R=.70,G/B=.65,A=.50 for both fields",
+  "alpha_mean": 0.3095119893550873,
+  "note": "CPU field inspection, not a runtime screenshot"
+}

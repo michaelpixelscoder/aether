@@ -1,0 +1,75 @@
+{
+  "revision": "r44",
+  "tool": "built-in image_gen",
+  "processing": "Both original native PNG files are copied byte-for-byte; no repainting, conversion or upscaling.",
+  "assets": [
+    {
+      "file": "assets/textures/evergreen-oak-sprig-r44.png",
+      "sha256": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb",
+      "native_resolution": [
+        1254,
+        1254
+      ],
+      "generated_original_filename": "exec-a9a69a9d-4b9c-47e6-a24a-721a5c2949ac.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: production PBR foliage cutout atlas on a genuinely TRANSPARENT background, native square image. Primary request: one botanically believable leafy terminal twig from a small Mediterranean evergreen oak, isolated and orthographic from above, arranged upright from the bottom-center base toward the upper-center tip. A thin branching brown twig with 16–20 small separated elliptical lanceolate leaves, alternate pairs spreading to left/right; each leaf has a slender petiole that visibly joins the main twig. Leaf blades are gently curved, pointed tips, subtle irregular edges, fine central veins. The botanical shoot should be softly asymmetrical, with many transparent gaps and a porous outline, not a solid silhouette. The shoot fills 90 percent of the square while retaining a small transparent border on every edge. This represents a 2-metre branchlet patch for a distant fantasy citadel tree, leaves roughly15–25cm. Mature upper leaf faces in restrained silver olive and fresh yellow green, approximate sRGB leaf body(120,151,74), some pale yellow green tips and cooler sage variations. Photorealistic natural plant detail and nuanced broad leaf color variation, not an illustration, no stylized block shapes. PBR ALBEDO only, even diffuse flat lighting, no directional shadows, no highlights, no ambient dark outline; all leaves reasonably uniform brightness with their natural veins. Leaves do not touch the image borders. No ground, no pot, no scene, no text, no checkerboard, no white background. One coherent sprig, not many disconnected stickers, no multiple panels. Output only the isolated transparent RGBA foliage asset.",
+      "measurements": {
+        "sample_step": 4,
+        "fully_transparent": 73497,
+        "alpha_greater_127": 19623,
+        "semi_transparent": 5476,
+        "opaque_neon_pixels": 0,
+        "opaque_linear_RGB": [
+          0.16936671912651352,
+          0.18824173352977097,
+          0.07535358147509702
+        ]
+      }
+    },
+    {
+      "file": "assets/textures/evergreen-oak-canopy-r44.png",
+      "sha256": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229",
+      "native_resolution": [
+        1254,
+        1254
+      ],
+      "generated_original_filename": "exec-e92572d2-0a64-4115-a489-c8affb24fb22.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: seamless full-bleed PBR BASE COLOR / ALBEDO texture of a dense evergreen oak leaf canopy, a companion to a realistic leafy sprig cutout. Generate a square native-resolution texture. Closely overlapping but individually readable small lanceolate oval oak leaves on many fine branching twigs, leaf angles vary naturally, curved pointed leaf outlines and fine veins. Approximately40–60 clearly readable leaf blades across the tile, with much smaller leaf tips between them. All space is filled by real leaf layers: NO blank background, no soil, no large black gaps. Restrained natural silver olive green, warm yellow green sun-growth tips and cooler mature green, approximate average sRGB(116,143,72), balanced varied values across the whole image, not monochrome. This is an original botanical ALBEDO map for a distant 3D canopy mesh, not a photograph with illumination: absolutely no directional light, cast shadows, highlights or deep baked occlusion. Flat diffuse color only. Keep the leaf surfaces and outline natural, not a generic bumpy green grass texture, no geometry primitive pattern. Seamless edges on both axes. No perspective, no text, no labels, no border, no panel layout. Output only the texture.",
+      "purpose": "Opaque inner crown and low-cost far canopy, whose coverage survives mip filtering independently of cutout leaf cards."
+    }
+  ],
+  "materials": {
+    "sprig": {
+      "slot": "08",
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true,
+      "linear_base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness": 0.83
+    },
+    "canopy": {
+      "slot": "09",
+      "alpha_mode": "OPAQUE",
+      "double_sided": true,
+      "linear_base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness": 0.87,
+      "metric_tile_metres": 2.8
+    }
+  },
+  "geometry": "Frozen accepted candidate. Five branch lobes, curved botanical shoots, opaque inner crown; independent local RNG and original tree collision contract.",
+  "known_live_issue": "Ordinary averaged alpha mipmaps lose sprig coverage at intermediate distance. Runtime coverage-preserving mipmaps and TAA motion review are separate parent-owned work; this package does not claim that validation.",
+  "runtime_lod": {
+    "islands_metres": "300 + 800 * island.scale",
+    "transition_metres": 120,
+    "vault_metres": 2600
+  }
+}

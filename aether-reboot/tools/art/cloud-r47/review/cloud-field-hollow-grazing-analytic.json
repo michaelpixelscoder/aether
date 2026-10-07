@@ -1,0 +1,26 @@
+{
+  "label": "hollow-grazing-analytic",
+  "bank": "hollow",
+  "mode": "analytic",
+  "seconds": 6.079540300001099,
+  "dimensions": [
+    240,
+    150
+  ],
+  "origin_local": [
+    3300,
+    550,
+    3800
+  ],
+  "target_local": [
+    0,
+    -140,
+    0
+  ],
+  "orthographic_span": 5600,
+  "steps": 128,
+  "lighting_refresh_steps": 4,
+  "live_noise": "held at R=.70,G/B=.65,A=.50 for both fields",
+  "alpha_mean": 0.18294112384319305,
+  "note": "CPU field inspection, not a runtime screenshot"
+}

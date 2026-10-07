@@ -1,0 +1,68 @@
+"""Independent read-only verification of the saved C World field and energy."""
+import bpy,json,hashlib,math
+import numpy as np
+from pathlib import Path
+OUT=Path(__file__).resolve().parent
+saved=OUT/'sky-r57-calibrated.blend'
+record=json.loads((OUT/'source-candidate.json').read_text())
+assert hashlib.sha256(saved.read_bytes()).hexdigest()==record['candidate_sha256']
+bpy.ops.wm.open_mainfile(filepath=str(saved))
+tree=bpy.context.scene.world.node_tree; nodes=tree.nodes
+def named(prefix):
+    matches=[n for n in nodes if n.name.startswith(prefix)]
+    assert len(matches)==1
+    return matches[0]
+# Blender may truncate saved node names to63bytes. Prefixes must be unique.
+field=named('R57 C | replace blue incident field')
+weight=nodes['R57 C | shared smooth incident weight, never camera mask']
+distance=nodes['R57 C | solar angular distance 1 minus dot']
+normalizer=nodes['R57 C | angular support divisor 1 minus cos4.5deg']
+dot=nodes['Dot with actual stellar direction']
+blue=nodes['Explicit broad blue sky poles']
+background=nodes['Blue boundary radiance | all ray types']
+def link(a,ai,b,bi):
+    assert any(l.from_node==a and l.from_socket==a.outputs[ai] and l.to_node==b and l.to_socket==b.inputs[bi] for l in tree.links)
+link(dot,1,distance,1); link(distance,0,normalizer,0); link(normalizer,0,weight,'Value')
+link(weight,0,field,0); link(blue,0,field,1); link(field,0,background,'Color')
+assert field.blend_type=='MIX' and not field.use_clamp and not field.use_alpha
+assert weight.interpolation_type=='SMOOTHSTEP' and weight.clamp and weight.data_type=='FLOAT'
+assert distance.operation=='SUBTRACT' and float(distance.inputs[0].default_value)==1
+assert normalizer.operation=='DIVIDE'
+for name,expected in [('From Min',0),('From Max',1),('To Min',1),('To Max',0)]:
+    assert float(weight.inputs[name].default_value)==expected
+ancestors=set()
+def visit(node):
+    if node in ancestors: return
+    ancestors.add(node)
+    for socket in node.inputs:
+        for l in socket.links: visit(l.from_node)
+visit(field)
+assert not any(n.bl_idname=='ShaderNodeLightPath' for n in ancestors)
+axis=np.array(dot.inputs[1].default_value,dtype=np.float64); magnitude=np.linalg.norm(axis)
+unit=axis/magnitude; d=float(normalizer.inputs[1].default_value)
+minimum=(1-d)/magnitude
+mu=np.linspace(minimum,1,1048577,dtype=np.float64)
+t=np.clip((1-magnitude*mu)/d,0,1); w=1-t*t*(3-2*t)
+low=np.array(blue.inputs[1].default_value[:3]); high=np.array(blue.inputs[2].default_value[:3])
+warm=np.array(field.inputs[2].default_value[:3]); middle=(low+high)/2; half=(high-low)/2
+extra=np.array([2*math.pi*np.trapezoid(w*(warm[k]-middle[k]-half[k]*unit[2]*mu)*mu,mu) for k in range(3)])
+core=float(nodes['Calibrated finite angular radiance'].inputs[1].default_value)
+threshold=float(nodes['Uniform radiance stellar surface | R57 1.20 degree diameter'].inputs[1].default_value)
+total=core*math.pi*(1-(threshold/magnitude)**2)+extra[0]
+assert abs(total-22)<2e-6
+assert np.max(abs(extra-record['additional_incident_normal_irradiance_rgb_vs_b']))<2e-10
+assert np.array_equal(low,record['blue_poles_b_exact'][0]) and np.array_equal(high,record['blue_poles_b_exact'][1])
+assert np.array_equal(warm,record['warm_boundary_rgb'])
+outside=[]
+for degrees in [4.501,5,10,20,90,180]:
+    v=np.clip((1-magnitude*math.cos(math.radians(degrees)))/d,0,1)
+    wk=1-v*v*(3-2*v); assert wk==0
+    outside.append(degrees)
+proof={'status':'PASS','candidate_sha256':record['candidate_sha256'],
+    'source_graph_connections_and_operations_verified':True,'no_camera_or_light_path_mask_in_field':True,
+    'blue_b_exact_outside_cone_degrees':outside,'blue_poles_exact':True,
+    'quadrature_steps':1048576,'additional_irradiance_rgb_numeric':extra.tolist(),
+    'total_red_irradiance_numeric':float(total),'error_from_target22':float(total-22),
+    'limitations':'This verifies the incident source and energy; rendered radiance after physical transport is allowed to differ globally.'}
+(OUT/'field-proof.json').write_text(json.dumps(proof,indent=2)+'\n',encoding='utf-8')
+print('R57_C_SAVED_FIELD_PASS',json.dumps(proof),flush=True)

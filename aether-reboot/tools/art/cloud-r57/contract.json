@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "recipe": "r57-blue-fill-warm-direct",
+  "shader_sha256": "1e586a174543ea72cae64fa7399b5ecd863b8785e12b2a65b177366063375f54",
+  "limits": {
+    "gpu_bytes": 59768832,
+    "density_mean": 0.006,
+    "regional_density_p99": 0.05,
+    "high_density_p99": 0.035,
+    "analytic_derivative_p99_degrees": 0.05,
+    "opaque_display_rmse": 0.025,
+    "edge_opacity_p99": 0.08
+  },
+  "historical_unchanged": {
+    "tools/art/cloud-r47/contract.json": "3cd7bf04fc7632dc7a04203bcf0c9d453fc2252a001c5fff635d4900b8d47752",
+    "docs/evidence/cloud-r47-audit.json": "2a80be11aff187bb79376b43b784d73b892a5b38a6e12e0b51e358f19bf1be8a",
+    "docs/evidence/cloud-r47-ray-comparison.json": "e46c2a91c07613c30c200500ad729df327caa67545c992ac4c338010b34f24d0",
+    "docs/evidence/cloud-cache-fidelity.json": "f890fbf40795f4adabd0004b999b278a25b98f61d716939a5edca3ad296535a4",
+    "tools/art/review_cloud_field_cpu.py": "38c019e756a41e518fdac9755c3e8a782ca76976853a219f1cd4492d6140573b",
+    "tools/art/compare_cloud_rays_cpu.py": "72e6d97c2742d2761ca0ce1d3c10a841505bda0a9057dd9f642cd89edf909c41",
+    "tools/art/verify_cloud_cache.py": "95429a2e918830bb2a9d5788916657fd12349ab41eca4db7318dd0213da85724",
+    "tools/art/verify-cloud-cache.mjs": "3771ce5821585f0fa68afec8fad6c3c880d33db28d6c021e3434fc84b8471a94",
+    "tools/art/build_cloud_lighting.mjs": "ad7ebbc793f06db058e4e3ce22963b1e237d5d64a9c1900a57099ffcb07c3a5d",
+    "tools/art/review_cloud_light_cpu.py": "c58bd4edca76f4b1bfc93e611b8557ba58f3eded021978f488e5c1cc365f08c1",
+    "tools/art/compare_cloud_light_rays_cpu.py": "ba33e5c5667c517c0f37b96bcec431824fa195349b552bec38c8cccff22c7875",
+    "tools/art/cloud-r57/archive/verify-cloud-lighting-r55.mjs.txt": "f6d04678a62dbd4252c9252a131e2f453bee2723048daa4e007b35112165cd7a",
+    "tools/art/cloud-r55/test-gate.mjs": "95217e6c4e44c18c8609ce5e66dad6b6f6cb1178cca5f8dcccd83056c87fca65",
+    "tools/art/cloud-r55/contract.json": "edea1cc01b9040155e27c3e9b0b1d2a1ca2eb527b43fc3106c7dc8ff45e2a838",
+    "tools/art/cloud-r55/sources.json": "51922c02b07e891397ec4cc86790cc50c4463ffa2eaefcaa1643663fed123550",
+    "tools/art/cloud-r55/provenance.json": "6b0b251adc6921dc8703b3f97347950d8189a13817a5efd1ded71f295433134d",
+    "docs/evidence/cloud-r55-ray-comparison.json": "db02fca2a130b4ee0ca337824ca57d91f9af8e05c74df885961bebdefe6c0ea2",
+    "docs/evidence/cloud-r55-lighting-fidelity.json": "f9ed1ead732865f40e99a8dfc84b512e51871d2f56c161d155a391c5717940f4",
+    "docs/evidence/cloud-r55-negative-tests.json": "30707ef18576c376d2fda749b1c6391cb31ec7a8c079aae76400f8c7b4654c16",
+    "docs/evidence/cloud-cache-assets.json": "2c1f424bc2c8cde966142750dfc28a51d0cfa1a35ba283f46174b0e4f4dc397e",
+    "tools/art/cloud-r57/archive/clouds-r55.wgsl": "ffcc09fbaea8702ddcab1938c3ee1e2c3c8c5431a765a1c00002b2f7ef9119b6"
+  },
+  "lighting": {
+    "ambient_rgb_gain": [
+      4,
+      4.5,
+      5
+    ],
+    "direct_radiance": [
+      3,
+      1.86,
+      0.96
+    ],
+    "bounce_radiance": [
+      3,
+      1.86,
+      0.96
+    ],
+    "bounce_strength": 0.35,
+    "phase_g": 0.45,
+    "bounce_elevation_degrees": 42,
+    "shadow_taps_per_lobe": 4,
+    "lighting_refresh_steps": [
+      4,
+      2
+    ],
+    "daylight_factor": 1
+  },
+  "proof_policy": "Fresh 24 CPU fields from actual R57 radiance; preserve all R47/R55 original contract/source/ray bytes. Historical display transform and fixed-noise cameras remain controlled.",
+  "limits_notes": [
+    "Regional historical .035 pointwise failure remains failed.",
+    "No native performance, temporal or graphical-fidelity claim."
+  ]
+}

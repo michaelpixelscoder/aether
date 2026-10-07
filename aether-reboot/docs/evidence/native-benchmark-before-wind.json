@@ -1,0 +1,304 @@
+{
+  "allocated_entity_indices": 8192,
+  "asset_samples_20_cycles": [],
+  "avatar_fallbacks": 0,
+  "benchmark": true,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 42.0,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 10000,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "contact_manifolds_active": 5,
+  "contact_pairs_active": 3,
+  "contact_pairs_sleeping": 0,
+  "docked": false,
+  "edit_point": [
+    931.2005004882812,
+    587.2721557617188
+  ],
+  "elapsed_seconds": 35.003082275390625,
+  "entities": 5667,
+  "entity_samples_20_cycles": [],
+  "frame_ms_p50_p95_p99": [
+    4.252600017935038,
+    4.844500217586756,
+    5.871799774467945
+  ],
+  "fuel": 1107.498291015625,
+  "gpu_timestamps_measured": true,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "material_assets": 111,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.0193,
+    0.0521,
+    0.0652
+  ],
+  "mesh_assets": 739,
+  "mesh_max_ms": 1.0089000000000001,
+  "mesh_p95_ms": 0.3996,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    2284.0161000000003,
+    3226.6899000000003,
+    3308.5014
+  ],
+  "navigation": {
+    "angular_y": 0.00008441237878287211,
+    "position": [
+      0.1501418501138687,
+      14.263277053833008,
+      0.45346325635910034
+    ],
+    "target_altitude": 12.0,
+    "velocity": [
+      -0.0011371984146535397,
+      -0.000015829913536435924,
+      -0.0009075473062694073
+    ],
+    "yaw": -0.02006552740931511
+  },
+  "notice": "Votre premier vaisseau vous attend au chantier.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.0218,
+      0.0322,
+      0.09899999999999999
+    ],
+    "avian/collision/update_contacts": [
+      2.3272000000000004,
+      2.5724,
+      2.9044000000000003
+    ],
+    "avian/solver/apply_restitution": [
+      0.00039999999999999996,
+      0.0007,
+      0.0007999999999999999
+    ],
+    "avian/solver/finalize": [
+      0.009000000000000001,
+      0.0123,
+      0.05450000000000001
+    ],
+    "avian/solver/integrate_positions": [
+      0.032100000000000004,
+      0.06380000000000001,
+      0.1442
+    ],
+    "avian/solver/integrate_velocities": [
+      0.0389,
+      0.0814,
+      0.2125
+    ],
+    "avian/solver/prepare_constraints": [
+      0.0123,
+      0.0213,
+      0.06849999999999999
+    ],
+    "avian/solver/relax_velocities": [
+      0.0088,
+      0.012,
+      0.0143
+    ],
+    "avian/solver/solve_constraints": [
+      0.0099,
+      0.0131,
+      0.0158
+    ],
+    "avian/solver/store_impulses": [
+      0.00019999999999999998,
+      0.0005,
+      0.0007999999999999999
+    ],
+    "avian/solver/swept_ccd": [
+      0.0005,
+      0.0007,
+      0.0009
+    ],
+    "avian/solver/update_velocity_increments": [
+      0.0152,
+      0.0235,
+      0.0765
+    ],
+    "avian/solver/warm_start": [
+      0.0028,
+      0.004,
+      0.0048
+    ]
+  },
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0.0044,
+      0.0087,
+      0.01
+    ],
+    "render/bin_unpacking/elapsed_gpu": [
+      0.076544,
+      0.088576,
+      0.253184
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.0291,
+      0.0356,
+      0.04
+    ],
+    "render/bloom/elapsed_gpu": [
+      0.07936,
+      0.079872,
+      0.080128
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.0079,
+      0.0101,
+      0.0132
+    ],
+    "render/clustering/elapsed_gpu": [
+      0.05888,
+      0.067328,
+      0.229888
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.0104,
+      0.012700000000000001,
+      0.0172
+    ],
+    "render/early prepass/elapsed_gpu": [
+      0.50048,
+      0.582144,
+      0.738304
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0.0021,
+      0.0038,
+      0.0044
+    ],
+    "render/early_mesh_preprocessing/elapsed_gpu": [
+      0.01792,
+      0.018944,
+      0.0192
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.009000000000000001,
+      0.011300000000000001,
+      0.015400000000000002
+    ],
+    "render/main_opaque_pass_3d/elapsed_gpu": [
+      0.414464,
+      0.457216,
+      0.469248
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.0063999999999999994,
+      0.009300000000000001,
+      0.0109
+    ],
+    "render/main_transparent_pass_3d/elapsed_gpu": [
+      0.024064,
+      0.0256,
+      0.026624
+    ],
+    "render/ssao/elapsed_cpu": [
+      0.0028,
+      0.0044,
+      0.005699999999999999
+    ],
+    "render/ssao/elapsed_gpu": [
+      0.13184,
+      0.135168,
+      0.138752
+    ],
+    "render/taa/elapsed_cpu": [
+      0.0006,
+      0.0012,
+      0.0017000000000000001
+    ],
+    "render/taa/elapsed_gpu": [
+      0.04992,
+      0.0512,
+      0.051456
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0.001,
+      0.0019,
+      0.0029000000000000002
+    ],
+    "render/tonemapping/elapsed_gpu": [
+      0.015104,
+      0.015104,
+      0.01536
+    ],
+    "render/ui/elapsed_cpu": [
+      0.0040999999999999995,
+      0.0055,
+      0.0067
+    ],
+    "render/ui/elapsed_gpu": [
+      0.008704,
+      0.00896,
+      0.009216
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0.0013,
+      0.0022,
+      0.0033
+    ],
+    "render/upscaling/elapsed_gpu": [
+      0.009728,
+      0.01024,
+      0.01024
+    ]
+  },
+  "tick": 1914,
+  "tick_ms_p50_p95_p99": [
+    3.0265999999999997,
+    3.9829000000000003,
+    4.6927
+  ],
+  "triangles_in_mesh_assets": 1840696,
+  "tutorial_flags": 12,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 567.0
+    },
+    {
+      "action": "Tether",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 516.0
+    },
+    {
+      "action": "Dock",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 466.0
+    },
+    {
+      "action": "Edit",
+      "height": 42.0,
+      "width": 281.0,
+      "x": 188.5,
+      "y": 415.0
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null
+}

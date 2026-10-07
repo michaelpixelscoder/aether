@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "kind": "CPU reimport comparison, not runtime",
+  "renderer": "Cycles CPU",
+  "samples": 16,
+  "threads": 4,
+  "resolution": [
+    1100,
+    850
+  ],
+  "frame_geometry_proven_identical_to_final_glbs": true,
+  "proof": "portable-rebuild.json",
+  "source_sha256": "d5c9958df99a5551be34c9f4b401f3d254a52c642bd7d03b2209546d6d4e4ce0",
+  "frames": [
+    {
+      "file": "watch-close-baseline.png",
+      "sha256": "e29addac4ea5e9f852680253935fca742106abbedbc7528c6d17345dc5792303"
+    },
+    {
+      "file": "watch-close-candidate.png",
+      "sha256": "1905d184ca8b9d55e47857ea69f59571744986b932ad3cab9811b73654d58d4a"
+    },
+    {
+      "file": "dawn-quarter-baseline.png",
+      "sha256": "457f2d0f322cd2e48c8d42a873f3a3935aa0e21624937292e2ed24ecd50fe5f5"
+    },
+    {
+      "file": "dawn-quarter-candidate.png",
+      "sha256": "c2d6b067c98b3d705f0d9f7743c0eb358784ff0ce685269978941b96fc7957fe"
+    }
+  ],
+  "cameras": {
+    "watch_close": {
+      "target": [
+        -28,
+        9,
+        29
+      ],
+      "position": [
+        -6,
+        25,
+        61
+      ],
+      "orthographic_scale": 29
+    },
+    "dawn_quarter": {
+      "target": [
+        -44,
+        18,
+        7
+      ],
+      "position": [
+        -11,
+        45,
+        60
+      ],
+      "orthographic_scale": 67
+    }
+  }
+}

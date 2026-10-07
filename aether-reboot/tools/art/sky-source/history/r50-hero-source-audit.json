@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checked": 97,
+  "failures": [],
+  "canonical_immutable": true,
+  "render_count": 1,
+  "panorama_exported": false,
+  "ibl_exported": false,
+  "hero_radiance": {
+    "finite": true,
+    "min": 0.099609375,
+    "max": 179200,
+    "pixels_above_red100": 335,
+    "bright_centroid_xy": [
+      294.55223880597015,
+      74.40298507462687
+    ],
+    "bright_bounds_xyxy": [
+      284,
+      64,
+      305,
+      84
+    ]
+  }
+}

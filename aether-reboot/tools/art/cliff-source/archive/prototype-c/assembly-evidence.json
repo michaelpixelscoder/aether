@@ -1,0 +1,323 @@
+{
+  "schema": 1,
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c",
+      "bytes": 19450572,
+      "triangles": 181520,
+      "rock_triangles": 22100,
+      "baseline_regeneration_payload_exact": true,
+      "unchanged_batches": [
+        {
+          "name": "02 | Deep strata",
+          "attributes_sha256": {
+            "POSITION": "14ec8a71924674bd8bc66a7cac5f54b65b42d80ce4e0b46a9837bce50e416fee",
+            "NORMAL": "7c26d56749780decbc15af26fd2bff13246afc09d4a098817ccaf807854e0a58",
+            "TEXCOORD_0": "cf945527d5283b9b2648b597a510bad08c806c69306e8772889e036d2c845b45",
+            "TANGENT": "a3f187272d23630eef353aef4fe78d1c3fac044de2348428cb29a529808ff89f"
+          },
+          "indices_sha256": "f6c641e82720ee96502b21f3df22d83cab4bb983418b3d6920d0d7cd31367c46"
+        },
+        {
+          "name": "03 | Dressed masonry",
+          "attributes_sha256": {
+            "POSITION": "465cbb69e57dfdb7c63fccc32be3df8ccf22edbef72fb0f9b7d1b05d4e471d76",
+            "NORMAL": "773582052cf282478c20e31ce272ce4671f51e41c86e14d91861af154d6dd693",
+            "TEXCOORD_0": "53bbf490d261bc3fe2115c187a8a665401430e5c5db9a796c8cdd3f05d4b9618",
+            "TANGENT": "88bacd52d18f8ade02c4a358b86d7c22e1953bb564a3c436268432e82c66b1bb"
+          },
+          "indices_sha256": "d48937c19ec9506cd760ad9d05ea6093a0a42a7500d8203f65541f3c2672ca31"
+        },
+        {
+          "name": "04 | Worn cornice",
+          "attributes_sha256": {
+            "POSITION": "b38885a16331909462927eb1ccde86a65edd3f6f686bf74920a29c5ec4a54d67",
+            "NORMAL": "6a6a2bd5a1ad5dfcd983970ebeebc0e1f01d96aa1dd411b4d543b9f9cb81e5c1",
+            "TEXCOORD_0": "416f10d3f403992cecee21dbbf5f1b459e998d9fb1421eed7aa2cdf92aa0dec6",
+            "TANGENT": "e45027a445cf67060d010c7c60f8b9cc56db988bfa92c351d82a9bbe7b2d753b"
+          },
+          "indices_sha256": "c65fbf7713888c41d85a039226cdaefa2d8679bc98031069a9fe7b1b3c3e93be"
+        },
+        {
+          "name": "05 | Brushed antique brass",
+          "attributes_sha256": {
+            "POSITION": "b1cf6acfb5c5079fbb3825ec46ae54d4fa0ed59ae7af7a63a6e9958c0419d9d2",
+            "NORMAL": "93b4f5cda9b59e6a9e8f8c6333e62976d9a6653ca2eb7426fabda503962ceea6",
+            "TEXCOORD_0": "fb1c4ce203ee85e8390c14e03382d0ba1d151e9611ffc729e2af49b4ce859ddb",
+            "TANGENT": "6d337268e8bc58c165e0afa65ace6e36ecad3b57a55d98077eb88308443993d3"
+          },
+          "indices_sha256": "72b736965bd7b9255267386d192c9ab1cdf8e87481d20a6451667739cab7a9bc"
+        },
+        {
+          "name": "06 | Cedar and roots",
+          "attributes_sha256": {
+            "POSITION": "d1f39bce2ae9f56d4831a9892889065cf67b7a743c802028e84e3e85bb3af346",
+            "NORMAL": "eac6b44c6fcbb6f05dfe5400210aa17a89d7106312cc8057a0c13d89ede6fed4",
+            "TEXCOORD_0": "7988f690a2a0386b500cdae79758a4f1d2d91e60e6f66f2b7ffd3ccba81cbb92",
+            "TANGENT": "9e62237d6bcb3e57df0da0e9a3e4470ffa12ba99f8c8880b7164ec53a487fbce"
+          },
+          "indices_sha256": "44ecbf5cf9a74b03f67c5870a6582bbdfc6b938fa4ad8cd057648c7c0379b841"
+        },
+        {
+          "name": "07 | Enamel and shadow",
+          "attributes_sha256": {
+            "POSITION": "09072327d8337ce45c20e5c2a4b938cb2e25dbe6df163f4d2f50cd7b77eb8b88",
+            "NORMAL": "823910d2aa83c4e7c5a12989f3c7cb314a1c46d841089d76e479df98a759989e",
+            "TEXCOORD_0": "4de94625812455789cfb9ddea3a5d3b722b161c5b2bd3844379ae718231beefe",
+            "TANGENT": "14cf5f2123a82526d822d92870dc5a0cdbaa3c9cda987f3630be47dca99bd690"
+          },
+          "indices_sha256": "31b5545df6af8061dcaadab03ae3d6dd5b759834a2d80e7d968dc6b447efe417"
+        },
+        {
+          "name": "08 | Deep foliage",
+          "attributes_sha256": {
+            "POSITION": "4ef161f386efc0da16400f29026f241b78110ef97ecb74111533c561c45cb25f",
+            "NORMAL": "202cb2d7359396f0f74cb40bb906f8187a29501086415c30a8ca9b94411dacdf",
+            "TEXCOORD_0": "689d026a036a39134302799a734576dc186de1763d1b5dea7f7f1e150f83cfbd",
+            "TANGENT": "cc3801970b51384cef7d63425ce8e00ec11a7a10ff244e21d64f775e512caa09"
+          },
+          "indices_sha256": "651baa56bd792cdda6b94a6941ef2ff5051564fe6260bbbb0c2af84536d6414b"
+        },
+        {
+          "name": "09 | Sunlit foliage",
+          "attributes_sha256": {
+            "POSITION": "a77ab09ea5e865ab4c121f874f6fd9e581ceef66981f883b7ec7b6f51479fdc0",
+            "NORMAL": "25afda81fe917b47f83865fb2180b7a3728e999d81b32e6d7e50ed6361184ac7",
+            "TEXCOORD_0": "045d307907f37a3b5b7e9820ca438c6db32309b206090a86fd4e1afba7a21b7c",
+            "TANGENT": "07f86bb1773dae5506cb0ddba99fc7352a09e6297fd644734a8afe35edb884f1"
+          },
+          "indices_sha256": "d03aa2b3cb325472eff91defe1d36def9406fb57121cfc0ffdd4fd8e1d7e62d1"
+        },
+        {
+          "name": "10 | Lantern glass",
+          "attributes_sha256": {
+            "POSITION": "ff728599e188c1dd31529b1721b055d7ff8250761da59cb9b8d0f0d4629357ec",
+            "NORMAL": "1940261c008685f20406637297b7e2ee4c806bd255ec33fb163c21ba45c545a9",
+            "TEXCOORD_0": "0cace13d43277534ede812fd3ba35abb53929d37ffa7ddee5c08e1cdee1bb48e",
+            "TANGENT": "4fa3cce22a3d8afc8847ebd113e41d34c8f43f052e1f54b958633aac8977182b"
+          },
+          "indices_sha256": "4f36ec82bdc53ad54594b0425e9bc29fc7cad9f0c14e80dc4a18ad85f948bd95"
+        },
+        {
+          "name": "11 | Aether mineral",
+          "attributes_sha256": {
+            "POSITION": "15489c8392f10256da0cc211be513de8c021f9381a985a927f45eccc0d89aad0",
+            "NORMAL": "1c0910d01b54386fd715d258bcc8c40033b9089b2fbb11d574d93e474a1b36e2",
+            "TEXCOORD_0": "1e89fbb4bc1fdf74e1895d614c23ebfcabdc5baae6b679ba2df608b597b6aa49",
+            "TANGENT": "3ce301b40e373eaff8d88c343872006f450bf68c00db0a6979f8c5bd172becb3"
+          },
+          "indices_sha256": "698f4904b286e5b36c509e8c2e2099cfc43f0a9542adb227a213f99195884eea"
+        },
+        {
+          "name": "12 | Surface biome",
+          "attributes_sha256": {
+            "POSITION": "5b0d8730c5d52caff97eb4b8ec7381d483b35393d0439878eaafdc8369df8423",
+            "NORMAL": "e543ae0fa8735991810ab4b21f525ac85c3bc506a02fe82635e669519fffe473",
+            "TEXCOORD_0": "d4e9c4a3182035e6ccf3dbadbcad65d58b2d7e870dff4ae5d57176a5fa1aacbc",
+            "TANGENT": "0d0aef44a4d220e7556e22dc17c5f9d756cd483c0aa0839d3bdb8e8ec17922f4"
+          },
+          "indices_sha256": "e876163919f86f0dc55136aaf67cc698297fa66cdf9c48f3c869b71924e72480"
+        }
+      ],
+      "before_bounds": [
+        [
+          -72.27836608886719,
+          80.40911865234375
+        ],
+        [
+          -88.74075317382812,
+          88.98600006103516
+        ],
+        [
+          -80.10235595703125,
+          89
+        ]
+      ],
+      "after_bounds": [
+        [
+          -72.27836608886719,
+          80.40911865234375
+        ],
+        [
+          -88.74075317382812,
+          88.98600006103516
+        ],
+        [
+          -80.10235595703125,
+          89
+        ]
+      ],
+      "bounds_exact": true,
+      "degenerate_triangles": 0,
+      "inverted_triangles": 0,
+      "max_normal_length_error": 1.3258611830657685e-7,
+      "max_tangent_length_error": 0.00006741918633434985,
+      "min_normal_dot": 0.9999999835190915,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "protected_root_triangles": 252,
+      "protected_root_attributes_and_corners_exact": true,
+      "substrate_connected_components": 1,
+      "original_terrain_components": 1
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353",
+      "bytes": 12942888,
+      "triangles": 124521,
+      "rock_triangles": 24586,
+      "baseline_regeneration_payload_exact": true,
+      "unchanged_batches": [
+        {
+          "name": "02 | Deep strata",
+          "attributes_sha256": {
+            "POSITION": "0e8d696ddee06f80a9644b33fe419820b202ca9c4930bca05a93b2be58704813",
+            "NORMAL": "65ce949a703df6caecb489edf82ba3094f3ca1faebf761f50828cf6a6358a62f",
+            "TEXCOORD_0": "adc114caeed8c70128cbf03af8828c9e11e1b2e42c6a3858816e28acee590b97",
+            "TANGENT": "199ff8231e312af2d61991b006eef18fa54adba8c5eec8211feb4204643c2472"
+          },
+          "indices_sha256": "d37e8d76d3410b708b4f6c41814add7ee87bf058addb08fcee88fd447624c91e"
+        },
+        {
+          "name": "03 | Dressed masonry",
+          "attributes_sha256": {
+            "POSITION": "fb3823edf92be2f49e76f890f59af397bf5bc5f21ca9f3d55eecaf9bec6bd6a9",
+            "NORMAL": "c79c6b220d1d5139dcca249c7b63199afa835f3abad98a21df56a9e3afaeb33f",
+            "TEXCOORD_0": "68cebaa9f93a907723c30ee516eb93ec4248272b7f82c93516bfdfe7f77e3515",
+            "TANGENT": "190b711ffc47e6b4851d7836d671346967a016486f3a016466371d9e5cbac80a"
+          },
+          "indices_sha256": "9411dbc0d72937bab092c95d4289f20ebe61a95db0f43b0b6e088d5797468024"
+        },
+        {
+          "name": "04 | Worn cornice",
+          "attributes_sha256": {
+            "POSITION": "86fd8c3594cfde20f46033def71d8fc60aa93158662c522afe2845d2cf71bc7f",
+            "NORMAL": "0e604c485a13c544878b5637bc9c0c93e6ac0388fb43e0b2dfb800c56c07a5a4",
+            "TEXCOORD_0": "12b3f5d4476b0178af7cb5c2303261f6ae99062308283f8e36dee8a26c7eba5c",
+            "TANGENT": "55b98293ad51e85ca6542d204413f772dfdfb68f02f0756876b501fd5f411748"
+          },
+          "indices_sha256": "b349712b0f4d40d4c8a35c50947db36490ab338e3e04470636ca11e5b7d4796c"
+        },
+        {
+          "name": "05 | Brushed antique brass",
+          "attributes_sha256": {
+            "POSITION": "2424927fd7abcb6486b58fb64c23f785164309e0816c70f4e348e431e9895a81",
+            "NORMAL": "c81ba5863a95eaaca58ad6d62c8829c82603910b55606262750485d36c98d23d",
+            "TEXCOORD_0": "def7e5ee84b2d9ab157e951510819ad72b6906867da0960da16a638187023815",
+            "TANGENT": "fe56176000d1380fcdfbb8bc0f6d847c8097ed363fe863cab66b7a8bd90e8e8d"
+          },
+          "indices_sha256": "e12c9ea0590d42ba728a692d9da095951a6719683044ea29b81345955c3ebdf6"
+        },
+        {
+          "name": "06 | Cedar and roots",
+          "attributes_sha256": {
+            "POSITION": "fb08c2d921a425bb173ebeb55519278ff523820e4d55dd2f90f210f45958b3e7",
+            "NORMAL": "8204511eeea241494f47a994b00ccdc462b65d7cc6a6018c122dd27e134347a4",
+            "TEXCOORD_0": "afe43327687c8d1d2bcaedc75ce645059c4382afff711cfcd43cc025007058fb",
+            "TANGENT": "f4646c5ff0768864360bdad7eb0f02161a77fde8a8a73470787b0619a658c003"
+          },
+          "indices_sha256": "ee41f65fe15f14a64a94b0311ef1283e0380a1118c26de9ef41ea41a3cf3f35b"
+        },
+        {
+          "name": "07 | Enamel and shadow",
+          "attributes_sha256": {
+            "POSITION": "762ae771686246e3a5600fc2e1bfb77cf840e59e842dbd83c87519a871188d78",
+            "NORMAL": "f70b113e94ec89b9f5dd6a1a52d3f5692a557d37e4672676eb2f2934279f3ba1",
+            "TEXCOORD_0": "f9bf6cb22d890658ec5a71b17cf6cb29989bbea1bdcd997a50d045f9533c80d8",
+            "TANGENT": "571a9fa0e9491432801df72964af88ad7240015fa05b84523b029b41ef95c378"
+          },
+          "indices_sha256": "a57f478ca5d65bc3f1cccfaceeb898a6176f7849e85f066f3ddd7c4361cf6720"
+        },
+        {
+          "name": "08 | Deep foliage",
+          "attributes_sha256": {
+            "POSITION": "97bfc9c73a1838d143af85eeaaced724ece80882bc4ad22b563b531d522261fb",
+            "NORMAL": "28f67d4f29ae10e70e8dc49e95ec8aedd38d2de9ec08cedb6f4a0bd6ecc74d4f",
+            "TEXCOORD_0": "dfd3d29897d934abe28db01075f6ac831127d6b7e9def0558e87fcacb6e77eb7",
+            "TANGENT": "8c47ee5e04918f59cb2e9cfe0581711c1e1cb829c19b13d7df993949fb802a3f"
+          },
+          "indices_sha256": "63dcef4f300d63a833ade8bede5e256c4ab063454961b324ed6691b0d0117ad5"
+        },
+        {
+          "name": "09 | Sunlit foliage",
+          "attributes_sha256": {
+            "POSITION": "eec3234c19d5e822297d05aa09f4a05379eedcaf6f47f690ddea94522428a26f",
+            "NORMAL": "64ac55b32c15d182cb6f7fc92201f655640bf122cf58a9b7e92b134a19ea1281",
+            "TEXCOORD_0": "5de85d9b26b147e53612926175b259271e9d5b0732f9a721643ecbebedc31ac6",
+            "TANGENT": "41baf8c58c4d6eb087c1b9037c0a739bd945a08338756f62d53acb0f3c196038"
+          },
+          "indices_sha256": "59233755b7d1d79f1f424e9df631193238ada859a2772c58fb1c7bda4c013733"
+        },
+        {
+          "name": "10 | Lantern glass",
+          "attributes_sha256": {
+            "POSITION": "2047963d1089a24bba734297e1021f23c84094b7fc196d083179f46ca20224bc",
+            "NORMAL": "f220efa64033a26b0324c5b474a0d2e386e8c21d69efc1b3504269b83234981d",
+            "TEXCOORD_0": "fd5e2bf827f3a340f9cdc42edd781e274e8a4ac5d261b25a53edd8d6c4608172",
+            "TANGENT": "576ecc8c9da39fce7fc64e79f0a74313563f07ad73a94493144890cb75874584"
+          },
+          "indices_sha256": "fa9febf67cd420b648d88562c1faa9fd9e1130d75b1a419915ac22740d969d9e"
+        },
+        {
+          "name": "11 | Aether mineral",
+          "attributes_sha256": {
+            "POSITION": "92001cf3e01286b96305a99a66c74fa9adc98f5e4b4bbd1502a852bda7fb7266",
+            "NORMAL": "0695a1c5450a93ebb14ff48ffda9e01353b96da2263165251ef4cb80b9481ba4",
+            "TEXCOORD_0": "921c1013f2aa6a5f780fb90b70c6189343ef6c8c48a11212924e0f9ef42dfa82",
+            "TANGENT": "450a561889eb2891f276fc3b106624205a6f420f068374d95a4d4d043850fd7b"
+          },
+          "indices_sha256": "87ecd4938f868ccabeaa89143fe528ce1fa9f4806fcd858e26d1fb9a847d3b6f"
+        },
+        {
+          "name": "12 | Surface biome",
+          "attributes_sha256": {
+            "POSITION": "4af1753caad784d09d738d94896e62378ef6de82f3d5cbc35d8e5bf9167b9993",
+            "NORMAL": "db35081f6590583c1edc591cd010cd3f60d9bae79c45a48fbdd9e5661608ea0c",
+            "TEXCOORD_0": "06f4d970f742754d3d0e8e706ab8871aa06fc1def5d0f8d256cfcb6deb0046d1",
+            "TANGENT": "6a7db40255d2cb9cd273e88a759a7b7a290e7f36cf46a26568c090585f980396"
+          },
+          "indices_sha256": "4a1dbef55f8ea4a4c6e3d560346152a5fdc9f942d223e9fb30bbbf55083e0176"
+        }
+      ],
+      "before_bounds": [
+        [
+          -73.1258316040039,
+          61.38911819458008
+        ],
+        [
+          -113,
+          95.68000030517578
+        ],
+        [
+          -78.82537841796875,
+          89
+        ]
+      ],
+      "after_bounds": [
+        [
+          -73.1258316040039,
+          61.38911819458008
+        ],
+        [
+          -113,
+          95.68000030517578
+        ],
+        [
+          -78.82537841796875,
+          89
+        ]
+      ],
+      "bounds_exact": true,
+      "degenerate_triangles": 0,
+      "inverted_triangles": 0,
+      "max_normal_length_error": 1.380215670643281e-7,
+      "max_tangent_length_error": 0.0000684034325018068,
+      "min_normal_dot": 0.9999999917059974,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "protected_root_triangles": 180,
+      "protected_root_attributes_and_corners_exact": true,
+      "substrate_connected_components": 2,
+      "original_terrain_components": 2
+    }
+  ]
+}

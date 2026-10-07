@@ -1,0 +1,187 @@
+{
+  "accepted_cases": 4,
+  "historical_rounded_components": 20,
+  "new_explicit_components": 3,
+  "tests": [
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unlisted single ULP",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unmeasured value inside nominal epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "two quantization bins",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "handedness sign",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "normal mapped surface",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "non-foliage wood",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "anisotropic surface",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unlisted single ULP",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unmeasured value inside nominal epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "two quantization bins",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "handedness sign",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "normal mapped surface",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "non-foliage wood",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "anisotropic surface",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "unlisted single ULP",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "unmeasured value inside nominal epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "two quantization bins",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "handedness sign",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "normal mapped surface",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "non-foliage wood",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "anisotropic surface",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unlisted single ULP",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unmeasured value inside nominal epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "two quantization bins",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "handedness sign",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "normal mapped surface",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "non-foliage wood",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "anisotropic surface",
+      "passed": true
+    },
+    {
+      "test": "extension cannot replace old measured coordinates",
+      "passed": true
+    },
+    {
+      "test": "extension must bind exact historical evidence",
+      "passed": true
+    },
+    {
+      "test": "woody node displacement remains in scope",
+      "passed": true
+    }
+  ]
+}

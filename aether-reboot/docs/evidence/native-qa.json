@@ -1,0 +1,845 @@
+{
+  "allocated_entity_indices": 32768,
+  "asset_samples_20_cycles": [
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ],
+    [
+      592,
+      417,
+      0
+    ]
+  ],
+  "avatar_fallbacks": 0,
+  "benchmark": false,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 23.0,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 547,
+  "checkpoint": 1,
+  "checks": [
+    "nouvelle partie",
+    "atelier au quai",
+    "ajout transactionnel",
+    "annulation",
+    "rétablissement",
+    "sauvegarde confirmée",
+    "nouvelle session nettoyée",
+    "reprise de la construction",
+    "poses, équipements et picking après reprise",
+    "marche et incarnation",
+    "reprise du personnage",
+    "départ",
+    "harpon et joint unique",
+    "reconstruction des attaches",
+    "point local après reprise attachée",
+    "libération du câble",
+    "secours au quai",
+    "scission exacte",
+    "poses et picking après scission",
+    "annulation de scission",
+    "rétablissement de scission",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "décor conservé entre les reprises",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "100 éditions puis annulations",
+    "arrivée et checkpoint"
+  ],
+  "contact_manifolds_active": 0,
+  "contact_pairs_active": 0,
+  "contact_pairs_sleeping": 0,
+  "couriers": [
+    {
+      "id": 1,
+      "position": [
+        -16.186153411865234,
+        362.541015625,
+        -395.01141357421875
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -524.5213012695312,
+        364.028076171875,
+        -951.861328125
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -1882.727783203125,
+        417.6202392578125,
+        -1056.856689453125
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -1717.2718505859375,
+        417.6201477050781,
+        -1743.143310546875
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        1163.1517333984375,
+        711.8858032226562,
+        -1540.9459228515625
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -155.80096435546875,
+        54.24418258666992,
+        -209.16287231445312
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -467.7570495605469,
+        136.4783935546875,
+        -1068.883056640625
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -180.60935974121094,
+        134.3408660888672,
+        -404.40557861328125
+      ]
+    }
+  ],
+  "decoration_cpu_ms_p50_p95_p99": [
+    0.0594,
+    5.4528,
+    6.2675
+  ],
+  "docked": true,
+  "edit_point": [
+    676.2254638671875,
+    527.2564086914062
+  ],
+  "elapsed_seconds": 23.353702545166016,
+  "entities": 16935,
+  "entity_samples_20_cycles": [
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934,
+    16934
+  ],
+  "expedition": {
+    "cargo": [
+      12,
+      4,
+      4,
+      0,
+      12,
+      0
+    ],
+    "contracts": [],
+    "credits": 175,
+    "destination": 100,
+    "harvested": [],
+    "observed_species": [],
+    "portal_ready_tick": 0,
+    "visited": [
+      0,
+      123
+    ]
+  },
+  "frame_ms_p50_p95_p99": [
+    11.172199621796608,
+    14.681600034236908,
+    40.943700820207596
+  ],
+  "fuel": 3600.0,
+  "gpu_timestamps_measured": true,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "loading": {
+    "elapsed": 0.0,
+    "error": "",
+    "pending": []
+  },
+  "mass_kg": 10994.0,
+  "material_assets": 417,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.0369,
+    0.17200000000000001,
+    0.214
+  ],
+  "mesh_assets": 592,
+  "mesh_max_ms": 0.6870999999999999,
+  "mesh_p95_ms": 0.3962,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    66.7166,
+    113.06960000000001,
+    119.9688
+  ],
+  "navigation": {
+    "angular_y": 0.0,
+    "intent": {
+      "brake": false,
+      "climb": 0.0,
+      "throttle": 0.0,
+      "turn": 0.0
+    },
+    "position": [
+      65.0,
+      20.0,
+      -154.0
+    ],
+    "target_altitude": 20.0,
+    "velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "yaw": 0.0
+  },
+  "notice": "Découverte : Couronne de l'Aube · îlot 23. Votre atlas a été complété ; prime de cartographie reçue.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physical_keys": [],
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.0264,
+      0.0413,
+      0.1185
+    ],
+    "avian/collision/update_contacts": [
+      0.0493,
+      0.0999,
+      0.45780000000000004
+    ],
+    "avian/solver/apply_restitution": [
+      0.00019999999999999998,
+      0.0005,
+      0.0007999999999999999
+    ],
+    "avian/solver/finalize": [
+      0.0104,
+      0.031900000000000005,
+      0.1793
+    ],
+    "avian/solver/integrate_positions": [
+      0.0422,
+      0.2156,
+      4.7981
+    ],
+    "avian/solver/integrate_velocities": [
+      0.0451,
+      0.244,
+      4.8798
+    ],
+    "avian/solver/prepare_constraints": [
+      0.0005,
+      0.0014,
+      0.0166
+    ],
+    "avian/solver/relax_velocities": [
+      0.0005,
+      0.0017000000000000001,
+      0.0044
+    ],
+    "avian/solver/solve_constraints": [
+      0.00039999999999999996,
+      0.0009,
+      0.0048
+    ],
+    "avian/solver/store_impulses": [
+      0.00009999999999999999,
+      0.00019999999999999998,
+      0.0005
+    ],
+    "avian/solver/swept_ccd": [
+      0.0005,
+      0.001,
+      0.0013
+    ],
+    "avian/solver/update_velocity_increments": [
+      0.0201,
+      0.0488,
+      2.5377
+    ],
+    "avian/solver/warm_start": [
+      0.00039999999999999996,
+      0.0013,
+      0.0027
+    ]
+  },
+  "progress": 4,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 35,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0.0125,
+      0.0219,
+      0.0324
+    ],
+    "render/bin_unpacking/elapsed_gpu": [
+      0.164352,
+      1.003776,
+      1.908992
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.0441,
+      0.0686,
+      0.0942
+    ],
+    "render/bloom/elapsed_gpu": [
+      0.09216,
+      0.099584,
+      0.123392
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.017499999999999998,
+      0.0281,
+      0.0376
+    ],
+    "render/clustering/elapsed_gpu": [
+      0.06272,
+      0.214528,
+      0.864
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.0346,
+      0.0577,
+      0.07669999999999999
+    ],
+    "render/early prepass/elapsed_gpu": [
+      0.912128,
+      1.268992,
+      1.541376
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0.0044,
+      0.007500000000000001,
+      0.0112
+    ],
+    "render/early_mesh_preprocessing/elapsed_gpu": [
+      0.019456,
+      0.022016,
+      0.367616
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.023200000000000002,
+      0.0391,
+      0.0592
+    ],
+    "render/main_opaque_pass_3d/elapsed_gpu": [
+      2.788864,
+      3.290368,
+      3.710976
+    ],
+    "render/main_transmissive_pass_3d/elapsed_cpu": [
+      0.0078,
+      0.013900000000000001,
+      0.0193
+    ],
+    "render/main_transmissive_pass_3d/elapsed_gpu": [
+      0.01792,
+      0.019712,
+      0.020736
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.0631,
+      0.1008,
+      0.1347
+    ],
+    "render/main_transparent_pass_3d/elapsed_gpu": [
+      3.054336,
+      3.588608,
+      3.809792
+    ],
+    "render/ssao/elapsed_cpu": [
+      0.0055,
+      0.0094,
+      0.0126
+    ],
+    "render/ssao/elapsed_gpu": [
+      0.1792,
+      0.328704,
+      0.447744
+    ],
+    "render/taa/elapsed_cpu": [
+      0.0015999999999999999,
+      0.0026,
+      0.0042
+    ],
+    "render/taa/elapsed_gpu": [
+      0.073472,
+      0.084992,
+      0.088576
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0.0018,
+      0.0045000000000000005,
+      0.0061
+    ],
+    "render/tonemapping/elapsed_gpu": [
+      0.020736,
+      0.02176,
+      0.032
+    ],
+    "render/ui/elapsed_cpu": [
+      0.0083,
+      0.0134,
+      0.0184
+    ],
+    "render/ui/elapsed_gpu": [
+      0.011776,
+      0.01408,
+      0.014336
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0.002,
+      0.0036,
+      0.006
+    ],
+    "render/upscaling/elapsed_gpu": [
+      0.013056,
+      0.013568,
+      0.020992
+    ]
+  },
+  "residents": [
+    {
+      "id": 1,
+      "position": [
+        -667.222900390625,
+        -1398.1019287109375,
+        -1587.714111328125
+      ],
+      "species": "Guardian"
+    },
+    {
+      "id": 2,
+      "position": [
+        1278.519287109375,
+        -2198.10205078125,
+        -3086.098876953125
+      ],
+      "species": "Guardian"
+    },
+    {
+      "id": 3,
+      "position": [
+        -589.0057983398438,
+        -1355.902099609375,
+        -1681.2994384765625
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 4,
+      "position": [
+        -611.0735473632812,
+        -1356.3406982421875,
+        -1714.6844482421875
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 5,
+      "position": [
+        1354.141845703125,
+        -2154.15185546875,
+        -3108.947265625
+      ],
+      "species": "Cavewing"
+    },
+    {
+      "id": 6,
+      "position": [
+        1345.4290771484375,
+        -2153.8271484375,
+        -3289.467041015625
+      ],
+      "species": "Cavewing"
+    }
+  ],
+  "sail_motion": [
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.49460288882255554,
+        -0.44638732075691223
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.49460288882255554,
+        -0.44638732075691223
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.49460288882255554,
+        -0.44638732075691223
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.49460288882255554,
+        -0.44638732075691223
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.49460288882255554,
+        -0.44638732075691223
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.07599680870771408,
+        0.6619049310684204
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.07599680870771408,
+        0.6619049310684204
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.07599680870771408,
+        0.6619049310684204
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.07599680870771408,
+        0.6619049310684204
+      ]
+    },
+    {
+      "normal_wind": -9.158321380615234,
+      "seconds": 0.800000011920929,
+      "speed": 9.327548027038574,
+      "weights": [
+        -0.7631934285163879,
+        0.07599680870771408,
+        0.6619049310684204
+      ]
+    }
+  ],
+  "tick": 48,
+  "tick_ms_p50_p95_p99": [
+    1.1076000000000001,
+    5.958200000000001,
+    8.2271
+  ],
+  "triangles_in_mesh_assets": 3479726,
+  "tutorial_flags": 253,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 564.0
+    },
+    {
+      "action": "Atlas",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 522.0
+    },
+    {
+      "action": "Tether",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 480.0
+    },
+    {
+      "action": "Dock",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 438.0
+    },
+    {
+      "action": "Edit",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 396.0
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null,
+  "window_focused": true
+}

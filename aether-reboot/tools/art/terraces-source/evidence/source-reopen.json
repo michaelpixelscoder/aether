@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "kind": "dawn",
+      "sha256": "026b8261fb10fc62e99ab982f739e137d113db35b44c037c8b231c597edae63e",
+      "original_objects": 12,
+      "addition_objects": 3,
+      "all_file_images_packed": true,
+      "packed_images": 15
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "1e68ddc4d8906e1f0bf463f8abaaa655ecb29a860ee445d334252d29f2997558",
+      "original_objects": 12,
+      "addition_objects": 3,
+      "all_file_images_packed": true,
+      "packed_images": 15
+    }
+  ]
+}

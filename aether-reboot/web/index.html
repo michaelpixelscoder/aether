@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101723">
+<title>Aether Isles — Les neuf archipels</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ac86ff' d='M16 1 22 12 31 16 22 21 16 31 10 21 1 16 10 12Z'/%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101723;color:#eceadd;font-family:system-ui,sans-serif}
+  canvas{display:block;width:100%;height:100%;outline:none}#loading-screen{position:fixed;inset:0;z-index:100;display:grid;place-content:center;padding:32px;background:#101723}
+  .card{max-width:580px}small{color:#b396ff;letter-spacing:.18em}h1{font:48px/1.1 Georgia,serif;margin:25px 0}p{color:#aebbc5;line-height:1.65}button{background:#ac86ff;color:#111722;border:0;border-radius:6px;padding:13px 24px;font:inherit;cursor:pointer}button:focus-visible{outline:3px solid white;outline-offset:4px}[hidden]{display:none!important}
+</style>
+<canvas id="aether-canvas" aria-label="Aether Isles, jeu de construction et de navigation" tabindex="0"></canvas>
+<button id="fullscreen" hidden aria-label="Passer en plein écran" style="position:fixed;left:50%;transform:translateX(-50%);top:22px;z-index:25;padding:5px 10px;font-size:11px;border:1px solid #736681;background:#101723;color:#eceadd">Plein écran</button>
+<div id="loading-screen" role="status" aria-live="polite"><div class="card"><small>AETHER ISLES</small><h1 id="loading-title">Le voyage se prépare.</h1><p id="loading-message">Chargement du moteur et vérification de WebGPU…</p><button id="retry" hidden>Réessayer</button><p>Clavier et souris · Sauvegarde locale à ce navigateur</p></div></div>
+<noscript>Activez JavaScript pour démarrer le jeu.</noscript>
+<script type="module">
+const screen=document.getElementById('loading-screen');
+const title=document.getElementById('loading-title');
+const message=document.getElementById('loading-message');
+const retry=document.getElementById('retry');
+let ready=false;
+function fail(detail){screen.hidden=false;title.textContent="Le voyage n'a pas pu démarrer.";message.textContent=detail;retry.hidden=false;window.aetherBootError=detail;}
+retry.onclick=()=>location.reload();
+const fullscreen=document.getElementById('fullscreen');
+let photoMode=false;document.addEventListener('keydown',e=>{if(e.code==='F8'&&!e.repeat){photoMode=!photoMode;fullscreen.hidden=photoMode||!document.fullscreenEnabled;}});
+fullscreen.onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();document.getElementById('aether-canvas').focus();}catch{fullscreen.textContent='Plein écran indisponible';}};
+document.addEventListener('fullscreenchange',()=>{fullscreen.textContent=document.fullscreenElement?'Rétablir':'Plein écran';fullscreen.setAttribute('aria-label',document.fullscreenElement?'Quitter le plein écran':'Passer en plein écran');});
+window.aetherReady=()=>{ready=true;screen.hidden=true;fullscreen.hidden=!document.fullscreenEnabled;document.getElementById('aether-canvas').focus();};
+window.addEventListener('error',e=>{if(!ready)fail(e.message||'Erreur de chargement.');});
+window.addEventListener('unhandledrejection',e=>{if(!String(e.reason).includes('Using exceptions for control flow'))fail(String(e.reason));});
+// Browsers require a user gesture before starting audio.
+const contexts=[];
+if(window.AudioContext){window.AudioContext=new Proxy(window.AudioContext,{construct(Target,args){const context=new Target(...args);contexts.push(context);return context;}});}
+for(const type of ['pointerdown','keydown']) document.addEventListener(type,()=>{for(const c of contexts)if(c.state==='suspended')c.resume();},{passive:true});
+setTimeout(()=>{if(!ready&&!window.aetherBootError)fail('Le chargement prend trop de temps. Vérifiez la connexion, puis réessayez.');},90000);
+try {
+  message.textContent='Vérification de WebGPU et du pilote graphique…';
+  if(!isSecureContext) throw Error('Ouvrez le jeu avec HTTPS ou sur localhost. WebGPU nécessite un contexte sécurisé.');
+  if(!navigator.gpu) throw Error('WebGPU est indisponible. Utilisez une version récente de Chrome ou Edge avec accélération graphique activée, ou le jeu Windows.');
+  const adapter=await navigator.gpu.requestAdapter();
+  if(!adapter) throw Error('Aucun adaptateur WebGPU disponible. Vérifiez votre pilote graphique et l’accélération matérielle du navigateur.');
+  try{const device=await adapter.requestDevice();device.destroy();}catch(error){throw Error('Le pilote WebGPU ne peut pas initialiser le jeu. Essayez Chrome ou Edge à jour, ou la version Windows. '+error.message);}
+  message.textContent='Téléchargement du module de démarrage…';
+  const {default:init}=await import('./build/aether_game.js');
+  message.textContent='Chargement WebAssembly et initialisation du moteur…';
+  await init();
+}catch(error){if(!String(error).includes('Using exceptions for control flow'))fail(error.message||String(error));}
+</script>
+</html>

@@ -1,0 +1,111 @@
+{
+  "terrain_matches_domain": true,
+  "sail_morph_primitives": 5,
+  "geometry_sha256": "56b816c30b4c6fda62b772f34603d05b3da720c3994d2e0eea11d86aded1e2b8",
+  "base_generator_sha256": "4f362af19f5e33a67012f1436d1df1fb888de6284ec67061f360eb7899ee4449",
+  "sail_pipeline": {
+    "sources": [
+      {
+        "role": "canvas",
+        "path": "tools/art/build_sail_r52.py",
+        "sha256": "f1c8b2b3ed2d40951590f4d87abc4cf56b6a8c7f8cd9d4e91b9397dc3c3ed276"
+      },
+      {
+        "role": "archived_canvas",
+        "path": "tools/art/sail-source/archive/r44-canvas.blend",
+        "sha256": "467bb211fc896e20ecafa01ef206d321cbfb1eb3ad21c7291039c801ae518487"
+      },
+      {
+        "role": "spars",
+        "path": "tools/art/build_sail_rig.py",
+        "sha256": "b9cd3bcf13e20ef339f71e0cd9a16c68fcdd0bba542e834bd24971ca10da5804"
+      },
+      {
+        "role": "primitive_helpers",
+        "path": "tools/art/build_ship.py",
+        "sha256": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd"
+      },
+      {
+        "role": "assembly",
+        "path": "tools/art/merge_sail_rig.mjs",
+        "sha256": "02fde852b48d0d029991f570202d8710ac4744aeb40d5955741a2c0f15478183"
+      },
+      {
+        "role": "provenance_validation",
+        "path": "tools/art/sail_provenance.mjs",
+        "sha256": "e6035dbcf51ebe3e83612ddce90e18c2b05347f90704944661f42bab4e4e676f"
+      }
+    ],
+    "cloth_payload_sha256": "edec8c9d1d92ed8cb1a7d3e1f44ebcc4ee8e454624b06b4a20ffe3cf2d6c09d0",
+    "static_payload_sha256": "a880915d9cc1c36d64757f787f6d217625664c19a692674d1944ef966246183d",
+    "triangles": 79084
+  },
+  "models": [
+    {
+      "file": "anchor.glb",
+      "sha256": "30578c960be4c32b93eb452817f4678b61951924521a0819a200407ab5e8c7a1",
+      "meshes": 5,
+      "materials": 4
+    },
+    {
+      "file": "harpoon.glb",
+      "sha256": "568826971cd79e010a0c76130d1db0d9c86fce4cd1d311502019d1bec4f0e0c0",
+      "meshes": 5,
+      "materials": 5
+    },
+    {
+      "file": "helm.glb",
+      "sha256": "047f2fd0d4b5e51f1c6c040fefb65bcdcebd18987cffed0ca351fc2b53ff378e",
+      "meshes": 4,
+      "materials": 3
+    },
+    {
+      "file": "island-0.glb",
+      "sha256": "9f3e3f82f94ff3bcdf3b2ad7fd6ab3ff5b29fe95cab7891a1962ccc280218480",
+      "meshes": 27,
+      "materials": 17
+    },
+    {
+      "file": "island-1.glb",
+      "sha256": "14cca56cbe63bbab24fb3acb92fb75e915a894d7d7d9e042f795958ca8b9cda5",
+      "meshes": 27,
+      "materials": 17
+    },
+    {
+      "file": "island-2.glb",
+      "sha256": "1ed8327b59728ca77f7b4c4e379a58297a16827f77c1766a80366854dd3a9743",
+      "meshes": 27,
+      "materials": 17
+    },
+    {
+      "file": "lift.glb",
+      "sha256": "8f4dceea161e33857fbf1b3cd51e7c5b0f0780098e59f8470f36331df73b04af",
+      "meshes": 5,
+      "materials": 4
+    },
+    {
+      "file": "propeller.glb",
+      "sha256": "d5452f2f8e5290d873fd3a9d30592adc717a5336319b4e9b478646c1e82c3891",
+      "meshes": 6,
+      "materials": 5
+    },
+    {
+      "file": "sail.glb",
+      "sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23",
+      "meshes": 9,
+      "materials": 7
+    },
+    {
+      "file": "sanctuary.glb",
+      "sha256": "5b76acaa0df4316ef4b0523c54cf7b6355d55a60f653620dc65d8699c1a6a3d2",
+      "meshes": 26,
+      "materials": 16
+    },
+    {
+      "file": "tank.glb",
+      "sha256": "8266df892adff94bdf8ecefc69899b99909d8694d80ceae8df97cc2cfd64a824",
+      "meshes": 5,
+      "materials": 5
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "glbs": [
+    {
+      "file": "arch-vault.glb",
+      "triangles": 93944,
+      "materials": 5,
+      "skylight_rays_clear": 96,
+      "entry_rays_clear": 50,
+      "wall_sightlines_closed": 318,
+      "roof_hits": 125,
+      "floor_rays_clear": 125,
+      "outer_massif_max_y": 650,
+      "upper_collision_surfaces_matched": 148
+    },
+    {
+      "file": "arch-vault-lod.glb",
+      "triangles": 11646,
+      "materials": 5,
+      "skylight_rays_clear": 96,
+      "entry_rays_clear": 50,
+      "wall_sightlines_closed": 318,
+      "roof_hits": 125,
+      "floor_rays_clear": 125,
+      "outer_massif_max_y": 650,
+      "upper_collision_surfaces_matched": 0
+    }
+  ],
+  "colliders": 3318,
+  "original_island_hashes_preserved": true,
+  "dense_wall_sightlines_closed": 12540
+}

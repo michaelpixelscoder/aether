@@ -1,0 +1,3 @@
+Six exact 3D cloud caches, accepted r47 fidelity, historical high banks and 57 MiB GPU verified; old regional .035 gate remains failed.
+R55 analytic/cache lighting: four fixed views at both 4-step and 2-step refresh pass unchanged RMSE/alpha limits; R47 history intact.
+R57 freshly recomputed analytic/cache rays: 8 views pass inherited .025 RMSE/.08 opacity limits; R47/R55 history preserved.

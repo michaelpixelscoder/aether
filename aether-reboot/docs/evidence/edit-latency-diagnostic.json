@@ -1,0 +1,115 @@
+{
+  "samples": [
+    {
+      "input_dispatch_ms": 6.430299999999988,
+      "cell_observed_ms": 12.10149999999885,
+      "mesh_observed_ms": 25.574099999999817,
+      "trace": [
+        {
+          "ms": 6.2000000000116415,
+          "cells": 151,
+          "pending": 0
+        },
+        {
+          "ms": 12.200000000011642,
+          "cells": 152,
+          "pending": 1
+        },
+        {
+          "ms": 25.70000000001164,
+          "cells": 152,
+          "pending": 0
+        }
+      ]
+    },
+    {
+      "input_dispatch_ms": 6.37250000000131,
+      "cell_observed_ms": 13.731400000000576,
+      "mesh_observed_ms": 28.157000000001062,
+      "trace": [
+        {
+          "ms": 6.5,
+          "cells": 151,
+          "pending": 0
+        },
+        {
+          "ms": 14.099999999976717,
+          "cells": 152,
+          "pending": 1
+        },
+        {
+          "ms": 28.5,
+          "cells": 152,
+          "pending": 0
+        }
+      ]
+    },
+    {
+      "input_dispatch_ms": 6.040400000001682,
+      "cell_observed_ms": 13.101599999999962,
+      "mesh_observed_ms": 30.055100000001403,
+      "trace": [
+        {
+          "ms": 5.7000000000116415,
+          "cells": 151,
+          "pending": 0
+        },
+        {
+          "ms": 13.299999999988358,
+          "cells": 152,
+          "pending": 1
+        },
+        {
+          "ms": 30.20000000001164,
+          "cells": 152,
+          "pending": 0
+        }
+      ]
+    },
+    {
+      "input_dispatch_ms": 6.65480000000025,
+      "cell_observed_ms": 12.875200000000405,
+      "mesh_observed_ms": 33.88999999999942,
+      "trace": [
+        {
+          "ms": 6.5,
+          "cells": 151,
+          "pending": 0
+        },
+        {
+          "ms": 12.799999999988358,
+          "cells": 152,
+          "pending": 1
+        },
+        {
+          "ms": 33.59999999997672,
+          "cells": 152,
+          "pending": 0
+        }
+      ]
+    },
+    {
+      "input_dispatch_ms": 6.821300000001429,
+      "cell_observed_ms": 14.877000000000407,
+      "mesh_observed_ms": 29.63380000000143,
+      "trace": [
+        {
+          "ms": 6.800000000046566,
+          "cells": 151,
+          "pending": 0
+        },
+        {
+          "ms": 15.100000000034925,
+          "cells": 152,
+          "pending": 1
+        },
+        {
+          "ms": 30.5,
+          "cells": 152,
+          "pending": 0
+        }
+      ]
+    }
+  ],
+  "method": "Node IPC stages and a read-only requestAnimationFrame trace of cells/jobs; extra attribution, not display latency."
+}

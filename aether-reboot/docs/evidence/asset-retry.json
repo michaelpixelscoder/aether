@@ -1,0 +1,445 @@
+{
+  "attempts": [
+    {
+      "texture": "textures/cedar.png",
+      "rejected_requests": 5,
+      "phase": "Menu"
+    },
+    {
+      "texture": "world/textures/0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401.png",
+      "rejected_requests": 5,
+      "phase": "Menu"
+    }
+  ],
+  "last": {
+    "allocated_entity_indices": 32768,
+    "asset_samples_20_cycles": [],
+    "avatar_fallbacks": 0,
+    "benchmark": false,
+    "binding_message": "",
+    "bindings": {},
+    "camera": {
+      "distance": 23,
+      "pitch": 0.30000001192092896,
+      "yaw": 0.44999998807907104
+    },
+    "cells": 526,
+    "checkpoint": 0,
+    "checks": [],
+    "contact_manifolds_active": 0,
+    "contact_pairs_active": 0,
+    "contact_pairs_sleeping": 0,
+    "couriers": [
+      {
+        "id": 6,
+        "position": [
+          -147.72764587402344,
+          48.68868637084961,
+          -203.58229064941406
+        ]
+      },
+      {
+        "id": 7,
+        "position": [
+          -478.36859130859375,
+          137.7949676513672,
+          -1065.4776611328125
+        ]
+      },
+      {
+        "id": 8,
+        "position": [
+          -169.55459594726562,
+          135.54278564453125,
+          -405.7438659667969
+        ]
+      },
+      {
+        "id": 1,
+        "position": [
+          -6.673142910003662,
+          363.2985534667969,
+          -400.8327331542969
+        ]
+      },
+      {
+        "id": 2,
+        "position": [
+          -533.6969604492188,
+          364.486328125,
+          -945.4791259765625
+        ]
+      },
+      {
+        "id": 3,
+        "position": [
+          -1871.891845703125,
+          419.82135009765625,
+          -1055.1656494140625
+        ]
+      },
+      {
+        "id": 4,
+        "position": [
+          -1728.1075439453125,
+          419.82122802734375,
+          -1744.8341064453125
+        ]
+      },
+      {
+        "id": 5,
+        "position": [
+          1170.724853515625,
+          711.1991577148438,
+          -1532.728759765625
+        ]
+      }
+    ],
+    "decoration_cpu_ms_p50_p95_p99": [
+      0.3,
+      5.6,
+      5.6
+    ],
+    "docked": true,
+    "edit_point": [
+      598.09521484375,
+      420.40850830078125
+    ],
+    "elapsed_seconds": 17.274703979492188,
+    "entities": 16806,
+    "entity_samples_20_cycles": [],
+    "expedition": {
+      "cargo": [
+        12,
+        4,
+        4,
+        0,
+        12,
+        0
+      ],
+      "contracts": [],
+      "credits": 160,
+      "destination": 100,
+      "harvested": [],
+      "observed_species": [],
+      "portal_ready_tick": 0,
+      "visited": [
+        0
+      ]
+    },
+    "frame_ms_p50_p95_p99": [
+      17.400000244379044,
+      590.6000137329102,
+      5256.199836730957
+    ],
+    "fuel": 3600,
+    "gpu_timestamps_measured": false,
+    "keyboard_action": null,
+    "keyboard_ui": false,
+    "loading": {
+      "elapsed": 0.6917000412940979,
+      "error": "",
+      "pending": []
+    },
+    "mass_kg": 10568,
+    "material_assets": 414,
+    "mesh_apply_cpu_ms_p50_p95_p99": [
+      0.1,
+      0.2,
+      0.2
+    ],
+    "mesh_assets": 578,
+    "mesh_max_ms": 0.7,
+    "mesh_p95_ms": 0.7,
+    "mesh_pending": 0,
+    "mesh_queue_to_apply_ms_p50_p95_p99": [
+      14432.5,
+      15763.9,
+      15790.2
+    ],
+    "navigation": {
+      "angular_y": 0,
+      "intent": {
+        "brake": false,
+        "climb": 0,
+        "throttle": 0,
+        "turn": 0
+      },
+      "position": [
+        0,
+        12,
+        0
+      ],
+      "target_altitude": 12,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "yaw": 0
+    },
+    "notice": "Votre premier vaisseau vous attend au chantier.",
+    "pending_storage": false,
+    "phase": "Menu",
+    "physical_keys": [],
+    "physics_phase_ms_p50_p95_p99": {},
+    "progress": 0,
+    "qa_failure": null,
+    "qa_finished": false,
+    "qa_stage": 0,
+    "render_pass_ms_p50_p95_p99": {
+      "render/bin_unpacking/elapsed_cpu": [
+        0,
+        0,
+        0
+      ],
+      "render/bloom/elapsed_cpu": [
+        0.1,
+        0.2,
+        0.6
+      ],
+      "render/clustering/elapsed_cpu": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "render/early prepass/elapsed_cpu": [
+        0.7,
+        0.9,
+        1
+      ],
+      "render/early_mesh_preprocessing/elapsed_cpu": [
+        0,
+        0.1,
+        0.1
+      ],
+      "render/main_opaque_pass_3d/elapsed_cpu": [
+        0.5,
+        0.6,
+        0.6
+      ],
+      "render/main_transparent_pass_3d/elapsed_cpu": [
+        0.2,
+        0.3,
+        0.4
+      ],
+      "render/ssao/elapsed_cpu": [
+        0,
+        0.1,
+        0.2
+      ],
+      "render/taa/elapsed_cpu": [
+        0,
+        0,
+        0
+      ],
+      "render/tonemapping/elapsed_cpu": [
+        0,
+        0.1,
+        0.1
+      ],
+      "render/ui/elapsed_cpu": [
+        0,
+        0.1,
+        0.1
+      ],
+      "render/upscaling/elapsed_cpu": [
+        0,
+        0.1,
+        0.1
+      ]
+    },
+    "residents": [
+      {
+        "id": 1,
+        "position": [
+          -667.2000122070312,
+          -1398.1019287109375,
+          -1588
+        ],
+        "species": "Guardian"
+      },
+      {
+        "id": 2,
+        "position": [
+          1278.8348388671875,
+          -2198.10205078125,
+          -3085.963134765625
+        ],
+        "species": "Guardian"
+      },
+      {
+        "id": 3,
+        "position": [
+          -588.7999877929688,
+          -1358,
+          -1700
+        ],
+        "species": "Cavewing"
+      },
+      {
+        "id": 4,
+        "position": [
+          -611.1903076171875,
+          -1358.46533203125,
+          -1695.925048828125
+        ],
+        "species": "Cavewing"
+      },
+      {
+        "id": 5,
+        "position": [
+          1356.0513916015625,
+          -2152.907958984375,
+          -3117.535888671875
+        ],
+        "species": "Cavewing"
+      },
+      {
+        "id": 6,
+        "position": [
+          1343.56201171875,
+          -2152.73193359375,
+          -3280.191162109375
+        ],
+        "species": "Cavewing"
+      }
+    ],
+    "sail_motion": [
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          0.280068039894104,
+          0.6911471486091614
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          0.280068039894104,
+          0.6911471486091614
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          0.280068039894104,
+          0.6911471486091614
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          0.280068039894104,
+          0.6911471486091614
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          0.280068039894104,
+          0.6911471486091614
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          -0.7252584099769592,
+          -0.17355895042419434
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          -0.7252584099769592,
+          -0.17355895042419434
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          -0.7252584099769592,
+          -0.17355895042419434
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          -0.7252584099769592,
+          -0.17355895042419434
+        ]
+      },
+      {
+        "normal_wind": -10,
+        "seconds": 0,
+        "speed": 10.440306663513184,
+        "weights": [
+          -0.8333333134651184,
+          -0.7252584099769592,
+          -0.17355895042419434
+        ]
+      }
+    ],
+    "tick": 0,
+    "tick_ms_p50_p95_p99": [
+      0,
+      0,
+      0
+    ],
+    "triangles_in_mesh_assets": 3570986,
+    "tutorial_flags": 0,
+    "ui_targets": [
+      {
+        "action": "Settings",
+        "height": 28,
+        "width": 283,
+        "x": 240.5,
+        "y": 437
+      },
+      {
+        "action": "Load",
+        "height": 28,
+        "width": 283,
+        "x": 240.5,
+        "y": 399
+      },
+      {
+        "action": "NewGame",
+        "height": 28,
+        "width": 283,
+        "x": 240.5,
+        "y": 361
+      }
+    ],
+    "walker": false,
+    "wasm_linear_memory_bytes": 1115684864,
+    "window_focused": true
+  }
+}

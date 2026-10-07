@@ -1,0 +1,49 @@
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `release` profile [optimized] target(s) in 1m 52s
+     Running tests\envelope.rs (target\release\deps\envelope-71f43c4d260e1d1f.exe)
+
+running 8 tests
+test repeated_walking_does_not_leave_sensor_entities ... ok
+sail lateral offset -0.5 m: yaw after 2 s = -1.3427222 degrees
+sail lateral offset 0.5 m: yaw after 2 s = 1.4036509 degrees
+test moving_sail_sideways_changes_measured_torque_and_course ... ok
+render 30 Hz landmark max lag 0.000001 m
+test sleeping_contact_wakes_and_teleported_body_rebuilds_contacts ... ok
+render 60 Hz landmark max lag 0.047203 m
+test loaded_vessel_with_sail_current_tether_and_low_reserve_remains_finite ... ok
+test voxel_internal_edges_do_not_stop_a_walking_character ... ok
+render 120 Hz landmark max lag 0.023409 m
+test interpolated_landmark_lags_by_at_most_one_tick_and_teleport_resets_it ... ok
+test slope_support_is_stable_at_30_60_120_render_fps ... ok
+54 cable cases: mass 1k/10k/900k kg, speed 0/25/80 m/s, length 3/80 m, render 30/60/120 Hz; worst relative p95=0.0000008742015
+test tether_mass_speed_length_fps_and_pause_matrix_is_bounded ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.46s
+
+     Running tests\scenarios.rs (target\release\deps\scenarios-21313e2d4aa412ff.exe)
+
+running 16 tests
+test restored_airborne_character_keeps_horizontal_momentum ... ok
+test sphere_ccd_stops_at_a_thin_wall_at_100_meters_per_second ... ok
+test heavy_construction_cannot_hover_with_two_lifts ... ok
+test moving_voxel_vessel_does_not_cross_a_thin_wall ... ok
+test controller_walks_up_small_steps ... ok
+test controller_stays_bounded_under_a_low_ceiling ... ok
+test child_voxel_collider_matches_domain_mass_and_surface ... ok
+test player_walk_jump_and_landing_on_a_static_deck ... ok
+test jumping_inherits_translation_of_the_support ... ok
+test character_mass_does_not_capsize_a_floating_vessel ... ok
+test voxel_vessel_lands_on_another_voxel_vessel ... ok
+Aether consumed in 10 s: cedar hull 6.957626, metal lower hull 9.796143
+test construction_mass_increases_consumption ... ok
+refuge reaction delay 0 s: arrived, closest=8.981 m, reserve=165.354
+test current_and_sail_reach_the_gardens_without_pose_teleportation ... ok
+refuge reaction delay 0.5 s: arrived, closest=8.980 m, reserve=166.011
+refuge reaction delay 1.5 s: arrived, closest=8.991 m, reserve=165.916
+test harpoon_swing_reaches_the_refuge_branch_and_releases_continuously ... ok
+test tether_is_bounded_for_ten_simulated_minutes ... ok
+test thirty_minutes_of_navigation_recovery_and_serialization_remain_finite ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 41.03s
+

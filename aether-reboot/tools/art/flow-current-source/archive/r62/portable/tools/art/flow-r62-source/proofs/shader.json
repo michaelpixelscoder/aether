@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "shader_sha256": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+  "baseline_sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+  "generator_sha256": "246624191b184251c1600d0848e473c7da01d09018dcdf21b5382704483d455d",
+  "source_fragments": {
+    "current-block.wgsl": "973ddc4d241be30961520afc80d2715ffbd5c6d969dfb2939cf88263a8b29852",
+    "current-sampling.wgsl": "2234c0a731501f29725d7c49759422ee1c9c61561ba16d1c379f96823c502c87"
+  },
+  "current_texture_fetches": 5,
+  "cascade_texture_fetches": 2,
+  "current_alpha_uv_sampling_changed": true,
+  "native_png_ktx_geometry_routes_physics_clock_unchanged": true,
+  "gpu_compile": "PENDING ROOT CAPTURE",
+  "promotion_authorized": false
+}

@@ -1,0 +1,23 @@
+{
+  "file": "sky-world-linear.hdr",
+  "sha256": "e588df650412ae7fe6ace40ecbf78367d8583996409e059cf9fae3e653ff2b99",
+  "bytes": 25741575,
+  "dimensions": [
+    8192,
+    4096
+  ],
+  "original_render_dimensions": [
+    8192,
+    4096
+  ],
+  "view_transform_applied": false,
+  "raw_exposure_stops": 0,
+  "resampled": false,
+  "runtime_reference_exposure_stops": -0.9,
+  "render_descriptor_sha256": "6c214eef069d7008cdadd466e1f569ed59bfe4ab2f6cd58a3745bc8b4cd3cd4b",
+  "seconds": 403.11535490000097,
+  "samples_max": 128,
+  "renderer": "Cycles OPTIX",
+  "source_sha256": "4196ff61f70037e5fb373ccdd840c52ff714fc82e6b03ae243b1cea65571acea",
+  "generator_sha256": "f0e7708b1f2be566da23d693b73d80cecbb95584c0b102fe741f385aa58f0678"
+}

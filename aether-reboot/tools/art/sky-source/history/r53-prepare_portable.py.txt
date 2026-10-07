@@ -1,0 +1,132 @@
+"""Package the accepted R53 scene BEFORE its authorized original 8K render."""
+import os
+for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):os.environ[k]='4'
+import bpy,copy,hashlib,importlib.util,json,re,shutil
+from pathlib import Path
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+OLD=ROOT/'.dream-loop/sky-r50-promotion'
+PACKAGE=ROOT/'.dream-loop/sky-r53-promotion'
+SOURCE=PACKAGE/'tools/art/sky-source'
+R52=ROOT/'.dream-loop/sky-r52-corona-candidate'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def write(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2)+'\n',encoding='utf-8')
+def record(p):return {'file':p.relative_to(PACKAGE).as_posix(),'sha256':sha(p),'bytes':p.stat().st_size}
+def module(name,p):
+    spec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+assert not PACKAGE.exists(),'Never overwrite an existing package'
+assert Path(bpy.data.filepath).resolve()==(STAGE/'sky-r53-forward-air.blend').resolve()
+staged=json.loads((STAGE/'manifest.json').read_text())
+assert sha(STAGE/'sky-r53-forward-air.blend')==staged['source_sha256']
+def ignored(folder,names):
+    return {n for n in names if n=='__pycache__' or n in ('sky-world-linear.hdr','sky-world-ibl-linear.hdr')}
+shutil.copytree(OLD/'tools',PACKAGE/'tools',ignore=ignored)
+(PACKAGE/'assets/textures').mkdir(parents=True)
+(PACKAGE/'docs/evidence').mkdir(parents=True)
+oldsource=OLD/'tools/art/sky-source'
+history=SOURCE/'history'
+for name in ('manifest.json','recipe.json','render-equivalence.json','render-scene-descriptor.json','ibl-render-scene-descriptor.json'):
+    shutil.copy2(oldsource/name,history/('r50-portable-'+name))
+for name in ('build_sky.py','verify-sky.mjs'):
+    shutil.copy2(OLD/'tools/art'/name,history/('r50-portable-'+name+'.txt'))
+for prefix,folder,names in [
+    ('r52',R52,('build_corona.py','manifest.json','scene-descriptor-before.json','scene-descriptor-after.json','column-audit.json','README.md')),
+    ('r53',STAGE,('build_forward_air.py','manifest.json','scene-descriptor-before.json','scene-descriptor-after.json','display-comparison.json','README.md'))]:
+    for name in names:shutil.copy2(folder/name,history/(prefix+'-'+name+('.txt' if name.endswith('.py') else '')))
+shutil.copy2(__file__,history/'r53-prepare_portable.py.txt')
+for p in (R52/'volumes').glob('*.vdb'):shutil.copy2(p,SOURCE/'cloud-volumes'/p.name)
+
+# Retain the same controller and I/O, extending only original resolution and
+# proof fields. No sampled image can enter this path.
+controller=PACKAGE/'tools/art/build_sky.py'
+code=controller.read_text()
+changes={
+    'EXPOSURE=-.90':'EXPOSURE=-.90\nWIDTH,HEIGHT=8192,4096',
+    'scene.render.resolution_x,scene.render.resolution_y=4096,2048':'scene.render.resolution_x,scene.render.resolution_y=WIDTH,HEIGHT\n    scene.render.resolution_percentage=100',
+    'assert pixels.shape==(2048,4096,3)':'assert pixels.shape==(HEIGHT,WIDTH,3)',
+    "rgba=np.ones((2048,4096,4),dtype='<f2')":"rgba=np.ones((HEIGHT,WIDTH,4),dtype='<f2')",
+    'for y in range(2048):':'for y in range(HEIGHT):',
+    "'dimensions':[4096,2048]":"'dimensions':[WIDTH,HEIGHT]",
+    "'original_render_dimensions':[4096,2048]":"'original_render_dimensions':[WIDTH,HEIGHT]",
+    "print('ORIGINAL_4K_RENDERED'":"print('ORIGINAL_8K_RENDERED'",
+}
+for old,new in changes.items():assert old in code,old;code=code.replace(old,new)
+code=code.replace("'view_transform_applied':False,'seconds':elapsed,'samples_max':128,", "'view_transform_applied':False,'raw_exposure_stops':0,'resampled':False,\n        'runtime_reference_exposure_stops':EXPOSURE,'render_descriptor_sha256':manifest['composite_provenance']['descriptor_sha256'],\n        'seconds':elapsed,'samples_max':128,")
+controller.write_text(code,encoding='utf-8')
+
+recipe=json.loads((SOURCE/'recipe.json').read_text())
+corona=json.loads((R52/'manifest.json').read_text())
+bygroup={}
+for cell in corona['placements']:bygroup.setdefault(cell['group'],[]).append(cell)
+for field in corona['new_fields']:
+    target='R52 | far torn vapour' if field['group'].startswith('remote') else 'R52 | fragmented backlit cloud margins'
+    rows=[]
+    for cell in bygroup[field['group']]:
+        mat=bpy.data.materials[cell['material']]
+        density=next(n for n in mat.node_tree.nodes if n.type=='PRINCIPLED_VOLUME').inputs['Density'].default_value
+        rows.append({'name':cell['name'],'grid':'original-volumes/'+Path(cell['input']).name,
+                     'location':cell['location'],'rotation_euler':cell['rotation'],'rotation_mode':'XYZ','scale':cell['scale'],'density':density})
+    blob=(SOURCE/'cloud-volumes'/field['file']).read_bytes()
+    identity=re.search(rb'[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}',blob[:256]);assert identity
+    recipe['groups'].append({'name':field['group'],'file':'cloud-volumes/'+field['file'],'voxel_metres':field['voxel_metres'],
+        'material_name':target,'cells':rows,'vdb_file_identifier':{'offset':identity.start(),'ascii':identity.group().decode('ascii')}})
+recipe['cells']=sum(len(g['cells']) for g in recipe['groups'])
+recipe['source_scene_sha256']=staged['source_sha256'];recipe['source_generator_sha256']=staged['generator_sha256']
+write(SOURCE/'recipe.json',recipe)
+
+fp=module('r53_fp',SOURCE/'scene_fingerprint.py')
+before=fp.descriptor(bpy.context.scene)
+assert fp.digest(before)==staged['after_descriptor_sha256']
+for obj in bpy.context.scene.objects:
+    if obj.type=='VOLUME':
+        old=Path(bpy.path.abspath(obj.data.filepath)).resolve()
+        new=SOURCE/'cloud-volumes'/old.name
+        assert sha(old)==sha(new),old
+        obj.data.filepath=str(new)
+renderer=module('r53_renderer',controller)
+renderer.final_configuration()
+after=fp.descriptor(bpy.context.scene)
+expected=copy.deepcopy(before)
+expected['render']['resolution_x']=8192;expected['render']['resolution_y']=4096
+assert after==expected,'Only native output resolution may differ from the approved source'
+bpy.context.preferences.filepaths.save_version=0
+bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'),compress=True,relative_remap=False)
+for obj in bpy.context.scene.objects:
+    if obj.type=='VOLUME':obj.data.filepath=bpy.path.relpath(obj.data.filepath)
+bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'),compress=True,relative_remap=False)
+assert fp.digest(fp.descriptor(bpy.context.scene))==fp.digest(after)
+write(SOURCE/'render-scene-descriptor.json',after)
+
+manifest=json.loads((oldsource/'manifest.json').read_text())
+for key in ('authoring_hdr','ibl_authoring','rebuild_proof'):manifest.pop(key,None)
+manifest.update({'source_sha256':sha(SOURCE/'sky-world.blend'),'generator_sha256':sha(controller),'output_needs_render':True,
+    'output_sha256':None,'bytes':None,'dimensions':[8192,4096],'panorama':'full-sphere original equirectangular 8192x4096',
+    'visible_volume_count':98,'compiled_cell_placements':recipe['cells'],'render_seconds':None,
+    'original_resolution_policy':'Original Cycles render at the recorded native dimensions; no resampling permitted.'})
+manifest['linear_encoding'].update({'dimensions':[8192,4096],'gpu_bytes':8192*4096*8})
+for key in ('encoding_scale','recommended_runtime_multiplier','source_radiance_min','source_radiance_max','encoded_radiance_min','encoded_radiance_max'):
+    manifest['linear_encoding'].pop(key,None)
+manifest['composite_provenance']={'status':'packaged before original render; output pending','descriptor':'render-scene-descriptor.json',
+    'descriptor_sha256':fp.digest(after),'recipe':'recipe.json',
+    'source_lineage':manifest['composite_provenance']['source_lineage']+' -> R52 removes broad horizon radiance band, adds223 placements in12 continuous thin fields -> R53 changes only neutral air HG .72 to .90 -> original8K and original1024x512 IBL pending'}
+for field in corona['new_fields']:
+    manifest['volume_grids'].append({**{k:v for k,v in field.items() if k not in ('dense_shape','dense_bytes','seconds','instances_merged')},'file':'cloud-volumes/'+field['file']})
+manifest['atmosphere_authoring'].update({'model':'Artist-directed continuous blue pole field + one actual angular emitter, finite blue and neutral air. No planetary horizon radiance peak.',
+    'sky_horizon':None,'neutral_air_density':3e-7,'neutral_air_anisotropy':.90,'blue_air_density':2e-6,'blue_air_anisotropy':.15,
+    'ibl_mode':'Original1024x512 camera rays omit only the stellar disk. Its light and all atmospheric scattering remain active.'})
+manifest['limitations']=['R53 hero confirms near-source scattering; gold hue and broad opening still require engine ACES review.',
+    'Original8K RGBA16F costs256MiB GPU; parent must measure browser memory/performance before acceptance.',
+    'Planetless atmosphere is artist-directed, with normalized HG scatter and one real angular emitter.']
+manifest['integration'].update({'radiance_gain_f32':None,'encoding_scale':None,'rust_change_applied':False})
+excluded={'manifest.json','sky-world.blend','render-equivalence.json','ibl-render-scene-descriptor.json'}
+manifest['supporting_files']=[record(p) for p in sorted(SOURCE.rglob('*')) if p.is_file() and p.parent.name not in ('cloud-volumes','original-volumes','__pycache__') and not (p.parent==SOURCE and p.name in excluded)]
+write(SOURCE/'manifest.json',manifest)
+proof={'status':'passed','approved_source_sha256':staged['source_sha256'],'packaged_source_sha256':manifest['source_sha256'],
+    'approved_descriptor_sha256':fp.digest(before),'packaged_descriptor_sha256':fp.digest(after),
+    'only_descriptor_changes':{'render.resolution_x':[4096,8192],'render.resolution_y':[2048,4096]},
+    'density_fields_unchanged':98,'cell_placements':recipe['cells'],'relative_volume_paths':True,'new_render_performed':False}
+write(PACKAGE/'docs/evidence/sky-r53-pre-render-package.json',proof)
+manifest['supporting_files'].append(record(PACKAGE/'docs/evidence/sky-r53-pre-render-package.json'));write(SOURCE/'manifest.json',manifest)
+for item in staged['frozen']:assert sha(ROOT/item['file'])==item['sha256']
+assert sha(STAGE/'sky-r53-forward-air.blend')==staged['source_sha256']
+print('R53_8K_PACKAGE_PREPARED',json.dumps(proof),flush=True)

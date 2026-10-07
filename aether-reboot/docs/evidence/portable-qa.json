@@ -1,0 +1,545 @@
+{
+  "allocated_entity_indices": 2048,
+  "asset_samples_20_cycles": [
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ],
+    [
+      186,
+      111,
+      0
+    ]
+  ],
+  "avatar_fallbacks": 0,
+  "benchmark": false,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 14.0,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 151,
+  "checks": [
+    "nouvelle partie",
+    "atelier au quai",
+    "ajout transactionnel",
+    "annulation",
+    "rétablissement",
+    "sauvegarde confirmée",
+    "nouvelle session nettoyée",
+    "reprise de la construction",
+    "poses, équipements et picking après reprise",
+    "marche et incarnation",
+    "reprise du personnage",
+    "départ",
+    "harpon et joint unique",
+    "reconstruction des attaches",
+    "point local après reprise attachée",
+    "libération du câble",
+    "secours au quai",
+    "scission exacte",
+    "poses et picking après scission",
+    "annulation de scission",
+    "rétablissement de scission",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "nombre total d'entités stable",
+    "maillages, matériaux et file stables",
+    "nettoyage des fragments",
+    "caméra unique",
+    "interface unique",
+    "100 éditions puis annulations",
+    "arrivée et checkpoint"
+  ],
+  "contact_manifolds_active": 0,
+  "contact_pairs_active": 0,
+  "contact_pairs_sleeping": 0,
+  "docked": true,
+  "edit_point": [
+    644.933349609375,
+    582.4842529296875
+  ],
+  "elapsed_seconds": 22.005720138549805,
+  "entities": 1057,
+  "entity_samples_20_cycles": [
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058,
+    1058
+  ],
+  "frame_ms_p50_p95_p99": [
+    4.560399800539017,
+    8.562600240111351,
+    93.20519864559174
+  ],
+  "fuel": 180.0,
+  "gpu_timestamps_measured": true,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "material_assets": 111,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.0233,
+    0.0629,
+    0.0958
+  ],
+  "mesh_assets": 186,
+  "mesh_max_ms": 0.6152,
+  "mesh_p95_ms": 0.4776,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    13.5143,
+    20.4755,
+    107.18690000000001
+  ],
+  "navigation": {
+    "angular_y": 0.0,
+    "position": [
+      65.0,
+      20.0,
+      -154.0
+    ],
+    "target_altitude": 20.0,
+    "velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "yaw": 0.0
+  },
+  "notice": "Remorquage au dernier quai. Construction conservée, fragments abandonnés.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.0009,
+      0.0107,
+      0.0168
+    ],
+    "avian/collision/update_contacts": [
+      0.0015999999999999999,
+      0.012,
+      0.13799999999999998
+    ],
+    "avian/solver/apply_restitution": [
+      0.00039999999999999996,
+      0.0007,
+      0.0009
+    ],
+    "avian/solver/finalize": [
+      0.0007999999999999999,
+      0.0058000000000000005,
+      0.0124
+    ],
+    "avian/solver/integrate_positions": [
+      0.0013,
+      0.0201,
+      0.1326
+    ],
+    "avian/solver/integrate_velocities": [
+      0.0023,
+      0.025,
+      0.0862
+    ],
+    "avian/solver/prepare_constraints": [
+      0.0006,
+      0.0013,
+      0.01
+    ],
+    "avian/solver/relax_velocities": [
+      0.00039999999999999996,
+      0.001,
+      0.0026
+    ],
+    "avian/solver/solve_constraints": [
+      0.00039999999999999996,
+      0.0007999999999999999,
+      0.0031999999999999997
+    ],
+    "avian/solver/store_impulses": [
+      0.00009999999999999999,
+      0.00019999999999999998,
+      0.0003
+    ],
+    "avian/solver/swept_ccd": [
+      0.0005,
+      0.0007999999999999999,
+      0.0009
+    ],
+    "avian/solver/update_velocity_increments": [
+      0.0015,
+      0.0126,
+      0.0467
+    ],
+    "avian/solver/warm_start": [
+      0.0003,
+      0.0009,
+      0.002
+    ]
+  },
+  "progress": 4,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 35,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0.0052,
+      0.0098,
+      0.011600000000000001
+    ],
+    "render/bin_unpacking/elapsed_gpu": [
+      0.07808,
+      0.089088,
+      0.242944
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.032100000000000004,
+      0.0392,
+      0.0429
+    ],
+    "render/bloom/elapsed_gpu": [
+      0.09216,
+      0.260864,
+      1.85728
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.0094,
+      0.0132,
+      0.0158
+    ],
+    "render/clustering/elapsed_gpu": [
+      0.058624,
+      0.066816,
+      0.07424
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.0125,
+      0.0168,
+      0.02
+    ],
+    "render/early prepass/elapsed_gpu": [
+      0.0768,
+      0.093952,
+      0.095488
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0.0027,
+      0.0045000000000000005,
+      0.0059
+    ],
+    "render/early_mesh_preprocessing/elapsed_gpu": [
+      0.017664,
+      0.018944,
+      0.019712
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.0107,
+      0.0146,
+      0.019
+    ],
+    "render/main_opaque_pass_3d/elapsed_gpu": [
+      0.146176,
+      0.16384,
+      0.337664
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0.0079,
+      0.0109,
+      0.013699999999999999
+    ],
+    "render/main_transparent_pass_3d/elapsed_gpu": [
+      0.02816,
+      0.068352,
+      0.070656
+    ],
+    "render/ssao/elapsed_cpu": [
+      0.0036,
+      0.0056,
+      0.0076
+    ],
+    "render/ssao/elapsed_gpu": [
+      0.1792,
+      0.18816,
+      1.338624
+    ],
+    "render/taa/elapsed_cpu": [
+      0.0007999999999999999,
+      0.0015999999999999999,
+      0.0022
+    ],
+    "render/taa/elapsed_gpu": [
+      0.071424,
+      0.082176,
+      0.086016
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0.0012,
+      0.0031999999999999997,
+      0.0040999999999999995
+    ],
+    "render/tonemapping/elapsed_gpu": [
+      0.020736,
+      0.1984,
+      1.946368
+    ],
+    "render/ui/elapsed_cpu": [
+      0.0048,
+      0.0068000000000000005,
+      0.0087
+    ],
+    "render/ui/elapsed_gpu": [
+      0.010496,
+      0.013824,
+      0.01664
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0.0014,
+      0.0026,
+      0.0042
+    ],
+    "render/upscaling/elapsed_gpu": [
+      0.0128,
+      0.017664,
+      0.019968
+    ]
+  },
+  "tick": 48,
+  "tick_ms_p50_p95_p99": [
+    0.4153,
+    0.8197,
+    4.0766
+  ],
+  "triangles_in_mesh_assets": 660486,
+  "tutorial_flags": 189,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 493.3333435058594
+    },
+    {
+      "action": "Tether",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 451.3333435058594
+    },
+    {
+      "action": "Dock",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 409.3333435058594
+    },
+    {
+      "action": "Edit",
+      "height": 34.66666793823242,
+      "width": 234.0,
+      "x": 157.0,
+      "y": 367.3333435058594
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": null
+}

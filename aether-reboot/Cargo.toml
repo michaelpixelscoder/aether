@@ -1,0 +1,46 @@
+[workspace]
+resolver = "3"
+members = ["crates/aether_core", "crates/aether_sim", "crates/aether_view", "crates/aether_game"]
+default-members = ["crates/aether_game"]
+
+[workspace.package]
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.98"
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+aether_core = { path = "crates/aether_core" }
+aether_sim = { path = "crates/aether_sim" }
+aether_view = { path = "crates/aether_view" }
+bevy = { version = "=0.19.0", default-features = false, features = ["std", "async_executor", "multi_threaded", "bevy_state", "bevy_log", "reflect_auto_register", "debug"] }
+avian3d = { version = "=0.7.0", default-features = false, features = ["3d", "f32", "parry-f32", "xpbd_joints"] }
+glam = { version = "0.32", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+# ECS system parameters deliberately expose their data access to Bevy's scheduler.
+[workspace.lints.clippy]
+type_complexity = "allow"
+too_many_arguments = "allow"
+
+[profile.dev]
+opt-level = 1
+debug = 0
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
+
+[profile.web-release]
+inherits = "release"
+opt-level = 3
+

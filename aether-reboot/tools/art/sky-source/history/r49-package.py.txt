@@ -1,0 +1,126 @@
+"""Package the r49 render and its unchanged r46 density recipe, without promotion."""
+import bpy
+import copy
+import hashlib
+import importlib.util
+import json
+import shutil
+from pathlib import Path
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+CANON=ROOT/'tools/art/sky-source'
+PACKAGE=ROOT/'.dream-loop/sky-r49-promotion'
+SOURCE=PACKAGE/'tools/art/sky-source'
+assert PACKAGE.resolve().parent==(ROOT/'.dream-loop').resolve()
+
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def write(path,value):
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(json.dumps(value,indent=2)+'\n',encoding='utf8')
+def record(path):
+    return {'file':path.relative_to(PACKAGE).as_posix(),'sha256':sha(path),'bytes':path.stat().st_size}
+def cp(a,b):
+    a=Path(a);b=Path(b)
+    assert b.resolve().is_relative_to(PACKAGE.resolve())
+    b.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copy2(a,b)
+    assert sha(a)==sha(b)
+    return record(b)
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    obj=importlib.util.module_from_spec(spec);spec.loader.exec_module(obj)
+    return obj
+
+assert Path(bpy.data.filepath).resolve()==(STAGE/'sky-r49-atmosphere.blend').resolve()
+stage=json.loads((STAGE/'manifest.json').read_text())
+assert stage['output_needs_render'] is False
+for r in stage['canonical_frozen']:assert sha(ROOT/r['file'])==r['sha256']
+baseline=json.loads((CANON/'manifest.json').read_text())
+for r in baseline['volume_grids']+baseline['authoring_grids']:
+    cp(CANON/r['file'],SOURCE/r['file'])
+for r in baseline['supporting_files']:
+    cp(ROOT/r['file'],PACKAGE/r['file'])
+cp(ROOT/'tools/art/build_sky.py',PACKAGE/'tools/art/build_sky.py')
+cp(ROOT/'tools/art/verify-sky.mjs',PACKAGE/'tools/art/verify-sky.mjs')
+history=[]
+for source,name in [
+    (CANON/'manifest.json','r46-manifest.json'),
+    (CANON/'sky-world.blend','r46-source.blend.bin'),
+    (CANON/'render-equivalence.json','r46-render-equivalence.json'),
+    (CANON/'render-scene-descriptor.json','r46-render-scene-descriptor.json'),
+    (STAGE/'build_atmosphere.py','r49-prepare.py.txt'),
+    (STAGE/'render_final.py','r49-render.py.txt'),
+    (ROOT/'tools/art/build_sky.py','r49-render-controller.py.txt'),
+    (STAGE/'manifest.json','r49-stage-manifest.json'),
+    (STAGE/'render-record.json','r49-render-record.json'),
+    (STAGE/'source-audit.json','r49-source-audit.json'),
+    (STAGE/'display-color-samples.json','r49-display-color-samples.json'),
+    (STAGE/'scene-descriptor-before.json','r49-descriptor-before-lighting.json'),
+    (STAGE/'scene-descriptor-after.json','r49-descriptor-after-lighting.json'),
+    (Path(__file__),'r49-package.py.txt'),
+]:history.append(cp(source,SOURCE/'history'/name))
+old_report=ROOT/'docs/evidence/sky-assets.json'
+if old_report.exists():cp(old_report,PACKAGE/'docs/evidence/sky-history'/('r46-'+sha(old_report)+'.json'))
+controller=module('r49_controller',PACKAGE/'tools/art/build_sky.py')
+controller.final_configuration()
+scene=bpy.context.scene
+scene.render.resolution_percentage=100
+fp=module('r49_fingerprint',SOURCE/'scene_fingerprint.py')
+before=fp.descriptor(scene)
+before_sha=fp.digest(before)
+assert before_sha==stage['render_descriptor_sha256'], 'Packaged configuration must exactly match actual final render'
+for obj in scene.objects:
+    if obj.type=='VOLUME':
+        original=Path(bpy.path.abspath(obj.data.filepath)).resolve()
+        replacement=SOURCE/'cloud-volumes'/original.name
+        assert sha(original)==sha(replacement)
+        obj.data.filepath=str(replacement)
+assert fp.digest(fp.descriptor(scene))==before_sha
+scene.render.filepath='//sky-world-linear.hdr'
+bpy.context.preferences.filepaths.save_version=0
+blend=SOURCE/'sky-world.blend'
+bpy.ops.wm.save_as_mainfile(filepath=str(blend),compress=True,relative_remap=False)
+for obj in scene.objects:
+    if obj.type=='VOLUME':obj.data.filepath=bpy.path.relpath(obj.data.filepath)
+bpy.ops.wm.save_as_mainfile(filepath=str(blend),compress=True,relative_remap=False)
+assert fp.digest(fp.descriptor(scene))==before_sha
+assert all(obj.data.filepath.startswith('//') for obj in scene.objects if obj.type=='VOLUME')
+write(SOURCE/'render-scene-descriptor.json',before)
+equivalence={'schema':1,'status':'passed','operation':'remap unchanged density bytes to package-relative paths; no geometry cleanup or further lighting edit',
+    'new_render_performed':False,'rendered_scene_sha256':stage['source_sha256'],'packaged_scene_sha256':sha(blend),
+    'before_descriptor_sha256':before_sha,'after_descriptor_sha256':before_sha,'visible_volume_count':86,
+    'input_raster_images':0,'source_scene_retained_in_working_evidence':'.dream-loop/sky-r49-atmosphere-candidate/sky-r49-atmosphere.blend',
+    'descriptor_scope':'visible geometry, grids by SHA, materials and node graphs, sun, camera, world, Cycles/integrator and output color configuration'}
+write(SOURCE/'render-equivalence.json',equivalence)
+cp(STAGE/stage['output'],PACKAGE/'assets/textures/sky-world-linear.ktx2')
+cp(ROOT/stage['authoring_hdr']['file'],SOURCE/'sky-world-linear.hdr')
+manifest=copy.deepcopy(baseline)
+manifest.update({'source_sha256':sha(blend),'generator_sha256':sha(PACKAGE/'tools/art/build_sky.py'),
+    'output_sha256':stage['output_sha256'],'bytes':stage['bytes'],'output_needs_render':False,
+    'linear_encoding':stage['linear_encoding'],'render_seconds':stage['authoring_hdr']['seconds'],
+    'sun_color_linear_rgb':[1,.62,.32],'authoring_hdr':{**stage['authoring_hdr'],'file':'sky-world-linear.hdr'},
+    'atmosphere_authoring':{'interpretation':stage['direction'],'exact_changes':stage['exact_changes'],
+        'lower_hosek_z_remap':'sqrt(z*z+.09)','neutral_volume_density':.3e-6,
+        'sun_rgb_luminance_ratio_to_r46':.8587773517718587,'exposure_compensation_applied':False},
+    'limitations':['The blue atmosphere improves in the authoring hero; the golden opening remains unresolved.',
+        'Final runtime ACES/gallery review is pending. The authoring hero is not runtime proof.',
+        'The lower hemisphere is an artistic continuous remap, not a strict physical atmosphere model.',
+        'This portable scene was not rerendered; exact descriptor equivalence links it to the retained original 4K render.']})
+manifest['composite_provenance'].update({'status':'render-preserving packaging; no new render',
+    'rendered_scene_sha256':stage['source_sha256'],'rendered_generator_sha256':stage['authoring_hdr']['generator_sha256'],
+    'rendered_generator_evidence':'history/r49-render.py.txt','render_record':'history/r49-render-record.json',
+    'descriptor_sha256':before_sha,'source_lineage':baseline['composite_provenance']['source_lineage']+
+        ' -> r49 four-scalar atmosphere/SUN edit with all density bytes unchanged -> original4K Cycles HDR -> RGBA16F'})
+manifest['integration'].update({'radiance_gain_f32':round(stage['linear_encoding']['recommended_runtime_multiplier'],7),'encoding_scale':stage['linear_encoding']['encoding_scale'],
+    'rust_change_applied':False,'first_runtime_review_exposure_stops':-.90})
+# Preserve historical evidence; refresh hashes of only the packaged mutable
+# descriptor/equivalence records, then include new historical source records.
+paths={r['file'] for r in baseline['supporting_files']}|{r['file'] for r in history}
+paths|={'tools/art/verify-sky.mjs','tools/art/sky-source/render-scene-descriptor.json',
+        'tools/art/sky-source/render-equivalence.json'}
+manifest['supporting_files']=[record(PACKAGE/p) for p in sorted(paths)]
+write(SOURCE/'manifest.json',manifest)
+for r in stage['canonical_frozen']:assert sha(ROOT/r['file'])==r['sha256']
+print('R49_PORTABLE_PACKAGED',json.dumps({'root':PACKAGE.relative_to(ROOT).as_posix(),'scene_sha256':sha(blend),
+    'descriptor_sha256':before_sha,'volume_count':86,'supporting_files':len(manifest['supporting_files'])}),flush=True)

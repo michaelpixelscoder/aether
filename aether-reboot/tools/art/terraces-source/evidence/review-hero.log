@@ -1,0 +1,69 @@
+09:51:21 | INFO: Data are loaded, start creating Blender stuff
+09:51:21 | INFO: Blender create Mesh node 01 | Fractured limestone
+09:51:21 | INFO: Blender create Mesh node 02 | Deep strata
+09:51:21 | INFO: Blender create Mesh node 03 | Dressed masonry
+09:51:21 | INFO: Blender create Mesh node 04 | Worn cornice
+09:51:21 | INFO: Blender create Mesh node 05 | Brushed antique brass
+09:51:21 | INFO: Blender create Mesh node 06 | Cedar and roots
+09:51:21 | INFO: Blender create Mesh node 07 | Enamel and shadow
+09:51:21 | INFO: Blender create Mesh node 08 | Deep foliage
+09:51:21 | INFO: Blender create Mesh node 09 | Sunlit foliage
+09:51:21 | INFO: Blender create Mesh node 10 | Lantern glass
+09:51:21 | INFO: Blender create Mesh node 11 | Aether mineral
+09:51:21 | INFO: Blender create Mesh node 12 | Surface biome
+09:51:21 | INFO: glTF import finished in 0.64s
+C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\terraces-r56-candidate\review_terraces.py:15: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world=bpy.data.worlds.new('Same review environment');scene.world.use_nodes=True
+00:09.328  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\terraces-r56-candidate\evidence\dawn-hero-before.png'
+TERRACES_REVIEW dawn before
+09:51:29 | INFO: Data are loaded, start creating Blender stuff
+09:51:29 | INFO: Blender create Mesh node 01 | Fractured limestone
+09:51:29 | INFO: Blender create Mesh node 02 | Deep strata
+09:51:29 | INFO: Blender create Mesh node 03 | Dressed masonry
+09:51:29 | INFO: Blender create Mesh node 04 | Worn cornice
+09:51:29 | INFO: Blender create Mesh node 05 | Brushed antique brass
+09:51:29 | INFO: Blender create Mesh node 06 | Cedar and roots
+09:51:29 | INFO: Blender create Mesh node 07 | Enamel and shadow
+09:51:29 | INFO: Blender create Mesh node 08 | Deep foliage
+09:51:29 | INFO: Blender create Mesh node 09 | Sunlit foliage
+09:51:29 | INFO: Blender create Mesh node 10 | Lantern glass
+09:51:29 | INFO: Blender create Mesh node 11 | Aether mineral
+09:51:29 | INFO: Blender create Mesh node 12 | Surface biome
+09:51:29 | INFO: glTF import finished in 0.58s
+00:16.906  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\terraces-r56-candidate\evidence\dawn-hero-after.png'
+TERRACES_REVIEW dawn after
+09:51:36 | INFO: Data are loaded, start creating Blender stuff
+09:51:36 | INFO: Blender create Mesh node 01 | Fractured limestone
+09:51:36 | INFO: Blender create Mesh node 02 | Deep strata
+09:51:36 | INFO: Blender create Mesh node 03 | Dressed masonry
+09:51:36 | INFO: Blender create Mesh node 04 | Worn cornice
+09:51:36 | INFO: Blender create Mesh node 05 | Brushed antique brass
+09:51:36 | INFO: Blender create Mesh node 06 | Cedar and roots
+09:51:36 | INFO: Blender create Mesh node 07 | Enamel and shadow
+09:51:36 | INFO: Blender create Mesh node 08 | Deep foliage
+09:51:37 | INFO: Blender create Mesh node 09 | Sunlit foliage
+09:51:37 | INFO: Blender create Mesh node 10 | Lantern glass
+09:51:37 | INFO: Blender create Mesh node 11 | Aether mineral
+09:51:37 | INFO: Blender create Mesh node 12 | Surface biome
+09:51:37 | INFO: glTF import finished in 0.48s
+00:24.266  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\terraces-r56-candidate\evidence\dawn-watch-hero-before.png'
+TERRACES_REVIEW dawn-watch before
+09:51:43 | INFO: Data are loaded, start creating Blender stuff
+09:51:43 | INFO: Blender create Mesh node 01 | Fractured limestone
+09:51:44 | INFO: Blender create Mesh node 02 | Deep strata
+09:51:44 | INFO: Blender create Mesh node 03 | Dressed masonry
+09:51:44 | INFO: Blender create Mesh node 04 | Worn cornice
+09:51:44 | INFO: Blender create Mesh node 05 | Brushed antique brass
+09:51:44 | INFO: Blender create Mesh node 06 | Cedar and roots
+09:51:44 | INFO: Blender create Mesh node 07 | Enamel and shadow
+09:51:44 | INFO: Blender create Mesh node 08 | Deep foliage
+09:51:44 | INFO: Blender create Mesh node 09 | Sunlit foliage
+09:51:44 | INFO: Blender create Mesh node 10 | Lantern glass
+09:51:44 | INFO: Blender create Mesh node 11 | Aether mineral
+09:51:44 | INFO: Blender create Mesh node 12 | Surface biome
+09:51:44 | INFO: glTF import finished in 0.45s
+00:31.484  render           | Saved: 'C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\.dream-loop\terraces-r56-candidate\evidence\dawn-watch-hero-after.png'
+TERRACES_REVIEW dawn-watch after
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:38:20)
+
+Blender quit

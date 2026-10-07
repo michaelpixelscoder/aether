@@ -1,0 +1,7 @@
+Provenance du kit du reboot
+
+cedar.png, cedar-normal.png, indigo-canvas.png : créations ImageGen du reboot. Prompts complets et méthode dans tools/art/PROMPTS.md du workspace source ; aucune génération d'image au runtime.
+grass.png, stone.png : copies exactes des fichiers aether/assets/textures/shipwright du projet existant. Le dossier historique ne contient pas de licence distincte ni de métadonnées auteur pour ces deux fichiers ; aucune attribution à une banque publique n'est inventée. Leur usage reste celui des actifs fournis avec le projet.
+sky-panorama-v2.png : image originale créée par ImageGen pour Aether Isles pendant ce reboot, ciel sans îles ni vaisseaux peints.
+
+Les modèles GLB sont créés par tools/art/build_art.py à partir du manifeste du domaine Rust et de modèles d'équipements originaux. Ils intègrent les textures ci-dessus. Les sources Blender et le générateur sont livrés dans le workspace, sans dépendance auteur requise au runtime.

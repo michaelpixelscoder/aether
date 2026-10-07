@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "source_sha256": "17affd617f348d854309c868b27d6303d92bd4ccfa3c2f3341304fecdbf72a94",
+  "output_sha256": "7efec756222aeaeffcbfe1591c28397d2f9ae97a503081a2b0548144eadb0b16",
+  "generator_sha256": "138066c02525026497305a058d2debbd727431c3c92624fbb118541bb927fed8",
+  "dimensions": [
+    8192,
+    4096
+  ],
+  "source_format": "RGBA16Float",
+  "runtime_format": "Rgb9e5Ufloat",
+  "vk_format": 123,
+  "source_gpu_bytes": 268435456,
+  "gpu_bytes": 134217728,
+  "bytes": 134218032,
+  "components_checked": 100663296,
+  "max_absolute_error": 0,
+  "opaque_alpha_exact": true,
+  "resampled": false,
+  "lossless": true
+}

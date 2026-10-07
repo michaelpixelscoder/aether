@@ -1,0 +1,88 @@
+
+Running 8 tests using 1 worker
+
+(node:54224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\game.spec.mjs:5:1 › traversée au clavier avec la physique de production (29.9s)
+(node:61064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 e2e\game.spec.mjs:30:1 › scène de performance 10k et 32 corps à 1080p (37.7s)
+  ok 3 e2e\game.spec.mjs:54:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus (14.1s)
+  ok 4 e2e\game.spec.mjs:106:1 › scénario intégré avec IndexedDB, câble, scission et vingt reprises (23.5s)
+  ok 5 e2e\game.spec.mjs:115:1 › capacité GPU absente : erreur explicite et bouton de reprise (168ms)
+  ok 6 e2e\game.spec.mjs:122:1 › asset critique absent : erreur récupérable puis rechargement (3.0s)
+  ok 7 e2e\game.spec.mjs:128:1 › stockage refusé : pas de faux succès, export toujours possible (3.1s)
+  x  8 e2e\game.spec.mjs:136:1 › backup IndexedDB et transaction interrompue conservent une partie valide (26.0s)
+
+
+  1) e2e\game.spec.mjs:5:1 › traversée au clavier avec la physique de production ───────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+       5 | test('traversée au clavier avec la physique de production',async({page})=>{
+       6 |   const errors=await ready(page);await page.keyboard.press('Enter');await phase(page,'Playing');await page.keyboard.press('f');
+    >  7 |   await expect.poll(async()=>(await snapshot(page)).docked).toBe(false);
+         |                                                             ^
+       8 |   const route=[[5,14,-65],[28,18,-115],[65,20,-154]];let waypoint=0;const held=new Set();const trace=[];
+       9 |   async function setKey(key,value){if(value&&!held.has(key)){await page.keyboard.down(key);held.add(key);}else if(!value&&held.has(key)){await page.keyboard.up(key);held.delete(key);}}
+      10 |   const started=Date.now();
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:7:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-traversée-au-clavier-avec-la-physique-de-production\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-traversée-au-clavier-avec-la-physique-de-production\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-traversée-au-clavier-avec-la-physique-de-production\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-traversée-au-clavier-avec-la-physique-de-production\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e\game.spec.mjs:136:1 › backup IndexedDB et transaction interrompue conservent une partie valide 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Playing"
+    Received: "Editing"
+
+    Call Log:
+    - Timeout 20000ms exceeded while waiting on the predicate
+
+      37 |   const s=await snapshot(page);await fs.writeFile('../docs/evidence/web-benchmark.json',JSON.stringify(s,null,2));
+      38 |   await page.screenshot({path:'../docs/evidence/web-benchmark.png'});
+    > 39 |   expect(s.qa_failure).toBeNull();expect(s.cells).toBe(10000);expect(s.tick).toBeGreaterThan(1500);expect(s.mesh_pending).toBe(0);expect(errors).toEqual([]);
+         |                                                                                                ^
+      40 | });
+      41 | async function phase(page, expected){await expect.poll(async()=>(await snapshot(page))?.phase).toBe(expected);}
+      42 | async function click(page,action){
+        at phase (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:39:96)
+        at C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\tools\e2e\game.spec.mjs:150:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-backup-IndexedDB-et-t-8081a-onservent-une-partie-valide\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\docs\evidence\browser-artifacts\game-backup-IndexedDB-et-t-8081a-onservent-une-partie-valide\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\docs\evidence\browser-artifacts\game-backup-IndexedDB-et-t-8081a-onservent-une-partie-valide\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\docs\evidence\browser-artifacts\game-backup-IndexedDB-et-t-8081a-onservent-une-partie-valide\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    e2e\game.spec.mjs:5:1 › traversée au clavier avec la physique de production ────────────────────
+    e2e\game.spec.mjs:136:1 › backup IndexedDB et transaction interrompue conservent une partie valide 
+  6 passed (2.4m)

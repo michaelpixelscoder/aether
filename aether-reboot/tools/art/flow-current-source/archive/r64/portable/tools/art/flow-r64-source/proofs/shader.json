@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "shader_sha256": "0861bdc4197dab68fb10826a6165fa6ef5e325fa52ad6d42331a6b65e30c5cf5",
+  "generator_sha256": "49bac59f739119a8b9db5519cef49c2b8a9fe61fc15bd4ced79a9bb436031101",
+  "baseline_r62_sha256": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+  "changes": "New art crop.42+.29 both widths; labels only. R62 color/radiance/coverage/sampling/clock unchanged.",
+  "bindings": {
+    "current_only_texture": "assets/textures/world-flow-current-r64.ktx2",
+    "waterfall_pool_texture": "assets/textures/world-flow.ktx2",
+    "current_only_handle_must_be_wired_by_root": true
+  },
+  "cascade_pool_branches_and_original_sampler_exact": true,
+  "gpu_compile": "PENDING root current-only override"
+}

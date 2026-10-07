@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c",
+      "triangles": 181520,
+      "rock_triangles": 22100,
+      "non_rock_batches_byte_exact": 11,
+      "physical_root_triangles_exact": 252,
+      "bounds_exact": true,
+      "max_normal_length_error": 1.3773697538077556e-7,
+      "max_tangent_length_error": 0.00008414063282713435,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "min_normal_dot": 0.6945203728174703,
+      "closed_substrate_components": 1,
+      "original_terrain_components": 1,
+      "closed_geological_joint_solids": true,
+      "terrain_soil_collision_lod_landmarks_routes_unchanged": true
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353",
+      "triangles": 124521,
+      "rock_triangles": 24586,
+      "non_rock_batches_byte_exact": 11,
+      "physical_root_triangles_exact": 180,
+      "bounds_exact": true,
+      "max_normal_length_error": 1.4414317539568344e-7,
+      "max_tangent_length_error": 0.00007695204550028922,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "min_normal_dot": 0.6510627084095039,
+      "closed_substrate_components": 2,
+      "original_terrain_components": 2,
+      "closed_geological_joint_solids": true,
+      "terrain_soil_collision_lod_landmarks_routes_unchanged": true
+    }
+  ],
+  "corruptions": [
+    {
+      "kind": "dawn",
+      "case": "header",
+      "rejected": true,
+      "reason": "GLB size\n+ actual - expected\n\n+ 19450568\n- 19450572\n        ^\n"
+    },
+    {
+      "kind": "dawn",
+      "case": "architecture-position",
+      "rejected": true,
+      "reason": "non-rock 03 | Dressed masonry POSITION"
+    },
+    {
+      "kind": "dawn",
+      "case": "soil-position",
+      "rejected": true,
+      "reason": "non-rock 12 | Surface biome POSITION"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-normal-nan",
+      "rejected": true,
+      "reason": "finite normal"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-tangent-zero",
+      "rejected": true,
+      "reason": "unit tangents"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-bounds",
+      "rejected": true,
+      "reason": "accepted island bounds\n+ actual - expected\n\n  [\n    [\n+     -10000,\n-     -72.27836608886719,\n      80.40911865234375\n    ],\n    [\n      -88.74075317382812,\n      88.98600006103516\n"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "header",
+      "rejected": true,
+      "reason": "GLB size\n+ actual - expected\n\n+ 12942884\n- 12942888\n         ^\n"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "architecture-position",
+      "rejected": true,
+      "reason": "non-rock 03 | Dressed masonry POSITION"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "soil-position",
+      "rejected": true,
+      "reason": "non-rock 12 | Surface biome POSITION"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-normal-nan",
+      "rejected": true,
+      "reason": "finite normal"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-tangent-zero",
+      "rejected": true,
+      "reason": "unit tangents"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-bounds",
+      "rejected": true,
+      "reason": "accepted island bounds\n+ actual - expected\n\n  [\n    [\n+     -10000,\n-     -73.1258316040039,\n      61.38911819458008\n    ],\n    [\n      -113,\n      95.68000030517578\n"
+    }
+  ]
+}

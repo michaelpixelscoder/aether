@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "tool": "image_gen.imagegen",
+  "generated_at": "2026-10-03",
+  "note": "Native image outputs copied byte for byte; no recolour, resize, repaint or bitmap synthesis. Roughness may be repacked into glTF ORM by the Blender exporter. All edits referenced the native albedo.",
+  "images": [
+    {
+      "role": "albedo-original",
+      "prompt": "Use case: photorealistic-natural. Asset type: production game PBR BASE COLOR texture for polished aether quartz mineral facets, flat orthographic material sheet, square native image. This is a texture filling the complete square, no specimen, no crystal silhouette, no scene, no lighting or shadows. The full height will map from a crystal's root at bottom to its tip at top. At the bottom: deep subdued midnight indigo with restrained violet inclusions. Middle: rich sapphire and cool blue quartz with broad translucent-looking cloudy internal growth zones and sparse fine diagonal natural cleavage fractures. At the top: gradually clearer pale icy blue, with a few delicate cyan mineral streaks. Preserve substantial quiet dark and medium-value areas; bright inclusions occupy less than 10 percent. Very restrained color saturation, varied nuanced mineral depth, no flat fluorescent magenta. Cleavage marks are fine broken irregular lines, not a white spiderweb, no uniform grid, no stylized lightning. Subtle long vertical growth striations at the scale of the full facet, no grit, no speckled noise. The sheet is horizontally seamless with no obvious sections or panel boundaries; the vertical root-to-tip color gradient is intentional. Material ALBEDO only: no baked highlights, no directional light, no specular reflections, no glossy rendered sphere, no cast shadows. Fine detailed natural mineral structure for a high quality voxel fantasy game's actual textured geometry. No text, labels, borders, lettering, watermark, or checkerboard.",
+      "file": "assets/textures/aether-quartz-r45-albedo-v1.png",
+      "native_output": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-6c4ce7ce-df27-4daf-bd63-674827d4b1d7.png",
+      "transparent_background": false,
+      "referenced_image_paths": [],
+      "sha256": "3384048d1cef3633900bb89cf794123793efda3669a365488899033de3114426",
+      "native_dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 2726991
+    },
+    {
+      "role": "emission",
+      "prompt": "Use case: photorealistic-natural. Convert the supplied quartz albedo sheet into its registered PBR EMISSION COLOR map for a game mineral material. Preserve the square dimensions, exact alignment and locations of the existing fracture lines and mineral growth forms. This is a technical emission texture, not a newly lit photograph. Make almost all of the image truly black or extremely dark midnight blue: at least 92 percent of the field should be black, with absolutely no overall blue illumination. Only a few selected thin fragments of the existing diagonal cleavage lines and sparse enclosed mineral veins emit dim pale cyan and restrained violet-blue. The active vein fragments must remain delicate, broken, less than 1 percent of the image width; do not outline all panels, do not invent a web or lightning. Slightly stronger cool cyan in a few selected fracture fragments in the upper third, dim violet-blue pinpricks in the lower third. No broad bright areas, no white face fills, no bloom or glow halo. Preserve the exact alignment of the supplied albedo, without changing or moving its fracture features. Flat texture only, no objects, no text, no borders.",
+      "file": "assets/textures/aether-quartz-r45-emission.png",
+      "native_output": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-46ac69bb-6ce9-49c5-8515-bc63e0405617.png",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-6c4ce7ce-df27-4daf-bd63-674827d4b1d7.png"
+      ],
+      "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152",
+      "native_dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 1754215
+    },
+    {
+      "role": "roughness",
+      "prompt": "Use case: photorealistic-natural. Create the registered PBR ROUGHNESS map for the supplied polished quartz mineral albedo. Keep the exact alignment, square dimensions, growth zones and fracture positions. Technical grayscale texture only, no color. Healthy polished broad facets should be dark charcoal gray around 45-65 out of 255. A few cloudy internal regions can be modestly rougher at 75-95. Existing fractured edges, shallow scratches and sparse worn mineral seams can be medium gray 105-135, never white. Preserve broad smooth regions, do not introduce grain, gritty noise, artificial panel outlines or new fractures. No gradient lighting: values describe physical roughness only. No text, borders, scene, objects or shadows. The crystal should read polished yet naturally imperfect, not frosted stone or scratched metal.",
+      "file": "assets/textures/aether-quartz-r45-roughness.png",
+      "native_output": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-44e0fc7f-a25e-42c2-b710-e37ba3aa142c.png",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-6c4ce7ce-df27-4daf-bd63-674827d4b1d7.png"
+      ],
+      "sha256": "08e2f1241c3834cb3eb6b43163c95a31586c78bf6ab304e39c2bf7921e0e4002",
+      "native_dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 2424498
+    },
+    {
+      "role": "normal",
+      "prompt": "Use case: photorealistic-natural. Create a physically restrained tangent-space OpenGL NORMAL MAP for the supplied quartz albedo. Preserve the exact fracture alignment and square dimensions. Most of the polished mineral face must be flat neutral tangent normal RGB 128,128,255. Only the existing sparse cleavage edges and very fine vertical growth striations have slight shallow normal deviations; use subtle pale lavender and pale cyan variations, no heavy relief. Large cloudy colour zones are internal inclusions and must NOT become surface lumps or pits. No dark grayscale lines, no baked light, no shadows, no objects, no scene, no text, no border. A clean technical +Y tangent-space normal texture: shallow fractures and striations, otherwise flat polished surface.",
+      "file": "assets/textures/aether-quartz-r45-normal.png",
+      "native_output": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-4df59292-4a24-4f69-ab95-a31600f86cc3.png",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-6c4ce7ce-df27-4daf-bd63-674827d4b1d7.png"
+      ],
+      "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219",
+      "native_dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 2103296
+    },
+    {
+      "role": "albedo",
+      "file": "assets/textures/aether-quartz-r45-albedo.png",
+      "native_output": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-383be3b0-68aa-4a72-b5a5-33fa0b9dd766.png",
+      "prompt": "Use case: photorealistic-natural. Edit this supplied game PBR ALBEDO texture while preserving its exact square dimensions and the registration and position of the MAIN diagonal cleavage fractures. It currently looks too frosted and stone-like. Make this read as very clean polished natural blue/violet quartz with broad clear internal growth planes. Remove at least 85 percent of the tiny white speckles, milky scratches, chalky grain and fine crinkly surface noise: most of each broad plane must be quiet and smooth in color. Keep only the main fine diagonal cleavage lines, sparse delicate vertical growth striations, and a few soft cloudy inclusions. Root at image bottom remains deep indigo with broader rich purple-violet internal layers; center has sapphire blue and a few quiet violet internal bands; top becomes clearer icy cyan-blue. Use translucent-looking internal COLOR zones, not opaque paint strokes or marble grain. Preserve the varied large angular growth planes from the input, but make their interior smooth, clean and subtly graded. It must be mineral depth, with cool cyan and restrained purple side by side, not all grey blue or magenta neon. This remains flat unlit ALBEDO ONLY: no baked specular reflection, no white hotspot, no highlights, no light source, no shadow, no bloom, no crystal object. No borders or text.",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "C:/Users/Damien/Documents/Perso/Game/Aether-git/aether-reboot/.dream-loop/crystal-r45-candidate/assets/textures/aether-quartz-r45-albedo-v1.png"
+      ],
+      "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626",
+      "native_dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 2452013
+    }
+  ]
+}

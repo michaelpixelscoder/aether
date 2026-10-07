@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../../',import.meta.url)),scratch=path.join(root,'portable-rebuild'),file=path.join(scratch,'assets/art/sail.glb'),original=fs.readFileSync(file),generator=path.join(scratch,'tools/art/build_sail_r52.py'),originalSource=fs.readFileSync(generator);
+const run=()=>spawnSync(process.execPath,[path.join(scratch,'tools/art/verify_sail_r52.mjs')],{encoding:'utf8'});
+const n=original.readUInt32LE(12),doc=JSON.parse(original.subarray(20,20+n)),binaryStart=28+n,results=[];
+function reject(label,mutate){try{mutate();const r=run();assert.notEqual(r.status,0,label);results.push({case:label,rejected:true});}finally{fs.writeFileSync(file,original);fs.writeFileSync(generator,originalSource);}}
+reject('source drift',()=>fs.appendFileSync(generator,'\n# unauthorized source change\n'));
+reject('embedded texture byte changed',()=>{const v=doc.bufferViews[doc.images[0].bufferView],b=Buffer.from(original);b[binaryStart+(v.byteOffset??0)+42]^=1;fs.writeFileSync(file,b);});
+reject('zero rest normal',()=>{const p=doc.meshes[0].primitives[0],a=doc.accessors[p.attributes.NORMAL],v=doc.bufferViews[a.bufferView],offset=binaryStart+(v.byteOffset??0)+(a.byteOffset??0),b=Buffer.from(original);for(let j=0;j<3;j++)b.writeFloatLE(0,offset+4*j);fs.writeFileSync(file,b);});
+assert.equal(run().status,0,'restored clean candidate passes');
+fs.writeFileSync(path.join(root,'evidence/negative-gate.json'),JSON.stringify({tests:results,restored_clean_passes:true},null,2)+'\n');console.log(JSON.stringify(results));

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "report": "docs\\evidence\\sky-assets.json",
+  "dimensions": [
+    8192,
+    4096
+  ],
+  "metrics": {
+    "radiance_min": 0.0234375,
+    "radiance_max": 16640,
+    "finite_nonnegative": true,
+    "opaque_alpha": true,
+    "above_one_channel_fraction": 0.0006809731324513754,
+    "black_pixel_fraction": 0,
+    "seam_mean_exposure_compressed_rgb": 0.003802316597050048,
+    "seam_p99_exposure_compressed_rgb": 0.018018326896680426,
+    "adjacent_mean_exposure_compressed_rgb": 0.003901743288882832,
+    "pole_p99_p01_exposure_compressed_rgb": [
+      0.010152471096297466,
+      0.010806793377383217
+    ],
+    "metric_transform": "x = linear radiance * runtime multiplier; x/(1+x), numerical metrics only"
+  }
+}

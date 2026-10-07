@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "historical_evidence_sha256": "c10e54385f0dbe7bbf6dad0d03cb27a2810cfd8d448fa0ae85fed1d07d95d912",
+  "reason": "One additional leaf vertex crosses the same four-decimal tangent rounding threshold during the actual r45 rebuild. Raw positions, indices, UV and normals are identical. Only the three named corners and the two measured values are added; the historical SHA stays unchanged.",
+  "source_proofs": [
+    {
+      "file": "crystal-r45-rounding.json",
+      "sha256": "145d4aaaebaccd6e4507752627214fed8420f4ce44507675db76042546788d2d"
+    },
+    {
+      "file": "crystal-r45-migration-proof.json",
+      "sha256": "0ae2046aae92ccbf95585c532ee5e2f0e67896a1566fd0816d38cc354ea309cc"
+    },
+    {
+      "file": "foliage-r45-rebuild/diagnose.py",
+      "sha256": "46fbd95bac041d8d9dd5e2c5cd252fdfabe7ada3afe827648a99efd7ff7dd8c9"
+    },
+    {
+      "file": "foliage-r45-rebuild/diagnosis.json",
+      "sha256": "1ecfe54284f4655b73c94a20f1b520003bee742c0b6c50cbfed586444f30ae0f"
+    }
+  ],
+  "cases": [
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage.002",
+      "historical_sha256": "4cb410a4a609e209ad83b4aef4b90136ac7c073a9ba3fe0de0a31b04f70c7de7",
+      "points": [
+        {
+          "corner": 40315,
+          "component": 0,
+          "historical": -0.15309999883174896,
+          "observed": -0.15320000052452087
+        },
+        {
+          "corner": 92084,
+          "component": 0,
+          "historical": -0.15309999883174896,
+          "observed": -0.15320000052452087
+        },
+        {
+          "corner": 92086,
+          "component": 0,
+          "historical": -0.15309999883174896,
+          "observed": -0.15320000052452087
+        }
+      ]
+    }
+  ]
+}

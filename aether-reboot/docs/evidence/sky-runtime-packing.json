@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "passed": true,
+  "pixels": 33554432,
+  "components": 100663296,
+  "source_gpu_bytes": 268435456,
+  "gpu_bytes": 134217728,
+  "source_sha256": "17affd617f348d854309c868b27d6303d92bd4ccfa3c2f3341304fecdbf72a94",
+  "runtime_sha256": "7efec756222aeaeffcbfe1591c28397d2f9ae97a503081a2b0548144eadb0b16",
+  "max_absolute_error": 0,
+  "implicit_alpha": 1,
+  "metadata": {
+    "KTXorientation": "rd",
+    "KTXwriter": "Aether lossless RGB9E5 / pack_sky.py"
+  },
+  "negative_cases": 0,
+  "dimensions": [
+    8192,
+    4096
+  ],
+  "format": "RGB9E5",
+  "resampled": false,
+  "source_manifest_sha256": "ff32fee34b9c39d212214799b62ce9f4808726cd9e3e8b80bd9990ccc4f7fbbd"
+}

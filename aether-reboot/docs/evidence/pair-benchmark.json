@@ -1,0 +1,5 @@
+{"units":"milliseconds","profile":"release","warmup_ticks":120,"sample_ticks":600,"cases":[
+{"pair":"sphere_voxel","narrow_p50_p95_p99":[0.0015, 0.0031, 0.004],"broad_p50_p95_p99":[9.999999999999999e-5, 0.0003, 0.00039999999999999996],"max_touching_pairs":1}
+,{"pair":"voxel_box","narrow_p50_p95_p99":[0.0084, 0.0123, 0.0129],"broad_p50_p95_p99":[9.999999999999999e-5, 0.0003, 0.0003],"max_touching_pairs":1}
+,{"pair":"voxel_voxel","narrow_p50_p95_p99":[0.013699999999999999, 0.0178, 0.0191],"broad_p50_p95_p99":[9.999999999999999e-5, 0.0003, 0.0003],"max_touching_pairs":1}
+]}

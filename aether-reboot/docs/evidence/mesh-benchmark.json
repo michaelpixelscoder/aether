@@ -1,0 +1,51 @@
+{
+  "gpu_measured": false,
+  "profile": "release",
+  "results": [
+    {
+      "bodies": 1,
+      "cells": 1000,
+      "chunks": 1,
+      "cpu_mesh_ms": {
+        "max": 0.1226,
+        "p50": 0.11649999999999999,
+        "p95": 0.1202
+      },
+      "fixture": "1k",
+      "samples": 21,
+      "triangles": 12,
+      "vertices": 24,
+      "warmup": 3
+    },
+    {
+      "bodies": 1,
+      "cells": 10000,
+      "chunks": 8,
+      "cpu_mesh_ms": {
+        "max": 1.7707000000000002,
+        "p50": 1.675,
+        "p95": 1.7439
+      },
+      "fixture": "10k",
+      "samples": 21,
+      "triangles": 48,
+      "vertices": 96,
+      "warmup": 3
+    },
+    {
+      "bodies": 5,
+      "cells": 50000,
+      "chunks": 40,
+      "cpu_mesh_ms": {
+        "max": 9.3905,
+        "p50": 8.379100000000001,
+        "p95": 9.2367
+      },
+      "fixture": "50k stress / 5 legal bodies",
+      "samples": 21,
+      "triangles": 240,
+      "vertices": 480,
+      "warmup": 3
+    }
+  ]
+}

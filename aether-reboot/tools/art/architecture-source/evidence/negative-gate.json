@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "results": [
+    {
+      "name": "patch source drift",
+      "rejected": true
+    },
+    {
+      "name": "archived baseline payload changed",
+      "rejected": true
+    },
+    {
+      "name": "new facade vertex breaks envelope even with updated file hash",
+      "rejected": true
+    }
+  ],
+  "restored_clean_passes": true
+}

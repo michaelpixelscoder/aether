@@ -1,0 +1,215 @@
+{
+  "reason": "Blender bevel UV interpolation: sparse one/two-ULP observed output differences; original and candidate authoring batches remain exact. No general epsilon exception.",
+  "baseline": "crystal-r45-candidate",
+  "pairs": [
+    {
+      "file": "ember.glb",
+      "material": "04 | Worn cornice / 04 | Worn cornice.006",
+      "attribute": "TEXCOORD_0",
+      "before": "970c3ed9759effffdc1ec950ca5b56a001e16c1e9b3badcee8b51b79d11d9af4",
+      "after": "48b53134bc09df258e276b497981e9e4466dcdefddfe97ed590fb511c6dc40fa",
+      "max_delta": 1.1920928955078125e-7,
+      "components": [
+        {
+          "component": 514,
+          "before": -1.1582998037338257,
+          "after": -1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 1132,
+          "before": 1.1582998037338257,
+          "after": 1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 2006,
+          "before": -1.1582998037338257,
+          "after": -1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 2932,
+          "before": 1.1582998037338257,
+          "after": 1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 2936,
+          "before": 1.1582998037338257,
+          "after": 1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 3510,
+          "before": -1.1582998037338257,
+          "after": -1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 3982,
+          "before": 1.1582998037338257,
+          "after": 1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 26384,
+          "before": -1.1582998037338257,
+          "after": -1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 26392,
+          "before": -1.1582998037338257,
+          "after": -1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 27322,
+          "before": 1.1582998037338257,
+          "after": 1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        },
+        {
+          "component": 27894,
+          "before": -1.1582998037338257,
+          "after": -1.1582999229431152,
+          "delta": 1.1920928955078125e-7,
+          "ulp": 1
+        }
+      ]
+    },
+    {
+      "file": "frost.glb",
+      "material": "03 | Dressed masonry / 03 | Dressed masonry.008",
+      "attribute": "TEXCOORD_0",
+      "before": "73e21de5423e3de49a303035205078093a3ff2068ffa1c1ecdd7007e07709fdc",
+      "after": "cf2ec92de791f88a76299b145ee8fde0e33619263151556bbd2e3c77ac0c9350",
+      "max_delta": 2.384185791015625e-7,
+      "components": [
+        {
+          "component": 31086,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 31150,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 31151,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7,
+          "ulp": 2
+        },
+        {
+          "component": 31334,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 31356,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 31357,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7,
+          "ulp": 2
+        },
+        {
+          "component": 31602,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 31603,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7,
+          "ulp": 2
+        },
+        {
+          "component": 69818,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 69880,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 69896,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 69897,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7,
+          "ulp": 2
+        },
+        {
+          "component": 69900,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 69901,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7,
+          "ulp": 2
+        },
+        {
+          "component": 70146,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8,
+          "ulp": 1
+        },
+        {
+          "component": 70147,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7,
+          "ulp": 2
+        }
+      ]
+    }
+  ]
+}

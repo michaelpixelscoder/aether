@@ -1,0 +1,11 @@
+{
+  "status": "initial portability attempt stopped: elapsed seconds is nondeterministic; all derived KTX and mip data byte exact",
+  "scratch": "D:/Aether-art-studies/flow-r66-promotion-rebuild-w22v4dip",
+  "changed_fields": [
+    "seconds"
+  ],
+  "original_seconds": 1.7744027999997343,
+  "rebuilt_seconds": 1.6337372999987565,
+  "source_sha256": "1459c281819f045cc02cd2bd27dd1b77a77a896eb35382c218ca257d1fd5e866",
+  "original_and_failed_evidence_preserved": true
+}

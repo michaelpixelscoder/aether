@@ -1,0 +1,200 @@
+"""Original fragmented corona volumes and removal of an artificial horizon band.
+
+All existing cloud fields, illumination, solar size/direction and exposure are
+retained. Only this isolated source and one hero are authorized here.
+"""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import hashlib
+import importlib.util
+import json
+import math
+import random
+import sys
+import time
+from pathlib import Path
+import openvdb
+from mathutils import Vector,Matrix
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+BASE=ROOT/'.dream-loop/sky-r50-promotion/tools/art/sky-source'
+CANON=ROOT/'tools/art/sky-source'
+OUT=STAGE/'sky-r52-corona.blend'
+SEED=52031003
+FORWARD=Vector((-460,-335,-670)).normalized()
+RIGHT=FORWARD.cross(Vector((0,1,0))).normalized()
+UP=RIGHT.cross(FORWARD)
+FOCAL=941/(2*math.tan(math.pi/8))
+SUN=Vector((-.853562646464,.518490600791,-.050973576023)).normalized()
+WIND=Vector((0,0,1)).cross(SUN).normalized()
+LIFT=SUN.cross(WIND).normalized()
+BASIS=Matrix((WIND,LIFT,SUN)).transposed()
+
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def record(path):
+    p=Path(path).resolve();return {'file':p.relative_to(ROOT).as_posix(),'sha256':sha(p),'bytes':p.stat().st_size}
+def write(path,obj):Path(path).write_text(json.dumps(obj,indent=2)+'\n',encoding='utf-8')
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result
+def ray(x,y):
+    d=(FORWARD+RIGHT*((x-836)/FOCAL)+UP*((470.5-y)/FOCAL)).normalized()
+    return Vector((d.x,-d.z,d.y))
+
+def prepare():
+    started=time.perf_counter();assert Path(bpy.data.filepath).resolve()==(BASE/'sky-world.blend').resolve()
+    scene=bpy.context.scene;fp=module('r52_fp',BASE/'scene_fingerprint.py')
+    before=fp.descriptor(scene)
+    frozen=[record(p) for p in (CANON/'sky-world.blend',CANON/'manifest.json',CANON/'recipe.json',
+        ROOT/'tools/art/build_sky.py',ROOT/'assets/textures/sky-world-linear.ktx2',
+        BASE/'sky-world.blend',BASE/'manifest.json',BASE.parents[2]/'assets/textures/sky-world-linear.ktx2')]
+    recipe=json.loads((BASE/'recipe.json').read_text());inputs=[BASE/r['file'] for r in recipe['density_inputs']]
+    bounds={}
+    for path in inputs:
+        grid=openvdb.read(str(path),'density');a,b=grid.evalActiveVoxelBoundingBox()
+        lo=Vector(grid.transform.indexToWorld(a));hi=Vector(grid.transform.indexToWorld(b))
+        bounds[path]=(hi-lo,(hi+lo)*.5)
+    old_volumes=[o for o in scene.objects if o.type=='VOLUME']
+    assert len(old_volumes)==86
+    # Remove the bright z=0 band, rather than retuning an exposure or placing
+    # an angular halo. The original pole radiances now form one continuous
+    # full-sphere blue field shared by all ray types and the future IBL.
+    tree=scene.world.node_tree
+    blue=tree.nodes['Blue boundary radiance | all ray types']
+    for link in list(blue.inputs['Color'].links):tree.links.remove(link)
+    tree.links.new(tree.nodes['Explicit broad blue sky poles'].outputs[0],blue.inputs['Color'])
+    for name in ('Squared altitude','Broad smooth horizon width','Continuous full sphere blue falloff',
+                 'Blue field radiance | shared by visible sky and lighting'):
+        tree.nodes.remove(tree.nodes[name])
+    material=bpy.data.materials['R43 | optically thin sunlit vapour'].copy()
+    material.name='R52 | fragmented backlit cloud margins'
+    n=next(n for n in material.node_tree.nodes if n.type=='PRINCIPLED_VOLUME')
+    n.inputs['Density'].default_value=.0022;n.inputs['Anisotropy'].default_value=.70
+    fine=material.copy();fine.name='R52 | far torn vapour'
+    n=next(n for n in fine.node_tree.nodes if n.type=='PRINCIPLED_VOLUME')
+    n.inputs['Density'].default_value=.0013;n.inputs['Anisotropy'].default_value=.68
+    rng=random.Random(SEED);cache={};groups={};placements=[]
+    def cell(group,pixel,distance,radius,aspect,thickness,thin=False):
+        path=rng.choice(inputs);mat=fine if thin else material
+        key=(path,mat.name)
+        if key not in cache:
+            data=bpy.data.volumes.new('R52 source '+path.stem);data.filepath=str(path);data.materials.append(mat);cache[key]=data
+        position=ray(*pixel)*distance
+        rotation=BASIS@Matrix.Rotation(rng.uniform(-.48,.48),3,'Z')@Matrix.Rotation(rng.uniform(-.22,.22),3,'Y')
+        half=Vector((radius,radius*aspect,thickness))
+        # Preserve an actual empty cone enclosing the complete stellar surface.
+        # This shrinks complete 3D sculptures near the cone; it does not apply
+        # any image-space mask or density cut after render.
+        separation=position.normalized().angle(SUN)
+        allowed=max(12.,distance*math.tan(max(.0005,separation-math.radians(.72))))
+        if half.length>allowed:half*=allowed/half.length
+        extent,centre=bounds[path];scale=Vector(tuple(2*half[i]/extent[i] for i in range(3)))
+        obj=bpy.data.objects.new(f'R52 {group} {len(groups.get(group,[])):03}',cache[key]);scene.collection.objects.link(obj)
+        obj.rotation_euler=rotation.to_euler();obj.scale=scale
+        obj.location=position-rotation@Vector(tuple(centre[i]*scale[i] for i in range(3)))
+        groups.setdefault(group,[]).append(obj)
+        placements.append({'name':obj.name,'group':group,'input':path.relative_to(ROOT).as_posix(),'input_sha256':sha(path),
+            'location':list(obj.location),'rotation':list(obj.rotation_euler),'scale':list(obj.scale),
+            'distance_metres':distance,'half_sizes_metres':list(half),'pixel_planning_axis':pixel,'material':mat.name})
+    # Authored, asymmetric branches: intervals/gaps and scale change explicitly;
+    # no closed ring, repeated equal pearls or one horizontal shelf.
+    branches=[
+        ('western torn cheek',[(137,190),(169,153),(194,120),(209,83),(203,48)],18500,1.0),
+        ('upper broken lip',[(225,23),(259,6),(304,-3),(345,8),(377,28)],21800,.78),
+        ('lower scattered clasp',[(214,125),(235,151),(270,163),(313,148)],25500,.72),
+        ('eastern drifting fragments',[(348,78),(369,108),(398,125),(431,107)],29500,.60),
+    ]
+    for group,anchors,distance,size in branches:
+        for index,anchor in enumerate(anchors):
+            main_radius=rng.uniform(280,590)*size
+            centre=(anchor[0]+rng.uniform(-5,5),anchor[1]+rng.uniform(-5,5))
+            cell(group,centre,distance+rng.uniform(-450,450),main_radius,rng.uniform(.38,.70),rng.uniform(75,155))
+            # Tiny pre-sculpted subdivisions overlap each major lobe, yielding
+            # eroded fingers and 3–6x scale variation instead of smooth beads.
+            for j in range(rng.randint(6,10)):
+                theta=rng.uniform(0,math.tau)
+                pixel=(centre[0]+math.cos(theta)*rng.uniform(7,20),centre[1]+math.sin(theta)*rng.uniform(5,15))
+                cell(group,pixel,distance+rng.uniform(-700,700),main_radius*rng.uniform(.14,.43),
+                     rng.uniform(.34,.82),rng.uniform(24,72),j%3==0)
+    # Remote wisps create a separate depth scale outside the opening. Each is
+    # fused locally, preventing a huge mostly-empty global volume domain.
+    wisps=[(443,154,33000),(512,207,36500),(598,171,31000),(683,236,40000),
+           (775,195,37000),(876,265,41000),(1211,205,39000),(1470,236,43000)]
+    for i,(x,y,distance) in enumerate(wisps):
+        group=f'remote weather shred {i:02}'
+        for j in range(8):
+            cell(group,(x+rng.uniform(-22,22),y+rng.uniform(-7,7)),distance+rng.uniform(-900,900),
+                 rng.uniform(90,330),rng.uniform(.20,.46),rng.uniform(25,85),True)
+    union=module('r52_union',BASE/'volume_union.py');folder=STAGE/'volumes';folder.mkdir(exist_ok=True)
+    output=[]
+    # Mixed per-cell optical densities are resolved into the one continuous
+    # field by the existing max-density union; no intersecting domain caissons.
+    for group,items in groups.items():
+        target=fine if group.startswith('remote') else material
+        result=union.union(items,folder/(group.replace(' ','-')+'.vdb'),target,14. if not group.startswith('remote') else 20.)
+        result['group']=group;output.append(result)
+        for obj in items:bpy.data.objects.remove(obj,do_unlink=True)
+    used={}
+    for obj in scene.objects:
+        if obj.type=='VOLUME':
+            p=Path(bpy.path.abspath(obj.data.filepath)).resolve();used[str(p)]=record(p)
+            # The open file still belongs to the r50 package at this point.
+            # Keep absolute references until the candidate has its own base.
+            obj.data.filepath=str(p)
+    after=fp.descriptor(scene);actual={o['name']:o for o in after['objects']}
+    for old in before['objects']:assert old==actual[old['name']],old['name']
+    for name,value in before['materials'].items():assert value==after['materials'][name],name
+    old_nodes={n['name']:n for n in before['world']['nodes']};new_nodes={n['name']:n for n in after['world']['nodes']}
+    for name in ('Dot with actual stellar direction','Calibrated finite angular radiance',
+        'Uniform radiance stellar surface | 0.75 degree diameter','Single warm stellar emitter | no additional SUN object'):
+        assert old_nodes[name]==new_nodes[name]
+    bpy.context.preferences.filepaths.save_version=0
+    bpy.ops.wm.save_as_mainfile(filepath=str(OUT),compress=True,relative_remap=False)
+    for obj in scene.objects:
+        if obj.type=='VOLUME':obj.data.filepath=bpy.path.relpath(obj.data.filepath)
+    bpy.ops.wm.save_as_mainfile(filepath=str(OUT),compress=True,relative_remap=False)
+    assert fp.digest(fp.descriptor(scene))==fp.digest(after)
+    for item in frozen:assert sha(ROOT/item['file'])==item['sha256']
+    m={'status':'isolated original corona source prepared; no render','output_needs_render':True,
+        'source':OUT.name,'source_sha256':sha(OUT),'generator_sha256':sha(__file__),'base':record(BASE/'sky-world.blend'),
+        'frozen':frozen,'seed':SEED,'new_fields':output,'placements':placements,
+        'source_files':list(used.values())+[record(p) for p in inputs]+[record(BASE/'volume_union.py'),record(BASE/'scene_fingerprint.py')],
+        'unchanged_original_fields':86,'unchanged_original_materials':True,'unchanged_solar_source':True,
+        'blue_model_change':'Remove artificial z=0 radiance band; continuous existing blue pole field now shared by all ray types',
+        'camera_and_exposure_unchanged':True,'before_descriptor_sha256':fp.digest(before),'after_descriptor_sha256':fp.digest(after),
+        'external_assets':[],'bitmap_edits':False,'upscaling':False,'prepare_seconds':time.perf_counter()-started}
+    write(STAGE/'manifest.json',m);write(STAGE/'scene-descriptor-before.json',before);write(STAGE/'scene-descriptor-after.json',after)
+    print('CORONA_PREPARED',json.dumps({'fields':len(output),'cells':len(placements),'seconds':m['prepare_seconds']}),flush=True)
+
+def hero():
+    assert Path(bpy.data.filepath).resolve()==OUT.resolve()
+    assert not (STAGE/'corona-hero.png').exists(),'Preserve original single-hero evidence'
+    m=json.loads((STAGE/'manifest.json').read_text());assert sha(OUT)==m['source_sha256']
+    scene=bpy.context.scene;prefs=bpy.context.preferences.addons['cycles'].preferences
+    prefs.compute_device_type='OPTIX';prefs.get_devices();assert any(d.type=='OPTIX' for d in prefs.devices)
+    for device in prefs.devices:device.use=device.type=='OPTIX'
+    scene.cycles.device='GPU';scene.cycles.samples=64;scene.cycles.adaptive_min_samples=16
+    scene.cycles.adaptive_threshold=.035;scene.cycles.use_adaptive_sampling=True
+    scene.cycles.use_denoising=True;scene.cycles.denoising_input_passes='RGB';scene.cycles.denoising_use_gpu=False
+    scene.camera.data.type='PERSP';scene.camera.data.sensor_fit='VERTICAL'
+    scene.camera.data.sensor_height=24;scene.camera.data.lens=12/math.tan(math.pi/8)
+    scene.camera.rotation_euler=Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+    scene.render.resolution_x,scene.render.resolution_y=1672,941;scene.render.resolution_percentage=100
+    scene.render.use_border=False;scene.render.image_settings.file_format='PNG';scene.render.image_settings.color_mode='RGB'
+    scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast'
+    scene.view_settings.exposure=-.90;scene.view_settings.gamma=1
+    scene.render.filepath=str(STAGE/'corona-hero.png');start=time.perf_counter()
+    bpy.ops.render.render(write_still=True)
+    m['hero']={**record(scene.render.filepath),'dimensions':[1672,941],'samples_max':64,'seconds':time.perf_counter()-start,
+        'source_sha256':sha(OUT),'exposure_stops':-.90,'renderer':'Cycles OPTIX','display_transform':'AgX Medium High Contrast'}
+    m['status']='single original hero rendered; no panorama authorized'
+    for item in m['frozen']:assert sha(ROOT/item['file'])==item['sha256']
+    write(STAGE/'manifest.json',m);print('CORONA_HERO_RENDERED',json.dumps(m['hero']),flush=True)
+
+if __name__=='__main__':
+    if '--prepare' in sys.argv:prepare()
+    elif '--hero' in sys.argv:hero()
+    else:raise ValueError('Only --prepare and one --hero are authorized')

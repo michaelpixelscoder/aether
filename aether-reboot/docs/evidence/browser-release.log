@@ -1,0 +1,14 @@
+
+Running 7 tests using 1 worker
+
+(node:55328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 e2e\game.spec.mjs:5:1 › traversée au clavier avec la physique de production (38.4s)
+  ok 2 e2e\game.spec.mjs:30:1 › scène de performance 10k et 32 corps à 1080p (38.6s)
+  ok 3 e2e\game.spec.mjs:54:1 › parcours réel : clavier, édition souris, disque navigateur, export et menus (13.7s)
+  ok 4 e2e\game.spec.mjs:106:1 › scénario intégré avec IndexedDB, câble, scission et vingt reprises (23.6s)
+  ok 5 e2e\game.spec.mjs:115:1 › capacité GPU absente : erreur explicite et bouton de reprise (168ms)
+  ok 6 e2e\game.spec.mjs:122:1 › asset critique absent : erreur récupérable puis rechargement (3.1s)
+  ok 7 e2e\game.spec.mjs:128:1 › stockage refusé : pas de faux succès, export toujours possible (3.4s)
+
+  7 passed (2.0m)

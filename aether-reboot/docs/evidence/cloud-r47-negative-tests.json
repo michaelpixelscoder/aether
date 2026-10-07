@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "passed": true,
+  "negative_cases": 13,
+  "tests": [
+    {
+      "test": "regional memory/resolution cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "continuous cave roof floor cannot be disabled",
+      "rejected": true
+    },
+    {
+      "test": "reviewed regional cache cannot change even with updated manifest hash",
+      "rejected": true
+    },
+    {
+      "test": "historical high cache cannot change even with updated manifest hash",
+      "rejected": true
+    },
+    {
+      "test": "unreviewed generator cannot be relabelled in manifest",
+      "rejected": true
+    },
+    {
+      "test": "historical evidence cannot be overwritten",
+      "rejected": true
+    },
+    {
+      "test": "regional p99 must stay below accepted .05",
+      "rejected": true
+    },
+    {
+      "test": "high-bank p99 still obeys historical .035",
+      "rejected": true
+    },
+    {
+      "test": "analytic derivative fidelity is independently bounded",
+      "rejected": true
+    },
+    {
+      "test": "opaque image RMSE is independently bounded",
+      "rejected": true
+    },
+    {
+      "test": "edge opacity is independently bounded",
+      "rejected": true
+    },
+    {
+      "test": "proof cannot quietly change comparison camera",
+      "rejected": true
+    },
+    {
+      "test": "stale renderer proof is rejected",
+      "rejected": true
+    }
+  ]
+}

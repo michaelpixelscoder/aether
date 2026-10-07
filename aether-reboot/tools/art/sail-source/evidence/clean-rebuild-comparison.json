@@ -1,0 +1,62 @@
+{
+  "before_sha256": "7e06e8574ab769ad877bfefae88d8ea8bb12366390ae963a54aa604d086f6752",
+  "after_sha256": "4f993ebc24fc031816651243082e9f59666d58629cdf1b03085a9dc305353132",
+  "comparison": "fresh exports: positions/morph positions checked at 10 micrometres; UV, normals and triangulation differences explicitly reported, not claimed identical",
+  "meshes": [
+    {
+      "mesh": "Embroidered gold thread.001",
+      "triangles": 7744,
+      "triangulation_identical": false,
+      "before_triangle_sha256": "79459ce8787031b43fb6bdac2ede1b38c31a7bda26f109fb29c3fc41b6bf841d",
+      "after_triangle_sha256": "37a9d45440186419faa0172fc2ec7ee06ec9f8bfd64dc58a1d6098dbd187af61",
+      "max_position_and_morph_delta": 0,
+      "max_uv_delta": 0.988800048828125,
+      "uv_mismatch_vertices": 7350,
+      "max_normal_and_morph_normal_delta": 0.00010001659393310547
+    },
+    {
+      "mesh": "Embroidered gold thread.002",
+      "triangles": 48,
+      "triangulation_identical": true,
+      "before_triangle_sha256": "f11648c3b74c5ae37466f846fdf7738d6d62812431f6ae347ea06f644f7d45ea",
+      "after_triangle_sha256": "f11648c3b74c5ae37466f846fdf7738d6d62812431f6ae347ea06f644f7d45ea",
+      "max_position_and_morph_delta": 0,
+      "max_uv_delta": 0,
+      "uv_mismatch_vertices": 0,
+      "max_normal_and_morph_normal_delta": 0
+    },
+    {
+      "mesh": "Indigo canvas",
+      "triangles": 41712,
+      "triangulation_identical": true,
+      "before_triangle_sha256": "d980d90d1f314818100f26c21a266a0cb4c9c62497a3cad5d18fe245275e8c29",
+      "after_triangle_sha256": "d980d90d1f314818100f26c21a266a0cb4c9c62497a3cad5d18fe245275e8c29",
+      "max_position_and_morph_delta": 0,
+      "max_uv_delta": 0,
+      "uv_mismatch_vertices": 0,
+      "max_normal_and_morph_normal_delta": 0.00013339519500732422
+    },
+    {
+      "mesh": "Indigo canvas variation",
+      "triangles": 20944,
+      "triangulation_identical": true,
+      "before_triangle_sha256": "75f71f32c23931ccc7d69d89ebe311ea4b14ee82ac39ad4e2bb327d9e37e58d3",
+      "after_triangle_sha256": "75f71f32c23931ccc7d69d89ebe311ea4b14ee82ac39ad4e2bb327d9e37e58d3",
+      "max_position_and_morph_delta": 0,
+      "max_uv_delta": 0,
+      "uv_mismatch_vertices": 0,
+      "max_normal_and_morph_normal_delta": 0.00010001659393310547
+    },
+    {
+      "mesh": "Indigo canvas.001",
+      "triangles": 308,
+      "triangulation_identical": true,
+      "before_triangle_sha256": "905a675805006364213a2a42c55f823e41e03b9e86041471db3e021a76807956",
+      "after_triangle_sha256": "905a675805006364213a2a42c55f823e41e03b9e86041471db3e021a76807956",
+      "max_position_and_morph_delta": 0,
+      "max_uv_delta": 0,
+      "uv_mismatch_vertices": 0,
+      "max_normal_and_morph_normal_delta": 0
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "status": "CPU candidate C only; not rendered, not promoted",
+  "baseline_b_sha256": "b06b3ad772c64da5c30ebb162a584b699bb409a2dd7dcadc7ba717d42aa098fe",
+  "candidate_sha256": "f14fe8ddbf914f1460af1da8e80c2347d18d61bd5a18f7d27418ee682a887d64",
+  "authoring_field": "Shared all-ray World boundary radiance; artist-directed circumsolar environment, not a measured stellar corona.",
+  "support_radius_degrees_nominal": 4.5,
+  "support_radius_degrees_actual": 4.500008540785765,
+  "weight": "1-smoothstep(0,1,(1-dot(unit_world_ray,stored_solar_axis))/(1-cos4.5deg)); clamp",
+  "warm_boundary_rgb": [
+    7.0,
+    2.0,
+    0.30000001192092896
+  ],
+  "blue_poles_b_exact": [
+    [
+      0.1599999964237213,
+      0.4050000309944153,
+      1.1999999284744263
+    ],
+    [
+      0.2199999988079071,
+      0.5849999785423279,
+      1.5
+    ]
+  ],
+  "angular_divisor_f32": 0.003082666313275695,
+  "solar_axis_length": 1.0000000116851209,
+  "disk_cos_threshold_f32": 0.9999451637268066,
+  "disk_diameter_degrees_actual": 1.2001895507050622,
+  "additional_incident_normal_irradiance_rgb_vs_b": [
+    0.06590561036861255,
+    0.014606123134471436,
+    -0.010085466698788964
+  ],
+  "extra_red_irradiance_numeric": 0.06590561036861303,
+  "core_red_radiance_b": 63860.37109375,
+  "core_red_radiance_c": 63648.95703125,
+  "core_red_normal_irradiance": 21.934094510988576,
+  "core_fraction_of_total": 0.9970042959540262,
+  "total_red_irradiance": 22.00000012135719,
+  "air_materials_changed": false,
+  "geometry_changed": false,
+  "source_vdb_changed": false,
+  "outside_cone_tests": [
+    {
+      "degrees": 4.501,
+      "warm_weight": 0.0,
+      "blue_field_exact": true
+    },
+    {
+      "degrees": 5,
+      "warm_weight": 0.0,
+      "blue_field_exact": true
+    },
+    {
+      "degrees": 10,
+      "warm_weight": 0.0,
+      "blue_field_exact": true
+    },
+    {
+      "degrees": 20,
+      "warm_weight": 0.0,
+      "blue_field_exact": true
+    },
+    {
+      "degrees": 90,
+      "warm_weight": 0.0,
+      "blue_field_exact": true
+    },
+    {
+      "degrees": 180,
+      "warm_weight": 0.0,
+      "blue_field_exact": true
+    }
+  ],
+  "retouching": false,
+  "resampled": false,
+  "limitations": [
+    "Source field is an artist-directed finite boundary illumination, not exact atmospheric multiple scattering.",
+    "The blue source is exact outside the cone, but physical scattering/IBL globally may change slightly after transport.",
+    "The narrow core becomes white under ACES; this hypothesis addresses surrounding field and volume rim color, not forcing a yellow disk.",
+    "The runtime key represents total22; for a final accepted model its core should use the recorded fraction to avoid double-counting the broad field retained in IBL.",
+    "Absolute local volume paths must be made portable in a later accepted package."
+  ]
+}

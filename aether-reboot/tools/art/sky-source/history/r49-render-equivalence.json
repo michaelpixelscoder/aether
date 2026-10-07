@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "operation": "remap unchanged density bytes to package-relative paths; no geometry cleanup or further lighting edit",
+  "new_render_performed": false,
+  "rendered_scene_sha256": "481cb38d2b7159a70cf0a45d9c68496ca5def822bc7d4c8cd7469f3291952d76",
+  "packaged_scene_sha256": "82837197fc812a790eb9bcb82f2553dd415e10062343d6d7b730ad7eef2bc4be",
+  "before_descriptor_sha256": "913f36bd73c00ba8318eb72ecbc15e3cefb68fad88e06859c07221883fd39b83",
+  "after_descriptor_sha256": "913f36bd73c00ba8318eb72ecbc15e3cefb68fad88e06859c07221883fd39b83",
+  "visible_volume_count": 86,
+  "input_raster_images": 0,
+  "source_scene_retained_in_working_evidence": ".dream-loop/sky-r49-atmosphere-candidate/sky-r49-atmosphere.blend",
+  "descriptor_scope": "visible geometry, grids by SHA, materials and node graphs, sun, camera, world, Cycles/integrator and output color configuration"
+}

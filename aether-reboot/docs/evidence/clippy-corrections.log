@@ -1,0 +1,153 @@
+error: this `if` statement can be collapsed
+  --> crates\aether_game\src\audio.rs:46:5
+   |
+46 | /     if prefs.volume > 0.0 {
+47 | |         if let Some(handle) = handle {
+48 | |             commands.spawn((
+49 | |                 AudioPlayer::new(handle),
+...  |
+53 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#collapsible_if
+   = note: `-D clippy::collapsible-if` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+   |
+46 ~     if prefs.volume > 0.0
+47 ~         && let Some(handle) = handle {
+48 |             commands.spawn((
+...
+51 |             ));
+52 ~         }
+   |
+
+
+error: this `if` statement can be collapsed
+  --> crates\aether_game\src\audio.rs:46:5
+   |
+46 | /     if prefs.volume > 0.0 {
+47 | |         if let Some(handle) = handle {
+48 | |             commands.spawn((
+49 | |                 AudioPlayer::new(handle),
+...  |
+53 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#collapsible_if
+   = note: `-D clippy::collapsible-if` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+   |
+46 ~     if prefs.volume > 0.0
+47 ~         && let Some(handle) = handle {
+48 |             commands.spawn((
+...
+51 |             ));
+52 ~         }
+   |
+
+
+error: items after a test module
+   --> crates\aether_game\src\controls.rs:61:1
+    |
+ 61 |   mod tests {
+    |   ^^^^^^^^^
+...
+ 72 | / pub fn collect(
+ 73 | |     keys: Res<ButtonInput<KeyCode>>,
+ 74 | |     logical:Res<ButtonInput<Key>>,
+ 75 | |     phase: Res<State<Phase>>,
+...   |
+ 81 | |     mut walkers: Query<&mut WalkerIntent>,
+ 82 | | ) {
+    | |_^
+...
+174 |   pub fn dispatch(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+306 |   pub fn notice(world: &mut World, text: impl Into<String>) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+309 |   fn busy(world: &mut World) -> bool {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+317 |   fn active_vessel(world: &World) -> Option<&Vessel> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+320 |   fn dock(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+404 |   pub fn release_tether(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+413 |   pub use aether_core::terrain::line_clear;
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+414 |   fn tether(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+468 |   fn walk(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+497 |   pub fn spawn_avatar(world: &mut World, position: Vec3, velocity: Vec3) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#items_after_test_module
+    = note: `-D clippy::items-after-test-module` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::items_after_test_module)]`
+
+
+Applied 3 safe suggestions in round 1.
+error: items after a test module
+   --> crates\aether_game\src\controls.rs:61:1
+    |
+ 61 |   mod tests {
+    |   ^^^^^^^^^
+...
+ 72 | / pub fn collect(
+ 73 | |     keys: Res<ButtonInput<KeyCode>>,
+ 74 | |     logical:Res<ButtonInput<Key>>,
+ 75 | |     phase: Res<State<Phase>>,
+...   |
+ 81 | |     mut walkers: Query<&mut WalkerIntent>,
+ 82 | | ) {
+    | |_^
+...
+174 |   pub fn dispatch(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+306 |   pub fn notice(world: &mut World, text: impl Into<String>) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+309 |   fn busy(world: &mut World) -> bool {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+317 |   fn active_vessel(world: &World) -> Option<&Vessel> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+320 |   fn dock(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+404 |   pub fn release_tether(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+413 |   pub use aether_core::terrain::line_clear;
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+414 |   fn tether(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+468 |   fn walk(world: &mut World) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+497 |   pub fn spawn_avatar(world: &mut World, position: Vec3, velocity: Vec3) {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#items_after_test_module
+    = note: `-D clippy::items-after-test-module` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::items_after_test_module)]`
+
+
+    Checking aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+error: could not compile `aether_game` (lib test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+

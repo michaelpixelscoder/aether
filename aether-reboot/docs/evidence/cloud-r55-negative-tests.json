@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "passed": true,
+  "negative_cases": 12,
+  "tests": [
+    {
+      "test": "opaque RMSE must remain below .025",
+      "rejected": true
+    },
+    {
+      "test": "edge alpha p99 must remain below .08",
+      "rejected": true
+    },
+    {
+      "test": "current two-step cadence cannot be omitted",
+      "rejected": true
+    },
+    {
+      "test": "comparison camera cannot drift",
+      "rejected": true
+    },
+    {
+      "test": "old sunlight cannot be relabelled R55",
+      "rejected": true
+    },
+    {
+      "test": "bounce path cannot be omitted",
+      "rejected": true
+    },
+    {
+      "test": "silently loosened contract limits are rejected",
+      "rejected": true
+    },
+    {
+      "test": "lighting may not alter opacity even within the old tolerance",
+      "rejected": true
+    },
+    {
+      "test": "R47 evidence cannot be rewritten to imply R55 coverage",
+      "rejected": true
+    },
+    {
+      "test": "stale input assets/shaders/clouds.wgsl",
+      "rejected": true
+    },
+    {
+      "test": "stale input tools/art/review_cloud_light_cpu.py",
+      "rejected": true
+    },
+    {
+      "test": "stale input tools/art/build_cloud_lighting.mjs",
+      "rejected": true
+    }
+  ]
+}

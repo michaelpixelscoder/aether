@@ -1,0 +1,6 @@
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_view v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+    Finished `dev` profile [optimized] target(s) in 9.84s
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+   Compiling aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+    Finished `dev` profile [optimized] target(s) in 12.84s

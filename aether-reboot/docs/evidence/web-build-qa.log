@@ -1,0 +1,81 @@
+info: compiling to WebAssembly...
+   Compiling web-sys v0.3.106
+   Compiling num-integer v0.1.47
+   Compiling cpal v0.17.3
+   Compiling dasp_sample v0.11.0
+   Compiling hound v3.5.1
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling num-bigint v0.4.8
+   Compiling num-rational v0.4.2
+   Compiling wgpu-types v29.0.4
+   Compiling winit v0.30.13
+   Compiling rodio v0.22.2
+   Compiling accesskit_winit v0.32.2
+   Compiling bevy_reflect v0.19.1
+   Compiling wgpu-naga-bridge v29.0.4
+   Compiling wgpu v29.0.4
+   Compiling bevy_ecs v0.19.1
+   Compiling bevy_math v0.19.1
+   Compiling glam_matrix_extras v0.3.0
+   Compiling bevy_color v0.19.1
+   Compiling bevy_heavy v0.5.0
+   Compiling bevy_app v0.19.1
+   Compiling bevy_time v0.19.1
+   Compiling bevy_transform v0.19.1
+   Compiling bevy_input v0.19.1
+   Compiling bevy_log v0.19.1
+   Compiling bevy_a11y v0.19.1
+   Compiling bevy_state v0.19.1
+   Compiling bevy_clipboard v0.19.1
+   Compiling bevy_diagnostic v0.19.1
+   Compiling bevy_asset v0.19.1
+   Compiling bevy_window v0.19.1
+   Compiling bevy_input_focus v0.19.1
+   Compiling bevy_winit v0.19.1
+   Compiling bevy_mesh v0.19.1
+   Compiling bevy_image v0.19.1
+   Compiling bevy_shader v0.19.1
+   Compiling bevy_audio v0.19.1
+   Compiling bevy_scene v0.19.1
+   Compiling bevy_text v0.19.1
+   Compiling bevy_camera v0.19.1
+   Compiling bevy_material v0.19.1
+   Compiling bevy_animation v0.19.1
+   Compiling bevy_gizmos v0.19.1
+   Compiling bevy_render v0.19.1
+   Compiling bevy_sprite v0.19.1
+   Compiling bevy_world_serialization v0.19.1
+   Compiling bevy_light v0.19.1
+   Compiling bevy_ui v0.19.1
+   Compiling bevy_gltf v0.19.1
+   Compiling bevy_core_pipeline v0.19.1
+   Compiling bevy_sprite_render v0.19.1
+   Compiling bevy_pbr v0.19.1
+   Compiling bevy_anti_alias v0.19.1
+   Compiling bevy_post_process v0.19.1
+   Compiling bevy_ui_render v0.19.1
+   Compiling bevy_gizmos_render v0.19.1
+   Compiling bevy_internal v0.19.1
+   Compiling bevy v0.19.0
+   Compiling bevy_transform_interpolation v0.5.0
+   Compiling bevy-tnua-physics-integration-layer v0.13.0
+   Compiling aether_view v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+warning: unused import: `AsyncComputeTaskPool`
+  --> crates\aether_view\src\voxel.rs:11:13
+   |
+11 |     tasks::{AsyncComputeTaskPool, Task},
+   |             ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling bevy-tnua v0.32.0
+   Compiling avian3d v0.7.0
+warning: `aether_view` (lib) generated 1 warning (run `cargo fix --lib -p aether_view` to apply 1 suggestion)
+   Compiling bevy-tnua-avian3d v0.12.0
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+   Compiling aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+    Finished `web` profile [optimized] target(s) in 1m 38s
+info: bundling JavaScript bindings...
+info: using workspace assets.
+info: using custom workspace web assets.
+info: created bundle at file://C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\target\bevy_web\web\aether_game

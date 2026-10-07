@@ -1,0 +1,416 @@
+{
+  "baseline": "crystal-r45-candidate, historical files unmodified",
+  "contracts": [
+    {
+      "file": "collisions.json",
+      "before": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+      "after": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+      "byte_exact": true
+    },
+    {
+      "file": "landmarks.json",
+      "before": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+      "after": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+      "byte_exact": true
+    },
+    {
+      "file": "vault-collisions.json",
+      "before": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70",
+      "after": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70",
+      "byte_exact": true
+    }
+  ],
+  "models": [
+    {
+      "file": "dawn.glb",
+      "before_sha256": "9ef4fd05dab89088f16a7732d972ccaf201ae9643f65313e7f82d1bad5797e1e",
+      "after_sha256": "9d72afb49de26b661de6e5321279fa08ec496c329a04f08d4cd4d3f5e37e803b",
+      "triangles": 184368,
+      "triangle_delta": -14044,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone",
+        "02 | Deep strata / 02 | Deep strata"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-lod.glb",
+      "before_sha256": "74bb3c31808c0a758d41f7723fe5d439d157e55a0fb8cf53e6e3c466f2d545e9",
+      "after_sha256": "727e814e40a920ad23b0d7280566a8b40b0419f5e13bd232331992db4e646dc9",
+      "triangles": 11928,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "crystal.glb",
+      "before_sha256": "583bf9a0b1135b903ebd8c5aab82cb075e787327c045c9e6340b6e74e00a661a",
+      "after_sha256": "8d357621043680bb99b9eaf9873341c82e89054e802dd9e606c8acea24f460ed",
+      "triangles": 105722,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "crystal-lod.glb",
+      "before_sha256": "e0d410d63452cd49960ae30a15cf1271f44a645f10f65106874b84d99862f795",
+      "after_sha256": "dfe524b0726711d56137798cf8b622a8a0ea792b29ebf1bb051e6d593d3fc9b6",
+      "triangles": 7462,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "nomad.glb",
+      "before_sha256": "91c657e36262b703869b04bd2d82ad15df4907dc7d1906fe0ecd3f6a7b37366b",
+      "after_sha256": "87eece42bc898a60d86a5da7b02fe142d7e1736f9c586efc6fa5e16e036fbf4b",
+      "triangles": 97428,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "nomad-lod.glb",
+      "before_sha256": "78c2a194f1ae186fbb838639fae9893ae406b6d1172707a838d9e5f0a65db09e",
+      "after_sha256": "26831e5464222c951147f380997e51c9b8fa9167a6acefae6afda6683165a9c7",
+      "triangles": 4940,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "ember.glb",
+      "before_sha256": "dcc42748e307c7378ea4cff047da414c605704307d21336a1426bdaf04739d11",
+      "after_sha256": "dabedd26eee4b72023b53197b71c57bf9b71c96f65dd9df9c2806c57e741bd7b",
+      "triangles": 79830,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "ember-lod.glb",
+      "before_sha256": "1e89d93cf3a573182b97d064be90f50ad6c941de685eb41f69fcc124541b07b6",
+      "after_sha256": "acd524edf6e848afc0ff62dab339bcede2000715bb9d22bf639467c20de92bb0",
+      "triangles": 6926,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "frost.glb",
+      "before_sha256": "27118006e321a9f62aa2a4c2f9776a1123d351cd33f9e78c4b1a2a228c4a8204",
+      "after_sha256": "1f195cb9b260b79c5152cc77ea312014ffdb730a5f1aea715222ccfff2ffdce8",
+      "triangles": 110830,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "frost-lod.glb",
+      "before_sha256": "3ef6e8beeb1d7ee3a15949af72e2be69b0eb494d4d5f4b4cea4c0b3fece55f64",
+      "after_sha256": "481375e46cf7f2ac0ce8bf2013807a50b7d283faf631918535fcae37e1dfb95d",
+      "triangles": 7900,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "verdant.glb",
+      "before_sha256": "994c3d290575e9d0f01afa6c0349321459f083db82638af23ec2349818e48ff0",
+      "after_sha256": "c744d13cb6b8db06ed5c37c0b3c489835c58a3b40d8f04d61f13da5df0724802",
+      "triangles": 93920,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "verdant-lod.glb",
+      "before_sha256": "bc05956ab3610d5b706d02608b3efe8e668102df6845ac8777eb801a5f2810a6",
+      "after_sha256": "190dc0f588500fa52604c7ce048dcf6cec375ed1de324075acd575cb2aef7944",
+      "triangles": 6532,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "storm.glb",
+      "before_sha256": "47e5ec17347c5c3311d122ef2c455505910d636f594d30f1c3dffdbdd8521a7f",
+      "after_sha256": "238540a5125a9e22840877b5c05217dc459ded8452bb4e05db5a4f9fd6740afe",
+      "triangles": 95894,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "storm-lod.glb",
+      "before_sha256": "e7a9d06c3ee6bfa272442c65aa5f32f2ae507f288e93b06664f39e4798bdd33d",
+      "after_sha256": "ad4bc8e411186036b2f6b1b438c5140af09026a495ae940a17eb704309d3c8df",
+      "triangles": 5176,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "hollow.glb",
+      "before_sha256": "b225147872b758d4d8d5fec3d7d4606cabe2a853537e44df85be2d2591496d31",
+      "after_sha256": "bbabf15356505568941d983a4962656d4fe499294d7fde1c6fd1e6e3d04dc833",
+      "triangles": 132352,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "hollow-lod.glb",
+      "before_sha256": "62eb455b8fd85b25272b374eccc5bec73a5e2bbaf410fc8a0a7b17a5a59ebc14",
+      "after_sha256": "e51df00c953c89b78c3188d86c9349f1fa03215739622c945e7b7cae43af9896",
+      "triangles": 9890,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "underforge.glb",
+      "before_sha256": "3d003c773e742ffeca4090ebec98557f55c9113f37540fea54819a0ff4005c07",
+      "after_sha256": "09750f4f994f7296b82e53a6b1dd188e49b33403c5ff2d93d1afddcc84c0a6e2",
+      "triangles": 123206,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "underforge-lod.glb",
+      "before_sha256": "0a0454a4f7f1502ff354746e845d577c6a0d28ab0c03deaf47c9ed2ca2a6cfaa",
+      "after_sha256": "96f50b8b143125b6b82c75edef7ccd51d9252b573bd6510c7c019104cf4ded9e",
+      "triangles": 10684,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-watch.glb",
+      "before_sha256": "9cc5dba4a7dd2b4203788c05f3584c6d19db85a66c727cf4d13b928c50c48af2",
+      "after_sha256": "b39634f784a041afd0e1f33c485bc088b0b3720eb162895e19717c1c268f74cb",
+      "triangles": 139763,
+      "triangle_delta": 28526,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone",
+        "02 | Deep strata / 02 | Deep strata"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "before_sha256": "5ee12aa01ab98b210b88f8b2610d1071e800aafafe468b2628748f035b0885af",
+      "after_sha256": "448ea68f0496c1e4d69346f53c618b8b04a9f0e751ac9dfd91e3f5af9f6e8902",
+      "triangles": 10509,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "before_sha256": "234f3da190b6f41944a43ff520d5301a1cc5232be998227670ef9a8fbee27976",
+      "after_sha256": "486ada3f3bc26a3f0707f5eb6d693bec6fbffb32e80c4851f342824e14328ea1",
+      "triangles": 130182,
+      "triangle_delta": 27188,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone.002",
+        "02 | Deep strata / 02 | Deep strata.002"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "before_sha256": "0e5bb37adbb202df6777c372814c3cbb1c30a2b48de3f9ffdb371980602491bb",
+      "after_sha256": "dca7d383c4e94d7aad5d4888c3b75f13c43b41887f7727c337dd56a4fc37f4ad",
+      "triangles": 10662,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "before_sha256": "bc29d03d736d8049b40037aeaf416a7512a13a0ee8bb33af61fa0c56bd4f6006",
+      "after_sha256": "1abd3235e0aea65f9a45c383ffe24e41a6c1df29efe424dcb2ecfcd141fbc7a3",
+      "triangles": 116844,
+      "triangle_delta": 30132,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone.004",
+        "02 | Deep strata / 02 | Deep strata.004"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "before_sha256": "fd9322814e861dd3ff16e69761c764b8f00708a390554ef319fd3fe7bcfd3306",
+      "after_sha256": "a0cec5d9a89d3029e91e82d44f86775fc2afc7f9c30d43722049a9c5783f155e",
+      "triangles": 8964,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "arch-vault.glb",
+      "before_sha256": "fe07743c021a247fefe81eabb50220bdf241121ee12bfa80e2eab220c9556ffb",
+      "after_sha256": "fe07743c021a247fefe81eabb50220bdf241121ee12bfa80e2eab220c9556ffb",
+      "triangles": 93944,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    },
+    {
+      "file": "arch-vault-lod.glb",
+      "before_sha256": "b14848ec935fd547d11b88d6130ac077f7dc10d8ce8ebb683c62e398145c0019",
+      "after_sha256": "b14848ec935fd547d11b88d6130ac077f7dc10d8ce8ebb683c62e398145c0019",
+      "triangles": 11646,
+      "triangle_delta": 0,
+      "changed_batches": [],
+      "nodes_exact": true
+    }
+  ],
+  "rounding": [
+    {
+      "file": "frost.glb",
+      "material": "03 | Dressed masonry / 03 | Dressed masonry.008",
+      "attribute": "TEXCOORD_0",
+      "before": "73e21de5423e3de49a303035205078093a3ff2068ffa1c1ecdd7007e07709fdc",
+      "after": "cf2ec92de791f88a76299b145ee8fde0e33619263151556bbd2e3c77ac0c9350",
+      "max_delta": 2.384185791015625e-7,
+      "components": [
+        {
+          "component": 31086,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 31150,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 31151,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7
+        },
+        {
+          "component": 31334,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 31356,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 31357,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7
+        },
+        {
+          "component": 31602,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 31603,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7
+        },
+        {
+          "component": 69818,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 69880,
+          "before": 0.8355555534362793,
+          "after": 0.8355554938316345,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 69896,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 69897,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7
+        },
+        {
+          "component": 69900,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 69901,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7
+        },
+        {
+          "component": 70146,
+          "before": -0.8383333086967468,
+          "after": -0.838333249092102,
+          "delta": 5.960464477539063e-8
+        },
+        {
+          "component": 70147,
+          "before": -1.7155554294586182,
+          "after": -1.7155556678771973,
+          "delta": 2.384185791015625e-7
+        }
+      ]
+    }
+  ],
+  "finite_audited": [
+    "dawn.glb",
+    "dawn-lod.glb",
+    "crystal.glb",
+    "crystal-lod.glb",
+    "nomad.glb",
+    "nomad-lod.glb",
+    "ember.glb",
+    "ember-lod.glb",
+    "frost.glb",
+    "frost-lod.glb",
+    "verdant.glb",
+    "verdant-lod.glb",
+    "storm.glb",
+    "storm-lod.glb",
+    "hollow.glb",
+    "hollow-lod.glb",
+    "underforge.glb",
+    "underforge-lod.glb",
+    "dawn-watch.glb",
+    "dawn-watch-lod.glb",
+    "dawn-garden.glb",
+    "dawn-garden-lod.glb",
+    "dawn-ruin.glb",
+    "dawn-ruin-lod.glb",
+    "arch-vault.glb",
+    "arch-vault-lod.glb",
+    "assets/ship/rail.glb",
+    "assets/ship/trim.glb",
+    "assets/ship/cabin-detail.glb",
+    "assets/ship/lantern.glb",
+    "assets/fauna/guardian.glb",
+    "assets/fauna/cavewing.glb",
+    "assets/fauna/trader.glb",
+    "assets/fauna/trader-lod.glb"
+  ],
+  "errors": []
+}

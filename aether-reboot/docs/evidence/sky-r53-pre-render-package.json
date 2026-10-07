@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "approved_source_sha256": "2aaaeda063c6012ae9f8068e5986b9412060deba78258b4658807219d00a3c66",
+  "packaged_source_sha256": "4196ff61f70037e5fb373ccdd840c52ff714fc82e6b03ae243b1cea65571acea",
+  "approved_descriptor_sha256": "7ff3834f10d4f59cc96f4a38b61a78725f7609bc17ef3b7a28349c3d3012b00c",
+  "packaged_descriptor_sha256": "6c214eef069d7008cdadd466e1f569ed59bfe4ab2f6cd58a3745bc8b4cd3cd4b",
+  "only_descriptor_changes": {
+    "render.resolution_x": [
+      4096,
+      8192
+    ],
+    "render.resolution_y": [
+      2048,
+      4096
+    ]
+  },
+  "density_fields_unchanged": 98,
+  "cell_placements": 4013,
+  "relative_volume_paths": true,
+  "new_render_performed": false
+}

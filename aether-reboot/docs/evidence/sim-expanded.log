@@ -1,0 +1,46 @@
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 30.26s
+     Running unittests src\lib.rs (target\debug\deps\aether_sim-b3fc0bf57ae7c9a0.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\physics.rs (target\debug\deps\physics-b01c949b3b28d089.exe)
+
+running 8 tests
+test tank_empty_removes_sustentation ... ok
+test dock_recharges_but_does_not_move ... ok
+test voxel_collider_supports_a_sphere ... ok
+test distance_joint_is_unilateral_and_bounded ... ok
+test gravity_and_static_contacts_are_finite ... ok
+test lift_consumes_energy_and_stays_bounded ... ok
+test fixed_ticks_ignore_render_rate ... ok
+test controller_follows_translating_rotating_deck ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.77s
+
+     Running tests\scenarios.rs (target\debug\deps\scenarios-e5c4cea6a0253390.exe)
+
+running 11 tests
+test sphere_ccd_stops_at_a_thin_wall_at_100_meters_per_second ... ok
+test heavy_construction_cannot_hover_with_two_lifts ... ok
+test moving_voxel_vessel_does_not_cross_a_thin_wall ... ok
+test player_walk_jump_and_landing_on_a_static_deck ... ok
+test child_voxel_collider_matches_domain_mass_and_surface ... ok
+test voxel_vessel_lands_on_another_voxel_vessel ... ok
+test construction_mass_increases_consumption ... ok
+test harpoon_swing_reaches_the_refuge_branch_and_releases_continuously ... ok
+test current_and_sail_reach_the_gardens_without_pose_teleportation ... ok
+test tether_is_bounded_for_ten_simulated_minutes ... ok
+test thirty_minutes_of_navigation_recovery_and_serialization_remain_finite ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 25.91s
+
+   Doc-tests aether_sim
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

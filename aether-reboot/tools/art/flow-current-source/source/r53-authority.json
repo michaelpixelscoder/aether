@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "unchanged_historical_author_files": [
+    {
+      "file": "tools/art/flow-source/build_mips.py",
+      "bytes": 7503,
+      "sha256": "f7bdbf8ba55e6763fafe66cfab9ea60950357289e1fb9c6f07f533765dd58c14"
+    },
+    {
+      "file": "tools/art/flow-source/build_shader.py",
+      "bytes": 1826,
+      "sha256": "a63865b2a553bebc2b94d061a69dcc382758c521cc963e33416c1868918225e9"
+    },
+    {
+      "file": "tools/art/flow-source/energy_probe.py",
+      "bytes": 1706,
+      "sha256": "2fcdb2b2758ca69ad2e121547ef17f323a80804333e658b0f320cbae09e89856"
+    },
+    {
+      "file": "tools/art/flow-source/history/medium-strong-contracts.json",
+      "bytes": 901,
+      "sha256": "6028520d3a7ed4750f5d15f7118bc97f31be79b5d73e7a666933b43d1c709756"
+    },
+    {
+      "file": "tools/art/flow-source/history/medium-strong-energy.json",
+      "bytes": 38378,
+      "sha256": "155c3f8c6ac893a23d89b179117c053eccece3daa2b050d1f9161bdbd17f74ea"
+    },
+    {
+      "file": "tools/art/flow-source/history/original-candidate-provenance.json",
+      "bytes": 4789,
+      "sha256": "4cc92cc0a3ab609d91947538faf441c12594dd434c493c8a7b79ec9699a8065f"
+    },
+    {
+      "file": "tools/art/flow-source/history/prior-r52.wgsl",
+      "bytes": 4507,
+      "sha256": "69078509c08b01ca11e31fdbde632902624daca7bee34c30e7558d65dd74f7fc"
+    },
+    {
+      "file": "tools/art/flow-source/history/rejected-r53.wgsl",
+      "bytes": 4143,
+      "sha256": "7323e79d4dc1efe56cdbb226a6af263c3a2acda46a2c626564c1d7d532b4b5a5"
+    },
+    {
+      "file": "tools/art/flow-source/history/rejected-strong.wgsl",
+      "bytes": 4302,
+      "sha256": "91d30691df1a88105815b201a3484251ed9bd9ec8f181c795c5ab461cd91c81c"
+    },
+    {
+      "file": "tools/art/flow-source/history/reviewed-medium.wgsl",
+      "bytes": 4302,
+      "sha256": "3d9432e720abcae6ab54c3c0ebe7fa9081d2394d178f30ee879502ffa0c85d61"
+    },
+    {
+      "file": "tools/art/flow-source/liquid_probe.py",
+      "bytes": 3895,
+      "sha256": "a62adb7906d91dff60280cbf3f5326e464e1c66c28fc6506bdb9965486bcaa6f"
+    },
+    {
+      "file": "tools/art/flow-source/proofs/material.json",
+      "bytes": 3824,
+      "sha256": "6313e98646c5bd2faabaae791a8c83531c27703fa82fb4e35b80347f82ea32ad"
+    },
+    {
+      "file": "tools/art/flow-source/proofs/mip.json",
+      "bytes": 3599,
+      "sha256": "0cbc00a8337539df5e24ee38464216b0bb3bd860898b52432ca3f6497190fe98"
+    },
+    {
+      "file": "tools/art/flow-source/proofs/relocation.json",
+      "bytes": 1289,
+      "sha256": "bbdadedbaa4fe89547a4580211b10c82eeb9d88b205138432237d68f7ca9526d"
+    },
+    {
+      "file": "tools/art/flow-source/proofs/shader.json",
+      "bytes": 471,
+      "sha256": "b6c36e6668d6fcceea3b64bd6fb47a6ae763fa08ef17de1e4102aec761c170a3"
+    },
+    {
+      "file": "tools/art/flow-source/README.md",
+      "bytes": 3405,
+      "sha256": "9e014c4ff2b9f3ec0a5376ff9885908346817e7f88c1a36311d8a8afb751bd97"
+    },
+    {
+      "file": "tools/art/flow-source/record_provenance.py",
+      "bytes": 2417,
+      "sha256": "fc19417355c68216ea53a7b719ed0cb34516804c26ef88961ff90ad60a74b0cf"
+    },
+    {
+      "file": "tools/art/flow-source/review/current-close.png",
+      "bytes": 406722,
+      "sha256": "46478812cc73fce397d798707a0e33384d985afebf5ccec2414058ac799cba91"
+    },
+    {
+      "file": "tools/art/flow-source/review/current-far.png",
+      "bytes": 55655,
+      "sha256": "a8ffb7ec57d051b0ec382ed85a35330ebd46abf8628176496ec45b6ce0d99f8c"
+    },
+    {
+      "file": "tools/art/flow-source/review/current-mid.png",
+      "bytes": 176371,
+      "sha256": "e7b9c5115b4b9fe28534271e0750bfc26e5c739019674b3d147de69d776e392e"
+    },
+    {
+      "file": "tools/art/flow-source/review/world-r53-material-sail.png",
+      "bytes": 2582735,
+      "sha256": "54c95cd30fac45357168453edcaa87dd1cba260ce69d84f442cadca9a7baf379"
+    },
+    {
+      "file": "tools/art/flow-source/review/world-r53-medium.png",
+      "bytes": 2686996,
+      "sha256": "4d9f0ae6063c618c8977fd1c69e4d54ece009c5f9c5d6edb638cc38e794619d2"
+    },
+    {
+      "file": "tools/art/flow-source/review/world-r53-strong.png",
+      "bytes": 2705355,
+      "sha256": "dc8d3726d2a2f786a39a94721af2f4556ee7d6d8cbcb454eb8f6786f48b876f6"
+    },
+    {
+      "file": "tools/art/flow-source/review/world-r53-violet.png",
+      "bytes": 2687292,
+      "sha256": "195b401dc421a2207c6c354d718bd1acd346238b13d7cdbc151730b552c74f46"
+    },
+    {
+      "file": "tools/art/flow-source/review_material.py",
+      "bytes": 3069,
+      "sha256": "88bd362912b3d89e695dd09f4487028f118ddc40f9cb407f2232b73955cc8c87"
+    },
+    {
+      "file": "tools/art/flow-source/source/naga-wgsl-reserved-29.0.4.json",
+      "bytes": 2419,
+      "sha256": "ef248c41c1f7e204c46902256d70ff65c674916bfa19917cff4d67c6a25a6fc7"
+    },
+    {
+      "file": "tools/art/flow-source/source/provenance.json",
+      "bytes": 5717,
+      "sha256": "14b3cd99511f3bc5a02f9cc0761c6627706fc0c504140b7f70eeff5f29665404"
+    },
+    {
+      "file": "tools/art/flow-source/source/world-flow-native.png",
+      "bytes": 2685518,
+      "sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b"
+    },
+    {
+      "file": "tools/art/flow-source/source/world-flow-prompt.txt",
+      "bytes": 3019,
+      "sha256": "cf03adcd920f23c1b68f4de9838e7d30c7e6b6f873b2c58b516ddf72bb5ca6c4"
+    },
+    {
+      "file": "tools/art/flow-source/test_portability.py",
+      "bytes": 1973,
+      "sha256": "355a3a633d49c9f15d2975fbba5c6a6dab01801e6d236eaa19c9afb8b064c636"
+    }
+  ],
+  "original_verify_sha256": "c99fb06a15fb81ebf5c0dbbec575e59f422dfc3100ca3cb6f6e458cb22e10ab4",
+  "original_container_sha256": "4345cef64eca3a5700bd08b769abd775e325470232c77196402b5d801c555644",
+  "current_adapter_sha256": "0c1a885cd94f9faebdf94981a7bd3cab6ce0b402ae22ae8fe43afbd1ab334042"
+}

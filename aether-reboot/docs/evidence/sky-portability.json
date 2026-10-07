@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "new_render_performed": false,
+  "canonical_files_modified": false,
+  "rust_modified": false,
+  "relocated_from": "sky-r46-promotion-incoming",
+  "relocated_to": "sky-r46-promotion",
+  "blender_reopened_after_relocation": true,
+  "all_visible_volume_paths_relative": true,
+  "visible_scene_descriptor_sha256": "c2354d611a447b99b3179a33bde3681ee152d4e7e908cc9756af831c589b2bc3",
+  "exact_rebuilt_fields": 86,
+  "source_density_inputs": 10,
+  "compiled_cell_placements": 3790,
+  "validator_self_test": "passed",
+  "composite_validation": "passed",
+  "legacy_r41_validation": "passed",
+  "embedded_machine_absolute_paths_in_scripts": 0,
+  "verified_artifact_hashes": 117,
+  "limits": [
+    "Native integration and golden opening remain separate visual review tasks.",
+    "The unchanged verify-open-world entrypoint/report path is retained; the full world suite awaits promotion."
+  ]
+}

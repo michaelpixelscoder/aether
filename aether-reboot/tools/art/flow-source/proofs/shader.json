@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "shader_sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+  "medium_source_sha256": "3d9432e720abcae6ab54c3c0ebe7fa9081d2394d178f30ee879502ffa0c85d61",
+  "generator_sha256": "a63865b2a553bebc2b94d061a69dcc382758c521cc963e33416c1868918225e9",
+  "patch_scope": "Current hue only; alpha, body, UVs, cascade, gain, pool, clock and haze exact to reviewed medium. Explicit CRLF author bytes preserve cross-platform shader hash."
+}

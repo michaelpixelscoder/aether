@@ -1,0 +1,34 @@
+{
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "dc7c806f70c77b711683abc6adfc9c9ce6e83f8642df86af061b98728ef68af8",
+      "bytes": 21818140,
+      "original_sha256": "9d72afb49de26b661de6e5321279fa08ec496c329a04f08d4cd4d3f5e37e803b",
+      "preserved_batches": [
+        "01 | Fractured limestone",
+        "02 | Deep strata",
+        "06 | Cedar and roots",
+        "08 | Deep foliage",
+        "09 | Sunlit foliage",
+        "11 | Aether mineral",
+        "12 | Surface biome"
+      ]
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "95b16cf5db02dbc788f385d1d9c9cc69557b23c37d691e1c91e13571b7ceee45",
+      "bytes": 16113900,
+      "original_sha256": "b39634f784a041afd0e1f33c485bc088b0b3720eb162895e19717c1c268f74cb",
+      "preserved_batches": [
+        "01 | Fractured limestone",
+        "02 | Deep strata",
+        "06 | Cedar and roots",
+        "08 | Deep foliage",
+        "09 | Sunlit foliage",
+        "11 | Aether mineral",
+        "12 | Surface biome"
+      ]
+    }
+  ]
+}

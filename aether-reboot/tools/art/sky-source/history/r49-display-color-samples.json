@@ -1,0 +1,74 @@
+{
+  "method": "Mean display RGB and HSV saturation of three fixed clear-sky 20x20 patches; AgX hero previews only, no engine or linear HDR claim",
+  "samples": [
+    {
+      "saturation_relative_change": 1.2268207116541894,
+      "pixel": [
+        295,
+        75
+      ],
+      "baseline": {
+        "saturation": 0.1285998013902681,
+        "rgb": [
+          171.1125,
+          185.0225,
+          196.365
+        ]
+      },
+      "candidate": {
+        "saturation": 0.28636870125046426,
+        "rgb": [
+          129.69,
+          156.0775,
+          181.7325
+        ]
+      }
+    },
+    {
+      "saturation_relative_change": 0.9481508394846434,
+      "pixel": [
+        930,
+        160
+      ],
+      "baseline": {
+        "saturation": 0.21471151799020655,
+        "rgb": [
+          147.54,
+          167.7475,
+          187.88
+        ]
+      },
+      "candidate": {
+        "saturation": 0.418290424019643,
+        "rgb": [
+          101.28,
+          138.1775,
+          174.1075
+        ]
+      }
+    },
+    {
+      "saturation_relative_change": 0.30913216929686693,
+      "pixel": [
+        80,
+        780
+      ],
+      "baseline": {
+        "saturation": 0.5538073038073038,
+        "rgb": [
+          68.91,
+          110.6575,
+          154.44
+        ]
+      },
+      "candidate": {
+        "saturation": 0.7250069570057047,
+        "rgb": [
+          39.5275,
+          93.5225,
+          143.74
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 8.69s
+     Running tests\physics.rs (target\debug\deps\physics-ff67f8a135a661ab.exe)
+
+running 8 tests
+test tank_empty_removes_sustentation ... ok
+test dock_recharges_but_does_not_move ... ok
+test voxel_collider_supports_a_sphere ... ok
+test distance_joint_is_unilateral_and_bounded ... ok
+test gravity_and_static_contacts_are_finite ... ok
+test lift_consumes_energy_and_stays_bounded ... ok
+test fixed_ticks_ignore_render_rate ... ok
+test controller_follows_translating_rotating_deck ... FAILED
+
+failures:
+
+---- controller_follows_translating_rotating_deck stdout ----
+
+thread 'controller_follows_translating_rotating_deck' (23912) panicked at crates\aether_sim\tests\physics.rs:202:5:
+relative drift: before=Vec3(1.0, 1.0499957, 0.0) after=Vec3(1.159762, 1.0499991, -0.008256242)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    controller_follows_translating_rotating_deck
+
+test result: FAILED. 7 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.90s
+
+error: test failed, to rerun pass `-p aether_sim --test physics`

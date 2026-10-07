@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "passed": true,
+  "outside_workspace": true,
+  "final_r59_caller_authentication": true,
+  "all4_glb_rebuilt_byte_exact": true,
+  "caller_unchanged": true,
+  "independent_js_api_negative_cases": [
+    "caller SHA authentication",
+    "mandatory caller authority",
+    "original PNG",
+    "BIN geometry",
+    "other material",
+    "soil roughness",
+    "hidden texture-info extension",
+    "texCoord override",
+    "normal map",
+    "existing image mutation",
+    "existing UV metadata",
+    "new image URI",
+    "sampler override",
+    "added extras"
+  ],
+  "source_png_unchanged": true,
+  "script_sha256": "da9957810e224a9c8e59664e26d50904f402816b2843dd554c648b3809d242fe",
+  "canonical_mutations": false,
+  "gpu_used": false
+}

@@ -1,0 +1,350 @@
+{
+  "checked_at": "2026-10-03T00:15:53.709Z",
+  "contracts": {
+    "collisions.json": {
+      "byte_identical": true,
+      "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd"
+    },
+    "landmarks.json": {
+      "byte_identical": true,
+      "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50"
+    },
+    "vault-collisions.json": {
+      "byte_identical": true,
+      "sha256": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70"
+    }
+  },
+  "models": [
+    {
+      "file": "dawn.glb",
+      "triangles": 198220,
+      "finite_normals": 394751,
+      "finite_tangents": 394751,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": false,
+      "tangent_rounding": [
+        {
+          "mesh": "08 | Deep foliage",
+          "material": "08 | Deep foliage",
+          "changed_components": 9,
+          "raw_sha256": "0d4ee5922581852c5a990001e8e15c2c163cf0cdd9d4c9b55e39d85143a30589",
+          "historical_sha256": "17d09c607beb9d4806a45d894c4925dcddda58cfc93688ebff48a431728b9491",
+          "max_abs": 0.00010001659393310547,
+          "max_angle_degrees": 0.005384775802703353
+        }
+      ]
+    },
+    {
+      "file": "dawn-lod.glb",
+      "triangles": 11928,
+      "finite_normals": 23579,
+      "finite_tangents": 23579,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "crystal.glb",
+      "triangles": 101210,
+      "finite_normals": 201374,
+      "finite_tangents": 201374,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "crystal-lod.glb",
+      "triangles": 7462,
+      "finite_normals": 15498,
+      "finite_tangents": 15498,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "nomad.glb",
+      "triangles": 97236,
+      "finite_normals": 194003,
+      "finite_tangents": 194003,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "nomad-lod.glb",
+      "triangles": 4940,
+      "finite_normals": 9831,
+      "finite_tangents": 9831,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "ember.glb",
+      "triangles": 79638,
+      "finite_normals": 158432,
+      "finite_tangents": 158432,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "ember-lod.glb",
+      "triangles": 6926,
+      "finite_normals": 13660,
+      "finite_tangents": 13660,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "frost.glb",
+      "triangles": 109966,
+      "finite_normals": 222596,
+      "finite_tangents": 222596,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "frost-lod.glb",
+      "triangles": 7900,
+      "finite_normals": 15934,
+      "finite_tangents": 15934,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "verdant.glb",
+      "triangles": 93728,
+      "finite_normals": 181874,
+      "finite_tangents": 181874,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "verdant-lod.glb",
+      "triangles": 6532,
+      "finite_normals": 13176,
+      "finite_tangents": 13176,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "storm.glb",
+      "triangles": 94166,
+      "finite_normals": 192934,
+      "finite_tangents": 192934,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "storm-lod.glb",
+      "triangles": 5176,
+      "finite_normals": 10504,
+      "finite_tangents": 10504,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "hollow.glb",
+      "triangles": 130528,
+      "finite_normals": 279726,
+      "finite_tangents": 279726,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "hollow-lod.glb",
+      "triangles": 9890,
+      "finite_normals": 20851,
+      "finite_tangents": 20851,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "underforge.glb",
+      "triangles": 122822,
+      "finite_normals": 261864,
+      "finite_tangents": 261864,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "underforge-lod.glb",
+      "triangles": 10684,
+      "finite_normals": 22244,
+      "finite_tangents": 22244,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "dawn-watch.glb",
+      "triangles": 111045,
+      "finite_normals": 213914,
+      "finite_tangents": 213914,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "triangles": 10509,
+      "finite_normals": 21581,
+      "finite_tangents": 21581,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "dawn-garden.glb",
+      "triangles": 102994,
+      "finite_normals": 196302,
+      "finite_tangents": 196302,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": false,
+      "tangent_rounding": [
+        {
+          "mesh": "08 | Deep foliage",
+          "material": "08 | Deep foliage.002",
+          "changed_components": 4,
+          "raw_sha256": "8e07e3b08fa4d9545c4f16405382bcbde6b9af1db99d14a11d8a2b3edbec0425",
+          "historical_sha256": "4cb410a4a609e209ad83b4aef4b90136ac7c073a9ba3fe0de0a31b04f70c7de7",
+          "max_abs": 0.00010001659393310547,
+          "max_angle_degrees": 0.005263362128041128
+        },
+        {
+          "mesh": "09 | Sunlit foliage",
+          "material": "09 | Sunlit foliage.002",
+          "changed_components": 3,
+          "raw_sha256": "179e5776b6a394cdc84b8b44550cfbdfc2b5ddee720ef28643ec05bed92bab92",
+          "historical_sha256": "b4a1d3d81337a083564afbbbfac3213dddd748200abae3cceac03bf04daa074b",
+          "max_abs": 0.00010001659393310547,
+          "max_angle_degrees": 0.004307942800356694
+        }
+      ]
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "triangles": 10662,
+      "finite_normals": 21982,
+      "finite_tangents": 21982,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "triangles": 85752,
+      "finite_normals": 192645,
+      "finite_tangents": 192645,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": false,
+      "tangent_rounding": [
+        {
+          "mesh": "08 | Deep foliage",
+          "material": "08 | Deep foliage.004",
+          "changed_components": 4,
+          "raw_sha256": "ff454a801cfe1c0348e633a1b6bd8704edf341d3ed094e429627278b60080305",
+          "historical_sha256": "2a3160bd91162da19692d83a565386e2d0d6b7c5aa423699db6e3d966a6dcf11",
+          "max_abs": 0.00010001659393310547,
+          "max_angle_degrees": 0.0014057498027807023
+        }
+      ]
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "triangles": 8964,
+      "finite_normals": 18506,
+      "finite_tangents": 18506,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "arch-vault.glb",
+      "triangles": 93944,
+      "finite_normals": 210356,
+      "finite_tangents": 210356,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    },
+    {
+      "file": "arch-vault-lod.glb",
+      "triangles": 11646,
+      "finite_normals": 26918,
+      "finite_tangents": 26918,
+      "all_candidate_geometry_exact": true,
+      "all_material_factors_exact": true,
+      "all_nodes_and_pivots_exact": true,
+      "tangents_exact": true,
+      "tangent_rounding": []
+    }
+  ],
+  "source_hashes": {
+    "build_world.py": "7796650781250bea376ce5421aff35e32fa82349d5ca3443a12337153f84debd",
+    "build_world_variants.py": "8815a9e4aa56e1452fdd940c9b9cc7bb96e10b9c37237791eb17a8d9a1ac87dd",
+    "build_vault.py": "7d073365cdb7aa02175a2190b3e29d1015e89b81cb6c32e641a5205f3234b684"
+  },
+  "baseline_sha256": "697164c2f6ca62083b2be70e79948aecbdc155241f53b3b387a4c6d7770d1f92"
+}

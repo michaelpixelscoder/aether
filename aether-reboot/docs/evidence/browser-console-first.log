@@ -1,0 +1,30 @@
+warning The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+log %cINFO%c C:\Users\Damien\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\bevy_winit-0.19.1\src\system.rs:67%c Creating new window Aether Isles — Les premiers courants (66v0) color: whitesmoke; background: #444 color: gray; font-style: italic color: inherit
+warning The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127
+warning The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+warning The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+log %cINFO%c C:\Users\Damien\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\bevy_render-0.19.1\src\renderer\mod.rs:288%c AdapterInfo { name: "", vendor: 0, device: 0, device_type: Other, device_pci_bus_id: "", driver: "", driver_info: "", backend: BrowserWebGpu, subgroup_min_size: 4, subgroup_max_size: 128, transient_saves_memory: false } color: whitesmoke; background: #444 color: gray; font-style: italic color: inherit
+warning Failed to create device:
+DynamicLib.Open: dxil.dll Windows Error: 87
+    at EnsureDXCLibraries (..\..\third_party\dawn\src\dawn\native\d3d12\PlatformFunctionsD3D12.cpp:212)
+
+error panicked at C:\Users\Damien\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\bevy_render-0.19.1\src\renderer\mod.rs:342:76:
+called `Result::unwrap()` on an `Err` value: RequestDeviceError { inner: WebGpu("JsValue(OperationError: Failed to execute 'requestDevice' on 'GPUAdapter': DynamicLib.Open: dxil.dll Windows Error: 87\n    at EnsureDXCLibraries (..\\..\\third_party\\dawn\\src\\dawn\\native\\d3d12\\PlatformFunctionsD3D12.cpp:212)\n\nOperationError: Failed to execute 'requestDevice' on 'GPUAdapter': DynamicLib.Open: dxil.dll Windows Error: 87\n    at EnsureDXCLibraries (..\\..\\third_party\\dawn\\src\\dawn\\native\\d3d12\\PlatformFunctionsD3D12.cpp:212)\n)") }
+
+Stack:
+
+Error
+    at __wbg_new_227d7c05414eb861 (http://127.0.0.1:4173/build/aether_game.js:1046:25)
+    at aether_game-0b4d6d754b899ca6.wasm.<console_error_panic_hook[e2cbf1542fb29904]::Error>::new::__wbg_new_227d7c05414eb861 externref shim (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[191253]:0x3ebe7ff)
+    at aether_game-0b4d6d754b899ca6.wasm.console_error_panic_hook[e2cbf1542fb29904]::hook (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[17247]:0x1fd5980)
+    at aether_game-0b4d6d754b899ca6.wasm.<console_error_panic_hook[e2cbf1542fb29904]::hook as core[f0fd674eaa06beef]::ops::function::Fn<(&std[2b356c9112ee3216]::panic::PanicHookInfo,)>>::call (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[269457]:0x40176a8)
+    at aether_game-0b4d6d754b899ca6.wasm.std[2b356c9112ee3216]::panicking::panic_with_hook (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[66062]:0x33f9713)
+    at aether_game-0b4d6d754b899ca6.wasm.std[2b356c9112ee3216]::panicking::panic_handler::{closure#0} (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[93918]:0x39317de)
+    at aether_game-0b4d6d754b899ca6.wasm.std[2b356c9112ee3216]::sys::backtrace::__rust_end_short_backtrace::<std[2b356c9112ee3216]::panicking::panic_handler::{closure#0}, !> (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[264699]:0x400d98f)
+    at aether_game-0b4d6d754b899ca6.wasm.__rustc[4b1ee1ef74718a7b]::rust_begin_unwind (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[142586]:0x3d5ec77)
+    at aether_game-0b4d6d754b899ca6.wasm.core[f0fd674eaa06beef]::panicking::panic_fmt (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[127460]:0x3c77fa8)
+    at aether_game-0b4d6d754b899ca6.wasm.core[f0fd674eaa06beef]::result::unwrap_failed (http://127.0.0.1:4173/build/aether_game_bg.wasm:wasm-function[106997]:0x3abdeef)
+
+
+PAGEERROR unreachable
+undefined

@@ -1,0 +1,173 @@
+{
+  "historical_and_rebuilt_accepted": 4,
+  "rejection_tests": [
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unlisted one-ULP change",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unmeasured value inside apparent epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "two quantization steps",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "handedness flip",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "normal-mapped foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "non-foliage material",
+      "passed": true
+    },
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "anisotropic foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unlisted one-ULP change",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unmeasured value inside apparent epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "two quantization steps",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "handedness flip",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "normal-mapped foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "non-foliage material",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "anisotropic foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "unlisted one-ULP change",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "unmeasured value inside apparent epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "two quantization steps",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "handedness flip",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "normal-mapped foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "non-foliage material",
+      "passed": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "test": "anisotropic foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unlisted one-ULP change",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "unmeasured value inside apparent epsilon",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "two quantization steps",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "handedness flip",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "normal-mapped foliage",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "non-foliage material",
+      "passed": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "test": "anisotropic foliage",
+      "passed": true
+    }
+  ]
+}

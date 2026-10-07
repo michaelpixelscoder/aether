@@ -1,0 +1,71 @@
+{
+  "source_topology_and_loop_uv_exact": true,
+  "surfaces": [
+    {
+      "vertices": 32,
+      "polygons": 24,
+      "material": "Embroidered gold thread",
+      "topology_sha256": "6eb0d5b7a2dd6723658ee3bc2a89a586b71b355e18eaffd900c309a14034c4b7",
+      "loop_uv_sha256": "9f72d42e69c40014b496d132549101076f4e4006eaafb0a1a5d20eb6a6fafd52",
+      "keys": [
+        "Basis",
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ]
+    },
+    {
+      "vertices": 4224,
+      "polygons": 4576,
+      "material": "Embroidered gold thread",
+      "topology_sha256": "9f4515e3b989611e64f6a7314f7a704c46b0e5de4207dc28b749f8b83e029706",
+      "loop_uv_sha256": "860dc1349f05f747a80be52ad62e67b850a337b8d518b722a83dadb89a2004e5",
+      "keys": [
+        "Basis",
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ]
+    },
+    {
+      "vertices": 168,
+      "polygons": 182,
+      "material": "Indigo canvas",
+      "topology_sha256": "49a10c401f294d984455aa1501cc394fa61621d576172386aa3e1010d45309b6",
+      "loop_uv_sha256": "68a659bd34a504c28f58f64163648629bf8763f9a2c23f133783163693a067d0",
+      "keys": [
+        "Basis",
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ]
+    },
+    {
+      "vertices": 22752,
+      "polygons": 24648,
+      "material": "Indigo canvas",
+      "topology_sha256": "7e90d7868e3a1110407f91363bb933dfed329ab37019b0ee7ff61213b5955144",
+      "loop_uv_sha256": "2562fc41c642e3618d6801853f2be6f059e3e251f33ec0bb5bb30adba8888c48",
+      "keys": [
+        "Basis",
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ]
+    },
+    {
+      "vertices": 11424,
+      "polygons": 12376,
+      "material": "Indigo canvas variation",
+      "topology_sha256": "aa985e087ed989c830e466447a564a285fd0c1ee12897b85d5da4329744c43ba",
+      "loop_uv_sha256": "f3ee0f5d0cddcfe1bc9fd2a55fbc2c544c9bdd64acf1651b831110eeeadfa0dd",
+      "keys": [
+        "Basis",
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ]
+    }
+  ],
+  "explanation": "glTF exporter may reindex vertices or choose another quad diagonal after deformation; Blender polygon topology and every original loop UV are byte-exact."
+}

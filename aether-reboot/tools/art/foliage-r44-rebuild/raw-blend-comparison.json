@@ -1,0 +1,346 @@
+{
+  "blender": "5.2.1 LTS",
+  "pairs": [
+    {
+      "model": "dawn",
+      "mesh": "08 | Deep foliage",
+      "attributes": {
+        "position": {
+          "components": 79938,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "indices": {
+          "components": 53292,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "uv": {
+          "components": 106584,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "normal": {
+          "components": 159876,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        },
+        "tangent": {
+          "components": 159876,
+          "different": 7801,
+          "max_abs": 1.7881393432617188e-07,
+          "different_after_round4": 9,
+          "rounded_changes": [
+            {
+              "loop": 8486,
+              "component": 0,
+              "old_raw": 0.9537498950958252,
+              "new_raw": 0.95374995470047,
+              "old_rounded": 0.9537000060081482,
+              "new_rounded": 0.9538000226020813
+            },
+            {
+              "loop": 8487,
+              "component": 0,
+              "old_raw": 0.9537498950958252,
+              "new_raw": 0.95374995470047,
+              "old_rounded": 0.9537000060081482,
+              "new_rounded": 0.9538000226020813
+            },
+            {
+              "loop": 20431,
+              "component": 1,
+              "old_raw": -0.3421499729156494,
+              "new_raw": -0.3421500027179718,
+              "old_rounded": -0.34209999442100525,
+              "new_rounded": -0.34220001101493835
+            },
+            {
+              "loop": 20435,
+              "component": 1,
+              "old_raw": -0.3421499729156494,
+              "new_raw": -0.3421500027179718,
+              "old_rounded": -0.34209999442100525,
+              "new_rounded": -0.34220001101493835
+            },
+            {
+              "loop": 21141,
+              "component": 1,
+              "old_raw": -0.9694499969482422,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            },
+            {
+              "loop": 35133,
+              "component": 0,
+              "old_raw": 0.9537498950958252,
+              "new_raw": 0.95374995470047,
+              "old_rounded": 0.9537000060081482,
+              "new_rounded": 0.9538000226020813
+            },
+            {
+              "loop": 47078,
+              "component": 1,
+              "old_raw": -0.3421499729156494,
+              "new_raw": -0.3421500027179718,
+              "old_rounded": -0.34209999442100525,
+              "new_rounded": -0.34220001101493835
+            },
+            {
+              "loop": 47785,
+              "component": 1,
+              "old_raw": -0.9694499969482422,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            },
+            {
+              "loop": 47787,
+              "component": 1,
+              "old_raw": -0.9694499969482422,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            }
+          ]
+        }
+      }
+    },
+    {
+      "model": "dawn",
+      "mesh": "09 | Sunlit foliage",
+      "attributes": {
+        "position": {
+          "components": 4950,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "indices": {
+          "components": 8160,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "uv": {
+          "components": 16320,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "normal": {
+          "components": 24480,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        },
+        "tangent": {
+          "components": 24480,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        }
+      }
+    },
+    {
+      "model": "dawn-garden",
+      "mesh": "08 | Deep foliage",
+      "attributes": {
+        "position": {
+          "components": 155304,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "indices": {
+          "components": 103536,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "uv": {
+          "components": 207072,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "normal": {
+          "components": 310608,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        },
+        "tangent": {
+          "components": 310608,
+          "different": 5670,
+          "max_abs": 1.7881393432617188e-07,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        }
+      }
+    },
+    {
+      "model": "dawn-garden",
+      "mesh": "09 | Sunlit foliage",
+      "attributes": {
+        "position": {
+          "components": 21996,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "indices": {
+          "components": 34488,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "uv": {
+          "components": 68976,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "normal": {
+          "components": 103464,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        },
+        "tangent": {
+          "components": 103464,
+          "different": 1752,
+          "max_abs": 1.1920928955078125e-07,
+          "different_after_round4": 3,
+          "rounded_changes": [
+            {
+              "loop": 20610,
+              "component": 0,
+              "old_raw": 0.6594500541687012,
+              "new_raw": 0.6594499349594116,
+              "old_rounded": 0.659500002861023,
+              "new_rounded": 0.6593999862670898
+            },
+            {
+              "loop": 33676,
+              "component": 0,
+              "old_raw": 0.6594500541687012,
+              "new_raw": 0.6594499349594116,
+              "old_rounded": 0.659500002861023,
+              "new_rounded": 0.6593999862670898
+            },
+            {
+              "loop": 33678,
+              "component": 0,
+              "old_raw": 0.6594500541687012,
+              "new_raw": 0.6594499349594116,
+              "old_rounded": 0.659500002861023,
+              "new_rounded": 0.6593999862670898
+            }
+          ]
+        }
+      }
+    },
+    {
+      "model": "dawn-ruin",
+      "mesh": "08 | Deep foliage",
+      "attributes": {
+        "position": {
+          "components": 106740,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "indices": {
+          "components": 71160,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "uv": {
+          "components": 142320,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "normal": {
+          "components": 213480,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        },
+        "tangent": {
+          "components": 213480,
+          "different": 16672,
+          "max_abs": 1.7881393432617188e-07,
+          "different_after_round4": 4,
+          "rounded_changes": [
+            {
+              "loop": 26809,
+              "component": 1,
+              "old_raw": -0.9694499373435974,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            },
+            {
+              "loop": 26811,
+              "component": 1,
+              "old_raw": -0.9694499373435974,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            },
+            {
+              "loop": 62390,
+              "component": 1,
+              "old_raw": -0.9694499373435974,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            },
+            {
+              "loop": 62391,
+              "component": 1,
+              "old_raw": -0.9694499373435974,
+              "new_raw": -0.969450056552887,
+              "old_rounded": -0.9693999886512756,
+              "new_rounded": -0.9695000052452087
+            }
+          ]
+        }
+      }
+    },
+    {
+      "model": "dawn-ruin",
+      "mesh": "09 | Sunlit foliage",
+      "attributes": {
+        "position": {
+          "components": 16434,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "indices": {
+          "components": 25032,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "uv": {
+          "components": 50064,
+          "different": 0,
+          "max_abs": 0.0
+        },
+        "normal": {
+          "components": 75096,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        },
+        "tangent": {
+          "components": 75096,
+          "different": 0,
+          "max_abs": 0.0,
+          "different_after_round4": 0,
+          "rounded_changes": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "file": ".dream-loop/sky-r49-atmosphere-candidate/sky-r49-atmosphere-4k-linear.hdr",
+  "sha256": "07ce041ccf13feb77648caca7fa388be95626d6cb6636b300f452664e525ec84",
+  "bytes": 8057544,
+  "dimensions": [
+    4096,
+    2048
+  ],
+  "original_render_dimensions": [
+    4096,
+    2048
+  ],
+  "view_transform_applied": false,
+  "seconds": 117.83284809999896,
+  "samples_max": 128,
+  "renderer": "Cycles OPTIX",
+  "denoising": "OpenImageDenoise RGB only",
+  "source_sha256": "481cb38d2b7159a70cf0a45d9c68496ca5def822bc7d4c8cd7469f3291952d76",
+  "generator_sha256": "89ab6f65a0338d6a18fae8bc9a84f0998582762097b20eee25df4d8921ff6c9b",
+  "render_descriptor_sha256": "913f36bd73c00ba8318eb72ecbc15e3cefb68fad88e06859c07221883fd39b83"
+}

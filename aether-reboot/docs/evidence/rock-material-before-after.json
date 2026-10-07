@@ -1,0 +1,1075 @@
+{
+  "files": [
+    {
+      "file": "assets/world/dawn.glb",
+      "finite_normal_vectors": 402539,
+      "finite_tangent_vectors": 402539,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 72176,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/dawn-lod.glb",
+      "finite_normal_vectors": 22435,
+      "finite_tangent_vectors": 22435,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2968,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/crystal.glb",
+      "finite_normal_vectors": 205547,
+      "finite_tangent_vectors": 205547,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 70496,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/crystal-lod.glb",
+      "finite_normal_vectors": 15149,
+      "finite_tangent_vectors": 15149,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 3024,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/nomad.glb",
+      "finite_normal_vectors": 196033,
+      "finite_tangent_vectors": 196033,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 65552,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/nomad-lod.glb",
+      "finite_normal_vectors": 9759,
+      "finite_tangent_vectors": 9759,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2560,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/ember.glb",
+      "finite_normal_vectors": 158438,
+      "finite_tangent_vectors": 158438,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 67728,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/ember-lod.glb",
+      "finite_normal_vectors": 13660,
+      "finite_tangent_vectors": 13660,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2936,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/frost.glb",
+      "finite_normal_vectors": 222604,
+      "finite_tangent_vectors": 222604,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 73840,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/frost-lod.glb",
+      "finite_normal_vectors": 15934,
+      "finite_tangent_vectors": 15934,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2948,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/verdant.glb",
+      "finite_normal_vectors": 195011,
+      "finite_tangent_vectors": 195011,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 64432,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/verdant-lod.glb",
+      "finite_normal_vectors": 13108,
+      "finite_tangent_vectors": 13108,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2648,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/storm.glb",
+      "finite_normal_vectors": 192936,
+      "finite_tangent_vectors": 192936,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 74512,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/storm-lod.glb",
+      "finite_normal_vectors": 10504,
+      "finite_tangent_vectors": 10504,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2812,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/hollow.glb",
+      "finite_normal_vectors": 283875,
+      "finite_tangent_vectors": 283875,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 78705,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/hollow-lod.glb",
+      "finite_normal_vectors": 21206,
+      "finite_tangent_vectors": 21206,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 6100,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/underforge.glb",
+      "finite_normal_vectors": 263356,
+      "finite_tangent_vectors": 263356,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 79409,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/underforge-lod.glb",
+      "finite_normal_vectors": 22244,
+      "finite_tangent_vectors": 22244,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 6260,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/dawn-watch.glb",
+      "finite_normal_vectors": 227211,
+      "finite_tangent_vectors": 227211,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 27260,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/dawn-watch-lod.glb",
+      "finite_normal_vectors": 20178,
+      "finite_tangent_vectors": 20178,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 3004,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/world/dawn-garden.glb",
+      "finite_normal_vectors": 210452,
+      "finite_tangent_vectors": 210452,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 20672,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/dawn-garden-lod.glb",
+      "finite_normal_vectors": 23093,
+      "finite_tangent_vectors": 23093,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2752,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/world/dawn-ruin.glb",
+      "finite_normal_vectors": 202666,
+      "finite_tangent_vectors": 202666,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 26386,
+      "maximum_height_uv_error": 2.384185791015625e-7
+    },
+    {
+      "file": "assets/world/dawn-ruin-lod.glb",
+      "finite_normal_vectors": 16568,
+      "finite_tangent_vectors": 16568,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 2752,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/world/arch-vault.glb",
+      "finite_normal_vectors": 210356,
+      "finite_tangent_vectors": 210356,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 69812,
+      "maximum_height_uv_error": 0.0000019073486328125
+    },
+    {
+      "file": "assets/world/arch-vault-lod.glb",
+      "finite_normal_vectors": 26918,
+      "finite_tangent_vectors": 26918,
+      "rock_primitives": 2,
+      "metric_cliff_vertices": 7094,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/ship/rail.glb",
+      "finite_normal_vectors": 2534,
+      "finite_tangent_vectors": 2534,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/ship/trim.glb",
+      "finite_normal_vectors": 742,
+      "finite_tangent_vectors": 742,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/ship/cabin-detail.glb",
+      "finite_normal_vectors": 1826,
+      "finite_tangent_vectors": 1826,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/ship/lantern.glb",
+      "finite_normal_vectors": 1396,
+      "finite_tangent_vectors": 1396,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/fauna/guardian.glb",
+      "finite_normal_vectors": 19838,
+      "finite_tangent_vectors": 0,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/fauna/cavewing.glb",
+      "finite_normal_vectors": 13281,
+      "finite_tangent_vectors": 0,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/fauna/trader.glb",
+      "finite_normal_vectors": 49249,
+      "finite_tangent_vectors": 49249,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "assets/fauna/trader-lod.glb",
+      "finite_normal_vectors": 6216,
+      "finite_tangent_vectors": 6216,
+      "rock_primitives": 0,
+      "metric_cliff_vertices": 0,
+      "maximum_height_uv_error": 0
+    }
+  ],
+  "geometry_preserved": [
+    {
+      "file": "assets/world/dawn.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/crystal.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/crystal-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/nomad.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/nomad-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/ember.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/ember-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/frost.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/frost-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/verdant.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/verdant-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/storm.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/storm-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/hollow.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/hollow-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/underforge.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/underforge-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-watch.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-watch-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-garden.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-garden-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-ruin.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/dawn-ruin-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/arch-vault.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    },
+    {
+      "file": "assets/world/arch-vault-lod.glb",
+      "exact_triangle_positions_and_counts": true,
+      "node_contracts_unchanged": true,
+      "material_count_unchanged": true
+    }
+  ],
+  "contracts": {
+    "collisions.json": {
+      "byte_identical": true,
+      "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd"
+    },
+    "landmarks.json": {
+      "byte_identical": true,
+      "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50"
+    },
+    "vault-collisions.json": {
+      "byte_identical": true,
+      "sha256": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70"
+    }
+  },
+  "rock_materials": [
+    {
+      "file": "assets/world/dawn.glb",
+      "name": "01 | Fractured limestone",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn.glb",
+      "name": "02 | Deep strata",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-lod.glb",
+      "name": "01 | Fractured limestone.001",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-lod.glb",
+      "name": "02 | Deep strata.001",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/crystal.glb",
+      "name": "01 | Fractured limestone.002",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/crystal.glb",
+      "name": "02 | Deep strata.002",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/crystal-lod.glb",
+      "name": "01 | Fractured limestone.003",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/crystal-lod.glb",
+      "name": "02 | Deep strata.003",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/nomad.glb",
+      "name": "01 | Fractured limestone.004",
+      "base_color_factor": [
+        0.3785199764198054,
+        0.23929805195628012,
+        0.11652839073247855,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/nomad.glb",
+      "name": "02 | Deep strata.004",
+      "base_color_factor": [
+        0.27206123305173513,
+        0.17199547484357636,
+        0.08375478083896895,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/nomad-lod.glb",
+      "name": "01 | Fractured limestone.005",
+      "base_color_factor": [
+        0.3785199764198054,
+        0.23929805195628012,
+        0.11652839073247855,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/nomad-lod.glb",
+      "name": "02 | Deep strata.005",
+      "base_color_factor": [
+        0.27206123305173513,
+        0.17199547484357636,
+        0.08375478083896895,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/ember.glb",
+      "name": "01 | Fractured limestone.006",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/ember.glb",
+      "name": "02 | Deep strata.006",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/ember-lod.glb",
+      "name": "01 | Fractured limestone.007",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/ember-lod.glb",
+      "name": "02 | Deep strata.007",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/frost.glb",
+      "name": "01 | Fractured limestone.008",
+      "base_color_factor": [
+        0.17159572264364512,
+        0.258832586809854,
+        0.3122960871630425,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/frost.glb",
+      "name": "02 | Deep strata.008",
+      "base_color_factor": [
+        0.12333442565011993,
+        0.18603592176958259,
+        0.22446281264843682,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/frost-lod.glb",
+      "name": "01 | Fractured limestone.009",
+      "base_color_factor": [
+        0.17159572264364512,
+        0.258832586809854,
+        0.3122960871630425,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/frost-lod.glb",
+      "name": "02 | Deep strata.009",
+      "base_color_factor": [
+        0.12333442565011993,
+        0.18603592176958259,
+        0.22446281264843682,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/verdant.glb",
+      "name": "01 | Fractured limestone.010",
+      "base_color_factor": [
+        0.26748745000332913,
+        0.29301802280360834,
+        0.21441223894776051,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/verdant.glb",
+      "name": "02 | Deep strata.010",
+      "base_color_factor": [
+        0.19225660468989283,
+        0.2106067038900935,
+        0.15410879674370287,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/verdant-lod.glb",
+      "name": "01 | Fractured limestone.011",
+      "base_color_factor": [
+        0.26748745000332913,
+        0.29301802280360834,
+        0.21441223894776051,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/verdant-lod.glb",
+      "name": "02 | Deep strata.011",
+      "base_color_factor": [
+        0.19225660468989283,
+        0.2106067038900935,
+        0.15410879674370287,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/storm.glb",
+      "name": "01 | Fractured limestone.012",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/storm.glb",
+      "name": "02 | Deep strata.012",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/storm-lod.glb",
+      "name": "01 | Fractured limestone.013",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/storm-lod.glb",
+      "name": "02 | Deep strata.013",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/hollow.glb",
+      "name": "01 | Fractured limestone.014",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/hollow.glb",
+      "name": "02 | Deep strata.014",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/hollow-lod.glb",
+      "name": "01 | Fractured limestone.015",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/hollow-lod.glb",
+      "name": "02 | Deep strata.015",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/underforge.glb",
+      "name": "01 | Fractured limestone.016",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/underforge.glb",
+      "name": "02 | Deep strata.016",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/underforge-lod.glb",
+      "name": "01 | Fractured limestone.017",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/underforge-lod.glb",
+      "name": "02 | Deep strata.017",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-watch.glb",
+      "name": "01 | Fractured limestone",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-watch.glb",
+      "name": "02 | Deep strata",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-watch-lod.glb",
+      "name": "01 | Fractured limestone.001",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-watch-lod.glb",
+      "name": "02 | Deep strata.001",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-garden.glb",
+      "name": "01 | Fractured limestone.002",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-garden.glb",
+      "name": "02 | Deep strata.002",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-garden-lod.glb",
+      "name": "01 | Fractured limestone.003",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-garden-lod.glb",
+      "name": "02 | Deep strata.003",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-ruin.glb",
+      "name": "01 | Fractured limestone.004",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-ruin.glb",
+      "name": "02 | Deep strata.004",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-ruin-lod.glb",
+      "name": "01 | Fractured limestone.005",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn-ruin-lod.glb",
+      "name": "02 | Deep strata.005",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/arch-vault.glb",
+      "name": "01 | Vault weathered limestone",
+      "base_color_factor": [
+        0.3312049793673297,
+        0.3510111731501558,
+        0.3495851721974356,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/arch-vault.glb",
+      "name": "02 | Vault deep fracture",
+      "base_color_factor": [
+        0.21291748673614055,
+        0.228920330315319,
+        0.2330567814649571,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/arch-vault-lod.glb",
+      "name": "01 | Vault weathered limestone.001",
+      "base_color_factor": [
+        0.3312049793673297,
+        0.3510111731501558,
+        0.3495851721974356,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/arch-vault-lod.glb",
+      "name": "02 | Vault deep fracture.001",
+      "base_color_factor": [
+        0.21291748673614055,
+        0.228920330315319,
+        0.2330567814649571,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    }
+  ],
+  "checked_at": "2026-10-02T21:31:51.101Z"
+}

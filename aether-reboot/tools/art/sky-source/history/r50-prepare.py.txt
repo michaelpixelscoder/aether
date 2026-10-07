@@ -1,0 +1,192 @@
+"""Isolated planetless radiance source. One real angular key; unchanged VDBs.
+
+Only --prepare and the authorized single --hero are implemented. No panorama,
+IBL export, canonical edit, external image, composited halo or painted disk.
+"""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import hashlib
+import importlib.util
+import json
+import math
+import sys
+import time
+from pathlib import Path
+from mathutils import Vector
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+SOURCE=ROOT/'tools/art/sky-source'
+BASE=ROOT/'.dream-loop/sky-r49-atmosphere-candidate/sky-r49-atmosphere.blend'
+OUT=STAGE/'sky-r50-low-sun.blend'
+SUN_GAME=Vector((-.8535626464638899,-.05097357602298374,-.5184906007913638))
+SUN_BLENDER=Vector((SUN_GAME.x,-SUN_GAME.z,SUN_GAME.y))
+DIAMETER_DEGREES=.75
+SUN_RGB=(1.0,.62,.32)
+KEY_IRRADIANCE=22.0
+SOLAR_RADIANCE=KEY_IRRADIANCE/(math.pi*math.sin(math.radians(DIAMETER_DEGREES/2))**2)
+EXPOSURE=-.90
+SKY_POLE_LOW=(.04,.09,.24,1)
+SKY_POLE_HIGH=(.055,.13,.30,1)
+SKY_HORIZON=(.24,.50,.94,1)
+
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def write(path,value):Path(path).write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
+def record(path):
+    p=Path(path).resolve()
+    return {'file':p.relative_to(ROOT).as_posix(),'sha256':sha(p),'bytes':p.stat().st_size}
+def module(name):
+    spec=importlib.util.spec_from_file_location('r50_'+name,SOURCE/(name+'.py'))
+    result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result
+
+def make_world(scene):
+    # Do not reuse an Earth sky below its planetary limb. This explicit broad
+    # blue boundary radiance is artist-directed, and illuminates every ray type
+    # identically. All localized warm scattering is computed by actual volumes.
+    world=bpy.data.worlds.new('R50 | planetless blue radiance and one angular star')
+    world.use_nodes=True
+    nodes=world.node_tree.nodes;links=world.node_tree.links;nodes.clear()
+    def node(kind,name):
+        n=nodes.new(kind);n.name=n.label=name;return n
+    def math_node(name,op,a=None,b=None):
+        n=node('ShaderNodeMath',name);n.operation=op
+        for index,value in enumerate((a,b)):
+            if value is None:continue
+            if isinstance(value,(int,float)):n.inputs[index].default_value=value
+            else:links.new(value,n.inputs[index])
+        return n.outputs[0]
+    coord=node('ShaderNodeTexCoord','World ray direction')
+    normalize=node('ShaderNodeVectorMath','Unit ray direction');normalize.operation='NORMALIZE'
+    links.new(coord.outputs['Generated'],normalize.inputs[0])
+    direction=normalize.outputs['Vector']
+    xyz=node('ShaderNodeSeparateXYZ','World altitude');links.new(direction,xyz.inputs[0])
+    z=xyz.outputs['Z']
+    poles=node('ShaderNodeMixRGB','Explicit broad blue sky poles');poles.blend_type='MIX'
+    poles.inputs[1].default_value=SKY_POLE_LOW;poles.inputs[2].default_value=SKY_POLE_HIGH
+    pole_weight=math_node('Signed altitude to hemisphere weight','MULTIPLY_ADD',z,.5)
+    nodes['Signed altitude to hemisphere weight'].inputs[2].default_value=.5
+    links.new(pole_weight,poles.inputs[0])
+    z2=math_node('Squared altitude','MULTIPLY',z,z)
+    exponent=math_node('Broad smooth horizon width','MULTIPLY',z2,-4.0)
+    horizon_weight=math_node('Continuous full sphere blue falloff','EXPONENT',exponent)
+    field=node('ShaderNodeMixRGB','Blue field radiance | shared by visible sky and lighting')
+    field.blend_type='MIX';field.inputs[2].default_value=SKY_HORIZON
+    links.new(horizon_weight,field.inputs[0]);links.new(poles.outputs[0],field.inputs[1])
+    blue=node('ShaderNodeBackground','Blue boundary radiance | all ray types')
+    links.new(field.outputs[0],blue.inputs['Color']);blue.inputs['Strength'].default_value=1
+    dot=node('ShaderNodeVectorMath','Dot with actual stellar direction');dot.operation='DOT_PRODUCT'
+    links.new(direction,dot.inputs[0]);dot.inputs[1].default_value=SUN_BLENDER
+    disk=math_node('Uniform radiance stellar surface | 0.75 degree diameter','GREATER_THAN',dot.outputs['Value'],math.cos(math.radians(DIAMETER_DEGREES/2)))
+    path=node('ShaderNodeLightPath','IBL separation keeps star illumination after scattering')
+    omit=math_node('IBL omit direct camera disk | 0 hero, 1 future IBL','MULTIPLY',path.outputs['Is Camera Ray'],0.0)
+    visible=math_node('Retain star for all non-camera paths','SUBTRACT',1.0,omit)
+    gate=math_node('Same emitter surface for camera and lighting','MULTIPLY',disk,visible)
+    strength=math_node('Calibrated finite angular radiance','MULTIPLY',gate,SOLAR_RADIANCE)
+    solar=node('ShaderNodeBackground','Single warm stellar emitter | no additional SUN object')
+    solar.inputs['Color'].default_value=(*SUN_RGB,1);links.new(strength,solar.inputs['Strength'])
+    add=node('ShaderNodeAddShader','Physical radiance sum: diffuse blue boundary plus stellar source')
+    links.new(blue.outputs[0],add.inputs[0]);links.new(solar.outputs[0],add.inputs[1])
+    out=node('ShaderNodeOutputWorld','Planetless world radiance')
+    links.new(add.outputs[0],out.inputs['Surface'])
+    scene.world=world
+    settings=world.cycles
+    if hasattr(settings,'sampling_method'):settings.sampling_method='MANUAL'
+    if hasattr(settings,'sample_map_resolution'):settings.sample_map_resolution=4096
+    if hasattr(settings,'sample_as_light'):settings.sample_as_light=True
+    return {p.identifier:getattr(settings,p.identifier) for p in settings.bl_rna.properties
+            if p.type in {'BOOLEAN','INT','FLOAT','STRING','ENUM'} and p.identifier!='rna_type'}
+
+def prepare():
+    started=time.perf_counter()
+    assert Path(bpy.data.filepath).resolve()==BASE.resolve()
+    frozen=[record(SOURCE/'sky-world.blend'),record(SOURCE/'manifest.json'),record(SOURCE/'recipe.json'),
+            record(ROOT/'tools/art/build_sky.py'),record(ROOT/'assets/textures/sky-world-linear.ktx2')]
+    scene=bpy.context.scene;fp=module('scene_fingerprint');before=fp.descriptor(scene)
+    sources=[]
+    for obj in scene.objects:
+        if obj.type=='VOLUME':
+            p=Path(bpy.path.abspath(obj.data.filepath)).resolve();sources.append(record(p))
+            obj.data.filepath='//'+os.path.relpath(p,STAGE).replace('\\','/')
+    suns=[obj for obj in scene.objects if obj.type=='LIGHT']
+    assert len(suns)==1 and suns[0].data.type=='SUN'
+    suns[0].hide_render=True
+    world_sampling=make_world(scene)
+    after=fp.descriptor(scene)
+    # Geometry, transforms, density materials and finite air are byte-described
+    # identically. Only the sole legacy SUN disappears from the active scene.
+    unchanged_before=[o for o in before['objects'] if o['type']!='LIGHT']
+    assert unchanged_before==after['objects']
+    assert before['materials']==after['materials']
+    assert len(sources)==86
+    bpy.context.preferences.filepaths.save_version=0
+    bpy.ops.wm.save_as_mainfile(filepath=str(OUT),compress=True,relative_remap=False)
+    for item in frozen:assert sha(ROOT/item['file'])==item['sha256']
+    report={'status':'isolated planetless low-sun source prepared; no render','output_needs_render':True,
+        'source':OUT.name,'source_sha256':sha(OUT),'generator_sha256':sha(__file__),
+        'base':record(BASE),'canonical_frozen':frozen,'source_files':sources+[record(SOURCE/'scene_fingerprint.py')],
+        'before_descriptor_sha256':fp.digest(before),'after_descriptor_sha256':fp.digest(after),
+        'geometry_and_materials_unchanged':True,'sun_game_direction':list(SUN_GAME),'sun_blender_direction':list(SUN_BLENDER),
+        'sun_elevation_degrees':math.degrees(math.asin(SUN_GAME.y)),
+        'world_authoring':{'model':'Artist-directed broad blue boundary radiance + one physical angular emitter, no planet. Existing finite scattering volumes unchanged.',
+            'disk_angular_diameter_degrees':DIAMETER_DEGREES,'sun_color_linear_rgb':SUN_RGB,
+            'key_normal_irradiance_red_channel':KEY_IRRADIANCE,'emitter_uniform_red_radiance':SOLAR_RADIANCE,
+            'calibration':'Previous r49 panorama solar cone integrated R=14.094; its world-light multiplier .09/.10 gives ~12.685, plus legacy SUN R=9.3 gives ~21.985. New single source uses22. This is an approximate reference energy, since the previous panorama includes finite air attenuation; not exact equality at every cloud.',
+            'sky_pole_low':SKY_POLE_LOW,'sky_pole_high':SKY_POLE_HIGH,'sky_horizon':SKY_HORIZON,
+            'blue_visibility_and_illumination_ratio':1.0,'sampling':world_sampling,
+            'ibl_mode':'Future separate panorama toggles IBL omit direct camera disk input1 to1. Key remains active for shadow/volume/diffuse paths. No IBL render authorized yet.'},
+        'exposure_stops':EXPOSURE,'external_assets':[],'bitmap_edits':False,'upscaling':False,
+        'halo':'Only actual finite medium scattering, no analytic glow or disk enlargement',
+        'prepare_seconds':time.perf_counter()-started}
+    write(STAGE/'manifest.json',report);write(STAGE/'scene-descriptor-before.json',before);write(STAGE/'scene-descriptor-after.json',after)
+    print('LOW_SUN_PREPARED',json.dumps({k:report[k] for k in ('source_sha256','sun_game_direction','sun_elevation_degrees','prepare_seconds')}),flush=True)
+
+def hero():
+    started=time.perf_counter();assert Path(bpy.data.filepath).resolve()==OUT.resolve()
+    assert not (STAGE/'low-sun-hero.png').exists(),'Single hero only: do not silently overwrite evidence'
+    scene=bpy.context.scene;fp=module('scene_fingerprint')
+    m=json.loads((STAGE/'manifest.json').read_text())
+    assert sha(OUT)==m['source_sha256'] and fp.digest(fp.descriptor(scene))==m['after_descriptor_sha256']
+    prefs=bpy.context.preferences.addons['cycles'].preferences;prefs.compute_device_type='OPTIX';prefs.get_devices()
+    assert any(d.type=='OPTIX' for d in prefs.devices)
+    for device in prefs.devices:device.use=device.type=='OPTIX'
+    scene.cycles.device='GPU';scene.cycles.samples=64;scene.cycles.adaptive_min_samples=16
+    scene.cycles.adaptive_threshold=.045;scene.cycles.use_adaptive_sampling=True
+    scene.cycles.use_denoising=True;scene.cycles.denoising_input_passes='RGB';scene.cycles.denoising_use_gpu=False
+    scene.camera.data.type='PERSP';scene.camera.data.sensor_fit='VERTICAL'
+    scene.camera.data.sensor_height=24;scene.camera.data.lens=12/math.tan(math.pi/8)
+    scene.camera.rotation_euler=Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+    scene.render.resolution_x=1672;scene.render.resolution_y=941;scene.render.resolution_percentage=100
+    scene.render.image_settings.file_format='PNG';scene.render.image_settings.color_mode='RGB'
+    scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast'
+    scene.view_settings.exposure=EXPOSURE;scene.view_settings.gamma=1
+    scene.render.filepath=str(STAGE/'low-sun-hero.png')
+    descriptor=fp.descriptor(scene);write(STAGE/'hero-scene-descriptor.json',descriptor)
+    print('LOW_SUN_HERO_BEGIN',json.dumps({'source_sha256':sha(OUT),'world_sampling':m['world_authoring']['sampling']}),flush=True)
+    bpy.ops.render.render(write_still=True)
+    m['hero']={**record(scene.render.filepath),'dimensions':[1672,941],'samples_max':64,'seconds':time.perf_counter()-started,
+        'renderer':'Cycles OPTIX','denoising':'OpenImageDenoise RGB only','display_transform':'AgX Medium High Contrast',
+        'exposure_stops':EXPOSURE,'render_descriptor_sha256':fp.digest(descriptor)}
+    # Save the same original Render Result as linear HDR, with no image editing
+    # or resampling, for finite/radiance and solar-position diagnostics.
+    scene.render.image_settings.file_format='HDR';scene.view_settings.view_transform='Raw'
+    scene.view_settings.look='None';scene.view_settings.exposure=0
+    hdr=STAGE/'low-sun-hero-linear.hdr';bpy.data.images['Render Result'].save_render(str(hdr),scene=scene)
+    import numpy as np
+    rgb=module('sky_io').read_linear_hdr(hdr)
+    bright=rgb[:,:,0]>100
+    ys,xs=np.nonzero(bright)
+    m['hero']['linear_original']=record(hdr)
+    m['hero']['radiance']={'finite':bool(np.isfinite(rgb).all()),'min':float(rgb.min()),'max':float(rgb.max()),
+        'pixels_above_red100':int(bright.sum()),'bright_centroid_xy':[float(xs.mean()),float(ys.mean())] if len(xs) else None,
+        'bright_bounds_xyxy':[int(xs.min()),int(ys.min()),int(xs.max()),int(ys.max())] if len(xs) else None}
+    m['status']='single original hero rendered; panorama and IBL pending visual review'
+    for item in m['canonical_frozen']:assert sha(ROOT/item['file'])==item['sha256']
+    write(STAGE/'manifest.json',m)
+    print('LOW_SUN_HERO_RENDERED',json.dumps(m['hero']),flush=True)
+
+if __name__=='__main__':
+    if '--prepare' in sys.argv:prepare()
+    elif '--hero' in sys.argv:hero()
+    else:raise ValueError('Only --prepare and one --hero are authorized')

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\Aether-art-studies\flow-r62-study\portable\tools\art\flow-r62-source\test_portability.py", line 13, in <module>
+    assert result.returncode==0,(script,result.stdout[-1000:],result.stderr[-1000:])
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('verify.mjs', '', "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Exact audited current source fragments required\n    at validate (file:///D:/Aether-art-studies/r62-cpu-relocation-d4wk1osg/portable/tools/art/flow-r62-source/verify.mjs:19:2)\n    at file:///D:/Aether-art-studies/r62-cpu-relocation-d4wk1osg/portable/tools/art/flow-r62-source/verify.mjs:35:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n")

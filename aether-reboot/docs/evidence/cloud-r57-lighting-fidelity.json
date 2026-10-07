@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "passed": true,
+  "recipe": "r57-blue-fill-warm-direct",
+  "shader_sha256": "1e586a174543ea72cae64fa7399b5ecd863b8785e12b2a65b177366063375f54",
+  "contract_sha256": "ed11c93d1c81f72626e206f922cffc6dffa86e49146b398db2b3aaeeb0469ccb",
+  "ray_comparison_sha256": "d7f88ba44cb2f5ee46122d85c8dd92b9ec65f0bc15cba403c9a522c9b2974bb4",
+  "historical_evidence_preserved": true,
+  "shader_density_integration_exact_r55": true,
+  "cpu_density_rays_phase_integration_exact_r55": true,
+  "legacy_regional_pointwise_gate_pass": false,
+  "limits": {
+    "gpu_bytes": 59768832,
+    "density_mean": 0.006,
+    "regional_density_p99": 0.05,
+    "high_density_p99": 0.035,
+    "analytic_derivative_p99_degrees": 0.05,
+    "opaque_display_rmse": 0.025,
+    "edge_opacity_p99": 0.08
+  },
+  "views": [
+    {
+      "bank": "hollow",
+      "view": "oblique",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.008158709137529902,
+      "edge_opacity_p99": 0.04301138043403618
+    },
+    {
+      "bank": "hollow",
+      "view": "grazing",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.009300619966894155,
+      "edge_opacity_p99": 0.07571425557136527
+    },
+    {
+      "bank": "underforge",
+      "view": "oblique",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.009129106160769498,
+      "edge_opacity_p99": 0.04323053359985351
+    },
+    {
+      "bank": "underforge",
+      "view": "grazing",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.009915231109776101,
+      "edge_opacity_p99": 0.0712310892343522
+    },
+    {
+      "bank": "hollow",
+      "view": "oblique",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.005679524421646336,
+      "edge_opacity_p99": 0.04301138043403618
+    },
+    {
+      "bank": "hollow",
+      "view": "grazing",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.006799094078360188,
+      "edge_opacity_p99": 0.07571425557136527
+    },
+    {
+      "bank": "underforge",
+      "view": "oblique",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.006184381983350331,
+      "edge_opacity_p99": 0.04323053359985351
+    },
+    {
+      "bank": "underforge",
+      "view": "grazing",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.0070079742106852645,
+      "edge_opacity_p99": 0.0712310892343522
+    }
+  ],
+  "maximum_cpu_threads": 4,
+  "cpu_wall_seconds": 327.2378169000003,
+  "limitations": [
+    "Fixed-noise orthographic CPU model, not native scene fidelity or performance.",
+    "R55 display transform retained; native ACES/bloom/opaque depth/live advection not modeled.",
+    "Freshly recomputed R57 values, no rescaling or relabelling of historical pixels."
+  ]
+}

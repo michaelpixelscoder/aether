@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+      "triangles": 199256,
+      "added_triangles": 4880,
+      "meshes": 12,
+      "nodes": 12,
+      "materials": 12,
+      "batches": [
+        {
+          "mesh": "01 | Fractured limestone",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "02 | Deep strata",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "03 | Dressed masonry",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "04 | Worn cornice",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "05 | Brushed antique brass",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "06 | Cedar and roots",
+          "added_triangles": 1744,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "07 | Enamel and shadow",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "08 | Deep foliage",
+          "added_triangles": 832,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "09 | Sunlit foliage",
+          "added_triangles": 2304,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "10 | Lantern glass",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "11 | Aether mineral",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "12 | Surface biome",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        }
+      ],
+      "added_foliage_surface_area_m2": 673.1978005749248,
+      "max_normal_length_error": 1.3418865396630508e-7,
+      "max_tangent_length_error": 0.00008414063282713435,
+      "degenerate_added_triangles": 0,
+      "inverted_added_triangles": 0,
+      "architecture_geometry_and_all_existing_terrain_exact": true,
+      "whole_island_aabb_exact": true,
+      "lod_collision_landmark_routes_exact": true
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+      "triangles": 148771,
+      "added_triangles": 5116,
+      "meshes": 12,
+      "nodes": 12,
+      "materials": 12,
+      "batches": [
+        {
+          "mesh": "01 | Fractured limestone",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "02 | Deep strata",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "03 | Dressed masonry",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "04 | Worn cornice",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "05 | Brushed antique brass",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "06 | Cedar and roots",
+          "added_triangles": 1868,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "07 | Enamel and shadow",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "08 | Deep foliage",
+          "added_triangles": 848,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "09 | Sunlit foliage",
+          "added_triangles": 2400,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "10 | Lantern glass",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "11 | Aether mineral",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        },
+        {
+          "mesh": "12 | Surface biome",
+          "added_triangles": 0,
+          "original_attributes_and_corners_exact": true
+        }
+      ],
+      "added_foliage_surface_area_m2": 704.4476059773828,
+      "max_normal_length_error": 1.360530741401078e-7,
+      "max_tangent_length_error": 0.0000717141116118869,
+      "degenerate_added_triangles": 0,
+      "inverted_added_triangles": 0,
+      "architecture_geometry_and_all_existing_terrain_exact": true,
+      "whole_island_aabb_exact": true,
+      "lod_collision_landmark_routes_exact": true
+    }
+  ],
+  "corruption_tests": [
+    {
+      "kind": "dawn",
+      "case": "payload",
+      "rejected": true
+    },
+    {
+      "kind": "dawn",
+      "case": "header-length",
+      "rejected": true
+    },
+    {
+      "kind": "dawn",
+      "case": "json",
+      "rejected": true
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "payload",
+      "rejected": true
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "header-length",
+      "rejected": true
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "json",
+      "rejected": true
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "passed": true,
+  "pixels_modified": false,
+  "gpu_used": false,
+  "source_png_sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+  "script_sha256": "9b2b1cd6f537b80b3aeddda9ed5bace9afb25600e0d9f718656edc6b5c89b57a",
+  "old_texture": {
+    "dimensions": [
+      256,
+      256
+    ],
+    "channels": 3,
+    "srgb_mean_8bit": [
+      94.96627807617188,
+      96.97572326660156,
+      24.943496704101562
+    ],
+    "linear_mean_rgb": [
+      0.11943426495763125,
+      0.13240868217585033,
+      0.009813435861997776
+    ],
+    "linear_luma_mean": 0.12079894429138997,
+    "linear_luma_p05_p50_p95": [
+      0.04482936489472492,
+      0.10716400640426499,
+      0.24697485140303493
+    ],
+    "opaque_alpha": true,
+    "mean_absolute_horizontal_edge_difference_8bit": 8.260416666666666,
+    "mean_absolute_vertical_edge_difference_8bit": 13.33984375
+  },
+  "native_texture": {
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "channels": 3,
+    "srgb_mean_8bit": [
+      78.95099954467872,
+      84.17988243044904,
+      40.89193114728244
+    ],
+    "linear_mean_rgb": [
+      0.09139355778494819,
+      0.10454073488835144,
+      0.02770489963472796
+    ],
+    "linear_luma_mean": 0.09619809773087765,
+    "linear_luma_p05_p50_p95": [
+      0.01638294496006311,
+      0.07880693340819694,
+      0.23553740297152193
+    ],
+    "opaque_alpha": true,
+    "mean_absolute_horizontal_edge_difference_8bit": 19.821637426900583,
+    "mean_absolute_vertical_edge_difference_8bit": 19.577352472089313
+  },
+  "source_palette_turf_linear": [
+    0.095,
+    0.19,
+    0.032
+  ],
+  "actual_glb_materials": [
+    {
+      "file": "dawn.glb",
+      "material_index": 11,
+      "primitive_count": 1,
+      "triangles": 3504,
+      "actual_base_color_factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "actual_vertex_color_0": "ABSENT from every material12 primitive",
+      "measured_uv_singular_values_min_max": [
+        0.10999984218187203,
+        0.11000011995105997
+      ],
+      "local_tile_m": 9.090909090909092,
+      "world_tile_m_primary_scale2_1": 19.09090909090909,
+      "new_world_tile_m_primary": 4.0,
+      "new_world_tile_m_instance_scale1_5": 2.857142857142857,
+      "roughness_unchanged": 0.8799999952316284
+    },
+    {
+      "file": "dawn-lod.glb",
+      "material_index": 9,
+      "primitive_count": 1,
+      "triangles": 498,
+      "actual_base_color_factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "actual_vertex_color_0": "ABSENT from every material12 primitive",
+      "measured_uv_singular_values_min_max": [
+        0.10999995470046997,
+        0.11000001430511475
+      ],
+      "local_tile_m": 9.090909090909092,
+      "world_tile_m_primary_scale2_1": 19.09090909090909,
+      "new_world_tile_m_primary": 4.0,
+      "new_world_tile_m_instance_scale1_5": 2.857142857142857,
+      "roughness_unchanged": 0.8799999952316284
+    },
+    {
+      "file": "dawn-watch.glb",
+      "material_index": 11,
+      "primitive_count": 1,
+      "triangles": 636,
+      "actual_base_color_factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "actual_vertex_color_0": "ABSENT from every material12 primitive",
+      "measured_uv_singular_values_min_max": [
+        0.10999997456868489,
+        0.1100000540415446
+      ],
+      "local_tile_m": 9.090909090909092,
+      "world_tile_m_primary_scale2_1": 19.09090909090909,
+      "new_world_tile_m_primary": 4.0,
+      "new_world_tile_m_instance_scale1_5": 2.857142857142857,
+      "roughness_unchanged": 0.8799999952316284
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "material_index": 9,
+      "primitive_count": 1,
+      "triangles": 636,
+      "actual_base_color_factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "actual_vertex_color_0": "ABSENT from every material12 primitive",
+      "measured_uv_singular_values_min_max": [
+        0.10999997456868489,
+        0.1100000540415446
+      ],
+      "local_tile_m": 9.090909090909092,
+      "world_tile_m_primary_scale2_1": 19.09090909090909,
+      "new_world_tile_m_primary": 4.0,
+      "new_world_tile_m_instance_scale1_5": 2.857142857142857,
+      "roughness_unchanged": 0.8799999952316284
+    }
+  ],
+  "neutral_factor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "factor_reason": "Actual source pixel values are albedo; glTF linear factor1 preserves them. Factor>1 invalid per Khronos; no yellow palette multiplier or global exposure added.",
+  "limits": [
+    "PNG prototype has one mip level; distant shimmer/performance need native check",
+    "seam metrics are diagnostics, not perfect tileability proof",
+    "same GLB material reused at other instance scales has proportional physical tile size",
+    "natural albedo is darker than old mosaic; final8K/key lighting review needed"
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "schema": 2,
+  "status": "passed",
+  "generated_at": "2026-10-03T00:15:38.715Z",
+  "command": "node tools/art/verify-sky.mjs",
+  "dimensions": [
+    4096,
+    2048
+  ],
+  "ktx2": {
+    "vk_format": 97,
+    "texture_format": "Rgba16Float",
+    "type_size": 2,
+    "transfer": "linear",
+    "primaries": "Rec.709",
+    "orientation": "rd",
+    "mip_levels": 1,
+    "payload_bytes": 67108864,
+    "dfd_and_section_bounds_verified": true,
+    "all_half_float_samples_verified": true,
+    "encoding_scale": 0.25,
+    "runtime_multiplier": 1.5691681957935013
+  },
+  "authoring_hdr": {
+    "file": "tools/art/sky-source/sky-world-linear.hdr",
+    "sha256": "40cff27034b5bb9a25b6d619488e0f7420bdb9295cb61f359d346766a4b92a0f",
+    "bytes": 7023933
+  },
+  "provenance": {
+    "original_3d_render": true,
+    "external_assets": [],
+    "retouching": false,
+    "upscaling": false
+  },
+  "generator": {
+    "file": "tools/art/build_sky.py",
+    "sha256": "9b658ba2b664e50b45ff1509bc16e3b895208a83c0fbf430a468eeb26007cd11",
+    "bytes": 42864
+  },
+  "source": {
+    "file": "tools/art/sky-source/sky-world.blend",
+    "sha256": "f94dc99d99a7ea9c8e9170ea723ddd781eaf759240c67b53df5e0686ab87d120",
+    "bytes": 129876336
+  },
+  "output": {
+    "file": "assets/textures/sky-world-linear.ktx2",
+    "sha256": "4b0309b80cb0edac02a3ad9e4100bfa5bf5b6761d4b02664f2ea1e7f9854085b",
+    "bytes": 67109144
+  },
+  "volume_grids": [
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-00.vdb",
+      "sha256": "4e8f97464a512bb7b624b0c493b96eeed9ef375db5c41084ba31d4af16515c0f",
+      "bytes": 22350106
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-01.vdb",
+      "sha256": "da2ff2f9129ac6205268ca7a36a7b7f437e886e635c9b6e95762c6762e6d7a85",
+      "bytes": 11345475
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-02.vdb",
+      "sha256": "cf43db4d952dbf733bfba4c16171a70b1b3200782231287b1052004461bd3905",
+      "bytes": 17420016
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-03.vdb",
+      "sha256": "e44c5835dbbc07ae0db87378f0a6dfeb66dfba4de93b8196e7667f1ffa603c6f",
+      "bytes": 12996784
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-04.vdb",
+      "sha256": "d97c7b8a528804fb9a0d16e8de3b6630f699211494bba0d315013bce4b84294a",
+      "bytes": 16098651
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-05.vdb",
+      "sha256": "668875eb5206a332f6cb32d6279c792baaae77c49ad95cb2a4b0715da35ce3e4",
+      "bytes": 13159309
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-06.vdb",
+      "sha256": "bbcbe9a0ca7907cdc5131001c3d880211b317628cd1a2f196d14e2c101253306",
+      "bytes": 14500544
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Broken-lower-cloud-sea-07.vdb",
+      "sha256": "27ec476dde0626d128bd7ac7a858d8e0a4c1f1221f28fe411663c41f83bdd760",
+      "bytes": 12775974
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Deep-cloud-islands-00.vdb",
+      "sha256": "1b0266dfabd611fd700464bbb7db1a38f33a8a3e8ee2620dabdff5d2f6ebd8c1",
+      "bytes": 7067272
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Deep-cloud-islands-01.vdb",
+      "sha256": "3aa7c222041cea86b786ef848cd379a22490a6f19a518e2b9e78d2b1205763f1",
+      "bytes": 4573545
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Deep-cloud-islands-02.vdb",
+      "sha256": "188f1212016e516d1deb5b34060535ba42634d323e1bf9a809677b28acca7525",
+      "bytes": 6774411
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Deep-cloud-islands-03.vdb",
+      "sha256": "3b9ef8d9e0f699fa1f61a5398067fb797f8f360bde445108b5533e5cf62a1696",
+      "bytes": 8229520
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-00.vdb",
+      "sha256": "a5925800cab29447f2b91a28aab0ed125323feb4684038d0b9093aeca67617ad",
+      "bytes": 5888746
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-01.vdb",
+      "sha256": "161500c94960b55ad556dd9c1510eb0df786919cde44cbbaa6566c5dfbc2e07a",
+      "bytes": 10385189
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-02.vdb",
+      "sha256": "324aa95d3ecf4996eda0aab19bfc71c6a0a24c8f2cb4ea21de2b56ee540c65b8",
+      "bytes": 7322574
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-03.vdb",
+      "sha256": "7cad83c7a99df7b63865353bf1df3b87f62960daada63b0718883c3bd29c0cfb",
+      "bytes": 8510057
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-04.vdb",
+      "sha256": "368d2a79e75e70df31278c60f8fdfecafba841c6868276b96697ac9007acbff1",
+      "bytes": 6488996
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-05.vdb",
+      "sha256": "0df2785168ce98d53197ce127ba1bee8dd696281c61f1b2f42db7e09d9dc32dd",
+      "bytes": 9163990
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-06.vdb",
+      "sha256": "b45ed71c01032d6aa1d8c403a5e7cf8f40a629c3b6a32f16df2ae3c111a66be8",
+      "bytes": 9874141
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-07.vdb",
+      "sha256": "c59d7a4c2ed9d8856bf786f6f0fb18fe1cb849712cdcaa96bc34ec087eebb0cf",
+      "bytes": 11915713
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-08.vdb",
+      "sha256": "6ce9c2e66f74ee42df36da3374e45d6cffbdfab92394b7c36439fb8f1d6b208f",
+      "bytes": 12997591
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-09.vdb",
+      "sha256": "b2ad4557c6a3793859e8f34320b2b665d989f3e5c0aa493317c1135951d4848b",
+      "bytes": 4703702
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-10.vdb",
+      "sha256": "a1cd46922b5f6fe4e7978f40add13d417ba2db808f529a0d8a32608ecd49eabf",
+      "bytes": 5585846
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Horizon-cumulus-11.vdb",
+      "sha256": "024d3c4a7bc963d6d6ecad5f009d21b59a8fdcced38f17513973b04f561871b0",
+      "bytes": 8437752
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-00.vdb",
+      "sha256": "727e0717eed793f4067ac763d4b8ac8f9a3dda0f484cd9b422e7387700a198c8",
+      "bytes": 2934732
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-01.vdb",
+      "sha256": "ba012e880b33ce667d310310ce811ed2ad8204f3f255f2f4112abaad690afea7",
+      "bytes": 2221454
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-02.vdb",
+      "sha256": "c3ad9a2ff9ce74b17b32c181e915d8c9cf913b10da9ef913164bfb684d7a335f",
+      "bytes": 3422201
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-03.vdb",
+      "sha256": "c41525e3fb84879f3f312ce609d652cedd90ba365695045cd87d7f69c99d84a0",
+      "bytes": 2087265
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-04.vdb",
+      "sha256": "da5c0bbb5fd8072b6f7839381a40c1131a872ff588972acd86bccac92b97a15a",
+      "bytes": 1662089
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-05.vdb",
+      "sha256": "834a47bbff450b9602738c1ea32835ff0869ad4cac02116d91e9cfe534f09258",
+      "bytes": 3779187
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Intermediate-drifting-bank-06.vdb",
+      "sha256": "ba1641b1a789f9cb55c5560596f8abe1c6563f6dbe7ab98617f91bd0619236d1",
+      "bytes": 1567181
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Master-cumulonimbus-00.vdb",
+      "sha256": "b1510e4265e7f023a0521c216b043726e8c0ebce7f8251036882ebb88bbb24a6",
+      "bytes": 16733544
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Master-cumulonimbus-01.vdb",
+      "sha256": "4905414e85ca959def5768382c30794a2f603f7c4db0c43c7b9c09b5dd7c449a",
+      "bytes": 12875953
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Overhead-cloud-arch-00.vdb",
+      "sha256": "4b4bac1bfb59dffb46311aebd324d7a6ea6919aa5aa83653c2aa6601a653484c",
+      "bytes": 2776115
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Overhead-cloud-arch-01.vdb",
+      "sha256": "e7a18cfd8b6e00a81c6c46abb198594e18a3623b426e80ea5c72224d9b4447d5",
+      "bytes": 2577712
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/Overhead-cloud-arch-02.vdb",
+      "sha256": "c6065e70fb24d83e2e2cdb1a1c29ba72e1a18c73219c0ea60573524a938a1fca",
+      "bytes": 2742072
+    }
+  ],
+  "hashes_verified": 40,
+  "metrics": {
+    "radiance_min": 0,
+    "radiance_max": 33792,
+    "finite_nonnegative": true,
+    "opaque_alpha": true,
+    "above_one_channel_fraction": 0.000011444091796875,
+    "black_pixel_fraction": 0,
+    "seam_mean_exposure_compressed_rgb": 0.0024094705634465975,
+    "seam_p99_exposure_compressed_rgb": 0.026750353982021524,
+    "adjacent_mean_exposure_compressed_rgb": 0.0024978573459632477,
+    "pole_p99_p01_exposure_compressed_rgb": [
+      0.00034271664096847954,
+      0
+    ],
+    "metric_transform": "x = linear radiance * runtime multiplier; x/(1+x), numerical metrics only"
+  },
+  "render": {
+    "renderer": "Cycles OPTIX",
+    "seconds": 249.05,
+    "samples_max": 128,
+    "volume_bounces": 16
+  },
+  "integration": {
+    "u": "fract(0.75 - input.uv.x)",
+    "v": "input.uv.y",
+    "u_sampler": "Repeat",
+    "v_sampler": "ClampToEdge",
+    "mirror_seam_blend": false
+  },
+  "limits": [
+    "This CPU report validates files and numerical continuity; it does not certify visual fidelity or runtime frame rate.",
+    "Pole extrema include path-tracing and dithering variation; robust ranges are reported without requiring identical pixels."
+  ]
+}

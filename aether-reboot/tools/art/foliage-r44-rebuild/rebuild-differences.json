@@ -1,0 +1,756 @@
+{
+  "contracts": {
+    "collisions.json": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+    "landmarks.json": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+    "vault-collisions.json": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70"
+  },
+  "models": [
+    {
+      "file": "dawn.glb",
+      "triangles": 198220,
+      "attribute_mismatches": 1,
+      "old_sha256": "7951e84ebe24e56a65b9c8de65fc31c6e03dffaf8a29555c919f2f50e5bd44cd",
+      "new_sha256": "dd4ba7d39357a38c7392e3fa691d28717a20593a02279010aff5420068b35cf4",
+      "finite_normals": 394751,
+      "finite_tangents": 394751
+    },
+    {
+      "file": "dawn-lod.glb",
+      "triangles": 11928,
+      "attribute_mismatches": 0,
+      "old_sha256": "1b1f97ce688e013ae26b817363357cd7be7c4b6b96595db0de0d2bff43b86d0b",
+      "new_sha256": "b9e2e2596a82eaf4536de2ebea74de23424c200a55666d3fcdbff3f02f46e11a",
+      "finite_normals": 23579,
+      "finite_tangents": 23579
+    },
+    {
+      "file": "crystal.glb",
+      "triangles": 101210,
+      "attribute_mismatches": 0,
+      "old_sha256": "f7960e0de658b3a8ce4d4f1a44b6be26ea3c47106744c81035e84911f20bbe95",
+      "new_sha256": "a9569e5ef7c19a649899fb19828a68534e67033e72ab29c61a3b0af128ade112",
+      "finite_normals": 201374,
+      "finite_tangents": 201374
+    },
+    {
+      "file": "crystal-lod.glb",
+      "triangles": 7462,
+      "attribute_mismatches": 0,
+      "old_sha256": "a16dbff1b85c4eafa536556b8e4712c3ac2a5de5506e295d0b31805e680a83c8",
+      "new_sha256": "630dcaa5efb8ae41effa3551374af74bdaf9bbceef4c572a02b1240d59e304a3",
+      "finite_normals": 15498,
+      "finite_tangents": 15498
+    },
+    {
+      "file": "nomad.glb",
+      "triangles": 97236,
+      "attribute_mismatches": 0,
+      "old_sha256": "8ce723d980037fbfaff1b8973dfe390bdb2b9e805b4e54531a5f8f573141e8ad",
+      "new_sha256": "ac7f566949e38883d5657fecb435ec07790b123930f671516b662e4a6abcf34b",
+      "finite_normals": 194003,
+      "finite_tangents": 194003
+    },
+    {
+      "file": "nomad-lod.glb",
+      "triangles": 4940,
+      "attribute_mismatches": 0,
+      "old_sha256": "8b199780f3ad4b82ad37f4fb72c196acee6dad8e5fd47665edbbe5c472147781",
+      "new_sha256": "ede6092fbf8da73f849f8dcb0460441a1d22f8c0df43fc724c986507d85f6af7",
+      "finite_normals": 9831,
+      "finite_tangents": 9831
+    },
+    {
+      "file": "ember.glb",
+      "triangles": 79638,
+      "attribute_mismatches": 0,
+      "old_sha256": "19622066612d9b12bb3a34a9a084042604afdcd89f098a40f644ad79a90933f4",
+      "new_sha256": "2642be5921390e622b324ff8b264b114660c471184e8887fe9462ae110d7ac0a",
+      "finite_normals": 158432,
+      "finite_tangents": 158432
+    },
+    {
+      "file": "ember-lod.glb",
+      "triangles": 6926,
+      "attribute_mismatches": 0,
+      "old_sha256": "f195cba6d7202f05c8b545739d62dd07fae017102b72c1b638391b64af555f54",
+      "new_sha256": "40042701fc5e0aa1a5f5e4f9aec1098dfa74e47b0a2cd909171e60deda8e9be9",
+      "finite_normals": 13660,
+      "finite_tangents": 13660
+    },
+    {
+      "file": "frost.glb",
+      "triangles": 109966,
+      "attribute_mismatches": 0,
+      "old_sha256": "8e1c0b38e8c75d9e7efaf0c03a42a9e58309667f3745691f55f027dcd1892145",
+      "new_sha256": "b9f96227d495c3620acbb0a23b50937eeec9092a73a9dd4c75eff429b6570b40",
+      "finite_normals": 222596,
+      "finite_tangents": 222596
+    },
+    {
+      "file": "frost-lod.glb",
+      "triangles": 7900,
+      "attribute_mismatches": 0,
+      "old_sha256": "1f1446885ae9e4ce75a83844f50ee3a6396a605344a9fbe044aafcbe3c36fba1",
+      "new_sha256": "db3cd0dda816c1d6e02a31760ea13c5634e70da93c9cd36f8f8972dd18ef486d",
+      "finite_normals": 15934,
+      "finite_tangents": 15934
+    },
+    {
+      "file": "verdant.glb",
+      "triangles": 93728,
+      "attribute_mismatches": 0,
+      "old_sha256": "ed3b27bcf50fc8f6363ada7fde5b89d7c3576eae4daca8a224394aeac02874b1",
+      "new_sha256": "c5ef14c06987fe08d08bd56c312c88159c11b18918a9ec917aa3e2a59a3d798a",
+      "finite_normals": 181874,
+      "finite_tangents": 181874
+    },
+    {
+      "file": "verdant-lod.glb",
+      "triangles": 6532,
+      "attribute_mismatches": 0,
+      "old_sha256": "cd3965918dcc3097223c63dc419cd2f281666aa622474b34fdbdd9b44a121009",
+      "new_sha256": "913a87fb50532174a3cb126368bb0656a721807424d79dc6e9e83f294e8640cf",
+      "finite_normals": 13176,
+      "finite_tangents": 13176
+    },
+    {
+      "file": "storm.glb",
+      "triangles": 94166,
+      "attribute_mismatches": 0,
+      "old_sha256": "688436c449481c2da4060fcfc0fbf9aa799608d979211a5041c54c464eebd750",
+      "new_sha256": "3caf3a962c0e253d26db7ac0ed6065c1631810a79c0debf27fb93ab25c3dd499",
+      "finite_normals": 192934,
+      "finite_tangents": 192934
+    },
+    {
+      "file": "storm-lod.glb",
+      "triangles": 5176,
+      "attribute_mismatches": 0,
+      "old_sha256": "7936c48f736a46612e98ff02afd63c0421f04d5247643c4bd29d79b12e6699e9",
+      "new_sha256": "3703e8ced48884b84b6fed3bbdf9cc9386d5e44b8a88680e45704785b16209e7",
+      "finite_normals": 10504,
+      "finite_tangents": 10504
+    },
+    {
+      "file": "hollow.glb",
+      "triangles": 130528,
+      "attribute_mismatches": 0,
+      "old_sha256": "ccb8b469342ab1ba6507d815c2b516586c0e30167d18cf3b5ca7baf321e51f2b",
+      "new_sha256": "2426e4761237efa6ea70f322514cafe9c64acb57276a19d852583249cb0b18ff",
+      "finite_normals": 279726,
+      "finite_tangents": 279726
+    },
+    {
+      "file": "hollow-lod.glb",
+      "triangles": 9890,
+      "attribute_mismatches": 0,
+      "old_sha256": "d60bbde8adc35e6d5a5b9a3f204fecdc923134c2c1fe1dd319e500c266110d35",
+      "new_sha256": "2703f2b7959bc531e8c5ec4f8788b69d77ca14c07a40daef99962ec33a39998e",
+      "finite_normals": 20851,
+      "finite_tangents": 20851
+    },
+    {
+      "file": "underforge.glb",
+      "triangles": 122822,
+      "attribute_mismatches": 0,
+      "old_sha256": "3042f1abcb1f08957cd24718d72f10a9a49582479f8e6792ef93b9f6c836e141",
+      "new_sha256": "0d8ee97258145c53aca32ed5a9efedc32922525095926791646e409a195d0e5b",
+      "finite_normals": 261864,
+      "finite_tangents": 261864
+    },
+    {
+      "file": "underforge-lod.glb",
+      "triangles": 10684,
+      "attribute_mismatches": 0,
+      "old_sha256": "a1f33e910c09a53b9ad80796d8e8a003fef4b48c3374673e306be9729fb84de4",
+      "new_sha256": "a4d91501f57ecec05cec74ed9d25d969952d6a573c3420d2ad086e65e1394453",
+      "finite_normals": 22244,
+      "finite_tangents": 22244
+    },
+    {
+      "file": "dawn-watch.glb",
+      "triangles": 111045,
+      "attribute_mismatches": 0,
+      "old_sha256": "68d2c83f1ba1b1f563ae29b83034cca6bd485d55ed71c557b335b93c7783805b",
+      "new_sha256": "38f8d637e3b4a5a2b26384294840214faf18bd700f1c5f9a015e125acd9ca8bc",
+      "finite_normals": 213914,
+      "finite_tangents": 213914
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "triangles": 10509,
+      "attribute_mismatches": 0,
+      "old_sha256": "50a6b72d7222f5b4d9ce8f27586e80be6cc14fd7138874c1c415fadeec4a7b33",
+      "new_sha256": "b5c00d948435c209c77950a4440421fdf67d5ef5b6238dcfe021b956557aa2b4",
+      "finite_normals": 21581,
+      "finite_tangents": 21581
+    },
+    {
+      "file": "dawn-garden.glb",
+      "triangles": 102994,
+      "attribute_mismatches": 2,
+      "old_sha256": "32b392728a98de2550f39376395c8c40465cb0ac06b392f99fc3af932821e047",
+      "new_sha256": "9fd416882a66212d4f722381c2c597f40b8e1233943e9254fd4bdc74f6025336",
+      "finite_normals": 196302,
+      "finite_tangents": 196302
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "triangles": 10662,
+      "attribute_mismatches": 0,
+      "old_sha256": "817f99cb99fe4789646aed96af17bec758cb20fa79beabf7562e9f99e4ad8154",
+      "new_sha256": "0564491a978e9732229961febd1ad0719ceaa48d7e06caabcf8c469216fac8b8",
+      "finite_normals": 21982,
+      "finite_tangents": 21982
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "triangles": 85752,
+      "attribute_mismatches": 1,
+      "old_sha256": "ddd05f8a8e8bbb9d877dadb6d43db0f3673e257fe17011f44b0ee5b60bb9910d",
+      "new_sha256": "f3f2060c7bc477b905cc08ac4e2896852cba4abce8e2f5053475baf6dd9c62f7",
+      "finite_normals": 192645,
+      "finite_tangents": 192645
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "triangles": 8964,
+      "attribute_mismatches": 0,
+      "old_sha256": "493282fbb6e69a4e2ade24e0e16730deaafd3a9a1a6a9d8fd584d0bb8c4a8bd2",
+      "new_sha256": "ed837d94d9e50092a4b7713dc192a2b3e1d3d0f28f4b76241ea587e3beed9616",
+      "finite_normals": 18506,
+      "finite_tangents": 18506
+    },
+    {
+      "file": "arch-vault.glb",
+      "triangles": 93944,
+      "attribute_mismatches": 0,
+      "old_sha256": "1db19ad2ac3329dd0342e6d578ca322143d59f0a269ede48be2e3bb7704dd253",
+      "new_sha256": "fe07743c021a247fefe81eabb50220bdf241121ee12bfa80e2eab220c9556ffb",
+      "finite_normals": 210356,
+      "finite_tangents": 210356
+    },
+    {
+      "file": "arch-vault-lod.glb",
+      "triangles": 11646,
+      "attribute_mismatches": 0,
+      "old_sha256": "2be06c70c3e312d7175500fcd740d55484e0102658e327d6fb0a5d546bb31347",
+      "new_sha256": "b14848ec935fd547d11b88d6130ac077f7dc10d8ce8ebb683c62e398145c0019",
+      "finite_normals": 26918,
+      "finite_tangents": 26918
+    }
+  ],
+  "differences": [
+    {
+      "file": "dawn.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage",
+      "attribute": "TANGENT",
+      "corners": 53292,
+      "old_vertices": 26646,
+      "new_vertices": 26646,
+      "changed_components": 9,
+      "changed_corners": 9,
+      "changed_unique_vertex_pairs": 3,
+      "max_abs": 0.00010001659393310547,
+      "max_ulp": 3356,
+      "ulp_histogram": {
+        "1678": 6,
+        "3356": 3
+      },
+      "max_vector_delta": 0.00010001659393310547,
+      "max_tangent_angle_degrees": 0.005384775802703353,
+      "handedness_changes": 0,
+      "examples": [
+        {
+          "corner": 8486,
+          "old_vertex": 8486,
+          "new_vertex": 8486,
+          "component": 0,
+          "old": 0.9538000226020813,
+          "new": 0.9537000060081482,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 8487,
+          "old_vertex": 8486,
+          "new_vertex": 8486,
+          "component": 0,
+          "old": 0.9538000226020813,
+          "new": 0.9537000060081482,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 20431,
+          "old_vertex": 20432,
+          "new_vertex": 20432,
+          "component": 2,
+          "old": 0.34209999442100525,
+          "new": 0.34220001101493835,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 20435,
+          "old_vertex": 20432,
+          "new_vertex": 20432,
+          "component": 2,
+          "old": 0.34209999442100525,
+          "new": 0.34220001101493835,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 21141,
+          "old_vertex": 21141,
+          "new_vertex": 21141,
+          "component": 2,
+          "old": 0.9693999886512756,
+          "new": 0.9695000052452087,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 35133,
+          "old_vertex": 8486,
+          "new_vertex": 8486,
+          "component": 0,
+          "old": 0.9538000226020813,
+          "new": 0.9537000060081482,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 47078,
+          "old_vertex": 20432,
+          "new_vertex": 20432,
+          "component": 2,
+          "old": 0.34209999442100525,
+          "new": 0.34220001101493835,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 47785,
+          "old_vertex": 21141,
+          "new_vertex": 21141,
+          "component": 2,
+          "old": 0.9693999886512756,
+          "new": 0.9695000052452087,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 47787,
+          "old_vertex": 21141,
+          "new_vertex": 21141,
+          "component": 2,
+          "old": 0.9693999886512756,
+          "new": 0.9695000052452087,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        }
+      ],
+      "changes": [
+        {
+          "corner": 8486,
+          "old_vertex": 8486,
+          "new_vertex": 8486,
+          "component": 0,
+          "old": 0.9538000226020813,
+          "new": 0.9537000060081482,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 8487,
+          "old_vertex": 8486,
+          "new_vertex": 8486,
+          "component": 0,
+          "old": 0.9538000226020813,
+          "new": 0.9537000060081482,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 20431,
+          "old_vertex": 20432,
+          "new_vertex": 20432,
+          "component": 2,
+          "old": 0.34209999442100525,
+          "new": 0.34220001101493835,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 20435,
+          "old_vertex": 20432,
+          "new_vertex": 20432,
+          "component": 2,
+          "old": 0.34209999442100525,
+          "new": 0.34220001101493835,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 21141,
+          "old_vertex": 21141,
+          "new_vertex": 21141,
+          "component": 2,
+          "old": 0.9693999886512756,
+          "new": 0.9695000052452087,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 35133,
+          "old_vertex": 8486,
+          "new_vertex": 8486,
+          "component": 0,
+          "old": 0.9538000226020813,
+          "new": 0.9537000060081482,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 47078,
+          "old_vertex": 20432,
+          "new_vertex": 20432,
+          "component": 2,
+          "old": 0.34209999442100525,
+          "new": 0.34220001101493835,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 47785,
+          "old_vertex": 21141,
+          "new_vertex": 21141,
+          "component": 2,
+          "old": 0.9693999886512756,
+          "new": 0.9695000052452087,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 47787,
+          "old_vertex": 21141,
+          "new_vertex": 21141,
+          "component": 2,
+          "old": 0.9693999886512756,
+          "new": 0.9695000052452087,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        }
+      ],
+      "index_order_changes": 0,
+      "old_sha256": "17d09c607beb9d4806a45d894c4925dcddda58cfc93688ebff48a431728b9491",
+      "new_sha256": "0d4ee5922581852c5a990001e8e15c2c163cf0cdd9d4c9b55e39d85143a30589"
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage.002",
+      "attribute": "TANGENT",
+      "corners": 103536,
+      "old_vertices": 51768,
+      "new_vertices": 51768,
+      "changed_components": 4,
+      "changed_corners": 4,
+      "changed_unique_vertex_pairs": 1,
+      "max_abs": 0.00010001659393310547,
+      "max_ulp": 3356,
+      "ulp_histogram": {
+        "3356": 4
+      },
+      "max_vector_delta": 0.00010001659393310547,
+      "max_tangent_angle_degrees": 0.005263362128041128,
+      "handedness_changes": 0,
+      "examples": [
+        {
+          "corner": 43441,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 43443,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 95210,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 95211,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        }
+      ],
+      "changes": [
+        {
+          "corner": 43441,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 43443,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 95210,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        },
+        {
+          "corner": 95211,
+          "old_vertex": 43442,
+          "new_vertex": 43442,
+          "component": 0,
+          "old": 0.3953999876976013,
+          "new": 0.3955000042915344,
+          "abs": 0.00010001659393310547,
+          "ulp": 3356
+        }
+      ],
+      "index_order_changes": 0,
+      "old_sha256": "4cb410a4a609e209ad83b4aef4b90136ac7c073a9ba3fe0de0a31b04f70c7de7",
+      "new_sha256": "8e07e3b08fa4d9545c4f16405382bcbde6b9af1db99d14a11d8a2b3edbec0425"
+    },
+    {
+      "file": "dawn-garden.glb",
+      "mesh": "09 | Sunlit foliage",
+      "material": "09 | Sunlit foliage.002",
+      "attribute": "TANGENT",
+      "corners": 34488,
+      "old_vertices": 18000,
+      "new_vertices": 18000,
+      "changed_components": 3,
+      "changed_corners": 3,
+      "changed_unique_vertex_pairs": 1,
+      "max_abs": 0.00010001659393310547,
+      "max_ulp": 1678,
+      "ulp_histogram": {
+        "1678": 3
+      },
+      "max_vector_delta": 0.00010001659393310547,
+      "max_tangent_angle_degrees": 0.004307942800356694,
+      "handedness_changes": 0,
+      "examples": [
+        {
+          "corner": 20610,
+          "old_vertex": 12851,
+          "new_vertex": 12851,
+          "component": 0,
+          "old": 0.6593999862670898,
+          "new": 0.659500002861023,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 33676,
+          "old_vertex": 12851,
+          "new_vertex": 12851,
+          "component": 0,
+          "old": 0.6593999862670898,
+          "new": 0.659500002861023,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 33678,
+          "old_vertex": 12851,
+          "new_vertex": 12851,
+          "component": 0,
+          "old": 0.6593999862670898,
+          "new": 0.659500002861023,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        }
+      ],
+      "changes": [
+        {
+          "corner": 20610,
+          "old_vertex": 12851,
+          "new_vertex": 12851,
+          "component": 0,
+          "old": 0.6593999862670898,
+          "new": 0.659500002861023,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 33676,
+          "old_vertex": 12851,
+          "new_vertex": 12851,
+          "component": 0,
+          "old": 0.6593999862670898,
+          "new": 0.659500002861023,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 33678,
+          "old_vertex": 12851,
+          "new_vertex": 12851,
+          "component": 0,
+          "old": 0.6593999862670898,
+          "new": 0.659500002861023,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        }
+      ],
+      "index_order_changes": 0,
+      "old_sha256": "b4a1d3d81337a083564afbbbfac3213dddd748200abae3cceac03bf04daa074b",
+      "new_sha256": "179e5776b6a394cdc84b8b44550cfbdfc2b5ddee720ef28643ec05bed92bab92"
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "mesh": "08 | Deep foliage",
+      "material": "08 | Deep foliage.004",
+      "attribute": "TANGENT",
+      "corners": 71160,
+      "old_vertices": 35580,
+      "new_vertices": 35580,
+      "changed_components": 4,
+      "changed_corners": 4,
+      "changed_unique_vertex_pairs": 1,
+      "max_abs": 0.00010001659393310547,
+      "max_ulp": 1678,
+      "ulp_histogram": {
+        "1678": 4
+      },
+      "max_vector_delta": 0.00010001659393310547,
+      "max_tangent_angle_degrees": 0.0014057498027807023,
+      "handedness_changes": 0,
+      "examples": [
+        {
+          "corner": 26809,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 26811,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 62390,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 62391,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        }
+      ],
+      "changes": [
+        {
+          "corner": 26809,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 26811,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 62390,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        },
+        {
+          "corner": 62391,
+          "old_vertex": 26811,
+          "new_vertex": 26811,
+          "component": 2,
+          "old": 0.9695000052452087,
+          "new": 0.9693999886512756,
+          "abs": 0.00010001659393310547,
+          "ulp": 1678
+        }
+      ],
+      "index_order_changes": 0,
+      "old_sha256": "2a3160bd91162da19692d83a565386e2d0d6b7c5aa423699db6e3d966a6dcf11",
+      "new_sha256": "ff454a801cfe1c0348e633a1b6bd8704edf341d3ed094e429627278b60080305"
+    }
+  ],
+  "all_non_attribute_contracts_exact": true,
+  "baseline_sha256": "697164c2f6ca62083b2be70e79948aecbdc155241f53b3b387a4c6d7770d1f92"
+}

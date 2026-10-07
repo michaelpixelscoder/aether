@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "checked_at": "2026-10-03T13:20:19.699Z",
+  "manifest_sha256": "2de403a49b335adfad594f95b08a9549e98b35c300f9414ac77d5a930da40230",
+  "outputs": [
+    {
+      "file": "sky-diffuse.ktx2",
+      "bytes": 49432,
+      "sha256": "64512ed5fbf4b883002996dc453c576db7a6125a7aef40aeee2fb3ea7117424c",
+      "levels": [
+        {
+          "level": 0,
+          "size": 32,
+          "offset": 280,
+          "bytes": 49152
+        }
+      ],
+      "gpu_bytes": 49152,
+      "radiance_max": 0.8037109375
+    },
+    {
+      "file": "sky-specular.ktx2",
+      "bytes": 4194760,
+      "sha256": "a40f18e5074632ac2e4d75f399525d72565523f14e6dec8f94a51718df4de2f0",
+      "levels": [
+        {
+          "level": 0,
+          "size": 256,
+          "offset": 1049032,
+          "bytes": 3145728
+        },
+        {
+          "level": 1,
+          "size": 128,
+          "offset": 262600,
+          "bytes": 786432
+        },
+        {
+          "level": 2,
+          "size": 64,
+          "offset": 65992,
+          "bytes": 196608
+        },
+        {
+          "level": 3,
+          "size": 32,
+          "offset": 16840,
+          "bytes": 49152
+        },
+        {
+          "level": 4,
+          "size": 16,
+          "offset": 4552,
+          "bytes": 12288
+        },
+        {
+          "level": 5,
+          "size": 8,
+          "offset": 1480,
+          "bytes": 3072
+        },
+        {
+          "level": 6,
+          "size": 4,
+          "offset": 712,
+          "bytes": 768
+        },
+        {
+          "level": 7,
+          "size": 2,
+          "offset": 520,
+          "bytes": 192
+        },
+        {
+          "level": 8,
+          "size": 1,
+          "offset": 472,
+          "bytes": 48
+        }
+      ],
+      "gpu_bytes": 4194288,
+      "radiance_max": 6.609375
+    }
+  ],
+  "negative_cases": 0
+}

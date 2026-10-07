@@ -1,0 +1,50 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+import {normalizeTangentRounding,combineRoundingEvidence,familyNodes,foliageFamily} from '../verify-foliage-materials.mjs';
+const dir=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(dir,'../../..');
+const read=f=>JSON.parse(fs.readFileSync(f));
+const old=read(path.join(dir,'../foliage-r44-tangent-rounding.json')),extension=read(path.join(dir,'../foliage-r45-tangent-rounding.json'));
+const cases=combineRoundingEvidence(old,extension),results=[];
+const next=x=>{const b=Buffer.alloc(4);b.writeFloatLE(x);b.writeUInt32LE(b.readUInt32LE()+(x>0?1:-1));return b.readFloatLE();};
+for(const e of cases){
+  const raw=fs.readFileSync(path.join(root,'assets/world',e.file)),length=raw.readUInt32LE(12),doc=JSON.parse(raw.subarray(20,20+length)),bin=raw.subarray(28+length);
+  const p=doc.meshes.find(m=>m.name===e.mesh).primitives.find(p=>doc.materials[p.material].name===e.material),material=doc.materials[p.material];
+  const data=index=>{
+    const a=doc.accessors[index],v=doc.bufferViews[a.bufferView],n=a.type==='SCALAR'?1:4,b=a.componentType===5123?2:4;
+    return Array.from({length:a.count},(_,i)=>Array.from({length:n},(_,k)=>{
+      const at=(v.byteOffset??0)+(a.byteOffset??0)+i*(v.byteStride??n*b)+k*b;
+      return a.componentType===5126?bin.readFloatLE(at):b===2?bin.readUInt16LE(at):bin.readUInt32LE(at);
+    }));
+  };
+  const values=data(p.attributes.TANGENT),indices=data(p.indices).flat();
+  assert(indices.length>=e.corners);
+  if(indices.length!==e.corners)assert(doc.asset.extras?.aether_terraces_r56,'Only the independently audited R56 append extends historical corners');
+  const ordered=indices.slice(0,e.corners).map(i=>values[i].slice()),historical=ordered.map(v=>v.slice());
+  normalizeTangentRounding(ordered,e,material);
+  for(const p of e.points)historical[p.corner][p.component]=p.historical;
+  assert.equal(normalizeTangentRounding(historical,e,material).changed_components,0);
+  const observed=historical.map(v=>v.slice());for(const p of e.points)observed[p.corner][p.component]=p.observed;
+  assert.equal(normalizeTangentRounding(observed,e,material).changed_components,e.points.length);
+  const reject=(name,mutate,mat=material)=>{const sample=historical.map(v=>v.slice());mutate(sample);assert.throws(()=>normalizeTangentRounding(sample,e,mat));results.push({file:e.file,mesh:e.mesh,test:name,passed:true});};
+  const p0=e.points[0];
+  reject('unlisted single ULP',a=>{a[0][0]=next(a[0][0]);});
+  reject('unmeasured value inside nominal epsilon',a=>{a[p0.corner][p0.component]=next(p0.historical);});
+  reject('two quantization bins',a=>{a[p0.corner][p0.component]=Math.fround(p0.historical+.0002);});
+  reject('handedness sign',a=>{a[p0.corner][3]*=-1;});
+  reject('normal mapped surface',()=>{},{...material,normalTexture:{index:0}});
+  reject('non-foliage wood',()=>{},{...material,name:'06 | Cedar and roots'});
+  reject('anisotropic surface',()=>{},{...material,extensions:{KHR_materials_anisotropy:{anisotropyStrength:1}}});
+}
+const duplicate=structuredClone(extension);duplicate.cases[0].points.push(old.cases.find(c=>c.file===duplicate.cases[0].file&&c.mesh===duplicate.cases[0].mesh).points[0]);
+assert.throws(()=>combineRoundingEvidence(old,duplicate));results.push({test:'extension cannot replace old measured coordinates',passed:true});
+const changed=structuredClone(extension);changed.historical_evidence_sha256='0'.repeat(64);assert.throws(()=>combineRoundingEvidence(old,changed));results.push({test:'extension must bind exact historical evidence',passed:true});
+assert(['06 | Cedar and roots','08 | Deep foliage','09 | Sunlit foliage'].every(foliageFamily));
+assert(['01 | Rock','07 | Enamel','11 | Aether mineral'].every(n=>!foliageFamily(n)));
+const baseline=read(path.join(dir,'../foliage-r44-baseline.json')).models['dawn-garden.glb'].candidate;
+const nodes=familyNodes(baseline),mutated=structuredClone(baseline);
+const woody=mutated.nodes.find(n=>n.name==='06 | Cedar and roots');woody.translation=[1,0,0];
+assert.notDeepEqual(familyNodes(mutated),nodes);results.push({test:'woody node displacement remains in scope',passed:true});
+fs.writeFileSync(path.join(dir,'negative-tests.json'),JSON.stringify({accepted_cases:4,historical_rounded_components:20,new_explicit_components:3,tests:results},null,2)+'\n');
+console.log(`Four authentic tangent families accepted, ${results.length} mutation/scope tests rejected, unchanged historical hashes recovered.`);

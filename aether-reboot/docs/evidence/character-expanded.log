@@ -1,0 +1,37 @@
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 9.89s
+     Running tests\scenarios.rs (target\debug\deps\scenarios-e5c4cea6a0253390.exe)
+
+running 15 tests
+test sphere_ccd_stops_at_a_thin_wall_at_100_meters_per_second ... ok
+test heavy_construction_cannot_hover_with_two_lifts ... ok
+test jumping_inherits_translation_of_the_support ... FAILED
+test moving_voxel_vessel_does_not_cross_a_thin_wall ... ok
+test controller_walks_up_small_steps ... ok
+test controller_stays_bounded_under_a_low_ceiling ... ok
+test player_walk_jump_and_landing_on_a_static_deck ... ok
+test child_voxel_collider_matches_domain_mass_and_surface ... ok
+test character_mass_does_not_capsize_a_floating_vessel ... ok
+test voxel_vessel_lands_on_another_voxel_vessel ... ok
+test construction_mass_increases_consumption ... ok
+test harpoon_swing_reaches_the_refuge_branch_and_releases_continuously ... ok
+test current_and_sail_reach_the_gardens_without_pose_teleportation ... ok
+test tether_is_bounded_for_ten_simulated_minutes ... ok
+test thirty_minutes_of_navigation_recovery_and_serialization_remain_finite ... ok
+
+failures:
+
+---- jumping_inherits_translation_of_the_support stdout ----
+
+thread 'jumping_inherits_translation_of_the_support' (63112) panicked at crates\aether_sim\tests\scenarios.rs:411:5:
+assertion failed: airborne.y > before.y + 0.5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    jumping_inherits_translation_of_the_support
+
+test result: FAILED. 14 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 27.23s
+
+error: test failed, to rerun pass `-p aether_sim --test scenarios`

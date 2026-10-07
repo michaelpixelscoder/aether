@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "scope": "Dawn and Dawn Watch current R54 canonical GLBs, copied byte-exact before landscape work. LOD/architecture/collision/landmark/route contracts frozen.",
+  "files": [
+    {
+      "file": "assets/world/dawn.glb",
+      "sha256": "dc7c806f70c77b711683abc6adfc9c9ce6e83f8642df86af061b98728ef68af8",
+      "bytes": 21818140
+    },
+    {
+      "file": "assets/world/dawn-watch.glb",
+      "sha256": "95b16cf5db02dbc788f385d1d9c9cc69557b23c37d691e1c91e13571b7ceee45",
+      "bytes": 16113900
+    },
+    {
+      "file": "assets/world/dawn-lod.glb",
+      "sha256": "727e814e40a920ad23b0d7280566a8b40b0419f5e13bd232331992db4e646dc9",
+      "bytes": 1218624
+    },
+    {
+      "file": "assets/world/dawn-watch-lod.glb",
+      "sha256": "448ea68f0496c1e4d69346f53c618b8b04a9f0e751ac9dfd91e3f5af9f6e8902",
+      "bytes": 1114056
+    },
+    {
+      "file": "assets/world/manifest.json",
+      "sha256": "fda1bdc94b7e025c00d4091f3a5f3e754913f12c8e067316e395f5615efe950f",
+      "bytes": 9424
+    },
+    {
+      "file": "assets/world/collisions.json",
+      "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+      "bytes": 1730929
+    },
+    {
+      "file": "assets/world/landmarks.json",
+      "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+      "bytes": 12910
+    },
+    {
+      "file": "tools/art/build_world.py",
+      "sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+      "bytes": 112654
+    },
+    {
+      "file": "tools/art/build_world_variants.py",
+      "sha256": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366",
+      "bytes": 26316
+    },
+    {
+      "file": "tools/art/build_facades_r54.py",
+      "sha256": "53eeb54c4faff248d44383841963546225cc60c4901e6967cde873258ba5922a",
+      "bytes": 3924
+    },
+    {
+      "file": "tools/art/facades_r54.py",
+      "sha256": "dea7054c0e601406b4ba3f796185a9db62ac7b1c315b793a39a5fb30bcabe2bb",
+      "bytes": 6659
+    },
+    {
+      "file": "tools/art/world-source/satellite-walk-routes.json",
+      "sha256": "8daea3e9267178cd6f8dd41769c162b4128251acc99a343ddf64510eb23e70e4",
+      "bytes": 2202
+    },
+    {
+      "file": "assets/world/textures/0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229.png",
+      "sha256": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229",
+      "bytes": 3033505
+    },
+    {
+      "file": "assets/world/textures/0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401.png",
+      "sha256": "0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401",
+      "bytes": 1534166
+    },
+    {
+      "file": "assets/world/textures/1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2.png",
+      "sha256": "1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2",
+      "bytes": 2907624
+    },
+    {
+      "file": "assets/world/textures/33a96572774aed638215f8120d51e8c826bf703d1132ac255e8990e56082de00.png",
+      "sha256": "33a96572774aed638215f8120d51e8c826bf703d1132ac255e8990e56082de00",
+      "bytes": 1306565
+    },
+    {
+      "file": "assets/world/textures/33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca.png",
+      "sha256": "33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca",
+      "bytes": 118783
+    },
+    {
+      "file": "assets/world/textures/4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb.png",
+      "sha256": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb",
+      "bytes": 1086094
+    },
+    {
+      "file": "assets/world/textures/7feae4aedd2f4f32a73a74f05251050816e57168e6c43417840dbcfe6b30cf40.png",
+      "sha256": "7feae4aedd2f4f32a73a74f05251050816e57168e6c43417840dbcfe6b30cf40",
+      "bytes": 1146542
+    },
+    {
+      "file": "assets/world/textures/828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914.png",
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914",
+      "bytes": 2455540
+    },
+    {
+      "file": "assets/world/textures/8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7.png",
+      "sha256": "8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7",
+      "bytes": 2205358
+    },
+    {
+      "file": "assets/world/textures/9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152.png",
+      "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152",
+      "bytes": 1754215
+    },
+    {
+      "file": "assets/world/textures/a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219.png",
+      "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219",
+      "bytes": 2103296
+    },
+    {
+      "file": "assets/world/textures/b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b.png",
+      "sha256": "b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b",
+      "bytes": 3338453
+    },
+    {
+      "file": "assets/world/textures/b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c.png",
+      "sha256": "b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c",
+      "bytes": 2945366
+    },
+    {
+      "file": "assets/world/textures/dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626.png",
+      "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626",
+      "bytes": 2452013
+    },
+    {
+      "file": "assets/world/textures/f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376.png",
+      "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376",
+      "bytes": 1499198
+    }
+  ]
+}

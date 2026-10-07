@@ -1,0 +1,19 @@
+{
+  "archives": [
+    {
+      "archive": "aether-isles-windows-0.1.0-27bffa9ee363.zip",
+      "bytes": 75716957,
+      "sha256": "e7d5a075e3bfc8a5fb08e563dcef630db0d375251b9d7b82765c908fedbbe810",
+      "verified_payload_files": 924,
+      "target": "windows"
+    },
+    {
+      "archive": "aether-isles-web-0.1.0-27bffa9ee363.zip",
+      "bytes": 157720749,
+      "sha256": "e3f0eaa1aeec7857e31d26b7ec545c7de2bd6896b08ee35e3f802e6630420e88",
+      "verified_payload_files": 929,
+      "target": "web"
+    }
+  ],
+  "id": "0.1.0-27bffa9ee363"
+}

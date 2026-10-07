@@ -1,0 +1,1009 @@
+{
+  "pipeline": {
+    "schema": 1,
+    "sources": [
+      {
+        "role": "canvas",
+        "path": "tools/art/build_art.py",
+        "sha256": "4f362af19f5e33a67012f1436d1df1fb888de6284ec67061f360eb7899ee4449"
+      },
+      {
+        "role": "spars",
+        "path": "tools/art/build_sail_rig.py",
+        "sha256": "da324c8c63592bc5ad9d2a33cc1243dd9a38b3516102903fb603ede62ec1c747"
+      },
+      {
+        "role": "primitive_helpers",
+        "path": "tools/art/build_ship.py",
+        "sha256": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd"
+      },
+      {
+        "role": "assembly",
+        "path": "tools/art/merge_sail_rig.mjs",
+        "sha256": "20f8260da17c62793f22cd9ac17ee84707b46489d0fc78e39b4b407b99624854"
+      },
+      {
+        "role": "provenance_validation",
+        "path": "tools/art/sail_provenance.mjs",
+        "sha256": "f61d42f494bdb4351d7012e384ec10f964758933ab0435f2ba55a46fc0efa76e"
+      }
+    ],
+    "input_sail_sha256": "db4e84bf5567684f5820112dedaf88e286594a0c8bba84894f59070f16bc6905",
+    "input_rig_sha256": "1e4da2ddd8289e733d6b07abdcad3a8989e7060be87ee4b3899f5f5fef1b3567",
+    "cloth_payload_sha256": "35e0817560f8d05d917d9f8920dbe713083833d2512d4fb22cb0275f7ec102a1",
+    "static_payload_sha256": "fbf95eb3cfffbcc40a11ddc2f71476951d8c8a278eb1bc733197718438b52389"
+  },
+  "result_sha256": "c41519410eb40f17b2c5087a2829bb3942e53ceb52eea22bf02d9a39f585c6f0",
+  "before": {
+    "sha256": "db4e84bf5567684f5820112dedaf88e286594a0c8bba84894f59070f16bc6905",
+    "bytes": 22407308,
+    "triangles": 71996,
+    "meshes": 9
+  },
+  "after": {
+    "bytes": 23004972,
+    "triangles": 78744,
+    "meshes": 9,
+    "materials": 7
+  },
+  "cloth_exact": true,
+  "cloth_before": [
+    {
+      "name": "Embroidered gold thread.001",
+      "nodes": [
+        {
+          "name": "Embroidered gold thread",
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "weights": [
+        1,
+        1,
+        1
+      ],
+      "target_names": [
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ],
+      "primitives": [
+        {
+          "material": {
+            "doubleSided": true,
+            "name": "Embroidered gold thread",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.6000000238418579,
+                0.3499999940395355,
+                0.07500000298023224,
+                1
+              ],
+              "metallicFactor": 0.18000000715255737,
+              "roughnessFactor": 0.7200000286102295
+            }
+          },
+          "mode": 4,
+          "indices": {
+            "component_type": 5123,
+            "type": "SCALAR",
+            "count": 23232,
+            "normalized": false,
+            "min": null,
+            "max": null,
+            "sha256": "92aecd4582bb444a5a10335d32682c2ac356392cd7bc0c30e5b0aba4bbfd5782"
+          },
+          "attributes": {
+            "NORMAL": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 16896,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "2ca8d7e48e3d43792f2232d57f095d14fbc0b414b4a68b60f99b3ab297309064"
+            },
+            "POSITION": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 16896,
+              "normalized": false,
+              "min": [
+                -0.6875,
+                -0.6048917770385742,
+                -0.270626425743103
+              ],
+              "max": [
+                0.6875,
+                0.6294572949409485,
+                -0.13075010478496552
+              ],
+              "sha256": "41be9f3a7976dc22726d3eeff225e0d16c4c5a47975d37f4d49d040e5f6bdac5"
+            },
+            "TEXCOORD_0": {
+              "component_type": 5126,
+              "type": "VEC2",
+              "count": 16896,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "1809be1f18d9a643961ede4890eadeacf76cb952d10abfe09fa2b180fd323736"
+            }
+          },
+          "targets": [
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 16896,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "c394cd8df24e40780d3e7c144f845bc494424775fc16e915ebaa4980f4c53ac0"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 16896,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0.1142469048500061
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.17997434735298157
+                ],
+                "sha256": "f408391183fe0fd9095f7de930898c6227269983bbc37d9ba1d2ef1f96a26866"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 16896,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "59c653fc7594bb7ce43c429ac7f6dc90aa696464894fee65feb4a715940ffbc9"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 16896,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.05796623229980469
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.05754461884498596
+                ],
+                "sha256": "439daef0b17ba821b518992008ad22ae41342a07b245a7862921a266cd071cea"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 16896,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "84783ba133c3403ef05ce9f5c38cc368d242d5f980f041375404e834c1092441"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 16896,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.040558651089668274
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.0649765282869339
+                ],
+                "sha256": "4dc40272033b63cbd0204bd08dbd4cfee587bd73b5cd87140ec61648b8451ce6"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Embroidered gold thread.002",
+      "nodes": [
+        {
+          "name": "Embroidered gold thread.001",
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "weights": [
+        1,
+        1,
+        1
+      ],
+      "target_names": [
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ],
+      "primitives": [
+        {
+          "material": {
+            "doubleSided": true,
+            "name": "Embroidered gold thread",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.6000000238418579,
+                0.3499999940395355,
+                0.07500000298023224,
+                1
+              ],
+              "metallicFactor": 0.18000000715255737,
+              "roughnessFactor": 0.7200000286102295
+            }
+          },
+          "mode": 4,
+          "indices": {
+            "component_type": 5123,
+            "type": "SCALAR",
+            "count": 144,
+            "normalized": false,
+            "min": null,
+            "max": null,
+            "sha256": "1be548ef447657922e67b1b49f5d2e4c19d7283e77b954767f2a401c3b604e77"
+          },
+          "attributes": {
+            "NORMAL": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 96,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "106b802c43303260590e386347a8ae400d1b7d97252c4ba3f02a7a439c308a62"
+            },
+            "POSITION": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 96,
+              "normalized": false,
+              "min": [
+                -1.2289999723434448,
+                -1.128999948501587,
+                -0.0279999990016222
+              ],
+              "max": [
+                1.2289999723434448,
+                1.128999948501587,
+                -0.009999999776482582
+              ],
+              "sha256": "9f5a86259df9979dc33051e0a29e932e0b37a8cb270df1dc0644669549080e2c"
+            },
+            "TEXCOORD_0": {
+              "component_type": 5126,
+              "type": "VEC2",
+              "count": 96,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "efc5736325f8105068108ff511f375336651294eeafd56db2045b7e489ceb1e3"
+            }
+          },
+          "targets": [
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 96,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "e2f6c7ef1dd2c45a767b954574c7ff424b5dea0cb0703e17bf004c4a8ea5934b"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 96,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0.0001945681869983673
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.00036123767495155334
+                ],
+                "sha256": "5fa3ebc4fa74a53aeaba3908c7e8d1586d9dd22e4fa182c4acc6ae33453df194"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 96,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "f79b2200c8dc4395986a11b148048d1c714466f4eacf2a683a4320b3c623a69a"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 96,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.00009256228804588318
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.00009256228804588318
+                ],
+                "sha256": "666f9ba91492291e29d9086dc00f3660f32b1eba97526c12c5d8fb0955dbd398"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 96,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "b233e2e713c5d2d179bbe18cd0949848b2e5ff57a9e808f7c6cda9455d75130f"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 96,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.00009646080434322357
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.00012359768152236938
+                ],
+                "sha256": "64a63492b1b2e60e08fe0591adf70eb724cc7ddba98aabf63d182fa0d9946b63"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indigo canvas",
+      "nodes": [
+        {
+          "name": "Indigo canvas",
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "weights": [
+        1,
+        1,
+        1
+      ],
+      "target_names": [
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ],
+      "primitives": [
+        {
+          "material": {
+            "doubleSided": true,
+            "name": "Indigo canvas",
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "index": 1
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.9200000166893005,
+              "baseColorFactor": [
+                0.3,
+                0.44,
+                0.72,
+                1
+              ]
+            }
+          },
+          "mode": 4,
+          "indices": {
+            "component_type": 5125,
+            "type": "SCALAR",
+            "count": 125136,
+            "normalized": false,
+            "min": null,
+            "max": null,
+            "sha256": "798b9d7a2b909e73db9b278b54bd463633e9326ec96b8a5a216bbf01165c0c30"
+          },
+          "attributes": {
+            "NORMAL": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 91008,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "035ee14d5643b0bc1a53d0f176797d46570ee14953309a2f55c6a46fe7e5d827"
+            },
+            "POSITION": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 91008,
+              "normalized": false,
+              "min": [
+                -1.25,
+                -1.203592300415039,
+                -0.270626425743103
+              ],
+              "max": [
+                1.25,
+                1.1499990224838257,
+                0.014458452351391315
+              ],
+              "sha256": "669e6fc8e5485f7ba2c2cbc398c49529c90e16f92a11a7ba3b33eb8eac9b7b8c"
+            },
+            "TEXCOORD_0": {
+              "component_type": 5126,
+              "type": "VEC2",
+              "count": 91008,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "2723f624f8c509f194486261c6cba907d523a10f92796e9fc3d967ccffcb15d2"
+            }
+          },
+          "targets": [
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 91008,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "d27661b6a019e8f838336e87355441c32612c8f798ee59fe0633fe7fcb01de63"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 91008,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.1777472347021103
+                ],
+                "sha256": "a497a05afb7c8c7cb67043548999cb8e9dea0e1c15ccf936e8f1d7b5d998dac7"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 91008,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "6730ee2d792fa5dde45ce441029b9ed5d03bb2804fbb43212ee680edf7776059"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 91008,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.05829015374183655
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.05825977027416229
+                ],
+                "sha256": "9c9f40e845af70d476d959c9ffe7398497300fcd489324a22ad754620cbd4a87"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 91008,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "23f35934bcfb689b2d8940c3fd02a364d3ce7a443a8e9b129c4212a25ab56b1c"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 91008,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.0407785028219223
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.06409983336925507
+                ],
+                "sha256": "b8cd24906a2a49b69d719433b20cb0cbd4287af3c69f70f73b85f67d6f0ce214"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indigo canvas variation",
+      "nodes": [
+        {
+          "name": "Indigo canvas variation",
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "weights": [
+        1,
+        1,
+        1
+      ],
+      "target_names": [
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ],
+      "primitives": [
+        {
+          "material": {
+            "doubleSided": true,
+            "name": "Indigo canvas variation",
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "index": 2
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8999999761581421,
+              "baseColorFactor": [
+                0.33,
+                0.47,
+                0.75,
+                1
+              ]
+            }
+          },
+          "mode": 4,
+          "indices": {
+            "component_type": 5123,
+            "type": "SCALAR",
+            "count": 62832,
+            "normalized": false,
+            "min": null,
+            "max": null,
+            "sha256": "826ae29b296f451913a3bd8d367fcd151d4c437bbb559a9e645f047553c78b67"
+          },
+          "attributes": {
+            "NORMAL": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 45696,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "4898aa2ff103742330efcff015ed01fc319b7c33df6e4224c6832f143aff6261"
+            },
+            "POSITION": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 45696,
+              "normalized": false,
+              "min": [
+                -1.25,
+                -1.2032618522644043,
+                -0.2565818727016449
+              ],
+              "max": [
+                1.25,
+                1.1499996185302734,
+                0.015137995593249798
+              ],
+              "sha256": "ac20af4f2046dbdeafa6896c6410f8eee50ac3a7fbc84b5501b1081859f0639a"
+            },
+            "TEXCOORD_0": {
+              "component_type": 5126,
+              "type": "VEC2",
+              "count": 45696,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "cc38f9124d39d25f066fe8a6cc17007f79b3b739ddfab82af0339dbaa9205d0c"
+            }
+          },
+          "targets": [
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 45696,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "db86c705df7258d4e6ea8c1292fc677012d5e1b5b762d8bfb2dfbfa924e5f84f"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 45696,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.1777472347021103
+                ],
+                "sha256": "2765fb0948a45033ecef4e242ec97dc63df4e26c9d2b559d69e3fa19fefca888"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 45696,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "4fbb9786fa3c1aad45e01dc9bd7dd5406f0cf66baac75283a866acf43db1a78b"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 45696,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.05827660858631134
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.0582369863986969
+                ],
+                "sha256": "de227f216e03cbc98797329693de3c295bc04e49be3d35fced42a303e06dbf6f"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 45696,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "1feb078ed82e7be55ea93209dee183706fb541fdb91670785d3b7366920269ac"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 45696,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  -0.0407799631357193
+                ],
+                "max": [
+                  0,
+                  0,
+                  0.06299276649951935
+                ],
+                "sha256": "737f9982557d4acc37ae094c94b910fb375eb5f1d3c2aac0aa362f911fff1aae"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indigo canvas.001",
+      "nodes": [
+        {
+          "name": "Indigo canvas.001",
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "weights": [
+        1,
+        1,
+        1
+      ],
+      "target_names": [
+        "WindPressure",
+        "RippleSin",
+        "RippleCos"
+      ],
+      "primitives": [
+        {
+          "material": {
+            "doubleSided": true,
+            "name": "Indigo canvas",
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "index": 1
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.9200000166893005,
+              "baseColorFactor": [
+                0.3,
+                0.44,
+                0.72,
+                1
+              ]
+            }
+          },
+          "mode": 4,
+          "indices": {
+            "component_type": 5123,
+            "type": "SCALAR",
+            "count": 924,
+            "normalized": false,
+            "min": null,
+            "max": null,
+            "sha256": "aed46d8f9cb267d9a5a7a1a9793207227195905435dad54df4abee0e49f6e9dd"
+          },
+          "attributes": {
+            "NORMAL": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 672,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "6b03fc2c41844fe86cd125f740c273e8f562f687ea944ac852f8c174cafb4624"
+            },
+            "POSITION": {
+              "component_type": 5126,
+              "type": "VEC3",
+              "count": 672,
+              "normalized": false,
+              "min": [
+                0.06449999660253525,
+                1.2970000505447388,
+                0.10123227536678314
+              ],
+              "max": [
+                0.6955000162124634,
+                1.5950000286102295,
+                0.17727892100811005
+              ],
+              "sha256": "6b6bfbbefcf3fb1f87daf7d4afeac630abf00b000569eb27784be40a59d79d54"
+            },
+            "TEXCOORD_0": {
+              "component_type": 5126,
+              "type": "VEC2",
+              "count": 672,
+              "normalized": false,
+              "min": null,
+              "max": null,
+              "sha256": "6038d0ff36b33c633b5e2514cb1b2a6e808b29e74ed7017c825099bb045e3218"
+            }
+          },
+          "targets": [
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 672,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "309ed1f1d4d1f7e4c2cdc2770965579738ea163c97c033194998328c9d19bc6c"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 672,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0
+                ],
+                "max": [
+                  0,
+                  0,
+                  0
+                ],
+                "sha256": "f5f818ec03414bf6b0a9a8e7a108b58f5c14bd001433ee466f50f423da6d05a5"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 672,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "309ed1f1d4d1f7e4c2cdc2770965579738ea163c97c033194998328c9d19bc6c"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 672,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0
+                ],
+                "max": [
+                  0,
+                  0,
+                  0
+                ],
+                "sha256": "f5f818ec03414bf6b0a9a8e7a108b58f5c14bd001433ee466f50f423da6d05a5"
+              }
+            },
+            {
+              "NORMAL": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 672,
+                "normalized": false,
+                "min": null,
+                "max": null,
+                "sha256": "309ed1f1d4d1f7e4c2cdc2770965579738ea163c97c033194998328c9d19bc6c"
+              },
+              "POSITION": {
+                "component_type": 5126,
+                "type": "VEC3",
+                "count": 672,
+                "normalized": false,
+                "min": [
+                  0,
+                  0,
+                  0
+                ],
+                "max": [
+                  0,
+                  0,
+                  0
+                ],
+                "sha256": "f5f818ec03414bf6b0a9a8e7a108b58f5c14bd001433ee466f50f423da6d05a5"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "delta_triangles": 6748,
+  "normals": {
+    "min_length": 0.9999999239995081,
+    "max_length": 1.0000001369454365,
+    "invalid": 0,
+    "inward_triangles": 0
+  },
+  "new_degenerate_triangles": 0,
+  "new_static_bounds_xyz": [
+    [
+      -1.369065523147583,
+      1.369065523147583
+    ],
+    [
+      -1.4900000095367432,
+      1.7599999904632568
+    ],
+    [
+      -0.10300000011920929,
+      0.20499999821186066
+    ]
+  ],
+  "existing_envelope_contained": true
+}

@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "islands": [
+    {
+      "kind": "dawn",
+      "sha256": "77c38267abdbce3208f891b1e472a6bc522eccdee7fcf5e62402a7721449acc4",
+      "triangles": 181520,
+      "rock_triangles": 22100,
+      "non_rock_batches_byte_exact": 11,
+      "physical_root_triangles_exact": 252,
+      "bounds_exact": true,
+      "max_normal_length_error": 1.3773697538077556e-7,
+      "max_tangent_length_error": 0.00008414063282713435,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "min_normal_dot": 0.6945203728174703,
+      "closed_substrate_components": 1,
+      "original_terrain_components": 1,
+      "closed_geological_joint_solids": true,
+      "actual_mesh_topology": {
+        "closed_substrate_solids": 281,
+        "closed_fracture_solids": 1252,
+        "actual_mesh_faces_verified": true,
+        "original_physical_cells": 249,
+        "actual_connected_components": 1,
+        "original_terrain_components": 1
+      },
+      "material12_r60_independent_contract": null,
+      "terrain_soil_collision_lod_landmarks_routes_unchanged": true
+    },
+    {
+      "kind": "dawn-watch",
+      "sha256": "be0f58ae2c3a8d91b18b0b994b69c97f83ecc042cb0578b07f1faf39b92092f6",
+      "triangles": 124521,
+      "rock_triangles": 24586,
+      "non_rock_batches_byte_exact": 11,
+      "physical_root_triangles_exact": 180,
+      "bounds_exact": true,
+      "max_normal_length_error": 1.4414317539568344e-7,
+      "max_tangent_length_error": 0.00007695204550028922,
+      "max_metric_uv_height_error": 2.384185791015625e-7,
+      "min_normal_dot": 0.6510627084095039,
+      "closed_substrate_components": 2,
+      "original_terrain_components": 2,
+      "closed_geological_joint_solids": true,
+      "actual_mesh_topology": {
+        "closed_substrate_solids": 386,
+        "closed_fracture_solids": 1351,
+        "actual_mesh_faces_verified": true,
+        "original_physical_cells": 318,
+        "actual_connected_components": 2,
+        "original_terrain_components": 2
+      },
+      "material12_r60_independent_contract": null,
+      "terrain_soil_collision_lod_landmarks_routes_unchanged": true
+    }
+  ],
+  "lod": [
+    {
+      "file": "dawn-lod.glb",
+      "material12_r60_validated": false,
+      "file_byte_exact": true
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "material12_r60_validated": false,
+      "file_byte_exact": true
+    }
+  ],
+  "corruptions": [
+    {
+      "kind": "dawn",
+      "case": "header",
+      "rejected": true,
+      "reason": "GLB size\n+ actual - expected\n\n+ 19450660\n- 19450664\n         ^\n"
+    },
+    {
+      "kind": "dawn",
+      "case": "architecture-position",
+      "rejected": true,
+      "reason": "non-rock 03 | Dressed masonry POSITION"
+    },
+    {
+      "kind": "dawn",
+      "case": "soil-position",
+      "rejected": true,
+      "reason": "non-rock 12 | Surface biome POSITION"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-normal-nan",
+      "rejected": true,
+      "reason": "finite normal"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-tangent-zero",
+      "rejected": true,
+      "reason": "unit tangents"
+    },
+    {
+      "kind": "dawn",
+      "case": "rock-bounds",
+      "rejected": true,
+      "reason": "accepted island bounds\n+ actual - expected\n\n  [\n    [\n+     -10000,\n-     -72.27836608886719,\n      80.40911865234375\n    ],\n    [\n      -88.74075317382812,\n      88.98600006103516\n"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "header",
+      "rejected": true,
+      "reason": "GLB size\n+ actual - expected\n\n+ 12942976\n- 12942980\n        ^\n"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "architecture-position",
+      "rejected": true,
+      "reason": "non-rock 03 | Dressed masonry POSITION"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "soil-position",
+      "rejected": true,
+      "reason": "non-rock 12 | Surface biome POSITION"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-normal-nan",
+      "rejected": true,
+      "reason": "finite normal"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-tangent-zero",
+      "rejected": true,
+      "reason": "unit tangents"
+    },
+    {
+      "kind": "dawn-watch",
+      "case": "rock-bounds",
+      "rejected": true,
+      "reason": "accepted island bounds\n+ actual - expected\n\n  [\n    [\n+     -10000,\n-     -73.1258316040039,\n      61.38911819458008\n    ],\n    [\n      -113,\n      95.68000030517578\n"
+    }
+  ]
+}

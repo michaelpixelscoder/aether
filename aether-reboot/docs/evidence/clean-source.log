@@ -1,0 +1,5 @@
+    Checking aether_core v0.2.0 (C:\Users\Damien\AppData\Local\Temp\Aether source clean fc78ff283a4845948c9037656ddeed28\crates\aether_core)
+    Checking aether_sim v0.2.0 (C:\Users\Damien\AppData\Local\Temp\Aether source clean fc78ff283a4845948c9037656ddeed28\crates\aether_sim)
+    Checking aether_view v0.2.0 (C:\Users\Damien\AppData\Local\Temp\Aether source clean fc78ff283a4845948c9037656ddeed28\crates\aether_view)
+    Checking aether_game v0.2.0 (C:\Users\Damien\AppData\Local\Temp\Aether source clean fc78ff283a4845948c9037656ddeed28\crates\aether_game)
+    Finished `dev` profile [optimized] target(s) in 8.15s

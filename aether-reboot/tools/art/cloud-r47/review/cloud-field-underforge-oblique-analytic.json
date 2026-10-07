@@ -1,0 +1,26 @@
+{
+  "label": "underforge-oblique-analytic",
+  "bank": "underforge",
+  "mode": "analytic",
+  "seconds": 8.106390800003282,
+  "dimensions": [
+    240,
+    150
+  ],
+  "origin_local": [
+    3250,
+    2200,
+    3600
+  ],
+  "target_local": [
+    0,
+    -90,
+    0
+  ],
+  "orthographic_span": 6200,
+  "steps": 128,
+  "lighting_refresh_steps": 4,
+  "live_noise": "held at R=.70,G/B=.65,A=.50 for both fields",
+  "alpha_mean": 0.3098331689834595,
+  "note": "CPU field inspection, not a runtime screenshot"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "outside_directory": "C:\\Users\\Damien\\AppData\\Local\\Temp\\aether-cliff-r59-rebuild-20261003",
+  "build_author_sha256": "c8e59e41d1b29173af039f652b761c8a95ed8baa0e867ac9dde38d641f9ca184",
+  "assembly_sha256": "b0fb44aa959a1a4548d7fabe2e92db0f4254cecc68d2b9d78b499ae1f2bffc4c",
+  "independent_gate_sha256": "a6b39017f48f6419a96e23e6cc3d23c87f20ab3ab16803833014e52203295198",
+  "islands": [
+    {
+      "kind": "dawn",
+      "bytes": 19450664,
+      "sha256": "77c38267abdbce3208f891b1e472a6bc522eccdee7fcf5e62402a7721449acc4",
+      "outside_rebuild_byte_exact": true,
+      "historical_cpu_c_glb_sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c",
+      "historical_cpu_c_all_geometry_streams_materials_nodes_images_byte_exact_to_current": true,
+      "only_r59_source_assembly_topology_provenance_metadata_changed": true
+    },
+    {
+      "kind": "dawn-watch",
+      "bytes": 12942980,
+      "sha256": "be0f58ae2c3a8d91b18b0b994b69c97f83ecc042cb0578b07f1faf39b92092f6",
+      "outside_rebuild_byte_exact": true,
+      "historical_cpu_c_glb_sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353",
+      "historical_cpu_c_all_geometry_streams_materials_nodes_images_byte_exact_to_current": true,
+      "only_r59_source_assembly_topology_provenance_metadata_changed": true
+    }
+  ]
+}

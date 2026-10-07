@@ -1,0 +1,224 @@
+   Compiling aether_core v0.2.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling aether_view v0.2.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+   Compiling aether_game v0.2.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+    Finished `test` profile [optimized] target(s) in 38.00s
+     Running unittests src\lib.rs (target\debug\deps\aether_core-1db55d20cb347a57.exe)
+
+running 17 tests
+test expedition::tests::contracts_consume_cargo_and_are_once_per_port ... ok
+test weather::tests::cavern_light_covers_the_hall_and_opens_above_skylights ... ok
+test expedition::tests::discovery_and_harvest_rewards_cannot_repeat_after_save_roundtrip ... ok
+test expedition::tests::refining_and_payload_conserve_resources ... ok
+test weather::tests::regional_weather_is_continuous_bounded_and_distinct ... ok
+test expedition::tests::trading_is_bounded_and_refusal_changes_nothing ... ok
+test world::tests::all_regions_have_ports_at_several_altitudes_with_stable_unique_ids ... ok
+test expedition::tests::visible_resource_type_and_persistent_slot_match_the_harvest ... ok
+test expedition::tests::refit_reuses_free_ids_when_imported_parts_have_sparse_high_ids ... ok
+test expedition::tests::legacy_ship_refit_is_transactional_and_makes_actual_engines ... ok
+test world_geometry::tests::every_export_has_finite_solid_geometry_and_clear_dock_approach ... ok
+test world::tests::all_portal_arrival_volumes_are_free_of_solid_terrain ... ok
+test fauna::tests::patrols_have_floor_or_clear_flight_volume_and_no_solid_overlap ... ok
+test world::tests::underground_current_endpoints_remain_near_their_ports ... ok
+test world::tests::routes_boost_travel_but_leave_port_approaches_calm ... ok
+test world::tests::current_centerlines_leave_room_for_a_vessel ... ok
+test traffic::tests::moving_airships_never_teleport_or_cross_a_landmark ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests\domain.rs (target\debug\deps\domain-5445df33cc66544e.exe)
+
+running 37 tests
+test dda_selects_surface_and_rejects_nan ... ok
+test dda_inside_and_negative_coordinates ... ok
+test bounded_cell_input_rejects_integer_extremes ... ok
+test boarding_respects_moved_helm_and_free_headroom ... ok
+test blueprint_does_not_include_fuel ... ok
+test duplicate_and_extent_rejected ... ok
+test field_is_bounded_continuous_and_inert_outside ... ok
+test glass_does_not_hide_opaque ... ok
+test mesh_stress_does_not_relax_public_cell_limit ... ok
+test mass_of_single_cube_matches_formula ... ok
+test cube_greedy_has_six_quads ... ok
+test negative_chunks_round_trip ... ok
+test empty_chunk_is_freed ... ok
+test expedition_roundtrip_preserves_choices_resources_and_unique_rewards ... ok
+test ray_picking_uses_local_coordinates_on_a_rotated_body ... ok
+test part_footprint_conflict_is_atomic ... ok
+test real_chunk_boundary_hides_interior_faces ... ok
+test sail_force_follows_normal_and_is_bounded ... ok
+test new_edit_discards_redo ... ok
+test tether_save_accepts_a_translated_origin_but_rejects_an_arbitrary_point ... ok
+test exact_connectivity_finds_distant_loop ... ok
+test invalid_generated_inputs_never_mutate_the_body ... ok
+test session_rejects_unknown_version_and_duplicate_ids ... ok
+test gusts_are_seeded_smooth_bounded_and_visible_over_a_few_seconds ... ok
+test session_rejects_corruption_and_impossible_fuel ... ok
+test expedition_hull_keeps_a_walkable_boarding_space_and_valid_buoyancy_budget ... ok
+test terrain_segment_test_detects_thin_obstacles_and_parallel_rays ... ok
+test session_roundtrip_preserves_pose_and_origin ... ok
+test starter_has_every_function_and_valid_mass ... ok
+test saves_preserve_altitude_setpoint_and_accept_early_v1 ... ok
+test rejected_transaction_changes_nothing ... ok
+test winding_points_out ... ok
+test version_one_session_migrates_without_losing_the_ship_or_pose ... ok
+test merged_terrain_preserves_volume_and_segment_hits ... ok
+test undo_redo_100_operations ... ok
+test entire_allowed_fleet_fits_the_session_byte_budget ... ok
+test cooperative_mesher_matches_full_mesher_for_bounded_generated_shapes ... ok
+
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.61s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_game-f3d35290708a045e.exe)
+
+running 6 tests
+test controls::tests::azerty_shortcut_follows_printed_letter ... ok
+test bindings::tests::remap_is_persistent_logical_and_conflicts_are_rejected ... ok
+test tutorial::tests::tutorial_observes_real_changes_and_can_replay ... ok
+test editor::tests::imported_high_part_id_still_allows_construction ... ok
+test editor::tests::imported_high_body_ids_allow_a_full_valid_fleet ... ok
+test camera::tests::orbit_stops_before_a_wall_and_recovers_without_moving_the_player ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src\main.rs (target\debug\deps\aether_game-3134d887ce68cf03.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\storage.rs (target\debug\deps\storage-3a84616d8562db57.exe)
+
+running 6 tests
+test closing_after_snapshot_failure_does_not_reuse_an_old_success ... ok
+test isolated_directory_needs_no_checkout ... ok
+test invalid_save_cannot_replace_existing_file ... ok
+test atomic_save_and_backup_recovery ... ok
+test corrupt_primary_does_not_overwrite_valid_backup ... ok
+test interrupted_save_at_each_durable_write_boundary_keeps_old_or_new_session ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_sim-b52323bab6bda625.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\envelope.rs (target\debug\deps\envelope-9425cc436e9d2fbd.exe)
+
+running 8 tests
+test repeated_walking_does_not_leave_sensor_entities ... ok
+test moving_sail_sideways_changes_measured_torque_and_course ... ok
+test sleeping_contact_wakes_and_teleported_body_rebuilds_contacts ... ok
+test voxel_internal_edges_do_not_stop_a_walking_character ... ok
+test loaded_vessel_with_sail_current_tether_and_low_reserve_remains_finite ... ok
+test interpolated_landmark_lags_by_at_most_one_tick_and_teleport_resets_it ... ok
+test slope_support_is_stable_at_30_60_120_render_fps ... ok
+test tether_mass_speed_length_fps_and_pause_matrix_is_bounded ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.71s
+
+     Running tests\navigation.rs (target\debug\deps\navigation-6d75fb47a998819f.exe)
+
+running 8 tests
+test high_speed_is_not_clamped_to_motor_cruise ... ok
+test powered_pilot_can_leave_a_current_towards_the_chosen_heading ... ok
+test extra_cargo_is_real_mass_and_uses_more_lift_energy ... ok
+test an_ascending_current_carries_altitude_hold_and_can_be_left_manually ... ok
+test reverse_propulsion_clears_a_manoeuvre_without_becoming_a_fast_travel_mode ... ok
+test propulsion_does_not_depend_on_render_frequency ... ok
+test favourable_wind_adds_speed_and_release_preserves_inertia ... ok
+test motor_can_cruise_without_wind_and_against_a_headwind ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.44s
+
+     Running tests\open_world.rs (target\debug\deps\open_world-1e3308817d404951.exe)
+
+running 5 tests
+test residents_follow_the_saved_clock_and_pause_with_the_simulation ... ok
+test courier_traffic_resumes_its_route_and_stops_during_pause ... ok
+test streaming_unloads_distant_collision_and_keeps_stable_port_ids ... ok
+test player_can_climb_the_capital_stairs_with_walking_input ... ok
+test every_capital_dock_has_real_support_and_portal_collision_is_immediate ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.21s
+
+     Running tests\physics.rs (target\debug\deps\physics-311527933a68ca9e.exe)
+
+running 8 tests
+test dock_recharges_but_does_not_move ... ok
+test tank_empty_removes_sustentation ... ok
+test voxel_collider_supports_a_sphere ... ok
+test distance_joint_is_unilateral_and_bounded ... ok
+test gravity_and_static_contacts_are_finite ... ok
+test lift_consumes_energy_and_stays_bounded ... ok
+test fixed_ticks_ignore_render_rate ... ok
+test controller_follows_translating_rotating_deck ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.23s
+
+     Running tests\scenarios.rs (target\debug\deps\scenarios-7ca2f5ac4e540d86.exe)
+
+running 16 tests
+test restored_airborne_character_keeps_horizontal_momentum ... ok
+test sphere_ccd_stops_at_a_thin_wall_at_100_meters_per_second ... ok
+test heavy_construction_cannot_hover_with_two_lifts ... ok
+test controller_walks_up_small_steps ... ok
+test moving_voxel_vessel_does_not_cross_a_thin_wall ... ok
+test player_walk_jump_and_landing_on_a_static_deck ... ok
+test controller_stays_bounded_under_a_low_ceiling ... ok
+test child_voxel_collider_matches_domain_mass_and_surface ... ok
+test jumping_inherits_translation_of_the_support ... ok
+test character_mass_does_not_capsize_a_floating_vessel ... ok
+test voxel_vessel_lands_on_another_voxel_vessel ... ok
+test construction_mass_increases_consumption ... ok
+test harpoon_swing_reaches_the_refuge_branch_and_releases_continuously ... ok
+test current_and_sail_reach_the_gardens_without_pose_teleportation ... ok
+test tether_is_bounded_for_ten_simulated_minutes ... ok
+test thirty_minutes_of_navigation_recovery_and_serialization_remain_finite ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 34.14s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_view-2b6fa5d412b21b20.exe)
+
+running 13 tests
+test clouds::tests::density_bands_are_periodic_and_vary_in_all_three_dimensions ... ok
+test mipmaps::tests::mipmap_averages_light_in_linear_space ... ok
+test mipmaps::tests::non_power_of_two_mipmap_includes_last_row_and_column ... ok
+test mipmaps::tests::masked_leaf_color_does_not_average_with_transparent_black ... ok
+test craft::tests::flat_tangents_preserve_rotated_and_mirrored_uvs ... ok
+test mipmaps::tests::narrow_leaf_coverage_survives_minification_without_changing_source ... ok
+test ship::tests::batches_preserve_authored_triangles_uvs_and_scaled_frames ... ok
+test sail::tests::wind_drives_only_its_sail_and_stays_still_when_time_is_paused ... ok
+test ship::tests::delayed_loading_shared_hulls_and_last_owner_removal ... ok
+test voxel::tests::editing_priority_then_nearest_chunk_and_latest_revision_wins ... ok
+test mipmaps::tests::dynamic_glyph_atlas_keeps_its_single_writable_level ... ok
+test craft::tests::identical_hulls_share_meshes_but_edits_and_sail_rotation_do_not ... ok
+test craft::tests::editable_fittings_preserve_reference_normal_mapping ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.41s
+
+   Doc-tests aether_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_game
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_sim
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_view
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,4006 @@
+{
+  "dawn.glb": [
+    {
+      "name": "01 | Fractured limestone",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.001",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.001",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.001",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.001",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.001",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.001",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.001",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.001",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.001",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.001",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "crystal.glb": [
+    {
+      "name": "01 | Fractured limestone.002",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.002",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.002",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.002",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.002",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.002",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.002",
+      "base_color_factor": [
+        0.04100000113248825,
+        0.014999999664723873,
+        0.18000000715255737,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.002",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.002",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.002",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.002",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.002",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "crystal-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.003",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.003",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.003",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.003",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.003",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.003",
+      "base_color_factor": [
+        0.04100000113248825,
+        0.014999999664723873,
+        0.18000000715255737,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.003",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.003",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.003",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.003",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "nomad.glb": [
+    {
+      "name": "01 | Fractured limestone.004",
+      "base_color_factor": [
+        0.3785199764198054,
+        0.23929805195628012,
+        0.11652839073247855,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.004",
+      "base_color_factor": [
+        0.27206123305173513,
+        0.17199547484357636,
+        0.08375478083896895,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.004",
+      "base_color_factor": [
+        0.4963407665983115,
+        0.3751320049048034,
+        0.19184752877643618,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.004",
+      "base_color_factor": [
+        0.65,
+        0.5005000000000001,
+        0.2665,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.004",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.004",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.004",
+      "base_color_factor": [
+        0.6000000238418579,
+        0.1599999964237213,
+        0.03500000014901161,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.004",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.004",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.004",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.004",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.004",
+      "base_color_factor": [
+        0.5,
+        0.36000001430511475,
+        0.1599999964237213,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "nomad-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.005",
+      "base_color_factor": [
+        0.3785199764198054,
+        0.23929805195628012,
+        0.11652839073247855,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.005",
+      "base_color_factor": [
+        0.27206123305173513,
+        0.17199547484357636,
+        0.08375478083896895,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.005",
+      "base_color_factor": [
+        0.4963407665983115,
+        0.3751320049048034,
+        0.19184752877643618,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.005",
+      "base_color_factor": [
+        0.65,
+        0.5005000000000001,
+        0.2665,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.005",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.005",
+      "base_color_factor": [
+        0.6000000238418579,
+        0.1599999964237213,
+        0.03500000014901161,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.005",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.005",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.005",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.005",
+      "base_color_factor": [
+        0.5,
+        0.36000001430511475,
+        0.1599999964237213,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "ember.glb": [
+    {
+      "name": "01 | Fractured limestone.006",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.006",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.006",
+      "base_color_factor": [
+        0.1588290453114597,
+        0.13641163814720123,
+        0.1169802004734367,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.006",
+      "base_color_factor": [
+        0.20800000000000002,
+        0.18200000000000002,
+        0.1625,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.006",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.006",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.006",
+      "base_color_factor": [
+        0.1599999964237213,
+        0.14000000059604645,
+        0.14000000059604645,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.006",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.006",
+      "base_color_factor": [
+        1,
+        0.64,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        1,
+        0.64,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.006",
+      "base_color_factor": [
+        0.12999999523162842,
+        0.11500000208616257,
+        0.10499999672174454,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "ember-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.007",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.007",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.007",
+      "base_color_factor": [
+        0.1588290453114597,
+        0.13641163814720123,
+        0.1169802004734367,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.007",
+      "base_color_factor": [
+        0.20800000000000002,
+        0.18200000000000002,
+        0.1625,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.007",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.007",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.007",
+      "base_color_factor": [
+        0.1599999964237213,
+        0.14000000059604645,
+        0.14000000059604645,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.007",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.007",
+      "base_color_factor": [
+        1,
+        0.64,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        1,
+        0.64,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.007",
+      "base_color_factor": [
+        0.12999999523162842,
+        0.11500000208616257,
+        0.10499999672174454,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "frost.glb": [
+    {
+      "name": "01 | Fractured limestone.008",
+      "base_color_factor": [
+        0.17159572264364512,
+        0.258832586809854,
+        0.3122960871630425,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.008",
+      "base_color_factor": [
+        0.12333442565011993,
+        0.18603592176958259,
+        0.22446281264843682,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.008",
+      "base_color_factor": [
+        0.35240194428480115,
+        0.4238504471002324,
+        0.4679208018937468,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.008",
+      "base_color_factor": [
+        0.46149999999999997,
+        0.5655,
+        0.65,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.008",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.008",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.008",
+      "base_color_factor": [
+        0.054999999701976776,
+        0.12999999523162842,
+        0.23000000417232513,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.008",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.008",
+      "base_color_factor": [
+        0.7,
+        1,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.7,
+        1,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.008",
+      "base_color_factor": [
+        0.7200000286102295,
+        0.8799999952316284,
+        0.9900000095367432,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "frost-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.009",
+      "base_color_factor": [
+        0.17159572264364512,
+        0.258832586809854,
+        0.3122960871630425,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.009",
+      "base_color_factor": [
+        0.12333442565011993,
+        0.18603592176958259,
+        0.22446281264843682,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.009",
+      "base_color_factor": [
+        0.35240194428480115,
+        0.4238504471002324,
+        0.4679208018937468,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.009",
+      "base_color_factor": [
+        0.46149999999999997,
+        0.5655,
+        0.65,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.009",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.009",
+      "base_color_factor": [
+        0.054999999701976776,
+        0.12999999523162842,
+        0.23000000417232513,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.009",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.009",
+      "base_color_factor": [
+        0.7,
+        1,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.7,
+        1,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.009",
+      "base_color_factor": [
+        0.7200000286102295,
+        0.8799999952316284,
+        0.9900000095367432,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "verdant.glb": [
+    {
+      "name": "01 | Fractured limestone.010",
+      "base_color_factor": [
+        0.26748745000332913,
+        0.29301802280360834,
+        0.21441223894776051,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.010",
+      "base_color_factor": [
+        0.19225660468989283,
+        0.2106067038900935,
+        0.15410879674370287,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.010",
+      "base_color_factor": [
+        0.3077312752909531,
+        0.31666987427028853,
+        0.21056436085218608,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.010",
+      "base_color_factor": [
+        0.403,
+        0.42250000000000004,
+        0.29250000000000004,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.010",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.010",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.010",
+      "base_color_factor": [
+        0.10000000149011612,
+        0.1899999976158142,
+        0.11999999731779099,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.010",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.010",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.010",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.010",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.010",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "verdant-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.011",
+      "base_color_factor": [
+        0.26748745000332913,
+        0.29301802280360834,
+        0.21441223894776051,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.011",
+      "base_color_factor": [
+        0.19225660468989283,
+        0.2106067038900935,
+        0.15410879674370287,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.011",
+      "base_color_factor": [
+        0.3077312752909531,
+        0.31666987427028853,
+        0.21056436085218608,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.011",
+      "base_color_factor": [
+        0.403,
+        0.42250000000000004,
+        0.29250000000000004,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.011",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.011",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.011",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.011",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.011",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "storm.glb": [
+    {
+      "name": "01 | Fractured limestone.012",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.012",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.012",
+      "base_color_factor": [
+        0.14393882231351032,
+        0.16564270346445864,
+        0.1778099047196238,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.012",
+      "base_color_factor": [
+        0.1885,
+        0.22100000000000003,
+        0.24700000000000003,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.012",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.012",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.012",
+      "base_color_factor": [
+        0.09000000357627869,
+        0.054999999701976776,
+        0.1599999964237213,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.012",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.012",
+      "base_color_factor": [
+        0.91,
+        0.61,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.91,
+        0.61,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.012",
+      "base_color_factor": [
+        0.10000000149011612,
+        0.14000000059604645,
+        0.10000000149011612,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "storm-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.013",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.013",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.013",
+      "base_color_factor": [
+        0.14393882231351032,
+        0.16564270346445864,
+        0.1778099047196238,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.013",
+      "base_color_factor": [
+        0.1885,
+        0.22100000000000003,
+        0.24700000000000003,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.013",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.013",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.013",
+      "base_color_factor": [
+        0.09000000357627869,
+        0.054999999701976776,
+        0.1599999964237213,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.013",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.013",
+      "base_color_factor": [
+        0.91,
+        0.61,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.91,
+        0.61,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.013",
+      "base_color_factor": [
+        0.10000000149011612,
+        0.14000000059604645,
+        0.10000000149011612,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "hollow.glb": [
+    {
+      "name": "01 | Fractured limestone.014",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.014",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.014",
+      "base_color_factor": [
+        0.14393882231351032,
+        0.16564270346445864,
+        0.1778099047196238,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.014",
+      "base_color_factor": [
+        0.1885,
+        0.22100000000000003,
+        0.24700000000000003,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.014",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.014",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.014",
+      "base_color_factor": [
+        0.09000000357627869,
+        0.054999999701976776,
+        0.1599999964237213,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.014",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.014",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.014",
+      "base_color_factor": [
+        0.25999999046325684,
+        0.75,
+        0.06499999761581421,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        0.3466666539510091,
+        1,
+        0.08666666348775227
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.014",
+      "base_color_factor": [
+        0.91,
+        0.61,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.91,
+        0.61,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.014",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "hollow-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.015",
+      "base_color_factor": [
+        0.10093866037861478,
+        0.11232357540804985,
+        0.1351729332496751,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.015",
+      "base_color_factor": [
+        0.07254966214712938,
+        0.08073256982453583,
+        0.09715554577320398,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.015",
+      "base_color_factor": [
+        0.14393882231351032,
+        0.16564270346445864,
+        0.1778099047196238,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.015",
+      "base_color_factor": [
+        0.1885,
+        0.22100000000000003,
+        0.24700000000000003,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.015",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.015",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.015",
+      "base_color_factor": [
+        0.25999999046325684,
+        0.75,
+        0.06499999761581421,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        0.3466666539510091,
+        1,
+        0.08666666348775227
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.015",
+      "base_color_factor": [
+        0.91,
+        0.61,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.91,
+        0.61,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.015",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "underforge.glb": [
+    {
+      "name": "01 | Fractured limestone.016",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.016",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.016",
+      "base_color_factor": [
+        0.1588290453114597,
+        0.13641163814720123,
+        0.1169802004734367,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.016",
+      "base_color_factor": [
+        0.20800000000000002,
+        0.18200000000000002,
+        0.1625,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.016",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.016",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.016",
+      "base_color_factor": [
+        0.1599999964237213,
+        0.14000000059604645,
+        0.14000000059604645,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.016",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.016",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.016",
+      "base_color_factor": [
+        1,
+        0.64,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        1,
+        0.64,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.016",
+      "base_color_factor": [
+        0.12999999523162842,
+        0.11500000208616257,
+        0.10499999672174454,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "underforge-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.017",
+      "base_color_factor": [
+        0.09589172735968403,
+        0.08302177312768903,
+        0.0885615769566837,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.017",
+      "base_color_factor": [
+        0.06892217903977291,
+        0.05967189943552649,
+        0.0636536334376164,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.017",
+      "base_color_factor": [
+        0.1588290453114597,
+        0.13641163814720123,
+        0.1169802004734367,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.017",
+      "base_color_factor": [
+        0.20800000000000002,
+        0.18200000000000002,
+        0.1625,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.017",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.017",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.017",
+      "base_color_factor": [
+        0.1599999964237213,
+        0.14000000059604645,
+        0.14000000059604645,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.017",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.017",
+      "base_color_factor": [
+        1,
+        0.64,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        1,
+        0.64,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.017",
+      "base_color_factor": [
+        0.12999999523162842,
+        0.11500000208616257,
+        0.10499999672174454,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-watch.glb": [
+    {
+      "name": "01 | Fractured limestone",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-watch-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.001",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.001",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.001",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.001",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.001",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.001",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.001",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.001",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.001",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.001",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-garden.glb": [
+    {
+      "name": "01 | Fractured limestone.002",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.002",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.002",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.002",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.002",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.002",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.002",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.002",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.002",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.002",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.002",
+      "base_color_factor": [
+        0.82,
+        0.92,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.82,
+        0.92,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.002",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-garden-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.003",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.003",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.003",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.003",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.003",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.003",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.003",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.003",
+      "base_color_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        1,
+        0.3799999952316284,
+        0.04500000178813934
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.003",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.003",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-ruin.glb": [
+    {
+      "name": "01 | Fractured limestone.004",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.004",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.004",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.004",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Brushed antique brass.004",
+      "base_color_factor": [
+        0.5799999833106995,
+        0.3199999928474426,
+        0.08500000089406967,
+        1
+      ],
+      "roughness_factor": 0.3700000047683716,
+      "metallic_factor": 0.6800000071525574,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.004",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "07 | Enamel and shadow.004",
+      "base_color_factor": [
+        0.012000000104308128,
+        0.05299999937415123,
+        0.10999999940395355,
+        1
+      ],
+      "roughness_factor": 0.49000000953674316,
+      "metallic_factor": 0.2199999988079071,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "08 | Deep foliage.004",
+      "base_color_factor": [
+        0.45,
+        0.9,
+        0.32,
+        1
+      ],
+      "roughness_factor": 0.8299999833106995,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "MASK",
+      "alpha_cutoff": 0.33,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.004",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.004",
+      "base_color_factor": [
+        0.5,
+        0.03500000014901161,
+        1,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        0.5,
+        0.03500000014901161,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.004",
+      "base_color_factor": [
+        0.85,
+        0.55,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.85,
+        0.55,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.004",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "dawn-ruin-lod.glb": [
+    {
+      "name": "01 | Fractured limestone.005",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Deep strata.005",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Dressed masonry.005",
+      "base_color_factor": [
+        0.4367798746065142,
+        0.4238504471002324,
+        0.36965743349606,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.4000000059604645,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Worn cornice.005",
+      "base_color_factor": [
+        0.5720000000000001,
+        0.5655,
+        0.5135000000000001,
+        1
+      ],
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "06 | Cedar and roots.005",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "09 | Sunlit foliage.005",
+      "base_color_factor": [
+        0.7,
+        0.91,
+        0.55,
+        1
+      ],
+      "roughness_factor": 0.8700000047683716,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "10 | Lantern glass.005",
+      "base_color_factor": [
+        0.5,
+        0.03500000014901161,
+        1,
+        1
+      ],
+      "roughness_factor": 0.30000001192092896,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "emissive_factor": [
+        0.5,
+        0.03500000014901161,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "11 | Aether mineral.005",
+      "base_color_factor": [
+        0.85,
+        0.55,
+        1,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0.07999999821186066,
+      "normal_scale": 0.10000000149011612,
+      "emissive_factor": [
+        0.85,
+        0.55,
+        1
+      ],
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "12 | Surface biome.005",
+      "roughness_factor": 0.8799999952316284,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "arch-vault.glb": [
+    {
+      "name": "01 | Vault weathered limestone",
+      "base_color_factor": [
+        0.3312049793673297,
+        0.3510111731501558,
+        0.3495851721974356,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Vault deep fracture",
+      "base_color_factor": [
+        0.21291748673614055,
+        0.228920330315319,
+        0.2330567814649571,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Vault silver strata",
+      "base_color_factor": [
+        0.29,
+        0.3,
+        0.29,
+        1
+      ],
+      "roughness_factor": 0.9100000262260437,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Vault muted lichen",
+      "base_color_factor": [
+        0.07500000298023224,
+        0.10199999809265137,
+        0.08100000023841858,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Vault mineral lichen",
+      "base_color_factor": [
+        0.12999999523162842,
+        0.1550000011920929,
+        0.13199999928474426,
+        1
+      ],
+      "roughness_factor": 0.9599999785423279,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ],
+  "arch-vault-lod.glb": [
+    {
+      "name": "01 | Vault weathered limestone.001",
+      "base_color_factor": [
+        0.3312049793673297,
+        0.3510111731501558,
+        0.3495851721974356,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "02 | Vault deep fracture.001",
+      "base_color_factor": [
+        0.21291748673614055,
+        0.228920330315319,
+        0.2330567814649571,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": 0.6499999761581421,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "03 | Vault silver strata.001",
+      "base_color_factor": [
+        0.29,
+        0.3,
+        0.29,
+        1
+      ],
+      "roughness_factor": 0.9100000262260437,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "04 | Vault muted lichen.001",
+      "base_color_factor": [
+        0.07500000298023224,
+        0.10199999809265137,
+        0.08100000023841858,
+        1
+      ],
+      "roughness_factor": 1,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    },
+    {
+      "name": "05 | Vault mineral lichen.001",
+      "base_color_factor": [
+        0.12999999523162842,
+        0.1550000011920929,
+        0.13199999928474426,
+        1
+      ],
+      "roughness_factor": 0.9599999785423279,
+      "metallic_factor": 0,
+      "normal_scale": null,
+      "alpha_mode": "OPAQUE",
+      "alpha_cutoff": null,
+      "double_sided": true
+    }
+  ]
+}

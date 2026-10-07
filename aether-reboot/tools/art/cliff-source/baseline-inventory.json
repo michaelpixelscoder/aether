@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "portable_inputs": true,
+  "files": [
+    {
+      "path": "baseline/assets/textures/aether-quartz-r45-albedo.png",
+      "bytes": 2452013,
+      "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+    },
+    {
+      "path": "baseline/assets/textures/aether-quartz-r45-emission.png",
+      "bytes": 1754215,
+      "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+    },
+    {
+      "path": "baseline/assets/textures/aether-quartz-r45-normal.png",
+      "bytes": 2103296,
+      "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+    },
+    {
+      "path": "baseline/assets/textures/aether-quartz-r45-roughness.png",
+      "bytes": 2424498,
+      "sha256": "08e2f1241c3834cb3eb6b43163c95a31586c78bf6ab304e39c2bf7921e0e4002"
+    },
+    {
+      "path": "baseline/assets/textures/cedar.png",
+      "bytes": 2455540,
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914"
+    },
+    {
+      "path": "baseline/assets/textures/dressed-limestone-r11.png",
+      "bytes": 2205358,
+      "sha256": "8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7"
+    },
+    {
+      "path": "baseline/assets/textures/dressed-masonry-r42-albedo.png",
+      "bytes": 2945366,
+      "sha256": "b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c"
+    },
+    {
+      "path": "baseline/assets/textures/dressed-masonry-r42-normal.png",
+      "bytes": 1534166,
+      "sha256": "0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401"
+    },
+    {
+      "path": "baseline/assets/textures/dressed-masonry-r42-roughness.png",
+      "bytes": 1651898,
+      "sha256": "282bffa8b782ed93cce593ba04607ffd8d8e8c7e268a40f8bb70240a87277631"
+    },
+    {
+      "path": "baseline/assets/textures/evergreen-oak-canopy-r44.png",
+      "bytes": 3033505,
+      "sha256": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229"
+    },
+    {
+      "path": "baseline/assets/textures/evergreen-oak-sprig-r44.png",
+      "bytes": 1086094,
+      "sha256": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb"
+    },
+    {
+      "path": "baseline/assets/textures/fractured-rock-r41-albedo.png",
+      "bytes": 3338453,
+      "sha256": "b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b"
+    },
+    {
+      "path": "baseline/assets/textures/fractured-rock-r41-normal.png",
+      "bytes": 2907624,
+      "sha256": "1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2"
+    },
+    {
+      "path": "baseline/assets/textures/fractured-rock-r41-roughness-v2.png",
+      "bytes": 1955510,
+      "sha256": "c22e6bd7661d8ed2cb8ea94c16815ab93a7bee0c1a4319593ef0b9c45aad85e5"
+    },
+    {
+      "path": "baseline/assets/textures/grass.png",
+      "bytes": 118783,
+      "sha256": "33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca"
+    },
+    {
+      "path": "baseline/assets/world/collisions.json",
+      "bytes": 1730929,
+      "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd"
+    },
+    {
+      "path": "baseline/assets/world/dawn-lod.glb",
+      "bytes": 1218624,
+      "sha256": "727e814e40a920ad23b0d7280566a8b40b0419f5e13bd232331992db4e646dc9"
+    },
+    {
+      "path": "baseline/assets/world/dawn-watch-lod.glb",
+      "bytes": 1114056,
+      "sha256": "448ea68f0496c1e4d69346f53c618b8b04a9f0e751ac9dfd91e3f5af9f6e8902"
+    },
+    {
+      "path": "baseline/assets/world/dawn-watch.glb",
+      "bytes": 16987292,
+      "sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30"
+    },
+    {
+      "path": "baseline/assets/world/dawn.glb",
+      "bytes": 22488728,
+      "sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e"
+    },
+    {
+      "path": "baseline/assets/world/landmarks.json",
+      "bytes": 12910,
+      "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50"
+    },
+    {
+      "path": "baseline/assets/world/manifest.json",
+      "bytes": 11212,
+      "sha256": "878d7ebf3902e728764a72a4d390e3f45cab34f8011addb7e9640987205ea18e"
+    },
+    {
+      "path": "baseline/assets/world/textures/0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229.png",
+      "bytes": 3033505,
+      "sha256": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229"
+    },
+    {
+      "path": "baseline/assets/world/textures/0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401.png",
+      "bytes": 1534166,
+      "sha256": "0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401"
+    },
+    {
+      "path": "baseline/assets/world/textures/1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2.png",
+      "bytes": 2907624,
+      "sha256": "1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2"
+    },
+    {
+      "path": "baseline/assets/world/textures/33a96572774aed638215f8120d51e8c826bf703d1132ac255e8990e56082de00.png",
+      "bytes": 1306565,
+      "sha256": "33a96572774aed638215f8120d51e8c826bf703d1132ac255e8990e56082de00"
+    },
+    {
+      "path": "baseline/assets/world/textures/33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca.png",
+      "bytes": 118783,
+      "sha256": "33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca"
+    },
+    {
+      "path": "baseline/assets/world/textures/4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb.png",
+      "bytes": 1086094,
+      "sha256": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb"
+    },
+    {
+      "path": "baseline/assets/world/textures/7feae4aedd2f4f32a73a74f05251050816e57168e6c43417840dbcfe6b30cf40.png",
+      "bytes": 1146542,
+      "sha256": "7feae4aedd2f4f32a73a74f05251050816e57168e6c43417840dbcfe6b30cf40"
+    },
+    {
+      "path": "baseline/assets/world/textures/828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914.png",
+      "bytes": 2455540,
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914"
+    },
+    {
+      "path": "baseline/assets/world/textures/8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7.png",
+      "bytes": 2205358,
+      "sha256": "8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7"
+    },
+    {
+      "path": "baseline/assets/world/textures/9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152.png",
+      "bytes": 1754215,
+      "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+    },
+    {
+      "path": "baseline/assets/world/textures/a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219.png",
+      "bytes": 2103296,
+      "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+    },
+    {
+      "path": "baseline/assets/world/textures/b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b.png",
+      "bytes": 3338453,
+      "sha256": "b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b"
+    },
+    {
+      "path": "baseline/assets/world/textures/b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c.png",
+      "bytes": 2945366,
+      "sha256": "b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c"
+    },
+    {
+      "path": "baseline/assets/world/textures/dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626.png",
+      "bytes": 2452013,
+      "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+    },
+    {
+      "path": "baseline/assets/world/textures/f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376.png",
+      "bytes": 1499198,
+      "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+    },
+    {
+      "path": "baseline/tools/art/build_world_variants.py",
+      "bytes": 26316,
+      "sha256": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366"
+    },
+    {
+      "path": "baseline/tools/art/build_world.py",
+      "bytes": 112654,
+      "sha256": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b"
+    },
+    {
+      "path": "baseline/tools/art/world-source/satellite-walk-routes.json",
+      "bytes": 2202,
+      "sha256": "8daea3e9267178cd6f8dd41769c162b4128251acc99a343ddf64510eb23e70e4"
+    }
+  ]
+}

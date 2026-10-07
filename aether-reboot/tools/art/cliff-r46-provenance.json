@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "status": "Native R47 gallery accepted by parent as structural progress; parent owns canonical promotion",
+  "authoring": "Closed fractured core, irregular clipped geological slabs, disconnected angular crown shoulders; independently seeded relief. No new texture or material.",
+  "authoring_block": {
+    "file": "tools/art/cliff-r46-authoring.py",
+    "sha256": "3699df0a2151cc5287cc771b3d6aa2655205e347656f3da5adfa6ccb7703c0fb"
+  },
+  "sources": {
+    "mineral_sources": {
+      "build_world.py": "5aa4f506fad75d97e9bbf1f7845edcc68872cf09ee55ad7033b550fabeafc062",
+      "build_world_variants.py": "5f8b63d4851294d5b9d56c97a3f81e177b98a7a54c58691ecabe2a7b7cdb8225",
+      "build_vault.py": "7d073365cdb7aa02175a2190b3e29d1015e89b81cb6c32e641a5205f3234b684"
+    },
+    "cliff_block_sha256": "3699df0a2151cc5287cc771b3d6aa2655205e347656f3da5adfa6ccb7703c0fb",
+    "generated_sources": {
+      "build_world.py": "06cee37da006fe119ceb3d449a62e86fa2297707716807124099913ad90b4e6b",
+      "build_world_variants.py": "dc4b52b1570cf003368241d63285a9a39f06ce82dc8ff26aaf4a4b56e4e54366",
+      "build_vault.py": "7d073365cdb7aa02175a2190b3e29d1015e89b81cb6c32e641a5205f3234b684"
+    },
+    "scope": "Isolated portable r45 minerals plus r46 cliffs; no canonical writes."
+  },
+  "reference": "aether/design/initial_researches/aether_isle_33.png",
+  "native_review": {
+    "images": [
+      "tools/art/cliff-r46-review/world-r47-combined-dawn.png",
+      "tools/art/cliff-r46-review/world-r47-combined-close.png"
+    ],
+    "decision": "Improved continuous envelope and broken shoulders, no visible holes. Accepted as progress; horizontal texture reading and smooth architectural walls remain unfinished."
+  },
+  "changed_geometry": [
+    "dawn HD ROCK/ROCK_DARK terrain",
+    "dawn-watch HD ROCK/ROCK_DARK terrain",
+    "dawn-garden HD ROCK/ROCK_DARK terrain",
+    "dawn-ruin HD ROCK/ROCK_DARK terrain"
+  ],
+  "unchanged": "All twelve authoring compositions preserve physical data, global RNG, all non-rock batches; eight other biomes and every LOD are entirely exact. All exported node transforms and PBR bindings equal the R45 mineral candidate.",
+  "safety": {
+    "closed_edge_incidence": 2,
+    "recess_metres": 0.65,
+    "maximum_outcrop_projection_metres": 4.563255315203424,
+    "walk_test": "Outcrop edge graph clipped against every original cell walk plane; conservative projected AABB rejects overlaps. Interior cliff faces only recede into original solids. Quay and spillway exclusions retained.",
+    "near_collinear_corner_threshold_metres": 0.08
+  },
+  "material_changes": 0,
+  "new_external_assets": 0,
+  "new_textures": 0,
+  "render_device": "CPU, four threads only",
+  "models": [
+    {
+      "file": "dawn.glb",
+      "before_sha256": "9ef4fd05dab89088f16a7732d972ccaf201ae9643f65313e7f82d1bad5797e1e",
+      "after_sha256": "9d72afb49de26b661de6e5321279fa08ec496c329a04f08d4cd4d3f5e37e803b",
+      "triangles": 184368,
+      "triangle_delta": -14044,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone",
+        "02 | Deep strata / 02 | Deep strata"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-watch.glb",
+      "before_sha256": "9cc5dba4a7dd2b4203788c05f3584c6d19db85a66c727cf4d13b928c50c48af2",
+      "after_sha256": "b39634f784a041afd0e1f33c485bc088b0b3720eb162895e19717c1c268f74cb",
+      "triangles": 139763,
+      "triangle_delta": 28526,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone",
+        "02 | Deep strata / 02 | Deep strata"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-garden.glb",
+      "before_sha256": "234f3da190b6f41944a43ff520d5301a1cc5232be998227670ef9a8fbee27976",
+      "after_sha256": "486ada3f3bc26a3f0707f5eb6d693bec6fbffb32e80c4851f342824e14328ea1",
+      "triangles": 130182,
+      "triangle_delta": 27188,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone.002",
+        "02 | Deep strata / 02 | Deep strata.002"
+      ],
+      "nodes_exact": true
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "before_sha256": "bc29d03d736d8049b40037aeaf416a7512a13a0ee8bb33af61fa0c56bd4f6006",
+      "after_sha256": "1abd3235e0aea65f9a45c383ffe24e41a6c1df29efe424dcb2ecfcd141fbc7a3",
+      "triangles": 116844,
+      "triangle_delta": 30132,
+      "changed_batches": [
+        "01 | Fractured limestone / 01 | Fractured limestone.004",
+        "02 | Deep strata / 02 | Deep strata.004"
+      ],
+      "nodes_exact": true
+    }
+  ],
+  "proof": {
+    "full_build_gate": "docs/evidence/verify-open-world.log",
+    "finite_unit_vectors": 34,
+    "physical_contract_bytes": [
+      {
+        "file": "collisions.json",
+        "before": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+        "after": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+        "byte_exact": true
+      },
+      {
+        "file": "landmarks.json",
+        "before": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+        "after": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+        "byte_exact": true
+      },
+      {
+        "file": "vault-collisions.json",
+        "before": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70",
+        "after": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70",
+        "byte_exact": true
+      }
+    ],
+    "retained_roundoff": [
+      {
+        "file": "frost.glb",
+        "attribute": "TEXCOORD_0",
+        "components": 16,
+        "max_delta": 2.384185791015625e-7,
+        "proof": "tools/art/cliff-r46-uv-rounding.json"
+      }
+    ]
+  },
+  "historical_baselines_rewritten": false,
+  "canonical_files_mutated": false
+}

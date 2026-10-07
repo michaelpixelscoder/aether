@@ -1,0 +1,138 @@
+[
+  {
+    "kind": "dawn",
+    "sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+    "bytes": 22488728,
+    "total_triangles": 199256,
+    "batches": [
+      {
+        "name": "01 | Fractured limestone",
+        "triangles": 39836,
+        "vertices": 105517
+      },
+      {
+        "name": "02 | Deep strata",
+        "triangles": 252,
+        "vertices": 504
+      },
+      {
+        "name": "03 | Dressed masonry",
+        "triangles": 39212,
+        "vertices": 78314
+      },
+      {
+        "name": "04 | Worn cornice",
+        "triangles": 58636,
+        "vertices": 119202
+      },
+      {
+        "name": "05 | Brushed antique brass",
+        "triangles": 17876,
+        "vertices": 37652
+      },
+      {
+        "name": "06 | Cedar and roots",
+        "triangles": 8062,
+        "vertices": 21728
+      },
+      {
+        "name": "07 | Enamel and shadow",
+        "triangles": 5942,
+        "vertices": 12047
+      },
+      {
+        "name": "08 | Deep foliage",
+        "triangles": 18596,
+        "vertices": 27894
+      },
+      {
+        "name": "09 | Sunlit foliage",
+        "triangles": 5024,
+        "vertices": 7202
+      },
+      {
+        "name": "10 | Lantern glass",
+        "triangles": 1644,
+        "vertices": 3180
+      },
+      {
+        "name": "11 | Aether mineral",
+        "triangles": 672,
+        "vertices": 1762
+      },
+      {
+        "name": "12 | Surface biome",
+        "triangles": 3504,
+        "vertices": 7008
+      }
+    ]
+  },
+  {
+    "kind": "dawn-watch",
+    "sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+    "bytes": 16987292,
+    "total_triangles": 148771,
+    "batches": [
+      {
+        "name": "01 | Fractured limestone",
+        "triangles": 48836,
+        "vertices": 129825
+      },
+      {
+        "name": "02 | Deep strata",
+        "triangles": 120,
+        "vertices": 240
+      },
+      {
+        "name": "03 | Dressed masonry",
+        "triangles": 13702,
+        "vertices": 27684
+      },
+      {
+        "name": "04 | Worn cornice",
+        "triangles": 16228,
+        "vertices": 33786
+      },
+      {
+        "name": "05 | Brushed antique brass",
+        "triangles": 5684,
+        "vertices": 11740
+      },
+      {
+        "name": "06 | Cedar and roots",
+        "triangles": 14724,
+        "vertices": 41565
+      },
+      {
+        "name": "07 | Enamel and shadow",
+        "triangles": 1141,
+        "vertices": 2055
+      },
+      {
+        "name": "08 | Deep foliage",
+        "triangles": 32728,
+        "vertices": 49092
+      },
+      {
+        "name": "09 | Sunlit foliage",
+        "triangles": 13864,
+        "vertices": 21342
+      },
+      {
+        "name": "10 | Lantern glass",
+        "triangles": 556,
+        "vertices": 1100
+      },
+      {
+        "name": "11 | Aether mineral",
+        "triangles": 552,
+        "vertices": 1410
+      },
+      {
+        "name": "12 | Surface biome",
+        "triangles": 636,
+        "vertices": 1272
+      }
+    ]
+  }
+]

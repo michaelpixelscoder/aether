@@ -1,0 +1,113 @@
+"""CPU preparation of a shared incident circumsolar World field.
+
+No render, camera-relative mask, raster edit, geometry/volume/material change.
+The broad field replaces B's blue boundary only within a solar4.5degree cone.
+Actual stored f32 mask and vector length are included in irradiance balance.
+"""
+import bpy, math, json, hashlib
+import numpy as np
+from numpy.polynomial import Polynomial as P
+from pathlib import Path
+OUT=Path(__file__).resolve().parent
+ROOT=OUT.parents[2]
+BASE=OUT.parent/'variant-b/sky-r57-calibrated.blend'
+assert hashlib.sha256(BASE.read_bytes()).hexdigest()=='b06b3ad772c64da5c30ebb162a584b699bb409a2dd7dcadc7ba717d42aa098fe'
+bpy.ops.wm.open_mainfile(filepath=str(BASE))
+world=bpy.context.scene.world.node_tree
+nodes,links=world.nodes,world.links
+dot=nodes['Dot with actual stellar direction']
+blue=nodes['Explicit broad blue sky poles']
+background=nodes['Blue boundary radiance | all ray types']
+radius_degrees=4.5
+warm=(7.0,2.0,.3,1.0)
+
+distance=nodes.new('ShaderNodeMath')
+distance.name=distance.label='R57 C | solar angular distance 1 minus dot'
+distance.operation='SUBTRACT'; distance.inputs[0].default_value=1
+links.new(dot.outputs[1],distance.inputs[1])
+normalizer=nodes.new('ShaderNodeMath')
+normalizer.name=normalizer.label='R57 C | angular support divisor 1 minus cos4.5deg'
+normalizer.operation='DIVIDE'
+normalizer.inputs[1].default_value=1-math.cos(math.radians(radius_degrees))
+links.new(distance.outputs[0],normalizer.inputs[0])
+weight=nodes.new('ShaderNodeMapRange')
+weight.name=weight.label='R57 C | shared smooth incident weight, never camera mask'
+weight.data_type='FLOAT'; weight.interpolation_type='SMOOTHSTEP'; weight.clamp=True
+weight.inputs['From Min'].default_value=0; weight.inputs['From Max'].default_value=1
+weight.inputs['To Min'].default_value=1; weight.inputs['To Max'].default_value=0
+links.new(normalizer.outputs[0],weight.inputs['Value'])
+field=nodes.new('ShaderNodeMixRGB')
+field.name=field.label='R57 C | replace blue incident field by warm circumsolar radiance'
+field.blend_type='MIX'; field.use_clamp=False; field.use_alpha=False
+field.inputs[2].default_value=warm
+links.new(weight.outputs[0],field.inputs[0]); links.new(blue.outputs[0],field.inputs[1])
+for link in list(background.inputs['Color'].links): links.remove(link)
+links.new(field.outputs[0],background.inputs['Color'])
+
+# Integrate the *difference* from B, common to camera and lighting ray paths.
+# Red normal irradiance is2pi*integral(delta_radiance(mu)*mu*dmu).
+axis=np.array(dot.inputs[1].default_value,dtype=np.float64)
+axis_length=float(np.linalg.norm(axis)); unit=axis/axis_length
+d=float(normalizer.inputs[1].default_value)
+low=np.array(blue.inputs[1].default_value[:3]); high=np.array(blue.inputs[2].default_value[:3])
+middle=(low+high)/2; half_difference=(high-low)/2
+actual_warm=np.array(field.inputs[2].default_value[:3])
+t_min=(1-axis_length)/d
+mu=P([1/axis_length,-d/axis_length])
+smooth=P([1,0,-3,2])
+additional=[]
+for channel in range(3):
+    delta=P([float(actual_warm[channel]-middle[channel])])-mu*float(half_difference[channel]*unit[2])
+    smooth_integral=(smooth*delta*mu).integ()
+    extra=float(smooth_integral(1)-smooth_integral(max(0,t_min)))
+    if t_min<0:
+        full_integral=(delta*mu).integ()
+        extra+=float(full_integral(0)-full_integral(t_min))
+    additional.append(2*math.pi*d/axis_length*extra)
+mask=nodes['Uniform radiance stellar surface | R57 1.20 degree diameter']
+threshold=float(mask.inputs[1].default_value)
+core_factor=math.pi*(1-(threshold/axis_length)**2)
+stellar=nodes['Calibrated finite angular radiance']
+old_core=float(stellar.inputs[1].default_value)
+stellar.inputs[1].default_value=(22-additional[0])/core_factor
+actual_core=float(stellar.inputs[1].default_value)
+red_integral=actual_core*core_factor+additional[0]
+assert abs(red_integral-22)<2e-6
+# Independent quadrature validates the analytic difference, including cap.
+mu_grid=np.linspace((1-d)/axis_length,1,262145)
+phase=np.clip((1-axis_length*mu_grid)/d,0,1)
+w=1-phase*phase*(3-2*phase)
+delta_r=actual_warm[0]-(middle[0]+half_difference[0]*unit[2]*mu_grid)
+numeric=2*math.pi*np.trapezoid(w*delta_r*mu_grid,mu_grid)
+assert abs(numeric-additional[0])<2e-10
+assert weight.clamp and all(abs(float(weight.inputs[name].default_value)-v)<1e-9 for name,v in
+    [('From Min',0),('From Max',1),('To Min',1),('To Max',0)])
+outside_checks=[]
+for angle in [4.501,5,10,20,90,180]:
+    cos_angle=axis_length*math.cos(math.radians(angle)); t=np.clip((1-cos_angle)/d,0,1)
+    wk=1-t*t*(3-2*t); assert wk==0
+    outside_checks.append({'degrees':angle,'warm_weight':float(wk),'blue_field_exact':True})
+target=OUT/'sky-r57-calibrated.blend'
+bpy.ops.wm.save_as_mainfile(filepath=str(target))
+record={'schema':1,'status':'CPU candidate C only; not rendered, not promoted',
+    'baseline_b_sha256':hashlib.sha256(BASE.read_bytes()).hexdigest(),
+    'candidate_sha256':hashlib.sha256(target.read_bytes()).hexdigest(),
+    'authoring_field':'Shared all-ray World boundary radiance; artist-directed circumsolar environment, not a measured stellar corona.',
+    'support_radius_degrees_nominal':radius_degrees,'support_radius_degrees_actual':math.degrees(math.acos((1-d)/axis_length)),
+    'weight':'1-smoothstep(0,1,(1-dot(unit_world_ray,stored_solar_axis))/(1-cos4.5deg)); clamp',
+    'warm_boundary_rgb':actual_warm.tolist(),'blue_poles_b_exact':[low.tolist(),high.tolist()],
+    'angular_divisor_f32':d,'solar_axis_length':axis_length,'disk_cos_threshold_f32':threshold,
+    'disk_diameter_degrees_actual':2*math.degrees(math.acos(threshold/axis_length)),
+    'additional_incident_normal_irradiance_rgb_vs_b':additional,
+    'extra_red_irradiance_numeric':float(numeric),'core_red_radiance_b':old_core,
+    'core_red_radiance_c':actual_core,'core_red_normal_irradiance':actual_core*core_factor,
+    'core_fraction_of_total':actual_core*core_factor/22,'total_red_irradiance':red_integral,
+    'air_materials_changed':False,'geometry_changed':False,'source_vdb_changed':False,
+    'outside_cone_tests':outside_checks,'retouching':False,'resampled':False,
+    'limitations':['Source field is an artist-directed finite boundary illumination, not exact atmospheric multiple scattering.',
+    'The blue source is exact outside the cone, but physical scattering/IBL globally may change slightly after transport.',
+    'The narrow core becomes white under ACES; this hypothesis addresses surrounding field and volume rim color, not forcing a yellow disk.',
+    'The runtime key represents total22; for a final accepted model its core should use the recorded fraction to avoid double-counting the broad field retained in IBL.',
+    'Absolute local volume paths must be made portable in a later accepted package.']}
+(OUT/'source-candidate.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+print('R57_C_CPU_READY',json.dumps(record),flush=True)

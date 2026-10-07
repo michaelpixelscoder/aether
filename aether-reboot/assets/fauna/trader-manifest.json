@@ -1,0 +1,120 @@
+{
+  "generator": "tools/art/build_trader.py",
+  "generator_sha256": "ef31eff286f83aafc6d2c1702a8a8cf065555cc027e80dc581efc9aa2e21c6aa",
+  "axes": "Y up; forward -Z; hull-centre origin",
+  "nominal_dimensions_xyz_m": [
+    6,
+    10,
+    14
+  ],
+  "required_y_range_m": [
+    -2,
+    8
+  ],
+  "physics_radius_m": 12,
+  "pivots_game_xyz_m": {
+    "MerchantPropellerL": [
+      -2.01,
+      0.4,
+      2.9
+    ],
+    "MerchantPropellerR": [
+      2.01,
+      0.4,
+      2.9
+    ]
+  },
+  "animation_axis": "local Z for both propellers",
+  "shared_images": [
+    {
+      "file": "assets/textures/cedar.png",
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914"
+    },
+    {
+      "file": "assets/textures/cedar-normal.png",
+      "sha256": "49e4159f90440c1ea9265635e841a76f20d116f02db21709bbee90a8079860bc"
+    },
+    {
+      "file": "assets/textures/indigo-canvas.png",
+      "sha256": "959ad02e433763268115086d4f01cca41458e85a5187501a1831d6c02ddf3c98"
+    }
+  ],
+  "assets": {
+    "trader": {
+      "file": "assets/fauna/trader.glb",
+      "sha256": "ed754c302fad6c0b5f2b1d0a5a48fd56cb06816ed16cd3a59a9baa40bae2066c",
+      "bytes": 2504440,
+      "source": "tools/art/traffic-source/trader.blend",
+      "source_sha256": "c748b2d94f821a21bbb2e382de04174bf2e4f31d6434428d7d0a05a8a2d0d0a6",
+      "triangles": 21542,
+      "materials": 5,
+      "meshes": 9,
+      "bounds_xyz_m": [
+        [
+          -2.999,
+          2.999
+        ],
+        [
+          -2.0,
+          7.997483
+        ],
+        [
+          -7.0,
+          7.0
+        ]
+      ],
+      "validation": {
+        "triangles": 21542,
+        "finite_attributes": true,
+        "degenerate_triangles": 0,
+        "buffer_bounds": true,
+        "named_pivots": true
+      },
+      "external_images": [
+        "../textures/indigo-canvas.png",
+        "../textures/cedar-normal.png",
+        "../textures/cedar.png"
+      ]
+    },
+    "trader-lod": {
+      "file": "assets/fauna/trader-lod.glb",
+      "sha256": "916ee12725966807efc49ab2aa6c1370e56c3045e13849c93fb6fc87c7176c00",
+      "bytes": 326416,
+      "source": "tools/art/traffic-source/trader-lod.blend",
+      "source_sha256": "e62b9a14485513b81e9223ca7a64b0d8809566b01cefc9f91a4de043dd079f26",
+      "triangles": 2812,
+      "materials": 5,
+      "meshes": 9,
+      "bounds_xyz_m": [
+        [
+          -2.94,
+          2.94
+        ],
+        [
+          -2.0,
+          7.94
+        ],
+        [
+          -7.0,
+          7.0
+        ]
+      ],
+      "validation": {
+        "triangles": 2812,
+        "finite_attributes": true,
+        "degenerate_triangles": 0,
+        "buffer_bounds": true,
+        "named_pivots": true
+      },
+      "external_images": [
+        "../textures/indigo-canvas.png",
+        "../textures/cedar-normal.png",
+        "../textures/cedar.png"
+      ]
+    }
+  },
+  "reimported_propeller_validation": {
+    "MerchantPropellerL": true,
+    "MerchantPropellerR": true
+  }
+}

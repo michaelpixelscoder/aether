@@ -1,0 +1,21 @@
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Finished `test` profile [optimized] target(s) in 4.77s
+     Running tests\envelope.rs (target\debug\deps\envelope-f0839302f08c2827.exe)
+
+running 7 tests
+sail lateral offset -0.5 m: yaw after 2 s = -2.0861294 degrees
+sail lateral offset 0.5 m: yaw after 2 s = 2.083837 degrees
+test moving_sail_sideways_changes_measured_torque_and_course ... ok
+render 30 Hz landmark max lag 0.000002 m
+test sleeping_contact_wakes_and_teleported_body_rebuilds_contacts ... ok
+render 60 Hz landmark max lag 0.056459 m
+test loaded_vessel_with_sail_current_tether_and_low_reserve_remains_finite ... ok
+test voxel_internal_edges_do_not_stop_a_walking_character ... ok
+render 120 Hz landmark max lag 0.028003 m
+test interpolated_landmark_lags_by_at_most_one_tick_and_teleport_resets_it ... ok
+test slope_support_is_stable_at_30_60_120_render_fps ... ok
+54 cable cases: mass 1k/10k/900k kg, speed 0/25/80 m/s, length 3/80 m, render 30/60/120 Hz; worst relative p95=0.0000008742015
+test tether_mass_speed_length_fps_and_pause_matrix_is_bounded ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.15s
+

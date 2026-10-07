@@ -1,0 +1,2754 @@
+{
+  "status": "passed",
+  "grid_count": 98,
+  "original_density_inputs": 10,
+  "all_derived_sha256_equal": true,
+  "cells": 4013,
+  "seconds": 51.017,
+  "grids": [
+    {
+      "file": "western-oblique-front.vdb",
+      "sha256": "5c2961e6419622e6f42d95c7fb8c22dd78f25a16809f6bbc875024e4402dbba5",
+      "bytes": 2901830,
+      "instances_merged": 76,
+      "voxel_metres": 48,
+      "dense_shape": [
+        177,
+        255,
+        274
+      ],
+      "dense_bytes": 49467960,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -780,
+        123,
+        -174
+      ],
+      "stored_upper": [
+        -604,
+        377,
+        99
+      ],
+      "seconds": 1.908,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "75aa956deab457a401e5e335325613376a4e7c8ea6155120f762caeb1dc70e26"
+    },
+    {
+      "file": "dawn-descending-shoulder.vdb",
+      "sha256": "8e071737d865150b1ccdad1a4f15f8d3a33088f513271786c837a8f835af228b",
+      "bytes": 1011934,
+      "instances_merged": 52,
+      "voxel_metres": 48,
+      "dense_shape": [
+        148,
+        213,
+        183
+      ],
+      "dense_bytes": 23075568,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -883,
+        219,
+        -358
+      ],
+      "stored_upper": [
+        -736,
+        431,
+        -176
+      ],
+      "seconds": 0.521,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "c4ed1223e8abec354a9434173b4f787cce2522d4b7b44977f3bac2f14b4bbad0"
+    },
+    {
+      "file": "distant-northwest-crest.vdb",
+      "sha256": "bafe64341d9d56a505cf35564dd935e031be9dd2401d1353b111b45cbfa4b0d7",
+      "bytes": 806406,
+      "instances_merged": 56,
+      "voxel_metres": 48,
+      "dense_shape": [
+        155,
+        174,
+        124
+      ],
+      "dense_bytes": 13377120,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -853,
+        566,
+        -217
+      ],
+      "stored_upper": [
+        -699,
+        739,
+        -94
+      ],
+      "seconds": 0.632,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "8b3f40874ae597816699dabb4b49449659f38e6704a6e928e9964b926d9246ef"
+    },
+    {
+      "file": "central-remote-turrets.vdb",
+      "sha256": "ae2ad5bb7f79a2863cd1d0f2c279d0bc4540b3f64cd8eaae5f24e3916e0a58b7",
+      "bytes": 925407,
+      "instances_merged": 64,
+      "voxel_metres": 48,
+      "dense_shape": [
+        271,
+        224,
+        165
+      ],
+      "dense_bytes": 40064640,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -827,
+        801,
+        -367
+      ],
+      "stored_upper": [
+        -557,
+        1024,
+        -203
+      ],
+      "seconds": 0.682,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "008b5b578b6d880e278a81886415273c7cc812ffea4f596a4e9b3abc07bb6b33"
+    },
+    {
+      "file": "eastern-diagonal-crest.vdb",
+      "sha256": "e0c5fc3f0f6d353090182660d264f2bf515bec44daf1f81260905d6b0b3ef2d3",
+      "bytes": 2828882,
+      "instances_merged": 56,
+      "voxel_metres": 48,
+      "dense_shape": [
+        270,
+        173,
+        244
+      ],
+      "dense_bytes": 45588960,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -543,
+        1100,
+        -281
+      ],
+      "stored_upper": [
+        -274,
+        1272,
+        -38
+      ],
+      "seconds": 1.681,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "6b5c5beb0263237e5f1a6c53e444d36bee0224caf300a5847447c48b66843481"
+    },
+    {
+      "file": "eastern-rising-towers.vdb",
+      "sha256": "4f31ce7e81e31127d19ab3a20a8a9b28acf44c26159febdcdd0ffde9d7eeacd2",
+      "bytes": 947593,
+      "instances_merged": 48,
+      "voxel_metres": 48,
+      "dense_shape": [
+        208,
+        77,
+        185
+      ],
+      "dense_bytes": 11851840,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -138,
+        969,
+        -198
+      ],
+      "stored_upper": [
+        69,
+        1045,
+        -14
+      ],
+      "seconds": 0.529,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "cb9a6460157a7137216a5df80d3a2705f88f22b1066ffb568f45a6ddeddd9709"
+    },
+    {
+      "file": "deep-central-cloud-islands.vdb",
+      "sha256": "16a4382982376bfc240b48660299cd115bb760aaa97315bc64145a2e8e7b142c",
+      "bytes": 1062114,
+      "instances_merged": 68,
+      "voxel_metres": 48,
+      "dense_shape": [
+        255,
+        175,
+        147
+      ],
+      "dense_bytes": 26239500,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -581,
+        856,
+        -518
+      ],
+      "stored_upper": [
+        -327,
+        1030,
+        -372
+      ],
+      "seconds": 0.767,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "40229a18aba39cc4698c352f5b176e7f44fc31e60c3392f384ec047a9b5a6d61"
+    },
+    {
+      "file": "western-middle-shelves.vdb",
+      "sha256": "dd2f6c44c19099c49e0e31cbdd15e124828afca74c5c2ac8b0bfce845b4ba26d",
+      "bytes": 1112084,
+      "instances_merged": 56,
+      "voxel_metres": 48,
+      "dense_shape": [
+        163,
+        229,
+        172
+      ],
+      "dense_bytes": 25680976,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -842,
+        352,
+        -506
+      ],
+      "stored_upper": [
+        -680,
+        580,
+        -335
+      ],
+      "seconds": 0.743,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "f83a1b4f34aedd6533601ea9840236399798f5e61bb4938ad1ad3541846db227"
+    },
+    {
+      "file": "eastern-middle-shelves.vdb",
+      "sha256": "048ad67d94e69f6d4c9a28f438817250f3ad7b9e8a799f94d218d624042e6c1a",
+      "bytes": 945160,
+      "instances_merged": 52,
+      "voxel_metres": 48,
+      "dense_shape": [
+        190,
+        103,
+        134
+      ],
+      "dense_bytes": 10489520,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -110,
+        787,
+        -399
+      ],
+      "stored_upper": [
+        79,
+        889,
+        -266
+      ],
+      "seconds": 0.544,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "4e259fd1509a239499983efd12b63c94b30bbf017b2b1ebc37773955d1bc472c"
+    },
+    {
+      "file": "lower-drift-left.vdb",
+      "sha256": "5ea46fc3b367c071ebba27096425ec3c292a92a084cc8153482caac9d78563b6",
+      "bytes": 928878,
+      "instances_merged": 56,
+      "voxel_metres": 48,
+      "dense_shape": [
+        158,
+        191,
+        117
+      ],
+      "dense_bytes": 14123304,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -572,
+        333,
+        -630
+      ],
+      "stored_upper": [
+        -415,
+        523,
+        -514
+      ],
+      "seconds": 0.747,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "8cb0e684cd3290669be27f087b238b56fb9d7e37df673ff442a26277a4507a1b"
+    },
+    {
+      "file": "lower-drift-right.vdb",
+      "sha256": "59eefd5a83765053ff82ba80b62edc188f349b8f035abca96ec6f7cd56c3f1c2",
+      "bytes": 929495,
+      "instances_merged": 56,
+      "voxel_metres": 48,
+      "dense_shape": [
+        209,
+        122,
+        148
+      ],
+      "dense_bytes": 15094816,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -286,
+        626,
+        -592
+      ],
+      "stored_upper": [
+        -78,
+        747,
+        -445
+      ],
+      "seconds": 0.554,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "919cdba572140b9e882bb8339b562320d77f175678ebe6e0eb51ab2cabf2e6b9"
+    },
+    {
+      "file": "remote-north.vdb",
+      "sha256": "de0f33d57eb65eefa143f1f84aaf6a003e4e2d955530ac06bfa3d89d89a3a1bd",
+      "bytes": 739167,
+      "instances_merged": 32,
+      "voxel_metres": 48,
+      "dense_shape": [
+        151,
+        210,
+        105
+      ],
+      "dense_bytes": 13318200,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        647,
+        430,
+        -186
+      ],
+      "stored_upper": [
+        797,
+        639,
+        -82
+      ],
+      "seconds": 0.408,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "9d114c4331beeb6ff03f2367a53b7e22cb5bf99ce4420e0beeba24acf3495fa9"
+    },
+    {
+      "file": "remote-west.vdb",
+      "sha256": "665b4a746311b839ec32305456accff3bc130d98ff967d6b6173b4e19cf07d35",
+      "bytes": 652082,
+      "instances_merged": 32,
+      "voxel_metres": 48,
+      "dense_shape": [
+        121,
+        170,
+        124
+      ],
+      "dense_bytes": 10202720,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -816,
+        -485,
+        -251
+      ],
+      "stored_upper": [
+        -696,
+        -316,
+        -128
+      ],
+      "seconds": 0.465,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "00bbd96700c76be0eb9881d745e824f986a506128e33a570d7b4bf8aa573cf14"
+    },
+    {
+      "file": "remote-south.vdb",
+      "sha256": "f19caa219dc81f82429aa45231b1ca677ac91a44adfa679426f872a741ef55b5",
+      "bytes": 534062,
+      "instances_merged": 32,
+      "voxel_metres": 48,
+      "dense_shape": [
+        171,
+        93,
+        105
+      ],
+      "dense_bytes": 6679260,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -24,
+        -636,
+        -222
+      ],
+      "stored_upper": [
+        146,
+        -544,
+        -118
+      ],
+      "seconds": 0.286,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "2216d640027182529dcc1bd35b92d604b4a4d48cd0cc29000ac9887ec392cb97"
+    },
+    {
+      "file": "remote-east.vdb",
+      "sha256": "ec2c604c68d333ddc692127d4256475b4c02d3da7f0488b50adab29ece811474",
+      "bytes": 635732,
+      "instances_merged": 32,
+      "voxel_metres": 48,
+      "dense_shape": [
+        135,
+        166,
+        111
+      ],
+      "dense_bytes": 9950040,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        782,
+        -583,
+        -143
+      ],
+      "stored_upper": [
+        916,
+        -418,
+        -33
+      ],
+      "seconds": 0.396,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "727d235c08589f33ff478d2ff1cb54e23520cb15d6286f9c9e95be90f22db3a6"
+    },
+    {
+      "file": "remote-eroded-remnants-00.vdb",
+      "sha256": "c834a98d02133916f2035050a30bbfdc33233c2a6917bd7d3f78f3ad982020dd",
+      "bytes": 74060,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        75,
+        90,
+        53
+      ],
+      "dense_bytes": 1431000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1235,
+        664,
+        -443
+      ],
+      "stored_upper": [
+        -1161,
+        753,
+        -391
+      ],
+      "seconds": 0.062,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "05f1d611924640a4894ddf316d1fbe4e7d0bcd969755ea4e900198155e904460"
+    },
+    {
+      "file": "remote-eroded-remnants-01.vdb",
+      "sha256": "f6c834674953a4ee0be8d7f06ca97270b86608dc4339c109201220cba7d03748",
+      "bytes": 74357,
+      "instances_merged": 20,
+      "voxel_metres": 32,
+      "dense_shape": [
+        75,
+        72,
+        62
+      ],
+      "dense_bytes": 1339200,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -996,
+        886,
+        -511
+      ],
+      "stored_upper": [
+        -922,
+        957,
+        -450
+      ],
+      "seconds": 0.065,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "57139792e204f61d69399fd10617a6cf9c8fdb345bb1bc6bee0af3c2f9aee110"
+    },
+    {
+      "file": "remote-eroded-remnants-02.vdb",
+      "sha256": "c4dfcb074b04c4f7567b6c79635e6df56f92cf191b5f61f7b51a052254f26761",
+      "bytes": 39746,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        71,
+        61,
+        38
+      ],
+      "dense_bytes": 658312,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -956,
+        975,
+        -160
+      ],
+      "stored_upper": [
+        -886,
+        1035,
+        -123
+      ],
+      "seconds": 0.038,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "240bbf376363caef8df36f1c7635b006d92441ed76974e887fa6f1acaf87b00a"
+    },
+    {
+      "file": "remote-eroded-remnants-03.vdb",
+      "sha256": "973a988000edf7f9764c2fc7d58f8ad44030caf2bc079a5a5b47f3f4f6b7ddd0",
+      "bytes": 86180,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        79,
+        63,
+        56
+      ],
+      "dense_bytes": 1114848,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -601,
+        1161,
+        -151
+      ],
+      "stored_upper": [
+        -523,
+        1223,
+        -96
+      ],
+      "seconds": 0.07,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "873d67a357901faefc4b8721206e407d42734399d18c8fc2e4e8385952f2d5f5"
+    },
+    {
+      "file": "remote-eroded-remnants-04.vdb",
+      "sha256": "4f9402079fc301b10ed1b088cea1c4bf9d3ed8a5d76d9f2986302ec31dca1041",
+      "bytes": 223794,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        126,
+        70,
+        92
+      ],
+      "dense_bytes": 3245760,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -326,
+        1268,
+        -504
+      ],
+      "stored_upper": [
+        -201,
+        1337,
+        -413
+      ],
+      "seconds": 0.13,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "af03830820374876d699366227a114f41d5a3fa13a2b572bf556f5794ffc132d"
+    },
+    {
+      "file": "remote-eroded-remnants-05.vdb",
+      "sha256": "5159643c4c3d5bcbac7a9041ddbd581a2017be64c6913de2f1e044133d9baa19",
+      "bytes": 95562,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        84,
+        57,
+        66
+      ],
+      "dense_bytes": 1264032,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -128,
+        1331,
+        -89
+      ],
+      "stored_upper": [
+        -45,
+        1387,
+        -24
+      ],
+      "seconds": 0.066,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "e337e2264c54cf4f9347309cc3dbd39ffd76454ac3fd2bb2f741fe66ecfd939a"
+    },
+    {
+      "file": "remote-eroded-remnants-06.vdb",
+      "sha256": "50fe035fc2f1aaf8fd3dcc3b27d8366f48118716ebe547a1c17b8f61fc0c2bb8",
+      "bytes": 182343,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        76,
+        134,
+        96
+      ],
+      "dense_bytes": 3910656,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1198,
+        493,
+        -1042
+      ],
+      "stored_upper": [
+        -1123,
+        626,
+        -947
+      ],
+      "seconds": 0.133,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "97d0f4a9260d694f7ebbddfe9b2cd90c0bc00e65f7201c28a08ca7c4355fa055"
+    },
+    {
+      "file": "remote-eroded-remnants-07.vdb",
+      "sha256": "4252356e3aee7635c865ebbe6b30b41d956fcd97512f227e0d07bfed30fb2173",
+      "bytes": 87063,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        131,
+        118,
+        63
+      ],
+      "dense_bytes": 3895416,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -848,
+        910,
+        -770
+      ],
+      "stored_upper": [
+        -718,
+        1027,
+        -708
+      ],
+      "seconds": 0.069,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "7b4c3c30c60e23da74c18c36cb033169149190674996fd3cbfb041b5f9ba5c4e"
+    },
+    {
+      "file": "remote-eroded-remnants-08.vdb",
+      "sha256": "584a45506d552714f4cdef42206eac7c1c372973266fe321acedc66a8e145b74",
+      "bytes": 110353,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        83,
+        68,
+        66
+      ],
+      "dense_bytes": 1490016,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -673,
+        1092,
+        -1098
+      ],
+      "stored_upper": [
+        -591,
+        1159,
+        -1033
+      ],
+      "seconds": 0.091,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "bdf80e5cee15e961f266d72aec7439c0a4689000f2df2705ff6f486fa2f17c9f"
+    },
+    {
+      "file": "remote-eroded-remnants-09.vdb",
+      "sha256": "a5f5bdd625501573dc2d32569eaad907b166ca8ca55cbbf00c07b6ae07698044",
+      "bytes": 98077,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        82,
+        81,
+        55
+      ],
+      "dense_bytes": 1461240,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -516,
+        1182,
+        -839
+      ],
+      "stored_upper": [
+        -435,
+        1262,
+        -785
+      ],
+      "seconds": 0.079,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "dd548b29beccbe0ed359dc6f4bc6e7071453604024ef3c59c33ac93bf739fc52"
+    },
+    {
+      "file": "remote-eroded-remnants-10.vdb",
+      "sha256": "2e15548eaeecd76c9d6780548c9cc46452b157eb3cc80a6c58d8aab234cc9e11",
+      "bytes": 159693,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        112,
+        56,
+        68
+      ],
+      "dense_bytes": 1705984,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -292,
+        1303,
+        -1065
+      ],
+      "stored_upper": [
+        -181,
+        1358,
+        -998
+      ],
+      "seconds": 0.098,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "eea6d884224dd3505e06d1f3d81530c362dc88c7bb6c2bf91026cfef782febdd"
+    },
+    {
+      "file": "remote-eroded-remnants-11.vdb",
+      "sha256": "619c954e3f1c8529763e3c6817d1a2650dd2b954d34b2d222ecfb00807a1fced",
+      "bytes": 129849,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        199,
+        100,
+        82
+      ],
+      "dense_bytes": 6527200,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        488,
+        1087,
+        -300
+      ],
+      "stored_upper": [
+        686,
+        1186,
+        -219
+      ],
+      "seconds": 0.085,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "992586d9280b4a3e1059c5f89c2fc288f9741794be89e950b2fd7d275555a762"
+    },
+    {
+      "file": "remote-eroded-remnants-12.vdb",
+      "sha256": "1bb138ffbbe4c5152b3766ebfecbb144a58d87e3c20aba71a34731f9b2b2c727",
+      "bytes": 33528,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        57,
+        51,
+        49
+      ],
+      "dense_bytes": 569772,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1359,
+        -411,
+        -571
+      ],
+      "stored_upper": [
+        -1303,
+        -361,
+        -523
+      ],
+      "seconds": 0.029,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "917e66d0157506d25d6c38969965a1ef48d5ca8268d75ee36a4fcb2c3309134c"
+    },
+    {
+      "file": "remote-eroded-remnants-13.vdb",
+      "sha256": "61ae0f5ae0609abef5a5d4db54d9276e65d1d0c5b672f7f0f0a10ec24fb3437b",
+      "bytes": 99815,
+      "instances_merged": 20,
+      "voxel_metres": 32,
+      "dense_shape": [
+        142,
+        82,
+        61
+      ],
+      "dense_bytes": 2841136,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -548,
+        -1351,
+        -185
+      ],
+      "stored_upper": [
+        -407,
+        -1270,
+        -125
+      ],
+      "seconds": 0.079,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "829974a3808399a71af9e02c77a40dfc969077796e1ef187dccc8a74bdf9eb52"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-00.vdb",
+      "sha256": "e461562109818eff5f70d871534c7609e7e651bd627a0e34901c8af2740db02d",
+      "bytes": 64334,
+      "instances_merged": 21,
+      "voxel_metres": 32,
+      "dense_shape": [
+        89,
+        53,
+        55
+      ],
+      "dense_bytes": 1037740,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -195,
+        1017,
+        -891
+      ],
+      "stored_upper": [
+        -107,
+        1069,
+        -837
+      ],
+      "seconds": 0.058,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "51b489ba3f33cff4d2feb63dca09eddad3ab31c9a085f998385dec21e8df76f4"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-01.vdb",
+      "sha256": "b1d85c8399ec616d596bf9a922581ec2e70708e5445bbb9d7b15306736c2e7e2",
+      "bytes": 123665,
+      "instances_merged": 17,
+      "voxel_metres": 32,
+      "dense_shape": [
+        89,
+        75,
+        61
+      ],
+      "dense_bytes": 1628700,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        79,
+        1229,
+        -130
+      ],
+      "stored_upper": [
+        167,
+        1303,
+        -70
+      ],
+      "seconds": 0.086,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "b05e322b03229d33faf17c0b2e86d403fdd17725a3f663afdf7c1eabd4fff738"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-02.vdb",
+      "sha256": "aa0fb8088af8ae9b164cc772e1f128909c320ea464d7b916c3d9198214772382",
+      "bytes": 158463,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        75,
+        160,
+        80
+      ],
+      "dense_bytes": 3840000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1123,
+        168,
+        -799
+      ],
+      "stored_upper": [
+        -1049,
+        327,
+        -720
+      ],
+      "seconds": 0.102,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "4265f99bcc8c9d54bfefb2a7574c049b89ea4e0f15df0190abf4926d1aee9684"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-03.vdb",
+      "sha256": "4d81102ce9ed0d7f6f063fabf429517208c22a30669c7a64c33a6c8c11b69772",
+      "bytes": 130350,
+      "instances_merged": 22,
+      "voxel_metres": 32,
+      "dense_shape": [
+        110,
+        84,
+        74
+      ],
+      "dense_bytes": 2735040,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -885,
+        841,
+        -715
+      ],
+      "stored_upper": [
+        -776,
+        924,
+        -642
+      ],
+      "seconds": 0.1,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "37f33d036e406924434465154dd5e0a6ee993d6c00b7f1dd0a5a4ca6f60454c1"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-04.vdb",
+      "sha256": "c40e1b858996ade1f5e23b3b6880ba2112659552c9ee611b1d33d0183007d3e8",
+      "bytes": 62701,
+      "instances_merged": 15,
+      "voxel_metres": 32,
+      "dense_shape": [
+        75,
+        59,
+        45
+      ],
+      "dense_bytes": 796500,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -519,
+        1113,
+        -714
+      ],
+      "stored_upper": [
+        -445,
+        1171,
+        -670
+      ],
+      "seconds": 0.054,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "39ca368ce08a15d04eae8822bcdbe1505df435aeeba60f6deb69446683f330e9"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-05.vdb",
+      "sha256": "99daff2938d5267fc7e6ca7ed1583f2f3e3d0295514a7db50ca4a9fb42d6757e",
+      "bytes": 449630,
+      "instances_merged": 20,
+      "voxel_metres": 32,
+      "dense_shape": [
+        168,
+        115,
+        103
+      ],
+      "dense_bytes": 7959840,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -489,
+        876,
+        -255
+      ],
+      "stored_upper": [
+        -322,
+        990,
+        -153
+      ],
+      "seconds": 0.252,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "db3fabfd0e809e9973f0e104ce23713bf1c8082e362fb6db9ca9786f9ed21f8b"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-06.vdb",
+      "sha256": "cab5e366c4a3f9b0f96214077e9076a6d91ebc43d4aff839f6f4f17a0f8a8e96",
+      "bytes": 84019,
+      "instances_merged": 17,
+      "voxel_metres": 32,
+      "dense_shape": [
+        74,
+        95,
+        56
+      ],
+      "dense_bytes": 1574720,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -732,
+        955,
+        -167
+      ],
+      "stored_upper": [
+        -659,
+        1049,
+        -112
+      ],
+      "seconds": 0.082,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "d4e6837067fc15aa28c2202a193a0d0770d119924f6b819f5be5ea62af9427de"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-07.vdb",
+      "sha256": "4da8c0b83b215a1b62219fa2f5a9a1dca30359f43f27d32732dfa4cc8a04de51",
+      "bytes": 93589,
+      "instances_merged": 15,
+      "voxel_metres": 32,
+      "dense_shape": [
+        80,
+        76,
+        58
+      ],
+      "dense_bytes": 1410560,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -568,
+        972,
+        -447
+      ],
+      "stored_upper": [
+        -489,
+        1047,
+        -390
+      ],
+      "seconds": 0.061,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "38b069fa40e521804c6d5f336751f45ab5a20aef667cbd662f81629fdbc8458e"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-08.vdb",
+      "sha256": "efcc2bbb00867323225477d3397a84a146c23f4ecf2edce28181614a62ba3631",
+      "bytes": 105888,
+      "instances_merged": 25,
+      "voxel_metres": 32,
+      "dense_shape": [
+        110,
+        53,
+        53
+      ],
+      "dense_bytes": 1235960,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -72,
+        1262,
+        -395
+      ],
+      "stored_upper": [
+        37,
+        1314,
+        -343
+      ],
+      "seconds": 0.066,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "6636fe22d45920668dbcf03b8715fa4a09bfe697a9b002a9c1b22d08ab3fce7e"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-09.vdb",
+      "sha256": "7c1d3f9ab1ac2408f25562b86defaa91e2d5372b08bad6de2658c3f3275a41c8",
+      "bytes": 155365,
+      "instances_merged": 17,
+      "voxel_metres": 32,
+      "dense_shape": [
+        65,
+        88,
+        81
+      ],
+      "dense_bytes": 1853280,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1058,
+        373,
+        -497
+      ],
+      "stored_upper": [
+        -994,
+        460,
+        -417
+      ],
+      "seconds": 0.087,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "e762068e7337966d7290320bf291503b7f7648c2e114d0d12a282ede60baa3a0"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-10.vdb",
+      "sha256": "71af1dc0ad84839c2a13a40b0800caa479c0acce0b08bef7f3246cd4c06ddc33",
+      "bytes": 313669,
+      "instances_merged": 20,
+      "voxel_metres": 32,
+      "dense_shape": [
+        135,
+        120,
+        112
+      ],
+      "dense_bytes": 7257600,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -474,
+        880,
+        -132
+      ],
+      "stored_upper": [
+        -340,
+        999,
+        -21
+      ],
+      "seconds": 0.196,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "c49742e53a824d578de85f09b1752ec6f71f571798feaa1ee498b730628e2983"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-11.vdb",
+      "sha256": "0dfc67b4d179487462c66a3472acbf72c5cc8d08be383b36a8abf2c9064098aa",
+      "bytes": 106364,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        137,
+        84,
+        58
+      ],
+      "dense_bytes": 2669856,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -834,
+        997,
+        -899
+      ],
+      "stored_upper": [
+        -698,
+        1080,
+        -842
+      ],
+      "seconds": 0.061,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "4e5d30e294c506497517ac11bf98f208f110d4004acb27e85cca020ced354a33"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-12.vdb",
+      "sha256": "fe365129563acda189ea0043825783d68a990608eb6d59ec8271d405c49d0d7a",
+      "bytes": 292298,
+      "instances_merged": 15,
+      "voxel_metres": 32,
+      "dense_shape": [
+        134,
+        153,
+        81
+      ],
+      "dense_bytes": 6642648,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1152,
+        471,
+        -673
+      ],
+      "stored_upper": [
+        -1019,
+        623,
+        -593
+      ],
+      "seconds": 0.16,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "337f0207a4f68f4585ee2bbf5de4df633a5f17f981e57bb0eba422aad2a200bf"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-13.vdb",
+      "sha256": "da3b319686f954ac5e69fe596dcaa8aa8fa810e8410e27b6e4af7a72f8e705b2",
+      "bytes": 190799,
+      "instances_merged": 21,
+      "voxel_metres": 32,
+      "dense_shape": [
+        111,
+        110,
+        68
+      ],
+      "dense_bytes": 3321120,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -915,
+        745,
+        -915
+      ],
+      "stored_upper": [
+        -805,
+        854,
+        -848
+      ],
+      "seconds": 0.168,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "fb4c8864ae5c225aab25fccc567eda09eb06e9077ecb5fe5b95ee55ad72b5416"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-14.vdb",
+      "sha256": "82b6108b7474170d8b1fd9636b23e006d5c8d6198bcf442cf1a4cd14a7626f59",
+      "bytes": 173086,
+      "instances_merged": 15,
+      "voxel_metres": 32,
+      "dense_shape": [
+        147,
+        70,
+        76
+      ],
+      "dense_bytes": 3128160,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        43,
+        1247,
+        -260
+      ],
+      "stored_upper": [
+        189,
+        1316,
+        -185
+      ],
+      "seconds": 0.1,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "f57ab35812f5796a7cd12beb495a056423e08520fa33ad207b7ab17999c3447f"
+    },
+    {
+      "file": "far-weather-layer-1-cluster-15.vdb",
+      "sha256": "c0db3c2f103e69c25821ecf737982ca6717826634659bfc097112ae24d12b8e0",
+      "bytes": 93355,
+      "instances_merged": 28,
+      "voxel_metres": 32,
+      "dense_shape": [
+        122,
+        71,
+        58
+      ],
+      "dense_bytes": 2009584,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        22,
+        975,
+        -269
+      ],
+      "stored_upper": [
+        143,
+        1045,
+        -212
+      ],
+      "seconds": 0.079,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "af62c194ce813bc2ca8941d5fac3402926603d94ef5c6a19b6136b4358bcec3b"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-00.vdb",
+      "sha256": "9ab0f2555312e2a21ef5446f4c625403b9eac1b15ff5e0aa4ce6d91cd479a671",
+      "bytes": 47772,
+      "instances_merged": 27,
+      "voxel_metres": 32,
+      "dense_shape": [
+        65,
+        96,
+        65
+      ],
+      "dense_bytes": 1622400,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1529,
+        632,
+        -317
+      ],
+      "stored_upper": [
+        -1465,
+        727,
+        -253
+      ],
+      "seconds": 0.047,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "f32246cec453dd68d017da28c1fc1f29d61b27de3839a4b9fc59653918df33d2"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-01.vdb",
+      "sha256": "1b25e611a2fbc06ba6542f54bca2cf21a7b116973893c17fd3fc1deff55a9fdf",
+      "bytes": 139244,
+      "instances_merged": 23,
+      "voxel_metres": 32,
+      "dense_shape": [
+        117,
+        95,
+        100
+      ],
+      "dense_bytes": 4446000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -997,
+        1030,
+        -719
+      ],
+      "stored_upper": [
+        -881,
+        1124,
+        -620
+      ],
+      "seconds": 0.123,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "4b8ae22d07ab08437872f52e3051a36f04c6c9a5df26d2fff6c05896aa54ce81"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-02.vdb",
+      "sha256": "ba7b964ab883f7286cb5fe1fc759ad0e2d11ca2266b88d04beee3c55c2092eaf",
+      "bytes": 71520,
+      "instances_merged": 24,
+      "voxel_metres": 32,
+      "dense_shape": [
+        80,
+        47,
+        58
+      ],
+      "dense_bytes": 872320,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -32,
+        1574,
+        -601
+      ],
+      "stored_upper": [
+        47,
+        1620,
+        -544
+      ],
+      "seconds": 0.061,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "79929358cd499d4f9ae749edfab7330a7a6529ca0240b9af17e4dc9814772b79"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-03.vdb",
+      "sha256": "dc04647e98a783bfc9f058cb7658c11c25ea0567c4bff8ba21972da7a9ff13fd",
+      "bytes": 182324,
+      "instances_merged": 23,
+      "voxel_metres": 32,
+      "dense_shape": [
+        106,
+        109,
+        77
+      ],
+      "dense_bytes": 3558632,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1105,
+        1024,
+        -164
+      ],
+      "stored_upper": [
+        -1000,
+        1132,
+        -88
+      ],
+      "seconds": 0.147,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "09141bb4818ce4de1c4165d8b874df94b86ff32d2a2319a88143618ec2883771"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-04.vdb",
+      "sha256": "0d090eb920cc1af77f54a39cc30ca3839ae612c182be3295ca83b437da82f557",
+      "bytes": 65574,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        54,
+        75,
+        60
+      ],
+      "dense_bytes": 972000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1538,
+        473,
+        -184
+      ],
+      "stored_upper": [
+        -1485,
+        547,
+        -125
+      ],
+      "seconds": 0.05,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "59c03e51d9f6dd092a205f5baa553ea7391646873ed8c7d4f88dcba9c7cd15ec"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-05.vdb",
+      "sha256": "9dc46241781473a8a3b6e70aa79638998adb48a36debc51b7c573c4542b124ed",
+      "bytes": 38665,
+      "instances_merged": 20,
+      "voxel_metres": 32,
+      "dense_shape": [
+        60,
+        46,
+        46
+      ],
+      "dense_bytes": 507840,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        168,
+        1690,
+        -1251
+      ],
+      "stored_upper": [
+        227,
+        1735,
+        -1206
+      ],
+      "seconds": 0.047,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "7a37d6f5525c64f03528f8fa9e8704ade04e7f8cbf672815668d8c96e01f3277"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-06.vdb",
+      "sha256": "bdb0cd5aedb65af09dea2edd6585bc29e6cc7e3e6e678647d546d17fe0cae05f",
+      "bytes": 29783,
+      "instances_merged": 13,
+      "voxel_metres": 32,
+      "dense_shape": [
+        60,
+        63,
+        44
+      ],
+      "dense_bytes": 665280,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1232,
+        835,
+        -1226
+      ],
+      "stored_upper": [
+        -1173,
+        897,
+        -1183
+      ],
+      "seconds": 0.033,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "e5dfce73b1103559793c7f4c8367fe7d6ef2a4b6027faf87cd95583b604c8498"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-07.vdb",
+      "sha256": "2c0ea7e3b6ee7504ddddf402edeb08f82769f4e87e94159d0474f40024c1a2d1",
+      "bytes": 83033,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        84,
+        55,
+        51
+      ],
+      "dense_bytes": 942480,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -339,
+        1407,
+        -1130
+      ],
+      "stored_upper": [
+        -256,
+        1461,
+        -1080
+      ],
+      "seconds": 0.048,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "3733037dc8712eff3459ebd885478c4fb090d5c62a84c0b40d1d6b77564c03de"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-08.vdb",
+      "sha256": "aff50d94bfa5663b63cfab0b459f51a2d8cac0536587c75062ec0bf62ede0883",
+      "bytes": 65194,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        59,
+        86,
+        49
+      ],
+      "dense_bytes": 994504,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1180,
+        845,
+        -293
+      ],
+      "stored_upper": [
+        -1122,
+        930,
+        -245
+      ],
+      "seconds": 0.062,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "8d6c2747f3236d7caf54eff7f5fe926eb52e3e4306af4820bcce4080bf45b7d7"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-09.vdb",
+      "sha256": "99158269a6ede111d9367d4918dbc85e7d896cb9a50853fd964b09e27b628d7a",
+      "bytes": 43693,
+      "instances_merged": 24,
+      "voxel_metres": 32,
+      "dense_shape": [
+        61,
+        69,
+        57
+      ],
+      "dense_bytes": 959652,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1170,
+        1034,
+        -966
+      ],
+      "stored_upper": [
+        -1110,
+        1102,
+        -910
+      ],
+      "seconds": 0.055,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "a998ea87acd8e7a810a8916df0378acf4f191c11377c6ee14e69173e1d2a434d"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-10.vdb",
+      "sha256": "0ef8e3f9ee3728d21b89defdc709b6ba1486846abf31e1ff79b05e91f4e9717a",
+      "bytes": 46702,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        65,
+        71,
+        50
+      ],
+      "dense_bytes": 923000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1281,
+        976,
+        -1052
+      ],
+      "stored_upper": [
+        -1217,
+        1046,
+        -1003
+      ],
+      "seconds": 0.044,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "8a48e1d3442438818f3ce6372208941252bd6587135377a18fe32c778c4f6286"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-11.vdb",
+      "sha256": "291559b9ce872faf714bf09171f3a6b54a5073883cb069ba9a34610c1c294c3f",
+      "bytes": 138974,
+      "instances_merged": 15,
+      "voxel_metres": 32,
+      "dense_shape": [
+        137,
+        68,
+        86
+      ],
+      "dense_bytes": 3204704,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -115,
+        1442,
+        -335
+      ],
+      "stored_upper": [
+        21,
+        1509,
+        -250
+      ],
+      "seconds": 0.075,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "56e75ab0f362678592fdfa5431b59c7fcd09d47728dc87e95e0bb40b036af3eb"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-12.vdb",
+      "sha256": "f748b8380287a0a97e88c42f80aaf376f6edfc893a279b6be863a0a9c578af96",
+      "bytes": 50737,
+      "instances_merged": 25,
+      "voxel_metres": 32,
+      "dense_shape": [
+        64,
+        73,
+        56
+      ],
+      "dense_bytes": 1046528,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1165,
+        814,
+        -612
+      ],
+      "stored_upper": [
+        -1102,
+        886,
+        -557
+      ],
+      "seconds": 0.061,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "d9ba004ea05c12c9992e8c8b65b685ca8a4419a15b3eff309c502f8a241ba79f"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-13.vdb",
+      "sha256": "403c4f36e5dfc199fc9f1af8355cb11317fcf00ec91f0de8b113e9afba2f725a",
+      "bytes": 103274,
+      "instances_merged": 25,
+      "voxel_metres": 32,
+      "dense_shape": [
+        102,
+        55,
+        85
+      ],
+      "dense_bytes": 1907400,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -281,
+        1590,
+        -1209
+      ],
+      "stored_upper": [
+        -180,
+        1644,
+        -1125
+      ],
+      "seconds": 0.068,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "38d9504289022530dc43a886d9cf37d8cf937ee3cf713b7d221e70cc2959ed9b"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-14.vdb",
+      "sha256": "96e2bacecb89603735367382809a00f302cacab9260dd0c8cadf195100c47af7",
+      "bytes": 45656,
+      "instances_merged": 24,
+      "voxel_metres": 32,
+      "dense_shape": [
+        77,
+        67,
+        53
+      ],
+      "dense_bytes": 1093708,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -880,
+        1291,
+        -890
+      ],
+      "stored_upper": [
+        -804,
+        1357,
+        -838
+      ],
+      "seconds": 0.059,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "76efc9e1a7a989d712a969d9ee5b6c8f8c1a903595c2d4932e37bbc252efb303"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-15.vdb",
+      "sha256": "5232651632364bb1c11c24276eb20058fc865f4491f798605a5b604ec076ffc1",
+      "bytes": 118871,
+      "instances_merged": 20,
+      "voxel_metres": 32,
+      "dense_shape": [
+        108,
+        67,
+        82
+      ],
+      "dense_bytes": 2373408,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -569,
+        1359,
+        -1057
+      ],
+      "stored_upper": [
+        -462,
+        1425,
+        -976
+      ],
+      "seconds": 0.088,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "686713dfdf87e25fec2f529abb344caa664458f069de9d67ce9cef9209d85984"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-16.vdb",
+      "sha256": "f6f79c6fc76d8db4af6bcf4d55978d4cfd1625d2703d8ddd790102cfd8d1484f",
+      "bytes": 20077,
+      "instances_merged": 16,
+      "voxel_metres": 32,
+      "dense_shape": [
+        34,
+        41,
+        31
+      ],
+      "dense_bytes": 172856,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1281,
+        1077,
+        -438
+      ],
+      "stored_upper": [
+        -1248,
+        1117,
+        -408
+      ],
+      "seconds": 0.034,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "4924f85ef6d4d2a0c6fbb945259e9ba1e99aeb18cc70d3f9d68e115a939571cd"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-17.vdb",
+      "sha256": "c8ce95a15adf105e504663343c84f77b00e2fabed4389bec3bdeec3e8fc2c697",
+      "bytes": 107901,
+      "instances_merged": 22,
+      "voxel_metres": 32,
+      "dense_shape": [
+        90,
+        130,
+        82
+      ],
+      "dense_bytes": 3837600,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1515,
+        495,
+        -455
+      ],
+      "stored_upper": [
+        -1426,
+        624,
+        -374
+      ],
+      "seconds": 0.081,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "80138199982f85e2d593c6ed9d648cf4e1fd10b06187ebb3ad49acd111731da7"
+    },
+    {
+      "file": "far-weather-layer-2-cluster-18.vdb",
+      "sha256": "e2ee41914bb24af62398cb3b68d5ceebd5a1aac2642c12f2d1bd2a6bd0f5abf2",
+      "bytes": 165465,
+      "instances_merged": 23,
+      "voxel_metres": 32,
+      "dense_shape": [
+        127,
+        86,
+        83
+      ],
+      "dense_bytes": 3626104,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -602,
+        1434,
+        -575
+      ],
+      "stored_upper": [
+        -476,
+        1519,
+        -493
+      ],
+      "seconds": 0.117,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "ade570758dc230d5a4ff4ecbd55a2463e181b79609bcf580fecacaa9036d2117"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-00.vdb",
+      "sha256": "aabf3c39fc254f07a9c53013167adb74fdfc5dc967fb8c845772090f2d6f6fa0",
+      "bytes": 43312,
+      "instances_merged": 13,
+      "voxel_metres": 32,
+      "dense_shape": [
+        55,
+        73,
+        42
+      ],
+      "dense_bytes": 674520,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -2000,
+        550,
+        -625
+      ],
+      "stored_upper": [
+        -1946,
+        622,
+        -584
+      ],
+      "seconds": 0.044,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "54e756c5f1a541a5682dcb4cab4da9033e7660b75ef8ee8cb50b8f67ae060026"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-01.vdb",
+      "sha256": "f97aca37616c1ad821d436edf95d8430e2e3aecf78933367753e0247b8580a3a",
+      "bytes": 27450,
+      "instances_merged": 19,
+      "voxel_metres": 32,
+      "dense_shape": [
+        58,
+        60,
+        46
+      ],
+      "dense_bytes": 640320,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1651,
+        991,
+        -327
+      ],
+      "stored_upper": [
+        -1594,
+        1050,
+        -282
+      ],
+      "seconds": 0.038,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "ade31a5ac7b3ea4688a2afaa7dbc1561f9279b14358b6e78902e6df04eea76a3"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-02.vdb",
+      "sha256": "1acffc260257e35af551f231a6719e0b156e6aaa706978a720b64d94a4d90908",
+      "bytes": 70970,
+      "instances_merged": 10,
+      "voxel_metres": 32,
+      "dense_shape": [
+        73,
+        82,
+        48
+      ],
+      "dense_bytes": 1149312,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1733,
+        976,
+        -1638
+      ],
+      "stored_upper": [
+        -1661,
+        1057,
+        -1591
+      ],
+      "seconds": 0.061,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "3d0e38285d49f9243ceadd53cb6bc983c206762d44fc32b7950ee392aa4d1590"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-03.vdb",
+      "sha256": "e1ce68fae32f262167176b8826ef5add86e40e6796a2ceaadd32278e161c9280",
+      "bytes": 44240,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        60,
+        54,
+        50
+      ],
+      "dense_bytes": 648000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1607,
+        1191,
+        -629
+      ],
+      "stored_upper": [
+        -1548,
+        1244,
+        -580
+      ],
+      "seconds": 0.043,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "513b6957f41e9f3c441abd03fd53335e8204f7db360b54f96396bd5607800798"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-04.vdb",
+      "sha256": "64c9944a2fe612240914aac38cb4d069b31f0008882166142e0b01975674dba6",
+      "bytes": 22063,
+      "instances_merged": 18,
+      "voxel_metres": 32,
+      "dense_shape": [
+        39,
+        59,
+        35
+      ],
+      "dense_bytes": 322140,
+      "density_max": 0.99951171875,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -2118,
+        836,
+        -1342
+      ],
+      "stored_upper": [
+        -2080,
+        894,
+        -1308
+      ],
+      "seconds": 0.036,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "5a8ea07bd48b655bf14e9b05d664f766c223e32d98d4e0786d4cb6ead5fe8634"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-05.vdb",
+      "sha256": "7a6d23d3063c69a970d2f68165a2d06004fd8bfab20f3d9727be8ab18f4dccbc",
+      "bytes": 69328,
+      "instances_merged": 11,
+      "voxel_metres": 32,
+      "dense_shape": [
+        76,
+        58,
+        56
+      ],
+      "dense_bytes": 987392,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -281,
+        2016,
+        -727
+      ],
+      "stored_upper": [
+        -206,
+        2073,
+        -672
+      ],
+      "seconds": 0.056,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "de60b07a7392c75cf2a5735970f599ad9193dbea07685f526a3d06419fccc97c"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-06.vdb",
+      "sha256": "c9b2814da75757998d4372d822a4a4a1d8a6491f40b1e0651dd5371d1af81d5a",
+      "bytes": 22351,
+      "instances_merged": 19,
+      "voxel_metres": 32,
+      "dense_shape": [
+        43,
+        39,
+        31
+      ],
+      "dense_bytes": 207948,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -703,
+        1942,
+        -1651
+      ],
+      "stored_upper": [
+        -661,
+        1980,
+        -1621
+      ],
+      "seconds": 0.046,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "ec124a754167b213f998768729a3dc633ed07ae18abc808b39a1b4d70f242d03"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-07.vdb",
+      "sha256": "b9f035706ead053a2620d555bd44031e19343d9d09256fb81be3b09a2229f64f",
+      "bytes": 55475,
+      "instances_merged": 17,
+      "voxel_metres": 32,
+      "dense_shape": [
+        63,
+        54,
+        49
+      ],
+      "dense_bytes": 666792,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1297,
+        1612,
+        -1176
+      ],
+      "stored_upper": [
+        -1235,
+        1665,
+        -1128
+      ],
+      "seconds": 0.066,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "009e92c009a8ef55b21664f38df0a07ed84c6bf4b7ea6e8090c69df0c3aa5c7c"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-08.vdb",
+      "sha256": "e56a338c3fc32dec6db9bd372859f689899f1d76927cf66a94abd72c3ad6c806",
+      "bytes": 82644,
+      "instances_merged": 23,
+      "voxel_metres": 32,
+      "dense_shape": [
+        69,
+        71,
+        59
+      ],
+      "dense_bytes": 1156164,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -2006,
+        741,
+        -1777
+      ],
+      "stored_upper": [
+        -1938,
+        811,
+        -1719
+      ],
+      "seconds": 0.076,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "ad67e94b328bb99e5c4ac275c85414f2efe9ca9d84fcc9b644df3a9fa2dcde52"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-09.vdb",
+      "sha256": "6729ef9ed88f3127b2bfc8e81c2745c8e225a9add4ee129464656194f9f01552",
+      "bytes": 20151,
+      "instances_merged": 22,
+      "voxel_metres": 32,
+      "dense_shape": [
+        54,
+        35,
+        30
+      ],
+      "dense_bytes": 226800,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -310,
+        1929,
+        -1104
+      ],
+      "stored_upper": [
+        -257,
+        1963,
+        -1075
+      ],
+      "seconds": 0.036,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "33638976febeebac2f828474134c847946b3a882c0fe2ff5404b35c6f493978e"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-10.vdb",
+      "sha256": "9d44fceb965c4243be618cc6812132a5276c2012d675f4862581745d683c20d6",
+      "bytes": 42613,
+      "instances_merged": 15,
+      "voxel_metres": 32,
+      "dense_shape": [
+        71,
+        67,
+        37
+      ],
+      "dense_bytes": 704036,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1554,
+        1637,
+        -825
+      ],
+      "stored_upper": [
+        -1484,
+        1703,
+        -789
+      ],
+      "seconds": 0.045,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "4f259c01b3fd810f20f7a1f467b9e21ee0caf6a245cff3ffd489c4be69571a5c"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-11.vdb",
+      "sha256": "60d4552fedaf01f39dfe532c50bdd28d66a9bea8d71541208c05facd1bfdc821",
+      "bytes": 51052,
+      "instances_merged": 21,
+      "voxel_metres": 32,
+      "dense_shape": [
+        94,
+        49,
+        59
+      ],
+      "dense_bytes": 1087016,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -363,
+        2148,
+        -534
+      ],
+      "stored_upper": [
+        -270,
+        2196,
+        -476
+      ],
+      "seconds": 0.056,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "fab08d3166ac659aaf78288bab2c76a8dfdf3c53a5da8d99092d8ade67abeb26"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-12.vdb",
+      "sha256": "34401bfab25b4d81aa2d4c2555e01c9e620d91ac25f84e18c3ce5c5070517abb",
+      "bytes": 18678,
+      "instances_merged": 12,
+      "voxel_metres": 32,
+      "dense_shape": [
+        36,
+        39,
+        25
+      ],
+      "dense_bytes": 140400,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -666,
+        2001,
+        -353
+      ],
+      "stored_upper": [
+        -631,
+        2039,
+        -329
+      ],
+      "seconds": 0.026,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "a75b2255a89bece358e44493226b15c2b117fa91ad114fc246a75f9d14f216e5"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-13.vdb",
+      "sha256": "c59cf5862a0de7ab3848d0fb98149b6d60df16ba2080c91e4fe874fc384ef770",
+      "bytes": 25679,
+      "instances_merged": 10,
+      "voxel_metres": 32,
+      "dense_shape": [
+        58,
+        32,
+        28
+      ],
+      "dense_bytes": 207872,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -535,
+        1838,
+        -606
+      ],
+      "stored_upper": [
+        -478,
+        1869,
+        -579
+      ],
+      "seconds": 0.027,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "d25c70a1a2cfc23977d956dec6a5c25b81b86f5581e2bbb646c87e1de6ee9dfd"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-14.vdb",
+      "sha256": "f22b6e84f66c89fc15c487ebfaf69f4053b9e972562aed07fc981db0d97330b0",
+      "bytes": 45809,
+      "instances_merged": 25,
+      "voxel_metres": 32,
+      "dense_shape": [
+        61,
+        63,
+        39
+      ],
+      "dense_bytes": 599508,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1655,
+        1352,
+        -1093
+      ],
+      "stored_upper": [
+        -1595,
+        1414,
+        -1055
+      ],
+      "seconds": 0.06,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "77323c75b13da6fb1abd2bf2d6b96ab1c557e1b2676a37ff9496896246f212bb"
+    },
+    {
+      "file": "far-weather-layer-3-cluster-15.vdb",
+      "sha256": "e779ef6af72f231d04df79add69e60df3c7d905fadb3781a99df1ca7a9b741f1",
+      "bytes": 29294,
+      "instances_merged": 25,
+      "voxel_metres": 32,
+      "dense_shape": [
+        49,
+        47,
+        40
+      ],
+      "dense_bytes": 368480,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1770,
+        1011,
+        -913
+      ],
+      "stored_upper": [
+        -1722,
+        1057,
+        -874
+      ],
+      "seconds": 0.042,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "2fb082eb08a3888b4ec0f641a8bb7355258dbf8d9dbf72582b2ad72cf4cc2a61"
+    },
+    {
+      "file": "western-distant-curtain.vdb",
+      "sha256": "cc29f4d70928f2717ebdb12e3580d41f249c571816a2d3768bef36b62f8a35f3",
+      "bytes": 8304173,
+      "instances_merged": 394,
+      "voxel_metres": 48,
+      "dense_shape": [
+        204,
+        384,
+        674
+      ],
+      "dense_bytes": 211193856,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1004,
+        109,
+        -557
+      ],
+      "stored_upper": [
+        -801,
+        492,
+        116
+      ],
+      "seconds": 5.513,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "f1fa39c39a23a32f7d78d7eb626e5ad789b2de32c5736ce84c7faf47fbe96d6a"
+    },
+    {
+      "file": "upper-broken-canopy.vdb",
+      "sha256": "6779edb31581886975b0842e9756fb445816b624a2ed8ab3c36a1988defe756e",
+      "bytes": 3313739,
+      "instances_merged": 264,
+      "voxel_metres": 48,
+      "dense_shape": [
+        459,
+        522,
+        224
+      ],
+      "dense_bytes": 214679808,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1109,
+        414,
+        -87
+      ],
+      "stored_upper": [
+        -651,
+        935,
+        136
+      ],
+      "seconds": 2.818,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "1af4e20af7c61a0bbfc0e6b1679e6cc49fff2293e48a520d9ebfb03f7ed098d6"
+    },
+    {
+      "file": "eastern-distant-curtain.vdb",
+      "sha256": "1c18aa4165beff590182c0f3305df33be9036665a27290bb4586ccacac24154d",
+      "bytes": 11552126,
+      "instances_merged": 420,
+      "voxel_metres": 48,
+      "dense_shape": [
+        736,
+        235,
+        743
+      ],
+      "dense_bytes": 514037120,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -583,
+        1119,
+        -641
+      ],
+      "stored_upper": [
+        152,
+        1353,
+        101
+      ],
+      "seconds": 7.874,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "87ade9ca98d1c18a5427d10228a51c9c14d2e5ce659619a37e5278f67ae7a425"
+    },
+    {
+      "file": "central-broken-weather.vdb",
+      "sha256": "9f1ab11784db074ee29bb309363fdbfa888c3c211e6b8883776c14f28dc6c550",
+      "bytes": 3739866,
+      "instances_merged": 277,
+      "voxel_metres": 48,
+      "dense_shape": [
+        610,
+        445,
+        412
+      ],
+      "dense_bytes": 447349600,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1030,
+        829,
+        -653
+      ],
+      "stored_upper": [
+        -421,
+        1273,
+        -242
+      ],
+      "seconds": 3.039,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "1c15f9cdc6d2e77cd3498db6deb41b3d95e84929a992b71181b792968a8ca791"
+    },
+    {
+      "file": "lower-remote-cloud-sea.vdb",
+      "sha256": "d39fe62191230c7918f4353536afa37509e8e598b002b8455a619a997c5f8b94",
+      "bytes": 9299150,
+      "instances_merged": 503,
+      "voxel_metres": 48,
+      "dense_shape": [
+        996,
+        738,
+        839
+      ],
+      "dense_bytes": 2466821088,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -992,
+        313,
+        -1160
+      ],
+      "stored_upper": [
+        3,
+        1050,
+        -322
+      ],
+      "seconds": 8.231,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "6daf6501200137df8951b8d8baf9a1200a01ab27a350132a0faa5424019a57d2"
+    },
+    {
+      "file": "thin-opening-rim.vdb",
+      "sha256": "443831fe9a918b5f9efb9ea92cc674bd9277544a16a63db9a114bb25dbc7473c",
+      "bytes": 198104,
+      "instances_merged": 8,
+      "voxel_metres": 24,
+      "dense_shape": [
+        144,
+        274,
+        194
+      ],
+      "dense_bytes": 30617856,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1263,
+        608,
+        -160
+      ],
+      "stored_upper": [
+        -1120,
+        881,
+        33
+      ],
+      "seconds": 0.226,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "3bafbf1dfb5e718736a93097342a71169ed4224f2cd0d6a0ff50144f92363046"
+    },
+    {
+      "file": "western-torn-cheek.vdb",
+      "sha256": "c6df08e53d94962a4ed12d66aad94f1d558517693c0772fac959bfb2aa397ee1",
+      "bytes": 237477,
+      "instances_merged": 44,
+      "voxel_metres": 14.0,
+      "dense_shape": [
+        157,
+        173,
+        190
+      ],
+      "dense_bytes": 20642360,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1255,
+        499,
+        -191
+      ],
+      "stored_upper": [
+        -1099,
+        671,
+        -2
+      ],
+      "seconds": 0.43,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "f2a91eba4f0c516f72d2b72894bfca4e95f8731058cb366b003c107e9870164e"
+    },
+    {
+      "file": "upper-broken-lip.vdb",
+      "sha256": "5a97b2b2a9e15825d02385614c1812d9e37508d24c822d476952ba14bf36e958",
+      "bytes": 181400,
+      "instances_merged": 40,
+      "voxel_metres": 14.0,
+      "dense_shape": [
+        188,
+        217,
+        91
+      ],
+      "dense_bytes": 14849744,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1417,
+        714,
+        -52
+      ],
+      "stored_upper": [
+        -1230,
+        930,
+        38
+      ],
+      "seconds": 0.283,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "29b59f2efa3fe9b150eb9dee5d99b8fbb1371bc607d9a4e93a994b37638d939e"
+    },
+    {
+      "file": "lower-scattered-clasp.vdb",
+      "sha256": "5b36fae87bd57143b642ba493af0545f9ff0e335962e57cc661886501b779c52",
+      "bytes": 106802,
+      "instances_merged": 38,
+      "voxel_metres": 14.0,
+      "dense_shape": [
+        155,
+        170,
+        87
+      ],
+      "dense_bytes": 9169800,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1645,
+        800,
+        -224
+      ],
+      "stored_upper": [
+        -1491,
+        969,
+        -138
+      ],
+      "seconds": 0.148,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "bb07fc19c9e8aa683687927ae6521c68ebce18aa5b8b2a4863b413ac0d5272b7"
+    },
+    {
+      "file": "eastern-drifting-fragments.vdb",
+      "sha256": "06e702194529399bfaff4e63146804220a2f6da6e1333c73905a0eebd4d807ae",
+      "bytes": 134235,
+      "instances_merged": 37,
+      "voxel_metres": 14.0,
+      "dense_shape": [
+        175,
+        193,
+        125
+      ],
+      "dense_bytes": 16887500,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1800,
+        1105,
+        -212
+      ],
+      "stored_upper": [
+        -1626,
+        1297,
+        -88
+      ],
+      "seconds": 0.16,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "86f99505b455dcea285e46bf3d8205a1386e75aa42bb3be9418a6c1d791fd294"
+    },
+    {
+      "file": "remote-weather-shred-00.vdb",
+      "sha256": "8c70a877e6d36f264d89f7025ffe587b9c9243b35031f8482c56b9c8bdea3a9c",
+      "bytes": 29658,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        95,
+        90,
+        33
+      ],
+      "dense_bytes": 1128600,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1365,
+        943,
+        -204
+      ],
+      "stored_upper": [
+        -1271,
+        1032,
+        -172
+      ],
+      "seconds": 0.04,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "8a7d958f4f5134feee85c0f0b13f2a8bc557dcac759f3688eef37bd6b3665be7"
+    },
+    {
+      "file": "remote-weather-shred-01.vdb",
+      "sha256": "77b699f99f296165c507fde532b8dbaadc0f51d42b03275d94b321ad5aaac7c3",
+      "bytes": 32597,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        107,
+        88,
+        42
+      ],
+      "dense_bytes": 1581888,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1450,
+        1105,
+        -305
+      ],
+      "stored_upper": [
+        -1344,
+        1192,
+        -264
+      ],
+      "seconds": 0.047,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "fa452e69a50f3d8e52b771e91e55f80599f3bec20e7ee5028ac3af8fc9d90e7b"
+    },
+    {
+      "file": "remote-weather-shred-02.vdb",
+      "sha256": "61748b8e82caf459ab68535402a7ca37a83a4d057b634174ee2fae9a8f187409",
+      "bytes": 23459,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        72,
+        90,
+        31
+      ],
+      "dense_bytes": 803520,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1127,
+        1028,
+        -222
+      ],
+      "stored_upper": [
+        -1056,
+        1117,
+        -192
+      ],
+      "seconds": 0.035,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "c4af32533685c1cdfcc816790fba1a3c0e98684095e32e40ca46128c0d88ddda"
+    },
+    {
+      "file": "remote-weather-shred-03.vdb",
+      "sha256": "d5045a96d4013d00168f92972e6409e804d29519a6e4ab9ebf329cfff07bfacb",
+      "bytes": 24090,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        81,
+        97,
+        47
+      ],
+      "dense_bytes": 1477116,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1368,
+        1399,
+        -390
+      ],
+      "stored_upper": [
+        -1288,
+        1495,
+        -344
+      ],
+      "seconds": 0.033,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "69df8d969e3054ab80b0c1c2dc8f200df97ac1e6f5176e9b73c474b50d99d6a2"
+    },
+    {
+      "file": "remote-weather-shred-04.vdb",
+      "sha256": "85e5932ff4ef545ffc3aee718a7e8eaef7c1262e02f254b33ab733a1e7380b56",
+      "bytes": 24397,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        72,
+        125,
+        49
+      ],
+      "dense_bytes": 1764000,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1146,
+        1386,
+        -309
+      ],
+      "stored_upper": [
+        -1075,
+        1510,
+        -261
+      ],
+      "seconds": 0.042,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "5b087769629a7f1a9e60e2dca2b2e3ea97bb8ea5dc3e0fb01779b2518e2efcb3"
+    },
+    {
+      "file": "remote-weather-shred-05.vdb",
+      "sha256": "8f8d258f1216200ccfa56d3dae898ba134ee9614e478e68ea1afad0c1800a53a",
+      "bytes": 23090,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        99,
+        114,
+        53
+      ],
+      "dense_bytes": 2392632,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -1127,
+        1639,
+        -454
+      ],
+      "stored_upper": [
+        -1029,
+        1752,
+        -402
+      ],
+      "seconds": 0.037,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "574236bb88d51139ff7a30ee07793504b87b3d84d99f387a928fd1f4edc3d598"
+    },
+    {
+      "file": "remote-weather-shred-06.vdb",
+      "sha256": "de377b74f1ceb6b80989db3fc58602fcf762319071ea65a53bf50e49ee77acf6",
+      "bytes": 27185,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        84,
+        102,
+        46
+      ],
+      "dense_bytes": 1576512,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -580,
+        1803,
+        -318
+      ],
+      "stored_upper": [
+        -497,
+        1904,
+        -273
+      ],
+      "seconds": 0.04,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "3f587d4c96748809b202d7e6b26be09d94980f167431694ddf9702ec5e60bb16"
+    },
+    {
+      "file": "remote-weather-shred-07.vdb",
+      "sha256": "dd82fda5216910597ad435992156092c4eaa5b2b5cc67554121d68b22604eab3",
+      "bytes": 24517,
+      "instances_merged": 8,
+      "voxel_metres": 20.0,
+      "dense_shape": [
+        88,
+        109,
+        45
+      ],
+      "dense_bytes": 1726560,
+      "density_max": 1.0,
+      "stored_zero_halo": true,
+      "stored_lower": [
+        -243,
+        2058,
+        -372
+      ],
+      "stored_upper": [
+        -156,
+        2166,
+        -328
+      ],
+      "seconds": 0.038,
+      "serialization_file_uuid_replayed": true,
+      "bytes_outside_uuid_sha256": "18508dd1ea030e92c0eca133700b74038d534e6f0a35abbbd8ed0a71061187fe"
+    }
+  ]
+}

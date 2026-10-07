@@ -1,0 +1,335 @@
+"""Original r43 sky candidate: multiscale weather banks, physical volume light.
+
+Open the production source with --prepare; all outputs stay beside this script.
+The original VDB grids are shared read-only, never rebuilt or resampled.
+"""
+import bpy
+import hashlib
+import importlib.util
+import json
+import math
+import random
+import sys
+import time
+from pathlib import Path
+from mathutils import Vector
+
+ROOT = Path(__file__).resolve().parents[2]
+STAGE = Path(__file__).resolve().parent
+ORIGINAL = ROOT/'tools/art/sky-source'
+HELPER = ROOT/'tools/art/build_sky.py'
+spec = importlib.util.spec_from_file_location('original_sky', HELPER)
+base = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(base)
+SEED = 43031003
+SUN = Vector((-80, 60, 38)).normalized()
+BREAK = Vector((-.85356265, .51849060, -.05097358)).normalized()
+DISPLAY_EXPOSURE = -.90
+base.DISPLAY_EXPOSURE = DISPLAY_EXPOSURE
+base.DIFFUSE_SKY_STRENGTH = .09
+base.SUN_ENERGY = 9.3
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def material(name, density, anisotropy):
+    result = bpy.data.materials.new(name)
+    result.use_nodes = True
+    tree = result.node_tree
+    tree.nodes.clear()
+    volume = tree.nodes.new('ShaderNodeVolumePrincipled')
+    volume.inputs['Density'].default_value = density
+    volume.inputs['Density Attribute'].default_value = 'density'
+    volume.inputs['Color'].default_value = (.985, .992, 1.0, 1.0)
+    volume.inputs['Absorption Color'].default_value = (.94, .97, 1.0, 1.0)
+    volume.inputs['Anisotropy'].default_value = anisotropy
+    output = tree.nodes.new('ShaderNodeOutputMaterial')
+    tree.links.new(volume.outputs['Volume'], output.inputs['Volume'])
+    return result
+
+
+def prepare():
+    randomizer = random.Random(SEED)
+    scene = bpy.context.scene
+    originals = [o for o in scene.objects if o.type == 'VOLUME' and 'r43_cell' not in o]
+    assert len(originals) == 36, 'Open the original 36-volume source'
+    grids = []
+    for obj in originals:
+        grid_name = obj.data.filepath.replace('\\', '/').split('cloud-volumes/')[-1]
+        path = ORIGINAL/'cloud-volumes'/grid_name
+        assert path.is_file(), (obj.data.filepath, str(path))
+        grids.append({'file': path.relative_to(ROOT).as_posix(), 'bytes': path.stat().st_size, 'sha256': digest(path)})
+        obj.data.filepath = str(path)
+        obj.hide_render = True
+    for obj in list(scene.objects):
+        if 'r43_cell' in obj or obj.name == 'R43 bounded aerial atmosphere':
+            bpy.data.objects.remove(obj, do_unlink=True)
+    templates = sorted([o for o in originals if o.name.startswith(('Horizon cumulus', 'Intermediate drifting bank'))], key=lambda o:o.name)
+    # A few original sculptural families at many world scales create cloud
+    # hierarchy without a tiling texture, procedural sphere silhouettes or grids.
+    templates = templates[::2]
+    materials = {
+        'body': material('R43 | illuminated cumulus body', .009, .35),
+        'edge': material('R43 | eroded cloud outskirts', .003, .45),
+        'veil': material('R43 | optically thin sunlit vapour', .0015, .65),
+    }
+    data_cache = {}
+    dimensions = {}
+    local_centers = {}
+    for template in templates:
+        mesh = bpy.data.objects[template.name.split(' | ')[0]]
+        extent = [max(p[i] for p in mesh.bound_box)-min(p[i] for p in mesh.bound_box) for i in range(3)]
+        scale = Vector(template['sky_base_scale'])
+        dimensions[template.name] = (max(extent[0]*scale.x,extent[1]*scale.y)*.5,extent[2]*scale.z*.5)
+        local_centers[template.name] = Vector(tuple((max(p[i] for p in mesh.bound_box)+min(p[i] for p in mesh.bound_box))*.5 for i in range(3)))
+    records = []
+
+    def cell(name, position, radius, height, kind='body', depth=1.0, rotation=None, clear_break=True):
+        position = Vector(position)
+        # A finite clear weather pocket is sculpted by placement. Constant
+        # density materials preserve shared-grid instancing in Cycles.
+        relative = position-BREAK*19000
+        radial = Vector((BREAK.x,BREAK.y,0)).normalized()
+        tangent = Vector((-radial.y,radial.x,0))
+        pocket = ((relative.dot(tangent)/(900+radius*.25))**2
+                  +(relative.dot(radial)/(8500+radius*.35))**2
+                  +(relative.z/(1100+height*.25))**2)
+        if clear_break and kind != 'veil' and pocket < 1:
+            return
+        template = randomizer.choice(templates)
+        key = (template.name, kind)
+        if key not in data_cache:
+            data = template.data.copy()
+            data.name = f'{template.name} | r43 {kind}'
+            data.materials.clear()
+            data.materials.append(materials[kind])
+            data_cache[key] = data
+        obj = bpy.data.objects.new(name, data_cache[key])
+        scene.collection.objects.link(obj)
+        obj['r43_cell'] = True
+        base_radius, base_height = dimensions[template.name]
+        scale = Vector(template['sky_base_scale'])
+        obj.scale = (scale.x*radius/base_radius, scale.y*radius/base_radius*depth, scale.z*height/base_height)
+        obj.rotation_euler.z = rotation if rotation is not None else randomizer.uniform(0, math.tau)
+        # Sculpt origins are at their old bases, not at their density centers.
+        # Centering through the object transform keeps every grid byte intact.
+        local_center = local_centers[template.name]
+        offset = Vector(tuple(local_center[i]*obj.scale[i] for i in range(3)))
+        obj.location = position-obj.rotation_euler.to_matrix()@offset
+        records.append({'name': name, 'grid': Path(template.data.filepath).name, 'kind': kind,
+            'position': list(obj.location), 'density_center': list(position), 'scale': list(obj.scale), 'rotation_z': obj.rotation_euler.z,
+            'radius_metres': radius, 'height_metres': height})
+
+    def bank(name, azimuth, distance, elevation, extent, radius, cores, slope=0.0):
+        a = math.radians(azimuth)
+        radial = Vector((math.cos(a), math.sin(a), 0))
+        tangent = Vector((-math.sin(a), math.cos(a), 0))
+        center = radial*distance + Vector((0, 0, math.tan(math.radians(elevation))*distance))
+        points = []
+        for i in range(cores):
+            along = randomizer.uniform(-extent,extent)
+            offset = tangent*along + radial*randomizer.uniform(-radius*.9, radius*.9)
+            offset.z = along*slope + randomizer.uniform(-radius*.65, radius*.85)
+            r = radius*(.42+1.28*randomizer.random()**.7)
+            point = center+offset
+            cell(f'{name} | core {i:02}', point, r, r*randomizer.uniform(.48,.80),'body',.8,a+math.pi/2+randomizer.uniform(-.3,.3))
+            points.append((point, r))
+            # Subordinate towers and smaller edge fragments articulate each
+            # bank at a different angular scale instead of enlarging a blob.
+            for j in range(2):
+                point2 = point + tangent*randomizer.uniform(-r*.65,r*.65) + radial*randomizer.uniform(-r*.4,r*.4)+Vector((0,0,r*randomizer.uniform(.4,.7)))
+                cell(f'{name} | turret {i:02}.{j}',point2,r*randomizer.uniform(.25,.50),r*randomizer.uniform(.30,.55),'body',.8,a+math.pi/2)
+            point2 = point + tangent*randomizer.choice((-1,1))*r*.75 + Vector((0,0,r*.35))
+            cell(f'{name} | fringe {i:02}', point2, r*.25, r*.16, 'edge', .65,a+math.pi/2)
+        return points
+
+    # Distant upper banks are below an elevated observer, so they intersect the
+    # visible 0..-20 degree rays rather than accumulating above the camera.
+    complexes=[
+        ('Western oblique front',158,18000,-5,4800,2400,20,-.90),
+        ('Dawn descending shoulder',158,21500,-19,3900,1850,13,-.70),
+        ('Distant northwest crest',140,31500,-10,4200,1750,14,.18),
+        ('Central remote turrets',125,35500,-14,6500,1750,16,-.32),
+        ('Eastern diagonal crest',108,29000,-10,4900,2300,14,.55),
+        ('Eastern rising towers',94,23000,-8,3500,1700,12,.72),
+        ('Deep central cloud islands',118,28500,-25,6500,1750,17,-.30),
+        ('Western middle shelves',150,24000,-29,4200,1900,14,-.40),
+        ('Eastern middle shelves',92,23000,-24,3800,1900,13,.20),
+        ('Lower drift left',140,17500,-44,4500,1800,14,.15),
+        ('Lower drift right',106,19500,-38,4400,1750,14,-.30),
+        ('Remote north',38,29000,-9,3900,1800,8),
+        ('Remote west',210,27000,-14,3700,1800,8),
+        ('Remote south',276,19000,-18,3200,1500,8),
+        ('Remote east',329,31000,-7,4200,1900,8),
+    ]
+    for params in complexes:
+        bank(*params)
+    # Smaller, remote weather clusters fill depth intervals between larger
+    # fronts. Each is a connected irregular group, never a row of flat ovals.
+    for i, (azimuth, elevation, radius, extent) in enumerate([
+        (149,-17,620,1600),(137,-20,520,1400),(132,-6,440,950),
+        (116,-6,540,1500),(103,-19,700,2100),(93,-3,500,1000),
+        (154,-38,650,1600),(129,-31,470,1800),(118,-40,560,1500),
+        (111,-32,580,1900),(99,-38,680,1700),
+        (63,-12,700,2300),(198,-22,620,1700),(250,-7,650,2200)]):
+        bank(f'Remote eroded remnants {i:02}',azimuth,randomizer.uniform(34000,39500),elevation,
+             extent,radius,randomizer.randint(3,5),randomizer.uniform(-.6,.6))
+    # Sparse translucent vapour crosses the weather gap: physical volume
+    # scattering can brighten the opening, while no solar disk is moved there.
+    for i in range(4):
+        a = math.radians(148.7+randomizer.uniform(-3.2,3.2))
+        elevation = math.radians(-3+randomizer.uniform(-1.6,1.6))
+        distance = randomizer.uniform(17500,21500)
+        cell(f'Dawn gap translucent edge {i:02}', (math.cos(a)*distance,math.sin(a)*distance,math.tan(elevation)*distance),
+             randomizer.uniform(380,620), randomizer.uniform(140,260), 'veil', .16, a+math.pi/2, False)
+
+    for obj in list(scene.objects):
+        if obj.type == 'LIGHT':
+            bpy.data.objects.remove(obj, do_unlink=True)
+    base.sky_world()
+    # Finite low-density air gives actual distance-dependent extinction and
+    # blue in-scattering between cloud layers. It is not a compositing filter.
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=32, ring_count=16, radius=48000)
+    air = bpy.context.object
+    air.name = 'R43 bounded aerial atmosphere'
+    air_material = bpy.data.materials.new('R43 | finite aerial scattering')
+    air_material.use_nodes = True
+    tree = air_material.node_tree
+    tree.nodes.clear()
+    scatter = tree.nodes.new('ShaderNodeVolumeScatter')
+    scatter.inputs['Color'].default_value = (.34,.55,1.0,1.0)
+    scatter.inputs['Density'].default_value = .000002
+    scatter.inputs['Anisotropy'].default_value = .15
+    output = tree.nodes.new('ShaderNodeOutputMaterial')
+    tree.links.new(scatter.outputs[0],output.inputs['Volume'])
+    air.data.materials.append(air_material)
+    scene.render.engine = 'CYCLES'
+    scene.cycles.device = 'CPU'
+    scene.cycles.volume_bounces = 16
+    scene.cycles.max_bounces = 24
+    scene.cycles.volume_step_rate = .65
+    scene.cycles.volume_max_steps = 512
+    scene.camera.data.type = 'PANO'
+    scene.camera.data.panorama_type = 'EQUIRECTANGULAR'
+    scene.camera.rotation_euler = (math.pi/2,0,0)
+    scene.render.resolution_x = 4096
+    scene.render.resolution_y = 2048
+    scene.render.image_settings.file_format = 'PNG'
+    scene.render.filepath = str(STAGE/'sky-r43-preview.png')
+    scene.view_settings.view_transform = 'AgX'
+    scene.view_settings.look = 'AgX - Medium High Contrast'
+    scene.view_settings.exposure = DISPLAY_EXPOSURE
+    bpy.context.preferences.filepaths.save_version = 0
+    bpy.ops.wm.save_as_mainfile(filepath=str(STAGE/'sky-r43.blend'), compress=True, relative_remap=False)
+    for data in bpy.data.volumes:
+        if data.filepath:
+            data.filepath = bpy.path.relpath(data.filepath)
+    bpy.ops.wm.save_as_mainfile(filepath=str(STAGE/'sky-r43.blend'), compress=True)
+    manifest = {
+        'status':'prepared; no production publication', 'output_needs_render':True,
+        'source':'sky-r43.blend', 'source_sha256':digest(STAGE/'sky-r43.blend'),
+        'generator':str(Path(__file__).relative_to(ROOT)).replace('\\','/'), 'generator_sha256':digest(Path(__file__)),
+        'helper':{'file':HELPER.relative_to(ROOT).as_posix(),'sha256':digest(HELPER)},
+        'original_source':{'file':'tools/art/sky-source/sky-world.blend','sha256':digest(ORIGINAL/'sky-world.blend')},
+        'original_3d_render':True,'external_assets':[],'retouching':False,'upscaling':False,'resampling':False,
+        'seed':SEED,'cloud_instances':len(records),'unique_density_grids':len(grids),'volume_grids':grids,
+        'sun_game_direction':[-80,38,-60], 'sun_color_linear_rgb':[1,.76,.48], 'sun_energy':base.SUN_ENERGY,
+        'diffuse_sky_strength':base.DIFFUSE_SKY_STRENGTH,
+        'display_exposure_stops':DISPLAY_EXPOSURE,'camera_mapping':{'u':'fract(0.75 - input.uv.x)','v':'input.uv.y'},
+        'aerial_scattering':{'radius_metres':48000,'density_per_metre':.000002,'color_linear_rgb':[.34,.55,1],'anisotropy':.15},
+        'cloud_materials':{'body':{'density':.009,'anisotropy':.35},'edge':{'density':.003,'anisotropy':.45},'veil':{'density':.0015,'anisotropy':.65}},
+        'clear_pocket':{'center':list(BREAK*19000),'tangent_radius':900,'radial_radius':8500,'vertical_radius':1100,'method':'finite 3D cell placement; no camera/density mask'},
+        'instances':records,
+    }
+    (STAGE/'manifest.json').write_text(json.dumps(manifest,indent=2))
+    print('R43_PREPARED',len(records),'CELLS',len(grids),'UNCHANGED_ORIGINAL_GRIDS',flush=True)
+
+
+def render(cpu=False, panorama=False, final=False, quality=False):
+    scene = bpy.context.scene
+    backend = 'CPU'
+    if not cpu:
+        prefs = bpy.context.preferences.addons['cycles'].preferences
+        prefs.compute_device_type = 'OPTIX'
+        prefs.get_devices()
+        assert any(d.type == 'OPTIX' for d in prefs.devices)
+        for d in prefs.devices:
+            d.use = d.type == 'OPTIX'
+        scene.cycles.device = 'GPU'
+        backend = 'OPTIX'
+    else:
+        scene.cycles.device = 'CPU'
+    scene.cycles.samples = 128 if final else (8 if cpu else 64)
+    scene.cycles.adaptive_min_samples = 16 if final or not cpu else 4
+    scene.cycles.adaptive_threshold = .015 if final else .06
+    scene.cycles.use_denoising = True
+    if panorama or final:
+        scene.camera.data.type = 'PANO'
+        scene.render.resolution_x = 4096 if final else 2048
+        scene.render.resolution_y = 2048 if final else 1024
+        output = STAGE/('sky-r43-linear.hdr' if final else 'sky-r43-panorama.png')
+    else:
+        scene.camera.data.type = 'PERSP'
+        scene.camera.data.sensor_fit = 'VERTICAL'
+        scene.camera.data.sensor_height = 24
+        scene.camera.data.lens = 12/math.tan(math.radians(45)/2)
+        scene.camera.rotation_euler = Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+        scene.render.resolution_x = 640 if cpu else (960 if quality else 1672)
+        scene.render.resolution_y = 360 if cpu else (540 if quality else 941)
+        output = STAGE/('hero-cpu.png' if cpu else 'hero-gpu.png')
+    if final:
+        scene.render.image_settings.file_format = 'HDR'
+        scene.render.image_settings.color_mode = 'RGB'
+        scene.view_settings.view_transform = 'Raw'
+        scene.view_settings.look = 'None'
+        scene.view_settings.exposure = 0
+        scene.view_settings.gamma = 1
+    scene.render.filepath = str(output)
+    start = time.perf_counter()
+    last = [0.0]
+    def progress(stats):
+        now = time.perf_counter()
+        if now-last[0]>20:
+            print('R43_RENDER_PROGRESS',str(stats),flush=True)
+            last[0]=now
+    bpy.app.handlers.render_stats.append(progress)
+    bpy.ops.render.render(write_still=True)
+    elapsed = time.perf_counter()-start
+    bpy.app.handlers.render_stats.remove(progress)
+    record = {'file':output.name,'sha256':digest(output),'bytes':output.stat().st_size,
+        'dimensions':[scene.render.resolution_x,scene.render.resolution_y],'seconds':round(elapsed,2),
+        'samples_max':scene.cycles.samples,'renderer':'Cycles '+backend,
+        'source_sha256':digest(STAGE/'sky-r43.blend'),'generator_sha256':digest(Path(__file__)),
+        'denoising':'OpenImageDenoise RGB_ALBEDO_NORMAL','blender_version':bpy.app.version_string}
+    if final:
+        base.HDR_OUT = output
+        base.KTX_OUT = STAGE/'sky-r43-linear.ktx2'
+        encoding = base.pack_linear_hdr()
+        manifest = json.loads((STAGE/'manifest.json').read_text())
+        manifest.update({'output_needs_render':False,'output':'sky-r43-linear.ktx2',
+            'output_sha256':digest(base.KTX_OUT),'bytes':base.KTX_OUT.stat().st_size,
+            'authoring_hdr':record,'linear_encoding':encoding,'status':'rendered candidate; not published'})
+        (STAGE/'manifest.json').write_text(json.dumps(manifest,indent=2))
+    else:
+        (STAGE/(output.stem+'.json')).write_text(json.dumps(record,indent=2))
+    print('R43_RENDERED',json.dumps(record),flush=True)
+
+
+if __name__ == '__main__':
+    args = sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+    if '--prepare' in args:
+        prepare()
+    elif '--cpu-preview' in args:
+        render(cpu=True)
+    elif '--hero' in args:
+        render()
+    elif '--quality-preview' in args:
+        render(quality=True)
+    elif '--panorama' in args:
+        render(panorama=True)
+    elif '--final' in args:
+        render(final=True)
+    else:
+        raise ValueError('Use --prepare, --cpu-preview, --hero, --panorama or --final')

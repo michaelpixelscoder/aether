@@ -1,0 +1,31 @@
+//! Persistent, renderer-independent contracts for Aether Isles.
+pub mod aether_network;
+pub mod body;
+pub mod conduit_route;
+pub mod edit;
+pub mod expedition;
+pub mod fauna;
+pub mod fields;
+pub mod fixtures;
+pub mod grid;
+pub mod mesh;
+pub mod naval;
+pub mod naval_deck;
+pub mod picking;
+pub mod save;
+pub mod terrain;
+pub mod traffic;
+pub mod tuning;
+pub mod weather;
+pub mod world;
+pub mod world_geometry;
+
+pub use body::*;
+pub use glam;
+pub use grid::*;
+pub const CELL_SIZE: f32 = 0.5;
+pub const CHUNK_SIZE: i32 = 16;
+pub const MAX_CELLS: usize = 10_000;
+pub const MAX_EXTENT: i32 = 128;
+pub const MAX_BODIES: usize = 32;
+pub const MAX_SAVE_BYTES: usize = 16 * 1024 * 1024;

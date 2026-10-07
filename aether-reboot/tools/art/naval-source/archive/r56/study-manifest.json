@@ -1,0 +1,223 @@
+{
+  "version": "R56-B-final-study",
+  "status": "NOT_PROMOTED",
+  "new_glb_assets": 0,
+  "save_schema_changes": 0,
+  "canonical_files_modified": 0,
+  "files": [
+    {
+      "path": "evidence/baseline-hero.png",
+      "sha256": "2e509477dc82c3584bb20ac2e6bda86b27c6b4849aed1462f483100a2ba67105",
+      "bytes": 1351223
+    },
+    {
+      "path": "evidence/baseline-stern.png",
+      "sha256": "e4bb4729bf2d30a53a462520e256ec2d0157c96ed16ec219e9a5c14a1e45f8a2",
+      "bytes": 1653416
+    },
+    {
+      "path": "evidence/candidate-hero.png",
+      "sha256": "4b9ecd78da94806b9efb438684441dd2fd73599aaa4900acd316c93451760ede",
+      "bytes": 1358669
+    },
+    {
+      "path": "evidence/candidate-stern.png",
+      "sha256": "56def79b71e1844345ae82c4d5290000046682c7fba751bb44206b02ccf5c69a",
+      "bytes": 1675957
+    },
+    {
+      "path": "evidence/domain-gate.log",
+      "sha256": "f478d691c160b4a385e626e7f4d2d71190cb137cbabe0d8b0660132e18eafbf8",
+      "bytes": 9378
+    },
+    {
+      "path": "evidence/trial-a-gate.json",
+      "sha256": "adfa7f852cb241feb84711337128d608d02ebd9d02227f8ad5c9497de0b91535",
+      "bytes": 6457
+    },
+    {
+      "path": "evidence/trial-a-stern.png",
+      "sha256": "fa02652ae4fc060ccd810aace247d1c908e21422bc1db4c0afe09d2a75a6c2be",
+      "bytes": 1645208
+    },
+    {
+      "path": "probe/Cargo.lock",
+      "sha256": "21d804c20879505d4400e32a8e76e7668e998acdf456aa2ee6dd1e5451703925",
+      "bytes": 3504
+    },
+    {
+      "path": "probe/Cargo.toml",
+      "sha256": "4d66c82701ec143ca919a036f8cdb0fe96a5fc1ab41cf7d44a37abc4e607461d",
+      "bytes": 224
+    },
+    {
+      "path": "probe/src/craft_candidate.rs",
+      "sha256": "fb13bda28d035134b8400c9d9e2404d5bd0e641dd7cc7de031f2d04826327767",
+      "bytes": 24209
+    },
+    {
+      "path": "probe/src/craft_snapshot.rs",
+      "sha256": "01468141a74df4e70edd7b244b61ba632337b6886c438e634f633d2b79c7385d",
+      "bytes": 23970
+    },
+    {
+      "path": "probe/src/main.rs",
+      "sha256": "4eeb4b34a0b329ce5716f1681ee251ac2f283950e82f9cd935a464928afb9721",
+      "bytes": 10405
+    },
+    {
+      "path": "probe/src/raised_deck.rs",
+      "sha256": "ee68809d33f081e8c9740afb80a5b4674cb22cd3da08560ce6996f12c227f11e",
+      "bytes": 4887
+    },
+    {
+      "path": "README.md",
+      "sha256": "a3173d1798b5df20497de10369d4bde44b3627f502cbd6792cffaab4678ae271",
+      "bytes": 7598
+    },
+    {
+      "path": "source/baseline-blueprint.json",
+      "sha256": "91922df1bcb7f29edf7916454346f62d1338a8d686f7db52fdaf17669c94e8b1",
+      "bytes": 43819
+    },
+    {
+      "path": "source/baseline.json",
+      "sha256": "def6bd8daf86569906cabeedb235de456e2f09ae98a7a046917977a2a43728a2",
+      "bytes": 43507279
+    },
+    {
+      "path": "source/candidate-blueprint.json",
+      "sha256": "575f29540c1561e32b06705f508768de421e130bb4c7e6711aa71740df214d62",
+      "bytes": 42214
+    },
+    {
+      "path": "source/candidate-study.blend",
+      "sha256": "7f07d91d43a8c9f12552b8f79b8694532e5e26789f39f201ed31766ec82e2ef5",
+      "bytes": 26500145
+    },
+    {
+      "path": "source/candidate.json",
+      "sha256": "73e8be75a8bc30388df06788c4f327fedf0c1be5fa53794f0a9043677c341b20",
+      "bytes": 35951939
+    },
+    {
+      "path": "source/domain-gate.json",
+      "sha256": "773d23f4c84b7d3daf36fe1687ff72e1558cdfb2275682a308f0e203bd4508d5",
+      "bytes": 9377
+    },
+    {
+      "path": "source/package_study.mjs",
+      "sha256": "acdfc2475d3465abba8a382cc8318f9d76ebfdf616e8c40148ef8563193638e1",
+      "bytes": 2361
+    },
+    {
+      "path": "source/packed-images.json",
+      "sha256": "30330387a4e4878ca3670ab621a72bd51c1935b81a99446b27774a86e3b4b997",
+      "bytes": 687
+    },
+    {
+      "path": "source/review_naval.py",
+      "sha256": "41d9cf7d99170b61b6562bc581b71d2dda01c0691197771474fe8d1680321ceb",
+      "bytes": 6937
+    },
+    {
+      "path": "source/trial-a-blueprint.json",
+      "sha256": "18bba248ebac0943729a28500e861ff023c6723c422c6b661d08521edc64da4e",
+      "bytes": 42141
+    }
+  ],
+  "inputs": [
+    {
+      "path": "crates/aether_core/src/fixtures.rs",
+      "sha256": "e0befcf5a840b1654ced933ffa37456f5a0e4bf56d78ff047f3462507deb06a5"
+    },
+    {
+      "path": "crates/aether_core/src/body.rs",
+      "sha256": "fc50af4d83aac1edd3cf120412da71789005408c2b9084ac687c18970f465b44"
+    },
+    {
+      "path": "crates/aether_core/src/grid.rs",
+      "sha256": "dcc6aee16a164d849ee9108b64d7c36e0a0cbbfbfa5b5600e1bf89fbf192796a"
+    },
+    {
+      "path": "crates/aether_core/src/mesh.rs",
+      "sha256": "bbde14ccb8c6610e25bd1cb428f572592702ec1283a8dd9d9e2de129779dba30"
+    },
+    {
+      "path": "crates/aether_core/src/naval.rs",
+      "sha256": "13da9a80c811e7fff1351792a8a75222a2dd76e578e3dbc971b95c9ad135fd46"
+    },
+    {
+      "path": "crates/aether_view/src/craft.rs",
+      "sha256": "b2b9e90f526494a72e4abebf564f6d82173db3aa873f38baf7d0df16b6d200b1"
+    },
+    {
+      "path": "crates/aether_view/src/voxel.rs",
+      "sha256": "450115d9e02303323f012f33e3d9ca476e4b11f85abd1e33135a434a08584bea"
+    },
+    {
+      "path": "crates/aether_view/src/ship.rs",
+      "sha256": "56a1b354dea8490c92c567439b75b290105cfd2bf253a96ae8aaefbf096c4980"
+    },
+    {
+      "path": "crates/aether_view/src/materials.rs",
+      "sha256": "78c1b8430b3f2bc15fb9177170bd3b5938a75d7ff49d313e9d802178035a9107"
+    },
+    {
+      "path": "crates/aether_sim/src/vessel.rs",
+      "sha256": "1dcd14830334b0b50cc49bbe7dc6f0cbeceeb802ee14a557461bec5b648b0ede"
+    },
+    {
+      "path": "assets/ship/rail.glb",
+      "sha256": "a6c4fc1eb06f3bd4a705953776c6130c327bb038580ac70762ffad92f5447d7a"
+    },
+    {
+      "path": "assets/ship/trim.glb",
+      "sha256": "474fa6218c12b16a29cdcc43d3d11f3d585fc3a62b7fc1a876206998f603c3ce"
+    },
+    {
+      "path": "assets/ship/cabin-detail.glb",
+      "sha256": "4b664783470395b2f9f84c49b050fa8784b8d1aa6474c82d2cbecd18e08a9629"
+    },
+    {
+      "path": "assets/ship/lantern.glb",
+      "sha256": "14721e1cc4e55780a5794be914650edbb6606847b6e0224d6733ecf40b93b6c1"
+    },
+    {
+      "path": "assets/art/sail.glb",
+      "sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23"
+    },
+    {
+      "path": "assets/art/helm.glb",
+      "sha256": "047f2fd0d4b5e51f1c6c040fefb65bcdcebd18987cffed0ca351fc2b53ff378e"
+    },
+    {
+      "path": "assets/art/tank.glb",
+      "sha256": "8266df892adff94bdf8ecefc69899b99909d8694d80ceae8df97cc2cfd64a824"
+    },
+    {
+      "path": "assets/art/harpoon.glb",
+      "sha256": "568826971cd79e010a0c76130d1db0d9c86fce4cd1d311502019d1bec4f0e0c0"
+    },
+    {
+      "path": "assets/art/propeller.glb",
+      "sha256": "d5452f2f8e5290d873fd3a9d30592adc717a5336319b4e9b478646c1e82c3891"
+    },
+    {
+      "path": "assets/art/lift.glb",
+      "sha256": "8f4dceea161e33857fbf1b3cd51e7c5b0f0780098e59f8470f36331df73b04af"
+    },
+    {
+      "path": "assets/textures/cedar.png",
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914"
+    },
+    {
+      "path": "assets/textures/cedar-normal.png",
+      "sha256": "49e4159f90440c1ea9265635e841a76f20d116f02db21709bbee90a8079860bc"
+    },
+    {
+      "path": "assets/textures/indigo-canvas.png",
+      "sha256": "959ad02e433763268115086d4f01cca41458e85a5187501a1831d6c02ddf3c98"
+    }
+  ]
+}

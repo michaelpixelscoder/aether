@@ -1,0 +1,123 @@
+{
+  "generator": "tools/art/build_cloud_cache.py",
+  "generator_sha256": "82978e1290b6471216bf103c87ce4b850c6f6651f25ed360480b6447ab6fd5f1",
+  "config_sha256": "699823d6864524ea3ec208d91326b693a6a0fb21867113e973d7ebcb4aa7c9b1",
+  "format": "RGBA8Unorm 3D",
+  "channels": [
+    "ellipsoid union",
+    "normal X encoded",
+    "normal Y encoded",
+    "normal Z encoded"
+  ],
+  "banks": [
+    {
+      "key": "hollow",
+      "file": "assets/atmosphere/hollow-shape.ktx2",
+      "sha256": "8f1000730e35857c255e5d1f361e95242e1af85b4e2dea12867deacb920ecfa9",
+      "dimensions": [
+        192,
+        64,
+        192
+      ],
+      "world_texel_metres": [
+        26.8125,
+        14.0625,
+        26.8125
+      ],
+      "gpu_bytes": 9437184,
+      "positive_voxels": 1039254,
+      "finite": true
+    },
+    {
+      "key": "underforge",
+      "file": "assets/atmosphere/underforge-shape.ktx2",
+      "sha256": "5d327e5b623a4d0d5c24ec14d0e0a78425d344ee872ba7abb1cf69675d89cec0",
+      "dimensions": [
+        192,
+        64,
+        192
+      ],
+      "world_texel_metres": [
+        26.8125,
+        14.0625,
+        26.8125
+      ],
+      "gpu_bytes": 9437184,
+      "positive_voxels": 1116631,
+      "finite": true
+    },
+    {
+      "key": "west",
+      "file": "assets/atmosphere/west-shape.ktx2",
+      "sha256": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "world_texel_metres": [
+        18.208333333333332,
+        16.40625,
+        18.208333333333332
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 244885,
+      "finite": true
+    },
+    {
+      "key": "east",
+      "file": "assets/atmosphere/east-shape.ktx2",
+      "sha256": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "world_texel_metres": [
+        17.166666666666668,
+        16.40625,
+        19.25
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 235086,
+      "finite": true
+    },
+    {
+      "key": "north",
+      "file": "assets/atmosphere/north-shape.ktx2",
+      "sha256": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "world_texel_metres": [
+        20.291666666666668,
+        17.1875,
+        19.25
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 211204,
+      "finite": true
+    },
+    {
+      "key": "south",
+      "file": "assets/atmosphere/south-shape.ktx2",
+      "sha256": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "world_texel_metres": [
+        19.25,
+        17.1875,
+        18.208333333333332
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 227002,
+      "finite": true
+    }
+  ],
+  "gpu_bytes": 28311552
+}

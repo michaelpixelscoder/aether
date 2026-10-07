@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-01T21:00:52.9537291+02:00",
+  "os": {
+    "Caption": "Microsoft Windows 11 Professionnel",
+    "Version": "10.0.26200",
+    "BuildNumber": "26200"
+  },
+  "cpu": {
+    "Name": "AMD Ryzen 9 9950X3D 16-Core Processor          ",
+    "NumberOfCores": 16,
+    "NumberOfLogicalProcessors": 32
+  },
+  "memoryBytes": 66190569472,
+  "gpu": [
+    {
+      "Name": "NVIDIA GeForce RTX 5080",
+      "DriverVersion": "32.0.15.9649"
+    },
+    {
+      "Name": "AMD Radeon(TM) Graphics",
+      "DriverVersion": "32.0.21043.5001"
+    }
+  ],
+  "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+  "node": "v24.19.0",
+  "cli": "bevy 0.1.0-alpha.2",
+  "wasmBindgen": "wasm-bindgen 0.2.129"
+}

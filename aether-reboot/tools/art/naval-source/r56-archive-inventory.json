@@ -1,0 +1,72 @@
+[
+  {
+    "file": "baseline-blueprint.json",
+    "sha256": "91922df1bcb7f29edf7916454346f62d1338a8d686f7db52fdaf17669c94e8b1",
+    "bytes": 43819
+  },
+  {
+    "file": "baseline-hero.png",
+    "sha256": "2e509477dc82c3584bb20ac2e6bda86b27c6b4849aed1462f483100a2ba67105",
+    "bytes": 1351223
+  },
+  {
+    "file": "baseline-stern.png",
+    "sha256": "e4bb4729bf2d30a53a462520e256ec2d0157c96ed16ec219e9a5c14a1e45f8a2",
+    "bytes": 1653416
+  },
+  {
+    "file": "candidate-blueprint.json",
+    "sha256": "575f29540c1561e32b06705f508768de421e130bb4c7e6711aa71740df214d62",
+    "bytes": 42214
+  },
+  {
+    "file": "candidate-hero.png",
+    "sha256": "4b9ecd78da94806b9efb438684441dd2fd73599aaa4900acd316c93451760ede",
+    "bytes": 1358669
+  },
+  {
+    "file": "candidate-stern.png",
+    "sha256": "56def79b71e1844345ae82c4d5290000046682c7fba751bb44206b02ccf5c69a",
+    "bytes": 1675957
+  },
+  {
+    "file": "candidate-study.blend",
+    "sha256": "7f07d91d43a8c9f12552b8f79b8694532e5e26789f39f201ed31766ec82e2ef5",
+    "bytes": 26500145
+  },
+  {
+    "file": "domain-gate.json",
+    "sha256": "773d23f4c84b7d3daf36fe1687ff72e1558cdfb2275682a308f0e203bd4508d5",
+    "bytes": 9377
+  },
+  {
+    "file": "packed-images.json",
+    "sha256": "30330387a4e4878ca3670ab621a72bd51c1935b81a99446b27774a86e3b4b997",
+    "bytes": 687
+  },
+  {
+    "file": "study-manifest.json",
+    "sha256": "ee29aa96ba143b0cb278d7fc75995584566ea44d1b5d4ffe97344e8b6a3690c8",
+    "bytes": 7267
+  },
+  {
+    "file": "study-readme.md",
+    "sha256": "a3173d1798b5df20497de10369d4bde44b3627f502cbd6792cffaab4678ae271",
+    "bytes": 7598
+  },
+  {
+    "file": "before-crates/aether_core/src/fixtures.rs",
+    "sha256": "e0befcf5a840b1654ced933ffa37456f5a0e4bf56d78ff047f3462507deb06a5",
+    "bytes": 7118
+  },
+  {
+    "file": "before-crates/aether_core/src/naval.rs",
+    "sha256": "13da9a80c811e7fff1351792a8a75222a2dd76e578e3dbc971b95c9ad135fd46",
+    "bytes": 3214
+  },
+  {
+    "file": "before-crates/aether_view/src/craft.rs",
+    "sha256": "b2b9e90f526494a72e4abebf564f6d82173db3aa873f38baf7d0df16b6d200b1",
+    "bytes": 31671
+  }
+]

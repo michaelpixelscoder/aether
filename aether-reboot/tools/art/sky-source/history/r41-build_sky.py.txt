@@ -1,0 +1,853 @@
+"""Original full-sphere sky, rendered from a modeled Cycles volume scene.
+
+blender --background --python tools/art/build_sky.py -- --prepare
+blender --background tools/art/sky-source/sky-world.blend --python tools/art/build_sky.py -- --refresh
+blender --background tools/art/sky-source/sky-world.blend --python tools/art/build_sky.py -- --preview
+blender --background tools/art/sky-source/sky-world.blend --python tools/art/build_sky.py -- --final
+
+No raster source, image upscaling, web asset or image retouching is used.
+Blender axes: X=game X, Y=-game Z, Z=game Y. A full equirectangular
+panorama is seamless by construction; both poles are part of the render.
+"""
+import bpy
+import math
+import random
+import json
+import hashlib
+import sys
+import time
+import struct
+from pathlib import Path
+from mathutils import Vector
+
+ROOT = Path(__file__).resolve().parents[2]
+SOURCE = ROOT / 'tools/art/sky-source'
+PREVIEW = ROOT / '.dream-loop'
+OUT = ROOT / 'assets/textures/sky-world-high.png'
+HDR_OUT = SOURCE / 'sky-world-linear.hdr'
+KTX_OUT = ROOT / 'assets/textures/sky-world-linear.ktx2'
+DISPLAY_EXPOSURE = -1.35
+for path in (SOURCE, PREVIEW, OUT.parent):
+    path.mkdir(parents=True, exist_ok=True)
+SEED = 33241002
+SUN_GAME = (-80.0, 38.0, -60.0)
+SUN = Vector((SUN_GAME[0], -SUN_GAME[2], SUN_GAME[1])).normalized()
+SUN_COLOR = (1.0, .76, .48)
+SUN_ENERGY = 6.2
+VISIBLE_SKY_STRENGTH = .10
+DIFFUSE_SKY_STRENGTH = .04
+LOWER_SKY_CALIBRATION = (30.0, 35.0, 45.0)
+MASTERS = [
+    (171, 18500, -6000, 7500, 3500),
+    (62, 33000, -3700, 2500, 2600),
+]
+
+
+def node(tree, kind, name):
+    result = tree.nodes.new(kind)
+    result.name = name
+    result.label = name
+    return result
+
+
+def math_node(tree, operation, a=None, b=None, name=''):
+    n = node(tree, 'ShaderNodeMath', name or operation)
+    n.operation = operation
+    for index, value in enumerate((a, b)):
+        if value is None:
+            continue
+        if isinstance(value, (float, int)):
+            n.inputs[index].default_value = value
+        else:
+            tree.links.new(value, n.inputs[index])
+    return n.outputs[0]
+
+
+def cloud_material():
+    material = bpy.data.materials.new('Cumulus | physical water-droplet scattering')
+    material.use_nodes = True
+    tree = material.node_tree
+    tree.nodes.clear()
+    output = node(tree, 'ShaderNodeOutputMaterial', 'Volume only — no opaque surface')
+    volume = node(tree, 'ShaderNodeVolumePrincipled', 'Water droplets / multiple scattering')
+    volume.inputs['Color'].default_value = (.985, .992, 1.0, 1.0)
+    volume.inputs['Anisotropy'].default_value = .35
+    volume.inputs['Absorption Color'].default_value = (.94, .97, 1.0, 1.0)
+    tree.links.new(volume.outputs['Volume'], output.inputs['Volume'])
+    coords = node(tree, 'ShaderNodeTexCoord', 'Metric coordinates shared across the entire sky')
+    origin = bpy.data.objects.new('Atmosphere noise origin', None)
+    bpy.context.collection.objects.link(origin)
+    coords.object = origin
+    broad = node(tree, 'ShaderNodeTexNoise', 'Large water-vapour bodies / 140 metres')
+    broad.inputs['Scale'].default_value = .007
+    broad.inputs['Detail'].default_value = 4.0
+    broad.inputs['Roughness'].default_value = .64
+    tree.links.new(coords.outputs['Object'], broad.inputs['Vector'])
+    fine = node(tree, 'ShaderNodeTexNoise', 'Fractal wisps / 22 metres')
+    fine.inputs['Scale'].default_value = .046
+    fine.inputs['Detail'].default_value = 3.1
+    fine.inputs['Roughness'].default_value = .67
+    tree.links.new(coords.outputs['Object'], fine.inputs['Vector'])
+    cells = node(tree, 'ShaderNodeTexVoronoi', 'Worley condensation pockets / 75 metres')
+    cells.feature = 'F1'
+    cells.distance = 'EUCLIDEAN'
+    cells.inputs['Scale'].default_value = .013
+    tree.links.new(coords.outputs['Object'], cells.inputs['Vector'])
+    cellular = math_node(tree, 'SUBTRACT', 1.0, cells.outputs['Distance'])
+    coarse = math_node(tree, 'MULTIPLY', broad.outputs['Fac'], .64)
+    # Macro volume is modeled; this shader gives real density variation inside it.
+    weather = math_node(tree, 'ADD', coarse, math_node(tree, 'MULTIPLY', cellular, .45))
+    eroded = math_node(tree, 'SUBTRACT', weather, math_node(tree, 'MULTIPLY', fine.outputs['Fac'], .28))
+    density = node(tree, 'ShaderNodeMapRange', 'Condensation → density / inverse metres')
+    density.clamp = True
+    density.interpolation_type = 'SMOOTHSTEP'
+    density.inputs['From Min'].default_value = .27
+    density.inputs['From Max'].default_value = .66
+    density.inputs['To Min'].default_value = .0
+    density.inputs['To Max'].default_value = .028
+    tree.links.new(eroded, density.inputs['Value'])
+    tree.links.new(density.outputs['Result'], volume.inputs['Density'])
+    return material
+
+
+def sky_world():
+    world = bpy.data.worlds.new('Aether | Nishita atmosphere above an open blue abyss')
+    bpy.context.scene.world = world
+    world.use_nodes = True
+    tree = world.node_tree
+    tree.nodes.clear()
+    sky = node(tree, 'ShaderNodeTexSky', 'Nishita sun and atmospheric scattering')
+    sky.sky_type = 'MULTIPLE_SCATTERING'
+    sky.sun_elevation = math.asin(SUN.z)
+    # Nishita's azimuth zero is +Y, increasing towards +X in Blender 5.2.
+    sky.sun_rotation = math.atan2(SUN.x, SUN.y)
+    sky.sun_size = math.radians(.75)
+    sky.sun_intensity = 1.0
+    sky.altitude = 4000.0
+    sky.air_density = .60
+    sky.aerosol_density = .035
+    sky.ozone_density = 1.55
+    coords = node(tree, 'ShaderNodeTexCoord', 'Full spherical direction')
+    split = node(tree, 'ShaderNodeSeparateXYZ', 'Altitude angle')
+    tree.links.new(coords.outputs['Generated'], split.inputs[0])
+    ramp = node(tree, 'ShaderNodeMapRange', 'Lower-hemisphere atmospheric continuation')
+    ramp.clamp = True
+    ramp.interpolation_type = 'SMOOTHSTEP'
+    ramp.inputs['From Min'].default_value = .0
+    ramp.inputs['From Max'].default_value = .22
+    tree.links.new(split.outputs['Z'], ramp.inputs['Value'])
+    # Aether has no solid planet floor. Continue physical atmospheric radiance
+    # into the lower hemisphere with a mirrored sunless sky, preserving both
+    # angular gradients and continuity at the horizon. Clouds remain actual
+    # modeled volumes; no part of the image is painted or post-corrected.
+    reflected = node(tree, 'ShaderNodeCombineXYZ', 'Open-sky continuation direction')
+    tree.links.new(split.outputs['X'], reflected.inputs['X'])
+    tree.links.new(split.outputs['Y'], reflected.inputs['Y'])
+    # Smoothly continue blue upper-air radiance through the groundless horizon.
+    # This is a spherical world shader, not a screen-space opening or image warp.
+    z = math_node(tree, 'SQRT', math_node(tree, 'ADD',
+                  math_node(tree, 'MULTIPLY', split.outputs['Z'], split.outputs['Z']), .12**2))
+    tree.links.new(z, reflected.inputs['Z'])
+    abyss = node(tree, 'ShaderNodeTexSky', 'Sunless physical atmosphere below the cloud sea')
+    # Blender 5.2 fixes Nishita's input direction to the world ray. Hosek-Wilkie
+    # provides the required explicit direction for this groundless continuation.
+    abyss.sky_type = 'HOSEK_WILKIE'
+    abyss.sun_direction = SUN
+    abyss.turbidity = 1.6
+    abyss.ground_albedo = .0
+    tree.links.new(reflected.outputs['Vector'], abyss.inputs['Vector'])
+    calibration = node(tree, 'ShaderNodeMixRGB', 'Hosek / Nishita radiance-unit calibration')
+    calibration.blend_type = 'MULTIPLY'
+    calibration.inputs[0].default_value = 1.0
+    # Match the cobalt aerial depth below a groundless cloud sea; equal RGB
+    # calibration would wash the lower hemisphere gray near the low dawn sun.
+    calibration.inputs[2].default_value = (*LOWER_SKY_CALIBRATION, 1.0)
+    tree.links.new(abyss.outputs['Color'], calibration.inputs[1])
+    mixed = node(tree, 'ShaderNodeMixRGB', 'Continuous sky / no ground plane')
+    tree.links.new(ramp.outputs['Result'], mixed.inputs[0])
+    tree.links.new(calibration.outputs[0], mixed.inputs[1])
+    tree.links.new(sky.outputs['Color'], mixed.inputs[2])
+    background = node(tree, 'ShaderNodeBackground', 'Daylight radiance')
+    background.inputs['Strength'].default_value = VISIBLE_SKY_STRENGTH
+    color = node(tree, 'ShaderNodeHueSaturation', 'Cobalt atmospheric depth / scene color direction')
+    color.inputs['Saturation'].default_value = 1.30
+    tree.links.new(mixed.outputs[0], color.inputs['Color'])
+    tree.links.new(color.outputs[0], background.inputs['Color'])
+    ambient = node(tree, 'ShaderNodeBackground', 'Blue diffuse sky fill')
+    ambient.inputs['Strength'].default_value = DIFFUSE_SKY_STRENGTH
+    tree.links.new(color.outputs[0], ambient.inputs['Color'])
+    rays = node(tree, 'ShaderNodeLightPath', 'Photographic sky exposure independent of key/fill ratio')
+    balance = node(tree, 'ShaderNodeMixShader', 'Visible sky and atmospheric lighting')
+    tree.links.new(rays.outputs['Is Camera Ray'], balance.inputs[0])
+    tree.links.new(ambient.outputs[0], balance.inputs[1])
+    tree.links.new(background.outputs[0], balance.inputs[2])
+    output = node(tree, 'ShaderNodeOutputWorld', 'Physical atmosphere')
+    tree.links.new(balance.outputs[0], output.inputs['Surface'])
+    light_data = bpy.data.lights.new('Warm solar key | game direction −80,38,−60', 'SUN')
+    light_data.energy = SUN_ENERGY
+    light_data.color = SUN_COLOR
+    light_data.angle = math.radians(.75)
+    light = bpy.data.objects.new(light_data.name, light_data)
+    bpy.context.collection.objects.link(light)
+    light.rotation_euler = (-SUN).to_track_quat('-Z','Y').to_euler()
+
+
+def group(name, position, radius, height, seed, material, sparse=False, master=0):
+    """A deliberately irregular, continuous multi-scale cumulus sculpture."""
+    randomizer = random.Random(seed)
+    meta = bpy.data.metaballs.new(name)
+    meta.resolution = 29.0
+    meta.render_resolution = 19.0
+    meta.threshold = .68
+    obj = bpy.data.objects.new(name, meta)
+    bpy.context.collection.objects.link(obj)
+    obj.location = position
+    obj.scale = (1.0, 1.0, height / radius)
+
+    def lobe(p, r, stiffness=2.0):
+        element = meta.elements.new()
+        element.co = p
+        element.radius = r * 1.43
+        element.stiffness = stiffness
+
+    # Asymmetric base: an elongated group of four lobes, with no level cap.
+    cores = []
+    structure = [
+        (-.47, -.05, -.15, .57), (.04, .12, .03, .68),
+        (.49, -.02, -.10, .49), (-.13, -.31, .42, .46),
+        (.23, .24, .56, .38), (-.46, .24, .31, .33),
+    ]
+    if master:
+        structure = [
+            (-.50, .05, -.42, .62), (.12, .05, -.28, .70),
+            (.49, -.15, -.10, .53), (-.13, -.10, .24, .60),
+            (-.35, .10, .68, .44), (.04, .05, 1.02, .34),
+            (.25, .02, .60, .37),
+        ]
+        if master == 2:
+            structure = [(-x,y,z*(.82 if i>3 else 1),r*(.90 if i==5 else 1)) for i,(x,y,z,r) in enumerate(structure)]
+    for i, (x, y, z, scale) in enumerate(structure):
+        p = Vector((x * radius, y * radius, z * radius))
+        p += Vector(tuple(randomizer.uniform(-.08, .08) * radius for _ in range(3)))
+        r = radius * scale * randomizer.uniform(.90, 1.12)
+        cores.append((p, r))
+        lobe(p, r*.72)
+    # Around every main body, distinct medium turrets produce cauliflower
+    # contours. Smaller vapour curls break smooth sphere silhouettes.
+    for p, r in cores:
+        for j in range(4 if sparse else 7):
+            angle = randomizer.uniform(0, math.tau)
+            vertical = randomizer.uniform(-.20, .95)
+            direction = Vector((math.cos(angle), math.sin(angle), vertical)).normalized()
+            small = r * randomizer.uniform(.32, .50)
+            center = p + direction * r * randomizer.uniform(.80, 1.04)
+            lobe(center, small)
+            if not sparse:
+                for k in range(3):
+                    bend = (direction + Vector(tuple(randomizer.uniform(-.7,.7) for _ in range(3)))).normalized()
+                    curl = center + bend * small * randomizer.uniform(.88,1.13)
+                    lobe(curl, small * randomizer.uniform(.30, .48), 1.8)
+    bpy.context.view_layer.objects.active = obj
+    obj.select_set(True)
+    bpy.ops.object.convert(target='MESH')
+    result = bpy.context.object
+    result.data.materials.append(material)
+    for scale, strength, depth in [(180.0, 95.0, 2), (43.0, 28.0, 2)]:
+        texture = bpy.data.textures.new(f'{name} | sculpted vapour {scale:g}m', type='CLOUDS')
+        texture.noise_scale = scale
+        texture.noise_depth = depth
+        modifier = result.modifiers.new(f'Irregular condensation contour {scale:g}m', 'DISPLACE')
+        modifier.texture = texture
+        modifier.texture_coords = 'GLOBAL'
+        modifier.strength = strength
+        modifier.mid_level = .5
+        bpy.ops.object.modifier_apply(modifier=modifier.name)
+    for polygon in result.data.polygons:
+        polygon.use_smooth = True
+    result.select_set(False)
+    result['sky_base_position'] = list(position)
+    result['sky_base_scale'] = list(result.scale)
+    result['sky_base_radius'] = radius
+    result['sky_base_height'] = height
+    print('CLOUD', name, len(result.data.vertices), len(result.data.polygons), flush=True)
+    return result
+
+
+def build_scene():
+    bpy.ops.object.select_all(action='SELECT')
+    bpy.ops.object.delete(use_global=False)
+    for collection in (bpy.data.materials, bpy.data.worlds, bpy.data.metaballs, bpy.data.meshes):
+        for item in list(collection):
+            if item.users == 0:
+                collection.remove(item)
+    scene = bpy.context.scene
+    scene.render.engine = 'CYCLES'
+    scene.cycles.device = 'CPU'
+    scene.cycles.samples = 128
+    scene.cycles.use_adaptive_sampling = True
+    scene.cycles.adaptive_threshold = .015
+    scene.cycles.adaptive_min_samples = 16
+    scene.cycles.use_denoising = True
+    scene.cycles.max_bounces = 24
+    scene.cycles.volume_bounces = 16
+    scene.cycles.transparent_max_bounces = 12
+    scene.cycles.volume_step_rate = .65
+    scene.cycles.volume_max_steps = 512
+    scene.render.film_transparent = False
+    scene.render.image_settings.file_format = 'PNG'
+    scene.render.image_settings.color_mode = 'RGB'
+    scene.render.image_settings.color_depth = '8'
+    scene.render.image_settings.compression = 30
+    scene.view_settings.view_transform = 'AgX'
+    scene.view_settings.look = 'AgX - Medium High Contrast'
+    scene.view_settings.exposure = -1.35
+    scene.render.resolution_x = 8192
+    scene.render.resolution_y = 4096
+    scene.render.resolution_percentage = 100
+    sky_world()
+    material = cloud_material()
+    randomizer = random.Random(SEED)
+    clouds = []
+    # Far horizon is broken into unequal families, never an unbroken belt.
+    for i in range(12):
+        angle = math.radians(i * 30 + randomizer.uniform(-8, 8))
+        distance = randomizer.uniform(5400, 7600)
+        radius = randomizer.uniform(1750, 2450)
+        center = (math.cos(angle) * distance, math.sin(angle) * distance, randomizer.uniform(-1000, -100))
+        clouds.append(group(f'Horizon cumulus {i:02}', center, radius, randomizer.uniform(1050, 1650), SEED+i*197, material))
+    # Tall cloud cathedrals give the upper hemisphere real volume and edges.
+    for i, (azimuth, distance, altitude, radius, height) in enumerate(MASTERS):
+        a = math.radians(azimuth)
+        clouds.append(group(f'Master cumulonimbus {i:02}', (math.cos(a)*distance, math.sin(a)*distance, altitude), radius, height, SEED+3000+i*317, material, master=i+1))
+    for i, azimuth in enumerate([14, 62, 123, 175, 221, 271, 322]):
+        a = math.radians(azimuth)
+        distance = randomizer.uniform(3800, 5700)
+        clouds.append(group(f'Intermediate drifting bank {i:02}', (math.cos(a)*distance, math.sin(a)*distance, randomizer.uniform(-1050, -450)), randomizer.uniform(850, 1480), randomizer.uniform(650, 940), SEED+4200+i*173, material))
+    for i, (azimuth, altitude) in enumerate([(62, 6200), (187, 5500), (292, 6900)]):
+        a = math.radians(azimuth)
+        clouds.append(group(f'Overhead cloud arch {i:02}', (math.cos(a)*4400, math.sin(a)*4400, altitude), 2750, 1100, SEED+5100+i*251, material))
+    # Lower cloud sea is made of individual overlapping sculptures. Large
+    # angular gaps intentionally retain blue depth instead of a white floor.
+    for i, angle in enumerate([4, 43, 102, 147, 189, 239, 283, 333]):
+        a = math.radians(angle)
+        distance = randomizer.uniform(2500, 4100)
+        radius = randomizer.uniform(1650, 2200)
+        clouds.append(group(f'Broken lower cloud sea {i:02}', (math.cos(a)*distance, math.sin(a)*distance, randomizer.uniform(-2300, -1450)), radius, randomizer.uniform(600, 920), SEED+6000+i*349, material))
+    for i, (x, y, z, r) in enumerate([
+        (-1750, -900, -3650, 1500), (1700, -1200, -3900, 1350),
+        (500, 2150, -3450, 1430), (-400, -2600, -4250, 1570),
+    ]):
+        clouds.append(group(f'Deep cloud islands {i:02}', (x, y, z), r, 800, SEED+9000+i*277, material))
+    camera_data = bpy.data.cameras.new('Equirectangular camera | full sphere')
+    camera = bpy.data.objects.new(camera_data.name, camera_data)
+    bpy.context.collection.objects.link(camera)
+    camera_data.type = 'PANO'
+    camera_data.panorama_type = 'EQUIRECTANGULAR'
+    camera_data.longitude_min = -math.pi
+    camera_data.longitude_max = math.pi
+    camera_data.latitude_min = -math.pi/2
+    camera_data.latitude_max = math.pi/2
+    camera_data.clip_start = 1.0
+    camera_data.clip_end = 100000.0
+    camera.rotation_euler = (math.pi/2, 0, 0)
+    scene.camera = camera
+    scene.render.filepath = str(OUT)
+    compose_clouds()
+    # Establish the source directory before creating relative VDB references,
+    # including a first build from Blender's unsaved factory scene.
+    bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'), compress=True)
+    fog_volumes()
+    bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'), compress=True)
+    manifest = {
+        'source': 'sky-world.blend', 'generator': 'tools/art/build_sky.py',
+        'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'seed': SEED, 'cloud_sculptures': len(clouds),
+        'vertices': sum(len(c.data.vertices) for c in clouds),
+        'faces': sum(len(c.data.polygons) for c in clouds),
+        'panorama': 'full-sphere equirectangular 8192x4096',
+        'sun_game_direction': list(SUN_GAME),
+        'original_3d_render': True, 'external_assets': [],
+        'retouching': False, 'upscaling': False,
+        'primary_reference': 'https://docs.blender.org/manual/en/latest/render/shader_nodes/textures/sky.html',
+    }
+    (SOURCE/'manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf8')
+    print('SKY_PREPARED', json.dumps(manifest), flush=True)
+
+
+def lighting_manifest():
+    return {
+        'sun_game_direction': list(SUN_GAME),
+        'sun_blender_direction': [SUN_GAME[0], -SUN_GAME[2], SUN_GAME[1]],
+        'sun_color_linear_rgb': list(SUN_COLOR),
+        'sun_energy': SUN_ENERGY,
+        'visible_sky_strength': VISIBLE_SKY_STRENGTH,
+        'diffuse_sky_strength': DIFFUSE_SKY_STRENGTH,
+        'lower_sky_radiance_calibration': list(LOWER_SKY_CALIBRATION),
+        'atmosphere': {'altitude_metres': 4000, 'air_density': .60,
+                       'aerosol_density': .035, 'ozone_density': 1.55,
+                       'lower_turbidity': 1.6, 'lower_ground_albedo': 0,
+                       'lower_direction_z': 'sqrt(z*z + 0.12*0.12)'},
+        'composition': 'Remote broken horizon groups and sun-facing crest; original lower sea preserved',
+        'display_exposure_stops': DISPLAY_EXPOSURE,
+        'camera_mapping': {'u': 'fract(0.75 - input.uv.x)', 'v': 'input.uv.y'},
+    }
+
+
+def read_linear_hdr(path):
+    """Decode original Radiance scanlines without resizing or changing orientation."""
+    import numpy as np
+    with path.open('rb') as file:
+        assert file.readline().strip() in (b'#?RADIANCE', b'#?RGBE')
+        header = []
+        while True:
+            line = file.readline()
+            assert line, 'Truncated HDR header'
+            if not line.strip():
+                break
+            header.append(line.strip())
+        assert b'FORMAT=32-bit_rle_rgbe' in header
+        dimensions = file.readline().split()
+        assert dimensions[0] == b'-Y' and dimensions[2] == b'+X', 'Expected top-left HDR orientation'
+        height, width = int(dimensions[1]), int(dimensions[3])
+        assert 8 <= width <= 16384 and 1 <= height <= 8192
+        pixels = np.empty((height, width, 3), dtype=np.float32)
+        for y in range(height):
+            prefix = file.read(4)
+            assert prefix == bytes((2, 2, width >> 8, width & 255)), 'Expected Radiance scanline RLE'
+            row = np.empty((4, width), dtype=np.uint8)
+            for c in range(4):
+                x = 0
+                while x < width:
+                    count = file.read(1)
+                    assert count and count[0] != 0, 'Truncated/invalid HDR run'
+                    count = count[0]
+                    if count > 128:
+                        length = count - 128
+                        value = file.read(1)
+                        assert value and x + length <= width
+                        row[c, x:x+length] = value[0]
+                    else:
+                        length = count
+                        values = file.read(length)
+                        assert len(values) == length and x + length <= width
+                        row[c, x:x+length] = np.frombuffer(values, dtype=np.uint8)
+                    x += length
+            # Radiance RGBE uses an unsigned shared exponent, not an sRGB curve.
+            scale = np.exp2(row[3].astype(np.float32) - 136.0)
+            scale[row[3] == 0] = 0.0
+            pixels[y] = row[:3].T.astype(np.float32) * scale[:, None]
+        assert file.read(1) == b'', 'Unexpected trailing HDR bytes'
+    assert np.isfinite(pixels).all() and (pixels >= 0).all()
+    return pixels
+
+
+def write_rgba16_ktx2(path, rgba):
+    """Package native-resolution linear samples in standard uncompressed KTX2."""
+    height, width, channels = rgba.shape
+    assert channels == 4 and rgba.dtype.str == '<f2'
+    # Khronos basic DFD: RGBSDA, BT.709 primaries, linear transfer, 8-byte texel.
+    block = struct.pack('<IHH4B4B8B', 0, 2, 88, 1, 1, 1, 0,
+                        0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0)
+    for c, channel in enumerate((0, 1, 2, 15)):
+        block += struct.pack('<HBB4BII', c*16, 15, 0xC0 | channel,
+                             0, 0, 0, 0, 0xBF800000, 0x3F800000)
+    dfd = struct.pack('<I', 4+len(block)) + block
+    metadata = b''
+    for key, value in [('KTXorientation', 'rd'), ('KTXwriter', 'Aether original Cycles render / build_sky.py')]:
+        pair = key.encode('ascii') + b'\0' + value.encode('ascii') + b'\0'
+        metadata += struct.pack('<I', len(pair)) + pair + b'\0' * (-len(pair) % 4)
+    dfd_offset = 104
+    kvd_offset = dfd_offset + len(dfd)
+    payload_offset = (kvd_offset + len(metadata) + 7) // 8 * 8
+    payload_length = width * height * 8
+    header = b'\xABKTX 20\xBB\r\n\x1A\n' + struct.pack('<13I2Q',
+        97, 2, width, height, 0, 0, 1, 1, 0,
+        dfd_offset, len(dfd), kvd_offset, len(metadata), 0, 0)
+    assert len(header) == 80 and len(dfd) == 92
+    with path.open('wb') as file:
+        file.write(header)
+        file.write(struct.pack('<3Q', payload_offset, payload_length, payload_length))
+        file.write(dfd)
+        file.write(metadata)
+        file.write(b'\0' * (payload_offset - file.tell()))
+        file.write(rgba.tobytes(order='C'))
+
+
+def pack_linear_hdr():
+    import numpy as np
+    pixels = read_linear_hdr(HDR_OUT)
+    assert pixels.shape == (2048, 4096, 3), 'Only an original 4K HDR render is accepted'
+    maximum = float(pixels.max())
+    # A reversible global power-of-two unit conversion protects fp16 range.
+    # It is not a tone map: the runtime multiplier restores these radiance units.
+    encoding_scale = 2.0 ** min(0, math.floor(math.log2(65504.0/max(maximum, 1e-20))))
+    rgba = np.ones((2048, 4096, 4), dtype='<f2')
+    error = 0.0
+    for y in range(2048):
+        rgba[y, :, :3] = pixels[y] * encoding_scale
+        error = max(error, float(np.max(np.abs(rgba[y, :, :3].astype(np.float32)/encoding_scale - pixels[y]))))
+    assert np.isfinite(rgba).all()
+    write_rgba16_ktx2(KTX_OUT, rgba)
+    report = {
+        'format': 'VK_FORMAT_R16G16B16A16_SFLOAT', 'vk_format': 97,
+        'orientation': 'rd', 'transfer': 'linear', 'primaries': 'Rec.709',
+        'dimensions': [4096, 2048], 'mip_levels': 1, 'gpu_bytes': rgba.nbytes,
+        'encoding_scale': encoding_scale,
+        'recommended_runtime_multiplier': 2.0**DISPLAY_EXPOSURE/encoding_scale,
+        'source_radiance_min': float(pixels.min()), 'source_radiance_max': maximum,
+        'encoded_radiance_min': float(rgba[:, :, :3].min()),
+        'encoded_radiance_max': float(rgba[:, :, :3].max()),
+        'half_float_max_absolute_error_in_source_units': error,
+        'finite_nonnegative': True, 'alpha': 1, 'resampled': False,
+        'conversion': 'Original Radiance RGBE scanlines decoded to linear RGB and encoded as fp16; no color curve, retouch or resampling',
+    }
+    print('SKY_KTX2_PACKED', json.dumps(report), flush=True)
+    return report
+
+
+def render(preview, hero=False, linear=False):
+    scene = bpy.context.scene
+    preferences = bpy.context.preferences.addons['cycles'].preferences
+    backend = None
+    for candidate in ('OPTIX', 'CUDA'):
+        try:
+            preferences.compute_device_type = candidate
+            preferences.get_devices()
+            if any(d.type == candidate for d in preferences.devices):
+                backend = candidate
+                break
+        except Exception:
+            continue
+    if backend is None:
+        raise RuntimeError('GPU render was requested but no compatible device is available')
+    for device in preferences.devices:
+        device.use = device.type == backend
+    print('SKY_GPU', backend, [d.name for d in preferences.devices if d.use], flush=True)
+    scene.cycles.device = 'GPU'
+    scene.cycles.samples = 32 if preview else 128
+    scene.cycles.adaptive_min_samples = 8 if preview else 16
+    scene.cycles.adaptive_threshold = .045 if preview else .015
+    scene.render.resolution_x = 2048 if preview else 8192
+    scene.render.resolution_y = 1024 if preview else 4096
+    scene.render.filepath = str(PREVIEW/'world-art-sky-preview.png') if preview else str(OUT)
+    if linear:
+        assert not preview and not hero
+        # Original 4K render, never a resized 8K image. HDR stores scene-linear
+        # radiance; the display transform is only applied by the game later.
+        scene.render.resolution_x = 4096
+        scene.render.resolution_y = 2048
+        scene.render.image_settings.file_format = 'HDR'
+        scene.render.image_settings.color_mode = 'RGB'
+        scene.view_settings.view_transform = 'Raw'
+        scene.view_settings.look = 'None'
+        scene.view_settings.exposure = 0.0
+        scene.view_settings.gamma = 1.0
+        scene.render.filepath = str(HDR_OUT)
+    if hero:
+        scene.camera.data.type = 'PERSP'
+        scene.camera.data.lens = 23.5
+        scene.camera.rotation_euler = Vector((-460, 670, -335)).to_track_quat('-Z', 'Y').to_euler()
+        scene.render.resolution_x = 1672
+        scene.render.resolution_y = 941
+        scene.render.filepath = str(PREVIEW/'world-art-sky-perspective.png')
+    last_report = [0.0]
+    def progress(stats):
+        now = time.perf_counter()
+        if now-last_report[0] > 15.0:
+            print('SKY_PROGRESS', str(stats), flush=True)
+            last_report[0] = now
+    bpy.app.handlers.render_stats.append(progress)
+    started = time.perf_counter()
+    bpy.ops.render.render(write_still=True)
+    bpy.app.handlers.render_stats.remove(progress)
+    elapsed = time.perf_counter() - started
+    print('SKY_RENDERED', scene.render.filepath, flush=True)
+    if not preview:
+        packed = pack_linear_hdr() if linear else None
+        output = KTX_OUT if linear else OUT
+        manifest = json.loads((SOURCE/'manifest.json').read_text(encoding='utf8'))
+        manifest.update(lighting_manifest())
+        manifest.update({
+            'output_needs_render': False,
+            'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            'source_sha256': hashlib.sha256((SOURCE/'sky-world.blend').read_bytes()).hexdigest(),
+            'output': output.relative_to(ROOT).as_posix(),
+            'output_sha256': hashlib.sha256(output.read_bytes()).hexdigest(),
+            'bytes': output.stat().st_size, 'samples_max': scene.cycles.samples,
+            'panorama': f'full-sphere equirectangular {scene.render.resolution_x}x{scene.render.resolution_y}',
+            'dimensions': [scene.render.resolution_x, scene.render.resolution_y],
+            'output_format': 'RGBA16Float KTX2 linear' if linear else 'RGB8 PNG sRGB display',
+            'adaptive_threshold': scene.cycles.adaptive_threshold,
+            'renderer': f'Cycles {backend}', 'render_seconds': round(elapsed,2),
+            'exposure': scene.view_settings.exposure,
+            'volume_bounces': scene.cycles.volume_bounces,
+            'density_grid_voxel_metres_before_object_scale': '12 near, 16 horizon, 24 masters, 32 zenith',
+            'density_boundary_ramp_metres_before_object_scale': '2.5 voxels: 30..80 metres',
+            'volume_grids': [
+                {'file': 'cloud-volumes/'+f.name, 'bytes': f.stat().st_size,
+                 'sha256': hashlib.sha256(f.read_bytes()).hexdigest()}
+                for f in sorted((SOURCE/'cloud-volumes').glob('*.vdb'))
+            ],
+        })
+        if packed:
+            manifest['linear_encoding'] = packed
+            manifest['authoring_hdr'] = {'file': HDR_OUT.name, 'bytes': HDR_OUT.stat().st_size,
+                'sha256': hashlib.sha256(HDR_OUT.read_bytes()).hexdigest(),
+                'original_render_dimensions': [4096, 2048], 'color_space': 'scene-linear Rec.709',
+                'view_transform_applied': False}
+            manifest.pop('validation', None)
+        manifest_name = 'candidate-manifest.json' if linear else 'manifest.json'
+        (SOURCE/manifest_name).write_text(json.dumps(manifest,indent=2),encoding='utf8')
+
+
+def compose_clouds():
+    """Camera is above the cloud sea; distant lateral towers leave a blue nave.
+
+    Base transforms are retained so refreshing a source never accumulates
+    translations. Raising camera alone would tilt the baked horizon and would
+    hide the actual arrangement error instead of fixing it.
+    """
+    for obj in bpy.context.scene.objects:
+        if obj.type not in {'MESH', 'VOLUME'}:
+            continue
+        if 'sky_base_position' not in obj:
+            obj['sky_base_position'] = list(obj.location)
+            obj['sky_base_scale'] = list(obj.scale)
+        p = Vector(obj['sky_base_position'])
+        obj.scale = obj['sky_base_scale']
+        if obj.name.startswith('Horizon cumulus'):
+            obj.location = (p.x*3.4, p.y*3.4, p.z-2600)
+            obj.scale *= .70
+        elif obj.name.startswith('Intermediate drifting bank'):
+            obj.location = (p.x*2.8, p.y*2.8, p.z-2200)
+            obj.scale *= .45
+        elif obj.name.startswith('Broken lower cloud sea'):
+            obj.location = (p.x*1.40, p.y*1.40, p.z-1500)
+        elif obj.name.startswith('Deep cloud islands'):
+            obj.location = (p.x*1.2, p.y*1.2, p.z-1000)
+        elif obj.name.startswith('Overhead cloud arch'):
+            # Thin remote groups frame the zenith without shadowing the whole sea.
+            obj.location = (p.x*2.5, p.y*2.5, p.z*1.5)
+            obj.scale.z *= .5
+        elif obj.name.startswith('Master cumulonimbus'):
+            i = int(obj.name.split()[2].split('.')[0])
+            azimuth,distance,altitude,radius,height = MASTERS[i]
+            a = math.radians(azimuth)
+            # Backfill dimensions for sources made before transform metadata.
+            old_radius = obj.get('sky_base_radius', [3500,3200][i])
+            old_height = obj.get('sky_base_height', [6000,5550][i])
+            obj.scale.x *= radius/old_radius
+            obj.scale.y *= radius/old_radius
+            obj.scale.z *= height/old_height
+            obj.location = (math.cos(a)*distance,math.sin(a)*distance,altitude)
+            if i == 0:
+                # A broad side bank frames the dawn opening; its upper crown
+                # sits above the horizon and its body connects to the sea.
+                mesh = next(o for o in bpy.context.scene.objects
+                            if o.type == 'MESH' and o.name.startswith('Master cumulonimbus 00'))
+                top = max(v.co.z for v in mesh.data.vertices) * obj.scale.z
+                obj.location.z = 1200.0 - top
+    bpy.context.view_layer.update()
+
+
+def refresh():
+    """Relight existing sculptures without changing their baked density grids."""
+    material = bpy.data.materials['Cumulus | physical water-droplet scattering']
+    volume = material.node_tree.nodes['Water droplets / multiple scattering']
+    volumes = [o for o in bpy.context.scene.objects if o.type == 'VOLUME']
+    assert len(volumes) == 36, 'Open the original VDB-backed sky-world.blend before refreshing'
+    assert not volume.inputs['Density'].links
+    assert volume.inputs['Density Attribute'].default_value == 'density'
+    density = volume.inputs['Density'].default_value
+    grids_before = {
+        o.data.filepath: hashlib.sha256(Path(bpy.path.abspath(o.data.filepath)).read_bytes()).hexdigest()
+        for o in volumes
+    }
+    for obj in list(bpy.context.scene.objects):
+        if obj.type == 'LIGHT':
+            bpy.data.objects.remove(obj, do_unlink=True)
+    sky_world()
+    bpy.context.scene.cycles.max_bounces = 24
+    bpy.context.scene.cycles.volume_bounces = 16
+    compose_clouds()
+    assert volume.inputs['Density'].default_value == density
+    assert all(hashlib.sha256(Path(bpy.path.abspath(path)).read_bytes()).hexdigest() == digest
+               for path, digest in grids_before.items())
+    bpy.context.preferences.filepaths.save_version = 0
+    bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'),compress=True)
+    manifest_path = SOURCE/'manifest.json'
+    manifest = json.loads(manifest_path.read_text(encoding='utf8'))
+    manifest.update(lighting_manifest())
+    manifest.update({
+        'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'source_sha256': hashlib.sha256((SOURCE/'sky-world.blend').read_bytes()).hexdigest(),
+        'source_refresh': 'World-space dawn recomposition and blue horizon; 36 original VDB density grids preserved byte-for-byte',
+        'output_needs_render': True,
+    })
+    manifest_path.write_text(json.dumps(manifest, indent=2), encoding='utf8')
+    print('SKY_REFRESHED', json.dumps(lighting_manifest()), 'VDB_GRIDS_UNCHANGED', len(grids_before), flush=True)
+
+
+def fog_volumes():
+    """Turn sculpted boundaries into a continuous condensation field.
+
+    The signed-distance fog band preserves the mesh's actual multi-scale shape
+    but removes its impermeable, stone-like cut at the silhouette. OpenVDB ships
+    with Blender; these are locally generated data, never downloaded assets.
+    """
+    import openvdb
+    import numpy as np
+    directory = SOURCE/'cloud-volumes'
+    directory.mkdir(exist_ok=True)
+    material = bpy.data.materials['Cumulus | physical water-droplet scattering']
+    tree = material.node_tree
+    volume = tree.nodes['Water droplets / multiple scattering']
+    for link in list(volume.inputs['Density'].links):
+        tree.links.remove(link)
+    volume.inputs['Density'].default_value = .024
+    volume.inputs['Density Attribute'].default_value = 'density'
+
+    def lattice_noise(x,y,z,period,seed):
+        """Vectorized smooth 3-D value noise baked once, never per light bounce."""
+        coords = [v/period for v in (x,y,z)]
+        floors = [np.floor(v).astype(np.int32) for v in coords]
+        fades = [v-f for v,f in zip(coords,floors)]
+        fades = [v*v*v*(v*(v*6-15)+10) for v in fades]
+        result = np.zeros(np.broadcast_shapes(x.shape,y.shape,z.shape), dtype=np.float32)
+        for dx in (0,1):
+            for dy in (0,1):
+                for dz in (0,1):
+                    h = ((floors[0]+dx).astype(np.uint32)*np.uint32(374761393)
+                         + (floors[1]+dy).astype(np.uint32)*np.uint32(668265263)
+                         + (floors[2]+dz).astype(np.uint32)*np.uint32(2147483647)
+                         + np.uint32(seed))
+                    h = (h ^ (h>>13))*np.uint32(1274126177)
+                    h = h ^ (h>>16)
+                    value = (h & np.uint32(0x00ffffff)).astype(np.float32)/16777215.0
+                    weight = ((fades[0] if dx else 1-fades[0])
+                              * (fades[1] if dy else 1-fades[1])
+                              * (fades[2] if dz else 1-fades[2]))
+                    result += value*weight
+        return result
+    for mesh_obj in [o for o in bpy.context.scene.objects if o.type == 'MESH' and 'sky_base_position' in o]:
+        name = mesh_obj.name + ' | water vapour'
+        if name in bpy.data.objects:
+            old = bpy.data.objects[name]
+            old_data = old.data
+            bpy.data.objects.remove(old,do_unlink=True)
+            if old_data.users == 0:
+                bpy.data.volumes.remove(old_data)
+        started = time.perf_counter()
+        mesh = mesh_obj.data
+        mesh.calc_loop_triangles()
+        vertices = np.empty(len(mesh.vertices)*3, dtype=np.float32)
+        mesh.vertices.foreach_get('co', vertices)
+        vertices = vertices.reshape(-1,3)
+        triangles = np.empty(len(mesh.loop_triangles)*3, dtype=np.uint32)
+        mesh.loop_triangles.foreach_get('vertices', triangles)
+        triangles = triangles.reshape(-1,3)
+        voxel = 12.0
+        if mesh_obj.name.startswith('Horizon cumulus'):
+            voxel = 16.0
+        elif mesh_obj.name.startswith('Master cumulonimbus'):
+            voxel = 24.0
+        elif mesh_obj.name.startswith('Overhead cloud arch'):
+            voxel = 32.0
+        boundary = voxel*2.5
+        transform = openvdb.createLinearTransform(voxelSize=voxel)
+        band = max(5.0,math.ceil((80.0+boundary*.5)/voxel))
+        sdf = openvdb.FloatGrid.createLevelSetFromPolygons(vertices, triangles=triangles, transform=transform, halfWidth=band)
+        lower, upper = sdf.evalActiveVoxelBoundingBox()
+        shape = tuple(upper[i]-lower[i]+1 for i in range(3))
+        field = np.empty(shape, dtype=np.float32)
+        sdf.copyToArray(field, ijk=lower)
+        # Bake the entire density field. This also allows Cycles to construct
+        # useful voxel majorants and skip empty cells instead of evaluating
+        # several procedural shaders at every null/scattering event.
+        seed = SEED + sum(ord(c) for c in mesh_obj.name)*191
+        y = (np.arange(shape[1],dtype=np.float32)+lower[1])[None,:,None]*voxel
+        z = (np.arange(shape[2],dtype=np.float32)+lower[2])[None,None,:]*voxel
+        for start in range(0,shape[0],16):
+            stop = min(start+16,shape[0])
+            x = (np.arange(start,stop,dtype=np.float32)+lower[0])[:,None,None]*voxel
+            broad = lattice_noise(x,y,z,420.0,seed)
+            medium = lattice_noise(x,y,z,150.0,seed+97)
+            fine = lattice_noise(x,y,z,48.0,seed+251)
+            vapour = broad*.50+medium*.32+fine*.18
+            erosion = (medium-.5)*110.0+(fine-.5)*45.0
+            fog = np.clip((boundary*.5-field[start:stop]+erosion)/boundary,0.0,1.0)
+            fog *= fog*(3.0-2.0*fog)
+            condensation = np.clip((vapour-.20)/.60,0.0,1.0)
+            condensation *= condensation*(3.0-2.0*condensation)
+            field[start:stop] = fog*(.25+.75*condensation)
+        grid = openvdb.FloatGrid()
+        grid.name = 'density'
+        grid.gridClass = openvdb.GridClass.FOG_VOLUME
+        grid.transform = transform
+        grid.copyFromArray(field, ijk=lower)
+        grid.saveFloatAsHalf = True
+        file = directory/(mesh_obj.name.replace(' ','-').replace('.001','')+'.vdb')
+        openvdb.write(str(file), grids=[grid])
+        volume_data = bpy.data.volumes.new(name)
+        volume_data.filepath = '//cloud-volumes/'+file.name
+        volume_data.materials.append(material)
+        volume_obj = bpy.data.objects.new(name,volume_data)
+        bpy.context.collection.objects.link(volume_obj)
+        volume_obj.matrix_world = mesh_obj.matrix_world.copy()
+        for key in mesh_obj.keys():
+            volume_obj[key] = mesh_obj[key]
+        mesh_obj.hide_render = True
+        print('SKY_VDB',mesh_obj.name,list(shape),file.stat().st_size,round(time.perf_counter()-started,2),flush=True)
+    bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'),compress=True)
+
+
+def validate():
+    import numpy as np
+    image = bpy.data.images.load(str(OUT), check_existing=False)
+    width, height = image.size
+    assert (width, height) == (8192, 4096)
+    pixels = np.empty(width*height*4, dtype=np.float32)
+    image.pixels.foreach_get(pixels)
+    pixels = pixels.reshape(height,width,4)[:,:,:3]
+    seam = np.abs(pixels[:,0]-pixels[:,-1])
+    adjacent = np.abs(pixels[:,0]-pixels[:,1])
+    stats = {
+        'width':width, 'height':height,
+        'seam_mean_linear_rgb':float(seam.mean()),
+        'seam_p99_linear_rgb':float(np.quantile(seam,.99)),
+        'adjacent_mean_linear_rgb':float(adjacent.mean()),
+        'clipped_white_fraction':float((pixels.min(axis=2)>.995).mean()),
+        'clipped_black_fraction':float((pixels.max(axis=2)<.0003).mean()),
+        'top_pole_range_linear_rgb':float(np.ptp(pixels[-1],axis=0).max()),
+        'bottom_pole_range_linear_rgb':float(np.ptp(pixels[0],axis=0).max()),
+    }
+    assert stats['seam_mean_linear_rgb'] < .01, stats
+    assert stats['clipped_white_fraction'] < .005, stats
+    assert stats['clipped_black_fraction'] < .001, stats
+    manifest = json.loads((SOURCE/'manifest.json').read_text(encoding='utf8'))
+    manifest['validation'] = stats
+    (SOURCE/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf8')
+    print('SKY_VALIDATED',json.dumps(stats),flush=True)
+
+
+if __name__ == '__main__':
+    args = sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+    if '--prepare' in args or not args:
+        build_scene()
+    elif '--preview' in args:
+        render(True)
+    elif '--final' in args:
+        render(False)
+    elif '--linear' in args:
+        render(False, linear=True)
+    elif '--hero' in args:
+        render(True, True)
+    elif '--validate' in args:
+        validate()
+    elif '--refresh' in args:
+        refresh()
+    elif '--fog' in args:
+        fog_volumes()
+        refresh()
+    else:
+        raise ValueError('Use --prepare, --preview or --final')

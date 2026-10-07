@@ -1,0 +1,86 @@
+[
+  {
+    "kind": "dawn",
+    "sha256": "d56726d7c7c2dfcaedf5d05fd689e0d20d74dc73cd55e30e31ed9acaf2ebabfa",
+    "bytes": 19467096,
+    "triangles": 181634,
+    "rock_triangles": 22214,
+    "baseline_regeneration_payload_exact": true,
+    "before_bounds": [
+      [
+        -72.27836608886719,
+        80.40911865234375
+      ],
+      [
+        -88.74075317382812,
+        88.98600006103516
+      ],
+      [
+        -80.10235595703125,
+        89
+      ]
+    ],
+    "after_bounds": [
+      [
+        -70.22711944580078,
+        78.40779113769531
+      ],
+      [
+        -88.74075317382812,
+        88.98600006103516
+      ],
+      [
+        -78.58209228515625,
+        89
+      ]
+    ],
+    "bounds_exact": false,
+    "degenerate_triangles": 0,
+    "inverted_triangles": 0,
+    "max_normal_length_error": 1.3591420833236612e-7,
+    "max_tangent_length_error": 1,
+    "min_normal_dot": 0.9999998246097322
+  },
+  {
+    "kind": "dawn-watch",
+    "sha256": "9f7464dd3062ebc5720dcfa06a263a2f82ece57a422eaa627c370d61aae16308",
+    "bytes": 12927672,
+    "triangles": 124321,
+    "rock_triangles": 24386,
+    "baseline_regeneration_payload_exact": true,
+    "before_bounds": [
+      [
+        -73.1258316040039,
+        61.38911819458008
+      ],
+      [
+        -113,
+        95.68000030517578
+      ],
+      [
+        -78.82537841796875,
+        89
+      ]
+    ],
+    "after_bounds": [
+      [
+        -71.74125671386719,
+        60.3411979675293
+      ],
+      [
+        -113,
+        95.68000030517578
+      ],
+      [
+        -77.90361022949219,
+        89
+      ]
+    ],
+    "bounds_exact": false,
+    "degenerate_triangles": 0,
+    "inverted_triangles": 0,
+    "max_normal_length_error": 1.357374388444299e-7,
+    "max_tangent_length_error": 0.00006803906582453223,
+    "min_normal_dot": 0.999999823361116
+  }
+]

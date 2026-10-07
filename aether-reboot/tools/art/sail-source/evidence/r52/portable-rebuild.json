@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "original_root": ".",
+  "rebuild_root": "portable-rebuild",
+  "source_paths_relative": true,
+  "glb_sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23",
+  "rebuild_glb_sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23",
+  "byte_exact": true,
+  "blender": "5.2.1 LTS",
+  "gpu_used": false,
+  "commands": [
+    "build_sail_r52.py",
+    "build_sail_rig.py",
+    "merge_sail_rig.mjs",
+    "verify_sail_r52.mjs"
+  ],
+  "shared_generator_sha256": "4f362af19f5e33a67012f1436d1df1fb888de6284ec67061f360eb7899ee4449",
+  "shared_generator_unchanged": true
+}

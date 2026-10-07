@@ -1,0 +1,30 @@
+[package]
+name = "aether_game"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+default-run = "aether_game"
+
+[dependencies]
+aether_core.workspace = true
+aether_sim.workspace = true
+aether_view.workspace = true
+bevy.workspace = true
+avian3d.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+directories = "6"
+tempfile = "3"
+rfd = { version = "0.15.4", default-features = false }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = ["Window", "Document", "HtmlElement", "HtmlAnchorElement", "HtmlInputElement", "File", "FileList", "Blob", "BlobPropertyBag", "Url", "Storage", "Event", "IdbFactory", "IdbDatabase", "IdbOpenDbRequest", "IdbRequest", "IdbTransaction", "IdbTransactionMode", "IdbObjectStore", "DomException"] }
+
+[lints]
+workspace = true

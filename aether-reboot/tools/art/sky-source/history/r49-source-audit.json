@@ -1,0 +1,37 @@
+{
+  "checked": 92,
+  "failures": [],
+  "canonical_immutable": true,
+  "exact_render_descriptor_changes": [
+    {
+      "path": "/materials/R43 | finite aerial scattering/nodes/nodes/3/inputs/1:Density",
+      "before": 0.0000012000000424450263,
+      "after": 3.000000106112566e-7
+    },
+    {
+      "path": "/objects/2/data/color/1",
+      "before": 0.7599999904632568,
+      "after": 0.6200000047683716
+    },
+    {
+      "path": "/objects/2/data/color/2",
+      "before": 0.47999998927116394,
+      "after": 0.3199999928474426
+    },
+    {
+      "path": "/world/nodes/0/inputs/1:Value",
+      "before": 0.014399999752640724,
+      "after": 0.09000000357627869
+    }
+  ],
+  "target_ray_mapping_degrees": {
+    "before": 7.4377445968386295,
+    "after": 16.945758565941226
+  },
+  "sun_rgb_luminance": {
+    "before": 0.790808,
+    "after": 0.679128,
+    "ratio": 0.8587773517718587
+  },
+  "note": "SUN scalar energy stays9.3. RGB warming reduces photometric luminance; no compensating exposure change."
+}

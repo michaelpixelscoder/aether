@@ -1,0 +1,29 @@
+{
+  "file": ".dream-loop/sky-r50-low-sun-candidate/sky-r50-ibl-linear.hdr",
+  "sha256": "d669ada13126d9de5d673eb26f59abc78e579383d41efa823d41fb7950a96def",
+  "bytes": 553972,
+  "dimensions": [
+    1024,
+    512
+  ],
+  "original_render_dimensions": [
+    1024,
+    512
+  ],
+  "view_transform_applied": false,
+  "raw_exposure_stops": 0,
+  "runtime_reference_exposure_stops": -0.9,
+  "seconds": 11.881760800002667,
+  "samples_max": 128,
+  "renderer": "Cycles OPTIX",
+  "denoising": "OpenImageDenoise RGB only",
+  "source_sha256": "cdba75ae0c1b5dd86e4c3a662e6f2d66c5ec5db0a025903f7b208fd2c6514087",
+  "generator_sha256": "8ca45d9f30013f852dcfe2ab647234d9cad909d09ec273bddd646262a19eb724",
+  "render_descriptor_sha256": "de7af11d3e727388f71954a49cab72c4f8d26de65bbc05299b144e5729dd7d5e",
+  "camera_solar_disk_visible": false,
+  "solar_illumination_active": true,
+  "radiance_min": 0.080078125,
+  "radiance_max": 4.75,
+  "finite_nonnegative": true,
+  "resampled": false
+}

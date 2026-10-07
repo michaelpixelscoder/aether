@@ -1,0 +1,137 @@
+"""Isolated artistic lower-sky study from unchanged r46, never from r48."""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import hashlib
+import importlib.util
+import json
+import math
+import sys
+import time
+from pathlib import Path
+from mathutils import Vector
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+SOURCE=ROOT/'tools/art/sky-source'
+EXPOSURE=-.90
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def record(path):
+    path=Path(path).resolve()
+    return {'file':path.relative_to(ROOT).as_posix(),'sha256':sha(path),'bytes':path.stat().st_size}
+
+def fingerprint():
+    path=SOURCE/'scene_fingerprint.py'
+    spec=importlib.util.spec_from_file_location('r49_fingerprint',path)
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+def differences(a,b,p=''):
+    result=[]
+    if type(a)!=type(b):return [{'path':p,'before':a,'after':b}]
+    if isinstance(a,dict):
+        for key in sorted(set(a)|set(b)):
+            if key not in a or key not in b:result.append({'path':p+'/'+str(key),'before':a.get(key),'after':b.get(key)})
+            else:result+=differences(a[key],b[key],p+'/'+str(key))
+    elif isinstance(a,list):
+        if len(a)!=len(b):return [{'path':p,'before_length':len(a),'after_length':len(b)}]
+        for i,(x,y) in enumerate(zip(a,b)):result+=differences(x,y,p+'/'+str(i))
+    elif a!=b:result.append({'path':p,'before':a,'after':b})
+    return result
+
+def prepare():
+    started=time.perf_counter()
+    assert Path(bpy.data.filepath).resolve()==(SOURCE/'sky-world.blend').resolve()
+    frozen=[record(SOURCE/'sky-world.blend'),record(SOURCE/'manifest.json'),record(SOURCE/'recipe.json'),
+            record(ROOT/'tools/art/build_sky.py'),record(ROOT/'assets/textures/sky-world-linear.ktx2')]
+    scene=bpy.context.scene;fp=fingerprint()
+    before=fp.descriptor(scene)
+    add=scene.world.node_tree.nodes['ADD']
+    assert add.type=='MATH' and add.operation=='ADD'
+    assert abs(add.inputs[1].default_value-.0144)<1e-6
+    add.inputs[1].default_value=.09
+    air=bpy.data.materials['R43 | finite aerial scattering'].node_tree
+    mie=next(n for n in air.nodes if n.type=='VOLUME_SCATTER' and n.inputs['Anisotropy'].default_value>.7)
+    assert abs(mie.inputs['Density'].default_value-.0000012)<1e-10
+    mie.inputs['Density'].default_value=.0000003
+    suns=[obj for obj in scene.objects if obj.type=='LIGHT' and obj.data.type=='SUN']
+    assert len(suns)==1
+    sun=suns[0]
+    assert max(abs(a-b) for a,b in zip(sun.data.color,(1,.76,.48)))<1e-5
+    sun.data.color=(1,.62,.32)
+    after=fp.descriptor(scene)
+    changes=differences(before,after)
+    # Input-only changes: no object, camera, geometry, key energy, exposure,
+    # principal upper sky or density-field transformation may change.
+    assert len(changes)==4,changes
+    sun_index=next(i for i,o in enumerate(before['objects']) if o['name']==sun.name)
+    object_changes=differences(before['objects'],after['objects'])
+    assert {c['path'] for c in object_changes}=={f'/{sun_index}/data/color/1',f'/{sun_index}/data/color/2'},object_changes
+    for key in ('camera','cycles','render','image_settings','view_settings','display_settings','frame'):
+        assert before[key]==after[key],key
+    sources=[]
+    for obj in scene.objects:
+        if obj.type=='VOLUME':
+            path=Path(bpy.path.abspath(obj.data.filepath)).resolve()
+            sources.append(record(path))
+            obj.data.filepath='//'+os.path.relpath(path,STAGE).replace('\\','/')
+    bpy.context.preferences.filepaths.save_version=0
+    output=STAGE/'sky-r49-atmosphere.blend'
+    bpy.ops.wm.save_as_mainfile(filepath=str(output),compress=True,relative_remap=False)
+    for item in frozen:assert sha(ROOT/item['file'])==item['sha256']
+    report={'status':'prepared isolated atmospheric study; no render','output_needs_render':True,
+        'source':output.name,'source_sha256':sha(output),'generator_sha256':sha(__file__),
+        'canonical_frozen':frozen,'source_files':sources+[record(SOURCE/'scene_fingerprint.py')],
+        'before_descriptor_sha256':fp.digest(before),'after_descriptor_sha256':fp.digest(after),'exact_changes':changes,
+        'base':'r46 canonical, no r48 ribbon','direction':'Artistic continuous lower-hemisphere remap; not a strict physical atmosphere model',
+        'requested_edits':{'hosek_z_remap':{'before':'sqrt(z*z+.0144)','after':'sqrt(z*z+.09)'},
+            'neutral_volume_density':{'before':1.2e-6,'after':.3e-6},'sun_color_linear_rgb':{'before':[1,.76,.48],'after':[1,.62,.32]}},
+        'unchanged':['all 86 density fields and transforms','camera','sun direction [-80,38,-60]','sun energy 9.3',
+            'upper MULTIPLE_SCATTERING sky','Hosek turbidity and albedo','sky strength .10','diffuse fill .09',
+            'blue finite scattering 2e-6/g.15','neutral scattering g.72','exposure -.90 EV'],
+        'reference_calibration':{'r46_encoding_scale':.5,'r46_runtime_gain':2**EXPOSURE/.5,
+            'runtime_gain_at_minus_1_35_EV':2**(-1.35)/.5,'candidate_encoding_scale':'not determined; no HDR render'},
+        'original_3d':True,'external_assets':[],'bitmap_edits':False,'upscaling':False,'prepare_seconds':time.perf_counter()-started}
+    (STAGE/'manifest.json').write_text(json.dumps(report,indent=2)+'\n')
+    (STAGE/'scene-descriptor-before.json').write_text(json.dumps(before,indent=2)+'\n')
+    (STAGE/'scene-descriptor-after.json').write_text(json.dumps(after,indent=2)+'\n')
+    print('ATMOSPHERE_PREPARED',json.dumps({'changes':changes,'seconds':report['prepare_seconds']}),flush=True)
+
+def hero():
+    started=time.perf_counter()
+    assert Path(bpy.data.filepath).resolve()==(STAGE/'sky-r49-atmosphere.blend').resolve()
+    scene=bpy.context.scene
+    prefs=bpy.context.preferences.addons['cycles'].preferences
+    prefs.compute_device_type='OPTIX';prefs.get_devices()
+    assert any(d.type=='OPTIX' for d in prefs.devices)
+    for device in prefs.devices:device.use=device.type=='OPTIX'
+    scene.cycles.device='GPU';scene.cycles.samples=64
+    scene.cycles.adaptive_min_samples=16;scene.cycles.adaptive_threshold=.045
+    scene.cycles.use_adaptive_sampling=True;scene.cycles.use_denoising=True
+    scene.cycles.denoising_input_passes='RGB';scene.cycles.denoising_use_gpu=False
+    scene.camera.data.type='PERSP';scene.camera.data.sensor_fit='VERTICAL'
+    scene.camera.data.sensor_height=24;scene.camera.data.lens=12/math.tan(math.pi/8)
+    scene.camera.rotation_euler=Vector((-460,670,-335)).to_track_quat('-Z','Y').to_euler()
+    scene.render.resolution_x=1672;scene.render.resolution_y=941;scene.render.resolution_percentage=100
+    scene.render.image_settings.file_format='PNG';scene.render.image_settings.color_mode='RGB'
+    scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast'
+    scene.view_settings.exposure=EXPOSURE;scene.view_settings.gamma=1
+    scene.render.filepath=str(STAGE/'atmosphere-hero.png')
+    bpy.ops.render.render(write_still=True)
+    m=json.loads((STAGE/'manifest.json').read_text())
+    m['hero']={**record(scene.render.filepath),'dimensions':[1672,941],'samples_max':64,
+        'renderer':'Cycles OPTIX','denoising':'OpenImageDenoise RGB only','seconds':time.perf_counter()-started,
+        'source_sha256':sha(bpy.data.filepath),'display_transform':'AgX Medium High Contrast','exposure_stops':EXPOSURE}
+    m['status']='hero rendered for review; no panorama'
+    for item in m['canonical_frozen']:assert sha(ROOT/item['file'])==item['sha256']
+    (STAGE/'manifest.json').write_text(json.dumps(m,indent=2)+'\n')
+    print('ATMOSPHERE_HERO_RENDERED',json.dumps(m['hero']),flush=True)
+
+if __name__=='__main__':
+    if '--prepare' in sys.argv:prepare()
+    elif '--hero' in sys.argv:hero()
+    else:raise ValueError('Use --prepare or --hero; no panorama export authorized')

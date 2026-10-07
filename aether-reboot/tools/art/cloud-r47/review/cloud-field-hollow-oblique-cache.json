@@ -1,0 +1,26 @@
+{
+  "label": "hollow-oblique-cache",
+  "bank": "hollow",
+  "mode": "cache",
+  "seconds": 0.9977235999976983,
+  "dimensions": [
+    240,
+    150
+  ],
+  "origin_local": [
+    3250,
+    2200,
+    3600
+  ],
+  "target_local": [
+    0,
+    -90,
+    0
+  ],
+  "orthographic_span": 6200,
+  "steps": 128,
+  "lighting_refresh_steps": 4,
+  "live_noise": "held at R=.70,G/B=.65,A=.50 for both fields",
+  "alpha_mean": 0.30576616525650024,
+  "note": "CPU field inspection, not a runtime screenshot"
+}

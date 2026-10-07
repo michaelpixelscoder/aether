@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "source_sha256": "bcbb3f5b72fb72be0de5df2bd7e65c92420e4ca5b39b4dcea68ef1203a85e397",
+  "source_field": {
+    "angular_mask_verified": true,
+    "all_ray_field_verified": true,
+    "core_red_irradiance": 21.934094510988576,
+    "additional_normal_irradiance_rgb": [
+      0.06590561036861302,
+      0.014606123134471474,
+      -0.010085466698788955
+    ],
+    "total_red_irradiance": 22.00000012135719,
+    "core_fraction": 0.9970042959540262,
+    "actual_disk_diameter_degrees": 1.2001895507050622,
+    "quadrature_intervals": 65536
+  },
+  "shader_sha256": "1e586a174543ea72cae64fa7399b5ecd863b8785e12b2a65b177366063375f54",
+  "cloud_density_and_integration_exact_r55": true,
+  "self_test_rejections": 13
+}

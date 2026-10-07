@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "passed": true,
+  "variants": [
+    {
+      "name": "medium",
+      "sha256": "3d9432e720abcae6ab54c3c0ebe7fa9081d2394d178f30ee879502ffa0c85d61",
+      "keyword_guard": true,
+      "clock_uv_alpha_mode_pool_haze_unchanged": true
+    },
+    {
+      "name": "strong",
+      "sha256": "91d30691df1a88105815b201a3484251ed9bd9ec8f181c795c5ab461cd91c81c",
+      "keyword_guard": true,
+      "clock_uv_alpha_mode_pool_haze_unchanged": true
+    }
+  ],
+  "stats_sha256": "155c3f8c6ac893a23d89b179117c053eccece3daa2b050d1f9161bdbd17f74ea",
+  "texture_unchanged": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+  "variant_difference_only_gains": true,
+  "reserved_patch_negative_test": true,
+  "shader_compilation": "Pending parent engine; static guard is not a full Naga parse.",
+  "validator_sha256": "fedcc0ec5a555c3b25004ac69ea2e8bd99a8a298db0343e0913b8dd3032f6083"
+}

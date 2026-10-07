@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "images": [
+    {
+      "name": "cedar",
+      "packed": true,
+      "source": "FILE"
+    },
+    {
+      "name": "cedar-normal.png",
+      "packed": true,
+      "source": "FILE"
+    },
+    {
+      "name": "cedar.001",
+      "packed": true,
+      "source": "FILE"
+    },
+    {
+      "name": "cedar.002",
+      "packed": true,
+      "source": "FILE"
+    },
+    {
+      "name": "cedar.png",
+      "packed": true,
+      "source": "FILE"
+    },
+    {
+      "name": "indigo-canvas",
+      "packed": true,
+      "source": "FILE"
+    },
+    {
+      "name": "indigo-canvas.png",
+      "packed": true,
+      "source": "FILE"
+    }
+  ]
+}

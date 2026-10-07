@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "passed": true,
+  "method": "Created an empty relocated output tree with generator and reviewed configuration; Blender 5.2 CPU4 rebuilt all six caches there from scratch. No cache copied into this output.",
+  "source_path_before": "tools/art/build_cloud_cache.py in authoring candidate",
+  "source_path_after": "promotion/tools/art/build_cloud_cache.py",
+  "generator_sha256": "df160c3ebf3b57b3cf4c161d3bd53416c27789048a58f2ef0afedebbe62aadea",
+  "config_sha256": "60ad26aa86ba465159d2fbad0c4cea00df73ddf4f55dc91e64303bb7bf5046bf",
+  "banks": [
+    {
+      "key": "hollow",
+      "file": "assets/atmosphere/hollow-shape.ktx2",
+      "sha256": "fc96de520c22f4c0266f0a17b04791adec792bf14618a835951612edcd8cbdfe",
+      "byte_identical_to_reviewed_r2": true,
+      "bake_seconds": 16.665
+    },
+    {
+      "key": "underforge",
+      "file": "assets/atmosphere/underforge-shape.ktx2",
+      "sha256": "64a2f7749544bc3bb718da534b4ee0744c6414dd3fc9d0a32ff59ddd1a972840",
+      "byte_identical_to_reviewed_r2": true,
+      "bake_seconds": 18.479
+    },
+    {
+      "key": "west",
+      "file": "assets/atmosphere/west-shape.ktx2",
+      "sha256": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40",
+      "byte_identical_to_reviewed_r2": true,
+      "bake_seconds": 1.106
+    },
+    {
+      "key": "east",
+      "file": "assets/atmosphere/east-shape.ktx2",
+      "sha256": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5",
+      "byte_identical_to_reviewed_r2": true,
+      "bake_seconds": 1.138
+    },
+    {
+      "key": "north",
+      "file": "assets/atmosphere/north-shape.ktx2",
+      "sha256": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71",
+      "byte_identical_to_reviewed_r2": true,
+      "bake_seconds": 1.296
+    },
+    {
+      "key": "south",
+      "file": "assets/atmosphere/south-shape.ktx2",
+      "sha256": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d",
+      "byte_identical_to_reviewed_r2": true,
+      "bake_seconds": 1.247
+    }
+  ],
+  "gpu_bytes": 59768832
+}

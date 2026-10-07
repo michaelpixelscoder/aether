@@ -1,0 +1,393 @@
+info: compiling to WebAssembly...
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.229
+   Compiling cfg-if v1.0.5
+   Compiling once_cell v1.21.4
+   Compiling libm v0.2.16
+   Compiling pin-project-lite v0.2.17
+   Compiling autocfg v1.5.1
+   Compiling wasm-bindgen-shared v0.2.129
+   Compiling rustversion v1.0.23
+   Compiling futures-core v0.3.34
+   Compiling bumpalo v3.20.3
+   Compiling slab v0.4.12
+   Compiling crossbeam-utils v0.8.23
+   Compiling serde v1.0.229
+   Compiling winnow v1.0.4
+   Compiling foldhash v0.2.0
+   Compiling hashbrown v0.17.1
+   Compiling equivalent v1.0.2
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling futures-task v0.3.34
+   Compiling thiserror v2.0.21
+   Compiling log v0.4.34
+   Compiling allocator-api2 v0.2.21
+   Compiling smallvec v1.16.2
+   Compiling futures-io v0.3.34
+   Compiling typewit v1.15.2
+   Compiling fastrand v2.5.0
+   Compiling rand_core v0.10.1
+   Compiling event-listener v5.4.2
+   Compiling parking v2.2.1
+   Compiling unicode-segmentation v1.13.3
+   Compiling raw-window-handle v0.6.2
+   Compiling arrayvec v0.7.8
+   Compiling typeid v1.0.3
+   Compiling futures-lite v2.6.1
+   Compiling rand v0.10.3
+   Compiling futures-channel v0.3.34
+   Compiling thread_local v1.1.10
+   Compiling unicode-xid v0.2.6
+   Compiling const_panic v0.2.17
+   Compiling event-listener-strategy v0.5.4
+   Compiling spin v0.10.1
+   Compiling erased-serde v0.4.10
+   Compiling foldhash v0.1.5
+   Compiling fixedbitset v0.5.7
+   Compiling downcast-rs v2.0.2
+   Compiling disqualified v1.1.0
+   Compiling bevy_ptr v0.19.1
+   Compiling async-task v4.7.1
+   Compiling hashbrown v0.15.5
+   Compiling version_check v0.9.5
+   Compiling atomic-waker v1.1.2
+   Compiling nonmax v0.5.5
+   Compiling either v1.18.0
+   Compiling convert_case v0.10.0
+   Compiling tracing-core v0.1.36
+   Compiling memchr v2.8.3
+   Compiling zerocopy v0.8.59
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+   Compiling regex-syntax v0.8.11
+   Compiling indexmap v2.14.2
+   Compiling itertools v0.14.0
+   Compiling piper v0.2.5
+   Compiling async-lock v3.4.2
+   Compiling constant_time_eq v0.4.2
+   Compiling const-fnv1a-hash v1.1.0
+   Compiling cfg_aliases v0.2.2
+   Compiling aho-corasick v1.1.5
+   Compiling stackfuture v0.3.1
+   Compiling concurrent-queue v2.5.0
+   Compiling crossbeam-queue v0.3.14
+   Compiling crossbeam-channel v0.5.17
+   Compiling async-broadcast v0.7.2
+   Compiling stable_deref_trait v1.2.1
+   Compiling atomicow v1.2.0
+   Compiling simd-adler32 v0.3.10
+   Compiling lazy_static v1.5.1
+   Compiling crc32fast v1.5.2
+   Compiling adler2 v2.0.1
+   Compiling tracing-log v0.2.0
+   Compiling async-channel v2.5.0
+   Compiling async-executor v1.14.0
+   Compiling cc v1.5.1
+   Compiling miniz_oxide v0.9.1
+   Compiling sharded-slab v0.1.7
+   Compiling nu-ansi-term v0.50.3
+   Compiling const_soft_float v0.1.4
+   Compiling miniz_oxide v0.8.9
+   Compiling fdeflate v0.3.7
+   Compiling pxfm v0.1.30
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling blocking v1.7.0
+   Compiling num-traits v0.2.19
+   Compiling constgebra v0.1.4
+   Compiling slotmap v1.1.1
+   Compiling async-fs v2.2.0
+   Compiling bevy_mikktspace v1.0.0
+   Compiling svg_fmt v0.4.5
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling twox-hash v2.1.4
+   Compiling byteorder-lite v0.1.0
+   Compiling rectangle-pack v0.4.2
+   Compiling unicode-width v0.2.2
+   Compiling termcolor v1.4.1
+   Compiling naga v29.0.4
+   Compiling toml_edit v0.25.15+spec-1.1.0
+   Compiling flate2 v1.1.10
+   Compiling ruzstd v0.8.3
+   Compiling bit-vec v0.9.1
+   Compiling writeable v0.6.4
+   Compiling pp-rs v0.2.1
+   Compiling rustc-hash v1.1.0
+   Compiling bit-set v0.9.1
+   Compiling codespan-reporting v0.13.1
+   Compiling hexf-parse v0.2.1
+   Compiling litemap v0.8.3
+   Compiling codespan-reporting v0.12.0
+   Compiling data-encoding v2.11.1
+   Compiling utf8_iter v1.0.4
+   Compiling regex-automata v0.4.18
+   Compiling static_assertions v1.1.0
+   Compiling icu_locale_fallback_data v2.3.0
+   Compiling icu_properties_data v2.3.0
+   Compiling wgpu v29.0.4
+   Compiling litrs v1.0.0
+   Compiling icu_normalizer_data v2.3.0
+   Compiling icu_segmenter_data v2.3.0
+   Compiling zmij v1.0.23
+   Compiling profiling v1.0.18
+   Compiling core_maths v0.1.1
+   Compiling offset-allocator v0.2.0
+   Compiling parlance v0.1.0
+   Compiling wasm-bindgen v0.2.129
+   Compiling inventory v0.3.24
+   Compiling memmap2 v0.9.11
+   Compiling approx v0.5.1
+   Compiling rand_distr v0.6.0
+   Compiling euclid v0.22.14
+   Compiling weak-table v0.3.2
+   Compiling hashbrown v0.16.1
+   Compiling linebender_resource_handle v0.1.1
+   Compiling serde_json v1.0.151
+   Compiling byteorder v1.5.0
+   Compiling itoa v1.0.18
+   Compiling yazi v0.2.1
+   Compiling zeno v0.3.3
+   Compiling sys-locale v0.3.2
+   Compiling inflections v1.1.1
+   Compiling radsort v0.1.1
+   Compiling winit v0.30.13
+   Compiling cursor-icon v1.2.0
+   Compiling grid v1.0.1
+   Compiling dpi v0.1.2
+   Compiling base64 v0.22.1
+   Compiling percent-encoding v2.3.2
+   Compiling crossbeam-epoch v0.9.21
+   Compiling crossbeam-deque v0.8.8
+   Compiling paste v1.0.15
+   Compiling rayon-core v1.13.0
+   Compiling moxcms v0.8.1
+   Compiling guillotiere v0.6.2
+   Compiling taffy v0.10.1
+   Compiling heapless v0.8.0
+   Compiling hash32 v0.3.1
+   Compiling num-complex v0.4.6
+   Compiling proc-macro-error-attr3 v3.1.1
+   Compiling robust v1.2.0
+   Compiling arbitrary-chunks v0.4.1
+   Compiling partition v0.1.2
+   Compiling ordered-float v5.5.0
+   Compiling ena v0.14.4
+   Compiling itertools v0.15.0
+   Compiling convert_case v0.11.0
+   Compiling spade v2.15.1
+   Compiling rdst v0.20.14
+   Compiling document-features v0.2.12
+   Compiling rstar v0.12.2
+   Compiling rayon v1.12.0
+   Compiling matchers v0.2.0
+   Compiling regex v1.13.1
+   Compiling bevy_macro_utils v0.19.1
+   Compiling encase_derive_impl v0.12.1
+   Compiling atterate v0.0.2
+   Compiling wasm-bindgen-macro-support v0.2.129
+   Compiling synstructure v0.14.0
+   Compiling proc-macro-error3 v3.1.1
+   Compiling bevy_ecs_macro_logic v0.19.1
+   Compiling blake3 v1.8.7
+   Compiling encase_derive v0.12.1
+   Compiling derive_more-impl v2.1.1
+   Compiling assert_type_match v0.1.1
+   Compiling bevy_reflect_derive v0.19.1
+   Compiling variadics_please v1.1.0
+   Compiling bevy_ecs_macros v0.19.1
+   Compiling bevy_derive v0.19.1
+   Compiling tracing-attributes v0.1.31
+   Compiling zerocopy-derive v0.8.59
+   Compiling bevy_asset_macros v0.19.1
+   Compiling bevy_encase_derive v0.19.1
+   Compiling bevy_gizmos_macros v0.19.1
+   Compiling bevy_material_macros v0.19.1
+   Compiling bevy_render_macros v0.19.1
+   Compiling gltf-derive v1.4.1
+   Compiling pin-project-internal v1.1.13
+   Compiling bevy_animation_macros v0.19.1
+   Compiling bevy_scene_macros v0.19.1
+   Compiling bevy_state_macros v0.19.1
+   Compiling num-derive v0.4.2
+   Compiling bevy-tnua-macros v0.3.0
+   Compiling bytemuck_derive v1.12.1
+   Compiling serde_derive v1.0.229
+   Compiling futures-macro v0.3.34
+   Compiling thiserror-impl v2.0.21
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.4
+   Compiling zerovec-derive v0.11.6
+   Compiling displaydoc v0.2.7
+   Compiling avian_derive v0.2.3
+   Compiling tracing v0.1.44
+   Compiling bytemuck v1.25.2
+   Compiling tracing-subscriber v0.3.23
+   Compiling pin-project v1.1.13
+   Compiling bitflags v2.13.2
+   Compiling font-types v0.11.3
+   Compiling futures-util v0.3.34
+   Compiling png v0.18.1
+   Compiling ktx2 v0.5.0
+   Compiling read-fonts v0.39.2
+   Compiling font-types v0.12.5
+   Compiling safe_arch v0.7.4
+   Compiling read-fonts v0.41.0
+   Compiling image v0.25.10
+   Compiling wide v0.7.33
+   Compiling wasm-bindgen-macro v0.2.129
+   Compiling glam v0.33.12
+   Compiling simba v0.9.1
+   Compiling encase v0.12.1
+   Compiling glam v0.32.1
+   Compiling js-sys v0.3.106
+   Compiling uuid v1.26.1
+   Compiling console_error_panic_hook v0.1.7
+   Compiling tracing-wasm v0.2.1
+   Compiling accesskit v0.24.1
+   Compiling derive_more v2.1.1
+   Compiling smol_str v0.2.2
+   Compiling petgraph v0.8.3
+   Compiling ron v0.12.2
+   Compiling gltf-json v1.4.1
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling zerotrie v0.2.5
+   Compiling half v2.7.1
+   Compiling tinystr v0.8.4
+   Compiling potential_utf v0.1.6
+   Compiling icu_collections v2.3.0
+   Compiling icu_locale_core v2.3.0
+   Compiling fontique v0.9.0
+   Compiling harfrust v0.6.2
+   Compiling skrifa v0.42.1
+   Compiling gltf v1.4.1
+   Compiling skrifa v0.44.0
+   Compiling icu_provider v2.3.1
+   Compiling icu_locale_fallback v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling icu_normalizer v2.3.0
+   Compiling obvhs v0.3.3
+   Compiling icu_segmenter v2.3.0
+   Compiling parley_data v0.9.0
+   Compiling parley v0.9.0
+   Compiling swash v0.2.10
+   Compiling hexasphere v18.0.0
+   Compiling glamx v0.2.0
+   Compiling aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+   Compiling parry3d v0.27.0
+   Compiling wasm-bindgen-futures v0.4.79
+   Compiling web-time v1.1.0
+   Compiling web-sys v0.3.106
+   Compiling web-task v1.1.3
+   Compiling bevy_platform v0.19.1
+   Compiling bevy_utils v0.19.1
+   Compiling bevy_tasks v0.19.1
+   Compiling naga_oil v0.22.0
+   Compiling wgpu-types v29.0.4
+   Compiling accesskit_winit v0.32.2
+   Compiling bevy_reflect v0.19.1
+   Compiling wgpu-naga-bridge v29.0.4
+   Compiling bevy_ecs v0.19.1
+   Compiling bevy_math v0.19.1
+   Compiling glam_matrix_extras v0.3.0
+   Compiling bevy_color v0.19.1
+   Compiling bevy_heavy v0.5.0
+   Compiling bevy_app v0.19.1
+   Compiling bevy_time v0.19.1
+   Compiling bevy_transform v0.19.1
+   Compiling bevy_input v0.19.1
+   Compiling bevy_log v0.19.1
+   Compiling bevy_a11y v0.19.1
+   Compiling bevy_state v0.19.1
+   Compiling bevy_clipboard v0.19.1
+   Compiling bevy_diagnostic v0.19.1
+   Compiling bevy_asset v0.19.1
+   Compiling bevy_window v0.19.1
+   Compiling bevy_input_focus v0.19.1
+   Compiling bevy_winit v0.19.1
+   Compiling bevy_mesh v0.19.1
+   Compiling bevy_image v0.19.1
+   Compiling bevy_shader v0.19.1
+   Compiling bevy_scene v0.19.1
+   Compiling bevy_text v0.19.1
+   Compiling bevy_camera v0.19.1
+   Compiling bevy_material v0.19.1
+   Compiling bevy_animation v0.19.1
+   Compiling bevy_gizmos v0.19.1
+   Compiling bevy_render v0.19.1
+   Compiling bevy_sprite v0.19.1
+   Compiling bevy_world_serialization v0.19.1
+   Compiling bevy_ui v0.19.1
+   Compiling bevy_light v0.19.1
+   Compiling bevy_gltf v0.19.1
+   Compiling bevy_core_pipeline v0.19.1
+   Compiling bevy_sprite_render v0.19.1
+   Compiling bevy_pbr v0.19.1
+   Compiling bevy_post_process v0.19.1
+   Compiling bevy_anti_alias v0.19.1
+   Compiling bevy_ui_render v0.19.1
+   Compiling bevy_gizmos_render v0.19.1
+   Compiling bevy_internal v0.19.1
+   Compiling bevy v0.19.0
+   Compiling bevy-tnua-physics-integration-layer v0.13.0
+   Compiling bevy_transform_interpolation v0.5.0
+   Compiling aether_view v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+warning: unused import: `AsyncComputeTaskPool`
+  --> crates\aether_view\src\voxel.rs:11:13
+   |
+11 |     tasks::{AsyncComputeTaskPool, Task},
+   |             ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling bevy-tnua v0.32.0
+   Compiling avian3d v0.7.0
+warning: `aether_view` (lib) generated 1 warning (run `cargo fix --lib -p aether_view` to apply 1 suggestion)
+   Compiling bevy-tnua-avian3d v0.12.0
+   Compiling aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+   Compiling aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+error[E0425]: cannot find function `spawn_avatar` in module `crate::controls`
+   --> crates\aether_game\src\session.rs:151:26
+    |
+151 |         crate::controls::spawn_avatar(world, saved.position, saved.velocity);
+    |                          ^^^^^^^^^^^^ not found in `crate::controls`
+
+error[E0422]: cannot find struct, variant or union type `WalkerSave` in module `aether_core::save`
+   --> crates\aether_game\src\session.rs:170:37
+    |
+170 |             Some(aether_core::save::WalkerSave {
+    |                                     ^^^^^^^^^^ not found in `aether_core::save`
+
+error[E0560]: struct `Session` has no field named `walker`
+  --> crates\aether_game\src\session.rs:55:9
+   |
+55 |         walker: None,
+   |         ^^^^^^ `Session` does not have this field
+   |
+   = note: all struct fields are already assigned
+
+error[E0609]: no field `walker` on type `Session`
+   --> crates\aether_game\src\session.rs:150:35
+    |
+150 |     if let Some(saved) = &session.walker {
+    |                                   ^^^^^^ unknown field
+    |
+    = note: available fields are: `version`, `seed`, `tick`, `vessels`, `active` ... and 3 others
+
+error[E0560]: struct `Session` has no field named `walker`
+   --> crates\aether_game\src\session.rs:169:9
+    |
+169 |         walker: game.walker.and_then(|e| {
+    |         ^^^^^^ `Session` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+Some errors have detailed explanations: E0422, E0425, E0560, E0609.
+For more information about an error, try `rustc --explain E0422`.
+error: could not compile `aether_game` (lib) due to 5 previous errors
+warning: build failed, waiting for other jobs to finish...
+warning: failed to run cargo, trying to find automatic fix...
+error: command `cargo build --config profile.web.inherits="dev" --package aether_game --profile web --target wasm32-unknown-unknown --locked` exited with status code exit code: 101

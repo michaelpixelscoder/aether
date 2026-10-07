@@ -1,0 +1,18 @@
+{
+  "native_original_sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+  "decoded_rgba_sha256": "c0f56f9e7a9b15f8f39fe1024cc161e861db8108ba548c716d256f6b991b4c59",
+  "runtime_level_zero_sha256": "c0f56f9e7a9b15f8f39fe1024cc161e861db8108ba548c716d256f6b991b4c59",
+  "level_zero_exact": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mip_count": 11,
+  "gpu_texel_bytes": 8384072,
+  "linear_min_mag_mip_and_anisotropy8": true,
+  "capture_surface_report_sha256": "ca7524cd458b37be0b3545eb9c6c88b67bd38d0e815af28e6d52492d0a0a3321",
+  "fixture": true,
+  "native_capture": ".dream-loop/world-r60-ground-filtering-corrected.png",
+  "no_gameplay_proof": true,
+  "glb_metadata_pre_portable_r59": true
+}

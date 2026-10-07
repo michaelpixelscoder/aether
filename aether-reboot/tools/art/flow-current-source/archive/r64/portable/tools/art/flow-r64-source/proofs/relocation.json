@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "outside_project_D": true,
+  "native_png_source_exact": true,
+  "new_ktx_and_shader_byte_exact": true,
+  "original_waterfall_pool_ktx_exact": true,
+  "twenty_negative_contract_cases": [
+    "native PNG bytes/CRC",
+    "source SHA authority",
+    "native dimension metadata",
+    "KTX Vulkan color format",
+    "DFD sRGB transfer",
+    "DFD alpha linear qualifier",
+    "actual complete mip count",
+    "KTX native width",
+    "native level0 including alpha",
+    "derived payload byte identity",
+    "mip index overlap",
+    "mip index alignment",
+    "container truncation",
+    "original waterfall texture",
+    "project clock",
+    "waterfall alpha",
+    "pool wave",
+    "new asset UV crop",
+    "historical haze",
+    "reserved identifier"
+  ],
+  "rectangular_and_single_axis_tests": [
+    {
+      "native_dimensions": [
+        97,
+        65
+      ],
+      "mips": 7,
+      "constant_rgba_exact": true,
+      "index_offsets_payload_dimensions_exact": true
+    },
+    {
+      "native_dimensions": [
+        128,
+        64
+      ],
+      "mips": 8,
+      "constant_rgba_exact": true,
+      "index_offsets_payload_dimensions_exact": true
+    },
+    {
+      "native_dimensions": [
+        1,
+        7
+      ],
+      "mips": 3,
+      "constant_rgba_exact": true,
+      "index_offsets_payload_dimensions_exact": true
+    },
+    {
+      "native_dimensions": [
+        7,
+        1
+      ],
+      "mips": 3,
+      "constant_rgba_exact": true,
+      "index_offsets_payload_dimensions_exact": true
+    }
+  ],
+  "odd_last_edge_contributes_both_axes": true,
+  "historical_four_encoder_tests": [
+    "constant RGBA through odd-sized chain",
+    "transparent cyan cannot contaminate opaque red",
+    "fully transparent color discarded in derived levels",
+    "linear-light black/white mean encodes as sRGB188"
+  ],
+  "gpu_used": false,
+  "canonical_mutations": false,
+  "script_sha256": "f16d1c1bda2eb2012076695b3bf6e208edabcf4964bc29ad8831ca7f6a3279a4"
+}

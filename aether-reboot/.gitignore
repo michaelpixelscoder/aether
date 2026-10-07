@@ -1,0 +1,21 @@
+# Local build output and release packages.
+/target/
+/dist/
+
+# Reinstallable development tools and dependencies.
+/tools/bin/
+/tools/node_modules/
+
+# Local studies, frozen validation runtimes and scratch output.
+/.dream-loop/
+/docs/evidence/browser-artifacts/
+/docs/evidence/qa-saves/
+/test-results/
+/playwright-report/
+__pycache__/
+*.pyc
+
+# Automatic Blender backups and transient process identifiers.
+*.blend1
+*.blend2
+*.pid

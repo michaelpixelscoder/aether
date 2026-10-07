@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "source_png_sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+  "patch_source_sha256": "9008218c1573000adf3cacf336356a8c7dcfd8b8b4d4d08edf818ab0ef6572fd",
+  "uv_transform_scale": 4.7727272727272725,
+  "base_color_factor": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "files": [
+    {
+      "file": "dawn.glb",
+      "input_sha256": "8372c8db8f9b73e83217515b3b34fe7882ea4bbb79e46e8be9048b5b85b3c52c",
+      "output_sha256": "83633442596ede95400e6a746d8dd9d831824a6b2b183960dfd7de9e010b3f77",
+      "bytes": 19450936,
+      "bin_byte_exact": true,
+      "other_materials_and_all_meshes_exact": true
+    },
+    {
+      "file": "dawn-lod.glb",
+      "input_sha256": "727e814e40a920ad23b0d7280566a8b40b0419f5e13bd232331992db4e646dc9",
+      "output_sha256": "6566afbc077c1de4e3201047c17a5bf63e53c5becfbb8cf5a19695ddb50b2859",
+      "bytes": 1218984,
+      "bin_byte_exact": true,
+      "other_materials_and_all_meshes_exact": true
+    },
+    {
+      "file": "dawn-watch.glb",
+      "input_sha256": "ecead2280cc71d80eadf9a4ac9290e31623b5ee5bd578cecd57398a668e54353",
+      "output_sha256": "86e5d7b5fe7a08861a40d335e4e093a8732f707678784c58d1938edd3d1ffd89",
+      "bytes": 12943248,
+      "bin_byte_exact": true,
+      "other_materials_and_all_meshes_exact": true
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "input_sha256": "448ea68f0496c1e4d69346f53c618b8b04a9f0e751ac9dfd91e3f5af9f6e8902",
+      "output_sha256": "6bada95a269609cdefcd78b7fe7910ccbf65e6e600847d6f492bccdd8904433c",
+      "bytes": 1114420,
+      "bin_byte_exact": true,
+      "other_materials_and_all_meshes_exact": true
+    }
+  ],
+  "historical_manifest_metadata_exact": true,
+  "native_gpu_compile": "PENDING",
+  "input_baseline_agnostic": true
+}

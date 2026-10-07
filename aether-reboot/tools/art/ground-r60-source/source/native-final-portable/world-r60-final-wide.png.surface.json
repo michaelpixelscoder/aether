@@ -1,0 +1,14 @@
+[
+  {
+    "data_bytes": 8384072,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "format": "Rgba8UnormSrgb",
+    "level_zero_dump": "C:\\Users\\Damien\\Documents\\Perso\\Game\\Aether-git\\aether-reboot\\.dream-loop\\world-r60-final-wide.png.surface-0.rgba",
+    "mip_count": 11,
+    "path": "world\\textures\\087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365.png",
+    "sampler": "Descriptor(ImageSamplerDescriptor { label: None, address_mode_u: Repeat, address_mode_v: Repeat, address_mode_w: ClampToEdge, mag_filter: Linear, min_filter: Linear, mipmap_filter: Linear, lod_min_clamp: 0.0, lod_max_clamp: 32.0, compare: None, anisotropy_clamp: 8, border_color: None })"
+  }
+]

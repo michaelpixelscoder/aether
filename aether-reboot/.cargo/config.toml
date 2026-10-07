@@ -1,0 +1,7 @@
+[alias]
+game = "run -p aether_game"
+gallery = "run -p aether_view --example gallery"
+verify = "test --workspace --locked"
+
+[target.wasm32-unknown-unknown]
+rustflags = ["--cfg", "getrandom_backend=\"wasm_js\""]

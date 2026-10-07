@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "file": "tools/art/flow-r64-source/source/world-flow-current-native.png",
+  "sha256": "eaf534efc2a2e30632fcfee7f3d5b731efe77dcd19f0849216e6c74c662497c3",
+  "bytes": 2082221,
+  "width": 1254,
+  "height": 1254,
+  "channels": 4,
+  "bit_depth": 8,
+  "prompt_file": "tools/art/flow-r64-source/source/prompt.txt",
+  "prompt_sha256": "0d93afaf056ad48968d6849e7a0882cd89febc3ee90ef360394ceba05476b591",
+  "prompt_bytes": 2072,
+  "tool": "image_gen.imagegen",
+  "built_in": true,
+  "invocation_prompt_file": "tools/art/flow-r64-source/source/prompt-invocation.txt",
+  "invocation_prompt_sha256": "5d2a8aa50e0945c0bd366c1ce4977930e0372419e55282a365bbb91382321ce4",
+  "invocation_prompt_bytes": 2071,
+  "saved_prompt_difference": "Root saved the exact in-memory tool prompt plus one final LF; only that LF removed in separate invocation text",
+  "generation_parameters": {
+    "transparent_background": true
+  },
+  "omitted_parameters": [
+    "referenced_image_paths",
+    "num_last_images_to_include"
+  ],
+  "original_generated_location": "C:/Users/Damien/.codex/generated_images/01a0f81f-371e-7440-ba13-362c122d50e5/exec-cd3181e2-4abb-4bec-8cf7-324b919ffef8.png",
+  "generated_at_approx_utc": "2026-10-03 10:35 UTC",
+  "tool_duration_seconds_root_reported": 53.7,
+  "metadata_authority": "Exact invocation reported by root; no inferred image-edit parameters",
+  "native_pixels_untouched": true,
+  "edit_or_bitmap_remap": false,
+  "source_from_root": "C:/Users/Damien/Documents/Perso/Game/Aether-git/aether-reboot/.dream-loop/flow-r64-original/world-flow-current-native.png",
+  "external_path_role": "provenance only; all builds read the portable source"
+}

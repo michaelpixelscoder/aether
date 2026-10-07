@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "authoring": "Native deterministic 3D scalar field and analytic outward gradient, authored for this project; no external bitmap or geometry sources.",
+  "recipe": "r47-regional-plume-crown-fold-r2",
+  "generator_sha256": "df160c3ebf3b57b3cf4c161d3bd53416c27789048a58f2ef0afedebbe62aadea",
+  "config_sha256": "60ad26aa86ba465159d2fbad0c4cea00df73ddf4f55dc91e64303bb7bf5046bf",
+  "reviewed_sources": {
+    "build_cloud_cache.py": "df160c3ebf3b57b3cf4c161d3bd53416c27789048a58f2ef0afedebbe62aadea",
+    "cloud_cache_sampling.py": "546c8baddf381a5c75e60ab7578d8036d2840d6160eec08f63ada00e25c3109f",
+    "audit_cloud_field.py": "deb224ddb387753e5fa54a394d164d2cf4b219348f42f4a14179a538043e8818",
+    "review_cloud_field_cpu.py": "38c019e756a41e518fdac9755c3e8a782ca76976853a219f1cd4492d6140573b",
+    "compare_cloud_rays_cpu.py": "72e6d97c2742d2761ca0ce1d3c10a841505bda0a9057dd9f642cd89edf909c41",
+    "verify_cloud_cache.py": "95429a2e918830bb2a9d5788916657fd12349ab41eca4db7318dd0213da85724"
+  },
+  "contract_file": "tools/art/cloud-r47/contract.json",
+  "contract_sha256": "3cd7bf04fc7632dc7a04203bcf0c9d453fc2252a001c5fff635d4900b8d47752",
+  "historical_gate": {
+    "mean": 0.006,
+    "p99": 0.035,
+    "regional_pass": false,
+    "archive": "tools/art/cloud-r47/archive"
+  },
+  "accepted_contract": {
+    "gpu_bytes": 59768832,
+    "density_mean": 0.006,
+    "regional_density_p99": 0.05,
+    "high_density_p99": 0.035,
+    "analytic_derivative_p99_degrees": 0.05,
+    "opaque_display_rmse": 0.025,
+    "edge_opacity_p99": 0.08
+  },
+  "acceptance_reason": "Parent explicitly accepted a regional sampling compromise after native visual review and four CPU matched-ray comparisons. Greater curvature raises pointwise error, while derivative consistency, opaque image RMSE and boundary opacity retain separate tight bounds. Historical failures are preserved.",
+  "native_review": {
+    "file": "world-r47-clouds-dawn.png",
+    "sha256": "87021d246d2360de83264fe956cf3b6de0957cbc56f780d728d084facd43d2a7",
+    "captured_by": "parent in engine; image unmodified by asset author"
+  },
+  "verification_files": [
+    "docs/evidence/cloud-cache-fidelity.json",
+    "docs/evidence/cloud-r47-audit.json",
+    "docs/evidence/cloud-r47-ray-comparison.json",
+    "docs/evidence/cloud-r47-relocation-rebuild.json",
+    "docs/evidence/cloud-r47-negative-tests.json"
+  ],
+  "gpu_bytes": 59768832,
+  "canonical_mutation_by_author": false,
+  "gpu_actions_by_author": false,
+  "banks": [
+    {
+      "key": "hollow",
+      "sha256": "fc96de520c22f4c0266f0a17b04791adec792bf14618a835951612edcd8cbdfe",
+      "dimensions": [
+        256,
+        96,
+        256
+      ],
+      "gpu_bytes": 25165824,
+      "recipe": "regional-r47"
+    },
+    {
+      "key": "underforge",
+      "sha256": "64a2f7749544bc3bb718da534b4ee0744c6414dd3fc9d0a32ff59ddd1a972840",
+      "dimensions": [
+        256,
+        96,
+        256
+      ],
+      "gpu_bytes": 25165824,
+      "recipe": "regional-r47"
+    },
+    {
+      "key": "west",
+      "sha256": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "recipe": "unchanged-high-bank"
+    },
+    {
+      "key": "east",
+      "sha256": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "recipe": "unchanged-high-bank"
+    },
+    {
+      "key": "north",
+      "sha256": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "recipe": "unchanged-high-bank"
+    },
+    {
+      "key": "south",
+      "sha256": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "recipe": "unchanged-high-bank"
+    }
+  ]
+}

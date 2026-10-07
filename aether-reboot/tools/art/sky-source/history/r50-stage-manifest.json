@@ -1,0 +1,684 @@
+{
+  "status": "original 4K and original sun-free-camera IBL exported; unpublished",
+  "output_needs_render": false,
+  "source": "sky-r50-low-sun.blend",
+  "source_sha256": "cdba75ae0c1b5dd86e4c3a662e6f2d66c5ec5db0a025903f7b208fd2c6514087",
+  "generator_sha256": "88b4c96640219c2bf8500fff067203b96bc2849ffc345c3a277ba02582ec6db3",
+  "base": {
+    "file": ".dream-loop/sky-r49-atmosphere-candidate/sky-r49-atmosphere.blend",
+    "sha256": "481cb38d2b7159a70cf0a45d9c68496ca5def822bc7d4c8cd7469f3291952d76",
+    "bytes": 126887
+  },
+  "canonical_frozen": [
+    {
+      "file": "tools/art/sky-source/sky-world.blend",
+      "sha256": "511aa38ce88b522b4efebfe96b48d8077df5de0d97ad816ed0a1384afeda5764",
+      "bytes": 126773
+    },
+    {
+      "file": "tools/art/sky-source/manifest.json",
+      "sha256": "5d1c74e520fefb5b41e6c19f40fa00830096fca9d99a875f160a82667b0188bb",
+      "bytes": 48064
+    },
+    {
+      "file": "tools/art/sky-source/recipe.json",
+      "sha256": "7a614f68c75e1f3a15aae7647df4a505d118f494547864d5e72d081263595117",
+      "bytes": 2209301
+    },
+    {
+      "file": "tools/art/build_sky.py",
+      "sha256": "97f97a01b3a7b6911e674dddeb82b9b748a4dd9f431e9beac008d12d52a809f4",
+      "bytes": 11817
+    },
+    {
+      "file": "assets/textures/sky-world-linear.ktx2",
+      "sha256": "22da6c606f347b6e6b24f649c2fbe5fe2b822a8148b25ad814beb67a6c4fab54",
+      "bytes": 67109144
+    }
+  ],
+  "source_files": [
+    {
+      "file": "tools/art/sky-source/cloud-volumes/western-oblique-front.vdb",
+      "sha256": "5c2961e6419622e6f42d95c7fb8c22dd78f25a16809f6bbc875024e4402dbba5",
+      "bytes": 2901830
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/dawn-descending-shoulder.vdb",
+      "sha256": "8e071737d865150b1ccdad1a4f15f8d3a33088f513271786c837a8f835af228b",
+      "bytes": 1011934
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/distant-northwest-crest.vdb",
+      "sha256": "bafe64341d9d56a505cf35564dd935e031be9dd2401d1353b111b45cbfa4b0d7",
+      "bytes": 806406
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/central-remote-turrets.vdb",
+      "sha256": "ae2ad5bb7f79a2863cd1d0f2c279d0bc4540b3f64cd8eaae5f24e3916e0a58b7",
+      "bytes": 925407
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/eastern-diagonal-crest.vdb",
+      "sha256": "e0c5fc3f0f6d353090182660d264f2bf515bec44daf1f81260905d6b0b3ef2d3",
+      "bytes": 2828882
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/eastern-rising-towers.vdb",
+      "sha256": "4f31ce7e81e31127d19ab3a20a8a9b28acf44c26159febdcdd0ffde9d7eeacd2",
+      "bytes": 947593
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/deep-central-cloud-islands.vdb",
+      "sha256": "16a4382982376bfc240b48660299cd115bb760aaa97315bc64145a2e8e7b142c",
+      "bytes": 1062114
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/western-middle-shelves.vdb",
+      "sha256": "dd2f6c44c19099c49e0e31cbdd15e124828afca74c5c2ac8b0bfce845b4ba26d",
+      "bytes": 1112084
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/eastern-middle-shelves.vdb",
+      "sha256": "048ad67d94e69f6d4c9a28f438817250f3ad7b9e8a799f94d218d624042e6c1a",
+      "bytes": 945160
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/lower-drift-left.vdb",
+      "sha256": "5ea46fc3b367c071ebba27096425ec3c292a92a084cc8153482caac9d78563b6",
+      "bytes": 928878
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/lower-drift-right.vdb",
+      "sha256": "59eefd5a83765053ff82ba80b62edc188f349b8f035abca96ec6f7cd56c3f1c2",
+      "bytes": 929495
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-north.vdb",
+      "sha256": "de0f33d57eb65eefa143f1f84aaf6a003e4e2d955530ac06bfa3d89d89a3a1bd",
+      "bytes": 739167
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-west.vdb",
+      "sha256": "665b4a746311b839ec32305456accff3bc130d98ff967d6b6173b4e19cf07d35",
+      "bytes": 652082
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-south.vdb",
+      "sha256": "f19caa219dc81f82429aa45231b1ca677ac91a44adfa679426f872a741ef55b5",
+      "bytes": 534062
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-east.vdb",
+      "sha256": "ec2c604c68d333ddc692127d4256475b4c02d3da7f0488b50adab29ece811474",
+      "bytes": 635732
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-00.vdb",
+      "sha256": "c834a98d02133916f2035050a30bbfdc33233c2a6917bd7d3f78f3ad982020dd",
+      "bytes": 74060
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-01.vdb",
+      "sha256": "f6c834674953a4ee0be8d7f06ca97270b86608dc4339c109201220cba7d03748",
+      "bytes": 74357
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-02.vdb",
+      "sha256": "c4dfcb074b04c4f7567b6c79635e6df56f92cf191b5f61f7b51a052254f26761",
+      "bytes": 39746
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-03.vdb",
+      "sha256": "973a988000edf7f9764c2fc7d58f8ad44030caf2bc079a5a5b47f3f4f6b7ddd0",
+      "bytes": 86180
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-04.vdb",
+      "sha256": "4f9402079fc301b10ed1b088cea1c4bf9d3ed8a5d76d9f2986302ec31dca1041",
+      "bytes": 223794
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-05.vdb",
+      "sha256": "5159643c4c3d5bcbac7a9041ddbd581a2017be64c6913de2f1e044133d9baa19",
+      "bytes": 95562
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-06.vdb",
+      "sha256": "50fe035fc2f1aaf8fd3dcc3b27d8366f48118716ebe547a1c17b8f61fc0c2bb8",
+      "bytes": 182343
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-07.vdb",
+      "sha256": "4252356e3aee7635c865ebbe6b30b41d956fcd97512f227e0d07bfed30fb2173",
+      "bytes": 87063
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-08.vdb",
+      "sha256": "584a45506d552714f4cdef42206eac7c1c372973266fe321acedc66a8e145b74",
+      "bytes": 110353
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-09.vdb",
+      "sha256": "a5f5bdd625501573dc2d32569eaad907b166ca8ca55cbbf00c07b6ae07698044",
+      "bytes": 98077
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-10.vdb",
+      "sha256": "2e15548eaeecd76c9d6780548c9cc46452b157eb3cc80a6c58d8aab234cc9e11",
+      "bytes": 159693
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-11.vdb",
+      "sha256": "619c954e3f1c8529763e3c6817d1a2650dd2b954d34b2d222ecfb00807a1fced",
+      "bytes": 129849
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-12.vdb",
+      "sha256": "1bb138ffbbe4c5152b3766ebfecbb144a58d87e3c20aba71a34731f9b2b2c727",
+      "bytes": 33528
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/remote-eroded-remnants-13.vdb",
+      "sha256": "61ae0f5ae0609abef5a5d4db54d9276e65d1d0c5b672f7f0f0a10ec24fb3437b",
+      "bytes": 99815
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-00.vdb",
+      "sha256": "e461562109818eff5f70d871534c7609e7e651bd627a0e34901c8af2740db02d",
+      "bytes": 64334
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-01.vdb",
+      "sha256": "b1d85c8399ec616d596bf9a922581ec2e70708e5445bbb9d7b15306736c2e7e2",
+      "bytes": 123665
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-02.vdb",
+      "sha256": "aa0fb8088af8ae9b164cc772e1f128909c320ea464d7b916c3d9198214772382",
+      "bytes": 158463
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-03.vdb",
+      "sha256": "4d81102ce9ed0d7f6f063fabf429517208c22a30669c7a64c33a6c8c11b69772",
+      "bytes": 130350
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-04.vdb",
+      "sha256": "c40e1b858996ade1f5e23b3b6880ba2112659552c9ee611b1d33d0183007d3e8",
+      "bytes": 62701
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-05.vdb",
+      "sha256": "99daff2938d5267fc7e6ca7ed1583f2f3e3d0295514a7db50ca4a9fb42d6757e",
+      "bytes": 449630
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-06.vdb",
+      "sha256": "cab5e366c4a3f9b0f96214077e9076a6d91ebc43d4aff839f6f4f17a0f8a8e96",
+      "bytes": 84019
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-07.vdb",
+      "sha256": "4da8c0b83b215a1b62219fa2f5a9a1dca30359f43f27d32732dfa4cc8a04de51",
+      "bytes": 93589
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-08.vdb",
+      "sha256": "efcc2bbb00867323225477d3397a84a146c23f4ecf2edce28181614a62ba3631",
+      "bytes": 105888
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-09.vdb",
+      "sha256": "7c1d3f9ab1ac2408f25562b86defaa91e2d5372b08bad6de2658c3f3275a41c8",
+      "bytes": 155365
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-10.vdb",
+      "sha256": "71af1dc0ad84839c2a13a40b0800caa479c0acce0b08bef7f3246cd4c06ddc33",
+      "bytes": 313669
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-11.vdb",
+      "sha256": "0dfc67b4d179487462c66a3472acbf72c5cc8d08be383b36a8abf2c9064098aa",
+      "bytes": 106364
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-12.vdb",
+      "sha256": "fe365129563acda189ea0043825783d68a990608eb6d59ec8271d405c49d0d7a",
+      "bytes": 292298
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-13.vdb",
+      "sha256": "da3b319686f954ac5e69fe596dcaa8aa8fa810e8410e27b6e4af7a72f8e705b2",
+      "bytes": 190799
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-14.vdb",
+      "sha256": "82b6108b7474170d8b1fd9636b23e006d5c8d6198bcf442cf1a4cd14a7626f59",
+      "bytes": 173086
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-1-cluster-15.vdb",
+      "sha256": "c0db3c2f103e69c25821ecf737982ca6717826634659bfc097112ae24d12b8e0",
+      "bytes": 93355
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-00.vdb",
+      "sha256": "9ab0f2555312e2a21ef5446f4c625403b9eac1b15ff5e0aa4ce6d91cd479a671",
+      "bytes": 47772
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-01.vdb",
+      "sha256": "1b25e611a2fbc06ba6542f54bca2cf21a7b116973893c17fd3fc1deff55a9fdf",
+      "bytes": 139244
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-02.vdb",
+      "sha256": "ba7b964ab883f7286cb5fe1fc759ad0e2d11ca2266b88d04beee3c55c2092eaf",
+      "bytes": 71520
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-03.vdb",
+      "sha256": "dc04647e98a783bfc9f058cb7658c11c25ea0567c4bff8ba21972da7a9ff13fd",
+      "bytes": 182324
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-04.vdb",
+      "sha256": "0d090eb920cc1af77f54a39cc30ca3839ae612c182be3295ca83b437da82f557",
+      "bytes": 65574
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-05.vdb",
+      "sha256": "9dc46241781473a8a3b6e70aa79638998adb48a36debc51b7c573c4542b124ed",
+      "bytes": 38665
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-06.vdb",
+      "sha256": "bdb0cd5aedb65af09dea2edd6585bc29e6cc7e3e6e678647d546d17fe0cae05f",
+      "bytes": 29783
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-07.vdb",
+      "sha256": "2c0ea7e3b6ee7504ddddf402edeb08f82769f4e87e94159d0474f40024c1a2d1",
+      "bytes": 83033
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-08.vdb",
+      "sha256": "aff50d94bfa5663b63cfab0b459f51a2d8cac0536587c75062ec0bf62ede0883",
+      "bytes": 65194
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-09.vdb",
+      "sha256": "99158269a6ede111d9367d4918dbc85e7d896cb9a50853fd964b09e27b628d7a",
+      "bytes": 43693
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-10.vdb",
+      "sha256": "0ef8e3f9ee3728d21b89defdc709b6ba1486846abf31e1ff79b05e91f4e9717a",
+      "bytes": 46702
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-11.vdb",
+      "sha256": "291559b9ce872faf714bf09171f3a6b54a5073883cb069ba9a34610c1c294c3f",
+      "bytes": 138974
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-12.vdb",
+      "sha256": "f748b8380287a0a97e88c42f80aaf376f6edfc893a279b6be863a0a9c578af96",
+      "bytes": 50737
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-13.vdb",
+      "sha256": "403c4f36e5dfc199fc9f1af8355cb11317fcf00ec91f0de8b113e9afba2f725a",
+      "bytes": 103274
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-14.vdb",
+      "sha256": "96e2bacecb89603735367382809a00f302cacab9260dd0c8cadf195100c47af7",
+      "bytes": 45656
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-15.vdb",
+      "sha256": "5232651632364bb1c11c24276eb20058fc865f4491f798605a5b604ec076ffc1",
+      "bytes": 118871
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-16.vdb",
+      "sha256": "f6f79c6fc76d8db4af6bcf4d55978d4cfd1625d2703d8ddd790102cfd8d1484f",
+      "bytes": 20077
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-17.vdb",
+      "sha256": "c8ce95a15adf105e504663343c84f77b00e2fabed4389bec3bdeec3e8fc2c697",
+      "bytes": 107901
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-2-cluster-18.vdb",
+      "sha256": "e2ee41914bb24af62398cb3b68d5ceebd5a1aac2642c12f2d1bd2a6bd0f5abf2",
+      "bytes": 165465
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-00.vdb",
+      "sha256": "aabf3c39fc254f07a9c53013167adb74fdfc5dc967fb8c845772090f2d6f6fa0",
+      "bytes": 43312
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-01.vdb",
+      "sha256": "f97aca37616c1ad821d436edf95d8430e2e3aecf78933367753e0247b8580a3a",
+      "bytes": 27450
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-02.vdb",
+      "sha256": "1acffc260257e35af551f231a6719e0b156e6aaa706978a720b64d94a4d90908",
+      "bytes": 70970
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-03.vdb",
+      "sha256": "e1ce68fae32f262167176b8826ef5add86e40e6796a2ceaadd32278e161c9280",
+      "bytes": 44240
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-04.vdb",
+      "sha256": "64c9944a2fe612240914aac38cb4d069b31f0008882166142e0b01975674dba6",
+      "bytes": 22063
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-05.vdb",
+      "sha256": "7a6d23d3063c69a970d2f68165a2d06004fd8bfab20f3d9727be8ab18f4dccbc",
+      "bytes": 69328
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-06.vdb",
+      "sha256": "c9b2814da75757998d4372d822a4a4a1d8a6491f40b1e0651dd5371d1af81d5a",
+      "bytes": 22351
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-07.vdb",
+      "sha256": "b9f035706ead053a2620d555bd44031e19343d9d09256fb81be3b09a2229f64f",
+      "bytes": 55475
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-08.vdb",
+      "sha256": "e56a338c3fc32dec6db9bd372859f689899f1d76927cf66a94abd72c3ad6c806",
+      "bytes": 82644
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-09.vdb",
+      "sha256": "6729ef9ed88f3127b2bfc8e81c2745c8e225a9add4ee129464656194f9f01552",
+      "bytes": 20151
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-10.vdb",
+      "sha256": "9d44fceb965c4243be618cc6812132a5276c2012d675f4862581745d683c20d6",
+      "bytes": 42613
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-11.vdb",
+      "sha256": "60d4552fedaf01f39dfe532c50bdd28d66a9bea8d71541208c05facd1bfdc821",
+      "bytes": 51052
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-12.vdb",
+      "sha256": "34401bfab25b4d81aa2d4c2555e01c9e620d91ac25f84e18c3ce5c5070517abb",
+      "bytes": 18678
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-13.vdb",
+      "sha256": "c59cf5862a0de7ab3848d0fb98149b6d60df16ba2080c91e4fe874fc384ef770",
+      "bytes": 25679
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-14.vdb",
+      "sha256": "f22b6e84f66c89fc15c487ebfaf69f4053b9e972562aed07fc981db0d97330b0",
+      "bytes": 45809
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/far-weather-layer-3-cluster-15.vdb",
+      "sha256": "e779ef6af72f231d04df79add69e60df3c7d905fadb3781a99df1ca7a9b741f1",
+      "bytes": 29294
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/western-distant-curtain.vdb",
+      "sha256": "cc29f4d70928f2717ebdb12e3580d41f249c571816a2d3768bef36b62f8a35f3",
+      "bytes": 8304173
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/upper-broken-canopy.vdb",
+      "sha256": "6779edb31581886975b0842e9756fb445816b624a2ed8ab3c36a1988defe756e",
+      "bytes": 3313739
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/eastern-distant-curtain.vdb",
+      "sha256": "1c18aa4165beff590182c0f3305df33be9036665a27290bb4586ccacac24154d",
+      "bytes": 11552126
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/central-broken-weather.vdb",
+      "sha256": "9f1ab11784db074ee29bb309363fdbfa888c3c211e6b8883776c14f28dc6c550",
+      "bytes": 3739866
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/lower-remote-cloud-sea.vdb",
+      "sha256": "d39fe62191230c7918f4353536afa37509e8e598b002b8455a619a997c5f8b94",
+      "bytes": 9299150
+    },
+    {
+      "file": "tools/art/sky-source/cloud-volumes/thin-opening-rim.vdb",
+      "sha256": "443831fe9a918b5f9efb9ea92cc674bd9277544a16a63db9a114bb25dbc7473c",
+      "bytes": 198104
+    },
+    {
+      "file": "tools/art/sky-source/scene_fingerprint.py",
+      "sha256": "fa5a096c7e1e063bc6d35d0406211a06dd64a3608ee999925026d267b9f381a2",
+      "bytes": 4571
+    }
+  ],
+  "before_descriptor_sha256": "913f36bd73c00ba8318eb72ecbc15e3cefb68fad88e06859c07221883fd39b83",
+  "after_descriptor_sha256": "0d3a9436d94629acd036f2529f6a01111749638648e3f88da0933ea9ea99817e",
+  "geometry_and_materials_unchanged": true,
+  "sun_game_direction": [
+    -0.8535626530647278,
+    -0.05097357556223869,
+    -0.5184906125068665
+  ],
+  "sun_blender_direction": [
+    -0.8535626530647278,
+    0.5184906125068665,
+    -0.05097357556223869
+  ],
+  "sun_elevation_degrees": -2.9218369832914357,
+  "world_authoring": {
+    "model": "Artist-directed broad blue boundary radiance + one physical angular emitter, no planet. Existing finite scattering volumes unchanged.",
+    "disk_angular_diameter_degrees": 0.75,
+    "sun_color_linear_rgb": [
+      1.0,
+      0.62,
+      0.32
+    ],
+    "key_normal_irradiance_red_channel": 22.0,
+    "emitter_uniform_red_radiance": 163478.91202749894,
+    "calibration": "Previous r49 panorama solar cone integrated R=14.094; its world-light multiplier .09/.10 gives ~12.685, plus legacy SUN R=9.3 gives ~21.985. New single source uses22. This is an approximate reference energy, since the previous panorama includes finite air attenuation; not exact equality at every cloud.",
+    "sky_pole_low": [
+      0.04,
+      0.09,
+      0.24,
+      1
+    ],
+    "sky_pole_high": [
+      0.055,
+      0.13,
+      0.3,
+      1
+    ],
+    "sky_horizon": [
+      0.24,
+      0.5,
+      0.94,
+      1
+    ],
+    "blue_visibility_and_illumination_ratio": 1.0,
+    "sampling": {
+      "name": "",
+      "is_caustics_light": false,
+      "sampling_method": "MANUAL",
+      "sample_map_resolution": 4096,
+      "max_bounces": 1024,
+      "volume_sampling": "EQUIANGULAR",
+      "volume_interpolation": "LINEAR",
+      "volume_step_size": 1.0,
+      "use_shadows": true
+    },
+    "ibl_mode": "Future separate panorama toggles IBL omit direct camera disk input1 to1. Key remains active for shadow/volume/diffuse paths. No IBL render authorized yet."
+  },
+  "exposure_stops": -0.9,
+  "external_assets": [],
+  "bitmap_edits": false,
+  "upscaling": false,
+  "halo": "Only actual finite medium scattering, no analytic glow or disk enlargement",
+  "prepare_seconds": 1.718913300002896,
+  "hero": {
+    "file": ".dream-loop/sky-r50-low-sun-candidate/low-sun-hero.png",
+    "sha256": "57fb637dadb7fcb739693aa7ac5b4c2cc268d3c544045f07b0482f9d4bab6a46",
+    "bytes": 6998658,
+    "dimensions": [
+      1672,
+      941
+    ],
+    "samples_max": 64,
+    "seconds": 67.74616590000005,
+    "renderer": "Cycles OPTIX",
+    "denoising": "OpenImageDenoise RGB only",
+    "display_transform": "AgX Medium High Contrast",
+    "exposure_stops": -0.9,
+    "render_descriptor_sha256": "9340a038a0561de8dad62670b4387402d75e43e5f7de51c842ac692c261d888d",
+    "linear_original": {
+      "file": ".dream-loop/sky-r50-low-sun-candidate/low-sun-hero-linear.hdr",
+      "sha256": "771b871440e73f70860448b73ad9e885edbe9d3e34c960d30e9342e419c5b48c",
+      "bytes": 3604021
+    },
+    "radiance": {
+      "finite": true,
+      "min": 0.099609375,
+      "max": 179200.0,
+      "pixels_above_red100": 335,
+      "bright_centroid_xy": [
+        294.55223880597015,
+        74.40298507462687
+      ],
+      "bright_bounds_xyxy": [
+        284,
+        64,
+        305,
+        84
+      ]
+    }
+  },
+  "output": "sky-r50-4k-linear.ktx2",
+  "output_sha256": "ae4cf6c080f56d05fd3bc09759cedf118c05d6c103ddfc9703519f492fc12782",
+  "bytes": 67109144,
+  "dimensions": [
+    4096,
+    2048
+  ],
+  "authoring_hdr": {
+    "file": ".dream-loop/sky-r50-low-sun-candidate/sky-r50-4k-linear.hdr",
+    "sha256": "04fb34a90d1900c334cd8759bb6a309ab97087c0e3459b9ac8a7745ab33fed8f",
+    "bytes": 6882265,
+    "dimensions": [
+      4096,
+      2048
+    ],
+    "original_render_dimensions": [
+      4096,
+      2048
+    ],
+    "view_transform_applied": false,
+    "raw_exposure_stops": 0,
+    "runtime_reference_exposure_stops": -0.9,
+    "seconds": 108.09404709999944,
+    "samples_max": 128,
+    "renderer": "Cycles OPTIX",
+    "denoising": "OpenImageDenoise RGB only",
+    "source_sha256": "cdba75ae0c1b5dd86e4c3a662e6f2d66c5ec5db0a025903f7b208fd2c6514087",
+    "generator_sha256": "8ca45d9f30013f852dcfe2ab647234d9cad909d09ec273bddd646262a19eb724",
+    "render_descriptor_sha256": "f8bb8a5b71a3f83d5f47a53dfde576e1c73384f9d9c85effc53f3ff28c1ed9ca",
+    "camera_solar_disk_visible": true,
+    "solar_illumination_active": true,
+    "radiance_min": 0.072265625,
+    "radiance_max": 205824.0,
+    "finite_nonnegative": true,
+    "resampled": false
+  },
+  "linear_encoding": {
+    "format": "VK_FORMAT_R16G16B16A16_SFLOAT",
+    "vk_format": 97,
+    "orientation": "rd",
+    "transfer": "linear",
+    "primaries": "Rec.709",
+    "dimensions": [
+      4096,
+      2048
+    ],
+    "mip_levels": 1,
+    "gpu_bytes": 67108864,
+    "encoding_scale": 0.25,
+    "recommended_runtime_multiplier": 2.1435469250725863,
+    "source_radiance_min": 0.072265625,
+    "source_radiance_max": 205824.0,
+    "encoded_radiance_min": 0.01806640625,
+    "encoded_radiance_max": 51456.0,
+    "finite_nonnegative": true,
+    "alpha": 1,
+    "resampled": false
+  },
+  "render_descriptor_sha256": "f8bb8a5b71a3f83d5f47a53dfde576e1c73384f9d9c85effc53f3ff28c1ed9ca",
+  "final_generator": {
+    "file": ".dream-loop/sky-r50-low-sun-candidate/render_exports.py",
+    "sha256": "8ca45d9f30013f852dcfe2ab647234d9cad909d09ec273bddd646262a19eb724",
+    "bytes": 5569
+  },
+  "fingerprint_dependency": {
+    "file": ".dream-loop/sky-r50-low-sun-candidate/scene_fingerprint.py",
+    "sha256": "d15db2698ea30266b9364c66cf32cbe22440fba199594690d461b1bc06236a8a",
+    "bytes": 4626
+  },
+  "final_controller_dependency": {
+    "file": "tools/art/build_sky.py",
+    "sha256": "97f97a01b3a7b6911e674dddeb82b9b748a4dd9f431e9beac008d12d52a809f4",
+    "bytes": 11817
+  },
+  "io_dependency": {
+    "file": "tools/art/sky-source/sky_io.py",
+    "sha256": "f5ad755294a087a5e35ad1c7bb2ffa8ebac5e9b351598a0056d5dc21bf9b4d52",
+    "bytes": 4044
+  },
+  "ibl_authoring": {
+    "file": ".dream-loop/sky-r50-low-sun-candidate/sky-r50-ibl-linear.hdr",
+    "sha256": "d669ada13126d9de5d673eb26f59abc78e579383d41efa823d41fb7950a96def",
+    "bytes": 553972,
+    "dimensions": [
+      1024,
+      512
+    ],
+    "original_render_dimensions": [
+      1024,
+      512
+    ],
+    "view_transform_applied": false,
+    "raw_exposure_stops": 0,
+    "runtime_reference_exposure_stops": -0.9,
+    "seconds": 11.881760800002667,
+    "samples_max": 128,
+    "renderer": "Cycles OPTIX",
+    "denoising": "OpenImageDenoise RGB only",
+    "source_sha256": "cdba75ae0c1b5dd86e4c3a662e6f2d66c5ec5db0a025903f7b208fd2c6514087",
+    "generator_sha256": "8ca45d9f30013f852dcfe2ab647234d9cad909d09ec273bddd646262a19eb724",
+    "render_descriptor_sha256": "de7af11d3e727388f71954a49cab72c4f8d26de65bbc05299b144e5729dd7d5e",
+    "camera_solar_disk_visible": false,
+    "solar_illumination_active": true,
+    "radiance_min": 0.080078125,
+    "radiance_max": 4.75,
+    "finite_nonnegative": true,
+    "resampled": false
+  }
+}

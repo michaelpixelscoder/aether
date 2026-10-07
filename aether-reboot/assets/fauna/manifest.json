@@ -1,0 +1,163 @@
+{
+  "generator": "tools/art/build_fauna.py",
+  "generator_sha256": "d965c511151317c45fda8f2a12dc9d1b471438bdea2d0768ba502356d053d5fe",
+  "units": "metres",
+  "axes": "Y up; forward -Z; L is negative X; all pivot local axes match game axes",
+  "shared_images": [
+    {
+      "file": "assets/textures/limestone-world.png",
+      "sha256": "a8d1095cb49df8271937f7f87e55b32d05980f696c8804df5fbe63c5d1a70510"
+    },
+    {
+      "file": "assets/textures/stone.png",
+      "sha256": "1865d728650a2300014e0686325c4631b07afe234f572394597099f4f8126a5d"
+    }
+  ],
+  "assets": {
+    "guardian": {
+      "file": "assets/fauna/guardian.glb",
+      "sha256": "a5578ef949e7acf9dc68863a739198be960c3295e51ced855aedc8295969294d",
+      "bytes": 694332,
+      "source": "tools/art/fauna-source/guardian.blend",
+      "source_sha256": "eb53acf5b20b5a21940abe1807c10c390b41728032c7f59b2a14effcfc1c54d0",
+      "triangles": 7440,
+      "meshes": 14,
+      "materials": 4,
+      "bounds_xyz_m": [
+        [
+          -0.863428,
+          0.861292
+        ],
+        [
+          0.0,
+          1.8
+        ],
+        [
+          -0.370101,
+          0.306869
+        ]
+      ],
+      "pivots_game_xyz_m": {
+        "GuardianArmL": [
+          -0.49,
+          1.3,
+          0
+        ],
+        "GuardianArmR": [
+          0.49,
+          1.3,
+          0
+        ],
+        "GuardianLegL": [
+          -0.22,
+          0.74,
+          0
+        ],
+        "GuardianLegR": [
+          0.22,
+          0.74,
+          0
+        ]
+      },
+      "animation": {
+        "arms": "local X; swing around shoulder",
+        "legs": "local X; swing around hip"
+      },
+      "external_images": [
+        "../textures/limestone-world.png"
+      ],
+      "validation": {
+        "triangles_verified": 7440,
+        "finite_attributes": true,
+        "degenerate_triangles": 0,
+        "buffer_bounds": true
+      }
+    },
+    "cavewing": {
+      "file": "assets/fauna/cavewing.glb",
+      "sha256": "2bce45155d6131726cef7d8d2a0df7a85c5b027acb0131ea37ce2d3cb0674103",
+      "bytes": 467904,
+      "source": "tools/art/fauna-source/cavewing.blend",
+      "source_sha256": "4ef064c266edbde6ca928fba250172d1d07b585198c1ff117fbaf76325e08016",
+      "triangles": 5140,
+      "meshes": 11,
+      "materials": 5,
+      "bounds_xyz_m": [
+        [
+          -2.006524,
+          2.005612
+        ],
+        [
+          -0.262565,
+          0.358692
+        ],
+        [
+          -0.82,
+          0.680905
+        ]
+      ],
+      "pivots_game_xyz_m": {
+        "WingL": [
+          -0.18,
+          0,
+          -0.08
+        ],
+        "WingR": [
+          0.18,
+          0,
+          -0.08
+        ]
+      },
+      "animation": {
+        "axis": "local Z",
+        "upstroke_sign": {
+          "WingL": -1,
+          "WingR": 1
+        },
+        "suggested_angle_radians": [
+          -0.24,
+          0.48
+        ]
+      },
+      "external_images": [
+        "../textures/stone.png"
+      ],
+      "validation": {
+        "triangles_verified": 5140,
+        "finite_attributes": true,
+        "degenerate_triangles": 0,
+        "buffer_bounds": true
+      }
+    }
+  },
+  "reimported_rig_validation": {
+    "guardian": {
+      "GuardianArmL": {
+        "rigid_pivot_verified": true,
+        "children": 3
+      },
+      "GuardianArmR": {
+        "rigid_pivot_verified": true,
+        "children": 3
+      },
+      "GuardianLegL": {
+        "rigid_pivot_verified": true,
+        "children": 2
+      },
+      "GuardianLegR": {
+        "rigid_pivot_verified": true,
+        "children": 2
+      }
+    },
+    "cavewing": {
+      "WingL": {
+        "rigid_pivot_verified": true,
+        "children": 4
+      },
+      "WingR": {
+        "rigid_pivot_verified": true,
+        "children": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "status": "ONE ISOLATED CPU PROTOTYPE READY; GPU COMPILE/VISUAL/PERFORMANCE NOT PROVED; NO PROMOTION",
+  "root": "D:/Aether-art-studies/flow-r62-study/portable",
+  "shader_sha256": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+  "files": [
+    {
+      "file": "assets/shaders/world-flow.wgsl",
+      "sha256": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+      "bytes": 9443
+    },
+    {
+      "file": "assets/textures/world-flow.ktx2",
+      "sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+      "bytes": 8384632
+    },
+    {
+      "file": "tools/art/flow-r62-source/build_shader.py",
+      "sha256": "246624191b184251c1600d0848e473c7da01d09018dcdf21b5382704483d455d",
+      "bytes": 1908
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/pre-coverage-conservation/current-sampling.wgsl",
+      "sha256": "660329369364c6cf33311084875c876eeeb737c9565200b0c1b586ea4f931e06",
+      "bytes": 3188
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/pre-coverage-conservation/material.json",
+      "sha256": "b474cb348013390ea08b68b7621e6bbca027b5773073f9f894b2127c6413455d",
+      "bytes": 4439
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/pre-coverage-conservation/probe.py",
+      "sha256": "ff3b534deb1d749bf19da8c9f2ee6c721365ed545cdb7bc7a98091706f883604",
+      "bytes": 8586
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/pre-coverage-conservation/world-flow.wgsl",
+      "sha256": "1347a50437a2f07bfc2d931ef47abe6e2a93d23185905c7205608cca89b14525",
+      "bytes": 9241
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/utf8-source-read-fix/build_shader.py",
+      "sha256": "c9e87ac59c51bec74a19dd0183443b518079de264106d61ffe4d6416c9cfd61b",
+      "bytes": 1876
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/utf8-source-read-fix/contracts-failed.log",
+      "sha256": "a8dd2ade5a33de0e3619bf959c6dd8f6dbb6bfa8a3bf21f48fa3aa4fa9c6b57a",
+      "bytes": 736
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/utf8-source-read-fix/relocation-failed.log",
+      "sha256": "85c01d80e94030e165ae4028782cf3f129aec8e9e07d47529a633aa8a88310b1",
+      "bytes": 1081
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/utf8-source-read-fix/world-flow.wgsl",
+      "sha256": "d3b32e953bae66827e1f0d49aa4f6e495396b439a918b197591fa9ccbf9d726f",
+      "bytes": 9448
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/world-flow-r53.wgsl",
+      "sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+      "bytes": 4672
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/world-flow-r58-prototype2.wgsl",
+      "sha256": "0d289ec4dda88fbe72a0f7f8ca5a42a2e6e206b8a91427121cdc2b38b62a2951",
+      "bytes": 6889
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/world-flow-r61.wgsl",
+      "sha256": "5e2e2c5b377ba30041a0493d0262d0dfc9c778d765548bdcd08c0990683d47d9",
+      "bytes": 7016
+    },
+    {
+      "file": "tools/art/flow-r62-source/history/world-r61-flow-native.evidence.json",
+      "sha256": "8462283f6a64f191fed89853d1d8434235b0c9d7852b4b401fae242f86307bdc",
+      "bytes": 21567
+    },
+    {
+      "file": "tools/art/flow-r62-source/probe.py",
+      "sha256": "a50fbf5f65d3adf91f05963925ed721fbd8599ef32e8ac7bbdbcb164e5da0c52",
+      "bytes": 9222
+    },
+    {
+      "file": "tools/art/flow-r62-source/proofs/contracts.json",
+      "sha256": "c3fe9b7f3db1e985e7ce507592c081224d9ec461bbddab9cea2c702e57cec018",
+      "bytes": 685
+    },
+    {
+      "file": "tools/art/flow-r62-source/proofs/material.json",
+      "sha256": "e6c5e3592e7ff1cf3c61cd245e0ca6dcd4de19ae47418d5eadc0237843056b09",
+      "bytes": 4433
+    },
+    {
+      "file": "tools/art/flow-r62-source/proofs/relocation.json",
+      "sha256": "15bcc632086b6a932188122cd75f7d8f6f4e5d745b8f910c84365885508874b8",
+      "bytes": 369
+    },
+    {
+      "file": "tools/art/flow-r62-source/proofs/shader.json",
+      "sha256": "82fc79f23dccecc5a644d91182cf2a80df76a4a3807794c1bab4b9b0e2245df8",
+      "bytes": 768
+    },
+    {
+      "file": "tools/art/flow-r62-source/README.md",
+      "sha256": "7a1e7a18a84c76ae25645067d2cfac837dfe0e0df0552c41c88071efff590203",
+      "bytes": 7085
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/current-block.wgsl",
+      "sha256": "973ddc4d241be30961520afc80d2715ffbd5c6d969dfb2939cf88263a8b29852",
+      "bytes": 2994
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/current-sampling.wgsl",
+      "sha256": "2234c0a731501f29725d7c49759422ee1c9c61561ba16d1c379f96823c502c87",
+      "bytes": 3395
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/mip-r53.json",
+      "sha256": "0cbc00a8337539df5e24ee38464216b0bb3bd860898b52432ca3f6497190fe98",
+      "bytes": 3599
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/naga-wgsl-reserved-29.0.4.json",
+      "sha256": "ef248c41c1f7e204c46902256d70ff65c674916bfa19917cff4d67c6a25a6fc7",
+      "bytes": 2419
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/provenance-r53.json",
+      "sha256": "14b3cd99511f3bc5a02f9cc0761c6627706fc0c504140b7f70eeff5f29665404",
+      "bytes": 5717
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/world-flow-native.png",
+      "sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+      "bytes": 2685518
+    },
+    {
+      "file": "tools/art/flow-r62-source/source/world-flow-prompt.txt",
+      "sha256": "cf03adcd920f23c1b68f4de9838e7d30c7e6b6f873b2c58b516ddf72bb5ca6c4",
+      "bytes": 3019
+    },
+    {
+      "file": "tools/art/flow-r62-source/test_portability.py",
+      "sha256": "1bed2384b12d04b0c04dea9ceca47d3d89507d03d26929c529f87ee9b3c678c5",
+      "bytes": 1671
+    },
+    {
+      "file": "tools/art/flow-r62-source/verify.mjs",
+      "sha256": "b941455080b801bfbddfa975fabc508edb50494f7574e3146017e6a007307ee4",
+      "bytes": 5356
+    }
+  ],
+  "file_count": 30,
+  "total_bytes": 11210972,
+  "native_candidate_instruction": "Use final canonical R59+R60 sky/weather/world assets. Replace only the candidate fixture shader; existing native KTX must match8ecd62... . No historical stage transplant.",
+  "scope": {
+    "current_alpha_delta": true,
+    "current_sampling_delta": true,
+    "native_art_bits_unchanged": true,
+    "geometry_uv_routes_physics_clock_unchanged": true,
+    "cascades_pools_haze_unchanged": true,
+    "current_fetches": 5,
+    "cascade_fetches": 2,
+    "gpu_used_by_author": false,
+    "git_actions": false,
+    "canonical_mutations": false
+  },
+  "sources": [
+    {
+      "url": "https://cdn.fastly.steamstatic.com/apps/valve/2010/siggraph2010_vlachos_waterflow.pdf",
+      "role": "Short centered color advection, temporal half-phases, weak repetition/pulse modulation; adaptation without authored vector-map claim"
+    },
+    {
+      "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+      "role": "Macro existing geometry versus optical detail, no fabricated geometry/normal map"
+    }
+  ],
+  "cpu_evidence": {
+    "negative_cases": [
+      "clock",
+      "cascade alpha",
+      "pool wave",
+      "haze",
+      "vertex alpha",
+      "bindings",
+      "discard",
+      "crop",
+      "coverage",
+      "reserved identifier"
+    ],
+    "relocation_byte_exact": true,
+    "mean_alpha_mip6": 0.029992645404210816,
+    "mean_alpha_mip8": 0.017975792339516194,
+    "continuity_max_delta": 1.549869007400062e-05,
+    "jacobian_max_error": 1.2789769243681803e-13
+  }
+}

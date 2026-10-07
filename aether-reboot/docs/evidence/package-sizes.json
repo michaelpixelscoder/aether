@@ -1,0 +1,86 @@
+{
+  "id": "0.1.0-27bffa9ee363",
+  "native_raw_bytes": 188951083,
+  "web_raw_bytes": 199461312,
+  "web_transfer_brotli_bytes": 57459756,
+  "largest_web_files": [
+    {
+      "path": "r/0.1.0-27bffa9ee363/build/aether_game_bg.wasm",
+      "bytes": 97815930,
+      "sha256": "e20f3e7e9d2b76acfec66911104418c38c2274cd1764a4a2e7fad6b88734caf8",
+      "transfer_bytes": 11043391,
+      "gzip_bytes": 16699789,
+      "brotli_bytes": 11043391
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/sail.glb",
+      "bytes": 22407308,
+      "sha256": "b9abaaec6a8513b18ea9fb0711ebd3ec3b9c9031368edca14e93126dc0f34833",
+      "transfer_bytes": 7849772,
+      "gzip_bytes": 8328279,
+      "brotli_bytes": 7849772
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/island-1.glb",
+      "bytes": 21629412,
+      "sha256": "81384eb221ea6d6fff73d463dd455889ed122350ed19e42a37385cbb1b52a75b",
+      "transfer_bytes": 4044599,
+      "gzip_bytes": 5486314,
+      "brotli_bytes": 4044599
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/island-0.glb",
+      "bytes": 12619760,
+      "sha256": "f31a9f1d6b9c9d71737ddb08f93876e76fcb4b095e4e25e235f74dd272259e65",
+      "transfer_bytes": 3384539,
+      "gzip_bytes": 4147638,
+      "brotli_bytes": 3384539
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/island-2.glb",
+      "bytes": 10801132,
+      "sha256": "d2d97fd726a743654ed2a83babe9048e7cdc8a3ab421a7707747bd11558458b0",
+      "transfer_bytes": 3254738,
+      "gzip_bytes": 3863688,
+      "brotli_bytes": 3254738
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/sanctuary.glb",
+      "bytes": 6877644,
+      "sha256": "c344894d3b8393a8085ff36f268d3a295b758f7e4c6d45c53866a377f039e9ef",
+      "transfer_bytes": 5896263,
+      "gzip_bytes": 5958006,
+      "brotli_bytes": 5896263
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/characters/Knight.glb",
+      "bytes": 3659532,
+      "sha256": "60428e3abc09ba83e595d256e3af8c5c976b46cdae599f0802fc82b4a3445168",
+      "transfer_bytes": 1057270,
+      "gzip_bytes": 1170800,
+      "brotli_bytes": 1057270
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/textures/indigo-canvas.png",
+      "bytes": 3217993,
+      "sha256": "959ad02e433763268115086d4f01cca41458e85a5187501a1831d6c02ddf3c98",
+      "transfer_bytes": 3217993
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/harpoon.glb",
+      "bytes": 2523376,
+      "sha256": "1e097a8ea18fe1c15d652cdb2c7261e9516804cc9d09386832c10a2a318680c9",
+      "transfer_bytes": 2446879,
+      "gzip_bytes": 2445817,
+      "brotli_bytes": 2446879
+    },
+    {
+      "path": "r/0.1.0-27bffa9ee363/assets/art/helm.glb",
+      "bytes": 2509296,
+      "sha256": "ab24e2bb5d3502281cc323a051c64151c6ca76fd92e6b5a8367df7820f386487",
+      "transfer_bytes": 2445082,
+      "gzip_bytes": 2445361,
+      "brotli_bytes": 2445082
+    }
+  ]
+}

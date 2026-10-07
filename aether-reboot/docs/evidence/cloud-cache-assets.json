@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "contract": "r47-regional-plume-crown-fold-r2",
+  "legacy_regional_pointwise_gate_pass": false,
+  "banks": [
+    {
+      "file": "assets/atmosphere/hollow-shape.ktx2",
+      "sha256": "fc96de520c22f4c0266f0a17b04791adec792bf14618a835951612edcd8cbdfe",
+      "dimensions": [
+        256,
+        96,
+        256
+      ],
+      "gpu_bytes": 25165824,
+      "positive_voxels": 2142186,
+      "recipe": "regional-r47"
+    },
+    {
+      "file": "assets/atmosphere/underforge-shape.ktx2",
+      "sha256": "64a2f7749544bc3bb718da534b4ee0744c6414dd3fc9d0a32ff59ddd1a972840",
+      "dimensions": [
+        256,
+        96,
+        256
+      ],
+      "gpu_bytes": 25165824,
+      "positive_voxels": 2213541,
+      "recipe": "regional-r47"
+    },
+    {
+      "file": "assets/atmosphere/west-shape.ktx2",
+      "sha256": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 244885,
+      "recipe": "unchanged-high-bank"
+    },
+    {
+      "file": "assets/atmosphere/east-shape.ktx2",
+      "sha256": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 235086,
+      "recipe": "unchanged-high-bank"
+    },
+    {
+      "file": "assets/atmosphere/north-shape.ktx2",
+      "sha256": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 211204,
+      "recipe": "unchanged-high-bank"
+    },
+    {
+      "file": "assets/atmosphere/south-shape.ktx2",
+      "sha256": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d",
+      "dimensions": [
+        96,
+        64,
+        96
+      ],
+      "gpu_bytes": 2359296,
+      "positive_voxels": 227002,
+      "recipe": "unchanged-high-bank"
+    }
+  ],
+  "gpu_bytes": 59768832,
+  "fidelity_sha256": "f890fbf40795f4adabd0004b999b278a25b98f61d716939a5edca3ad296535a4"
+}

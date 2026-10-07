@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "candidate_sha256": "f14fe8ddbf914f1460af1da8e80c2347d18d61bd5a18f7d27418ee682a887d64",
+  "source_graph_connections_and_operations_verified": true,
+  "no_camera_or_light_path_mask_in_field": true,
+  "blue_b_exact_outside_cone_degrees": [
+    4.501,
+    5,
+    10,
+    20,
+    90,
+    180
+  ],
+  "blue_poles_exact": true,
+  "quadrature_steps": 1048576,
+  "additional_irradiance_rgb_numeric": [
+    0.06590561036861257,
+    0.01460612313447144,
+    -0.01008546669878897
+  ],
+  "total_red_irradiance_numeric": 22.00000012135719,
+  "error_from_target22": 1.2135718918671046e-07,
+  "limitations": "This verifies the incident source and energy; rendered radiance after physical transport is allowed to differ globally."
+}

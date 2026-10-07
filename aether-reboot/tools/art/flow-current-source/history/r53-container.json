@@ -1,0 +1,118 @@
+{
+  "schema": 2,
+  "passed": true,
+  "native_png_sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+  "shader_sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+  "derived_ktx2_sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+  "native_level0_byte_exact": true,
+  "rgba_srgb_straight_alpha_dfd": true,
+  "levels": [
+    {
+      "level": 0,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 6290064,
+      "offset": 2094568
+    },
+    {
+      "level": 1,
+      "dimensions": [
+        627,
+        627
+      ],
+      "bytes": 1572516,
+      "offset": 522048
+    },
+    {
+      "level": 2,
+      "dimensions": [
+        313,
+        313
+      ],
+      "bytes": 391876,
+      "offset": 130168
+    },
+    {
+      "level": 3,
+      "dimensions": [
+        156,
+        156
+      ],
+      "bytes": 97344,
+      "offset": 32824
+    },
+    {
+      "level": 4,
+      "dimensions": [
+        78,
+        78
+      ],
+      "bytes": 24336,
+      "offset": 8488
+    },
+    {
+      "level": 5,
+      "dimensions": [
+        39,
+        39
+      ],
+      "bytes": 6084,
+      "offset": 2400
+    },
+    {
+      "level": 6,
+      "dimensions": [
+        19,
+        19
+      ],
+      "bytes": 1444,
+      "offset": 952
+    },
+    {
+      "level": 7,
+      "dimensions": [
+        9,
+        9
+      ],
+      "bytes": 324,
+      "offset": 624
+    },
+    {
+      "level": 8,
+      "dimensions": [
+        4,
+        4
+      ],
+      "bytes": 64,
+      "offset": 560
+    },
+    {
+      "level": 9,
+      "dimensions": [
+        2,
+        2
+      ],
+      "bytes": 16,
+      "offset": 544
+    },
+    {
+      "level": 10,
+      "dimensions": [
+        1,
+        1
+      ],
+      "bytes": 4,
+      "offset": 536
+    }
+  ],
+  "gpu_bytes": 8384072,
+  "clock_vertex_alpha_pool_haze_preserved": true,
+  "only_current_hue_changed_from_medium": true,
+  "material_proof_sha256": "6313e98646c5bd2faabaae791a8c83531c27703fa82fb4e35b80347f82ea32ad",
+  "naga_reserved_words_checked": 146,
+  "naga_version": "29.0.4",
+  "reserved_patch_negative_test": true,
+  "native_shader_compilation": "Parent capture world-r53-violet.png was reviewed and accepted; static keyword guard itself is not a complete Naga parser."
+}

@@ -1,0 +1,45 @@
+{
+  "accepted_sha256": "7b6f4e166a125bd70111d74ce10aaeffdc08ce13fd0becdfa803f2a70fd0c5b3",
+  "promotion_sha256": "6fe29c97310f96a8c42e632da69684915571177fd341ea7734731f20567b4466",
+  "all_nine_mesh_payloads_identical_to_accepted": true,
+  "positive_verification": true,
+  "negative_checks_rejected": 4,
+  "checks": [
+    "old single-generator claim",
+    "stale participating source hash",
+    "changed morph target name",
+    "changed morph accessor byte"
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "role": "canvas",
+        "path": "tools/art/build_art.py",
+        "sha256": "4f362af19f5e33a67012f1436d1df1fb888de6284ec67061f360eb7899ee4449"
+      },
+      {
+        "role": "spars",
+        "path": "tools/art/build_sail_rig.py",
+        "sha256": "da324c8c63592bc5ad9d2a33cc1243dd9a38b3516102903fb603ede62ec1c747"
+      },
+      {
+        "role": "primitive_helpers",
+        "path": "tools/art/build_ship.py",
+        "sha256": "b3ca93c3993dfb3202e98bf23bc390b6f5b75215413289163f89bb3685ac94fd"
+      },
+      {
+        "role": "assembly",
+        "path": "tools/art/merge_sail_rig.mjs",
+        "sha256": "20f8260da17c62793f22cd9ac17ee84707b46489d0fc78e39b4b407b99624854"
+      },
+      {
+        "role": "provenance_validation",
+        "path": "tools/art/sail_provenance.mjs",
+        "sha256": "f61d42f494bdb4351d7012e384ec10f964758933ab0435f2ba55a46fc0efa76e"
+      }
+    ],
+    "cloth_payload_sha256": "06348a58052f4d5afe7700d0427901c5a3b9bbe40fdb3b165d080d2177d4735f",
+    "static_payload_sha256": "fbf95eb3cfffbcc40a11ddc2f71476951d8c8a278eb1bc733197718438b52389",
+    "triangles": 78744
+  }
+}

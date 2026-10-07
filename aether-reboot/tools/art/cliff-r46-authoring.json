@@ -1,0 +1,342 @@
+[
+  {
+    "kind": "dawn",
+    "lod": false,
+    "changed_batches": [
+      "('02 | Deep strata', 0)",
+      "('01 | Fractured limestone', 0)"
+    ],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": -14044,
+    "cliffs": [
+      {
+        "kind": "dawn",
+        "lod": false,
+        "removed_rock_triangles": 53628,
+        "new_closed_rock_triangles": 39584,
+        "unchanged_root_triangles": 504,
+        "net_triangles": -14044,
+        "closed_bodies": 249,
+        "closed_fracture_plates": 1452,
+        "crown_rocks": 539,
+        "crown_triangles": 17248,
+        "crown_walk_conflicts_rejected": 24,
+        "maximum_protrusion_metres": 4.563255315203424,
+        "maximum_recess_metres": 0.65
+      }
+    ]
+  },
+  {
+    "kind": "dawn",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "crystal",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "crystal",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "nomad",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "nomad",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "ember",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "ember",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "frost",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "frost",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "verdant",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "verdant",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "storm",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "storm",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "hollow",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "hollow",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "underforge",
+    "lod": false,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "underforge",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "dawn-watch",
+    "lod": false,
+    "changed_batches": [
+      "('02 | Deep strata', 0)",
+      "('01 | Fractured limestone', 0)"
+    ],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 28526,
+    "cliffs": [
+      {
+        "kind": "dawn-watch",
+        "lod": false,
+        "removed_rock_triangles": 20130,
+        "new_closed_rock_triangles": 48656,
+        "unchanged_root_triangles": 300,
+        "net_triangles": 28526,
+        "closed_bodies": 318,
+        "closed_fracture_plates": 1755,
+        "crown_rocks": 688,
+        "crown_triangles": 22016,
+        "crown_walk_conflicts_rejected": 23,
+        "maximum_protrusion_metres": 4.546598645338751,
+        "maximum_recess_metres": 0.65
+      }
+    ]
+  },
+  {
+    "kind": "dawn-watch",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "dawn-garden",
+    "lod": false,
+    "changed_batches": [
+      "('02 | Deep strata', 0)",
+      "('01 | Fractured limestone', 0)"
+    ],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 27188,
+    "cliffs": [
+      {
+        "kind": "dawn-garden",
+        "lod": false,
+        "removed_rock_triangles": 15292,
+        "new_closed_rock_triangles": 42480,
+        "unchanged_root_triangles": 300,
+        "net_triangles": 27188,
+        "closed_bodies": 338,
+        "closed_fracture_plates": 1381,
+        "crown_rocks": 633,
+        "crown_triangles": 20256,
+        "crown_walk_conflicts_rejected": 27,
+        "maximum_protrusion_metres": 4.461266080707432,
+        "maximum_recess_metres": 0.65
+      }
+    ]
+  },
+  {
+    "kind": "dawn-garden",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  },
+  {
+    "kind": "dawn-ruin",
+    "lod": false,
+    "changed_batches": [
+      "('02 | Deep strata', 0)",
+      "('01 | Fractured limestone', 0)"
+    ],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 30132,
+    "cliffs": [
+      {
+        "kind": "dawn-ruin",
+        "lod": false,
+        "removed_rock_triangles": 13052,
+        "new_closed_rock_triangles": 43184,
+        "unchanged_root_triangles": 300,
+        "net_triangles": 30132,
+        "closed_bodies": 338,
+        "closed_fracture_plates": 1381,
+        "crown_rocks": 655,
+        "crown_triangles": 20960,
+        "crown_walk_conflicts_rejected": 30,
+        "maximum_protrusion_metres": 4.461266080707432,
+        "maximum_recess_metres": 0.65
+      }
+    ]
+  },
+  {
+    "kind": "dawn-ruin",
+    "lod": true,
+    "changed_batches": [],
+    "collisions_exact": true,
+    "landmarks_exact": true,
+    "global_rng_exact": true,
+    "nonrock_batches_exact": true,
+    "raw_triangle_delta": 0,
+    "cliffs": []
+  }
+]

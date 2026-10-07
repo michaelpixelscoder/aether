@@ -1,0 +1,10 @@
+   Compiling aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+    Finished `test` profile [optimized] target(s) in 3.64s
+     Running unittests src\lib.rs (target\debug\deps\aether_game-e32b51088a575398.exe)
+
+running 2 tests
+test editor::tests::imported_high_part_id_still_allows_construction ... ok
+test editor::tests::imported_high_body_ids_allow_a_full_valid_fleet ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.00s
+

@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "passed": true,
+  "recipe": "r55-directional-reflected-light",
+  "shader_sha256": "ffcc09fbaea8702ddcab1938c3ee1e2c3c8c5431a765a1c00002b2f7ef9119b6",
+  "contract_sha256": "edea1cc01b9040155e27c3e9b0b1d2a1ca2eb527b43fc3106c7dc8ff45e2a838",
+  "source_hashes": {
+    "tools/art/build_cloud_lighting.mjs": "ad7ebbc793f06db058e4e3ce22963b1e237d5d64a9c1900a57099ffcb07c3a5d",
+    "tools/art/review_cloud_light_cpu.py": "c58bd4edca76f4b1bfc93e611b8557ba58f3eded021978f488e5c1cc365f08c1",
+    "tools/art/compare_cloud_light_rays_cpu.py": "ba33e5c5667c517c0f37b96bcec431824fa195349b552bec38c8cccff22c7875",
+    "tools/art/verify-cloud-lighting.mjs": "f6d04678a62dbd4252c9252a131e2f453bee2723048daa4e007b35112165cd7a",
+    "tools/art/cloud-r55/test-gate.mjs": "95217e6c4e44c18c8609ce5e66dad6b6f6cb1178cca5f8dcccd83056c87fca65"
+  },
+  "ray_comparison_sha256": "db02fca2a130b4ee0ca337824ca57d91f9af8e05c74df885961bebdefe6c0ea2",
+  "r47_historical_ray_comparison_sha256": "e46c2a91c07613c30c200500ad729df327caa67545c992ac4c338010b34f24d0",
+  "r47_evidence_preserved": true,
+  "legacy_regional_pointwise_gate_pass": false,
+  "limits": {
+    "gpu_bytes": 59768832,
+    "density_mean": 0.006,
+    "regional_density_p99": 0.05,
+    "high_density_p99": 0.035,
+    "analytic_derivative_p99_degrees": 0.05,
+    "opaque_display_rmse": 0.025,
+    "edge_opacity_p99": 0.08
+  },
+  "views": [
+    {
+      "bank": "hollow",
+      "view": "oblique",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.01464798300753289,
+      "edge_opacity_p99": 0.04301138043403618
+    },
+    {
+      "bank": "hollow",
+      "view": "grazing",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.0161800599247022,
+      "edge_opacity_p99": 0.07571425557136527
+    },
+    {
+      "bank": "underforge",
+      "view": "oblique",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.016518555366883698,
+      "edge_opacity_p99": 0.04323053359985351
+    },
+    {
+      "bank": "underforge",
+      "view": "grazing",
+      "lighting_refresh_steps": 4,
+      "opaque_display_rmse": 0.017313651463302257,
+      "edge_opacity_p99": 0.0712310892343522
+    },
+    {
+      "bank": "hollow",
+      "view": "oblique",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.010150032765387427,
+      "edge_opacity_p99": 0.04301138043403618
+    },
+    {
+      "bank": "hollow",
+      "view": "grazing",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.01188417123477372,
+      "edge_opacity_p99": 0.07571425557136527
+    },
+    {
+      "bank": "underforge",
+      "view": "oblique",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.01120215454048188,
+      "edge_opacity_p99": 0.04323053359985351
+    },
+    {
+      "bank": "underforge",
+      "view": "grazing",
+      "lighting_refresh_steps": 2,
+      "opaque_display_rmse": 0.012235885730663303,
+      "edge_opacity_p99": 0.0712310892343522
+    }
+  ]
+}

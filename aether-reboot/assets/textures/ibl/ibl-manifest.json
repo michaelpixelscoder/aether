@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "source": "tools/art/sky-source/sky-world-ibl-linear.hdr",
+  "source_sha256": "ae637be38ce625988bb24ec2c55d47904b1d3fe810b09c03e7e68093cb49bb47",
+  "generator_sha256": "261b33eff02cd91b219d58c02a1bade36f0d1e0a2d079fdd61c5506edacce8c2",
+  "generator": "tools/art/build_ibl.py",
+  "decoder": "tools/art/sky-source/sky_io.py",
+  "decoder_sha256": "f5ad755294a087a5e35ad1c7bb2ffa8ebac5e9b351598a0056d5dc21bf9b4d52",
+  "sky_manifest_sha256": "ff32fee34b9c39d212214799b62ce9f4808726cd9e3e8b80bd9990ccc4f7fbbd",
+  "source_dimensions": [
+    512,
+    1024,
+    3
+  ],
+  "source_gain": 0.5358867312681466,
+  "samples": 1024,
+  "diffuse_size": 32,
+  "specular_size": 256,
+  "specular_roughness": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "radiance_max": 7.033513069152832,
+  "elapsed_seconds": 32.390756599999804,
+  "outputs": [
+    {
+      "file": "sky-diffuse.ktx2",
+      "bytes": 49432,
+      "sha256": "64512ed5fbf4b883002996dc453c576db7a6125a7aef40aeee2fb3ea7117424c"
+    },
+    {
+      "file": "sky-specular.ktx2",
+      "bytes": 4194760,
+      "sha256": "a40f18e5074632ac2e4d75f399525d72565523f14e6dec8f94a51718df4de2f0"
+    }
+  ],
+  "kind": "derived lighting convolution; not an original sky render"
+}

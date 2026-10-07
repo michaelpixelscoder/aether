@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "dawn",
+    "candidate_sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+    "rebuilt_sha256": "2849d858e5c8b9a91d070f5914a10e22b3e6c9438753e5775f1a5654e35dbd7e",
+    "byte_exact": true
+  },
+  {
+    "kind": "dawn-watch",
+    "candidate_sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+    "rebuilt_sha256": "60761080443c10c22a83c8eb5185888d9d080abadf70464bd9e83bef8d07aa30",
+    "byte_exact": true
+  }
+]

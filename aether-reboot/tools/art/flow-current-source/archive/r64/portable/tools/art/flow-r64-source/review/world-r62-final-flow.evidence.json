@@ -1,0 +1,620 @@
+{
+  "arguments": [],
+  "captured_at": "2026-10-03T10:30:48.3205516Z",
+  "gameplay_proof": false,
+  "files": [
+    {
+      "bytes": 175944,
+      "sha256": "30578c960be4c32b93eb452817f4678b61951924521a0819a200407ab5e8c7a1",
+      "file": "art/anchor.glb"
+    },
+    {
+      "bytes": 2523376,
+      "sha256": "568826971cd79e010a0c76130d1db0d9c86fce4cd1d311502019d1bec4f0e0c0",
+      "file": "art/harpoon.glb"
+    },
+    {
+      "bytes": 2509296,
+      "sha256": "047f2fd0d4b5e51f1c6c040fefb65bcdcebd18987cffed0ca351fc2b53ff378e",
+      "file": "art/helm.glb"
+    },
+    {
+      "bytes": 12619760,
+      "sha256": "9f3e3f82f94ff3bcdf3b2ad7fd6ab3ff5b29fe95cab7891a1962ccc280218480",
+      "file": "art/island-0.glb"
+    },
+    {
+      "bytes": 21629412,
+      "sha256": "14cca56cbe63bbab24fb3acb92fb75e915a894d7d7d9e042f795958ca8b9cda5",
+      "file": "art/island-1.glb"
+    },
+    {
+      "bytes": 10801132,
+      "sha256": "1ed8327b59728ca77f7b4c4e379a58297a16827f77c1766a80366854dd3a9743",
+      "file": "art/island-2.glb"
+    },
+    {
+      "bytes": 114416,
+      "sha256": "8f4dceea161e33857fbf1b3cd51e7c5b0f0780098e59f8470f36331df73b04af",
+      "file": "art/lift.glb"
+    },
+    {
+      "bytes": 136448,
+      "sha256": "d5452f2f8e5290d873fd3a9d30592adc717a5336319b4e9b478646c1e82c3891",
+      "file": "art/propeller.glb"
+    },
+    {
+      "bytes": 23084476,
+      "sha256": "e6d674469df01f79343b6d18848299b2e41e99c2c31f283b5c70b7773c1a3f23",
+      "file": "art/sail.glb"
+    },
+    {
+      "bytes": 6877644,
+      "sha256": "5b76acaa0df4316ef4b0523c54cf7b6355d55a60f653620dc65d8699c1a6a3d2",
+      "file": "art/sanctuary.glb"
+    },
+    {
+      "bytes": 111080,
+      "sha256": "8266df892adff94bdf8ecefc69899b99909d8694d80ceae8df97cc2cfd64a824",
+      "file": "art/tank.glb"
+    },
+    {
+      "bytes": 1936,
+      "sha256": "60ad26aa86ba465159d2fbad0c4cea00df73ddf4f55dc91e64303bb7bf5046bf",
+      "file": "atmosphere/cloud-banks.json"
+    },
+    {
+      "bytes": 3598,
+      "sha256": "c2166fc4e07dd00a9e80300bea6fceeac8aa3e9623f3fd188ea886ef3a031493",
+      "file": "atmosphere/cloud-cache-manifest.json"
+    },
+    {
+      "bytes": 2359496,
+      "sha256": "9c494144a67e7f0ecd86254b55b32da6542a3151c01008194a8b2a07d30826b5",
+      "file": "atmosphere/east-shape.ktx2"
+    },
+    {
+      "bytes": 25166024,
+      "sha256": "fc96de520c22f4c0266f0a17b04791adec792bf14618a835951612edcd8cbdfe",
+      "file": "atmosphere/hollow-shape.ktx2"
+    },
+    {
+      "bytes": 2359496,
+      "sha256": "340c04e7860baa362e88f9ba1cdf03ff37327bd3f0d85ebf1cba50d220722c71",
+      "file": "atmosphere/north-shape.ktx2"
+    },
+    {
+      "bytes": 2359496,
+      "sha256": "bdbb164ec1eeb3ce77e8a26a74573fc9c7e4e3bebde858742222db4b0df9929d",
+      "file": "atmosphere/south-shape.ktx2"
+    },
+    {
+      "bytes": 25166024,
+      "sha256": "64a2f7749544bc3bb718da534b4ee0744c6414dd3fc9d0a32ff59ddd1a972840",
+      "file": "atmosphere/underforge-shape.ktx2"
+    },
+    {
+      "bytes": 2359496,
+      "sha256": "b010d115cdc0ac52869aedb0af56bb23933cc610c9c2d93135747f6ed16feb40",
+      "file": "atmosphere/west-shape.ktx2"
+    },
+    {
+      "bytes": 48554,
+      "sha256": "ab96607a5c932952da8e2710d0253ecbdfd67cc93ba8938ec4ab1e6184462ed4",
+      "file": "audio/bell.wav"
+    },
+    {
+      "bytes": 6658,
+      "sha256": "de4b9c2b31c54a4d400e346716b16f77382e347f5968ab302c8b7e0cdf60e1a5",
+      "file": "audio/click.wav"
+    },
+    {
+      "bytes": 15920,
+      "sha256": "9633c7bc83762f6cba34faac0d48d56cb47af79e27aaca5b128100e4325cc7c7",
+      "file": "audio/tension.wav"
+    },
+    {
+      "bytes": 22094,
+      "sha256": "9ab77aa047af322258f4861953c7100b530044d6bf31c6b7b279e38b259101d2",
+      "file": "audio/warning.wav"
+    },
+    {
+      "bytes": 3659532,
+      "sha256": "60428e3abc09ba83e595d256e3af8c5c976b46cdae599f0802fc82b4a3445168",
+      "file": "characters/Knight.glb"
+    },
+    {
+      "bytes": 923,
+      "sha256": "efdd298aae817351e8939a4ea60600cf33aea87c1ce188e5710beff655c23173",
+      "file": "characters/LICENSE.txt"
+    },
+    {
+      "bytes": 484,
+      "sha256": "032b5847c78cf84ecc6559fa33a4f1e40fc753287bdb3f5081dbcbf929c9c155",
+      "file": "characters/README.md"
+    },
+    {
+      "bytes": 467904,
+      "sha256": "2bce45155d6131726cef7d8d2a0df7a85c5b027acb0131ea37ce2d3cb0674103",
+      "file": "fauna/cavewing.glb"
+    },
+    {
+      "bytes": 694332,
+      "sha256": "a5578ef949e7acf9dc68863a739198be960c3295e51ced855aedc8295969294d",
+      "file": "fauna/guardian.glb"
+    },
+    {
+      "bytes": 3929,
+      "sha256": "33d0ac21a17d0622ce85b83e50acfb2cbdbcaffb89adf87131ca796c1b74e27a",
+      "file": "fauna/manifest.json"
+    },
+    {
+      "bytes": 16543,
+      "sha256": "a63422419113e53b1c0ad7771706ee0187afec9f45133ec15c6716230e8daebc",
+      "file": "fauna/trader-collisions.json"
+    },
+    {
+      "bytes": 326416,
+      "sha256": "916ee12725966807efc49ab2aa6c1370e56c3045e13849c93fb6fc87c7176c00",
+      "file": "fauna/trader-lod.glb"
+    },
+    {
+      "bytes": 3075,
+      "sha256": "b9ce8c8eb9ea026496ee0c80801cbab799ad6dc11ad61662c868e588d21baf0a",
+      "file": "fauna/trader-manifest.json"
+    },
+    {
+      "bytes": 2504440,
+      "sha256": "ed754c302fad6c0b5f2b1d0a5a48fd56cb06816ed16cd3a59a9baa40bae2066c",
+      "file": "fauna/trader.glb"
+    },
+    {
+      "bytes": 4387,
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "file": "fonts/cormorantgaramond-OFL.txt"
+    },
+    {
+      "bytes": 1195560,
+      "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+      "file": "fonts/cormorantgaramond.ttf"
+    },
+    {
+      "bytes": 4396,
+      "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+      "file": "fonts/notosans-OFL.txt"
+    },
+    {
+      "bytes": 2049096,
+      "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+      "file": "fonts/notosans.ttf"
+    },
+    {
+      "bytes": 7824,
+      "sha256": "1e586a174543ea72cae64fa7399b5ecd863b8785e12b2a65b177366063375f54",
+      "file": "shaders/clouds.wgsl"
+    },
+    {
+      "bytes": 1067,
+      "sha256": "771eea054ee5a81cb3729288fd44593dcac810d1e5d77019d249be7f31457d91",
+      "file": "shaders/sky.wgsl"
+    },
+    {
+      "bytes": 9443,
+      "sha256": "f5f7517a5123232cb2b6ee9f02527a9753840a3ebec152f72557289cd4869cc1",
+      "file": "shaders/world-flow.wgsl"
+    },
+    {
+      "bytes": 97224,
+      "sha256": "4b664783470395b2f9f84c49b050fa8784b8d1aa6474c82d2cbecd18e08a9629",
+      "file": "ship/cabin-detail.glb"
+    },
+    {
+      "bytes": 76644,
+      "sha256": "14721e1cc4e55780a5794be914650edbb6606847b6e0224d6733ecf40b93b6c1",
+      "file": "ship/lantern.glb"
+    },
+    {
+      "bytes": 3710,
+      "sha256": "7267d9cf680b7d9907d3e72dc8b12ea340d57d1a99be789c9bd41cf24eb8df60",
+      "file": "ship/manifest.json"
+    },
+    {
+      "bytes": 136448,
+      "sha256": "a6c4fc1eb06f3bd4a705953776c6130c327bb038580ac70762ffad92f5447d7a",
+      "file": "ship/rail.glb"
+    },
+    {
+      "bytes": 42052,
+      "sha256": "474fa6218c12b16a29cdcc43d3d11f3d585fc3a62b7fc1a876206998f603c3ce",
+      "file": "ship/trim.glb"
+    },
+    {
+      "bytes": 2726991,
+      "sha256": "3384048d1cef3633900bb89cf794123793efda3669a365488899033de3114426",
+      "file": "textures/aether-quartz-r45-albedo-v1.png"
+    },
+    {
+      "bytes": 2452013,
+      "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626",
+      "file": "textures/aether-quartz-r45-albedo.png"
+    },
+    {
+      "bytes": 1754215,
+      "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152",
+      "file": "textures/aether-quartz-r45-emission.png"
+    },
+    {
+      "bytes": 2103296,
+      "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219",
+      "file": "textures/aether-quartz-r45-normal.png"
+    },
+    {
+      "bytes": 2424498,
+      "sha256": "08e2f1241c3834cb3eb6b43163c95a31586c78bf6ab304e39c2bf7921e0e4002",
+      "file": "textures/aether-quartz-r45-roughness.png"
+    },
+    {
+      "bytes": 2147020,
+      "sha256": "49e4159f90440c1ea9265635e841a76f20d116f02db21709bbee90a8079860bc",
+      "file": "textures/cedar-normal.png"
+    },
+    {
+      "bytes": 2455540,
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914",
+      "file": "textures/cedar.png"
+    },
+    {
+      "bytes": 2205358,
+      "sha256": "8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7",
+      "file": "textures/dressed-limestone-r11.png"
+    },
+    {
+      "bytes": 2945366,
+      "sha256": "b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c",
+      "file": "textures/dressed-masonry-r42-albedo.png"
+    },
+    {
+      "bytes": 1534166,
+      "sha256": "0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401",
+      "file": "textures/dressed-masonry-r42-normal.png"
+    },
+    {
+      "bytes": 1651898,
+      "sha256": "282bffa8b782ed93cce593ba04607ffd8d8e8c7e268a40f8bb70240a87277631",
+      "file": "textures/dressed-masonry-r42-roughness.png"
+    },
+    {
+      "bytes": 3033505,
+      "sha256": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229",
+      "file": "textures/evergreen-oak-canopy-r44.png"
+    },
+    {
+      "bytes": 1086094,
+      "sha256": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb",
+      "file": "textures/evergreen-oak-sprig-r44.png"
+    },
+    {
+      "bytes": 3338453,
+      "sha256": "b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b",
+      "file": "textures/fractured-rock-r41-albedo.png"
+    },
+    {
+      "bytes": 2907624,
+      "sha256": "1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2",
+      "file": "textures/fractured-rock-r41-normal.png"
+    },
+    {
+      "bytes": 1955510,
+      "sha256": "c22e6bd7661d8ed2cb8ea94c16815ab93a7bee0c1a4319593ef0b9c45aad85e5",
+      "file": "textures/fractured-rock-r41-roughness-v2.png"
+    },
+    {
+      "bytes": 118783,
+      "sha256": "33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca",
+      "file": "textures/grass.png"
+    },
+    {
+      "bytes": 1322,
+      "sha256": "2de403a49b335adfad594f95b08a9549e98b35c300f9414ac77d5a930da40230",
+      "file": "textures/ibl/ibl-manifest.json"
+    },
+    {
+      "bytes": 49432,
+      "sha256": "64512ed5fbf4b883002996dc453c576db7a6125a7aef40aeee2fb3ea7117424c",
+      "file": "textures/ibl/sky-diffuse.ktx2"
+    },
+    {
+      "bytes": 4194760,
+      "sha256": "a40f18e5074632ac2e4d75f399525d72565523f14e6dec8f94a51718df4de2f0",
+      "file": "textures/ibl/sky-specular.ktx2"
+    },
+    {
+      "bytes": 3217993,
+      "sha256": "959ad02e433763268115086d4f01cca41458e85a5187501a1831d6c02ddf3c98",
+      "file": "textures/indigo-canvas.png"
+    },
+    {
+      "bytes": 3590576,
+      "sha256": "a8d1095cb49df8271937f7f87e55b32d05980f696c8804df5fbe63c5d1a70510",
+      "file": "textures/limestone-world.png"
+    },
+    {
+      "bytes": 985,
+      "sha256": "7a33ee470aec7ed5c1a9bb156b38a5d66322a9e0874a994bde7173b489e351cb",
+      "file": "textures/PROVENANCE.txt"
+    },
+    {
+      "bytes": 1833063,
+      "sha256": "7ba401ae8b91de1fede63b67c041204db3c1d9d38e5e902d24f829226679d6cd",
+      "file": "textures/sky-panorama-v2.png"
+    },
+    {
+      "bytes": 134218032,
+      "sha256": "7efec756222aeaeffcbfe1591c28397d2f9ae97a503081a2b0548144eadb0b16",
+      "file": "textures/sky-world-linear.ktx2"
+    },
+    {
+      "bytes": 2208183,
+      "sha256": "65e12559550fdf2f7559344e708d293ebc7caf8e184edd8543572996e6c61583",
+      "file": "textures/sky-world.png"
+    },
+    {
+      "bytes": 81691,
+      "sha256": "1865d728650a2300014e0686325c4631b07afe234f572394597099f4f8126a5d",
+      "file": "textures/stone.png"
+    },
+    {
+      "bytes": 8384632,
+      "sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+      "file": "textures/world-flow.ktx2"
+    },
+    {
+      "bytes": 1368984,
+      "sha256": "b14848ec935fd547d11b88d6130ac077f7dc10d8ce8ebb683c62e398145c0019",
+      "file": "world/arch-vault-lod.glb"
+    },
+    {
+      "bytes": 10961004,
+      "sha256": "fe07743c021a247fefe81eabb50220bdf241121ee12bfa80e2eab220c9556ffb",
+      "file": "world/arch-vault.glb"
+    },
+    {
+      "bytes": 1730929,
+      "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd",
+      "file": "world/collisions.json"
+    },
+    {
+      "bytes": 803636,
+      "sha256": "dfe524b0726711d56137798cf8b622a8a0ea792b29ebf1bb051e6d593d3fc9b6",
+      "file": "world/crystal-lod.glb"
+    },
+    {
+      "bytes": 11117508,
+      "sha256": "8d357621043680bb99b9eaf9873341c82e89054e802dd9e606c8acea24f460ed",
+      "file": "world/crystal.glb"
+    },
+    {
+      "bytes": 1135232,
+      "sha256": "dca7d383c4e94d7aad5d4888c3b75f13c43b41887f7727c337dd56a4fc37f4ad",
+      "file": "world/dawn-garden-lod.glb"
+    },
+    {
+      "bytes": 14419056,
+      "sha256": "486ada3f3bc26a3f0707f5eb6d693bec6fbffb32e80c4851f342824e14328ea1",
+      "file": "world/dawn-garden.glb"
+    },
+    {
+      "bytes": 1218984,
+      "sha256": "6566afbc077c1de4e3201047c17a5bf63e53c5becfbb8cf5a19695ddb50b2859",
+      "file": "world/dawn-lod.glb"
+    },
+    {
+      "bytes": 955860,
+      "sha256": "a0cec5d9a89d3029e91e82d44f86775fc2afc7f9c30d43722049a9c5783f155e",
+      "file": "world/dawn-ruin-lod.glb"
+    },
+    {
+      "bytes": 14065152,
+      "sha256": "1abd3235e0aea65f9a45c383ffe24e41a6c1df29efe424dcb2ecfcd141fbc7a3",
+      "file": "world/dawn-ruin.glb"
+    },
+    {
+      "bytes": 1114420,
+      "sha256": "6bada95a269609cdefcd78b7fe7910ccbf65e6e600847d6f492bccdd8904433c",
+      "file": "world/dawn-watch-lod.glb"
+    },
+    {
+      "bytes": 12943344,
+      "sha256": "7cb3a6a54c4ec339179670ac149928dbf64241838ff7cf3d2fb795e2ea22581f",
+      "file": "world/dawn-watch.glb"
+    },
+    {
+      "bytes": 19451028,
+      "sha256": "ad650143d24404c301022f008eebab25173a3d22f0bbb830530137c2776e4c7c",
+      "file": "world/dawn.glb"
+    },
+    {
+      "bytes": 712020,
+      "sha256": "acd524edf6e848afc0ff62dab339bcede2000715bb9d22bf639467c20de92bb0",
+      "file": "world/ember-lod.glb"
+    },
+    {
+      "bytes": 8325980,
+      "sha256": "dabedd26eee4b72023b53197b71c57bf9b71c96f65dd9df9c2806c57e741bd7b",
+      "file": "world/ember.glb"
+    },
+    {
+      "bytes": 825840,
+      "sha256": "481375e46cf7f2ac0ce8bf2013807a50b7d283faf631918535fcae37e1dfb95d",
+      "file": "world/frost-lod.glb"
+    },
+    {
+      "bytes": 11696388,
+      "sha256": "1f195cb9b260b79c5152cc77ea312014ffdb730a5f1aea715222ccfff2ffdce8",
+      "file": "world/frost.glb"
+    },
+    {
+      "bytes": 1074060,
+      "sha256": "e51df00c953c89b78c3188d86c9349f1fa03215739622c945e7b7cae43af9896",
+      "file": "world/hollow-lod.glb"
+    },
+    {
+      "bytes": 14721516,
+      "sha256": "bbabf15356505568941d983a4962656d4fe499294d7fde1c6fd1e6e3d04dc833",
+      "file": "world/hollow.glb"
+    },
+    {
+      "bytes": 12910,
+      "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50",
+      "file": "world/landmarks.json"
+    },
+    {
+      "bytes": 15268,
+      "sha256": "0cf01f1af6fae4a39c1f8cb6f50b9fc0a0a3d5fcfe82494816ed8b27b76783e4",
+      "file": "world/manifest.json"
+    },
+    {
+      "bytes": 516560,
+      "sha256": "26831e5464222c951147f380997e51c9b8fa9167a6acefae6afda6683165a9c7",
+      "file": "world/nomad-lod.glb"
+    },
+    {
+      "bytes": 9940316,
+      "sha256": "87eece42bc898a60d86a5da7b02fe142d7e1736f9c586efc6fa5e16e036fbf4b",
+      "file": "world/nomad.glb"
+    },
+    {
+      "bytes": 550048,
+      "sha256": "ad4bc8e411186036b2f6b1b438c5140af09026a495ae940a17eb704309d3c8df",
+      "file": "world/storm-lod.glb"
+    },
+    {
+      "bytes": 10296052,
+      "sha256": "238540a5125a9e22840877b5c05217dc459ded8452bb4e05db5a4f9fd6740afe",
+      "file": "world/storm.glb"
+    },
+    {
+      "bytes": 3823150,
+      "sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+      "file": "world/textures/087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365.png"
+    },
+    {
+      "bytes": 3033505,
+      "sha256": "0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229",
+      "file": "world/textures/0aa403411b095b2d62b83bf981c235cfd67e89168bd82bbf5047182cc5e34229.png"
+    },
+    {
+      "bytes": 1534166,
+      "sha256": "0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401",
+      "file": "world/textures/0cb43813e17d0481d8b00eb989971d83f047ae1a4e718e1e96a586aa6854e401.png"
+    },
+    {
+      "bytes": 2907624,
+      "sha256": "1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2",
+      "file": "world/textures/1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2.png"
+    },
+    {
+      "bytes": 1306565,
+      "sha256": "33a96572774aed638215f8120d51e8c826bf703d1132ac255e8990e56082de00",
+      "file": "world/textures/33a96572774aed638215f8120d51e8c826bf703d1132ac255e8990e56082de00.png"
+    },
+    {
+      "bytes": 118783,
+      "sha256": "33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca",
+      "file": "world/textures/33d76d37dd5aaa4295875ec608048cca1c65dd2b83cc1dbc2c06e6624ee2f3ca.png"
+    },
+    {
+      "bytes": 1086094,
+      "sha256": "4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb",
+      "file": "world/textures/4d64299a28b8a12a5ac1a39ddfa36e25f9edfdc5821034cf291c7df21aa1dbcb.png"
+    },
+    {
+      "bytes": 1146542,
+      "sha256": "7feae4aedd2f4f32a73a74f05251050816e57168e6c43417840dbcfe6b30cf40",
+      "file": "world/textures/7feae4aedd2f4f32a73a74f05251050816e57168e6c43417840dbcfe6b30cf40.png"
+    },
+    {
+      "bytes": 2455540,
+      "sha256": "828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914",
+      "file": "world/textures/828ba6d14a3e6aa78c41bd7ef432d6bc7410c90c321b6883691aafb6e0318914.png"
+    },
+    {
+      "bytes": 2205358,
+      "sha256": "8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7",
+      "file": "world/textures/8cc4016c4332d436f68b11f42c36d6ca495fdf3582c0dba6908682f1ccce6fe7.png"
+    },
+    {
+      "bytes": 1754215,
+      "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152",
+      "file": "world/textures/9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152.png"
+    },
+    {
+      "bytes": 2103296,
+      "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219",
+      "file": "world/textures/a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219.png"
+    },
+    {
+      "bytes": 3590576,
+      "sha256": "a8d1095cb49df8271937f7f87e55b32d05980f696c8804df5fbe63c5d1a70510",
+      "file": "world/textures/a8d1095cb49df8271937f7f87e55b32d05980f696c8804df5fbe63c5d1a70510.png"
+    },
+    {
+      "bytes": 3338453,
+      "sha256": "b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b",
+      "file": "world/textures/b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b.png"
+    },
+    {
+      "bytes": 2945366,
+      "sha256": "b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c",
+      "file": "world/textures/b94888ddc518c7a483c4a9aab4366695191bc75563b76e552ffb55a89a0f9b0c.png"
+    },
+    {
+      "bytes": 2452013,
+      "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626",
+      "file": "world/textures/dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626.png"
+    },
+    {
+      "bytes": 1499198,
+      "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376",
+      "file": "world/textures/f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376.png"
+    },
+    {
+      "bytes": 1149908,
+      "sha256": "96f50b8b143125b6b82c75edef7ccd51d9252b573bd6510c7c019104cf4ded9e",
+      "file": "world/underforge-lod.glb"
+    },
+    {
+      "bytes": 13622804,
+      "sha256": "09750f4f994f7296b82e53a6b1dd188e49b33403c5ff2d93d1afddcc84c0a6e2",
+      "file": "world/underforge.glb"
+    },
+    {
+      "bytes": 466192,
+      "sha256": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70",
+      "file": "world/vault-collisions.json"
+    },
+    {
+      "bytes": 1213,
+      "sha256": "a320d8b2d6a1679d4e9f183f3ad18a2ff4a00a2dca24de61edbffe857e678549",
+      "file": "world/vault-manifest.json"
+    },
+    {
+      "bytes": 685596,
+      "sha256": "190dc0f588500fa52604c7ce048dcf6cec375ed1de324075acd575cb2aef7944",
+      "file": "world/verdant-lod.glb"
+    },
+    {
+      "bytes": 9535632,
+      "sha256": "c744d13cb6b8db06ed5c37c0b3c489835c58a3b40d8f04d61f13da5df0724802",
+      "file": "world/verdant.glb"
+    }
+  ],
+  "exit_code": 0,
+  "world": "dawn",
+  "assets": "D:\\Aether-Isles-validation\\art-r62-flow-assets",
+  "valid_capture": true,
+  "fixture": true,
+  "capture_sha256": "a87536e7ef6bee15c119ebd5e03254f4d15fcd001f16f518f2dc8a274f7f841d",
+  "renderer_errors": [],
+  "binary_sha256": "a516682b64a11b990f75caeefe2ef969ca4053c9b0dc600789fc641797752075"
+}

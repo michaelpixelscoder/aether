@@ -1,0 +1,96 @@
+"""Two authorized original renders: 4096x2048 visible sky and 1024x512 IBL."""
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','TBB_NUM_THREADS'):
+    os.environ[key]='4'
+import bpy
+import hashlib
+import importlib.util
+import json
+import math
+import time
+from pathlib import Path
+import numpy as np
+
+STAGE=Path(__file__).resolve().parent
+ROOT=STAGE.parents[1]
+SOURCE=ROOT/'tools/art/sky-source'
+EXPOSURE=-.90
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def write(path,value):Path(path).write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
+def record(path):
+    path=Path(path).resolve()
+    return {'file':path.relative_to(ROOT).as_posix(),'sha256':sha(path),'bytes':path.stat().st_size}
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result
+
+assert Path(bpy.data.filepath).resolve()==(STAGE/'sky-r50-low-sun.blend').resolve()
+m=json.loads((STAGE/'manifest.json').read_text())
+assert sha(bpy.data.filepath)==m['source_sha256']
+for item in m['canonical_frozen']:assert sha(ROOT/item['file'])==item['sha256']
+controller=module('r50_base_controller',ROOT/'tools/art/build_sky.py')
+controller.final_configuration()
+scene=bpy.context.scene;scene.render.resolution_percentage=100
+prefs=bpy.context.preferences.addons['cycles'].preferences;prefs.compute_device_type='OPTIX';prefs.get_devices()
+assert any(d.type=='OPTIX' for d in prefs.devices)
+for device in prefs.devices:device.use=device.type=='OPTIX'
+fp=module('r50_fingerprint',STAGE/'scene_fingerprint.py')
+io=module('r50_sky_io',SOURCE/'sky_io.py')
+omit=scene.world.node_tree.nodes['IBL omit direct camera disk | 0 hero, 1 future IBL']
+assert omit.inputs[1].default_value==0
+last=[0.]
+def progress(stats):
+    now=time.perf_counter()
+    if now-last[0]>20:print('R50_EXPORT_PROGRESS',stats,flush=True);last[0]=now
+bpy.app.handlers.render_stats.append(progress)
+for is_ibl in (False,True):
+    dimensions=(1024,512) if is_ibl else (4096,2048)
+    omit.inputs[1].default_value=float(is_ibl)
+    scene.render.resolution_x,scene.render.resolution_y=dimensions
+    label='ibl' if is_ibl else '4k'
+    hdr=STAGE/f'sky-r50-{label}-linear.hdr'
+    assert not hdr.exists(),'Original render evidence must not be overwritten'
+    scene.render.filepath=str(hdr)
+    descriptor=fp.descriptor(scene);descriptor_sha=fp.digest(descriptor)
+    write(STAGE/f'{label}-render-scene-descriptor.json',descriptor)
+    print('R50_EXPORT_BEGIN',label,dimensions,flush=True)
+    start=time.perf_counter();bpy.ops.render.render(write_still=True);elapsed=time.perf_counter()-start
+    rgb=io.read_linear_hdr(hdr)
+    assert rgb.shape==(dimensions[1],dimensions[0],3) and np.isfinite(rgb).all() and rgb.min()>=0
+    output={**record(hdr),'dimensions':dimensions,'original_render_dimensions':dimensions,
+        'view_transform_applied':False,'raw_exposure_stops':0,'runtime_reference_exposure_stops':EXPOSURE,
+        'seconds':elapsed,'samples_max':128,'renderer':'Cycles OPTIX','denoising':'OpenImageDenoise RGB only',
+        'source_sha256':sha(bpy.data.filepath),'generator_sha256':sha(__file__),
+        'render_descriptor_sha256':descriptor_sha,'camera_solar_disk_visible':not is_ibl,
+        'solar_illumination_active':True,'radiance_min':float(rgb.min()),'radiance_max':float(rgb.max()),
+        'finite_nonnegative':True,'resampled':False}
+    write(STAGE/f'{label}-render-record.json',output)
+    if not is_ibl:
+        maximum=float(rgb.max())
+        encoding=2.**min(0,math.floor(math.log2(65504./max(maximum,1e-20))))
+        rgba=np.ones((dimensions[1],dimensions[0],4),dtype='<f2')
+        for y in range(dimensions[1]):rgba[y,:,:3]=rgb[y]*encoding
+        assert np.isfinite(rgba).all()
+        ktx=STAGE/'sky-r50-4k-linear.ktx2';io.write_rgba16_ktx2(ktx,rgba)
+        metadata={'format':'VK_FORMAT_R16G16B16A16_SFLOAT','vk_format':97,'orientation':'rd','transfer':'linear',
+            'primaries':'Rec.709','dimensions':dimensions,'mip_levels':1,'gpu_bytes':rgba.nbytes,
+            'encoding_scale':encoding,'recommended_runtime_multiplier':2**EXPOSURE/encoding,
+            'source_radiance_min':float(rgb.min()),'source_radiance_max':maximum,
+            'encoded_radiance_min':float(rgba[:,:,:3].min()),'encoded_radiance_max':float(rgba[:,:,:3].max()),
+            'finite_nonnegative':True,'alpha':1,'resampled':False}
+        m.update({'status':'original 4K exported; original IBL next','output_needs_render':False,
+            'output':ktx.name,'output_sha256':sha(ktx),'bytes':ktx.stat().st_size,'dimensions':dimensions,
+            'authoring_hdr':output,'linear_encoding':metadata,'render_descriptor_sha256':descriptor_sha,
+            'final_generator':record(__file__),'fingerprint_dependency':record(STAGE/'scene_fingerprint.py'),
+            'final_controller_dependency':record(ROOT/'tools/art/build_sky.py'),'io_dependency':record(SOURCE/'sky_io.py')})
+        print('R50_ORIGINAL_4K_RENDERED',json.dumps({'hdr':output,'ktx':record(ktx),'encoding':metadata}),flush=True)
+        del rgba
+    else:
+        m['ibl_authoring']=output
+        m['status']='original 4K and original sun-free-camera IBL exported; unpublished'
+        print('R50_ORIGINAL_IBL_RENDERED',json.dumps(output),flush=True)
+    for item in m['canonical_frozen']:assert sha(ROOT/item['file'])==item['sha256']
+    write(STAGE/'manifest.json',m)
+    del rgb
+bpy.app.handlers.render_stats.remove(progress)
+print('R50_BOTH_EXPORTS_COMPLETE',flush=True)

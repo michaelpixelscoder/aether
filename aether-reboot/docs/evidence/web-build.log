@@ -1,0 +1,8 @@
+info: compiling to WebAssembly...
+   Compiling aether_view v0.2.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+   Compiling aether_game v0.2.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+    Finished `web-release` profile [optimized] target(s) in 2m 09s
+info: bundling JavaScript bindings...
+info: using workspace assets.
+info: using custom workspace web assets.
+info: created bundle at file://C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\target\bevy_web\web-release\aether_game

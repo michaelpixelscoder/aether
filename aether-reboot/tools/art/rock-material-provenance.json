@@ -1,0 +1,137 @@
+{
+  "task": "R41 fractured-rock PBR skin",
+  "tool": "built-in image_gen__imagegen",
+  "skills": [
+    "dream-loop",
+    "imagegen"
+  ],
+  "generated_resolution": [
+    1254,
+    1254
+  ],
+  "requested_resolution": [
+    2048,
+    2048
+  ],
+  "postprocessing": "None. PNGs copied intact from Codex generated_images; no repainting, conversion or upscaling. Standard Blender glTF texture packing is exporter behavior.",
+  "albedo_source": "C:/Users/Damien/.codex/generated_images/01a0fe20-cf43-76b2-b777-46207a535a3e/exec-f380b514-65f3-449d-a26a-e911650889fa.png",
+  "normal_source": "C:/Users/Damien/.codex/generated_images/01a0fe20-cf43-76b2-b777-46207a535a3e/exec-7f77954a-5110-4873-a8ac-b119c718ba66.png",
+  "roughness_source": "C:/Users/Damien/.codex/generated_images/01a0fe20-cf43-76b2-b777-46207a535a3e/exec-a20350fe-bc2b-402f-90b3-d704dabeceb2.png",
+  "assets": {
+    "albedo": "assets/textures/fractured-rock-r41-albedo.png",
+    "normal": "assets/textures/fractured-rock-r41-normal.png",
+    "roughness": "assets/textures/fractured-rock-r41-roughness-v2.png"
+  },
+  "material_constants": {
+    "tile_metres": 16,
+    "normal_scale": 0.65,
+    "linear_albedo_gain_rgb": [
+      1.5771665684158558,
+      1.52613553543546,
+      1.4566048841559818
+    ],
+    "roughness_channel": "Green, Non-Color / linear",
+    "roughness_factor": 1,
+    "metallic_factor": 0,
+    "roughness_sampled_mean": 0.8349569127013863,
+    "roughness_sampled_min": 0.5725490196078431,
+    "roughness_sampled_max": 0.9333333333333333
+  },
+  "calibration": "Per-channel ratio of old texture mean linear RGB to new texture mean linear RGB; sampled every four pixels. This preserves the previous average reflected rock colour under r40 lighting. See rock-material-image-stats.json.",
+  "scope": "Only the existing two rock materials, metric rock UVs and exported tangents. Architecture limestone, vegetation, geometry, collision generation, landmark generation and animation transforms are unchanged. Vault adopts the same calibrated two rock materials.",
+  "prompts": {
+    "albedo": "Use case: photorealistic-natural. Asset type: seamless PBR BASE COLOR / ALBEDO texture for an in-engine rocky floating-island cliff, square 2048 by 2048. Generate ONE full-bleed flat orthographic texture, no collage, no labels, no text, no border. This tile represents a 16 x 16 metre patch of naturally fractured weathered limestone, NOT dressed masonry and NOT a grid of square blocks. About 7 irregular roughly horizontal sediment beds, with unequal heights 0.8–2 metres, offset branching vertical fractures spaced 2–5 metres, a few diagonal shear cracks, broad eroded facets and subtle mineral weathering. The strata should merge and split organically with no perfectly straight full-width seams. Crisp medium-scale material detail; quiet microscopic grain, no noisy photographic speckling. Exact PBR requirement: diffuse surface colour only, evenly illuminated/unlit, NO baked directional shadows, NO highlights, NO vignette, NO perspective, NO bevel shading masquerading as light. The rock's overall albedo is pale neutral warm gray/off-white, approximately sRGB 225–235 on most exposed stone so it can be tinted by existing in-engine factors; broad exposed facets can vary about +/-10%. Fractures occupy a small area and have moderate gray mineral coloration, not black. Bare rock only: no grass, moss, roots, water, masonry, vegetation or soil. Seamless wrap on all four edges. Natural geologic fractures and readable large surfaces suitable for viewing from a distance.",
+    "normal": "Use case: precise-object-edit. Asset type: production PBR OpenGL tangent-space NORMAL MAP, square 2048x2048 PNG. Input image is the exact albedo registration target for a fractured limestone rock tile. Change only its encoding into a normal map. Preserve EVERY fracture, bedding seam, facet boundary and fine chipped edge at the exact same pixel locations, same crop and same scale; do not add or rearrange stones or cracks. This is normal vector data, NOT a purple photograph: flat frontal surface RGB(128,128,255), red encodes +X/right-facing slopes, green encodes +Y/up-facing slopes (OpenGL/glTF), blue positive Z. Broad rock faces should remain mostly neutral blue-purple with smooth mild 5–12 degree departures; stronger beveled fracture lips and chipped facets may tilt 20–35 degrees. Fine grain must be subtle, not a speckle/noise field. Interpret the source as shallow weathered rock relief, not separate huge rectangular blocks. Avoid black shadows, white highlights, grayscale occlusion, text, labels, borders or inset panels. Output only the perfectly registered seamless tangent normal texture edge to edge, opaque.",
+    "roughness_initial": "Use case: precise-object-edit. Asset type: production PBR LINEAR ROUGHNESS texture, square 2048x2048 grayscale PNG. Input image is the exact albedo registration target. Change ONLY the channel encoding, preserving the exact pixel positions of every existing fracture, bedding seam and rock facet, the identical crop, scale, and four seamless boundaries. Produce a scalar roughness map in grayscale with R=G=B, no transparency. Pale dry exposed rock has roughness approximately 0.86–0.94 (8-bit values 219–240), slightly smoother weathered broad facet patches 0.80–0.86 (204–219), and a few narrow mineral/damp fracture interiors 0.68–0.78 (173–199). Average roughness should be about 0.87. Make this mostly light gray with restrained structured midgray cracks; it is NOT an ambient occlusion map, height map or black-and-white photograph. No black cracks, no baked shadows/highlights, no directional illumination, no color tint, no noisy speckles, no text, no borders. Smooth local transitions, perfectly registered with the supplied limestone tile. Output only the full-bleed roughness map.",
+    "roughness_final": "Use case: precise-object-edit. Change ONLY the brightness range of this roughness data texture. It must remain a perfectly registered LINEAR SCALAR ROUGHNESS MAP with exactly the same crack/facet locations and identical crop. Current map is too dark (measured mean 196/255), making the rock too glossy. Produce the same map with a much narrower, brighter grayscale roughness range: the overwhelming majority of dry rock RGB around (226,226,226), some smoother worn facets RGB around (215,215,215), and the deepest thin cracks must never be darker than (185,185,185). Target full-image arithmetic average green channel about 224/255 = roughness 0.88. No pixel should be near black, no shadows. Keep R=G=B, zero hue. Preserve registration, texture features, edges, resolution and seamless tiling. No added detail, labels, border, noise, new stones or geometry. Output this one corrected grayscale texture only."
+  },
+  "visual_qa": "Albedo, normal and roughness were visually inspected for registration. Macro seams and fracture positions match; normal response and tiling in the actual r40 scene remain for the parent GPU capture. This authoring pass performs no Blender render.",
+  "validation": {
+    "open_world": "PASS: 34 GLB, 90 trader colliders, five gears per LOD",
+    "finite_normals_tangents": "PASS: 34 GLB",
+    "geometry": "PASS: all 26 world GLB exact triangle-position hashes and counts preserved",
+    "materials": "PASS: material counts preserved, 52 rock materials use normal and roughness maps",
+    "nodes": "PASS: every world node, including animated pivots, preserved exactly",
+    "contracts": {
+      "collisions.json": {
+        "byte_identical": true,
+        "sha256": "c8f4b02d4f31c9b996a31b16d6577eabd761d0125dbdca4ff3c58ad6675a73bd"
+      },
+      "landmarks.json": {
+        "byte_identical": true,
+        "sha256": "302331adcb42f71b5a102ca183af94ce202fbe802194834c9d77a223ee7b3a50"
+      },
+      "vault-collisions.json": {
+        "byte_identical": true,
+        "sha256": "b88ac8abaec9d53b84d054d15c5ff97c5019ab1b7e4ce92a024caeb1f5efbb70"
+      }
+    },
+    "metric_cliff_vertices": 838838,
+    "maximum_uv_height_error": 0.0000019073486328125,
+    "finite_normal_vectors": 3296862,
+    "finite_tangent_vectors": 3263743,
+    "no_gpu_render": true
+  },
+  "asset_sha256": {
+    "albedo": "b8c2b0a3128a6e159d227943be79a595f743a71723fe9872518984a3dae3f06b",
+    "normal": "1a90a152033bc9da9589b6f2b1dcb80c25b9e54c09e791a4f492e97e3556acb2",
+    "roughness": "c22e6bd7661d8ed2cb8ea94c16815ab93a7bee0c1a4319593ef0b9c45aad85e5"
+  },
+  "source_sha256": {
+    "build_world": "f5318720a6b5401ffd880d19ef4b1f9aad096df6195b2c0b213d916aa1b06996",
+    "build_vault": "344dc523c1ab724d92804060630a92b8dd56d17dc7593756f76c72da495be6e1"
+  },
+  "actual_dawn_glb_factors": [
+    {
+      "file": "assets/world/dawn.glb",
+      "name": "01 | Fractured limestone",
+      "base_color_factor": [
+        0.3230037132115673,
+        0.3369707262241496,
+        0.33560176530953817,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/dawn.glb",
+      "name": "02 | Deep strata",
+      "base_color_factor": [
+        0.23215891887081397,
+        0.24219770947360753,
+        0.24121376881623058,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    }
+  ],
+  "actual_vault_glb_factors": [
+    {
+      "file": "assets/world/arch-vault.glb",
+      "name": "01 | Vault weathered limestone",
+      "base_color_factor": [
+        0.3312049793673297,
+        0.3510111731501558,
+        0.3495851721974356,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    },
+    {
+      "file": "assets/world/arch-vault.glb",
+      "name": "02 | Vault deep fracture",
+      "base_color_factor": [
+        0.21291748673614055,
+        0.228920330315319,
+        0.2330567814649571,
+        1
+      ],
+      "roughness_factor": 1,
+      "normal_scale": 0.6499999761581421
+    }
+  ],
+  "discarded_initial_roughness": ".dream-loop/rock-material-before/roughness-initial.png"
+}

@@ -1,0 +1,2159 @@
+{
+  "schema": 1,
+  "note": "Frozen r45 mineral family only. Whole migration checks are in crystal-r45-migration-proof.json.",
+  "source_hashes_at_review": {
+    "build_world.py": "5aa4f506fad75d97e9bbf1f7845edcc68872cf09ee55ad7033b550fabeafc062",
+    "build_world_variants.py": "5f8b63d4851294d5b9d56c97a3f81e177b98a7a54c58691ecabe2a7b7cdb8225",
+    "build_vault.py": "7d073365cdb7aa02175a2190b3e29d1015e89b81cb6c32e641a5205f3234b684"
+  },
+  "models": {
+    "dawn.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 672,
+        "attributes": {
+          "POSITION": "310862becb1061bf108e4da7fec99fee8e8675b1c81818905d86c17b50e50608",
+          "NORMAL": "6a4c2d80d0223076c0037acdb65e7b1739e1727495c66730bb28ce73401cfdb3",
+          "TEXCOORD_0": "d41f768ad0f8bd5eb57cd6f7d2b109bca4283566b8741de75118b143588070a5",
+          "TANGENT": "43a206d7c07e4cbbcf6f7650f9829e5291615b05d1f5af349365e6fe17e2f962"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "dawn-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 48,
+        "attributes": {
+          "POSITION": "d995d9743c62828deaad09cf0b49e6019ffe8095b1aa35af82e0bbea29cefb93",
+          "NORMAL": "ef87a24917136e58a7411eaa9298b00377c7ee952472590c30c188b324d39159",
+          "TEXCOORD_0": "bce4741fdc78cd89e7060c4a914d00a545c95e030b92823740b290ce6225fa97",
+          "TANGENT": "ceef8ac475a76f540d353f7afbbc0f1c415dd2e4ba93ec07496e47c9b4534731"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.001",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "crystal.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 7344,
+        "attributes": {
+          "POSITION": "5be5679f75446ceba3b2a8bea3e480c7cadc01fadb3b60e8a6a64b405d939776",
+          "NORMAL": "197a9eb9c422735d1201ed75cb5ff2843777d9849e7caf81e99c6d82584c46a8",
+          "TEXCOORD_0": "adbbbf387ea236e08809ff4b3688e8e20e04824c70b67ba7578524004c2f6846",
+          "TANGENT": "ef20a55357e55aa1ef9b90e4b4163eb0110d84821dcfebd2876a1f19ce606180"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.002",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "crystal-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 1464,
+        "attributes": {
+          "POSITION": "18e119d9284b7b5aef6c6165f8b8553b0f497c36444fb6bf5d1adc53e23851c8",
+          "NORMAL": "fb8300c7418af8abbf500cff2f93e5bcf4b81483e795ca02a69f96d9be55acc6",
+          "TEXCOORD_0": "f8837ce1ed302ecaa74e224cbce61d8715e18cde3b51cfd255ef1225a3b55c3e",
+          "TANGENT": "f5200d8162cd9dec8285b80fb6f436ab45bde068c31bd7f9bc56fa14a1b95c02"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.003",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "nomad.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 504,
+        "attributes": {
+          "POSITION": "bca25b5f0cb589e0f6d70cd2b5a17336fa59546fb0a2a56225486f36717cc0c9",
+          "NORMAL": "a421cd6bd4b3d1990dcdf6cb69c43499ca2d8303c4c9b7d2040dc3d3f3b32776",
+          "TEXCOORD_0": "6a56ae51728aff4fd5ec6d02d9aacb259083f3f95f66366aab37deef182cb36e",
+          "TANGENT": "23a5d660ed07b604248c4248e4c69c908b6c9e34f7c828a45bdc29bd2bdadf22"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.004",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "nomad-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 48,
+        "attributes": {
+          "POSITION": "d995d9743c62828deaad09cf0b49e6019ffe8095b1aa35af82e0bbea29cefb93",
+          "NORMAL": "ef87a24917136e58a7411eaa9298b00377c7ee952472590c30c188b324d39159",
+          "TEXCOORD_0": "bce4741fdc78cd89e7060c4a914d00a545c95e030b92823740b290ce6225fa97",
+          "TANGENT": "ceef8ac475a76f540d353f7afbbc0f1c415dd2e4ba93ec07496e47c9b4534731"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.005",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "ember.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 432,
+        "attributes": {
+          "POSITION": "8fb2d9013e95cc678b0e557c680dfd3cdeec77df68d0e197fa3379af0c3fd28a",
+          "NORMAL": "1cde0891863f9a84a00aa63bb4d3189da0cc26653cb55d6f9d013fbf26c564dd",
+          "TEXCOORD_0": "b1fbbc0d99fa885a6596a54feaff35334deb5c991e5e01072ed611c2eb242a80",
+          "TANGENT": "959e87f186c050873c9d309cd1eaebcf562768d5542c9fbf678ad40b3e310824"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.64,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.006",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              1,
+              0.64,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "ember-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 48,
+        "attributes": {
+          "POSITION": "d995d9743c62828deaad09cf0b49e6019ffe8095b1aa35af82e0bbea29cefb93",
+          "NORMAL": "ef87a24917136e58a7411eaa9298b00377c7ee952472590c30c188b324d39159",
+          "TEXCOORD_0": "bce4741fdc78cd89e7060c4a914d00a545c95e030b92823740b290ce6225fa97",
+          "TANGENT": "ceef8ac475a76f540d353f7afbbc0f1c415dd2e4ba93ec07496e47c9b4534731"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.64,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.007",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              1,
+              0.64,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "frost.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 2576,
+        "attributes": {
+          "POSITION": "f80aa7dd69cd5cf9f99eb4c72e273fa063ca44ac85df3a9463bfe99ae04a6458",
+          "NORMAL": "8eb6a82f8b5458c8ad07ac5846ba2340603d7cb257784d20eec06f8f6daa59c6",
+          "TEXCOORD_0": "6385a23e779fcbe0745f545b1f2ed9fec5f2bdfc29341db8760ea57355b3b1b0",
+          "TANGENT": "afd0f8fd9b4a3f309aa94f373ed0aed8065d5a8f1541f0da27dcc7bb1c3f0be2"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.7,
+            1,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.008",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.7,
+              1,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "frost-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 1352,
+        "attributes": {
+          "POSITION": "2f2ab4199ad30d949388f6d48d96a48dfd29c0322bae2c51cd84579e7c2ad9d3",
+          "NORMAL": "117e69f6d2d34a83e6db933cf30b1880f2ea957d91deea90b48ad0436868e124",
+          "TEXCOORD_0": "ecc2d050376b3e33c990f8d80dcab7a356674e08b17e935edff8a4fdea0244c5",
+          "TANGENT": "9155dc41ffb4071d471c3a6395b10c9c8a604ee9860b4192f8526ce43a9b8eeb"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.7,
+            1,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.009",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.7,
+              1,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "verdant.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 432,
+        "attributes": {
+          "POSITION": "01f9922a03cd9e45dfacbb33b82e605cda942276448435071d6773987bdfe8fa",
+          "NORMAL": "f8f90375b3c59cc14d5b7a405a96c7d0136d5cef3b57a6d81ec575b3e672fcb1",
+          "TEXCOORD_0": "b1fbbc0d99fa885a6596a54feaff35334deb5c991e5e01072ed611c2eb242a80",
+          "TANGENT": "959e87f186c050873c9d309cd1eaebcf562768d5542c9fbf678ad40b3e310824"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.010",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "verdant-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 48,
+        "attributes": {
+          "POSITION": "d995d9743c62828deaad09cf0b49e6019ffe8095b1aa35af82e0bbea29cefb93",
+          "NORMAL": "ef87a24917136e58a7411eaa9298b00377c7ee952472590c30c188b324d39159",
+          "TEXCOORD_0": "bce4741fdc78cd89e7060c4a914d00a545c95e030b92823740b290ce6225fa97",
+          "TANGENT": "ceef8ac475a76f540d353f7afbbc0f1c415dd2e4ba93ec07496e47c9b4534731"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.011",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "storm.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 2568,
+        "attributes": {
+          "POSITION": "920d9f1071c0744a51054820738d51c96ba726fb3a5d765bab3aaf5468384149",
+          "NORMAL": "bd3949e635d3b2fe8c2fbb7a7d23e20c44ea9e7b9b45d2e7dadd0af5a6df0bb7",
+          "TEXCOORD_0": "23e4ead1742940a9524569b448689d5b62b1c306d9600cbc52138d61352fe535",
+          "TANGENT": "2cad6b91c0af22bdf3be832f23d50635c84028cf484d748fd2474fd022132cfd"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.91,
+            0.61,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.012",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.91,
+              0.61,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "storm-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 576,
+        "attributes": {
+          "POSITION": "c754e1e82d30057bd8587e2fef947026ad6cbf6cd6e529474c62f83f365448d9",
+          "NORMAL": "c24f67155586e41cd14b7d2278b17103c37937d82bea07bd947cdfc22a68a0f7",
+          "TEXCOORD_0": "b3e2ad6f98745c107f472c69ac00025173e14cfe6db8ec607996557fb72d1058",
+          "TANGENT": "29c1f5a095292415a0f0cc3c658d022a4a83215a0286c175f4be4a69d3e7ad78"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.91,
+            0.61,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.013",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.91,
+              0.61,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "hollow.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 3624,
+        "attributes": {
+          "POSITION": "8f17770fe5e58004a5ba7d7f02bee5017b893550a95d9986fd1357ba7c6a24f5",
+          "NORMAL": "30f935c2a3efad249937c41fa85377409ff576a53bb477dd75db25cd2e93331a",
+          "TEXCOORD_0": "cce7136a67a2ef89ace75db173485d60aa5d6bf7f53b60167e657e701fa85917",
+          "TANGENT": "d82cc5a190499e434e28d351a2729cffe1427a9f33a28f4b70c24d255ddc3add"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.91,
+            0.61,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.014",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.91,
+              0.61,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "hollow-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 600,
+        "attributes": {
+          "POSITION": "2d3d22cf2f8b24ffa1de6987d00b07f69d1a3cd64c2859b2addf9c1ba40c6e1e",
+          "NORMAL": "a34e8fb145c3d4274946463fb365ed545e8908a0f39b9fe9cf2b77612219a3e2",
+          "TEXCOORD_0": "03b2acebb14db039fed43845332e1e6695a76cddc7a0a74ec0f8e2d601622682",
+          "TANGENT": "1d2bcfd2b02f6bdd3a95a5ecc001184b86fbbf1456d98bd0f88fae6d2516a001"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.91,
+            0.61,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.015",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.91,
+              0.61,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "underforge.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 1368,
+        "attributes": {
+          "POSITION": "b6d297a3cbe906c786a0087a4edc38ff3f12258acb7e20687bb8b20ecb8059cb",
+          "NORMAL": "eab96b08025f4ffcc9317cce08cf99f363f4f915ae36b4c86e672e6209e9bb4f",
+          "TEXCOORD_0": "79ce7d4dc699e8f2174aad823fc681c7d5ec01432fe0d1cfa2a67c79d7975dd5",
+          "TANGENT": "5d0628cf1714fdfbf0097b862f7d0064000fba602080b18eab000f711265523f"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.64,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.016",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              1,
+              0.64,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "underforge-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 144,
+        "attributes": {
+          "POSITION": "9299f46346a7dcc69eb899a7f092784eacdb8de15a46f7f15eaf4cd393abb7e2",
+          "NORMAL": "70f8827a97c4d2bbecd3493fc56e1b52e46ca2ab3b90d442d43881fa0eae41f5",
+          "TEXCOORD_0": "d3b4796f47e970a3951312e0b9a7d20f308f42664d6f37a5f5e79d3b994d9827",
+          "TANGENT": "eae2c465a173de650eb2b8d906870de3b0bc5ff9a459a302c468bb022b32c921"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            1,
+            0.64,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.017",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              1,
+              0.64,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "dawn-watch.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 552,
+        "attributes": {
+          "POSITION": "84604799980ea5dd27685c6d5e7f502bacc80dac6b9882de5ca4d78f3a3253cd",
+          "NORMAL": "dc12e641eb18d0843f6be368815f19f7f1734df70a311e34e765c0347ed7386c",
+          "TEXCOORD_0": "5f1c66395871253d03d3b3f85bbae605f087186052cf8f4d963503356142aa9f",
+          "TANGENT": "323131b2093be0e55a576ed3b865ebf78180b605f77e2cce3b699ed92dc553df"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "dawn-watch-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 72,
+        "attributes": {
+          "POSITION": "fe56b44fbe364b681ed5b59854c1bd6d10e05b70826d61c1b2b9ea8d22420339",
+          "NORMAL": "753950dd044c3b9a7b8fed20136f3821523c0df5b46252552d7ef485443e378b",
+          "TEXCOORD_0": "9e5563035b917178448675728f22fb22df838ed6676228f3fc1b5e4d6beadcf3",
+          "TANGENT": "50c9fb60ca0f4754079e5507eba13d6d81ff011e0f97c9f76f7bfc815a1c1ceb"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.001",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "dawn-garden.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 240,
+        "attributes": {
+          "POSITION": "452a2e028b62d9ef724966b765419bb9a3a37c918bb60512c6a0013d9ade5e48",
+          "NORMAL": "c130dc1e4729b0c06b7e5e09be9bae43577cc002420c6b5ec16b60d975f19833",
+          "TEXCOORD_0": "d0e93889e8be07b59f764acb61fb86ccc6c2c93944afece2d7083152ee03e26a",
+          "TANGENT": "bb6401b3a6455e7ef2953bfc105d0efb781cce7349b4eecdf0ddde46dccb7f0d"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.82,
+            0.92,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.002",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.82,
+              0.92,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "dawn-garden-lod.glb": {
+      "mineral": null
+    },
+    "dawn-ruin.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 1488,
+        "attributes": {
+          "POSITION": "0e58ccdfe6c9fb6ab9516c136299437d77d95cd33936a960364522adaff9edd3",
+          "NORMAL": "1a415745da0b5feeb97a7cc538233f003807f8153754c8b3dcee15f4266fe7db",
+          "TEXCOORD_0": "80e8022cc87cef624e0de5436cd649a44aabfecba9bc9e8efdca2e92a0b0bfcd",
+          "TANGENT": "11888d9e5b43e94139a2d1beee5e88c95bb0a536d03e7c13a26633e8025658bd"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.85,
+            0.55,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.004",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.85,
+              0.55,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "dawn-ruin-lod.glb": {
+      "mineral": {
+        "mesh": "11 | Aether mineral",
+        "triangles": 360,
+        "attributes": {
+          "POSITION": "0d60618fb907c331a7c7807c2cb65706fbc36e59cc932071cee27076fbfa6e30",
+          "NORMAL": "cba13055a65572330ed1c8063e1b98275da864d9107ed69b639f0f58acfcc67b",
+          "TEXCOORD_0": "9de09c6186483f63a4823e855da7cfc85a0fdeb01ac43d8e63311e81a472e952",
+          "TANGENT": "a3d192d5a55fbbaa5d434a966606f042f2c41bfcf4f3998cb89bae8806dab530"
+        },
+        "material": {
+          "doubleSided": true,
+          "emissiveFactor": [
+            0.85,
+            0.55,
+            1
+          ],
+          "emissiveTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-emission"
+              },
+              "sha256": "9f11c41561eb0f0a47bde65c18fb86b8374c0312773ff67d470cb1893d2a2152"
+            }
+          },
+          "extensions": {
+            "KHR_materials_emissive_strength": {
+              "emissiveStrength": 2.5
+            }
+          },
+          "name": "11 | Aether mineral.005",
+          "normalTexture": {
+            "index": {
+              "texture": {},
+              "sampler": {
+                "magFilter": 9729,
+                "minFilter": 9987
+              },
+              "image": {
+                "mimeType": "image/png",
+                "name": "aether-quartz-r45-normal"
+              },
+              "sha256": "a66c024c3540f3e4021eec8c6295f73868f5d675c3a9c7050641d06a83ca1219"
+            },
+            "scale": 0.10000000149011612
+          },
+          "pbrMetallicRoughness": {
+            "baseColorTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-albedo"
+                },
+                "sha256": "dcc5affc3b779093b1db6fb338bb07f4608c0b1c2a25bf536878d010e87aa626"
+              }
+            },
+            "metallicFactor": 0.07999999821186066,
+            "metallicRoughnessTexture": {
+              "index": {
+                "texture": {},
+                "sampler": {
+                  "magFilter": 9729,
+                  "minFilter": 9987
+                },
+                "image": {
+                  "mimeType": "image/png",
+                  "name": "aether-quartz-r45-roughness"
+                },
+                "sha256": "f7b3895bd06231597e31ad15a23322f8f2df23539a11b0e52ba9ca30a922b376"
+              }
+            },
+            "baseColorFactor": [
+              0.85,
+              0.55,
+              1,
+              1
+            ]
+          },
+          "alphaMode": "OPAQUE"
+        }
+      }
+    },
+    "arch-vault.glb": {
+      "mineral": null
+    },
+    "arch-vault-lod.glb": {
+      "mineral": null
+    }
+  }
+}

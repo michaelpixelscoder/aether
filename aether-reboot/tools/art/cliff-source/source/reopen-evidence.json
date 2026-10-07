@@ -1,0 +1,36 @@
+[
+  {
+    "kind": "dawn",
+    "full_source_sha256": "5f30374025f7f276239e18b1be6baa9b0502da08e6e8f72bda1e2edf6a5b6bbc",
+    "mesh_objects": 12,
+    "file_images": 15,
+    "all_images_packed": true,
+    "cpu_device": true,
+    "threads": 4
+  },
+  {
+    "kind": "dawn",
+    "rock_source_sha256": "3a2b5bdeccb85b95f47bab775283d55b87dcd1416173cc8d50dacd0e10512e7a",
+    "mesh_objects": 1,
+    "file_images": 3,
+    "all_images_packed": true,
+    "rock_triangles": 22100
+  },
+  {
+    "kind": "dawn-watch",
+    "full_source_sha256": "e67cf226d424cf324979df0fabb3ecab82dab8f1ce1e76ef036a7777f3a9035d",
+    "mesh_objects": 12,
+    "file_images": 15,
+    "all_images_packed": true,
+    "cpu_device": true,
+    "threads": 4
+  },
+  {
+    "kind": "dawn-watch",
+    "rock_source_sha256": "96896d246ed47cb6a379d17046a6229319306b996c2ed19f92fa551b6771f6d7",
+    "mesh_objects": 1,
+    "file_images": 3,
+    "all_images_packed": true,
+    "rock_triangles": 24586
+  }
+]

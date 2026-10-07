@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "shader_sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+  "review_source_sha256": "88bd362912b3d89e695dd09f4487028f118ddc40f9cb407f2232b73955cc8c87",
+  "sampling_source_sha256": "a62adb7906d91dff60280cbf3f5326e464e1c66c28fc6506bdb9965486bcaa6f",
+  "energy_source_sha256": "2fcdb2b2758ca69ad2e121547ef17f323a80804333e658b0f320cbae09e89856",
+  "body_alpha_uv_cascade_unchanged": true,
+  "method": "Actual KTX mip pixels; same sampling and medium energy recipe, only a native-ratio/ridge-masked hue change. CPU probes, no native rendering claim.",
+  "swatches": [
+    {
+      "kind": "current-close",
+      "nominal_mip": 2.0991268520368793,
+      "alpha_exact_medium": true,
+      "uncolored_pixels_rgb_exact": true,
+      "tinted_total_fraction": 0.07094401041666666,
+      "tinted_ridge_fraction": 0.1670243094938843,
+      "violet_weight_max": 0.95,
+      "violet_weight_mean": 0.0496233942014058,
+      "ridge_color_luma_before": 0.15651353951389316,
+      "ridge_color_luma_after": 0.14186902635290358
+    },
+    {
+      "kind": "current-mid",
+      "nominal_mip": 3.4210549469242415,
+      "alpha_exact_medium": true,
+      "uncolored_pixels_rgb_exact": true,
+      "tinted_total_fraction": 0.09213053385416667,
+      "tinted_ridge_fraction": 0.18598347324670203,
+      "violet_weight_max": 0.95,
+      "violet_weight_mean": 0.05861144648665315,
+      "ridge_color_luma_before": 0.14899662419579052,
+      "ridge_color_luma_after": 0.14099579954540306
+    },
+    {
+      "kind": "current-far",
+      "nominal_mip": 5.006017447645398,
+      "alpha_exact_medium": true,
+      "uncolored_pixels_rgb_exact": true,
+      "tinted_total_fraction": 0.0931396484375,
+      "tinted_ridge_fraction": 0.14553292133974213,
+      "violet_weight_max": 0.95,
+      "violet_weight_mean": 0.04933165473798581,
+      "ridge_color_luma_before": 0.14130186483099932,
+      "ridge_color_luma_after": 0.13829348814164358
+    }
+  ],
+  "mips": [
+    {
+      "mip": 0,
+      "tinted_total_fraction": 0.040313720703125,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 0.9808324305873076
+    },
+    {
+      "mip": 1,
+      "tinted_total_fraction": 0.052215576171875,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 0.9946140255787205
+    },
+    {
+      "mip": 2,
+      "tinted_total_fraction": 0.0708465576171875,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.0125439610146703
+    },
+    {
+      "mip": 3,
+      "tinted_total_fraction": 0.08856201171875,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.021820327100054
+    },
+    {
+      "mip": 4,
+      "tinted_total_fraction": 0.1035919189453125,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.025044461779598
+    },
+    {
+      "mip": 5,
+      "tinted_total_fraction": 0.09808349609375,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.0196636939693602
+    },
+    {
+      "mip": 6,
+      "tinted_total_fraction": 0.0623931884765625,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.0104181257940488
+    },
+    {
+      "mip": 7,
+      "tinted_total_fraction": 0.001678466796875,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.0006731902879533
+    },
+    {
+      "mip": 8,
+      "tinted_total_fraction": 0.0,
+      "alpha_exact_medium": true,
+      "water_body_rgb_exact": true,
+      "color_energy_ratio": 1.0
+    }
+  ]
+}

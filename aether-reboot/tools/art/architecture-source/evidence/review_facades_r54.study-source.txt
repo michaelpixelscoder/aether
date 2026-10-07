@@ -1,0 +1,22 @@
+"""Fixed camera CPU review, delivered GLBs reimported. Never selects a GPU."""
+import bpy,json
+from pathlib import Path
+from mathutils import Vector
+ROOT=Path(__file__).resolve().parents[2];CANONICAL=ROOT.parent.parent
+def vec(p):return Vector((p[0],-p[2],p[1]))
+def render(file,kind,label,target,position,scale):
+    for o in list(bpy.data.objects):bpy.data.objects.remove(o,do_unlink=True)
+    bpy.ops.import_scene.gltf(filepath=str(file))
+    scene=bpy.context.scene;scene.render.engine='CYCLES';scene.cycles.device='CPU';scene.cycles.samples=16;scene.cycles.use_denoising=True
+    scene.render.threads_mode='FIXED';scene.render.threads=4
+    scene.world.use_nodes=True;bg=scene.world.node_tree.nodes['Background'];bg.inputs['Color'].default_value=(.15,.24,.40,1);bg.inputs['Strength'].default_value=.65
+    data=bpy.data.lights.new('Same directional key','SUN');data.energy=3.0;data.color=(1,.78,.51);data.angle=.04
+    o=bpy.data.objects.new(data.name,data);bpy.context.collection.objects.link(o);o.location=vec((-120,100,60));o.rotation_euler=(vec((0,0,0))-o.location).to_track_quat('-Z','Y').to_euler()
+    data=bpy.data.cameras.new('Same inspection camera');data.type='ORTHO';data.ortho_scale=scale
+    camera=bpy.data.objects.new(data.name,data);bpy.context.collection.objects.link(camera);camera.location=vec(position);camera.rotation_euler=(vec(target)-camera.location).to_track_quat('-Z','Y').to_euler();scene.camera=camera
+    scene.view_settings.view_transform='AgX';scene.render.resolution_x=1100;scene.render.resolution_y=850;scene.render.resolution_percentage=100
+    scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/'evidence'/f'{kind}-{label}.png');bpy.ops.render.render(write_still=True)
+    print('R54_REVIEW',label,flush=True)
+for root,label in [(CANONICAL,'baseline'),(ROOT,'candidate')]:
+    render(root/'assets/world/dawn-watch.glb','watch-close',label,(-28,9,29),(-6,25,61),29)
+    render(root/'assets/world/dawn.glb','dawn-quarter',label,(-44,18,7),(-11,45,60),67)

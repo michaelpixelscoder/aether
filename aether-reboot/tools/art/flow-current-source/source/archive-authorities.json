@@ -1,0 +1,14 @@
+{
+  "r62": {
+    "manifest_sha256": "255f6db336b8c1b25c71fd7c1344eaa89161215d0eb5d087bc83ba0b737effc1",
+    "files": 30
+  },
+  "r64": {
+    "manifest_sha256": "afab9be09e7851fbeb0a8523196aae877a0551df65dc5970b92ff550301aaeb4",
+    "files": 29
+  },
+  "r66": {
+    "manifest_sha256": "8a7c69d43300133365968ee2f7ebc6d4d0d9b6beeef3bfe16be58179515d63c7",
+    "files": 17
+  }
+}

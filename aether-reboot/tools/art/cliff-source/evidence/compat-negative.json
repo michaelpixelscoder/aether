@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "only_isolated_outside_assets_temporarily_mutated": true,
+  "restored_exactly": true,
+  "tests": [
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "01 |position",
+      "recomputed_current_glb_manifest_sha": true,
+      "manifest_provenance_updated_to_corruption": true,
+      "rejected": true,
+      "reason": "actual R59 POSITION"
+    },
+    {
+      "gate": "verify_facades_r54.mjs",
+      "case": "01 |author",
+      "recomputed_current_glb_manifest_sha": true,
+      "manifest_provenance_updated_to_corruption": true,
+      "rejected": true,
+      "reason": "Expected values"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "01 |position",
+      "recomputed_current_glb_manifest_sha": true,
+      "manifest_provenance_updated_to_corruption": true,
+      "rejected": true,
+      "reason": "actual R59 rock POSITION"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "03 |position",
+      "recomputed_current_glb_manifest_sha": true,
+      "manifest_provenance_updated_to_corruption": true,
+      "rejected": true,
+      "reason": "original bytes"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "12 |position",
+      "recomputed_current_glb_manifest_sha": true,
+      "manifest_provenance_updated_to_corruption": true,
+      "rejected": true,
+      "reason": "original bytes"
+    },
+    {
+      "gate": "terraces-source/verify_terraces.mjs",
+      "case": "01 |author",
+      "recomputed_current_glb_manifest_sha": true,
+      "manifest_provenance_updated_to_corruption": true,
+      "rejected": true,
+      "reason": "Expected values"
+    }
+  ]
+}

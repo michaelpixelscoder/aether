@@ -1,0 +1,48 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+import {validateGroundR60World} from './validate-world.mjs';
+import {mergeGroundManifest} from './merge-manifest.mjs';
+const author=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(author,'../../..');
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const proof=JSON.parse(fs.readFileSync(path.join(author,'proofs/r59-portable-patch.json')));
+assert.equal(proof.patch_source_sha256,sha(fs.readFileSync(path.join(author,'patch_ground.py'))));
+const report=validateGroundR60World({root});assert(report.applied,'Production R60 validator requires patched4-model world');
+for(const item of proof.files){const actual=report.models.find(m=>m.file===item.file);assert(actual);assert.equal(actual.input_sha256,item.input_sha256);assert.equal(actual.output_sha256,item.output_sha256);}
+const manifestBefore=fs.readFileSync(path.join(author,'history/r59-portable-world/manifest.json'));
+mergeGroundManifest(manifestBefore,JSON.parse(fs.readFileSync(path.join(root,'assets/world/manifest.json'))),{expectedInputSha:sha(manifestBefore)});
+const study=path.join(author,'source/native-filtering-study');
+const nativeEvidence=JSON.parse(fs.readFileSync(path.join(study,'world-r60-ground-filtering-corrected.evidence.json')));
+assert.deepEqual(nativeEvidence.renderer_errors,[]);assert.equal(nativeEvidence.exit_code,0);assert.equal(nativeEvidence.valid_capture,true);
+assert.equal(nativeEvidence.capture_sha256,sha(fs.readFileSync(path.join(study,'world-r60-ground-filtering-corrected.png'))));
+assert.equal(nativeEvidence.files.find(f=>f.file==='world/dawn.glb').sha256,'83633442596ede95400e6a746d8dd9d831824a6b2b183960dfd7de9e010b3f77','Native prior fixture retains its actual older GLB SHA');
+const filtering=JSON.parse(fs.readFileSync(path.join(author,'source/native-runtime-filtering-study.json')));
+assert.equal(sha(fs.readFileSync(path.join(study,'world-r60-ground-filtering-corrected.png.surface.json'))),filtering.capture_surface_report_sha256);
+assert.equal(sha(fs.readFileSync(path.join(study,'world-r60-ground-filtering-corrected.png.surface-0.rgba'))),filtering.runtime_level_zero_sha256);
+report.prior_fixture_native_compile_passed=true;
+const final=path.join(author,'source/native-final-portable');
+const finalFiltering=JSON.parse(fs.readFileSync(path.join(final,'r60-ground-final-runtime-filtering.json')));
+for(const stem of ['world-r60-final-wide','world-r60-final-watch-close']){
+ const evidence=JSON.parse(fs.readFileSync(path.join(final,stem+'.evidence.json')));
+ assert.deepEqual(evidence.renderer_errors,[]);assert.equal(evidence.exit_code,0);assert.equal(evidence.valid_capture,true);
+ assert.equal(evidence.capture_sha256,sha(fs.readFileSync(path.join(final,stem+'.png'))));
+ for(const model of report.models)assert.equal(evidence.files.find(f=>f.file==='world/'+model.file)?.sha256,model.output_sha256,'Actual native final caller-model SHA');
+}
+assert.equal(finalFiltering.metadata_version,'final portable R59 + R60');
+assert.equal(finalFiltering.native_png_sha256,report.source_png_sha256);
+assert.equal(finalFiltering.runtime_rgba_level_zero_sha256,filtering.runtime_level_zero_sha256);
+assert.equal(finalFiltering.runtime_rgba_level_zero_sha256,sha(fs.readFileSync(path.join(final,'world-r60-final-wide.png.surface-0.rgba'))));
+assert.equal(finalFiltering.capture_sha256,sha(fs.readFileSync(path.join(final,'world-r60-final-wide.png'))));
+assert.equal(finalFiltering.surface_report_sha256,sha(fs.readFileSync(path.join(final,'world-r60-final-wide.png.surface.json'))));
+const finalSurface=JSON.parse(fs.readFileSync(path.join(final,'world-r60-final-wide.png.surface.json')))[0];
+assert.deepEqual(finalSurface.dimensions,[1254,1254]);assert.equal(finalSurface.format,'Rgba8UnormSrgb');
+assert.equal(finalSurface.mip_count,11);assert.equal(finalSurface.data_bytes,8384072);assert.equal(finalSurface.sampler,finalFiltering.sampler);
+assert(finalSurface.sampler.includes('address_mode_u: Repeat')&&finalSurface.sampler.includes('address_mode_v: Repeat')&&finalSurface.sampler.includes('anisotropy_clamp: 8'));
+assert.equal(finalFiltering.gameplay_proof,false,'Native art fixture is not gameplay evidence');
+report.native_compile='PASS exact final portable R59+R60 wide and Watch close captures';
+report.final_portable_native_compile='PASS';report.final_portable_runtime_filtering='PASS 11 mips, linear-sRGB, repeat/linear/anis8, byte-exact native level0';
+report.final_portable_native_evidence_sha256=sha(fs.readFileSync(path.join(final,'r60-ground-final-runtime-filtering.json')));
+const destination=path.join(root,'docs/evidence/ground-r60-validation.json');fs.mkdirSync(path.dirname(destination),{recursive:true});fs.writeFileSync(destination,JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report));

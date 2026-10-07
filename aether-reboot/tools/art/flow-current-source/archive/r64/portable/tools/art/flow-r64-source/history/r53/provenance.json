@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "status": "Medium-violet retained after parent native review. No further shader changes.",
+  "tool": "built-in image_gen.imagegen",
+  "fallback_cli": false,
+  "native_pixels_untouched": true,
+  "original_generated_location": "C:/Users/Damien/.codex/generated_images/01a0fcd3-904f-78d3-9e49-e5b56eb81088/exec-f9d8b43e-030a-47da-a377-4e97ba47b719.png",
+  "original_location_role": "Provenance only; no tool or runtime reads this external path.",
+  "native": {
+    "file": "tools/art/flow-source/source/world-flow-native.png",
+    "sha256": "b0925b91ad5c3a8e3f17099b8262963620e806476c493453c0a358722134fc3b",
+    "bytes": 2685518
+  },
+  "prompt": {
+    "file": "tools/art/flow-source/source/world-flow-prompt.txt",
+    "sha256": "cf03adcd920f23c1b68f4de9838e7d30c7e6b6f873b2c58b516ddf72bb5ca6c4",
+    "bytes": 3019
+  },
+  "runtime_shader": {
+    "file": "assets/shaders/world-flow.wgsl",
+    "sha256": "f3f2efc413e71ae5e941325d59c2a457b6863cfa79dd1478a44af475f678fb41",
+    "bytes": 4672
+  },
+  "derived_runtime_texture": {
+    "file": "assets/textures/world-flow.ktx2",
+    "sha256": "8ecd62eb7df01a02d9864521e63b1c29a128ff18a267f369a1d7d96cd73b4973",
+    "bytes": 8384632
+  },
+  "sources": [
+    {
+      "file": "tools/art/flow-source/build_shader.py",
+      "sha256": "a63865b2a553bebc2b94d061a69dcc382758c521cc963e33416c1868918225e9",
+      "bytes": 1826
+    },
+    {
+      "file": "tools/art/flow-source/build_mips.py",
+      "sha256": "f7bdbf8ba55e6763fafe66cfab9ea60950357289e1fb9c6f07f533765dd58c14",
+      "bytes": 7503
+    },
+    {
+      "file": "tools/art/flow-source/liquid_probe.py",
+      "sha256": "a62adb7906d91dff60280cbf3f5326e464e1c66c28fc6506bdb9965486bcaa6f",
+      "bytes": 3895
+    },
+    {
+      "file": "tools/art/flow-source/energy_probe.py",
+      "sha256": "2fcdb2b2758ca69ad2e121547ef17f323a80804333e658b0f320cbae09e89856",
+      "bytes": 1706
+    },
+    {
+      "file": "tools/art/flow-source/review_material.py",
+      "sha256": "88bd362912b3d89e695dd09f4487028f118ddc40f9cb407f2232b73955cc8c87",
+      "bytes": 3069
+    },
+    {
+      "file": "tools/art/flow-source/verify.mjs",
+      "sha256": "c99fb06a15fb81ebf5c0dbbec575e59f422dfc3100ca3cb6f6e458cb22e10ab4",
+      "bytes": 8078
+    },
+    {
+      "file": "tools/art/flow-source/test_portability.py",
+      "sha256": "355a3a633d49c9f15d2975fbba5c6a6dab01801e6d236eaa19c9afb8b064c636",
+      "bytes": 1973
+    },
+    {
+      "file": "tools/art/flow-source/record_provenance.py",
+      "sha256": "fc19417355c68216ea53a7b719ed0cb34516804c26ef88961ff90ad60a74b0cf",
+      "bytes": 2417
+    }
+  ],
+  "proofs": [
+    {
+      "file": "tools/art/flow-source/proofs/shader.json",
+      "sha256": "b6c36e6668d6fcceea3b64bd6fb47a6ae763fa08ef17de1e4102aec761c170a3",
+      "bytes": 471
+    },
+    {
+      "file": "tools/art/flow-source/proofs/mip.json",
+      "sha256": "0cbc00a8337539df5e24ee38464216b0bb3bd860898b52432ca3f6497190fe98",
+      "bytes": 3599
+    },
+    {
+      "file": "tools/art/flow-source/proofs/material.json",
+      "sha256": "6313e98646c5bd2faabaae791a8c83531c27703fa82fb4e35b80347f82ea32ad",
+      "bytes": 3824
+    },
+    {
+      "file": "tools/art/flow-source/proofs/container.json",
+      "sha256": "4345cef64eca3a5700bd08b769abd775e325470232c77196402b5d801c555644",
+      "bytes": 2285
+    },
+    {
+      "file": "tools/art/flow-source/proofs/relocation.json",
+      "sha256": "bbdadedbaa4fe89547a4580211b10c82eeb9d88b205138432237d68f7ca9526d",
+      "bytes": 1289
+    }
+  ],
+  "history": [
+    {
+      "file": "tools/art/flow-source/history/rejected-r53.wgsl",
+      "sha256": "7323e79d4dc1efe56cdbb226a6af263c3a2acda46a2c626564c1d7d532b4b5a5",
+      "bytes": 4143
+    },
+    {
+      "file": "tools/art/flow-source/history/reviewed-medium.wgsl",
+      "sha256": "3d9432e720abcae6ab54c3c0ebe7fa9081d2394d178f30ee879502ffa0c85d61",
+      "bytes": 4302
+    },
+    {
+      "file": "tools/art/flow-source/history/rejected-strong.wgsl",
+      "sha256": "91d30691df1a88105815b201a3484251ed9bd9ec8f181c795c5ab461cd91c81c",
+      "bytes": 4302
+    },
+    {
+      "file": "tools/art/flow-source/history/prior-r52.wgsl",
+      "sha256": "69078509c08b01ca11e31fdbde632902624daca7bee34c30e7558d65dd74f7fc",
+      "bytes": 4507
+    }
+  ],
+  "native_reviews": [
+    {
+      "result": "Rejected: dark strip and missing crests",
+      "file": "tools/art/flow-source/review/world-r53-material-sail.png",
+      "sha256": "54c95cd30fac45357168453edcaa87dd1cba260ce69d84f442cadca9a7baf379",
+      "bytes": 2582735
+    },
+    {
+      "result": "Retained energy base",
+      "file": "tools/art/flow-source/review/world-r53-medium.png",
+      "sha256": "4d9f0ae6063c618c8977fd1c69e4d54ece009c5f9c5d6edb638cc38e794619d2",
+      "bytes": 2686996
+    },
+    {
+      "result": "Rejected: excessive whitening",
+      "file": "tools/art/flow-source/review/world-r53-strong.png",
+      "sha256": "dc8d3726d2a2f786a39a94721af2f4556ee7d6d8cbcb454eb8f6786f48b876f6",
+      "bytes": 2705355
+    },
+    {
+      "result": "Retained final narrow crest violet",
+      "file": "tools/art/flow-source/review/world-r53-violet.png",
+      "sha256": "195b401dc421a2207c6c354d718bd1acd346238b13d7cdbc151730b552c74f46",
+      "bytes": 2687292
+    }
+  ],
+  "gpu_bytes": 8384072,
+  "native_rgba_level0_exact": true,
+  "mip_levels": 11,
+  "format": "Rgba8UnormSrgb Vk43 straight alpha",
+  "changes": "Original finer native liquid; linear alpha-weighted mip derivation; two-fetch periodic advection; positive blue-inclusive ridge energy; violet restricted to authored current crest portions. Geometry/alpha/clock/cascade preserved relative to reviewed medium.",
+  "no_canonical_mutation_by_author": true,
+  "no_engine_gpu_actions_by_author": true
+}

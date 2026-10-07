@@ -1,0 +1,242 @@
+{
+  "asset_samples_20_cycles": [],
+  "benchmark": true,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 42,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 10000,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "contact_manifolds_active": 13,
+  "contact_pairs_active": 7,
+  "contact_pairs_sleeping": 0,
+  "docked": false,
+  "edit_point": [
+    935.5201416015625,
+    610.2636108398438
+  ],
+  "elapsed_seconds": 35.92702865600586,
+  "entities": 8192,
+  "entity_samples_20_cycles": [],
+  "frame_ms_p50_p95_p99": [
+    14.299999922513962,
+    17.69999973475933,
+    20.19999921321869
+  ],
+  "fuel": 1251.0634765625,
+  "gpu_timestamps_measured": false,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "material_assets": 95,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0,
+    0.1,
+    0.2
+  ],
+  "mesh_assets": 597,
+  "mesh_max_ms": 1.1,
+  "mesh_p95_ms": 0.6,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    3244.3,
+    5033.7,
+    5201.5
+  ],
+  "navigation": {
+    "angular_y": 0.041139595210552216,
+    "position": [
+      -0.4612739086151123,
+      16.2060546875,
+      -0.38456058502197266
+    ],
+    "target_altitude": 12,
+    "velocity": [
+      -1.0885305404663086,
+      -4.897140979766846,
+      -2.00748872756958
+    ],
+    "yaw": 0.03317761793732643
+  },
+  "notice": "Votre premier vaisseau vous attend au chantier.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "physics_phase_ms_p50_p95_p99": {
+    "avian/collision/broad_phase": [
+      0.1,
+      0.1,
+      0.2
+    ],
+    "avian/collision/update_contacts": [
+      7.2,
+      8.4,
+      9.299999999999999
+    ],
+    "avian/solver/apply_restitution": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/finalize": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/integrate_positions": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/integrate_velocities": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/prepare_constraints": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/relax_velocities": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/solve_constraints": [
+      0,
+      0.1,
+      0.1
+    ],
+    "avian/solver/store_impulses": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/swept_ccd": [
+      0,
+      0,
+      0
+    ],
+    "avian/solver/update_velocity_increments": [
+      0,
+      0,
+      0.1
+    ],
+    "avian/solver/warm_start": [
+      0,
+      0.1,
+      0.1
+    ]
+  },
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.1,
+      0.1,
+      0.2
+    ],
+    "render/clustering/elapsed_cpu": [
+      0,
+      0.1,
+      0.2
+    ],
+    "render/early prepass/elapsed_cpu": [
+      0.3,
+      0.5,
+      0.5
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.3,
+      0.4,
+      0.5
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/ssao/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/taa/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/ui/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ]
+  },
+  "tick": 2108,
+  "tick_ms_p50_p95_p99": [
+    7.9,
+    9.4,
+    10.5
+  ],
+  "triangles_in_mesh_assets": 388882,
+  "tutorial_flags": 12,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 567
+    },
+    {
+      "action": "Tether",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 516
+    },
+    {
+      "action": "Dock",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 466
+    },
+    {
+      "action": "Edit",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 415
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": 249233408
+}

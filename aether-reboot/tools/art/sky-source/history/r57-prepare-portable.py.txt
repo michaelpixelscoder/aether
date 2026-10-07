@@ -1,0 +1,52 @@
+"""CPU-only isolated final package source preparation and manifest refresh."""
+import bpy,json,hashlib,importlib.util
+from pathlib import Path
+OUT=Path(__file__).resolve().parent
+ROOT=OUT.parents[2]
+PACKAGE=ROOT/'.dream-loop/sky-r57-promotion'
+SOURCE=PACKAGE/'tools/art/sky-source'
+study=json.loads((OUT/'source-candidate.json').read_text())
+canonical=json.loads((ROOT/'tools/art/sky-source/manifest.json').read_text())
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def record(p): return {'file':p.relative_to(PACKAGE).as_posix(),'sha256':sha(p),'bytes':p.stat().st_size}
+bpy.ops.wm.open_mainfile(filepath=str(OUT/'sky-r57-calibrated.blend'))
+for v in bpy.data.volumes:
+    old=Path(bpy.path.abspath(v.filepath))
+    new=SOURCE/'cloud-volumes'/old.name
+    assert old.is_file() and new.is_file() and sha(old)==sha(new)
+    v.filepath='//cloud-volumes/'+old.name
+spec=importlib.util.spec_from_file_location('r57_renderer',PACKAGE/'tools/art/build_sky.py')
+renderer=importlib.util.module_from_spec(spec);spec.loader.exec_module(renderer)
+renderer.final_configuration()
+bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'sky-world.blend'),relative_remap=False)
+manifest=json.loads((SOURCE/'manifest.json').read_text())
+manifest['source_sha256']=sha(SOURCE/'sky-world.blend')
+manifest['output_needs_render']=True
+manifest['atmosphere_authoring'].update({
+ 'model':'Planetless blue boundary plus one angular stellar core and a shared finite warm circumsolar incident field. No camera mask on the boundary.',
+ 'disk_angular_diameter_degrees':1.2,
+ 'disk_angular_diameter_degrees_actual':study['disk_diameter_degrees_actual'],
+ 'emitter_uniform_red_radiance':study['core_red_radiance_c'],
+ 'sky_pole_low':[*study['blue_poles_b_exact'][0],1],
+ 'sky_pole_high':[*study['blue_poles_b_exact'][1],1],
+ 'circumsolar_field':{'model':'shared incident boundary replacement','support_radius_degrees':4.5,
+   'warm_boundary_rgb':[7,2,.3],'additional_red_irradiance':study['additional_incident_normal_irradiance_rgb_vs_b'][0],
+   'total_red_irradiance':study['total_red_irradiance'],'core_fraction':study['core_fraction_of_total'],
+   'cloud_blue_fill_ratio':[4,4.5,5],
+   'calibration':'Actual stored f32 angular masks/axis + independently integrated field; total normal red22.'}})
+manifest['sun_energy_interpretation']='Total normal red irradiance of the stellar core plus the incident circumsolar difference from B; not core alone.'
+manifest['limitations']=[
+ 'World incident field is artist-directed, not a measured stellar corona or exact multiple-scattering atmosphere.',
+ 'Native8K/128 and authoredIBL/128 must be newly rendered from this packaged scene; diagnostics are historical only.',
+ 'Runtime gain2.1435469 corresponds to explicit exact encoding.25; revalidation is required for every future render.',
+ 'Environment/key production calibration is reviewed separately; gallery sliders are not final gameplay evidence.']
+additional=[]
+for p in [SOURCE/'history/r53-original-source.blend',SOURCE/'history/r53-original-linear.hdr',
+          SOURCE/'history/r53-original-ibl-linear.hdr',SOURCE/'reference/sky-r53-original-rgba16.ktx2',
+          SOURCE/'history/r55-cloud-before-calibration.wgsl',SOURCE/'history/r57-c-diagnostic-source.json',
+          SOURCE/'history/r57-c-diagnostic-field-proof.json',PACKAGE/'tools/art/verify-sky-field.mjs']:
+    additional.append(record(p))
+manifest['supporting_files']=list({r['file']:r for r in manifest['supporting_files']+additional}.values())
+(SOURCE/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+renderer.refresh()
+print('R57_PORTABLE_CPU_READY',manifest['source_sha256'],flush=True)

@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "case": "source drift",
+      "rejected": true
+    },
+    {
+      "case": "embedded texture byte changed",
+      "rejected": true
+    },
+    {
+      "case": "zero rest normal",
+      "rejected": true
+    }
+  ],
+  "restored_clean_passes": true
+}

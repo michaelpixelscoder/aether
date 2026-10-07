@@ -1,0 +1,160 @@
+{
+  "asset_samples_20_cycles": [],
+  "benchmark": true,
+  "binding_message": "",
+  "bindings": {},
+  "camera": {
+    "distance": 42,
+    "pitch": 0.30000001192092896,
+    "yaw": 0.44999998807907104
+  },
+  "cells": 10000,
+  "checks": [
+    "scène 32 corps",
+    "construction 10k"
+  ],
+  "contact_manifolds_active": 14,
+  "contact_pairs_active": 6,
+  "contact_pairs_sleeping": 0,
+  "docked": false,
+  "edit_point": [
+    935.9139404296875,
+    611.2625732421875
+  ],
+  "elapsed_seconds": 35.706626892089844,
+  "entities": 8192,
+  "entity_samples_20_cycles": [],
+  "frame_ms_p50_p95_p99": [
+    49.60000142455101,
+    77.20000296831131,
+    105.09999841451645
+  ],
+  "fuel": 1261.6412353515625,
+  "gpu_timestamps_measured": false,
+  "keyboard_action": null,
+  "keyboard_ui": false,
+  "material_assets": 95,
+  "mesh_apply_cpu_ms_p50_p95_p99": [
+    0.1,
+    0.2,
+    0.2
+  ],
+  "mesh_assets": 597,
+  "mesh_max_ms": 1.5,
+  "mesh_p95_ms": 0.9,
+  "mesh_pending": 0,
+  "mesh_queue_to_apply_ms_p50_p95_p99": [
+    10341.8,
+    17197.7,
+    17626.3
+  ],
+  "navigation": {
+    "angular_y": 0.029487118124961853,
+    "position": [
+      -0.5150370001792908,
+      16.278484344482422,
+      -0.49686121940612793
+    ],
+    "target_altitude": 12,
+    "velocity": [
+      -0.7167726159095764,
+      -3.525763988494873,
+      -1.3712735176086426
+    ],
+    "yaw": 0.039791759103536606
+  },
+  "notice": "Votre premier vaisseau vous attend au chantier.",
+  "pending_storage": false,
+  "phase": "Playing",
+  "progress": 0,
+  "qa_failure": null,
+  "qa_finished": true,
+  "qa_stage": 1,
+  "render_pass_ms_p50_p95_p99": {
+    "render/bin_unpacking/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/bloom/elapsed_cpu": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "render/clustering/elapsed_cpu": [
+      0.1,
+      0.2,
+      0.2
+    ],
+    "render/early_mesh_preprocessing/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/main_opaque_pass_3d/elapsed_cpu": [
+      0.3,
+      0.4,
+      0.6
+    ],
+    "render/main_transparent_pass_3d/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/tonemapping/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ],
+    "render/ui/elapsed_cpu": [
+      0,
+      0.1,
+      0.1
+    ],
+    "render/upscaling/elapsed_cpu": [
+      0,
+      0,
+      0.1
+    ]
+  },
+  "tick": 2100,
+  "tick_ms_p50_p95_p99": [
+    13.299999999999999,
+    16.7,
+    18
+  ],
+  "triangles_in_mesh_assets": 388882,
+  "tutorial_flags": 12,
+  "ui_targets": [
+    {
+      "action": "Save",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 567
+    },
+    {
+      "action": "Tether",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 516
+    },
+    {
+      "action": "Dock",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 466
+    },
+    {
+      "action": "Edit",
+      "height": 42,
+      "width": 281,
+      "x": 188.5,
+      "y": 415
+    }
+  ],
+  "walker": false,
+  "wasm_linear_memory_bytes": 238616576
+}

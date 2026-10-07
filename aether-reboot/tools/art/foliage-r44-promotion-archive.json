@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "note": "Original all-surface migration audit, accepted runtime evidence and unchanged historical baseline. Current verification is restricted to the authored foliage/wood family; no baseline is recalibrated.",
+  "files": [
+    {
+      "file": "foliage-r44-promotion-audit.mjs",
+      "sha256": "f9954ac817a70b67b2d139fd5fb4c1667426dfa6c0778b12422ee9f93f964539"
+    },
+    {
+      "file": "foliage-r44-promotion-proof.json",
+      "sha256": "c7cb03912bc4590bc94e47c28be0bc0b324a2c74fad8863abde61c6aa35ab2ab"
+    },
+    {
+      "file": "foliage-r44-baseline.json",
+      "sha256": "697164c2f6ca62083b2be70e79948aecbdc155241f53b3b387a4c6d7770d1f92"
+    },
+    {
+      "file": "foliage-r44-tangent-rounding.json",
+      "sha256": "9f40bb4e64be5c62bb31c443685d12d9c2c7b31074f63b5875f69d4b4c1dc69c"
+    },
+    {
+      "file": "foliage-r44-rebuild/rebuild-differences.json",
+      "sha256": "760144b1ecfd343403950bd019a2717dc943a725b3f426db45d7e668bd9d0447"
+    },
+    {
+      "file": "foliage-r44-rebuild/raw-blend-comparison.json",
+      "sha256": "e2b4715d73c02fbb52be32918519c14fc5eb429692da4bd9a7eaa4dc7f4fca0f"
+    },
+    {
+      "file": "foliage-r44-rebuild/repeat-tangents.json",
+      "sha256": "e72e8242846640bfd628eaecd04597aedb0972070f16fd072a343763b48cf11a"
+    }
+  ]
+}

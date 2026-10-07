@@ -1,0 +1,26 @@
+[
+  {
+    "exit_code": 0,
+    "sampled_peak_working_set_bytes": 1656725504,
+    "elapsed_seconds": 29.5928952,
+    "report": "native-qa.json",
+    "mode": "qa",
+    "sampled_peak_private_bytes": 3720241152
+  },
+  {
+    "exit_code": 0,
+    "sampled_peak_working_set_bytes": 1637261312,
+    "elapsed_seconds": 40.9402514,
+    "report": "native-benchmark.json",
+    "mode": "benchmark",
+    "sampled_peak_private_bytes": 3441090560
+  },
+  {
+    "exit_code": 0,
+    "sampled_peak_working_set_bytes": 1441288192,
+    "elapsed_seconds": 0.5397869,
+    "saved_version": 2,
+    "mode": "close-success",
+    "sampled_peak_private_bytes": 3553665024
+  }
+]

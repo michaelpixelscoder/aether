@@ -1,0 +1,55 @@
+    Checking bevy_utils v0.19.1
+    Checking aether_core v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_core)
+    Checking bevy_reflect v0.19.1
+    Checking bevy_ecs v0.19.1
+    Checking bevy_math v0.19.1
+    Checking glam_matrix_extras v0.3.0
+    Checking bevy_color v0.19.1
+    Checking bevy_heavy v0.5.0
+    Checking bevy_app v0.19.1
+    Checking bevy_time v0.19.1
+    Checking bevy_transform v0.19.1
+    Checking bevy_input v0.19.1
+    Checking bevy_log v0.19.1
+    Checking bevy_a11y v0.19.1
+    Checking bevy_state v0.19.1
+    Checking bevy_diagnostic v0.19.1
+    Checking bevy_clipboard v0.19.1
+    Checking bevy_asset v0.19.1
+    Checking bevy_window v0.19.1
+    Checking bevy_input_focus v0.19.1
+    Checking bevy_mesh v0.19.1
+    Checking bevy_image v0.19.1
+    Checking bevy_shader v0.19.1
+    Checking bevy_scene v0.19.1
+    Checking bevy_audio v0.19.1
+    Checking bevy_winit v0.19.1
+    Checking bevy_material v0.19.1
+    Checking bevy_animation v0.19.1
+    Checking bevy_camera v0.19.1
+    Checking bevy_text v0.19.1
+    Checking bevy_gizmos v0.19.1
+    Checking bevy_render v0.19.1
+    Checking bevy_world_serialization v0.19.1
+    Checking bevy_sprite v0.19.1
+    Checking bevy_light v0.19.1
+    Checking bevy_ui v0.19.1
+    Checking bevy_gltf v0.19.1
+    Checking bevy_core_pipeline v0.19.1
+    Checking bevy_sprite_render v0.19.1
+    Checking bevy_pbr v0.19.1
+    Checking bevy_post_process v0.19.1
+    Checking bevy_anti_alias v0.19.1
+    Checking bevy_ui_render v0.19.1
+    Checking bevy_gizmos_render v0.19.1
+    Checking bevy_internal v0.19.1
+    Checking bevy v0.19.0
+    Checking bevy_transform_interpolation v0.5.0
+    Checking bevy-tnua-physics-integration-layer v0.13.0
+    Checking aether_view v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_view)
+    Checking bevy-tnua v0.32.0
+    Checking avian3d v0.7.0
+    Checking bevy-tnua-avian3d v0.12.0
+    Checking aether_sim v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_sim)
+    Checking aether_game v0.1.0 (C:\Users\Damien\Documents\Perso\Game\Aether-git\aether-reboot\crates\aether_game)
+    Finished `dev` profile [optimized] target(s) in 1m 04s

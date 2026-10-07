@@ -1,0 +1,288 @@
+[
+  {
+    "pixel": [
+      20,
+      20
+    ],
+    "native_rgb": [
+      82.78,
+      96.44,
+      121.0
+    ],
+    "predicted_sky": [
+      96.87,
+      94.25,
+      105.04
+    ],
+    "predicted_with_banks": [
+      77.44,
+      93.45,
+      120.7
+    ],
+    "high_transmission": 0.011690380904387577
+  },
+  {
+    "pixel": [
+      45,
+      30
+    ],
+    "native_rgb": [
+      81.56,
+      94.67,
+      119.44
+    ],
+    "predicted_sky": [
+      117.56,
+      110.95,
+      115.84
+    ],
+    "predicted_with_banks": [
+      75.31,
+      91.26,
+      118.55
+    ],
+    "high_transmission": 0.011569644836121468
+  },
+  {
+    "pixel": [
+      65,
+      45
+    ],
+    "native_rgb": [
+      113.67,
+      118.78,
+      133.22
+    ],
+    "predicted_sky": [
+      159.56,
+      145.24,
+      137.75
+    ],
+    "predicted_with_banks": [
+      111.05,
+      117.73,
+      133.82
+    ],
+    "high_transmission": 0.011134044171436232
+  },
+  {
+    "pixel": [
+      175,
+      20
+    ],
+    "native_rgb": [
+      77.0,
+      91.78,
+      118.44
+    ],
+    "predicted_sky": [
+      211.03,
+      201.41,
+      192.91
+    ],
+    "predicted_with_banks": [
+      69.36,
+      87.32,
+      116.99
+    ],
+    "high_transmission": 0.011911888610975859
+  },
+  {
+    "pixel": [
+      200,
+      30
+    ],
+    "native_rgb": [
+      74.22,
+      87.67,
+      114.33
+    ],
+    "predicted_sky": [
+      240.91,
+      232.99,
+      222.67
+    ],
+    "predicted_with_banks": [
+      66.05,
+      82.67,
+      112.59
+    ],
+    "high_transmission": 0.010385952561584906
+  },
+  {
+    "pixel": [
+      225,
+      55
+    ],
+    "native_rgb": [
+      81.89,
+      96.44,
+      131.44
+    ],
+    "predicted_sky": [
+      244.87,
+      238.73,
+      230.23
+    ],
+    "predicted_with_banks": [
+      71.19,
+      83.95,
+      110.57
+    ],
+    "high_transmission": 0.010620656318894924
+  },
+  {
+    "pixel": [
+      235,
+      80
+    ],
+    "native_rgb": [
+      159.0,
+      164.89,
+      192.22
+    ],
+    "predicted_sky": [
+      238.63,
+      232.3,
+      224.04
+    ],
+    "predicted_with_banks": [
+      157.54,
+      152.67,
+      153.83
+    ],
+    "high_transmission": 0.05944323446208388
+  },
+  {
+    "pixel": [
+      250,
+      100
+    ],
+    "native_rgb": [
+      108.22,
+      118.11,
+      137.67
+    ],
+    "predicted_sky": [
+      215.34,
+      211.81,
+      207.31
+    ],
+    "predicted_with_banks": [
+      215.34,
+      211.81,
+      207.31
+    ],
+    "high_transmission": 1
+  },
+  {
+    "pixel": [
+      15,
+      100
+    ],
+    "native_rgb": [
+      99.22,
+      94.33,
+      100.33
+    ],
+    "predicted_sky": [
+      95.75,
+      91.5,
+      98.9
+    ],
+    "predicted_with_banks": [
+      95.75,
+      91.5,
+      98.9
+    ],
+    "high_transmission": 1
+  },
+  {
+    "pixel": [
+      100,
+      105
+    ],
+    "native_rgb": [
+      226.0,
+      210.33,
+      190.56
+    ],
+    "predicted_sky": [
+      228.68,
+      213.84,
+      194.54
+    ],
+    "predicted_with_banks": [
+      228.68,
+      213.84,
+      194.54
+    ],
+    "high_transmission": 1
+  },
+  {
+    "pixel": [
+      295,
+      75
+    ],
+    "native_rgb": [
+      254.89,
+      254.89,
+      255.0
+    ],
+    "predicted_sky": [
+      255.0,
+      255.0,
+      255.0
+    ],
+    "predicted_with_banks": [
+      255.0,
+      255.0,
+      255.0
+    ],
+    "high_transmission": 1
+  },
+  {
+    "pixel": [
+      325,
+      100
+    ],
+    "native_rgb": [
+      218.22,
+      214.11,
+      209.89
+    ],
+    "predicted_sky": [
+      219.35,
+      215.33,
+      211.25
+    ],
+    "predicted_with_banks": [
+      219.35,
+      215.33,
+      211.25
+    ],
+    "high_transmission": 1
+  },
+  {
+    "pixel": [
+      400,
+      30
+    ],
+    "native_rgb": [
+      208.89,
+      200.0,
+      191.33
+    ],
+    "predicted_sky": [
+      206.98,
+      198.96,
+      192.15
+    ],
+    "predicted_with_banks": [
+      206.98,
+      198.96,
+      192.15
+    ],
+    "high_transmission": 1
+  }
+]

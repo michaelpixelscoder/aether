@@ -1,0 +1,309 @@
+{
+  "files": [
+    {
+      "file": "arch-vault-lod.glb",
+      "masonry_primitives": 0,
+      "metric_facade_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "arch-vault.glb",
+      "masonry_primitives": 0,
+      "metric_facade_vertices": 0,
+      "maximum_height_uv_error": 0
+    },
+    {
+      "file": "crystal-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1454,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "crystal.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 6032,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "dawn-garden-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 968,
+      "maximum_height_uv_error": 1.5894571969710114e-7
+    },
+    {
+      "file": "dawn-garden.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 4432,
+      "maximum_height_uv_error": 3.9736429835457443e-7
+    },
+    {
+      "file": "dawn-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 4134,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "dawn-ruin-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1200,
+      "maximum_height_uv_error": 2.1192762567068257e-7
+    },
+    {
+      "file": "dawn-ruin.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 4790,
+      "maximum_height_uv_error": 4.2385525178545436e-7
+    },
+    {
+      "file": "dawn-watch-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1328,
+      "maximum_height_uv_error": 3.178914393942023e-7
+    },
+    {
+      "file": "dawn-watch.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 12456,
+      "maximum_height_uv_error": 4.2385525178545436e-7
+    },
+    {
+      "file": "dawn.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 29544,
+      "maximum_height_uv_error": 6.622738308870169e-7
+    },
+    {
+      "file": "ember-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 598,
+      "maximum_height_uv_error": 1.0596381283534129e-7
+    },
+    {
+      "file": "ember.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 6912,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "frost-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1454,
+      "maximum_height_uv_error": 2.1192762567068257e-7
+    },
+    {
+      "file": "frost.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 7072,
+      "maximum_height_uv_error": 4.2385525178545436e-7
+    },
+    {
+      "file": "hollow-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1756,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "hollow.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 10939,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "nomad-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1206,
+      "maximum_height_uv_error": 2.1192762567068257e-7
+    },
+    {
+      "file": "nomad.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 7184,
+      "maximum_height_uv_error": 6.887647838738076e-7
+    },
+    {
+      "file": "storm-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 542,
+      "maximum_height_uv_error": 1.5894571969710114e-7
+    },
+    {
+      "file": "storm.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 5696,
+      "maximum_height_uv_error": 1.3245476626622121e-7
+    },
+    {
+      "file": "underforge-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 1748,
+      "maximum_height_uv_error": 4.2385525134136515e-7
+    },
+    {
+      "file": "underforge.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 11371,
+      "maximum_height_uv_error": 5.298190650648849e-7
+    },
+    {
+      "file": "verdant-lod.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 574,
+      "maximum_height_uv_error": 1.0596381283534129e-7
+    },
+    {
+      "file": "verdant.glb",
+      "masonry_primitives": 1,
+      "metric_facade_vertices": 4592,
+      "maximum_height_uv_error": 3.708733453677837e-7
+    }
+  ],
+  "contracts": {},
+  "uv_roundoff": [],
+  "checked_at": "2026-10-03T13:20:39.468Z",
+  "stone_material_factors": {
+    "crystal-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "crystal.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-garden-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-garden.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-ruin-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-ruin.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-watch-lod.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn-watch.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "dawn.glb": [
+      0.4367798746065142,
+      0.4238504471002324,
+      0.36965743349606,
+      1
+    ],
+    "ember-lod.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "ember.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "frost-lod.glb": [
+      0.35240194428480115,
+      0.4238504471002324,
+      0.4679208018937468,
+      1
+    ],
+    "frost.glb": [
+      0.35240194428480115,
+      0.4238504471002324,
+      0.4679208018937468,
+      1
+    ],
+    "hollow-lod.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "hollow.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "nomad-lod.glb": [
+      0.4963407665983115,
+      0.3751320049048034,
+      0.19184752877643618,
+      1
+    ],
+    "nomad.glb": [
+      0.4963407665983115,
+      0.3751320049048034,
+      0.19184752877643618,
+      1
+    ],
+    "storm-lod.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "storm.glb": [
+      0.14393882231351032,
+      0.16564270346445864,
+      0.1778099047196238,
+      1
+    ],
+    "underforge-lod.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "underforge.glb": [
+      0.1588290453114597,
+      0.13641163814720123,
+      0.1169802004734367,
+      1
+    ],
+    "verdant-lod.glb": [
+      0.3077312752909531,
+      0.31666987427028853,
+      0.21056436085218608,
+      1
+    ],
+    "verdant.glb": [
+      0.3077312752909531,
+      0.31666987427028853,
+      0.21056436085218608,
+      1
+    ]
+  }
+}

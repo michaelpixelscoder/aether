@@ -1,0 +1,289 @@
+{
+  "source": "sky-world.blend",
+  "generator": "tools/art/build_sky.py",
+  "generator_sha256": "9b658ba2b664e50b45ff1509bc16e3b895208a83c0fbf430a468eeb26007cd11",
+  "seed": 33241002,
+  "cloud_sculptures": 36,
+  "vertices": 3135178,
+  "faces": 3871991,
+  "panorama": "full-sphere equirectangular 4096x2048",
+  "sun_game_direction": [
+    -80.0,
+    38.0,
+    -60.0
+  ],
+  "original_3d_render": true,
+  "external_assets": [],
+  "retouching": false,
+  "upscaling": false,
+  "primary_reference": "https://docs.blender.org/manual/en/latest/render/shader_nodes/textures/sky.html",
+  "source_sha256": "f94dc99d99a7ea9c8e9170ea723ddd781eaf759240c67b53df5e0686ab87d120",
+  "output": "assets/textures/sky-world-linear.ktx2",
+  "output_sha256": "4b0309b80cb0edac02a3ad9e4100bfa5bf5b6761d4b02664f2ea1e7f9854085b",
+  "bytes": 67109144,
+  "samples_max": 128,
+  "adaptive_threshold": 0.014999999664723873,
+  "renderer": "Cycles OPTIX",
+  "render_seconds": 249.05,
+  "exposure": 0.0,
+  "volume_bounces": 16,
+  "density_grid_voxel_metres_before_object_scale": "12 near, 16 horizon, 24 masters, 32 zenith",
+  "density_boundary_ramp_metres_before_object_scale": "2.5 voxels: 30..80 metres",
+  "volume_grids": [
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-00.vdb",
+      "bytes": 22350106,
+      "sha256": "4e8f97464a512bb7b624b0c493b96eeed9ef375db5c41084ba31d4af16515c0f"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-01.vdb",
+      "bytes": 11345475,
+      "sha256": "da2ff2f9129ac6205268ca7a36a7b7f437e886e635c9b6e95762c6762e6d7a85"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-02.vdb",
+      "bytes": 17420016,
+      "sha256": "cf43db4d952dbf733bfba4c16171a70b1b3200782231287b1052004461bd3905"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-03.vdb",
+      "bytes": 12996784,
+      "sha256": "e44c5835dbbc07ae0db87378f0a6dfeb66dfba4de93b8196e7667f1ffa603c6f"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-04.vdb",
+      "bytes": 16098651,
+      "sha256": "d97c7b8a528804fb9a0d16e8de3b6630f699211494bba0d315013bce4b84294a"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-05.vdb",
+      "bytes": 13159309,
+      "sha256": "668875eb5206a332f6cb32d6279c792baaae77c49ad95cb2a4b0715da35ce3e4"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-06.vdb",
+      "bytes": 14500544,
+      "sha256": "bbcbe9a0ca7907cdc5131001c3d880211b317628cd1a2f196d14e2c101253306"
+    },
+    {
+      "file": "cloud-volumes/Broken-lower-cloud-sea-07.vdb",
+      "bytes": 12775974,
+      "sha256": "27ec476dde0626d128bd7ac7a858d8e0a4c1f1221f28fe411663c41f83bdd760"
+    },
+    {
+      "file": "cloud-volumes/Deep-cloud-islands-00.vdb",
+      "bytes": 7067272,
+      "sha256": "1b0266dfabd611fd700464bbb7db1a38f33a8a3e8ee2620dabdff5d2f6ebd8c1"
+    },
+    {
+      "file": "cloud-volumes/Deep-cloud-islands-01.vdb",
+      "bytes": 4573545,
+      "sha256": "3aa7c222041cea86b786ef848cd379a22490a6f19a518e2b9e78d2b1205763f1"
+    },
+    {
+      "file": "cloud-volumes/Deep-cloud-islands-02.vdb",
+      "bytes": 6774411,
+      "sha256": "188f1212016e516d1deb5b34060535ba42634d323e1bf9a809677b28acca7525"
+    },
+    {
+      "file": "cloud-volumes/Deep-cloud-islands-03.vdb",
+      "bytes": 8229520,
+      "sha256": "3b9ef8d9e0f699fa1f61a5398067fb797f8f360bde445108b5533e5cf62a1696"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-00.vdb",
+      "bytes": 5888746,
+      "sha256": "a5925800cab29447f2b91a28aab0ed125323feb4684038d0b9093aeca67617ad"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-01.vdb",
+      "bytes": 10385189,
+      "sha256": "161500c94960b55ad556dd9c1510eb0df786919cde44cbbaa6566c5dfbc2e07a"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-02.vdb",
+      "bytes": 7322574,
+      "sha256": "324aa95d3ecf4996eda0aab19bfc71c6a0a24c8f2cb4ea21de2b56ee540c65b8"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-03.vdb",
+      "bytes": 8510057,
+      "sha256": "7cad83c7a99df7b63865353bf1df3b87f62960daada63b0718883c3bd29c0cfb"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-04.vdb",
+      "bytes": 6488996,
+      "sha256": "368d2a79e75e70df31278c60f8fdfecafba841c6868276b96697ac9007acbff1"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-05.vdb",
+      "bytes": 9163990,
+      "sha256": "0df2785168ce98d53197ce127ba1bee8dd696281c61f1b2f42db7e09d9dc32dd"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-06.vdb",
+      "bytes": 9874141,
+      "sha256": "b45ed71c01032d6aa1d8c403a5e7cf8f40a629c3b6a32f16df2ae3c111a66be8"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-07.vdb",
+      "bytes": 11915713,
+      "sha256": "c59d7a4c2ed9d8856bf786f6f0fb18fe1cb849712cdcaa96bc34ec087eebb0cf"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-08.vdb",
+      "bytes": 12997591,
+      "sha256": "6ce9c2e66f74ee42df36da3374e45d6cffbdfab92394b7c36439fb8f1d6b208f"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-09.vdb",
+      "bytes": 4703702,
+      "sha256": "b2ad4557c6a3793859e8f34320b2b665d989f3e5c0aa493317c1135951d4848b"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-10.vdb",
+      "bytes": 5585846,
+      "sha256": "a1cd46922b5f6fe4e7978f40add13d417ba2db808f529a0d8a32608ecd49eabf"
+    },
+    {
+      "file": "cloud-volumes/Horizon-cumulus-11.vdb",
+      "bytes": 8437752,
+      "sha256": "024d3c4a7bc963d6d6ecad5f009d21b59a8fdcced38f17513973b04f561871b0"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-00.vdb",
+      "bytes": 2934732,
+      "sha256": "727e0717eed793f4067ac763d4b8ac8f9a3dda0f484cd9b422e7387700a198c8"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-01.vdb",
+      "bytes": 2221454,
+      "sha256": "ba012e880b33ce667d310310ce811ed2ad8204f3f255f2f4112abaad690afea7"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-02.vdb",
+      "bytes": 3422201,
+      "sha256": "c3ad9a2ff9ce74b17b32c181e915d8c9cf913b10da9ef913164bfb684d7a335f"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-03.vdb",
+      "bytes": 2087265,
+      "sha256": "c41525e3fb84879f3f312ce609d652cedd90ba365695045cd87d7f69c99d84a0"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-04.vdb",
+      "bytes": 1662089,
+      "sha256": "da5c0bbb5fd8072b6f7839381a40c1131a872ff588972acd86bccac92b97a15a"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-05.vdb",
+      "bytes": 3779187,
+      "sha256": "834a47bbff450b9602738c1ea32835ff0869ad4cac02116d91e9cfe534f09258"
+    },
+    {
+      "file": "cloud-volumes/Intermediate-drifting-bank-06.vdb",
+      "bytes": 1567181,
+      "sha256": "ba1641b1a789f9cb55c5560596f8abe1c6563f6dbe7ab98617f91bd0619236d1"
+    },
+    {
+      "file": "cloud-volumes/Master-cumulonimbus-00.vdb",
+      "bytes": 16733544,
+      "sha256": "b1510e4265e7f023a0521c216b043726e8c0ebce7f8251036882ebb88bbb24a6"
+    },
+    {
+      "file": "cloud-volumes/Master-cumulonimbus-01.vdb",
+      "bytes": 12875953,
+      "sha256": "4905414e85ca959def5768382c30794a2f603f7c4db0c43c7b9c09b5dd7c449a"
+    },
+    {
+      "file": "cloud-volumes/Overhead-cloud-arch-00.vdb",
+      "bytes": 2776115,
+      "sha256": "4b4bac1bfb59dffb46311aebd324d7a6ea6919aa5aa83653c2aa6601a653484c"
+    },
+    {
+      "file": "cloud-volumes/Overhead-cloud-arch-01.vdb",
+      "bytes": 2577712,
+      "sha256": "e7a18cfd8b6e00a81c6c46abb198594e18a3623b426e80ea5c72224d9b4447d5"
+    },
+    {
+      "file": "cloud-volumes/Overhead-cloud-arch-02.vdb",
+      "bytes": 2742072,
+      "sha256": "c6065e70fb24d83e2e2cdb1a1c29ba72e1a18c73219c0ea60573524a938a1fca"
+    }
+  ],
+  "sun_blender_direction": [
+    -80.0,
+    60.0,
+    38.0
+  ],
+  "sun_color_linear_rgb": [
+    1.0,
+    0.76,
+    0.48
+  ],
+  "sun_energy": 6.2,
+  "visible_sky_strength": 0.1,
+  "diffuse_sky_strength": 0.04,
+  "camera_mapping": {
+    "u": "fract(0.75 - input.uv.x)",
+    "v": "input.uv.y"
+  },
+  "source_refresh": "World-space dawn recomposition and blue horizon; 36 original VDB density grids preserved byte-for-byte",
+  "output_needs_render": false,
+  "lower_sky_radiance_calibration": [
+    30.0,
+    35.0,
+    45.0
+  ],
+  "atmosphere": {
+    "altitude_metres": 4000,
+    "air_density": 0.6,
+    "aerosol_density": 0.035,
+    "ozone_density": 1.55,
+    "lower_turbidity": 1.6,
+    "lower_ground_albedo": 0,
+    "lower_direction_z": "sqrt(z*z + 0.12*0.12)"
+  },
+  "composition": "Remote broken horizon groups and sun-facing crest; original lower sea preserved",
+  "display_exposure_stops": -1.35,
+  "dimensions": [
+    4096,
+    2048
+  ],
+  "output_format": "RGBA16Float KTX2 linear",
+  "linear_encoding": {
+    "format": "VK_FORMAT_R16G16B16A16_SFLOAT",
+    "vk_format": 97,
+    "orientation": "rd",
+    "transfer": "linear",
+    "primaries": "Rec.709",
+    "dimensions": [
+      4096,
+      2048
+    ],
+    "mip_levels": 1,
+    "gpu_bytes": 67108864,
+    "encoding_scale": 0.25,
+    "recommended_runtime_multiplier": 1.5691681957935013,
+    "source_radiance_min": 0.0,
+    "source_radiance_max": 135168.0,
+    "encoded_radiance_min": 0.0,
+    "encoded_radiance_max": 33792.0,
+    "half_float_max_absolute_error_in_source_units": 0.0,
+    "finite_nonnegative": true,
+    "alpha": 1,
+    "resampled": false,
+    "conversion": "Original Radiance RGBE scanlines decoded to linear RGB and encoded as fp16; no color curve, retouch or resampling"
+  },
+  "authoring_hdr": {
+    "file": "sky-world-linear.hdr",
+    "bytes": 7023933,
+    "sha256": "40cff27034b5bb9a25b6d619488e0f7420bdb9295cb61f359d346766a4b92a0f",
+    "original_render_dimensions": [
+      4096,
+      2048
+    ],
+    "color_space": "scene-linear Rec.709",
+    "view_transform_applied": false
+  }
+}

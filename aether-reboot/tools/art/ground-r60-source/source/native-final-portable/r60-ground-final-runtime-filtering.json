@@ -1,0 +1,24 @@
+{
+  "fixture": true,
+  "gameplay_proof": false,
+  "metadata_version": "final portable R59 + R60",
+  "native_png_sha256": "087deb4c68767e876653edc1b1fd0890b0ce5cb051beb5a29d03de718806b365",
+  "runtime_rgba_level_zero_sha256": "c0f56f9e7a9b15f8f39fe1024cc161e861db8108ba548c716d256f6b991b4c59",
+  "level_zero_exact": true,
+  "mip_count": 11,
+  "gpu_texel_bytes": 8384072,
+  "format": "Rgba8UnormSrgb",
+  "sampler": "Descriptor(ImageSamplerDescriptor { label: None, address_mode_u: Repeat, address_mode_v: Repeat, address_mode_w: ClampToEdge, mag_filter: Linear, min_filter: Linear, mipmap_filter: Linear, lod_min_clamp: 0.0, lod_max_clamp: 32.0, compare: None, anisotropy_clamp: 8, border_color: None })",
+  "capture_sha256": "3865776537e00b559859907672cf6fffd670a25cb3b2cadce7a53a88ab4d9a0a",
+  "surface_report_sha256": "7996ac6296e5ad97e871a8bec47abccd417eedf343e2e476bb0ac6d061a63573",
+  "glb_sha256": {
+    "dawn-garden-lod.glb": "dca7d383c4e94d7aad5d4888c3b75f13c43b41887f7727c337dd56a4fc37f4ad",
+    "dawn-garden.glb": "486ada3f3bc26a3f0707f5eb6d693bec6fbffb32e80c4851f342824e14328ea1",
+    "dawn-lod.glb": "6566afbc077c1de4e3201047c17a5bf63e53c5becfbb8cf5a19695ddb50b2859",
+    "dawn-ruin-lod.glb": "a0cec5d9a89d3029e91e82d44f86775fc2afc7f9c30d43722049a9c5783f155e",
+    "dawn-ruin.glb": "1abd3235e0aea65f9a45c383ffe24e41a6c1df29efe424dcb2ecfcd141fbc7a3",
+    "dawn-watch-lod.glb": "6bada95a269609cdefcd78b7fe7910ccbf65e6e600847d6f492bccdd8904433c",
+    "dawn-watch.glb": "7cb3a6a54c4ec339179670ac149928dbf64241838ff7cf3d2fb795e2ea22581f",
+    "dawn.glb": "ad650143d24404c301022f008eebab25173a3d22f0bbb830530137c2776e4c7c"
+  }
+}

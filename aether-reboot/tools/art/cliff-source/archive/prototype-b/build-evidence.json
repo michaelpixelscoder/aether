@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "author_sha256": "66770009a33f73fcdff772dd8a2c2c649961919c8eb1f8ca3ae9a9b53560e8d8",
+  "records": [
+    {
+      "kind": "dawn",
+      "candidate": false,
+      "payload": {
+        "file": "dawn-regenerated-baseline.glb",
+        "triangles": 39836,
+        "materials": 1,
+        "bytes": 5545188,
+        "sha256": "32c4df768d03e7a7e2c2ee7cdd66d8b7f1a3926b1260e93b75d6946fcdbe9bf0"
+      },
+      "metrics": [],
+      "source_sha256": "88b10ac08f9e73d7833ca4f651ac59628464ac4dd5519cb8ee284dff29f7e82a",
+      "collisions_exact": true,
+      "landmarks_exact": true,
+      "walking_routes": null,
+      "legacy_cliff_metrics": [
+        {
+          "kind": "dawn",
+          "lod": false,
+          "removed_rock_triangles": 53628,
+          "new_closed_rock_triangles": 39584,
+          "unchanged_root_triangles": 504,
+          "net_triangles": -14044,
+          "closed_bodies": 249,
+          "closed_fracture_plates": 1452,
+          "crown_rocks": 539,
+          "crown_triangles": 17248,
+          "crown_walk_conflicts_rejected": 24,
+          "maximum_protrusion_metres": 4.563255315203424,
+          "maximum_recess_metres": 0.65
+        }
+      ]
+    },
+    {
+      "kind": "dawn",
+      "candidate": true,
+      "payload": {
+        "file": "dawn-candidate.glb",
+        "triangles": 21716,
+        "materials": 1,
+        "bytes": 2467252,
+        "sha256": "0eb28336472ccf5c1894c7ebe5cbb2f7e68ddeb90ffbb59f36d3f239011d9b35"
+      },
+      "metrics": [
+        {
+          "closed_substrate_cells": 249,
+          "macroplates": 1252,
+          "rock_triangles": 21368,
+          "max_plate_vertical_span_m": 31.040006539256407,
+          "true_joint_width_range_m": [
+            0.58,
+            1.18
+          ],
+          "wall_site_field_shared_across_cells": true,
+          "walk_faces_recess_only": true,
+          "silhouette_anchor_closed_volumes": 3,
+          "silhouette_anchor_triangles": 96
+        }
+      ],
+      "source_sha256": "7526ef3f5eb9c4112d2d9b7dcf10160b2590bf853662f1a886a6f17018147c1c",
+      "collisions_exact": true,
+      "landmarks_exact": true,
+      "walking_routes": null,
+      "legacy_cliff_metrics": [
+        {
+          "kind": "dawn",
+          "lod": false,
+          "removed_rock_triangles": 53628,
+          "new_closed_rock_triangles": 21464,
+          "unchanged_root_triangles": 504,
+          "net_triangles": -32164,
+          "closed_bodies": 249,
+          "closed_fracture_plates": 1252,
+          "crown_rocks": 3,
+          "crown_triangles": 96,
+          "crown_walk_conflicts_rejected": 0,
+          "maximum_protrusion_metres": 0,
+          "maximum_recess_metres": 0.65
+        }
+      ]
+    },
+    {
+      "kind": "dawn-watch",
+      "candidate": false,
+      "payload": {
+        "file": "dawn-watch-regenerated-baseline.glb",
+        "triangles": 48836,
+        "materials": 1,
+        "bytes": 6819964,
+        "sha256": "618054d96b0262938f4a2d17670534850b812a38bf6907cb398fdd5a3a818ce9"
+      },
+      "metrics": [],
+      "source_sha256": "54952f3c3485fe5c8f1fb81652a7b24caa9f8248906f651867a17c86a51c6430",
+      "collisions_exact": true,
+      "landmarks_exact": true,
+      "walking_routes": [
+        {
+          "name": "terrace 1",
+          "a": [
+            0,
+            0,
+            50
+          ],
+          "b": [
+            0,
+            4,
+            36
+          ]
+        },
+        {
+          "name": "terrace 2",
+          "a": [
+            0,
+            4,
+            30
+          ],
+          "b": [
+            0,
+            9,
+            16
+          ]
+        },
+        {
+          "name": "terrace 3",
+          "a": [
+            0,
+            9,
+            10
+          ],
+          "b": [
+            0,
+            15,
+            -4
+          ]
+        },
+        {
+          "name": "terrace 4",
+          "a": [
+            0,
+            15,
+            -10
+          ],
+          "b": [
+            0,
+            23,
+            -24
+          ]
+        }
+      ],
+      "legacy_cliff_metrics": [
+        {
+          "kind": "dawn-watch",
+          "lod": false,
+          "removed_rock_triangles": 20130,
+          "new_closed_rock_triangles": 48656,
+          "unchanged_root_triangles": 300,
+          "net_triangles": 28526,
+          "closed_bodies": 318,
+          "closed_fracture_plates": 1755,
+          "crown_rocks": 688,
+          "crown_triangles": 22016,
+          "crown_walk_conflicts_rejected": 23,
+          "maximum_protrusion_metres": 4.546598645338751,
+          "maximum_recess_metres": 0.65
+        }
+      ]
+    },
+    {
+      "kind": "dawn-watch",
+      "candidate": true,
+      "payload": {
+        "file": "dawn-watch-candidate.glb",
+        "triangles": 23770,
+        "materials": 1,
+        "bytes": 2691724,
+        "sha256": "d30707da529ced7317b28380fbd3e447dc6fae25ac1fc2d5c6c585de5d1a65fe"
+      },
+      "metrics": [
+        {
+          "closed_substrate_cells": 318,
+          "macroplates": 1351,
+          "rock_triangles": 23494,
+          "max_plate_vertical_span_m": 29.452153337875963,
+          "true_joint_width_range_m": [
+            0.58,
+            1.18
+          ],
+          "wall_site_field_shared_across_cells": true,
+          "walk_faces_recess_only": true,
+          "silhouette_anchor_closed_volumes": 3,
+          "silhouette_anchor_triangles": 96
+        }
+      ],
+      "source_sha256": "a30e4769f2776362a9f0b498d34cbca259af32a66576527133fbe291e8277197",
+      "collisions_exact": true,
+      "landmarks_exact": true,
+      "walking_routes": [
+        {
+          "name": "terrace 1",
+          "a": [
+            0,
+            0,
+            50
+          ],
+          "b": [
+            0,
+            4,
+            36
+          ]
+        },
+        {
+          "name": "terrace 2",
+          "a": [
+            0,
+            4,
+            30
+          ],
+          "b": [
+            0,
+            9,
+            16
+          ]
+        },
+        {
+          "name": "terrace 3",
+          "a": [
+            0,
+            9,
+            10
+          ],
+          "b": [
+            0,
+            15,
+            -4
+          ]
+        },
+        {
+          "name": "terrace 4",
+          "a": [
+            0,
+            15,
+            -10
+          ],
+          "b": [
+            0,
+            23,
+            -24
+          ]
+        }
+      ],
+      "legacy_cliff_metrics": [
+        {
+          "kind": "dawn-watch",
+          "lod": false,
+          "removed_rock_triangles": 20130,
+          "new_closed_rock_triangles": 23590,
+          "unchanged_root_triangles": 300,
+          "net_triangles": 3460,
+          "closed_bodies": 318,
+          "closed_fracture_plates": 1351,
+          "crown_rocks": 3,
+          "crown_triangles": 96,
+          "crown_walk_conflicts_rejected": 0,
+          "maximum_protrusion_metres": 0,
+          "maximum_recess_metres": 0.65
+        }
+      ]
+    }
+  ]
+}
